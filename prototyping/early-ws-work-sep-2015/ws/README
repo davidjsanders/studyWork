@@ -1,0 +1,12 @@
+This is a simple git repository for a learning exercise
+I did using Miguel Grinberg's blog post below:
+
+  Grinberg, M,
+  2013,
+  "Designing a RESTful API with Python and Flask"
+  Available at: http://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask
+  Accessed: 08 September 2015
+
+98% of the code came from Miguel's post and is reproduced
+here for learning purposes only (it's my first Python code
+and first GitHub repository).
