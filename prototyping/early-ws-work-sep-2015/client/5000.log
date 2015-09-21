@@ -13,10 +13,10 @@ Step 4: Get task string with ID = 2
 2 Test 2 (Second test description) False
 
 Step 5: Get task list with ID = 1
-{'id': 1, 'description': 'Test description 1', 'title': 'Test 1', 'done': False}
+{'description': 'Test description 1', 'done': False, 'title': 'Test 1', 'id': 1}
 
 Step 6: Get task list with ID = 2
-{'id': 2, 'description': 'Second test description', 'title': 'Test 2', 'done': False}
+{'description': 'Second test description', 'done': False, 'title': 'Test 2', 'id': 2}
 
 Step 7: Add a task
 {
@@ -48,6 +48,6 @@ Step 9: Update a task
 Program end
 
 =================================
-Mon Sep 21 15:15:09 EDT 2015
+Mon Sep 21 19:40:48 UTC 2015
 
 

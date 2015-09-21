@@ -11,6 +11,11 @@ def do_printAllTasks(taskURI='http://localhost:5000/'):
     Execute the web service request and retrieve
     all tasks. Then, add the tasks to a list
     (returnList) which will be returned to the user
+
+    REMEMBER: This test strap REQUIRES to import requests:
+
+    $ sudo -H pip install requests
+
     """
 
     returnList = []
