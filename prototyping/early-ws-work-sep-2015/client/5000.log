@@ -1,29 +1,33 @@
 Step 1: Getting list of tasks
 URI: http://localhost:5000/tasks/1
 URI: http://localhost:5000/tasks/2
+URI: http://localhost:5000/tasks/3
+URI: http://localhost:5000/tasks/4
 
 Step 2: Get each task
-1 Test 1 (Test description 1) False
+1 New Title (New Description) True
 2 Test 2 (Second test description) False
+3 Watch TV (Watch Mixology to relax) False
+4 Switch off your TV (and go and do something less boring instead!) False
 
 Step 3: Get task string with ID = 1
-1 Test 1 (Test description 1) False
+1 New Title (New Description) True
 
 Step 4: Get task string with ID = 2
 2 Test 2 (Second test description) False
 
 Step 5: Get task list with ID = 1
-{'description': 'Test description 1', 'done': False, 'title': 'Test 1', 'id': 1}
+{'description': 'New Description', 'id': 1, 'title': 'New Title', 'done': True}
 
 Step 6: Get task list with ID = 2
-{'description': 'Second test description', 'done': False, 'title': 'Test 2', 'id': 2}
+{'description': 'Second test description', 'id': 2, 'title': 'Test 2', 'done': False}
 
 Step 7: Add a task
 {
   "task": {
     "description": "Watch Mixology to relax",
     "done": false,
-    "id": 3,
+    "id": 5,
     "title": "Watch TV"
   }
 }
@@ -32,7 +36,7 @@ Step 8: Add a task
   "task": {
     "description": "and go and do something less boring instead!",
     "done": false,
-    "id": 4,
+    "id": 6,
     "title": "Switch off your TV"
   }
 }
@@ -48,6 +52,6 @@ Step 9: Update a task
 Program end
 
 =================================
-Mon Sep 21 19:40:48 UTC 2015
+Sat Oct 10 10:52:09 EDT 2015
 
 
