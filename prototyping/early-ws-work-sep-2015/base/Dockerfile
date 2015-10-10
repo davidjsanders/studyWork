@@ -5,6 +5,7 @@ RUN apt-get install -y openssl
 RUN apt-get install -y curl
 RUN apt-get install -y nginx
 RUN apt-get install -y python3-pip
+RUN apt-get install -y redis-server
 RUN pip3 install redis
 RUN pip3 install virtualenv
 RUN virtualenv flask
