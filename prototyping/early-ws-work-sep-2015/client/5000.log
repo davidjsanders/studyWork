@@ -3,12 +3,24 @@ URI: http://localhost:5000/tasks/1
 URI: http://localhost:5000/tasks/2
 URI: http://localhost:5000/tasks/3
 URI: http://localhost:5000/tasks/4
+URI: http://localhost:5000/tasks/9
+URI: http://localhost:5000/tasks/10
+URI: http://localhost:5000/tasks/11
+URI: http://localhost:5000/tasks/12
+URI: http://localhost:5000/tasks/13
+URI: http://localhost:5000/tasks/14
 
 Step 2: Get each task
 1 New Title (New Description) True
 2 Test 2 (Second test description) False
 3 Watch TV (Watch Mixology to relax) False
 4 Switch off your TV (and go and do something less boring instead!) False
+9 Watch TV (Watch Mixology to relax) False
+10 Switch off your TV (and go and do something less boring instead!) False
+11 Watch TV (Watch Mixology to relax) False
+12 Switch off your TV (and go and do something less boring instead!) False
+13 Watch TV (Watch Mixology to relax) False
+14 Switch off your TV (and go and do something less boring instead!) False
 
 Step 3: Get task string with ID = 1
 1 New Title (New Description) True
@@ -17,17 +29,17 @@ Step 4: Get task string with ID = 2
 2 Test 2 (Second test description) False
 
 Step 5: Get task list with ID = 1
-{'description': 'New Description', 'id': 1, 'title': 'New Title', 'done': True}
+{'done': True, 'description': 'New Description', 'title': 'New Title', 'id': 1}
 
 Step 6: Get task list with ID = 2
-{'description': 'Second test description', 'id': 2, 'title': 'Test 2', 'done': False}
+{'done': False, 'description': 'Second test description', 'title': 'Test 2', 'id': 2}
 
 Step 7: Add a task
 {
   "task": {
     "description": "Watch Mixology to relax",
     "done": false,
-    "id": 5,
+    "id": 15,
     "title": "Watch TV"
   }
 }
@@ -36,7 +48,7 @@ Step 8: Add a task
   "task": {
     "description": "and go and do something less boring instead!",
     "done": false,
-    "id": 6,
+    "id": 16,
     "title": "Switch off your TV"
   }
 }
@@ -49,9 +61,13 @@ Step 9: Update a task
     "title": "New Title"
   }
 }
+Step 10: Delete fifth task in the list
+{
+  "result": true
+}
 Program end
 
 =================================
-Sat Oct 10 10:52:09 EDT 2015
+Sat Oct 10 12:34:54 EDT 2015
 
 
