@@ -1,7 +1,30 @@
 #!/flask/bin/python3
 from flask import Flask, jsonify, abort, make_response, request, url_for
 from flask.ext.httpauth import HTTPBasicAuth
+import sqlite3
 auth = HTTPBasicAuth()
+
+tasks = []
+
+def loadData():
+    tasks = []
+    print('In Load data')
+    """ loads data from the database """
+    connection = sqlite3.connect('/scratch/tasks.db')
+    with connection:
+        print('In connection:')
+        cursor = connection.cursor()
+        cursor.execute('select * from tasks')
+        doneIndicator = False
+        while True:
+            row = cursor.fetchone()
+            if row == None:
+                break
+            if row[3] == 0:
+                doneIndicator = False
+            else:
+                doneIndicator = True
+            tasks.append({"id":row[0], "title":row[1], "description":row[2], "done":doneIndicator})
 
 @auth.get_password
 def get_password(username):
@@ -16,20 +39,20 @@ def unauthorized():
 app = Flask(__name__)
 #app.config['STATIC_FOLDER'] = 'static'
 
-tasks = [
-    {
-        'id':1,
-        'title':'Test 1',
-        'description':'Test description 1',
-        'done': False
-    },
-    {
-        'id':2,
-        'title':'Test 2',
-        'description':'Second test description',
-        'done': False
-    }
-]
+#tasks = [
+#    {
+#        'id':1,
+#        'title':'Test 1',
+#        'description':'Test description 1',
+#        'done': False
+#    },
+#    {
+#        'id':2,
+#        'title':'Test 2',
+#        'description':'Second test description',
+#        'done': False
+#    }
+#]
 
 def make_hyperlink(task):
     new_task = {}
@@ -87,6 +110,7 @@ def delete_task(task_id):
 
 @app.route('/tasks', methods=['GET'])
 def get_tasks():
+    loadData()
     return jsonify({'tasks': [make_hyperlink(task) for task in tasks]})
 
 @app.route('/tasks/<int:task_id>', methods=['GET'])
@@ -98,4 +122,6 @@ def get_task(task_id):
     return jsonify({'task':task})
 
 if __name__ == "__main__":
+    print('In __main__')
+    loadData()
     app.run(host='0.0.0.0')
