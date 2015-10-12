@@ -4,15 +4,9 @@ from flask.ext.httpauth import HTTPBasicAuth
 import sqlite3
 auth = HTTPBasicAuth()
 
-tasks = []
-
 def loadData():
-    tasks = []
-    print('In Load data')
-    """ loads data from the database """
     connection = sqlite3.connect('/scratch/tasks.db')
     with connection:
-        print('In connection:')
         cursor = connection.cursor()
         cursor.execute('select * from tasks')
         doneIndicator = False
@@ -24,7 +18,8 @@ def loadData():
                 doneIndicator = False
             else:
                 doneIndicator = True
-            tasks.append({"id":row[0], "title":row[1], "description":row[2], "done":doneIndicator})
+            yield {"id":row[0], "title":row[1], "description":row[2], "done":doneIndicator}
+            
 
 @auth.get_password
 def get_password(username):
@@ -84,21 +79,21 @@ def create_task():
 
 @app.route('/tasks/<int:task_id>', methods=['PUT'])
 def update_task(task_id):
-    task = [task for task in tasks if task['id'] == task_id]
-    if len(task) == 0:
-        abort(404)
-    if not request.json:
-        abort(400)
-    if 'title' in request.json and type(request.json['title']) != str:
-        abort(400)
-    if 'description' in request.json and type(request.json['description']) is not str:
-        abort(400)
-    if 'done' in request.json and type(request.json['done']) is not bool:
-        abort(400)
-    task[0]['title'] = request.json.get('title', task[0]['title'])
-    task[0]['description'] = request.json.get('description', task[0]['description'])
-    task[0]['done'] = request.json.get('done', task[0]['done'])
-    return jsonify({'task': task[0]})
+#    if not request.json:
+#        abort(400)
+#    if 'title' in request.json and type(request.json['title']) != str:
+#        abort(400)
+#    if 'description' in request.json and type(request.json['description']) is not str:
+#        abort(400)
+#    if 'done' in request.json and type(request.json['done']) is not bool:
+#        abort(400)
+    connection = sqlite3.connect('/scratch/tasks.db')
+    with connection:
+        cursor = connection.cursor()
+        cursor.execute("update tasks set title = 'Has been updated' where id = ?", \
+             (task_id,))
+    return get_task(task_id)
+#    return jsonify({'task': task[0]})
 
 @app.route('/tasks/<int:task_id>', methods=['DELETE'])
 def delete_task(task_id):
@@ -110,18 +105,28 @@ def delete_task(task_id):
 
 @app.route('/tasks', methods=['GET'])
 def get_tasks():
-    loadData()
-    return jsonify({'tasks': [make_hyperlink(task) for task in tasks]})
+    mytasks = []
+    for datarow in loadData():
+        mytasks.append(datarow)
+    return jsonify({'tasks': [make_hyperlink(task) for task in mytasks]})
 
 @app.route('/tasks/<int:task_id>', methods=['GET'])
 #@auth.login_required
 def get_task(task_id):
-    task = [task for task in tasks if task['id'] == task_id]
-    if len(task) == 0:
-        abort(404)
-    return jsonify({'task':task})
+    connection = sqlite3.connect('/scratch/tasks.db')
+    with connection:
+        cursor = connection.cursor()
+        cursor.execute('select * from tasks where id = ?', (task_id,))
+        doneIndicator = False
+        row = cursor.fetchone()
+        if row == None:
+            abort(404)
+    doneIndicator = True
+    if row[3] == 0:
+        doneIndicator = False
+    return jsonify({'task':{"id":row[0], "title":row[1], "description":row[2], "done":doneIndicator}})
 
 if __name__ == "__main__":
     print('In __main__')
-    loadData()
-    app.run(host='0.0.0.0')
+    #loadData()
+    app.run(host='0.0.0.0', debug=True)
