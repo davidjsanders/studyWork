@@ -1,73 +1,60 @@
 Step 1: Getting list of tasks
-URI: http://localhost:5000/tasks/1
-URI: http://localhost:5000/tasks/2
-URI: http://localhost:5000/tasks/3
-URI: http://localhost:5000/tasks/4
-URI: http://localhost:5000/tasks/9
-URI: http://localhost:5000/tasks/10
-URI: http://localhost:5000/tasks/11
-URI: http://localhost:5000/tasks/12
-URI: http://localhost:5000/tasks/13
-URI: http://localhost:5000/tasks/14
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 557, in urlopen
+    body=body, headers=headers)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 382, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python3.4/http/client.py", line 1088, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python3.4/http/client.py", line 1126, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python3.4/http/client.py", line 1084, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python3.4/http/client.py", line 922, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.4/http/client.py", line 857, in send
+    self.connect()
+  File "/usr/lib/python3.4/http/client.py", line 834, in connect
+    self.timeout, self.source_address)
+  File "/usr/lib/python3.4/socket.py", line 512, in create_connection
+    raise err
+  File "/usr/lib/python3.4/socket.py", line 503, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
 
-Step 2: Get each task
-1 New Title (New Description) True
-2 Test 2 (Second test description) False
-3 Watch TV (Watch Mixology to relax) False
-4 Switch off your TV (and go and do something less boring instead!) False
-9 Watch TV (Watch Mixology to relax) False
-10 Switch off your TV (and go and do something less boring instead!) False
-11 Watch TV (Watch Mixology to relax) False
-12 Switch off your TV (and go and do something less boring instead!) False
-13 Watch TV (Watch Mixology to relax) False
-14 Switch off your TV (and go and do something less boring instead!) False
+During handling of the above exception, another exception occurred:
 
-Step 3: Get task string with ID = 1
-1 New Title (New Description) True
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 330, in send
+    timeout=timeout
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 607, in urlopen
+    raise MaxRetryError(self, url, e)
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /tasks (Caused by <class 'ConnectionRefusedError'>: [Errno 111] Connection refused)
 
-Step 4: Get task string with ID = 2
-2 Test 2 (Second test description) False
+During handling of the above exception, another exception occurred:
 
-Step 5: Get task list with ID = 1
-{'done': True, 'description': 'New Description', 'title': 'New Title', 'id': 1}
-
-Step 6: Get task list with ID = 2
-{'done': False, 'description': 'Second test description', 'title': 'Test 2', 'id': 2}
-
-Step 7: Add a task
-{
-  "task": {
-    "description": "Watch Mixology to relax",
-    "done": false,
-    "id": 15,
-    "title": "Watch TV"
-  }
-}
-Step 8: Add a task
-{
-  "task": {
-    "description": "and go and do something less boring instead!",
-    "done": false,
-    "id": 16,
-    "title": "Switch off your TV"
-  }
-}
-Step 9: Update a task
-{
-  "task": {
-    "description": "New Description",
-    "done": true,
-    "id": 1,
-    "title": "New Title"
-  }
-}
-Step 10: Delete fifth task in the list
-{
-  "result": true
-}
-Program end
+Traceback (most recent call last):
+  File "./app.py", line 121, in <module>
+    do_Tests(argURI)
+  File "./app.py", line 72, in do_Tests
+    returnList = do_printAllTasks(wsURI)
+  File "./app.py", line 22, in do_printAllTasks
+    data = get_data(taskURI)
+  File "./app.py", line 28, in get_data
+    r = requests.get(taskURI + "tasks")
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 44, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 455, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 558, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 378, in send
+    raise ConnectionError(e)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /tasks (Caused by <class 'ConnectionRefusedError'>: [Errno 111] Connection refused)
 
 =================================
-Sat Oct 10 12:34:54 EDT 2015
+Tue Oct 13 19:52:27 EDT 2015
 
 

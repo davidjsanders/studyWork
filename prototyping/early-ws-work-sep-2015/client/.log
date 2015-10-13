@@ -1,0 +1,30 @@
+Step 1: Getting list of tasks
+Traceback (most recent call last):
+  File "./app.py", line 117, in <module>
+    do_Tests(argURI)
+  File "./app.py", line 68, in do_Tests
+    returnList = do_printAllTasks(wsURI)
+  File "./app.py", line 22, in do_printAllTasks
+    data = get_data(taskURI)
+  File "./app.py", line 28, in get_data
+    r = requests.get(taskURI + "tasks")
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/api.py", line 44, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 421, in request
+    prep = self.prepare_request(req)
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 359, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/usr/lib/python3/dist-packages/requests/models.py", line 287, in prepare
+    self.prepare_url(url, params)
+  File "/usr/lib/python3/dist-packages/requests/models.py", line 334, in prepare_url
+    scheme, auth, host, port, path, query, fragment = parse_url(url)
+  File "/usr/lib/python3/dist-packages/urllib3/util.py", line 390, in parse_url
+    raise LocationParseError("Failed to parse: %s" % url)
+urllib3.exceptions.LocationParseError: Failed to parse: Failed to parse: localhost:
+
+=================================
+Tue Oct 13 19:29:46 EDT 2015
+
+

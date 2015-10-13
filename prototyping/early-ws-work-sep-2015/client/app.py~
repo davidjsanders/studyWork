@@ -40,6 +40,7 @@ def printEachTask(taskURI='http://localhost:5000/'):
 
 def getTaskString(uri):
     task = getTask(uri)
+    print(task)
     returnValue = str(task['uri']) + ' ' + task['title'] + ' (' + task['description']+ ') ' + str(task['done'])
     return returnValue
 
@@ -47,6 +48,8 @@ def getTask(uri):
     r2 = requests.get(uri)
     task = r2.json()['task']
     task0 = task[0]
+    print(task)
+    print(task0)
     return {'uri':task0['uri'], 'title':task0['title'], 'description':task0['description'], 'done':task0['done']}
 
 def insertTask(title, description, done=False, taskURI='http://localhost:5000/'):
