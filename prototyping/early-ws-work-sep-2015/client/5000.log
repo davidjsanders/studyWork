@@ -1,0 +1,97 @@
+Step 1: Getting list of tasks
+URI: http://localhost:5000/tasks/1
+URI: http://localhost:5000/tasks/2
+
+Step 2: Get each task
+Title: New Title
+Description:  New Description
+Complete:  True
+link:  http://localhost:5000/tasks/1
+
+Title: Research Project
+Description:  Learn Python, Flask, SQLite3, and Redis
+Complete:  False
+link:  http://localhost:5000/tasks/2
+
+
+Step 3: Get task string with ID = 1
+http://localhost:5000/tasks/1 New Title (New Description) True
+
+Step 4: Get task string with ID = 2
+http://localhost:5000/tasks/2 Research Project (Learn Python, Flask, SQLite3, and Redis) False
+
+Step 5: Get task list with ID = 1
+{'description': 'New Description', 'done': True, 'uri': 'http://localhost:5000/tasks/1', 'title': 'New Title'}
+
+Step 6: Get task list with ID = 2
+{'description': 'Learn Python, Flask, SQLite3, and Redis', 'done': False, 'uri': 'http://localhost:5000/tasks/2', 'title': 'Research Project'}
+
+Step 7: Add a task
+{
+  "tasks": [
+    {
+      "description": "New Description",
+      "done": true,
+      "title": "New Title",
+      "uri": "http://localhost:5000/tasks/1"
+    },
+    {
+      "description": "Learn Python, Flask, SQLite3, and Redis",
+      "done": false,
+      "title": "Research Project",
+      "uri": "http://localhost:5000/tasks/2"
+    },
+    {
+      "description": "Watch Mixology to relax",
+      "done": false,
+      "title": "Watch TV",
+      "uri": "http://localhost:5000/tasks/3"
+    }
+  ]
+}
+Step 8: Add a task
+{
+  "tasks": [
+    {
+      "description": "New Description",
+      "done": true,
+      "title": "New Title",
+      "uri": "http://localhost:5000/tasks/1"
+    },
+    {
+      "description": "Learn Python, Flask, SQLite3, and Redis",
+      "done": false,
+      "title": "Research Project",
+      "uri": "http://localhost:5000/tasks/2"
+    },
+    {
+      "description": "Watch Mixology to relax",
+      "done": false,
+      "title": "Watch TV",
+      "uri": "http://localhost:5000/tasks/3"
+    },
+    {
+      "description": "and go and do something less boring instead!",
+      "done": false,
+      "title": "Switch off your TV",
+      "uri": "http://localhost:5000/tasks/4"
+    }
+  ]
+}
+Step 9: Update a task
+{
+  "task": [
+    {
+      "description": "New Description",
+      "done": true,
+      "title": "New Title",
+      "uri": "http://localhost:5000/tasks/1"
+    }
+  ]
+}
+Program end
+
+=================================
+Tue Oct 13 19:57:08 EDT 2015
+
+
