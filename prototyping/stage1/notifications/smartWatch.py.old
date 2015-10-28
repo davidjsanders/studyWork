@@ -1,0 +1,64 @@
+#!/flask/bin/python3
+from flask import Flask, jsonify, abort, make_response, request, url_for
+#from flask.ext.httpauth import HTTPBasicAuth
+#import sqlite3
+
+# Global variables
+# ----------------
+
+lock_status = True       # The device ALWAYS starts in locked mode
+unlock_pin = 1234        # pin code required to unlock the device
+app = Flask(__name__)    # The applicaiton
+
+
+# /lock, GET
+# ----------
+# Purpose: To find out if the smartwatch locked status
+# Parameters: {none}
+# Returns: true or false
+#
+@app.route('/lock', methods=['GET'])
+def lock_status():
+    #"""
+    #http://host/lock interrogates the device and returns the locked status
+    #of the device, either true or false
+    #"""
+    return lock_status
+
+# /lock, PUT
+# ----------
+# Purpose: To set the device status to locked
+# Parameters: {none}
+# Returns: http status 201
+#
+@app.route('/lock', methods=['PUT'])
+def lock_device():
+    """
+    http://host/lock [PUT] locks the device and returns an HTTP Status 201
+    """
+    lock_status = True
+    return 201
+
+# /unlock, GET
+# ----------
+# Purpose: To set the device status to locked
+# Parameters: {none}
+# Returns: http status 201
+#
+@app.route('/unlock/<int:pin_code>', methods=['PUT'])
+def unlock_device(pin_code):
+    returnCode = 400
+    """
+    http://host/unlock/<int:pin_code> [PUT] locks the device and returns an 
+    HTTP Status 201 if the pin code provided matches the device code.
+    """
+    if (pin_code == unlock_pin): # Did the codes match?
+        lock_status = False
+        returnCode = 201
+
+    return returnCode
+
+# Main
+# ----
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', debug=True)
