@@ -13,8 +13,8 @@ from flask import Flask, jsonify, abort, make_response, request, url_for
 
 # Global variables
 # ----------------
-debug_state = False
-lock_status = False #True       # The device ALWAYS starts in locked mode
+debug_state = True # False
+lock_status = False # True       # The device ALWAYS starts in locked mode
 unlock_pin = 1234        # pin code required to unlock the device
 allergies = ['peanuts', 'seafood']
 medical_bracelet = {'medical_bracelet': \
@@ -36,6 +36,18 @@ being_worn = False # You have to put the watch on
 being_worn_by = "" # who is wearing the watch - default no one
 
 app = Flask(__name__)    # The applicaiton
+
+@app.route('/', methods=['GET'])
+def get_actions():
+    action_list = []
+    action_list.append({'action':'lock status', 'uri':'lock', 'method':'GET'})
+    action_list.append({'action':'lock device', 'uri':'http://localhost/lock', 'method':'PUT'})
+    action_list.append({'action':'unlock device', 'uri':'http://localhost/unlock/<int:pin_code>', 'method':'PUT'})
+    action_list.append({'action':'get wear status', 'uri':'http://localhost/wear', 'method':'GET'})
+    action_list.append({'action':'wear device', 'uri':'http://localhost/wear/<string:wearer_name>', 'method':'PUT'})
+    print (action_list)
+    return make_response(jsonify({'actions':action_list})), 201
+    # return make_response(jsonify(action_list), 200)
 
 @app.route('/lock', methods=['GET'])
 def get_lock_status():
