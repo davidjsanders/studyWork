@@ -13,6 +13,7 @@ from flask import Flask, jsonify, abort, make_response, request, url_for
 
 # Global variables
 # ----------------
+global_rules = []
 debug_state = True # False
 lock_status = False # True       # The device ALWAYS starts in locked mode
 unlock_pin = 1234        # pin code required to unlock the device
@@ -35,23 +36,56 @@ medical_ems = {'ems': \
 being_worn = False # You have to put the watch on
 being_worn_by = "" # who is wearing the watch - default no one
 
-action_list = []
-action_list.append({'action':'lock status', 'uri':'lock', 'method':'GET'})
-action_list.append({'action':'lock device', 'uri':'http://localhost/lock', 'method':'PUT'})
-action_list.append({'action':'unlock device', 'uri':'http://localhost/unlock/<int:pin_code>', 'method':'PUT'})
-action_list.append({'action':'get wear status', 'uri':'http://localhost/wear', 'method':'GET'})
-action_list.append({'action':'wear device', 'uri':'http://localhost/wear/<string:wearer_name>', 'method':'PUT'})
-
 app = Flask(__name__)    # The applicaiton
 
 def build_response(data, code=200):
     response_data = make_response(jsonify(data), code)
     return response_data
 
+@app.route('/custom', methods=['GET','PUT','POST','DELETE'])
+def action_custom():
+    return make_response(jsonify({'error':'not permitted'}),403)
+
+@app.route('/rule/<string:rule>', methods=['POST'])
+def action_add_rule(rule):
+    if not request.json:
+        abort(400)
+
+    elements = []
+    for element in request.json:
+        if element != 'methods':
+            elements.append({'parameter':element, 'datatype':request.json[element]})
+
+    if 'methods' in request.json:
+        new_rule = {'rule':rule, 'parameters':elements, 'methods':request.json['methods']}
+    else:
+        new_rule = {'rule':rule, 'parameters':elements, 'methods':['GET']}
+
+    global_rules.append(new_rule)
+    return make_response(jsonify({'new rule':new_rule}), 200)
+    #return make_response(jsonify({'new rule':'success'}), 200)
+
+@app.route('/rules', methods=['GET'])
+def get_rules():
+    return make_response(jsonify({'rules':global_rules}), 200)
+
 @app.route('/', methods=['GET'])
 def get_actions():
-    return make_response(jsonify({'actions':action_list})), 201
-    # return make_response(jsonify(action_list), 200)
+    action_list = []
+    # References
+    # http://stackoverflow.com/questions/13317536/get-a-list-of-all-routes-defined-in-the-app
+    # http://flask.pocoo.org/snippets/117/
+
+    for route in app.url_map.iter_rules():
+        options = {}
+        for arg in route.arguments:
+            options[arg] = '[{0}]'.format(arg)
+
+        methods = ', '.join(route.methods)
+        #url = url_for(route.endpoint, **options)
+        action_list.append({'route':route.endpoint, 'methods':methods})
+
+    return make_response(jsonify({'actions':action_list}), 201)
 
 @app.route('/lock', methods=['GET'])
 def get_lock_status():
