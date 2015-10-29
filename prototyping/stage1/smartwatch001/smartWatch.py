@@ -15,7 +15,7 @@ from flask import Flask, jsonify, abort, make_response, request, url_for
 # ----------------
 global_rules = []
 debug_state = True # False
-lock_status = False # True       # The device ALWAYS starts in locked mode
+lock_status = True       # The device ALWAYS starts in locked mode
 unlock_pin = 1234        # pin code required to unlock the device
 allergies = ['peanuts', 'seafood']
 medical_bracelet = {'medical_bracelet': \
