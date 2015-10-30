@@ -1,6 +1,7 @@
 #!/flask/bin/python3
 from flask import Flask, jsonify, abort, make_response, request, url_for
 import json
+import sys
 #from flask.ext.httpauth import HTTPBasicAuth
 #import sqlite3
 
@@ -16,6 +17,7 @@ import json
 # ----------------
 global_rules = []
 global_dataitems = {}
+global_action_list = {}
 debug_state = True
 lock_status = True       # The device ALWAYS starts in locked mode
 unlock_pin = 1234        # pin code required to unlock the device
@@ -43,6 +45,42 @@ app = Flask(__name__)    # The applicaiton
 def build_response(data, code=200):
     response_data = make_response(jsonify(data), code)
     return response_data
+
+def not_ready():
+    response_data = make_response(jsonify({"status":"Still a work in progress - i.e. to do "}), 400)
+    return response_data 
+
+@app.route('/actions', methods=['GET'])
+def get_action_list():
+    return make_response(jsonify(global_action_list), 200)
+
+@app.route('/action/<string:item>', methods=['GET'])
+def get_action(item):
+    response_data = ''
+
+    try:
+        response_data = make_response(jsonify({'action':global_action_list[item]}), 200)
+    except KeyError:
+        abort(404)
+    except:
+        e = sys.exc_info()[0]
+        return make_response(jsonify({'error':str(e)}), 400)
+#        abort(404)
+
+    return response_data
+
+#    return not_ready();
+
+@app.route('/action/<string:item>', methods=['PUT'])
+def set_action(item):
+#    if not request.json:
+#        abort(400)
+
+    global_action_list[item] = item
+
+    return make_response(jsonify(global_action_list), 200)
+
+
 
 @app.route('/data/<string:item>', methods=['GET'])
 def get_data(item):
