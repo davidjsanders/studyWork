@@ -5,6 +5,8 @@ import resources.Config as Config
 class HelloWorld(Resource):
     def get(self, message=None):
         #global config.output_message
+        if not message == None:
+            abort(404)
         return {'output':Config.output_messages['message']}
 
     def put(self, message):
