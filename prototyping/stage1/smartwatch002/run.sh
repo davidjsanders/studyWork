@@ -2,6 +2,10 @@
 portToUse=$1
 if [ "$1x" == "x" ]; then portToUse='5000'; fi
 echo "Starting service on port $portToUse"
-docker run -p $portToUse:5000 -P --name smartwatch002 -v datavol:/datavol -d dsanders/smartwatch002 /bin/bash -c /phonews/startup.sh
+docker run -p $portToUse:5000 -P \
+    --name smartwatch002 \
+    -v /home/dasander/studyWork/prototyping/stage1/smartwatch002/datavol:/datavol \
+    -d dsanders/smartwatch002 /bin/bash \
+    -c /phonews/startup.sh
 #docker run -p $portToUse:5000 -P -d dsanders/phonews /bin/bash -c "/phonews/phoneWS.py"
 #docker run -p $portToUse:5000 -P -d dsanders/smartwatch /bin/bash -c "/phonews/smartWatch.py"
