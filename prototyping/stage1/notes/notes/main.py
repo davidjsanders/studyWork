@@ -1,14 +1,17 @@
-#!/flask/bin/python3
-from flask import Flask, Blueprint, abort
+#from flask import Flask
+#app = Flask(__name__)
+
 from flask_restful import Resource, Api
 
-app = Flask(__name__)
-api = Api(app)
+#app = Flask(__name__)
+#api = Api(app)
 
-import app.resources.Config as Config
-from app.resources.Notifications \
+from notes import app, api
+
+import notes.resources.Config as Config
+from notes.resources.Notifications \
     import Notifications, NotificationGetter, NotificationAdder
-from resources.Lock import Lock, Unlock
+from notes.resources.Lock import Lock, Unlock
 
 class Helper(Resource):
     def get(self):

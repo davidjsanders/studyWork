@@ -9,6 +9,7 @@ class Notifications(Resource):
         returnList = []
 #        with app.test_request_context():
         for idx, note in enumerate(Config.notificationList):
+            from app import api
             temp_dict = {'note':note['note']}
             if not Config.locked:
                 temp_dict['_link'] = api.url_for(NotificationGetter, id = idx)
@@ -32,12 +33,11 @@ class NotificationGetter(Resource):
         try:
             parser = reqparse.RequestParser()
             parser.add_argument('note', type=str)
-            parser.add_argument('sensitivity', type=str)
             parser.add_argument('action', type=str)
             args = parser.parse_args()
 
             for k, v in args.items():
-                if k.upper() in ['NOTE','SENSITIVITY','ACTION'] \
+                if k.upper() in ['NOTE','ACTION'] \
                 and not v == None:
                     Config.notificationList[id][k] = v
 
@@ -57,7 +57,6 @@ class NotificationAdder(Resource):
                 required=True,
                 help='You must provide a message for the notification'
             )
-            parser.add_argument('sensitivity', type=str)
             parser.add_argument(
                 'action',
                 type=str,
@@ -68,7 +67,6 @@ class NotificationAdder(Resource):
 
             Config.notificationList.append({
                     'note':args['note'],
-                    'sensitivity':args['sensitivity'],
                     'action':args['action']
                 }
             )

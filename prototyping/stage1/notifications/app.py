@@ -5,8 +5,8 @@ from flask_restful import Resource, Api
 app = Flask(__name__)
 api = Api(app)
 
-import app.resources.Config as Config
-from app.resources.Notifications \
+import resources.Config as Config
+from resources.Notifications \
     import Notifications, NotificationGetter, NotificationAdder
 from resources.Lock import Lock, Unlock
 

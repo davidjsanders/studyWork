@@ -1,7 +1,7 @@
-#from app import api
+from notes import app,api
 from flask_restful import Resource, request, reqparse
 from flask import abort, url_for
-import resources.Config as Config
+import notes.resources.Config as Config
 import sys
 
 class Notifications(Resource):
@@ -9,7 +9,7 @@ class Notifications(Resource):
         returnList = []
 #        with app.test_request_context():
         for idx, note in enumerate(Config.notificationList):
-            from app import api
+            #from app import api
             temp_dict = {'note':note['note']}
             if not Config.locked:
                 temp_dict['_link'] = api.url_for(NotificationGetter, id = idx)
