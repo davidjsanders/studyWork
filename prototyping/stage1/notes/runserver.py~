@@ -1,3 +1,0 @@
-from flask_restful import Api
-from notes import app, api
-app.run(debug=True)
