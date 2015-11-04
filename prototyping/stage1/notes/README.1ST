@@ -1,0 +1,31 @@
+README 1ST
+-----------------------------------------------------------------------------
+This application (notes) is built to run either with Docker or natively. 
+Before running with Docker, the application needs to be built and Docker must
+be installed in the operating system. To run the application natively, Python3,
+pip, flask, and flask_restful must be installed.
+
+Using Docker with shell scripts provided
+========================================
+To build the image   :  ./build.sh
+To run the image     :  ./run.sh <port>
+To stop the container:  ./stop.sh
+
+  * Note: <port> defaults to 5000
+
+Using Docker manually
+=====================
+To build the image manually: docker build -t <imagename> .
+To run the image manually:
+  docker run -p 5000:5000 -P --name <imagename> \
+   -d dsanders/<imagename> /bin/bash -c /notes/startup.sh
+To stop the image manually: 
+  docker stop <imagename>
+  docker rm -f <imagename> # allows imagename to be reused
+
+Running the application natively
+================================
+To run the app manually: python3 [install path]/runserver.py
+  * where install path is the path to the top notes/ directory
+To stop the app manually: ^c
+
