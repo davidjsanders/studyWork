@@ -2,7 +2,9 @@
     Application: notes
     Overivew:    A demonstration of a device, such as a smart phone, which
                  provides notifications and only changes the behaviour of the
-                 notifications based on locked or unlocked status.
+                 notifications based on locked or unlocked status. The key
+                 element of this demonstrator is to show that the device is
+                 set to a priori context only.
     Purpose:     To demonstrate how a solution could be modelled by developing
                  a skeleton version of the application using any language, in
                  this case Python. The model is relatively easy to build and

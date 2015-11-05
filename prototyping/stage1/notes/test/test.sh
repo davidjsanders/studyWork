@@ -58,3 +58,23 @@ echo "----------------------------"
 echo ""
 curl localhost:5000/notification/0
 echo ""
+echo "Test 11 - Lock Device"
+echo "---------------------"
+echo ""
+curl -X PUT localhost:5000/lock
+echo ""
+echo "Test 12 - List all notifications"
+echo "-------------------------------"
+echo ""
+curl localhost:5000/notifications
+echo ""
+echo "Test 13 - Unlock Device"
+echo "-----------------------"
+echo ""
+curl -X PUT localhost:5000/unlock/1234
+echo ""
+echo "Test 14 - List all notifications"
+echo "-------------------------------"
+echo ""
+curl localhost:5000/notifications
+echo ""
