@@ -10,8 +10,14 @@ Documentation sections:
 
 This application (notes) is built to run either with Docker or natively. 
 Before running with Docker, the application needs to be built and Docker must
-be installed in the operating system. To run the application natively, Python3,
-pip, flask, and flask_restful must be installed.
+be installed in the operating system. To run the application natively, the 
+following must be installed:
+
+  * Python3       # sudo apt-get install python3
+  * setuptools    # sudo apt-get install python3-setuptools
+  * pip           # sudo easy_install3 pip
+  * flask         # sudo pip3 install flask
+  * flask_restful # sudo pip3 install flask-restful (notich a HYPHEN!)
 
 
 Using Docker with shell scripts provided
