@@ -3,10 +3,7 @@ from notes import app, api
 
 import notes.resources.Config as Config
 from notes.resources.Notifications \
-    import Notifications, \
-           NotificationsClear, \
-           NotificationGetter, \
-           NotificationAdder
+    import Notifications, NotificationGetter, NotificationAdder
 from notes.resources.Lock import Lock, Unlock
 
 class Helper(Resource):

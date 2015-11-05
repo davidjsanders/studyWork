@@ -1,5 +1,13 @@
 README 1ST
 -----------------------------------------------------------------------------
+Documentation sections:
+
+  * Using Docker with shell scripts provided
+  * Using Docker manually
+  * Running the application natively
+  * Interacting with the app
+  * Running test scripts
+
 This application (notes) is built to run either with Docker or natively. 
 Before running with Docker, the application needs to be built and Docker must
 be installed in the operating system. To run the application natively, Python3,
@@ -7,9 +15,9 @@ pip, flask, and flask_restful must be installed.
 
 Using Docker with shell scripts provided
 ========================================
-To build the image   :  ./build.sh
-To run the image     :  ./run.sh <port>
-To stop the container:  ./stop.sh
+To build the image   :  bin/build.sh
+To run the image     :  bin/run.sh <port>
+To stop the container:  bin/stop.sh
 
   * Note: <port> defaults to 5000
 
@@ -29,3 +37,81 @@ To run the app manually: python3 [install path]/runserver.py
   * where install path is the path to the top notes/ directory
 To stop the app manually: ^c
 
+Interacting with the app
+========================
+All interaction with the app (which runs as a web server) is via HTTP. In Linux
+the best approach is to use CURL, as follows:
+
+  1 - List all operations supported, using HATEOAS approach (Hypertext as the
+      engine of application state)
+
+        curl <hostname>:<port>/notifications
+
+  2 - List all notifications
+
+        curl <hostname>:<port>/notifications
+
+  3 - Add a new notification
+
+        curl -X POST -H "Content-Type: application/json" \
+        -d '{"note":"The notification text", "action":"Description of ation"}' \
+        <hostname>:<port>/notification
+
+  4 - Get an existing notification
+
+        curl <hostname>:<port>/notification/9 # Where 9 is the notification id.
+
+  5 - Update an existing notification
+
+        curl -X PUT -H "Content-Type: application/json" \
+        -d '{"note":"The notification text", "action":"Description of ation"}' \
+        <hostname>:<port>/notification/9 # Where 9 is the notification id.
+
+  6 - Check the device's lock status
+
+        curl <hostname>:<port>/lock
+
+  7 - Lock the device
+
+        curl -X PUT <hostname>:<port>/lock
+
+  8 - Unlock the device
+
+        curl -X PUT <hostname>:<port>/unlock/1234 # 1234 is the unlock code
+
+Running Test Scripts
+====================
+There are two initial test scripts provided:
+
+  * test/test.sh <port>
+  * test/test2.sh <no_of_containers>
+  * test/test3.sh <no_of_containers>
+
+test/test.sh: 
+-------------
+expects a running environment already up and running (see above). Tests are 
+executed to:
+
+  1. clear the notification history
+  2. list the HTTP routes
+  3. post a notification
+  4. post a notification
+  5. get the first (0) notification
+  6. get the second (1) notificaiton
+  7. list all notifications
+  8. list the possible actions (as per 2 but notice the different results)
+  9. update notification 0, set the note to have the text "updated: " added.
+ 10. get the first (0) notification
+
+test/create.sh:
+---------------
+Creates x containers named notes5000 through notes50099. Test is to prove 
+that multiple containers can be created. test/test.sh can then be used for any
+(or all) of the created containers by calling test/test.sh notes500?? (where ??
+is 0 to 99).
+
+After the containers are created, any commands (e.g. free) can be executed.
+
+test/destroy.sh:
+----------------
+Destroys the x containers created in test/test2.sh

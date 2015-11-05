@@ -19,7 +19,6 @@ class Notifications(Resource):
 class NotificationsClear(Resource):
     def put(self):
         Config.notificationList = []
-        return {'notifications':Config.notificationList}
 
 class NotificationGetter(Resource):
     def get(self, id):
