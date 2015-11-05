@@ -13,11 +13,11 @@ Before running with Docker, the application needs to be built and Docker must
 be installed in the operating system. To run the application natively, the 
 following must be installed:
 
-  * Python3       # sudo apt-get install python3
-  * setuptools    # sudo apt-get install python3-setuptools
-  * pip           # sudo easy_install3 pip
-  * flask         # sudo pip3 install flask
-  * flask_restful # sudo pip3 install flask-restful (notich a HYPHEN!)
+  * Python3
+  * setuptools
+  * pip
+  * flask
+  * flask_restful
 
 
 Using Docker with shell scripts provided
