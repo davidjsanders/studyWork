@@ -1,8 +1,0 @@
-limit="100"
-i="0"
-
-while [ $i -lt $limit ]
-do
-bin/stop.sh 500$i
-i=$[$i+1]
-done
