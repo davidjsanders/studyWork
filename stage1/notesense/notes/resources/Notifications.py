@@ -41,8 +41,8 @@ class NotificationGetter(Resource):
             return Config.notificationList[id]
         except IndexError:
             abort(404)
-        except:
-            return {'error':str(sys.exc_info()[0])}
+        except Exception as e:
+            return {'error':repr(e)}
 
     def put(self, id):
         try:
@@ -54,10 +54,10 @@ class NotificationGetter(Resource):
             args = parser.parse_args()
 
             for k, v in args.items():
-                if k.upper() in ['NOTE', 'ACTION', 'SENSITIVITY'] \
-                and not v == None:
-                    Config.notificationList[id][k] = v
-                    updated_data = True
+                if k.upper() in ['NOTE', 'ACTION', 'SENSITIVITY']:
+                    if not v == None:
+                        Config.notificationList[id][k] = v
+                        updated_data = True
                 else:
                     raise ValueError('Unexpected paramter passed to /notification/9 >>> ' + k)
 
@@ -67,11 +67,13 @@ class NotificationGetter(Resource):
                     return None
                 return(Config.notificationList[id])
             else:
-                abort(400)
+                raise ValueError('No data to update or paramters incorrectly parsed.')
         except IndexError:
             abort(404)
-        except Exception as e:
+        except ValueError:
             abort(400)
+        except Exception as e:
+            return {'error':repr(e)}
 
 class NotificationAdder(Resource):
     def post(self):

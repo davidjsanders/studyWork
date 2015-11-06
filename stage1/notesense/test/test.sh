@@ -95,7 +95,7 @@ echo "Test 17 - Bad update notification 1"
 echo "-----------------------------------"
 echo ""
 curl -X PUT -H "Content-Type: application/json" \
-  -d '{"note":"This is the note", "notes":"updated: This is just a notification"}' \
+  -d '{"notes":"updated: This is just a notification"}' \
   localhost:$portToUse/notification/0
 echo ""
 echo "Test 18 - Update non-existent notification"
