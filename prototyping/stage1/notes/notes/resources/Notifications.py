@@ -34,6 +34,7 @@ class NotificationGetter(Resource):
 
     def put(self, id):
         try:
+            updated_data = False
             parser = reqparse.RequestParser()
             parser.add_argument('note', type=str)
             parser.add_argument('action', type=str)
@@ -43,12 +44,18 @@ class NotificationGetter(Resource):
                 if k.upper() in ['NOTE','ACTION'] \
                 and not v == None:
                     Config.notificationList[id][k] = v
+                    updated_data = True
 
-            return(Config.notificationList[id])
+            if updated_data:
+                return(Config.notificationList[id])
+            else:
+                abort(400)
         except IndexError:
             abort(404)
-        except:
-            return {'error':str(sys.exc_info()[0])}
+        except Exception as e:
+            abort(400)
+            #return {'error':repr(e)}
+            #return {'error':str(sys.exc_info().message)}
 
 class NotificationAdder(Resource):
     def post(self):

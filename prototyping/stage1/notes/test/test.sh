@@ -49,7 +49,6 @@ echo "----------------------------------"
 echo ""
 curl localhost:$portToUse/
 echo ""
-echo ""
 echo "Test 9 - Update notification 0"
 echo "------------------------------"
 echo ""
@@ -79,4 +78,14 @@ echo "Test 14 - List all notifications"
 echo "-------------------------------"
 echo ""
 curl localhost:$portToUse/notifications
+echo ""
+echo "Test 15 - Bad update notification 0"
+echo "-----------------------------------"
+echo ""
+curl -X PUT -H "Content-Type: application/json" -d '{"notes":"updated: This is just a notification"}' localhost:$portToUse/notification/0
+echo ""
+echo "Test 16 - Update non-existent notification"
+echo "------------------------------------------"
+echo ""
+curl -X PUT -H "Content-Type: application/json" -d '{"note":"updated: This is just a notification"}' localhost:$portToUse/notification/20202
 echo ""
