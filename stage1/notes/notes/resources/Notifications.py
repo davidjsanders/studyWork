@@ -54,8 +54,6 @@ class NotificationGetter(Resource):
             abort(404)
         except Exception as e:
             abort(400)
-            #return {'error':repr(e)}
-            #return {'error':str(sys.exc_info().message)}
 
 class NotificationAdder(Resource):
     def post(self):
