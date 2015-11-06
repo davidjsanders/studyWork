@@ -45,8 +45,6 @@ class NotificationGetter(Resource):
                 and not v == None:
                     Config.notificationList[id][k] = v
                     updated_data = True
-                else:
-                    abort(400)
 
             if updated_data:
                 return(Config.notificationList[id])
