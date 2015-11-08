@@ -26,6 +26,8 @@ RUN mkdir /notes/notes/resources
 #
 COPY startup.sh /notes/
 COPY runserver.py /notes/
+COPY notesuwsgi.ini /notes/
+COPY notesuwsgi.conf /notes/
 COPY notes/__init__.py /notes/notes/
 COPY notes/main.py /notes/notes/
 COPY notes/resources/Config.py /notes/notes/resources/
@@ -35,3 +37,8 @@ COPY notes/resources/Lock.py /notes/notes/resources/
 # Set the working directory for the container
 #
 WORKDIR /notes/
+#
+# Update nginx configuration
+#
+RUN rm -r -f /etc/nginx/sites-enabled/default
+RUN ln -s /notes/notesuwsgi.conf /etc/nginx/conf.d/notesuwsgi.conf

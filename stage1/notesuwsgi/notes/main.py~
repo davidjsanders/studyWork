@@ -38,13 +38,28 @@ class Helper(Resource):
             for note in notification_list['notifications']:
                 action_list.append({
                      'href':note['href'],
-                      'method':['GET','PUT','DELETE'],
+                      'method':'GET',
                       'description':'Get notification ' + str(note['id'])
                     })
+                action_list.append({
+                     'href':note['href'],
+                      'method':'PUT',
+                      'description':'Update notification ' + str(note['id']),
+                      'comment':'{\'note\':\'<str:note>\', '+ \
+                          '\'action\':\'<str:action>\'}'
+                    })
+
+#            for idx, note in enumerate(notification_list):
 #                action_list.append({
-#                     'href':note['href'],
+#                     '*** TEST ***':'*** TEST ***',
+#                     'href':notification_list,
+#                      'method':'GET',
+#                      'description':'Get notification ' + str(idx)
+#                    })
+#                action_list.append({
+#                     'href':api.url_for(NotificationGetter, id = idx),
 #                      'method':'PUT',
-#                      'description':'Update notification ' + str(note['id']),
+#                      'description':'Update notification ' + str(idx),
 #                      'comment':'{\'note\':\'<str:note>\', '+ \
 #                          '\'action\':\'<str:action>\'}'
 #                    })
