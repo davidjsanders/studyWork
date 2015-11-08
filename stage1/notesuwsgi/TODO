@@ -1,0 +1,1 @@
+1. Make thread safe -> move globals into sqlite3

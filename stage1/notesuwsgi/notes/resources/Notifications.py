@@ -1,6 +1,7 @@
 from notes import app,api
 from flask_restful import Resource, request, reqparse
 from flask import abort, url_for
+import sqlite3
 import requests
 import notes.resources.Config as Config
 import sys
@@ -8,84 +9,182 @@ import sys
 class Notifications(Resource):
     def get(self):
         try:
-            returnList = []
-            for idx, note in enumerate(Config.notificationList):
-                #from app import api
-                temp_dict = {'note':note['note']}
-                if not Config.locked:
-                    temp_dict['_link'] = api.url_for(NotificationGetter, id = idx, _external=True)
-                returnList.append(temp_dict)
+            return_list = []
 
-            #req = requests.get(api.url_for(NotificationGetter, id = 0, _external=True))
+            db_connection = sqlite3.connect(Config.database_connection)
+            db_cursor = db_connection.cursor()
+            db_cursor.execute(
+                'select note, action, sensitivity from notifications'
+            )
+            db_records = db_cursor.fetchall()
+            for db_row in db_records:
+                return_list.append({
+                    'note':db_row[0],
+                    'action':db_row[1],
+                    'sensitivity':db_row[2]
+                })
+
+#            req = requests.get(api.url_for(NotificationGetter, id = 0, _external=True))
             #t = req.json()
             #t = {'test':'none'}
+
         except Exception as e:
             return {'error':repr(e)}
+        finally:
+             db_cursor.close()
+             db_connection.close()
         
-        return {'notifications':returnList}
+        return {'notifications':return_list}
 
 class NotificationsClear(Resource):
-    def put(self):
-        Config.notificationList = []
-        return {'notifications':Config.notificationList}
+    def delete(self):
+        try:
+            return_list = []
+
+            db_connection = sqlite3.connect(Config.database_connection)
+            db_cursor = db_connection.cursor()
+            db_cursor.execute(
+                'delete from notifications'
+            )
+            db_connection.commit()
+        except Exception as e:
+            return {'error':repr(e)}
+        finally:
+             db_cursor.close()
+             db_connection.close()
+        
+        return {'notifications':[]}
 
 class NotificationGetter(Resource):
     def get(self, id):
+        if Config.locked:
+            return {'notice':'unlock device first'}
         try:
-            if Config.locked:
-                return {'notice':'unlock device first'}
-            return Config.notificationList[id]
-        except IndexError:
-            abort(404)
-        except:
-            return {'error':str(sys.exc_info()[0])}
+            return_list = {'notification':''}
 
-    def put(self, id):
-        try:
-            updated_data = False
-            parser = reqparse.RequestParser()
-            parser.add_argument('note', type=str)
-            parser.add_argument('action', type=str)
-            args = parser.parse_args()
-
-            for k, v in args.items():
-                if k.upper() in ['NOTE','ACTION'] \
-                and not v == None:
-                    Config.notificationList[id][k] = v
-                    updated_data = True
-
-            if updated_data:
-                return(Config.notificationList[id])
-            else:
-                abort(400)
+            db_connection = sqlite3.connect(Config.database_connection)
+            db_cursor = db_connection.cursor()
+            db_cursor.execute(
+                'select note, action, sensitivity from notifications '+ \
+                'where id = ?', \
+                (id, )
+            )
+            db_records = db_cursor.fetchall()
+            return_list['notification'] = {
+                'note':db_records[0][0],
+                'action':db_records[0][1],
+                'sensitivity':db_records[0][2]
+            }
         except IndexError:
             abort(404)
         except Exception as e:
-            abort(400)
+            return_list = {'error':repr(e)}
+        finally:
+             db_cursor.close()
+             db_connection.close()
+        
+        return return_list
+
+    def put(self, id):
+        try:
+            return_list = []
+            database_opened = False
+            updated_data = False
+
+            tempCall = NotificationGetter()
+            return_list = tempCall.get(id)
+
+            if return_list == None:
+                abort(404)
+
+            parser = reqparse.RequestParser()
+            parser.add_argument('note', type=str)
+            parser.add_argument('action', type=str)
+            parser.add_argument('sensitivity', type=str)
+            args = parser.parse_args()
+
+            for k, v in args.items():
+                if not v == None:
+                    return_list['notification'][0][k] = v
+                    updated_data = True
+
+            if not updated_data:
+                pass
+            else:
+                database_opened = True
+
+            db_connection = sqlite3.connect(Config.database_connection)
+            db_cursor = db_connection.cursor()
+            db_cursor.execute( \
+                'update notifications '+ \
+                'set note = ?, action = ?, sensitivity = ? '+ \
+                'where id = ?', \
+                (return_list['notification'][0]['note'], \
+                 return_list['notification'][0]['action'], \
+                 return_list['notification'][0]['sensitivity'], \
+                 id, ) \
+            )
+            db_connection.commit()
+        except IndexError:
+            abort(404)
+        except Exception as e:
+            return_list = {'error':repr(e)}
+        finally:
+            if database_opened:
+                db_cursor.close()
+                db_connection.close()
+
+        return return_list
 
 class NotificationAdder(Resource):
     def post(self):
         try:
+            insert_list = {
+                'notification':{
+                    'note':'',
+                    'sensitivity':'',
+                    'action':''
+                }
+            }
+
+            database_opened = False
+            updated_data = False
+
             parser = reqparse.RequestParser()
-            parser.add_argument(
-                'note',
-                type=str,
-                required=True,
-                help='You must provide a message for the notification'
-            )
-            parser.add_argument(
-                'action',
-                type=str,
-                required=True,
-                help='You must provide an action'
-            )
+            parser.add_argument('note', 
+                                type=str,
+                                required=True,
+                                help='note must be prodived')
+            parser.add_argument('action', 
+                                type=str,
+                                required=True,
+                                help='action must be prodived')
+            parser.add_argument('sensitivity', type=str)
             args = parser.parse_args()
 
-            Config.notificationList.append({
-                    'note':args['note'],
-                    'action':args['action']
-                }
+            for k, v in args.items():
+                if not v == None:
+                    insert_list['notification'][k] = v
+                    updated_data = True
+
+            database_opened = True
+
+            db_connection = sqlite3.connect(Config.database_connection)
+            db_cursor = db_connection.cursor()
+            db_cursor.execute( \
+                'insert into notifications '+ \
+                'values (null, ?, ?, ?)', \
+                (insert_list['notification']['note'], \
+                 insert_list['notification']['action'], \
+                 insert_list['notification']['sensitivity']) \
             )
-            return {'notification sent':Config.notificationList[-1:]}
-        except:
-            return {'error':str(sys.exc_info()[0])}
+            insert_list['notification']['id'] = db_cursor.lastrowid
+            db_connection.commit()
+        except Exception as e:
+            insert_list = {'error':repr(e)}
+        finally:
+            if database_opened:
+                db_cursor.close()
+                db_connection.close()
+
+        return insert_list

@@ -11,7 +11,7 @@ output_messages = {
     'message':'Hello World!'
 }
 authorized_ids = ['dasander','diane','david','bob']
-database_connection = '/datavol/config.db'
+database_connection = 'datavol/notesuwsgi.db'
 message = {
     'default':'This is the default message'
 }
