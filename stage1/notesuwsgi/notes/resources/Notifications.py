@@ -14,19 +14,21 @@ class Notifications(Resource):
             db_connection = sqlite3.connect(Config.database_connection)
             db_cursor = db_connection.cursor()
             db_cursor.execute(
-                'select note, action, sensitivity from notifications'
+                'select id, note, action, sensitivity from notifications'
             )
             db_records = db_cursor.fetchall()
             for db_row in db_records:
                 return_list.append({
-                    'note':db_row[0],
-                    'action':db_row[1],
-                    'sensitivity':db_row[2]
+                 'id':db_row[0],
+                 'note':db_row[1],
+                 'action':db_row[2],
+                 'sensitivity':db_row[3],
+                 'href':api.url_for(
+                     NotificationGetter,
+                     id = db_row[0],
+                     _external=True),
+                 'rel':'self'
                 })
-
-#            req = requests.get(api.url_for(NotificationGetter, id = 0, _external=True))
-            #t = req.json()
-            #t = {'test':'none'}
 
         except Exception as e:
             return {'error':repr(e)}
@@ -135,6 +137,33 @@ class NotificationGetter(Resource):
                 db_connection.close()
 
         return return_list
+
+    def delete(self, id):
+        try:
+            return_list = []
+            database_opened = False
+            updated_data = False
+
+            tempCall = NotificationGetter()
+            return_list = tempCall.get(id)
+
+            if return_list == None:
+                abort(404)
+
+            db_connection = sqlite3.connect(Config.database_connection)
+            db_cursor = db_connection.cursor()
+            db_cursor.execute(
+                'delete from notifications where id = ?', (id,)
+            )
+            db_connection.commit()
+        except Exception as e:
+            return {'error':repr(e)}
+        finally:
+             if database_opened:
+                 db_cursor.close()
+                 db_connection.close()
+        
+        return {'notification':[]}
 
 class NotificationAdder(Resource):
     def post(self):

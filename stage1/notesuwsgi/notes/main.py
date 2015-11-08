@@ -12,9 +12,11 @@ from notes.resources.Lock import Lock, Unlock
 class Helper(Resource):
     def get(self):
         action_list = []
-        notifications = Notifications()
-        notification_list = notifications.get()
+
         with app.test_request_context():
+            notifications = Notifications()
+            notification_list = notifications.get()
+
             action_list.append({
                 'href':api.url_for(Helper),
                 'rel':'self',
@@ -32,20 +34,21 @@ class Helper(Resource):
                 'description':'Add a new notification.',
                 'comment':'{\'note\':\'<str:note>\', '+ \
                      '\'action\':\'<str:action>\'}'})
-            for idx, note in enumerate(notification_list):
+
+            for note in notification_list['notifications']:
                 action_list.append({
-                     '*** TEST ***':'*** TEST ***',
-                     'href':api.url_for(NotificationGetter, id = idx),
+                     'href':note['href'],
                       'method':'GET',
-                      'description':'Get notification ' + str(idx)
+                      'description':'Get notification ' + str(note['id'])
                     })
                 action_list.append({
-                     'href':api.url_for(NotificationGetter, id = idx),
+                     'href':note['href'],
                       'method':'PUT',
-                      'description':'Update notification ' + str(idx),
+                      'description':'Update notification ' + str(note['id']),
                       'comment':'{\'note\':\'<str:note>\', '+ \
                           '\'action\':\'<str:action>\'}'
                     })
+
             action_list.append({
                 'href':api.url_for(Lock),
                 'rel':'lock',
