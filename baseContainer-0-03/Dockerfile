@@ -16,3 +16,4 @@ RUN flask/bin/pip install flask-httpauth
 RUN flask/bin/pip install flask-restful
 RUN flask/bin/pip install uwsgi
 RUN flask/bin/pip install requests
+RUN flask/bin/pip install -U marshmallow
