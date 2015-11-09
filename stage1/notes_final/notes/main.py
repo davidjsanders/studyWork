@@ -19,5 +19,5 @@ api.add_resource(Lock, '/lock')
 api.add_resource(Unlock, '/unlock/<int:unlock_code>')
 api.add_resource(Helper, '/')
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+#if __name__ == '__main__':
+#    app.run(host='0.0.0.0', debug=True)

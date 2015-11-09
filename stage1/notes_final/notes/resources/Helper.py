@@ -20,17 +20,17 @@ class Helper(Resource):
             notification_list = notifications.get()
 
             action_list.append({
-                'href':api.url_for(Helper, _external=True),
+                'href':Config.make_url(Helper, _external=True),
                 'rel':'self',
                 'method':'GET',
                 'description':'Display routes available.'})
             action_list.append({
-                'href':api.url_for(Notifications, _external=True),
+                'href':Config.make_url(Notifications, _external=True),
                 'rel':'notifications',
                 'method':'GET',
                 'description':'Display notifications.'})
             action_list.append({
-                'href':api.url_for(NotificationAdder, _external=True),
+                'href':Config.make_url(NotificationAdder, _external=True),
                 'rel':'notification',
                 'method':'POST',
                 'description':'Add a new notification.',
@@ -53,17 +53,17 @@ class Helper(Resource):
 #                    })
 
             action_list.append({
-                'href':api.url_for(Lock, _external=True),
+                'href':Config.make_url(Lock, _external=True),
                 'rel':'lock',
                 'method':'GET',
                 'description':'Get device locked status.'})
             action_list.append({
-                'href':api.url_for(Lock, _external=True),
+                'href':Config.make_url(Lock, _external=True),
                 'rel':'lock',
                 'method':'PUT',
                 'description':'Lock the device.'})
             action_list.append({
-                'href':api.url_for(Unlock, unlock_code=9999, _external=True),
+                'href':Config.make_url(Unlock, unlock_code=9999, _external=True),
                 'rel':'unlock',
                 'method':'PUT',
                 'description':'Unlock the device with the code 9999.'})

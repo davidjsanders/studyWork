@@ -16,6 +16,11 @@ locked = False
 unlock_code = 1234
 enable_sensitivity = True
 testing_enabled = False
+port_number = 5000
+
+def make_url(*args, **kwargs):
+    url = api.url_for(*args, **kwargs)
+    return url.replace('://localhost/','://localhost:'+str(port_number)+'/')
 
 class Note(object):
     def __init__(self, note=None, action=None, sensitivity=None):
@@ -50,11 +55,11 @@ class Note(object):
             or notificationGetter == None \
             or notifications == None:
                 raise ValueError('A required value for define_links is missing!')
-            self._links['_self'] = api.url_for(
+            self._links['_self'] = make_url(
                 notificationGetter,
                 id = self.identifier,
                 _external=True)
-            self._links['_collection'] = api.url_for(
+            self._links['_collection'] = make_url(
                 notifications,
                 _external=True)
         except Exception as e:

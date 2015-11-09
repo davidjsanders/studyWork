@@ -40,7 +40,8 @@ def routes_available(test_title, source_url):
 #print('Test Execution Script')
 #print('')
 try:
-    routes_available('Display Routes Available', 'http://localhost/')
+    server = 'http://localhost:5200/'
+    routes_available('Display Routes Available', server)
     print('')
     print('')
     print('Done.')

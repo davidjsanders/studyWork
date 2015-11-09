@@ -1,4 +1,5 @@
 import requests
+import sys
 from pprint import pprint
 
 def routes_available(test_title, source_url):
@@ -40,7 +41,9 @@ def routes_available(test_title, source_url):
 #print('Test Execution Script')
 #print('')
 try:
-    routes_available('Display Routes Available', 'http://localhost:5000/')
+    server = sys.argv[1]
+#    server = 'http://localhost:5200/'
+    routes_available('Display Routes Available', server)
     print('')
     print('')
     print('Done.')

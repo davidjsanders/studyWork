@@ -50,7 +50,11 @@ from flask_restful import Api
 # they can be accessed globally by any module within this package.
 from notes import app, api
 
+import notes.resources.Config as Config
+import os
+
+Config.port_number = os.environ['portToUse']
 # Run the server. host = '0.0.0.0' enables access from any endpoint (necessary
 # for using with Docker), debug=True enables verbose debugging - not to be used
 # in production.
-app.run(host='0.0.0.0', debug=True)
+app.run(host='0.0.0.0', port=5000, debug=True)
