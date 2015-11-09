@@ -1,6 +1,6 @@
 from notes import app,api
 from flask_restful import Resource, request, reqparse
-from flask import abort, url_for
+from flask import abort
 from notes.resources.Notifications \
     import Notifications, \
            NotificationAdder
@@ -20,17 +20,17 @@ class Helper(Resource):
             notification_list = notifications.get()
 
             action_list.append({
-                'href':api.url_for(Helper),
+                'href':api.url_for(Helper, _external=True),
                 'rel':'self',
                 'method':'GET',
                 'description':'Display routes available.'})
             action_list.append({
-                'href':api.url_for(Notifications),
+                'href':api.url_for(Notifications, _external=True),
                 'rel':'notifications',
                 'method':'GET',
                 'description':'Display notifications.'})
             action_list.append({
-                'href':api.url_for(NotificationAdder),
+                'href':api.url_for(NotificationAdder, _external=True),
                 'rel':'notification',
                 'method':'POST',
                 'description':'Add a new notification.',
@@ -39,9 +39,10 @@ class Helper(Resource):
 
             for note in notification_list['notifications']:
                 action_list.append({
-                     'href':note['href'],
+                      'href':note['_links']['_self'],
                       'method':['GET','PUT','DELETE'],
-                      'description':'Get notification ' + str(note['id'])
+                      'description':'Get notification ' + \
+                          str(note['identifier'])
                     })
 #                action_list.append({
 #                     'href':note['href'],
@@ -52,17 +53,17 @@ class Helper(Resource):
 #                    })
 
             action_list.append({
-                'href':api.url_for(Lock),
+                'href':api.url_for(Lock, _external=True),
                 'rel':'lock',
                 'method':'GET',
                 'description':'Get device locked status.'})
             action_list.append({
-                'href':api.url_for(Lock),
+                'href':api.url_for(Lock, _external=True),
                 'rel':'lock',
                 'method':'PUT',
                 'description':'Lock the device.'})
             action_list.append({
-                'href':api.url_for(Unlock, unlock_code=9999),
+                'href':api.url_for(Unlock, unlock_code=9999, _external=True),
                 'rel':'unlock',
                 'method':'PUT',
                 'description':'Unlock the device with the code 9999.'})
