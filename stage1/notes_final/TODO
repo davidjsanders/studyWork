@@ -1,1 +1,1 @@
-1. Fix URL -> add a new url_for in Config.py
+1. Fix database issue - initial table creation
