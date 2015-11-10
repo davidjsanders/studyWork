@@ -27,7 +27,6 @@ RUN mkdir /notes/notes/resources
 COPY startup.sh /notes/
 COPY runserver.py /notes/
 COPY notes_final.ini /notes/
-COPY notes_final.conf /notes/
 COPY notes/__init__.py /notes/notes/
 COPY notes/main.py /notes/notes/
 COPY notes/resources/Config.py /notes/notes/resources/
