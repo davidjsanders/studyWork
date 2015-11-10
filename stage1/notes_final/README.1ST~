@@ -123,10 +123,6 @@ the best approach is to use CURL, as follows:
 
       curl -X PUT http://<hostname>:<port>/mode/9 (where 9 is 1, 2, or 3)
 
- 10 - Get the app mode (see runserver.py)
-
-      curl http://<hostname>:<port>/mode
-
 
 Running Test Scripts
 ====================

@@ -16,7 +16,7 @@ class Notifications(Resource):
         app_mode = Config.get_app_mode()
         lock_mode = Config.get_lock()
 
-        if lock_mode \
+        if Config.locked \
         and app_mode == Config.app_mode_no_notifications:
             return None
 
@@ -32,7 +32,7 @@ class Notifications(Resource):
                 if app_mode == Config.app_mode_all_notifications:
                     append_notification = True
                 else:
-                    if lock_mode \
+                    if Config.locked \
                     and app_mode == Config.app_mode_no_sensitive:
                         append_notification = False
                     else:

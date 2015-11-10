@@ -34,6 +34,7 @@ COPY notes/resources/Notifications.py /notes/notes/resources/
 COPY notes/resources/Lock.py /notes/notes/resources/
 COPY notes/resources/Persist.py /notes/notes/resources/
 COPY notes/resources/Helper.py /notes/notes/resources/
+COPY notes/resources/Mode.py /notes/notes/resources/
 #
 # Set the working directory for the container
 #

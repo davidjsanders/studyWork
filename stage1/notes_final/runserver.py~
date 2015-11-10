@@ -110,5 +110,4 @@ import os
 
 # Set the port_number to whatever portToUse is
 Config.port_number = os.environ['portToUse']
-Config.initialize()
 

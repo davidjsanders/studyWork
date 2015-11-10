@@ -18,7 +18,7 @@ class Helper(Resource):
         with app.test_request_context():
             notifications = Notifications()
             notification_list = notifications.get()
-            if notification_list == None:
+            if notification_list = None:
                 notification_list = []
 
             action_list.append({

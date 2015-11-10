@@ -105,6 +105,7 @@ class Configuration(object):
                 (port, 'locked')
             )
             db_records = db_cursor.fetchall()
+            print(db_records[0][2])
             if db_records == []:
                 return_value = False
             elif int(db_records[0][2]) == 1:

@@ -18,5 +18,5 @@ class Unlock(Resource):
             Config.set_lock(False)
             return {'locked':Config.get_lock()}
         else:
-            return {'error':'bad unlock code.'}
+            return {'error':'bad code.'}
 

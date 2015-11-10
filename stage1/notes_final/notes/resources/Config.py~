@@ -77,7 +77,7 @@ def get_app_mode():
 def set_lock(lock_status):
     try:
         con = Configuration()
-        return con.set_lock(lock_status, port_number, database_connection)
+        con.set_lock(lock_status, port_number, database_connection)
     except Exception as e:
         return {'error':repr(e)}
 
