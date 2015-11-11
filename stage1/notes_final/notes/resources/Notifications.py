@@ -18,7 +18,7 @@ class Notifications(Resource):
 
         if lock_mode \
         and app_mode == Config.app_mode_no_notifications:
-            return None
+            return {'notifications':[]}
 
         try:
             notification_list = []
@@ -33,7 +33,8 @@ class Notifications(Resource):
                     append_notification = True
                 else:
                     if lock_mode \
-                    and app_mode == Config.app_mode_no_sensitive:
+                    and app_mode == Config.app_mode_no_sensitive \
+                    and notification.sensitivity.upper() == 'HIGH':
                         append_notification = False
                     else:
                         append_notification = True
@@ -65,15 +66,20 @@ class NotificationGetter(Resource):
     def put(self, id):
         try:
             return_list = []
+            new_data = request.get_json()
 
             existing_notification = Config.Note()
             existing_notification.load(id, NotificationGetter, Notifications)
-
-            new_data = Config.NoteSchema(strict=False).load(request.get_json()).data
-
             existing_notification.update(new_data)
             existing_notification.save()
             return_list = existing_notification.json()
+        except TypeError as e:
+            return_list = {'error':'Type error in put - '+  \
+                           repr(e)+'. At step '+str(step) + \
+                           'Note is '+repr(existing_notification) + '. ' + \
+                           'New Note is '+repr(new_data) + \
+                           'JSON is ' + repr(json_data) \
+                          }, 400
         except Exception as e:
             return_list = {'error':repr(e)}, 400
 
@@ -106,6 +112,6 @@ class NotificationAdder(Resource):
         except Exception as e:
             return {'error':repr(e)}, 400
 
-        return {'full':notification.json()}
+        return {'notification':notification.json()}
 
 

@@ -1,1 +1,2 @@
 1. Fix database issue - initial table creation
+2. Make more use of OPTIONS for HATEOAS - r.headers['allow']

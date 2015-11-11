@@ -318,47 +318,47 @@ try:
     print_header('Test 1. Call the device and find the routes available', '=')
     routes = routes_available(server)
 
-    print_header('Test 2. Iterate through the routes available', '=')
+    print_header('Test 1. Iterate through the routes available', '=')
     traverse(server)
 
-    print_header('Test 3. Create a new notification', '=')
+    print_header('Test 2. Create a new notification', '=')
     create_notification(note='Test Notification', action='Do something')
 
-    print_header('Test 4. Update the new notification ('+\
+    print_header('Test 3. Update the new notification ('+\
                  str(notification_last_insert)+')', '=')
     update_notification(note='Updated notification'
                        ,action='Updated action'
                        ,sensitivity='high')
 
-    print_header('Test 5. Delete the notification ('+\
+    print_header('Test 4. Delete the notification ('+\
                  str(notification_last_insert)+')', '=')
     delete_last_notification()
 
-    print_header('Test 6. Lock the device', '=')
+    print_header('Test 5. Lock the device', '=')
     lock_device()
 
-    print_header('Test 7. Get notifications when locked [Default Mode]', '=')
+    print_header('Test 6. Get notifications when locked [Default Mode]', '=')
     get_notifications()
 
-    print_header('Test 8. Set Mode to 1', '=')
+    print_header('Test 7. Set Mode to 1', '=')
     set_mode(1)
 
-    print_header('Test 9. Get notifications when locked [Mode 1]', '=')
+    print_header('Test 8. Get notifications when locked [Mode 1]', '=')
     get_notifications()
 
-    print_header('Test 10. Set Mode to 3', '=')
+    print_header('Test 9. Set Mode to 3', '=')
     set_mode(3)
 
-    print_header('Test 11. Get notifications when locked [Mode 3]', '=')
+    print_header('Test 10. Get notifications when locked [Mode 3]', '=')
     get_notifications()
 
-    print_header('Test 12. Set Mode to 2', '=')
+    print_header('Test 11. Set Mode to 2', '=')
     set_mode(2)
 
-    print_header('Test 13. Get notifications when locked [Default Mode]', '=')
+    print_header('Test 12. Get notifications when locked [Default Mode]', '=')
     get_notifications()
 
-    print_header('Test 14. Unlock the device', '=')
+    print_header('Test 13. Unlock the device', '=')
     unlock_device()
 
     print_header('Post-test tidy up', '#')

@@ -89,13 +89,16 @@ def get_lock():
         return {'error':repr(e)}
 
 class Note(object):
-    def __init__(self, note=None, action=None, sensitivity=None):
-        self._saved = False
-        self.identifier = None
-        self._links = {'_self':None, '_collection':''}
-        self.note = note
-        self.action = action
-        self.sensitivity = sensitivity
+    def __init__(self, note=None, action=None, sensitivity=None, dummy='Ignore'):
+        try:
+            self._saved = False
+            self.identifier = None
+            self._links = {'_self':None, '_collection':''}
+            self.note = note
+            self.action = action
+            self.sensitivity = sensitivity
+        except Exception as e:
+            raise e
 
     def __repr__(self):
         return '<Note(identifier={self.identifier!r}>'.format(self=self)
@@ -199,5 +202,6 @@ class NoteSchema(Schema):
 
     @post_load
     def make_Note(self, data):
-        return Note(**data)
+        note = Note(**data)
+        return note
 
