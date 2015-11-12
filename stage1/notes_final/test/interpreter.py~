@@ -16,7 +16,11 @@ from marshmallow import Schema, fields, post_load
 
 # Global variables
 interactive = False
+server = ''
 g_links = []
+
+# Import CMD
+from cmd2 import Cmd
 
 # Class definitions
 class Link(object):
@@ -51,10 +55,44 @@ class LinkSchema(Schema):
     def make_link(self, data):
         return Link(**data)
 
-def fetch_routes(server_name):
+# Class definition for cmd2
+class App(Cmd):
+
+    def do_print(self, line):
+        print ('{0}'.format(line))
+
+    def do_server(self, line):
+        global server
+        server = line
+        self.prompt = server+' >> '
+
+    def do_get(self, line):
+        get(line)
+
+    def do_head(self, line):
+        header(line)
+
+    def do_routes(self, line):
+        fetch_routes(line)
+
+def fetch_routes(command):
+    '''
+    This is the help text :)
+    '''
     try:
+        global server
+        args = command.split()
+        verbose = False
+        if len(args) > 0:
+            if args[0] == '--verbose':
+                verbose = True
+                print('Set verbose')
+            else:
+                raise Exception('correct usage: routes <--verbose>, '+\
+                                 'where <--verbose> displays full details.')
+
         global g_links
-        result = requests.get(server_name)
+        result = requests.get(server)
         if '_links' in result.json():
             _links = result.json()['_links']
             g_links = LinkSchema(many=True, strict=False).load(_links).data
@@ -63,20 +101,25 @@ def fetch_routes(server_name):
                 for index, link in enumerate(g_links):
                     link.identifier = index
                     link.get_headers()
-                    print('{0:2d} {1:30s} {2:40s} {3:s}'.format(
-                        index
-                       ,link.description
-                       ,link.href
-                       ,link.headers['allow']
-                    ))
+                    if verbose:
+                        print('{0:3d} {1} - {2} ({3})'.format(
+                            index
+                           ,link.description
+                           ,link.href
+                           ,link.headers['allow']
+                        ))
+                    else:
+                        print('{0:3d} {1:30s}'.format(
+                            index
+                           ,link.description
+                        ))
                 print()
         else:
             raise ValueError('No links were found at the root address:')
     except ValueError as e:
-        print('{0} {1}'.format(e, server_name))
+        print('{0} {1}'.format(e, server))
     except Exception as e:
-        print()
-        print('error. '+repr(e))
+        print('error. '+str(e))
 
 def fetch_route(command):
     try:
@@ -87,17 +130,16 @@ def fetch_route(command):
     except ValueError as e:
         print(e)
     except Exception as e:
-        print()
-        print('error. '+repr(e))
+        print('error. '+str(e))
 
 def header(command):
     try:
         args = command.split()
-        if len(args) < 2 or len(args) > 2:
+        if len(args) < 1 or len(args) > 1:
             raise Exception('correct usage: '+args[0]+' <route>, where <route> '+\
                              'is a number.')
 
-        route = int(args[1])
+        route = int(args[0])
         if route < 0:
             raise ValueError("The route cannot be less than zero.")
         elif route > len(g_links):
@@ -114,15 +156,15 @@ def header(command):
 def get(command):
     try:
         args = command.split()
-        if len(args) < 2:
+        if len(args) < 1:
             raise Exception('correct usage: get <route>, where <route> '+\
                              'is a number.')
 
         content_to_find = None
-        if len(args) > 2:
-            content_to_find = str(args[2])
+        if len(args) > 1:
+            content_to_find = str(args[1])
 
-        route = int(args[1])
+        route = int(args[0])
         if route < 0:
             raise ValueError("The route cannot be less than zero.")
         elif route > len(g_links):
@@ -149,7 +191,7 @@ def get(command):
             if not content_to_find in data_set:
                 key_string = ""
                 for key in data_set.keys():
-                    key_string = key_string + key + ' '
+                    key_string = key_string + key + ','
                 raise Exception('Content "'+content_to_find+ \
                                 '" does not exist. Possible choices are '+ \
                                 'one of: [' + \
@@ -197,42 +239,19 @@ def help(server):
     print('head <route> - show the header and options for <route>')
     print()
 
-try:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("server"
-                       ,type=str
-                       ,help="Fully qualified url for the device"+\
-                             ", e.g. http://localhost:82/ **NOTE** "+\
-                             "the port and closing / should be provided")
-    args = parser.parse_args()
-    if args.server:
-        server = args.server
+if __name__ == '__main__':
+#    parser = argparse.ArgumentParser()
+#    parser.add_argument("server"
+#                       ,type=str
+#                       ,help="Fully qualified url for the device"+\
+#                             ", e.g. http://localhost:82/ **NOTE** "+\
+#                             "the port and closing / should be provided")
+#    args = parser.parse_args()
+#    if args.server:
+#        global server
+#        server = args.server
+    App.prompt = ' >> '
+    App.intro = 'Command line microservice interpreter. Remember to '+\
+                    'set the server using: server <servername>'
 
-    while True:
-        command = input(server + ' > ')
-        if command.upper()[:4] == 'EXIT':
-            break
-        elif command.upper()[:6] == 'ROUTES':
-            fetch_routes(server)
-        elif command.upper()[:6] == 'ROUTE ':
-            fetch_route(server)
-        elif command.upper()[:7] == 'HEADER ' \
-        or   command.upper()[:5] == 'HEAD ' \
-        or   command.upper()[:8] == 'OPTIONS ':
-            header(command)
-        elif command.upper()[:4] == 'GET ':
-            get(command)
-        elif command.upper()[:5] == 'HELP ' \
-        or   command.upper()[:4] == 'HELP'  \
-        or   command.upper()[:1] == '?':
-            help(server)
-        elif command == '':
-            pass
-        else:
-            print('Unknown command [{0}]'.format(command))
-except EOFError as e:
-    print()
-except Exception as e:
-    raise e
-
-
+    App().cmdloop()

@@ -14,14 +14,14 @@ from notes.resources.Mode \
     import Modes, \
            ModesGet
 
-api.add_resource(Notifications, '/notifications')
-api.add_resource(NotificationsID, '/notifications/<int:id>')
+api.add_resource(Notifications, '/v1_01/notifications')
+api.add_resource(NotificationsID, '/v1_01/notifications/<int:id>')
 #api.add_resource(NotificationAdder, '/notifications')
-api.add_resource(Lock, '/lock')
-api.add_resource(Unlock, '/unlock/<int:unlock_code>')
-api.add_resource(Helper, '/')
-api.add_resource(Modes, '/modes/<int:mode>')
-api.add_resource(ModesGet, '/modes')
+api.add_resource(Lock, '/v1_01/lock')
+api.add_resource(Unlock, '/v1_01/unlock/<int:unlock_code>')
+api.add_resource(Helper, '/v1_01/', '/')
+api.add_resource(Modes, '/v1_01/modes/<int:mode>')
+api.add_resource(ModesGet, '/v1_01/modes')
 
 #print('In Configuration.')
 #Config.initialize()
