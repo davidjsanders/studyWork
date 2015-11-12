@@ -40,10 +40,8 @@ def routes_available(source_url, quiet_mode=False):
         print('{0:39s} {1:39s}'.format('','Method(s)'))
         print('{0:39s} {1:39s}'.format('-' * 39, '-' * 39))
     for data_line in data['_links']:
-        if data_line['href'][-13:] == 'notifications':
+        if data_line['href'][-12:] == 'notification':
             global notification_url
-            global notifications_url
-            notifications_url = data_line['href']
             notification_url = data_line['href']
         elif data_line['href'][-4:] == 'lock':
             global lock_url
@@ -51,6 +49,9 @@ def routes_available(source_url, quiet_mode=False):
         elif data_line['href'][-11:] == 'unlock/9999':
             global unlock_url
             unlock_url = data_line['href']
+        elif data_line['href'][-13:] == 'notifications':
+            global notifications_url
+            notifications_url = data_line['href']
         if not quiet_mode:
             print('{0:39s} {1:40s}'.format( \
                 data_line['description']
@@ -245,7 +246,7 @@ def set_mode(mode):
         print()
         return
 
-    result = requests.put(notifications_url.replace('notifications','modes')+'/'+str(mode))
+    result = requests.put(notifications_url.replace('notifications','mode')+'/'+str(mode))
     result_data = result.json()
     pprint(result_data)
     check_continue()

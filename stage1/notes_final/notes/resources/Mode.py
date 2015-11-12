@@ -1,7 +1,7 @@
 from flask_restful import Resource
 import notes.resources.Config as Config
 
-class Mode(Resource):
+class Modes(Resource):
     def put(self, mode):
         try:
             if mode < 1 or mode > 3:
@@ -14,7 +14,7 @@ class Mode(Resource):
         
         return {'mode':mode}
 
-class ModeGet(Resource):
+class ModesGet(Resource):
     def get(self):
         try:
             return {'mode':Config.get_app_mode()}

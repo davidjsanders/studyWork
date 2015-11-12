@@ -5,7 +5,6 @@ from marshmallow import Schema, fields, ValidationError
 import sqlite3
 import notes.resources.Config as Config
 from notes.resources.Persist import Persistance
-from notes.resources.Mode import ModeGet
 
 class Notifications(Resource):
     def get(self):
@@ -18,7 +17,7 @@ class Notifications(Resource):
 
         if lock_mode \
         and app_mode == Config.app_mode_no_notifications:
-            return None
+            return {'notifications':[]}
 
         try:
             notification_list = []
@@ -33,7 +32,8 @@ class Notifications(Resource):
                     append_notification = True
                 else:
                     if lock_mode \
-                    and app_mode == Config.app_mode_no_sensitive:
+                    and app_mode == Config.app_mode_no_sensitive \
+                    and notification.sensitivity.upper() == 'HIGH':
                         append_notification = False
                     else:
                         append_notification = True
@@ -49,7 +49,22 @@ class Notifications(Resource):
         persist = Persistance()
         return persist.clear_all(Config.database_connection)
 
-class NotificationGetter(Resource):
+    def post(self):
+        try:
+            notification = Config.NoteSchema(strict=True) \
+                .load(request.get_json()).data
+            notification.save()
+            notification.define_links(
+                NotificationGetter,
+                Notifications)
+        except ValidationError as e:
+            return {'error':repr(e)}, 400
+        except Exception as e:
+            return {'error':repr(e)}, 400
+
+        return {'notification':notification.json()}
+
+class NotificationsID(Resource):
     def get(self, id):
         if Config.locked:
             return {'notice':'unlock device first'}
@@ -96,21 +111,5 @@ class NotificationGetter(Resource):
             return {'error':repr(e)}, 400
 
         return {'notification':[]}
-
-class NotificationAdder(Resource):
-    def post(self):
-        try:
-            notification = Config.NoteSchema(strict=True) \
-                .load(request.get_json()).data
-            notification.save()
-            notification.define_links(
-                NotificationGetter,
-                Notifications)
-        except ValidationError as e:
-            return {'error':repr(e)}, 400
-        except Exception as e:
-            return {'error':repr(e)}, 400
-
-        return {'notification':notification.json()}
 
 

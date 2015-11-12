@@ -5,6 +5,7 @@ from marshmallow import Schema, fields, ValidationError
 import sqlite3
 import notes.resources.Config as Config
 from notes.resources.Persist import Persistance
+from notes.resources.Mode import ModeGet
 
 class Notifications(Resource):
     def get(self):
@@ -24,7 +25,7 @@ class Notifications(Resource):
             persist = Persistance()
             for db_row in persist.fetch_all(Config.database_connection):
                 notification = Config.Note()
-                notification.load(db_row[0], NotificationsID, Notifications)
+                notification.load(db_row[0], NotificationGetter, Notifications)
 
                 append_notification = False
 
@@ -49,28 +50,13 @@ class Notifications(Resource):
         persist = Persistance()
         return persist.clear_all(Config.database_connection)
 
-    def post(self):
-        try:
-            notification = Config.NoteSchema(strict=True) \
-                .load(request.get_json()).data
-            notification.save()
-            notification.define_links(
-                NotificationsID,
-                Notifications)
-        except ValidationError as e:
-            return {'error':repr(e)}, 400
-        except Exception as e:
-            return {'error':repr(e)}, 400
-
-        return {'notification':notification.json()}
-
-class NotificationsID(Resource):
+class NotificationGetter(Resource):
     def get(self, id):
         if Config.locked:
             return {'notice':'unlock device first'}
         try:
             notification = Config.Note()
-            notification.load(id, NotificationsID, Notifications)
+            notification.load(id, NotificationGetter, Notifications)
             return_list = {'notification':notification.json()}
         except Exception as e:
             return_list = {'error':repr(e)}
@@ -83,7 +69,7 @@ class NotificationsID(Resource):
             new_data = request.get_json()
 
             existing_notification = Config.Note()
-            existing_notification.load(id, NotificationsID, Notifications)
+            existing_notification.load(id, NotificationGetter, Notifications)
             existing_notification.update(new_data)
             existing_notification.save()
             return_list = existing_notification.json()
@@ -102,7 +88,7 @@ class NotificationsID(Resource):
     def delete(self, id):
         try:
             notification = Config.Note()
-            notification.load(id, NotificationsID, Notifications)
+            notification.load(id, NotificationGetter, Notifications)
             notification.delete()
             notification = Config.Note()
         except ValidationError as e:
@@ -111,5 +97,21 @@ class NotificationsID(Resource):
             return {'error':repr(e)}, 400
 
         return {'notification':[]}
+
+class NotificationAdder(Resource):
+    def post(self):
+        try:
+            notification = Config.NoteSchema(strict=True) \
+                .load(request.get_json()).data
+            notification.save()
+            notification.define_links(
+                NotificationGetter,
+                Notifications)
+        except ValidationError as e:
+            return {'error':repr(e)}, 400
+        except Exception as e:
+            return {'error':repr(e)}, 400
+
+        return {'notification':notification.json()}
 
 

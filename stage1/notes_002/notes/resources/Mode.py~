@@ -8,7 +8,7 @@ class Mode(Resource):
                 raise ValueError(
                     'Invalid mode ('+str(mode)+') requested. '+\
                     'Should be 1, 2, or 3.')
-            Config.set_app_mode(mode)
+            Config.set_mode(mode)
         except Exception as e:
             return {'error':repr(e)}
         
@@ -17,6 +17,6 @@ class Mode(Resource):
 class ModeGet(Resource):
     def get(self):
         try:
-            return {'mode':Config.get_app_mode()}
+            return {'mode':Config.get_mode()}
         except Exception as e:
             return {'error':repr(e)}
