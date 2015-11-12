@@ -37,7 +37,7 @@ class Link(object):
                self.href + ') '
 
     def get_headers(self):
-        result = requests.get(self.href)
+        result = requests.options(self.href)
         if result.status_code == 200:
             self.headers = result.headers
 
@@ -147,9 +147,13 @@ def get(command):
 
         if not content_to_find == None:
             if not content_to_find in data_set:
+                key_string = ""
+                for key in data_set.keys():
+                    key_string = key_string + key + ' '
                 raise Exception('Content "'+content_to_find+ \
-                                '" does not exist in: ' + \
-                                repr(data_set.keys()))
+                                '" does not exist. Possible choices are '+ \
+                                'one of: [' + \
+                                key_string + ']')
             if type(data_set[content_to_find]) is dict:
                 print('Data')
                 print('-'*80)
@@ -181,8 +185,12 @@ def help(server):
     print('help - execute this command')
     print('routes - list all routes available from root server {0}' \
           .format(server))
-    print('get <route> - get (curl -X GET) the route identified by <route>')
-    print('put <route> - put (curl -X PUT) the route identified by <route>')
+    print('get <route> - get (curl -X GET) the route identified '+ \
+          'by <route> returning keys in dictionary items, otherwise ' +\
+          'the values.')
+    print('get <route> <key> - get (curl -X GET) the route identified '+\
+          'by <route> and <key>')
+    print('put <route> <key> - put (curl -X PUT) the route identified by <route>')
     print('post <route> - post (curl -X POST) the route identified by <route>')
     print('delete <route> - post (curl -X DELETE) the route '+\
           'identified by <route>')
