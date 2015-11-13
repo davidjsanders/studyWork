@@ -6,6 +6,9 @@
 # Import argpars to parse command line arguments
 import argparse
 
+# Import text wrapping module
+import textwrap
+
 # Import requests, sys, json, and pprint for http methods and formatting #
 import requests
 import sys
@@ -154,6 +157,7 @@ def fetch_routes(command):
             _links = result.json()['_links']
             counter = 0
             print()
+            print_route_header(verbose)
             for link in sorted(list(_links)):
                 _link = LinkSchema(strict=True).load(_links[link]).data
                 _link.identifier = counter
@@ -162,7 +166,7 @@ def fetch_routes(command):
                 counter += 1
                 g_links.append(_link)
                 print_route(_link, verbose)
-            print()
+            print_route_footer(verbose)
         else:
             raise ValueError('No links were found at the root address:')
     except ValueError as e:
@@ -170,31 +174,71 @@ def fetch_routes(command):
     except Exception as e:
         print('error. '+str(e))
 
+def print_route_header(verbosity):
+    if verbosity:
+        pass
+    else:
+        print('\033[4m{0:3s} {1:20s} {2:28s} {3:25s}\033[0m'.format(
+              ' ID', 'Name', 'Description', 'Methods Allowed'
+        ))
+#        print('{0}'.format('='*80))
+
+def print_route_footer(verbosity):
+    print()
+
 def print_route(link, verbosity):
     if verbosity:
-        print('Name: {0:3d} {1:20s}'.format(
-            link.identifier
-           ,link.name[:69]
-           ))
-        print('{0}'.format('='*80))
-        print('Desc: {0}'.format(
-            link.description[:74]
-           ))
-        print('Url:  {0}'.format(
-            link.href
-           ))
-        print('{0}'.format(
-            link.headers['allow']
-           ))
-        print()
+        pass
     else:
-        print('{0:3d} {1} {2} {3}'.format(
-            link.identifier
-           ,str.ljust(link.name, 20, ' ')[:20]
-           ,str.ljust(link.description, 30, ' ')[:30]
-           ,link.headers['allow']
-           ))
+        print_route_table(link, verbosity)
 
+def print_route_table(link, verbosity):
+    name = textwrap.wrap(link.name, width=20)
+    description = textwrap.wrap(link.description, width=28)
+#    href = textwrap.wrap(link.href, width=25)
+    href = []
+    allow = textwrap.wrap(link.headers['allow'], width = 25)
+
+    sizes = [len(name), len(description), len(href), len(allow)]
+    max_size = max(sizes)
+    underline_counter = max_size - 1
+
+    counter = 0
+    while True:
+        if counter == max_size:
+            break
+
+        name_print = ''
+        description_print = ''
+        href_print = ''
+        allow_print = ''
+        if counter == 0:
+            identifier = str(link.identifier).rjust(3, ' ')
+        else:
+            identifier = ''
+
+        try:
+            if counter < len(name):
+                name_print = name[counter]
+            if counter < len(description):
+                description_print = description[counter]
+            if counter < len(href):
+                href_print = href[counter]
+            if counter < len(allow):
+                allow_print = allow[counter]
+            print('{0:3s} {1:20s} {2:28s} {3:25s}'.format(
+                identifier
+               ,name_print
+               ,description_print
+               ,allow_print
+            ))
+        except Exception as e:
+            print('error: '+repr(e))
+        counter += 1
+
+#    print('{0}'.format('-'*80))
+
+    return
 
 def fetch_route(command):
     try:

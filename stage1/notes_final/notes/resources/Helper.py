@@ -23,10 +23,10 @@ class Helper(Resource):
             if notification_list == None:
                 notification_list = []
 
-            links['_links']['_self'] = {
+            links['_links']['self'] = {
                 'href':Config.make_url(Helper, _external=True),
                 'rel':'self',
-                'description':'Display routes supported.'}
+                'description':'Display routes supported by this service.'}
             links['_links']['notifications'] = {
                 'href':Config.make_url(Notifications, _external=True),
                 'rel':'notifications',
@@ -34,8 +34,8 @@ class Helper(Resource):
 
             if 'notifications' in notification_list:
                 for note in notification_list['notifications']:
-                    links['_links']['notification['+\
-                            str(note['identifier'])+']'] = {
+                    links['_links']['notifications'+\
+                            str(note['identifier'])] = {
                         'href':note['_links']['_self'],
                         'rel':'notification',
                         'description':'Notification ' + \

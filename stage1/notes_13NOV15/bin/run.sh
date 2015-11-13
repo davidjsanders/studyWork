@@ -2,7 +2,7 @@
 portToUse=$1
 if [ "$1x" == "x" ]; then portToUse='5000'; fi
 echo -n "Starting port $portToUse >> "
-docker run -p $portToUse:$portToUse --name notesfinal$portToUse \
+docker run -p $portToUse:$portToUse --name notes_13nov15$portToUse \
     -e portToUse=$portToUse \
     -v $PWD/datavol:/notes/datavol \
-    -d dsanders/notesfinal /bin/bash -c /notes/startup.sh
+    -d dsanders/notes_13nov15 /bin/bash -c /notes/startup.sh
