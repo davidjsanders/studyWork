@@ -1,0 +1,8 @@
+1. Fix database issue - initial table creation
+2. Add PUT, POST, DELETE
+3. Add schema option
+4. Add mode to helper
+5. Check response codes and error handling
+6. Add wrapping to the output pages - it's cool :)
+
+At some point -> CODE FREEZE
