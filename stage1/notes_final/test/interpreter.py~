@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # Import 
 # Reference: 
 # Argparse Tutorial - https://docs.python.org/2/howto/argparse.html#id1
@@ -152,6 +153,7 @@ def fetch_routes(command):
         if '_links' in result.json():
             _links = result.json()['_links']
             counter = 0
+            print()
             for link in sorted(list(_links)):
                 _link = LinkSchema(strict=True).load(_links[link]).data
                 _link.identifier = counter
@@ -160,6 +162,7 @@ def fetch_routes(command):
                 counter += 1
                 g_links.append(_link)
                 print_route(_link, verbose)
+            print()
         else:
             raise ValueError('No links were found at the root address:')
     except ValueError as e:
