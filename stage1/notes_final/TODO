@@ -2,4 +2,5 @@
 2. Add PUT, POST, DELETE
 3. Add schema option
 4. Add mode to helper
-5. Code freeze
+5. Check response codes and error handling
+6. Code freeze
