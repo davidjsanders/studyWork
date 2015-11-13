@@ -26,6 +26,7 @@ from cmd2 import Cmd
 class Link(object):
     def __init__(self, description=None, href=None, rel=None):
         self.headers = []
+        self.name = ''
         self.identifier = -1
         self.description = description
         self.href = href
@@ -59,20 +60,73 @@ class LinkSchema(Schema):
 class App(Cmd):
 
     def do_print(self, line):
+        '''
+print [args]: print to standard out
+===================================
+Print a small message to standard output. All text after print will be printed 
+and redirection is honored
+'''
         print ('{0}'.format(line))
 
     def do_server(self, line):
+        '''
+server [arg]: connect to server
+===============================
+Connect to a service running on a fully qualified URL [arg], e.g. 
+http://<host>:<port>/url). Note, the URL must be fully qualified and 
+the program expects a service at the endpoint; if not, errors will be reported.
+'''
         global server
         server = line
         self.prompt = server+' >> '
 
+    def do_close(self, line):
+        '''
+close: close current server
+===========================
+Closes the currently open server and returns control to the user.
+'''
+        global server
+        server = ''
+        self.prompt = server+' >> '
+
     def do_get(self, line):
+        '''
+get [arg] [arg2]: execute a get statement from known routes
+===========================================================
+Connect to the current service and execute one of the known routes (known from
+issuing a 'routes' command (see help routes). The first argument is the route
+id. If a second argument is present, get will look for a dictionary key with
+the value of arg2. Typically get <route> is executed first, then the user
+executes get <route> <key> from the list of keys returned.
+'''
         get(line)
 
     def do_head(self, line):
+        '''
+head [arg]: get the OPTIONS for a known route
+=============================================
+Connect to the current service and execute an options (curl -X OPTIONS...) 
+on a known route given as an argument. The route is known from issuing a 
+'routes' command (see help routes). The first argument is the route id.
+The head command typically shows the date, content-type, server, connection,
+allow, and content-length fields. The allow is particularly important as it
+defines the type of HTTP requests (GET, PUT, POST, DELETE, HEAD, OPTIONS, etc.)
+which are permitted for the route.
+'''
         header(line)
 
     def do_routes(self, line):
+        '''
+routes [--verbose]: get a list of routes (known routes) from the server
+=======================================================================
+Connect to the current service and tell it to return the list of routes
+available from the service. If the flag --verbose is used, then the full set
+of information (id, description, url, and methods) are shown.
+
+Once the list of known routes has been created, other commands (e.g. put, get,
+etc.) can be executed by typing: get <route id> (see help get).
+'''
         fetch_routes(line)
 
 def fetch_routes(command):
@@ -92,34 +146,52 @@ def fetch_routes(command):
                                  'where <--verbose> displays full details.')
 
         global g_links
+        g_links = []
+
         result = requests.get(server)
         if '_links' in result.json():
             _links = result.json()['_links']
-            g_links = LinkSchema(many=True, strict=False).load(_links).data
-            if not g_links == None:
-                print()
-                for index, link in enumerate(g_links):
-                    link.identifier = index
-                    link.get_headers()
-                    if verbose:
-                        print('{0:3d} {1} - {2} ({3})'.format(
-                            index
-                           ,link.description
-                           ,link.href
-                           ,link.headers['allow']
-                        ))
-                    else:
-                        print('{0:3d} {1:30s}'.format(
-                            index
-                           ,link.description
-                        ))
-                print()
+            counter = 0
+            for link in sorted(list(_links)):
+                _link = LinkSchema(strict=True).load(_links[link]).data
+                _link.identifier = counter
+                _link.get_headers()
+                _link.name = link
+                counter += 1
+                g_links.append(_link)
+                print_route(_link, verbose)
         else:
             raise ValueError('No links were found at the root address:')
     except ValueError as e:
         print('{0} {1}'.format(e, server))
     except Exception as e:
         print('error. '+str(e))
+
+def print_route(link, verbosity):
+    if verbosity:
+        print('Name: {0:3d} {1:20s}'.format(
+            link.identifier
+           ,link.name[:69]
+           ))
+        print('{0}'.format('='*80))
+        print('Desc: {0}'.format(
+            link.description[:74]
+           ))
+        print('Url:  {0}'.format(
+            link.href
+           ))
+        print('{0}'.format(
+            link.headers['allow']
+           ))
+        print()
+    else:
+        print('{0:3d} {1} {2} {3}'.format(
+            link.identifier
+           ,str.ljust(link.name, 20, ' ')[:20]
+           ,str.ljust(link.description, 30, ' ')[:30]
+           ,link.headers['allow']
+           ))
+
 
 def fetch_route(command):
     try:
