@@ -1,1 +1,1 @@
-{"data":[{"sensitivity": "low", "note": "Test notification", "action": "do something", "id": "1"}, {"sensitivity": "high", "note": "Note number 2", "action": "Another action...", "id": "2"}]}
+{"data":[{"sensitivity": "low", "action": "do something", "note": "Test notification", "id": "1"}, {"sensitivity": "high", "action": "Another action...", "note": "Note number 2", "id": "2"}]}
