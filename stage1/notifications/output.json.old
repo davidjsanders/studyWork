@@ -1,0 +1,1 @@
+{"data": {"type": "Notification", "relationships": {"related": {"links": {"related": "http://localhost:5000/notifications/", "self": "http://localhost:5000/notification/2"}}}, "id": "2", "attributes": {"note": "Note number 2", "action": "Another action...", "sensitivity": "high"}}}
