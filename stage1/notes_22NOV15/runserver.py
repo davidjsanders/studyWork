@@ -3,11 +3,11 @@
     ------------------------------------------------------------------------
     Author:      David J. Sanders
     Student No:  H00035340
-    Date:        22 November 2015
+    Date:        09 November 2015
     ------------------------------------------------------------------------
-    Overivew:    To do
+    Overivew:    A demonstration of a device, such as a smart phone, which
 
-    Purpose:     To do
+    Purpose:     To demonstrate how a solution could be modelled by developing
 
     Patterns:    Larger Applications pattern from Flask website (Ronacher,
                  2013)
@@ -33,7 +33,7 @@ from flask_restful import Api
 from notifications import app, api
 
 # Import the configuration module
-#import notifications.resources.Config as Config
+#import notes.resources.Config as Config
 
 # Import the OS package to access environment variables
 import os

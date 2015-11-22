@@ -1,0 +1,15 @@
+{
+    "$schema":"http://json-schema.org/draft-04/schema#",
+    "title":"Notification",
+    "description":"A Notification object",
+    "type": "object",
+    "properties": {
+        "notification":{"type":"object", "properties":{
+            "sensitivity": {"anyOf":[{"type": "string", "description":"Sensitivity of the notification"},{"type":"null"}]},
+            "note": {"type": "string", "description":"The notification text"},
+            "id": {"type": "number", "description":"The identifier (read only)"},
+            "action": {"type": "string", "description":"What action is taken when the notification is selected"}},
+            "required":["action", "note"]
+        }
+    }
+}

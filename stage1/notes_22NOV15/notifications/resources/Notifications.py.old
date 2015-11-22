@@ -51,3 +51,21 @@ class Notification(object):
         yield "action", self.action
         yield "sensitivity", self.sensitivity
 
+#    def to_json(self):
+#        return_value = {'data':}
+#        return_attributes = {
+#            'note':note,
+#            'action':action,
+#            'sensitivity':sensitivity
+#        }
+#        return_related = {
+#            'related':{
+#            }
+#        }
+#        return_links = {
+#            'links':{
+#                'self':'https://localhost:5000/notifications/'+self.id,
+#                'collection':'https://localhost:5000/notifications/'
+#            }
+#        }
+
