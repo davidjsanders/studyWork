@@ -60,7 +60,7 @@ class Notification_Boundary_All(Resource):
         except exceptions.ValidationError as ve:
             return_status = 400
             return_list = {'error':'Data not loaded. '+\
-                str(ve.message), 'status':return_status}
+                str(ve.message), 'status':return_status}}
         except Exception as e:
             return_status = 400
             return_list = {'error':repr(e), 'status':return_status}

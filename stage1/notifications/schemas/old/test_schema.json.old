@@ -4,6 +4,12 @@
     "properties": {
         "notification": {
             "type":"object",
+            "oneOf":[ { "$ref":"#/definitions/notification_object"} ]
+            }
+        },
+    "required":["notification"],
+    "definitions":{
+        "notification_object":{
             "properties":{
                 "sensitivity": { "enum" : ["low", "normal", "high", null]},
                 "note": {"type": "string", "description":"The notification text"},
@@ -11,7 +17,6 @@
                 "action": {"type": "string", "description":"What action is taken when the notification is selected"}
             },
             "required": ["note", "action"]
-            }
-        },
-    "required":["notification"]
+       }
+    }
 }
