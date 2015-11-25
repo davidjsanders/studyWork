@@ -1,1 +1,6 @@
-["{\"notification\": {\"identifier\": 1, \"action\": \"With an action which does something\", \"sensitivity\": \"low\", \"note\": \"This is a notification\"}}", "{\"notification\": {\"identifier\": 2, \"action\": \"Do this\", \"sensitivity\": \"high\", \"note\": \"This is the second notification\"}}", "{\"notification\": {\"identifier\": 3, \"action\": \"Find something interesting\", \"sensitivity\": \"normal\", \"note\": \"This is third notification\"}}", "{\"notification\": {\"identifier\": 4, \"action\": \"Watch television\", \"sensitivity\": null, \"note\": \"This is a fourth notification\"}}"]
+[
+    "{\"notification\": {\"action\": \"This is an action, so do http://www.msn.com/\", \"identifier\": 1, \"sensitivity\": \"normal\", \"note\": \"This is a notification\"}}",
+    "{\"notification\": {\"action\": \"This is an action, so do http://www.msn.com/\", \"identifier\": 2, \"sensitivity\": \"normal\", \"note\": \"This is a notification\"}}",
+    "{\"notification\": {\"action\": \"This is an action, so do http://www.msn.com/\", \"identifier\": 3, \"sensitivity\": \"normal\", \"note\": \"This is a notification\"}}",
+    "{\"notification\": {\"action\": \"This is an action, so do http://www.msn.com/\", \"identifier\": 4, \"sensitivity\": \"normal\", \"note\": \"This is a notification\"}}"
+]

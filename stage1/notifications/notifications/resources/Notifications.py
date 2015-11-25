@@ -80,20 +80,24 @@ class Notification(object):
         return return_string
 
     def load(self, json_data, strict=False):
-        __temp_json = json_data.replace("'",'"').replace('None','null')
-
         current_step = 0
+
         try:
+            __temp_json = json_data.replace("'",'"').replace('None','null')
+
             # Load the provided JSON string into a dict
             __json_data = json.loads(__temp_json)
 
             current_step += 1
             # Step 1 - Validate the JSON data against the schema
             #          An exception will be raised if there is an issue.
-            validate(__json_data, self.__schema__)
+            validate(__json_data, Notification.__schema__)
 
             current_step += 1
             # Step 2 - Use marshmallow to deserialize the JSON data.
+            if not 'notification' in __json_data:
+                raise exceptions.ValidationError('Object is not a notification')
+                abort(400, message='Not a notification object')
             __n_schema = self.Notification_Schema(many=False, strict=False)
             __result = __n_schema.load(__json_data['notification']).data
 
@@ -109,30 +113,26 @@ class Notification(object):
                 self.sensitivity = __result['sensitivity']
 
         except exceptions.ValidationError as v:
-            exception_string = 'Data issue: '
-            exception_string += str(__json_data['notification']) + '; '
+            exception_string = 'Data issue: ** '
+            exception_string += str(__json_data['notification']) + ' **; '
             exception_string += v.message + '.  '
-            exception_string += 'The following fields are required and '
-            exception_string += 'may not be null or None: '
-            required_fields = self.__schema__['properties']['notification']['required']
-            for idx2, key in enumerate(required_fields):
-                exception_string += required_fields[idx2] + ' '
-            exception_string += ''
-#            exception_string = '\033[4mData issue\033[0m\n'
-#            exception_string += '\033[93m' 
-#            exception_string += str(__json_data['notification']) + '\033[0m\n'
-#            exception_string += ' "\033[0m' + v.message + '"\033[0m\n'
-#            exception_string += 'The following fields are required and '
-#            exception_string += 'may not be null or None: '
-#            required_fields = self.__schema__['properties']['notification']['required']
-#            for idx2, key in enumerate(required_fields):
-#                exception_string += '\033[4m'
-#                exception_string += required_fields[idx2]
-#                exception_string += '\033[0m '
-#            exception_string += '\n'
+            exception_string += 'Fields expected are:'
+            fields_expected = self.__schema__['properties']\
+                ['notification']['properties'].keys()
+            max_length = len(fields_expected) - 1
+            for idx, key in enumerate(fields_expected):
+                exception_string += ' ' + key
+                exception_string += ',' if idx < max_length else '. '
+            exception_string += 'Required fields are :'
+            required_fields = self.__schema__['properties']\
+                ['notification']['required']
+            max_length = len(required_fields) - 1
+            for idx, key in enumerate(required_fields):
+                exception_string += ' ' + key
+                exception_string += ',' if idx < max_length else '. '
             raise exceptions.ValidationError(exception_string)
         except Exception as e:
-            print('An unknown exception occured at {1}: {0}'\
+            raise Exception('An unknown exception occured at {1}: {0}'\
                   .format(str(e), current_step))
 
         return
