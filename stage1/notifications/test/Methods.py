@@ -78,5 +78,5 @@ class Methods(object):
 
             return data_set, headers
         except Exception as e:
-            print('Error during get processing. '+str(e))
+            raise
 

@@ -74,9 +74,10 @@ class Methods(object):
                     data_set = data_set['success']['data']
                     if type(data_set) == list \
                     and len(data_set) == 1:
-                        data_set = date_set[0]
+                        data_set = data_set[0]
 
             return data_set, headers
         except Exception as e:
             print('Error during get processing. '+str(e))
+            raise
 

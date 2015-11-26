@@ -99,7 +99,7 @@ class Notification(object):
 #                raise exceptions.ValidationError('Object is not a notification')
 #                abort(400, message='Not a notification object')
             __n_schema = self.Notification_Schema(many=False, strict=False)
-            __result = __n_schema.load(__json_data).data
+            __result = __n_schema.load(__json_data['notification']).data
 
             current_step += 1
             # Step 3 - Update this object to the values loaded from JSON data.
@@ -114,18 +114,18 @@ class Notification(object):
 
         except exceptions.ValidationError as v:
             exception_string = 'Data issue: ** '
-            exception_string += str(__json_data) + ' **; '
+            exception_string += str(__json_data['notification']) + ' **; '
             exception_string += v.message + '.  '
             exception_string += 'Fields expected are:'
             fields_expected = self.__schema__['properties']\
-                ['properties'].keys()
+                ['notification']['properties'].keys()
             max_length = len(fields_expected) - 1
             for idx, key in enumerate(fields_expected):
                 exception_string += ' ' + key
                 exception_string += ',' if idx < max_length else '. '
             exception_string += 'Required fields are :'
             required_fields = self.__schema__['properties']\
-                ['required']
+                ['notification']['required']
             max_length = len(required_fields) - 1
             for idx, key in enumerate(required_fields):
                 exception_string += ' ' + key
