@@ -5,6 +5,7 @@
         "sensitivity": 
             {
                 "enum" : ["low", "normal", "high", null],
+                "description":"The sensitivity of the notification",
                 "default":"normal"
             },
         "note": 
@@ -17,7 +18,8 @@
             {
              "type": "number", 
              "description":"The identifier (read only)",
-             "default":0
+             "default":0,
+             "minimum":0
             },
         "action": 
             {

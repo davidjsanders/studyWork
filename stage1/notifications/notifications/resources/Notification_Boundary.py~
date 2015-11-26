@@ -181,7 +181,7 @@ class Notification_One(Resource):
                 elif key == 'action':
                     note.action = new_note[key]
                 elif key == 'sensitivity':
-                    note.sensitivity = new_note[key]
+                    note.action = new_note[key]
                 elif key == 'identifier':
                     pass
                 else:

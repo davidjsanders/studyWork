@@ -36,6 +36,16 @@ class Methods(object):
 
         return __url_string
 
+    def post(self):
+        pass
+        #TODO 
+        # 1 - load the schema
+        # 2 - create an object factory
+        # 3 - Create a dict object
+        # 4 - Read through the schema properties and add to 3
+        # 5 - Create a new object using 2 and the ** data from 4
+        # 6 - Iterate through input requests
+
     def get(self, link_collection=None, route_identifier=-1):
         try:
             route = int(route_identifier)

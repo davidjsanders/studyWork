@@ -117,15 +117,13 @@ class Notification(object):
             exception_string += str(__json_data) + ' **; '
             exception_string += v.message + '.  '
             exception_string += 'Fields expected are:'
-            fields_expected = self.__schema__['properties']\
-                ['properties'].keys()
+            fields_expected = self.__schema__['properties'].keys()
             max_length = len(fields_expected) - 1
             for idx, key in enumerate(fields_expected):
                 exception_string += ' ' + key
                 exception_string += ',' if idx < max_length else '. '
             exception_string += 'Required fields are :'
-            required_fields = self.__schema__['properties']\
-                ['required']
+            required_fields = self.__schema__['required']
             max_length = len(required_fields) - 1
             for idx, key in enumerate(required_fields):
                 exception_string += ' ' + key
