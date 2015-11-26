@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties":
+    {
+        "identifier":{"type":"number", "description":"The ID for the link"},
+        "href": {"type": "string", "description":"The link url"},
+        "rel": {"type": "string", "description":"The link rel"},
+        "description": {"type": "string", "description":"The link description"},
+        "methods": {"type": "array", "description":"An array of methods supported by the link"}
+    },
+    "required":["identifier", "href","rel","methods","description"]
+}

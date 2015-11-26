@@ -8,7 +8,7 @@ from jsonschema import validate, exceptions, Draft3Validator
 import json
 
 class Notification(object):
-    __schema_filename__ = 'schemas/Notification_Schema.json'
+    __schema_filename__ = 'schemas/notification.json'
 
     # Define the schema as a class level variable
     # and load the schema from disk
