@@ -1,6 +1,7 @@
 from marshmallow import Schema, fields, post_load
 from jsonschema import validate
 import json
+import requests
 
 # Load links schema
 f = open('schemas/links.json','r')
@@ -24,8 +25,22 @@ class Link_Collection(object):
     ):
         self.links = []
 
-    def parse_links(self, links=None):
+    def get_links(self, server_name=None):
         try:
+            if server_name == None:
+                raise Exception('Server name is not set.')
+
+            result = requests.get(server_name)
+            json_data = result.json()
+
+            if not result.status_code == 200\
+            or not 'success' in json_data\
+            or not 'data' in json_data['success']\
+            or 'error' in result.json():
+                raise Exception('The server issued a bad response.')
+
+            links = json_data['success']['data']['_links']
+
             if links == None:
                 raise Exception('The link list was empty.')
 
@@ -36,8 +51,8 @@ class Link_Collection(object):
             def getKey(item):
                 return links[item]['identifier']
 
+            self.links = []
             for link in sorted(links, key=getKey):
-                print('Validating...')
                 validate(links[link], __schema__)
                 new_link = Link_Schema(strict=True).load(links[link]).data
                 self.links.append(new_link)
@@ -60,7 +75,108 @@ class Link(object):
         self.href = href
         self.rel = rel
         self.methods = methods
+        self.parameters = []
+
+        self.parameters = self.__parse_parameters(href)
 
     def __repr__(self):
         return str(Link_Schema().dump(self).data).replace("'",'"')
+
+    def __parse_parameters(self, url=None):
+        parameter_list =[]
+        __url_string = url
+
+        if url == None:
+            return
+
+        while True:
+            try:
+                if '<int' in __url_string:
+                    parameter_string = \
+                        __url_string[__url_string.index('<int'):\
+                                     __url_string.index('>')+1]
+                    parameter_name = \
+                        __url_string[__url_string.index('<int')+5:\
+                                     __url_string.index('>')]
+                    parameter_list.append({ \
+                        'name':parameter_name,
+                        'type':int,
+                        'required':True
+                    })
+                    __url_string = __url_string.replace(parameter_string, '')
+                elif '<string' in __url_string:
+                    pass  # TODO
+#                    parameter = url[url.index('<string'):url.index('>')+1]
+                else:
+                    break
+            except ValueError as ve:
+                break
+        return parameter_list
+
+def print_route_header(verbosity):
+    if verbosity:
+        pass
+    else:
+        print('\033[4m{0:3s} {1:20s} {2:28s} {3:25s}\033[0m'.format(
+              ' ID', 'Route Name', 'Description', 'Methods Allowed'
+        ))
+#        print('{0}'.format('='*80))
+
+def print_route_footer(verbosity):
+    print()
+
+def print_route(link, verbosity):
+    if verbosity:
+        pass
+    else:
+        print_route_table(link, verbosity)
+
+def print_route_table(link, verbosity):
+    name = textwrap.wrap(link.name, width=20)
+    description = textwrap.wrap(link.description, width=28)
+#    href = textwrap.wrap(link.href, width=25)
+    href = []
+    allow = textwrap.wrap(link.headers['allow'], width = 25)
+
+    sizes = [len(name), len(description), len(href), len(allow)]
+    max_size = max(sizes)
+    underline_counter = max_size - 1
+
+    counter = 0
+    while True:
+        if counter == max_size:
+            break
+
+        name_print = ''
+        description_print = ''
+        href_print = ''
+        allow_print = ''
+        if counter == 0:
+            identifier = str(link.identifier).rjust(3, ' ')
+        else:
+            identifier = ''
+
+        try:
+            if counter < len(name):
+                name_print = name[counter]
+            if counter < len(description):
+                description_print = description[counter]
+            if counter < len(href):
+                href_print = href[counter]
+            if counter < len(allow):
+                allow_print = allow[counter]
+            print('{0:3s} {1:20s} {2:28s} {3:25s}'.format(
+                identifier
+               ,name_print
+               ,description_print
+               ,allow_print
+            ))
+        except Exception as e:
+            print('error: '+repr(e))
+        counter += 1
+
+#    print('{0}'.format('-'*80))
+
+    return
+
 
