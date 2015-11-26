@@ -1,5 +1,6 @@
 from marshmallow import Schema, fields, post_load
 from jsonschema import validate
+from pprint import pprint
 import json
 import requests
 
@@ -46,15 +47,15 @@ class Methods(object):
             if not 'GET' in link_collection.links[route].methods:
                 raise Exception('HTTP 405 - This route does not support GET')
 
-            result = requests.get(self.__parameters(
+            if not link_collection.links[route].parameters == []:
+                result = requests.get(self.__parameters(
                          link_collection.links[route].href,
                          link_collection.links[route].parameters))
+            else:
+                result = requests.get(link_collection.links[route].href)
 
             print()
             headers = result.headers
-            for header_item in headers:
-                print('{0:20s} {1}'.format(header_item, headers[header_item]))
-            print()
 
             if not result.status_code == 200:
                 if 'error' in result.json():
@@ -67,10 +68,15 @@ class Methods(object):
                 raise Exception('Expected JSON data but did not receive it.')
 
             data_set = result.json()
-            data_keys = data_set.keys()
-            print(data_set)
-            print(data_keys)
 
+            if 'success' in data_set:
+                if 'data' in data_set['success']:
+                    data_set = data_set['success']['data']
+                    if type(data_set) == list \
+                    and len(data_set) == 1:
+                        data_set = data_set[0]
+
+            return data_set, headers
         except Exception as e:
-            print('error. '+str(e))
+            print('Error during get processing. '+str(e))
 

@@ -90,8 +90,11 @@ def fetch_routes(command):
         print()
         for link in g_links.links:
             print(link.identifier, link.description)
-            print(link.href)
+            print('{0}'.format('-'*80))
+            print('URL:       ', link.href)
+            print('Methods:   ', str(link.methods))
             print('Parameters:',str(link.parameters))
+            print()
             print()
 
     except ValueError as e:
@@ -143,7 +146,11 @@ def get(command):
             content_to_find = str(args[1])
 
         methods = Methods()
-        methods.get(g_links, command)
+        data_set, headers = methods.get(g_links, command)
+        for header_item in headers:
+            print('{0:20s} {1}'.format(header_item, headers[header_item]))
+        print()
+        pprint(data_set)
 
     except Exception as e:
         print('error. '+str(e))

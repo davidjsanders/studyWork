@@ -50,7 +50,7 @@ class Notification_Helper(Resource):
                     .replace('http://localhost/','http://localhost:'+port_number+'/'),
                 'rel':'schema',
                 'description':'Edit, Delete, or Fetch individual notifications.',
-                'methods':['GET','OPTIONS','HEAD']}
+                'methods':['GET','PUT', 'DELETE','OPTIONS','HEAD']}
 
         return Response_Object(links, return_status).response()
 

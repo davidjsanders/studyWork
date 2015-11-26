@@ -21,21 +21,21 @@ class Notification_Helper(Resource):
 
         with app.test_request_context():
             links['_links']['self'] = {
-                'id':0,
+                'identifier':0,
                 'href':api.url_for(Notification_Helper, _external=ext_mode)\
                     .replace('http://localhost/','http://localhost:'+port_number+'/'),
                 'rel':'self',
                 'description':'Display routes supported by this service.',
                 'methods':['GET','OPTIONS','HEAD']}
             links['_links']['notification-schema'] = {
-                'id':1,
+                'identifier':1,
                 'href':api.url_for(Notification_Schema, _external=ext_mode)\
                     .replace('http://localhost/','http://localhost:'+port_number+'/'),
                 'rel':'schema',
                 'description':'Get the schema for the notification object',
                 'methods':['GET','PUT','DELETE','OPTIONS','HEAD']}
             links['_links']['notifications'] = {
-                'id':2,
+                'identifier':2,
                 'href':(api.url_for(Notification_Helper, _external=ext_mode)+\
                     'notifications')\
                     .replace('http://localhost/','http://localhost:'+port_number+'/'),
@@ -44,7 +44,7 @@ class Notification_Helper(Resource):
                     'and post new notifications.',
                 'methods':['GET','POST', 'DELETE','OPTIONS','HEAD']}
             links['_links']['notifications_list'] = {
-                'id':3,
+                'identifier':3,
                 'href':(api.url_for(Notification_All, _external=ext_mode)+\
                     '/<int:identifier>')\
                     .replace('http://localhost/','http://localhost:'+port_number+'/'),
