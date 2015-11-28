@@ -1,6 +1,7 @@
 from flask_restful import Resource, Api, reqparse, abort
 from notifications import app, api
 
+import notifications.resources.Config as Config
 from notifications.resources.Notification import Notification
 from notifications.resources.Response import Response_Object
 #from notifications.resources.Notification_Helper import Notification_Helper
@@ -14,7 +15,7 @@ import sqlite3
 
 class Notification_Helper(Resource):
     def get(self):
-        port_number = "5000"
+#        port_number = "5000"
         ext_mode = True
         links = {'_links':{}}
         return_status = 200
@@ -23,23 +24,25 @@ class Notification_Helper(Resource):
             links['_links']['self'] = {
                 'identifier':0,
                 'href':api.url_for(Notification_Helper, _external=ext_mode)\
-                    .replace('http://localhost/','http://localhost:'+port_number+'/'),
-                'rel':'self',
+                    .replace('http://localhost/','http://localhost:'+str(Config.port_number)+'/'),
+                'rel':'links',
                 'description':'Display routes supported by this service.',
                 'methods':['GET','OPTIONS','HEAD']}
             links['_links']['notification-schema'] = {
                 'identifier':1,
                 'href':api.url_for(Notification_Schema, _external=ext_mode)\
-                    .replace('http://localhost/','http://localhost:'+port_number+'/'),
+                    .replace('http://localhost/','http://localhost:'+str(Config.port_number)+'/'),
                 'rel':'schema',
                 'description':'Get the schema for the notification object',
-                'methods':['GET','PUT','DELETE','OPTIONS','HEAD']}
+                'methods':['GET','OPTIONS','HEAD']}
             links['_links']['notifications'] = {
                 'identifier':2,
                 'href':(api.url_for(Notification_Helper, _external=ext_mode)+\
                     'notifications')\
-                    .replace('http://localhost/','http://localhost:'+port_number+'/'),
-                'rel':'schema',
+                    .replace('http://localhost/','http://localhost:'+str(Config.port_number)+'/'),
+                'schema':api.url_for(Notification_Schema, _external=ext_mode)\
+                    .replace('http://localhost/','http://localhost:'+str(Config.port_number)+'/'),
+                'rel':'collection',
                 'description':'Display and manipulate the notification list '+\
                     'and post new notifications.',
                 'methods':['GET','POST', 'DELETE','OPTIONS','HEAD']}
@@ -47,8 +50,10 @@ class Notification_Helper(Resource):
                 'identifier':3,
                 'href':(api.url_for(Notification_All, _external=ext_mode)+\
                     '/<int:identifier>')\
-                    .replace('http://localhost/','http://localhost:'+port_number+'/'),
-                'rel':'schema',
+                    .replace('http://localhost/','http://localhost:'+str(Config.port_number)+'/'),
+                'rel':'notification',
+                'schema':api.url_for(Notification_Schema, _external=ext_mode)\
+                    .replace('http://localhost/','http://localhost:'+str(Config.port_number)+'/'),
                 'description':'Edit, Delete, or Fetch individual notifications.',
                 'methods':['GET','PUT', 'DELETE','OPTIONS','HEAD']}
 

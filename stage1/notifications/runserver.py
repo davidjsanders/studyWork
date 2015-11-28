@@ -33,12 +33,11 @@ from flask_restful import Api
 from notifications import app, api
 
 # Import the configuration module
-#import notifications.resources.Config as Config
+import notifications.resources.Config as Config
 
 # Import the OS package to access environment variables
 import os
 
 # Set the port_number to whatever portToUse is
-#Config.port_number = os.environ['portToUse']
+Config.port_number = os.environ['portToUse']
 #Config.initialize()
-app.run(host='0.0.0.0', debug=True)

@@ -104,7 +104,6 @@ class Link(object):
                         'required':True
                     })
                     __url_string = __url_string.replace(parameter_string, '')
-                    print(parameter_string, __url_string)
                 elif '<string' in __url_string:
                     pass  # TODO
 #                    parameter = url[url.index('<string'):url.index('>')+1]

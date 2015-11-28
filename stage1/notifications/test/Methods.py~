@@ -3,8 +3,90 @@ from jsonschema import validate
 from pprint import pprint
 import json
 import requests
+import warlock
 
 class Methods(object):
+
+    def __get_schema(self, schema_url=None):
+        try:
+            if schema_url == None:
+                raise KeyError('Schema url cannot be blank. It must be a '+\
+                    'URL to the schema.'\
+                    )
+
+            r = requests.get(schema_url)
+
+            if not r.status_code == 200:
+                raise Exception('Schema not found at {0}'.format(schema_url))
+
+            if 'success' in r.json():
+                if 'data' in r.json()['success']:
+                    return r.json()['success']['data']
+            else:
+                raise Exception('Schema not found. Expected {"success":{'+
+                                '"data":{...schema...}} but found {0}'\
+                                .format(r.json()))
+        except Exception:
+            raise
+
+    def __input_dataitems(self, 
+                          schema_properties=None, 
+                          schema_required=None,
+                          data_item=None,
+                          update_mode=False
+    ):
+        if schema_properties == None:
+            raise KeyError('A dict of schema properties must be provided.')
+        if data_item == None:
+            raise KeyError("For some reasons (this shouldn't happen), there "+\
+                "is no data item.")
+
+        print('This request requires data...')
+        try:
+            for k in schema_properties.keys():
+                while True:
+                    try:
+                        prompt_string = '  '+k+\
+                            ' ('+schema_properties[k]['description']+')'
+                        if update_mode:
+                            prompt_string += ' [' + str(data_item[k]) + ']'
+                        prompt_string += ': '
+
+                        temp = input(prompt_string)
+
+                        if k in schema_required \
+                        and temp == ''\
+                        and not update_mode:
+                            raise ValueError('{0} is a required property.'\
+                                .format(k))
+                        elif temp == '':
+                            if update_mode:
+                                break
+                            if type(data_item[k]) == int:
+                                break
+                            temp = None
+
+                        if type(data_item[k]) == int:
+                            data_item[k] = int(temp)
+                        else:
+                            data_item[k] = temp
+                        break
+                    except ValueError as ve:
+                        if type(data_item[k]) == int:
+                            print('{0} must be an integer number'\
+                                .format(k))
+                        else:
+                            print(ve)
+                    except TypeError as te:
+                        print(te)
+                    except warlock.InvalidOperation as io:
+                        print(io)
+                    except Exception as e:
+                        print(repr(e))
+            print()
+            return data_item
+        except Exception:
+            raise
 
     def __parameters(self, url, parameter_collection = []):
         __url_string = url
@@ -34,29 +116,14 @@ class Methods(object):
                 except Exception:
                     raise
 
+        print()
         return __url_string
 
-    def get(self, link_collection=None, route_identifier=-1):
+    def __fetch_data(self, url_string=None):
+        if url_string == None:
+            raise KeyError('A URL must be provided for __fetch_data')
         try:
-            route = int(route_identifier)
-
-            if route < 0:
-                raise ValueError("The route cannot be less than zero.")
-            elif route > len(link_collection.links):
-                raise IndexError("The route doesn't exist. Have you run routes?")
-            if not 'GET' in link_collection.links[route].methods:
-                raise Exception('HTTP 405 - This route does not support GET')
-
-            if not link_collection.links[route].parameters == []:
-                result = requests.get(self.__parameters(
-                         link_collection.links[route].href,
-                         link_collection.links[route].parameters))
-            else:
-                result = requests.get(link_collection.links[route].href)
-
-            print()
-            headers = result.headers
-
+            result = requests.get(url_string)
             if not result.status_code == 200:
                 if 'error' in result.json():
                     if 'message' in result.json()['error']:
@@ -67,16 +134,137 @@ class Methods(object):
             elif not 'json' in result.headers['content-type']:
                 raise Exception('Expected JSON data but did not receive it.')
 
-            data_set = result.json()
+            data = result.json()
 
-            if 'success' in data_set:
-                if 'data' in data_set['success']:
-                    data_set = data_set['success']['data']
-                    if type(data_set) == list \
-                    and len(data_set) == 1:
-                        data_set = data_set[0]
+            if 'success' in data:
+                if 'data' in data['success']:
+                    data = data['success']['data']
+                    if type(data) == list \
+                    and len(data) == 1:
+                        data = data[0]
 
-            return data_set, headers
+            return data, result.headers
+        except Exception:
+            raise
+
+    def post(self, link_collection=None, route_identifier=-1):
+        try:
+            route = int(route_identifier)
+            put_route = link_collection.links[route]
+
+            url_string = self.__parameters(put_route.href,put_route.parameters)
+
+            schema = self.__get_schema(put_route.schema)
+            schema_properties = schema['properties']
+            schema_required = schema['required']
+            object_factory = warlock.model_factory(schema)
+
+            data_dict = {}
+            for key in schema_properties.keys():
+                data_dict[str(key)] = schema_properties[key]['default']
+
+            temp = object_factory(**data_dict)
+
+            temp = self.__input_dataitems(
+                       schema_properties,
+                       schema_required,
+                       temp,
+                       update_mode=False)
+
+            insert = requests.post(url_string,
+                                   data=json.dumps(temp),
+                                   headers={'Content-Type':'application/json'}
+                     )
+
+            return insert.json(), insert.headers
+
         except Exception as e:
+            raise
+
+
+    def put(self, link_collection=None, route_identifier=-1):
+        try:
+            route = int(route_identifier)
+            put_route = link_collection.links[route]
+
+            url_string = self.__parameters(put_route.href,put_route.parameters)
+
+            original_data, headers = self.__fetch_data(url_string)
+
+            schema = self.__get_schema(put_route.schema)
+            schema_properties = schema['properties']
+            schema_required = schema['required']
+            object_factory = warlock.model_factory(schema)
+
+            temp = object_factory(**original_data)
+
+            temp = self.__input_dataitems(
+                       schema_properties,
+                       schema_required,
+                       temp,
+                       update_mode=True)
+
+            update = requests.put(url_string,
+                                  data=json.dumps(temp),
+                                  headers={'Content-Type':'application/json'}
+                     )
+
+            return update.json(), update.headers
+
+        except Exception as e:
+            raise
+
+    def get(self,
+            link_collection=None,
+            route_identifier=-1,
+            parameters_needed=True):
+        try:
+            route = int(route_identifier)
+            put_route = link_collection.links[route]
+
+            url_string = self.__parameters(put_route.href,put_route.parameters)
+
+            original_data, headers = self.__fetch_data(url_string)
+
+            return original_data, headers
+        except Exception as e:
+            raise
+
+    def delete(self,
+               link_collection=None,
+               route_identifier=-1):
+        try:
+            route = int(route_identifier)
+            del_route = link_collection.links[route]
+
+            url_string = self.__parameters(del_route.href, del_route.parameters)
+
+            original_data, headers = self.__fetch_data(url_string)
+
+            delete = requests.delete(url_string,
+                                     headers={'Content-Type':'application/json'}
+                     )
+
+            return delete.json(), delete.headers
+        except Exception:
+            raise
+
+    def options(self,
+                link_collection=None,
+                route_identifier=-1):
+        try:
+            route = int(route_identifier)
+            opt_route = link_collection.links[route]
+
+            url_string = self.__parameters(opt_route.href, opt_route.parameters)
+
+            original_data, headers = self.__fetch_data(url_string)
+
+            options = requests.options(url_string,
+                                      headers={'Content-Type':'application/json'}
+                     )
+
+            return {'allowed':options.headers['allow']}, options.headers
+        except Exception:
             raise
 

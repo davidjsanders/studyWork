@@ -6,8 +6,9 @@
         "identifier":{"type":"number", "description":"The ID for the link"},
         "href": {"type": "string", "description":"The link url"},
         "rel": {"type": "string", "description":"The link rel"},
+        "schema":{"type":"string", "description":"Schema to put, or post"},
         "description": {"type": "string", "description":"The link description"},
         "methods": {"type": "array", "description":"An array of methods supported by the link"}
     },
-    "required":["identifier", "href","rel","methods","description"]
+    "required":["identifier", "rel", "methods", "description"]
 }

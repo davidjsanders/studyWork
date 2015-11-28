@@ -12,6 +12,7 @@ class Link_Schema(Schema):
     description = fields.Str(required=True)
     identifier = fields.Int(required=True)
     href = fields.Str(required=False)
+    schema = fields.Str(required=False)
     rel = fields.Str(required=True)
     methods = fields.List(fields.Str())
 
@@ -66,6 +67,7 @@ class Link(object):
         identifier=-1,
         description=None,
         href=None,
+        schema=None,
         rel=None,
         methods=[]
     ):
@@ -73,6 +75,7 @@ class Link(object):
         self.identifier = identifier
         self.description = description
         self.href = href
+        self.schema = schema
         self.rel = rel
         self.methods = methods
         self.parameters = []
