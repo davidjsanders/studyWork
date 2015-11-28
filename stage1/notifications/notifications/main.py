@@ -28,15 +28,15 @@ class Notification_Helper(Resource):
                 'rel':'links',
                 'description':'Display routes supported by this service.',
                 'methods':['GET','OPTIONS','HEAD']}
-            links['_links']['notification-schema'] = {
-                'identifier':1,
-                'href':api.url_for(Notification_Schema, _external=ext_mode)\
-                    .replace('http://localhost/','http://localhost:'+str(Config.port_number)+'/'),
-                'rel':'schema',
-                'description':'Get the schema for the notification object',
-                'methods':['GET','OPTIONS','HEAD']}
+#            links['_links']['notification-schema'] = {
+#                'identifier':1,
+#                'href':api.url_for(Notification_Schema, _external=ext_mode)\
+#                    .replace('http://localhost/','http://localhost:'+str(Config.port_number)+'/'),
+#                'rel':'schema',
+#                'description':'Get the schema for the notification object',
+#                'methods':['GET','OPTIONS','HEAD']}
             links['_links']['notifications'] = {
-                'identifier':2,
+                'identifier':1,
                 'href':(api.url_for(Notification_Helper, _external=ext_mode)+\
                     'notifications')\
                     .replace('http://localhost/','http://localhost:'+str(Config.port_number)+'/'),
@@ -47,7 +47,7 @@ class Notification_Helper(Resource):
                     'and post new notifications.',
                 'methods':['GET','POST', 'DELETE','OPTIONS','HEAD']}
             links['_links']['notifications_list'] = {
-                'identifier':3,
+                'identifier':2,
                 'href':(api.url_for(Notification_All, _external=ext_mode)+\
                     '/<int:identifier>')\
                     .replace('http://localhost/','http://localhost:'+str(Config.port_number)+'/'),
