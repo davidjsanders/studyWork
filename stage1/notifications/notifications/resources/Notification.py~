@@ -108,12 +108,9 @@ class Notification(object):
         try:
             if not schema_context == None\
             and not schema == None:
-                if type(schema_context) == dict\
-                or type(schema_context) == list\
-                or type(schema_context) == str:
-                    pass
-    #                schema['context'] = {}
-                else:
+                if not type(schema_context) == dict\
+                or not type(schema_context) == list\
+                or not type(schema_context) == str:
                     raise TypeError('Context is not dict, list, or string')
 
                 if type(schema_context) == dict:

@@ -29,7 +29,7 @@ RUN mkdir /notifications/notifications/resources
 COPY startup.sh /notifications/
 COPY runserver.py /notifications/
 COPY notifications_uwsgi.ini /notifications/
-COPY notifications_uwsgi.conf /notifications/
+#COPY notifications_uwsgi.conf /notifications/
 COPY notifications/__init__.py /notifications/notifications/
 COPY notifications/main.py /notifications/notifications/
 COPY notifications/resources/Notification_Boundary.py /notifications/notifications/resources/
@@ -38,8 +38,9 @@ COPY notifications/resources/Notification.py /notifications/notifications/resour
 COPY notifications/resources/Notification_Schema.py /notifications/notifications/resources/
 COPY notifications/resources/Response.py /notifications/notifications/resources/
 COPY notifications/resources/Config.py /notifications/notifications/resources/
-COPY schemas/links.json /notifications/schemas/
-COPY schemas/notification.json /notifications/schemas/
+COPY schemas/ /notifications/schemas/
+#COPY schemas/links.json /notifications/schemas/
+#COPY schemas/notification.json /notifications/schemas/
 #COPY datavol/notifications.db /notifications/datavol/notifications.db
 #
 # Set the working directory for the container
@@ -48,5 +49,5 @@ WORKDIR /notifications/
 #
 # Update nginx configuration
 #
-RUN rm -r -f /etc/nginx/sites-enabled/default
-RUN ln -s /notifications/notifications_uwsgi.conf /etc/nginx/conf.d/notifications_uwsgi.conf
+#RUN rm -r -f /etc/nginx/sites-enabled/default
+#RUN ln -s /notifications/notifications_uwsgi.conf /etc/nginx/conf.d/notifications_uwsgi.conf

@@ -21,21 +21,23 @@ echo ""
 # is called by the UWSGI call below. It stores the environment variable
 # portToUse in Config.py
 #
-echo "server {" > notes_final.conf
-echo "    listen      ${portToUse};" >> notes_final.conf
-echo "    server_name localhost;" >> notes_final.conf
-echo "    charset     utf-8;" >> notes_final.conf
-echo "    client_max_body_size 75M;" >> notes_final.conf
-echo "" >> notes_final.conf
-echo "    location / { try_files \$uri @yourapplication; }" >> notes_final.conf
-echo "    location @yourapplication {" >> notes_final.conf
-echo "        include uwsgi_params;" >> notes_final.conf
-echo "        uwsgi_pass 127.0.0.1:3031;" >> notes_final.conf
-echo "    }" >> notes_final.conf
-echo "}" >> notes_final.conf
+echo "server {" > notifications_uwsgi.conf
+echo "    listen      ${portToUse};" >> notifications_uwsgi.conf
+echo "    server_name localhost;" >> notifications_uwsgi.conf
+echo "    charset     utf-8;" >> notifications_uwsgi.conf
+echo "    client_max_body_size 75M;" >> notifications_uwsgi.conf
+echo "" >> notifications_uwsgi.conf
+echo "    location / { try_files \$uri @yourapplication; }" >> notifications_uwsgi.conf
+echo "    location @yourapplication {" >> notifications_uwsgi.conf
+echo "        include uwsgi_params;" >> notifications_uwsgi.conf
+echo "        uwsgi_pass 127.0.0.1:3031;" >> notifications_uwsgi.conf
+echo "    }" >> notifications_uwsgi.conf
+echo "}" >> notifications_uwsgi.conf
 #
 # Start nginx
 #
+rm -r -f /etc/nginx/sites-enabled/default
+ln -s /notifications/notifications_uwsgi.conf /etc/nginx/conf.d/notifications_uwsgi.conf
 service nginx start
 #
 # Start UWSGI and pass the notes_final.ini file.

@@ -1,5 +1,5 @@
 from marshmallow import Schema, fields, post_load
-from jsonschema import validate
+from jsonschema import validate, exceptions
 from pprint import pprint
 import json
 import requests
@@ -44,8 +44,12 @@ class Methods(object):
         print('This request requires data...')
         try:
             for k in schema_properties.keys():
+                print(k)
                 while True:
                     try:
+                        if type(data_item[k]) == None:
+                            break
+
                         prompt_string = '  '+k+\
                             ' ('+schema_properties[k]['description']+')'
                         if update_mode:
@@ -79,6 +83,8 @@ class Methods(object):
                             print(ve)
                     except TypeError as te:
                         print(te)
+                    except KeyError:
+                        raise
                     except warlock.InvalidOperation as io:
                         print(io)
                     except Exception as e:
@@ -210,7 +216,6 @@ class Methods(object):
                      )
 
             return update.json(), update.headers
-
         except Exception as e:
             raise
 
@@ -225,8 +230,12 @@ class Methods(object):
             url_string = self.__parameters(put_route.href,put_route.parameters)
 
             original_data, headers = self.__fetch_data(url_string)
+            get_data = requests.get(url_string,
+                                  headers={'Content-Type':'application/json'}
+                     )
 
-            return original_data, headers
+
+            return get_data.json(), headers
         except Exception as e:
             raise
 

@@ -21,7 +21,7 @@
              "default":0,
              "minimum":0
             },
-        "action": 
+        "action":
             {
              "type": "string", 
              "description":"What action is taken when the notification is selected",
@@ -29,5 +29,5 @@
             }
         },
     "additionalProperties":false,
-    "required": ["note", "action"]
+    "required": ["note","action"]
 }

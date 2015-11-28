@@ -1,5 +1,5 @@
 from marshmallow import Schema, fields, post_load
-from jsonschema import validate
+from jsonschema import validate, exceptions
 from pprint import pprint
 import json
 import requests
@@ -44,8 +44,12 @@ class Methods(object):
         print('This request requires data...')
         try:
             for k in schema_properties.keys():
+                print(k)
                 while True:
                     try:
+                        if type(data_item[k]) == None:
+                            break
+
                         prompt_string = '  '+k+\
                             ' ('+schema_properties[k]['description']+')'
                         if update_mode:
@@ -79,6 +83,8 @@ class Methods(object):
                             print(ve)
                     except TypeError as te:
                         print(te)
+                    except KeyError:
+                        raise
                     except warlock.InvalidOperation as io:
                         print(io)
                     except Exception as e:
@@ -189,7 +195,9 @@ class Methods(object):
 
             url_string = self.__parameters(put_route.href,put_route.parameters)
 
+            loading_original = True
             original_data, headers = self.__fetch_data(url_string)
+            loading_original = False
 
             schema = self.__get_schema(put_route.schema)
             schema_properties = schema['properties']
@@ -210,9 +218,14 @@ class Methods(object):
                      )
 
             return update.json(), update.headers
-
+        except exceptions.ValidationError as ve:
+            if loading_original:
+                print('This item cannot be updated.')
         except Exception as e:
-            raise
+            if loading_original:
+                print('This item cannot be updated.')
+            else:
+                raise
 
     def get(self,
             link_collection=None,
@@ -225,8 +238,12 @@ class Methods(object):
             url_string = self.__parameters(put_route.href,put_route.parameters)
 
             original_data, headers = self.__fetch_data(url_string)
+            get_data = requests.get(url_string,
+                                  headers={'Content-Type':'application/json'}
+                     )
 
-            return original_data, headers
+
+            return get_data.json(), headers
         except Exception as e:
             raise
 
@@ -265,6 +282,25 @@ class Methods(object):
                      )
 
             return {'allowed':options.headers['allow']}, options.headers
+        except Exception:
+            raise
+
+    def head(self,
+             link_collection=None,
+             route_identifier=-1):
+        try:
+            route = int(route_identifier)
+            opt_route = link_collection.links[route]
+
+            url_string = self.__parameters(opt_route.href, opt_route.parameters)
+
+            original_data, headers = self.__fetch_data(url_string)
+
+            options = requests.head(url_string,
+                                    headers={'Content-Type':'application/json'}
+                     )
+
+            return {}, options.headers
         except Exception:
             raise
 
