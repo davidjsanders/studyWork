@@ -92,24 +92,26 @@ class Link(object):
         if url == None:
             return
 
+        count = 0
         while True:
             try:
-                if '<int' in __url_string:
-                    parameter_string = \
-                        __url_string[__url_string.index('<int'):\
-                                     __url_string.index('>')+1]
-                    parameter_name = \
-                        __url_string[__url_string.index('<int')+5:\
-                                     __url_string.index('>')]
+                if '<' in __url_string:
+                    start_position = __url_string.index('<')
+                    end_position = __url_string[start_position:].index('>')+1
+                    parameter_string = __url_string[start_position:(start_position+end_position)]
+                    name_start_position = parameter_string.index(':')+1
+                    parameter_name = parameter_string[name_start_position:-1]
+                    parameter_type = parameter_string[1:name_start_position-1]
+                    parameter_type = str if parameter_type == 'string' else int
+                    __url_string = __url_string.replace(parameter_string, '')
                     parameter_list.append({ \
+                        'id':count,
                         'name':parameter_name,
-                        'type':int,
+                        'type':parameter_type,
                         'required':True
                     })
-                    __url_string = __url_string.replace(parameter_string, '')
-                elif '<string' in __url_string:
-                    pass  # TODO
-#                    parameter = url[url.index('<string'):url.index('>')+1]
+                    count += 1
+                    print(parameter_string, parameter_name, __url_string)
                 else:
                     break
             except ValueError as ve:

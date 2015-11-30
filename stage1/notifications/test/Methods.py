@@ -100,24 +100,29 @@ class Methods(object):
         if parameter_collection == []:
             return url
 
+        print('Please enter the following parameters:')
         for p in parameter_collection:
-            print('Please enter the following parameters:')
             while True:
                 try:
                     input_value = input('  '+p['name']+' : ')
                     if p['type'] == int:
                         input_value = int(input_value)
 
-                    if not input_value == None\
+                    if not (input_value == None or input_value == '')\
                     or not p['required']:
                         __parameter = __url_string[\
                             __url_string.index('<'):__url_string.index('>')+1]
                         __url_string = __url_string.replace\
                             (__parameter, str(input_value))
                         break
+                    else:
+                        raise ValueError()
                 except ValueError as ve:
                     print('  Invalid value provided. {0} needs to be a {1}'\
-                        .format(p['name'], repr(p['type'])))
+                          .format(p['name'], \
+                          'string' if p['type'] == str else 'int'\
+                         )
+                    )
                     pass
                 except Exception:
                     raise

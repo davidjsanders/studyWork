@@ -158,7 +158,7 @@ class Notification_One(Resource):
     database_name = 'datavol/notifications.db'
     return_dict = {}
 
-    def get(self, id, controlkey=None):
+    def get(self, controlkey=None, id):
         try:
             return_list = []
             return_string = ''
@@ -231,7 +231,7 @@ class Notification_One(Resource):
                 return_message
             ).response()
 
-    def put(self, id, controlkey=None):
+    def put(self, controlkey=None, id):
         return_data = []
         return_message = ''
         return_status = 200
@@ -285,7 +285,7 @@ class Notification_One(Resource):
                 return_message
             ).response()
 
-    def delete(self, id, controlkey=None):
+    def delete(self, controlkey=None, id):
         try:
             return_data = []
             return_message = ''

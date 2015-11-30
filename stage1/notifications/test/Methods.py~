@@ -108,16 +108,22 @@ class Methods(object):
                     if p['type'] == int:
                         input_value = int(input_value)
 
-                    if not input_value == None\
+                    print('Input', input_value, 'Required', p['required'])
+                    if not (input_value == None or input_value == '')\
                     or not p['required']:
                         __parameter = __url_string[\
                             __url_string.index('<'):__url_string.index('>')+1]
                         __url_string = __url_string.replace\
                             (__parameter, str(input_value))
                         break
+                    else:
+                        raise ValueError()
                 except ValueError as ve:
                     print('  Invalid value provided. {0} needs to be a {1}'\
-                        .format(p['name'], repr(p['type'])))
+                          .format(p['name'], \
+                          'string' if p['type'] == str else 'int'\
+                         )
+                    )
                     pass
                 except Exception:
                     raise
@@ -195,9 +201,7 @@ class Methods(object):
 
             url_string = self.__parameters(put_route.href,put_route.parameters)
 
-            loading_original = True
             original_data, headers = self.__fetch_data(url_string)
-            loading_original = False
 
             schema = self.__get_schema(put_route.schema)
             schema_properties = schema['properties']
@@ -218,14 +222,8 @@ class Methods(object):
                      )
 
             return update.json(), update.headers
-        except exceptions.ValidationError as ve:
-            if loading_original:
-                print('This item cannot be updated.')
         except Exception as e:
-            if loading_original:
-                print('This item cannot be updated.')
-            else:
-                raise
+            raise
 
     def get(self,
             link_collection=None,
