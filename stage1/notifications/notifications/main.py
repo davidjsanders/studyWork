@@ -34,8 +34,8 @@ class Notification_Helper(Resource):
                 'href':'http://'+Config.server_name+':'+Config.port_number+\
                     api.url_for(Notification_Helper, _external=ext_mode)+\
                     'notifications/<string:controlkey>',
-                'schema':api.url_for(Notification_Schema, _external=ext_mode)\
-                    .replace('http://localhost/','http://localhost:'+str(Config.port_number)+'/'),
+                'schema':'http://'+Config.server_name+':'+Config.port_number+\
+                    api.url_for(Notification_Schema, _external=ext_mode),
                 'rel':'collection',
                 'description':'Display and manipulate the notification list '+\
                     'and post new notifications.',
@@ -47,8 +47,8 @@ class Notification_Helper(Resource):
                     api.url_for(Notification_Helper, _external=ext_mode)+\
                     'notifications/<string:controlkey>/<int:identifier>',
                 'rel':'notification',
-                'schema':api.url_for(Notification_Schema, _external=ext_mode)\
-                    .replace('http://localhost/','http://localhost:'+str(Config.port_number)+'/'),
+                'schema':'http://'+Config.server_name+':'+Config.port_number+\
+                    api.url_for(Notification_Schema, _external=ext_mode),
                 'description':'Edit, Delete, or Fetch individual notifications.',
                 'methods':['GET','PUT', 'DELETE','OPTIONS','HEAD']}
 
