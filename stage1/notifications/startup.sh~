@@ -4,7 +4,6 @@
 # default of 5000 is used.
 #
 if [ "${portToUse}x" == "x" ]; then portToUse='5000'; fi
-if [ "${serverName}x" == "x" ]; then serverName='localhost'; fi
 #
 # Debug statements - access through 'docker logs <containername>'
 # For this app, that is: docker logs notesfinal<portToUse>
@@ -24,7 +23,7 @@ echo ""
 #
 echo "server {" > notifications_uwsgi.conf
 echo "    listen      ${portToUse};" >> notifications_uwsgi.conf
-echo "    server_name ${serverName};" >> notifications_uwsgi.conf
+echo "    server_name localhost;" >> notifications_uwsgi.conf
 echo "    charset     utf-8;" >> notifications_uwsgi.conf
 echo "    client_max_body_size 75M;" >> notifications_uwsgi.conf
 echo "" >> notifications_uwsgi.conf

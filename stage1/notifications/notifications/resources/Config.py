@@ -2,6 +2,8 @@ from notifications import app, api
 import sqlite3
 
 port_number = 5000
+server_name = 'localhost'
+
 controlkey_master = 'ABC123'
 
 def check_key(key=None):
