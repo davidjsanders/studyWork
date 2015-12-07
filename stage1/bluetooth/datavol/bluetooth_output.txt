@@ -1,0 +1,8 @@
+Read aloud: Hello David Sanders!
+Read aloud: How are you today
+Read aloud: Remember Safe Sex Is Good Sex
+Read aloud: {"message": "Hello David, how are you?"}
+Read aloud: This is a test
+Read aloud: You have entered an area of high STI infections! Remember, Safe Sex is Good Sex.
+Read aloud: Hello!
+Read aloud: Hello David. Final test message @ 21:20
