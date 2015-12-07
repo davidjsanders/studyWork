@@ -119,8 +119,7 @@ class Notification(object):
         __n_schema = self.Notification_Schema(many=False)
         self.__set_context(__n_schema, schema_context)
         if type(schema_context) == dict:
-            if 'pre-lollipop' in schema_context\
-            or not 'android' in schema_context:
+            if 'pre-lollipop' in schema_context:
                 __n_schema = self.Notification_Schema(
                                  many=False,
                                  only=('identifier','note','action')

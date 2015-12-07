@@ -23,7 +23,7 @@ class Notification_Helper(Resource):
         with app.test_request_context():
             links['_links']['self'] = {
                 'identifier':0,
-                'href':'http://'+Config.server_name+':'+Config.port_number+\
+                'href':'http://'+Config.server_name+':'+str(Config.port_number)+\
                     api.url_for(Notification_Helper, _external=ext_mode),
                 'rel':'links',
                 'description':'Display routes supported by this service.',
@@ -31,10 +31,10 @@ class Notification_Helper(Resource):
 
             links['_links']['notifications'] = {
                 'identifier':1,
-                'href':'http://'+Config.server_name+':'+Config.port_number+\
+                'href':'http://'+Config.server_name+':'+str(Config.port_number)+\
                     api.url_for(Notification_Helper, _external=ext_mode)+\
                     'notifications/<string:controlkey>',
-                'schema':'http://'+Config.server_name+':'+Config.port_number+\
+                'schema':'http://'+Config.server_name+':'+str(Config.port_number)+\
                     api.url_for(Notification_Schema, _external=ext_mode),
                 'rel':'collection',
                 'description':'Display and manipulate the notification list '+\
@@ -43,11 +43,11 @@ class Notification_Helper(Resource):
 
             links['_links']['notifications_list'] = {
                 'identifier':2,
-                'href':'http://'+Config.server_name+':'+Config.port_number+\
+                'href':'http://'+Config.server_name+':'+str(Config.port_number)+\
                     api.url_for(Notification_Helper, _external=ext_mode)+\
                     'notifications/<string:controlkey>/<int:identifier>',
                 'rel':'notification',
-                'schema':'http://'+Config.server_name+':'+Config.port_number+\
+                'schema':'http://'+Config.server_name+':'+str(Config.port_number)+\
                     api.url_for(Notification_Schema, _external=ext_mode),
                 'description':'Edit, Delete, or Fetch individual notifications.',
                 'methods':['GET','PUT', 'DELETE','OPTIONS','HEAD']}

@@ -13,6 +13,21 @@ import json
 class Notification_All(Resource):
     database_name = 'datavol/notifications.db'
 
+    def set_contexts(self, schema=None):
+        print('woops!')
+        if schema == None or not type(schema) == dict:
+            return
+
+        if Config.check_key('android'):
+            schema['android'] = True
+        if Config.check_key('locked'):
+            schema['locked'] = True
+        if Config.check_key('pre-lollipop'):
+            schema['pre-lollipop'] = True
+        if 'pre-lollipop' in schema \
+        and 'locked' in schema:
+            raise RuntimeError('Device is locked.')
+
     def get(self, controlkey=None):
         try:
             raw_list=[]
@@ -23,16 +38,7 @@ class Notification_All(Resource):
             if controlkey == None or not controlkey == Config.controlkey_master:
                 raise RuntimeError('Control Key does not match.')
 
-            if Config.check_key('locked'):
-                if Config.check_key('pre-lollipop'):
-                    raise RuntimeError('Device is locked.')
-                else:
-                    schema_context={'locked':True}
-                    if Config.check_key('android'):
-                        schema_context['android'] = True
-
-                # Otherwise set the context to not show sensitive notifications
-                #
+            self.set_contexts(schema_context)
 
             return_message = 'success'
             return_status = 200
@@ -113,19 +119,22 @@ class Notification_All(Resource):
         return_success_fail = ''
 
         try:
+            schema_context = {}
             if controlkey == None or not controlkey == Config.controlkey_master:
                 raise RuntimeError('Control Key does not match.')
+
+            self.set_contexts(schema_context)
 
             raw_json = reqparse.request.get_data().decode('utf-8')
             json_data = json.loads(raw_json)
             note = Notification()
-            note.load(raw_json)
+            note.load(raw_json, schema_context)
 
             noteDB = Notification_DB()
             noteDB.insert(note)
 
             return_message = 'Notification created'
-            return_data = note.dump()
+            return_data = note.dump(schema_context)
             return_success_fail = 'success'
         except exceptions.ValidationError as ve:
             return_status = 400
@@ -158,7 +167,21 @@ class Notification_One(Resource):
     database_name = 'datavol/notifications.db'
     return_dict = {}
 
-    def get(self, controlkey=None, id):
+    def set_contexts(self, schema=None):
+        if schema == None or not type(schema) == dict:
+            return
+
+        if Config.check_key('android'):
+            schema['android'] = True
+        if Config.check_key('locked'):
+            schema['locked'] = True
+        if Config.check_key('pre-lollipop'):
+            schema['pre-lollipop'] = True
+        if 'pre-lollipop' in schema \
+        and 'locked' in schema:
+            raise RuntimeError('Device is locked.')
+
+    def get(self, id, controlkey=None):
         try:
             return_list = []
             return_string = ''
@@ -170,13 +193,7 @@ class Notification_One(Resource):
             if controlkey == None or not controlkey == Config.controlkey_master:
                 raise RuntimeError('Control Key does not match.')
 
-            if Config.check_key('locked'):
-                if Config.check_key('pre-lollipop'):
-                    raise RuntimeError('Device is locked.')
-                else:
-                    schema_context={'locked':True}
-                    if Config.check_key('android'):
-                        schema_context['android'] = True
+            self.set_contexts(schema_context)
 
             noteDB = Notification_DB()
             note = Notification()
@@ -231,19 +248,22 @@ class Notification_One(Resource):
                 return_message
             ).response()
 
-    def put(self, controlkey=None, id):
+    def put(self, id, controlkey=None):
         return_data = []
         return_message = ''
         return_status = 200
         return_success_fail = ''
 
         try:
+            schema_context = {}
             if controlkey == None or not controlkey == Config.controlkey_master:
                 raise RuntimeError('Control Key does not match.')
 
+            self.set_contexts(schema_context)
+
             noteDB = Notification_DB()
             note = Notification()
-            note.load(noteDB.query_one(id))
+            note.load(noteDB.query_one(id), schema_context)
             temp = Notification()
 
             raw_json = reqparse.request.get_data().decode('utf-8')
@@ -260,12 +280,12 @@ class Notification_One(Resource):
                     pass
                 else:
                     temp.load(raw_json) # Force a validation error
-            temp.load(note.dump())
+            temp.load(note.dump(schema_context))
 
-            noteDB.update_one(note.identifier, note.dump())
+            noteDB.update_one(note.identifier, note.dump(schema_context))
 
             return_message = 'Notification updated.'
-            return_data = note.dump()
+            return_data = note.dump(schema_context)
             return_success_fail = 'success'
         except IndexError as ie:
             return_message = 'The notification '+str(id)+' does not exist.'
@@ -285,7 +305,7 @@ class Notification_One(Resource):
                 return_message
             ).response()
 
-    def delete(self, controlkey=None, id):
+    def delete(self, id, controlkey=None):
         try:
             return_data = []
             return_message = ''

@@ -44,9 +44,10 @@ class Methods(object):
         print('This request requires data...')
         try:
             for k in schema_properties.keys():
-                print(k)
                 while True:
                     try:
+                        if not k in data_item:
+                            break
                         if type(data_item[k]) == None:
                             break
 

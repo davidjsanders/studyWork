@@ -44,9 +44,12 @@ class Methods(object):
         print('This request requires data...')
         try:
             for k in schema_properties.keys():
-                print(k)
                 while True:
                     try:
+                        print(k, data_item)
+                        if not k in data_item:
+                            print('??')
+                            break
                         if type(data_item[k]) == None:
                             break
 
@@ -100,15 +103,14 @@ class Methods(object):
         if parameter_collection == []:
             return url
 
+        print('Please enter the following parameters:')
         for p in parameter_collection:
-            print('Please enter the following parameters:')
             while True:
                 try:
                     input_value = input('  '+p['name']+' : ')
                     if p['type'] == int:
                         input_value = int(input_value)
 
-                    print('Input', input_value, 'Required', p['required'])
                     if not (input_value == None or input_value == '')\
                     or not p['required']:
                         __parameter = __url_string[\

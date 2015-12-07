@@ -6,6 +6,24 @@ server_name = 'localhost'
 
 controlkey_master = 'ABC123'
 
+def set_contexts(self, schema=None):
+    if schema == None or not type(schema) == dict:
+        return {}
+
+    new_schema = {}
+    if check_key('android'):
+        new_schema['android'] = True
+    if check_key('locked'):
+        new_schema['locked'] = True
+    if check_key('pre-lollipop'):
+        new_schema['pre-lollipop'] = True
+
+    if 'pre-lollipop' in schema \
+    and 'locked' in schema:
+        raise RuntimeError('Device is locked.')
+
+    return new_schema
+
 def check_key(key=None):
     if key==None:
         return False
