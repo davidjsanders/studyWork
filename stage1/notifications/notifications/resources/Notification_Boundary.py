@@ -141,12 +141,14 @@ class Notification_All(Resource):
             if not bluetooth_device == None:
                 try:
                     payload = {"message":note.note}
-                    r = requests.post(bluetooth_device, data=json.dumps(payload))
+                    r = requests.post(
+                            bluetooth_device, data=json.dumps(payload))
                 except Exception as e:
+                    # Ignore any errors trying to get to bluetooth
+                    # but let the caller the know.
                     return_message += \
                         ' (Bluetooth set BUT transmission failed - bad URL?) '+\
                         bluetooth_device
-                    pass # We ignore any errors trying to get to bluetooth
 
         except exceptions.ValidationError as ve:
             return_status = 400
@@ -156,11 +158,16 @@ class Notification_All(Resource):
             return_data = []
         except KeyError as ke:
             return_status = 400
-            return_message = {'error':'Data not posted. '+\
-                str(ke) + '. No valid key found in: ' +\
-                reqparse.request.get_data().decode('utf-8')}
+            return_message = str(ke) + '. No valid key found in: ' +\
+                reqparse.request.get_data().decode('utf-8')
             return_success_fail = 'error'
             return_data = []
+        except RuntimeError as re:
+            return_status = 400
+            return_message = str(re)
+            return_success_fail = 'error'
+            return_data = []
+
         except Exception as e:
             return_status = 400
             return_message = {'error':'Data not posted. '+\
@@ -337,6 +344,10 @@ class Notification_One(Resource):
         except IndexError as ie:
             return_message = 'The notification '+str(id)+' does not exist.'
             return_status = 404
+            return_success_fail = 'error'
+        except RuntimeError as re:
+            return_message = str(re)
+            return_status = 400
             return_success_fail = 'error'
         except Exception as e:
             return_status = 400

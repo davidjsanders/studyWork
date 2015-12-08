@@ -1,4 +1,2 @@
-Device89:2015-12-08 02:08:29.270202: Hi. This is a text message for David Sanders
-Device89:2015-12-08 02:12:10.855935: Test Message @ 21:12EST 02:12UTC.
-Device89:2015-12-08 02:13:56.920922: Test notification sent at 21:13EST (02:13UTC).
-Device89:2015-12-08 02:17:06.580646: David James Sanders, Esq.
+Device89:2015-12-08 13:34:11.350947: *** Notification read aloud over blutooth ***
+Device89:2015-12-08 13:38:55.596106: *** New notification to test Bluetooth emulation ***
