@@ -9,6 +9,7 @@ import notifications.resources.Config as Config
 
 from jsonschema import exceptions
 import json
+import requests
 
 class Notification_All(Resource):
     database_name = 'datavol/notifications.db'
@@ -135,6 +136,18 @@ class Notification_All(Resource):
             return_message = 'Notification created'
             return_data = note.dump(schema_context)
             return_success_fail = 'success'
+
+            bluetooth_device = Config.get_key('bluetooth')
+            if not bluetooth_device == None:
+                try:
+                    payload = {"message":note.note}
+                    r = requests.post(bluetooth_device, data=json.dumps(payload))
+                except Exception as e:
+                    return_message += \
+                        ' (Bluetooth set BUT transmission failed - bad URL?) '+\
+                        bluetooth_device
+                    pass # We ignore any errors trying to get to bluetooth
+
         except exceptions.ValidationError as ve:
             return_status = 400
             return_message = {'error':'Data not posted. '+\

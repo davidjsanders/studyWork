@@ -5,6 +5,8 @@ port_number = 5000
 server_name = 'localhost'
 
 controlkey_master = 'ABC123'
+__schema_filename__ = 'schemas/notification.json'
+__pair_schema_filename__ = 'schemas/pair.json'
 
 def set_contexts(self, schema=None):
     if schema == None or not type(schema) == dict:
@@ -24,7 +26,7 @@ def set_contexts(self, schema=None):
 
     return new_schema
 
-def check_key(key=None):
+def get_key(key=None):
     if key==None:
         return False
 
@@ -46,6 +48,78 @@ def check_key(key=None):
 
         db_cursor.close()
         db_connection.close()
+
+        if db_records == None:
+            return None # Default to a locked state if database is empty!
+        else:
+            return db_records[0]
+
+    except Exception as e:
+        raise Exception('Something went wrong!')
+
+def set_key(key=None, value=None):
+    if key==None or value==None:
+        return False
+
+    database_name = 'datavol/notifications.db'
+    try:
+        return_data = ''
+        database_opened = False
+        updated_data = False
+
+        db_connection = sqlite3.connect(database_name)
+        db_cursor = db_connection.cursor()
+        database_opened = True
+        db_cursor.execute(
+            'insert or replace into configuration (key, value) values (?, ?)',
+            (key, value) \
+        )
+        db_connection.commit()
+
+        db_cursor.close()
+        db_connection.close()
+
+        return get_key(key)
+    except Exception as e:
+        raise Exception('Something went wrong!')
+
+def delete_key(key=None):
+    if key==None:
+        return False
+
+    database_name = 'datavol/notifications.db'
+    try:
+        return_data = ''
+        database_opened = False
+        updated_data = False
+
+        db_connection = sqlite3.connect(database_name)
+        db_cursor = db_connection.cursor()
+        database_opened = True
+        db_cursor.execute(
+            'delete from configuration where key = ?',
+            (key,) \
+        )
+        db_connection.commit()
+
+        db_cursor.close()
+        db_connection.close()
+
+        return True
+
+    except Exception as e:
+        raise Exception('Something went wrong!')
+
+def check_key(key=None):
+    if key==None:
+        return False
+
+    try:
+        return_data = ''
+        database_opened = False
+        updated_data = False
+
+        db_records = get_key(key)
 
         if db_records == None:
             return True # Default to a locked state if database is empty!

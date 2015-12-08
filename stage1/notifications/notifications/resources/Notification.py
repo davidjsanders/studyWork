@@ -4,16 +4,15 @@ from marshmallow \
 
 # Import jsonschema for Schema validation
 from jsonschema import validate, exceptions, Draft3Validator
+import notifications.resources.Config as Config
 
 # Import JSON for JavaScript Object Notation serialization
 import json
 
 class Notification(object):
-    __schema_filename__ = 'schemas/notification.json'
-
     # Define the schema as a class level variable
     # and load the schema from disk
-    file_handle = open(__schema_filename__, 'r')
+    file_handle = open(Config.__schema_filename__, 'r')
     __schema__ = json.load(file_handle)
     file_handle.close()
 

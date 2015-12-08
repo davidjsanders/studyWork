@@ -4,16 +4,15 @@ from marshmallow \
 
 # Import jsonschema for Schema validation
 from jsonschema import validate, exceptions, Draft3Validator
+from notifications.resources.Config import Config
 
 # Import JSON for JavaScript Object Notation serialization
 import json
 
 class Notification(object):
-    __schema_filename__ = 'schemas/notification.json'
-
     # Define the schema as a class level variable
     # and load the schema from disk
-    file_handle = open(__schema_filename__, 'r')
+    file_handle = open(Config.__schema_filename__, 'r')
     __schema__ = json.load(file_handle)
     file_handle.close()
 
@@ -119,7 +118,8 @@ class Notification(object):
         __n_schema = self.Notification_Schema(many=False)
         self.__set_context(__n_schema, schema_context)
         if type(schema_context) == dict:
-            if 'pre-lollipop' in schema_context:
+            if 'pre-lollipop' in schema_context\
+            or not 'android' in schema_context:
                 __n_schema = self.Notification_Schema(
                                  many=False,
                                  only=('identifier','note','action')

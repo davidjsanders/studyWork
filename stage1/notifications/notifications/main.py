@@ -6,6 +6,9 @@ from notifications.resources.Notification import Notification
 from notifications.resources.Response import Response_Object
 #from notifications.resources.Notification_Helper import Notification_Helper
 from notifications.resources.Notification_Schema import Notification_Schema
+from notifications.resources.Notification_Pair import Notification_Pair
+from notifications.resources.Notification_Pair_Schema \
+    import Notification_Pair_Schema
 from notifications.resources.Notification_Boundary \
     import Notification_All, Notification_One
 
@@ -52,6 +55,17 @@ class Notification_Helper(Resource):
                 'description':'Edit, Delete, or Fetch individual notifications.',
                 'methods':['GET','PUT', 'DELETE','OPTIONS','HEAD']}
 
+            links['_links']['notifications_pair'] = {
+                'identifier':3,
+                'href':'http://'+Config.server_name+':'+str(Config.port_number)+\
+                    api.url_for(Notification_Helper, _external=ext_mode)+\
+                    'pair/<string:controlkey>',
+                'rel':'notification',
+                'schema':'http://'+Config.server_name+':'+str(Config.port_number)+\
+                    api.url_for(Notification_Helper, _external=ext_mode)+'pair/schema',
+                'description':'Pair with a Bluetooth device.',
+                'methods':['GET','POST', 'DELETE','OPTIONS','HEAD']}
+
         return Response_Object(links, return_status).response()
 
 api.add_resource(Notification_Schema,
@@ -62,3 +76,8 @@ api.add_resource(Notification_One,
                  '/v1_00/notifications/<string:controlkey>/<int:id>')
 api.add_resource(Notification_Helper,
                  '/v1_00/')
+
+api.add_resource(Notification_Pair,
+                 '/v1_00/pair/<string:controlkey>')
+api.add_resource(Notification_Pair_Schema,
+                 '/v1_00/pair/schema')

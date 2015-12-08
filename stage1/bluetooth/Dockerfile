@@ -29,7 +29,7 @@ RUN mkdir /bluetooth/schemas
 COPY startup.sh /bluetooth/
 COPY runserver.py /bluetooth/
 COPY bluetooth_uwsgi.ini /bluetooth/
-COPY bluetooth_uwsgi.conf /bluetooth/
+#COPY bluetooth_uwsgi.conf /bluetooth/
 COPY bluetooth/__init__.py /bluetooth/bluetooth/
 COPY bluetooth/ /bluetooth/
 COPY bluetooth/main.py /bluetooth/bluetooth/
