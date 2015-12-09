@@ -1,7 +1,10 @@
+from Parameters import Parameter_List, Parameter
+
 from marshmallow import Schema, fields, post_load
-from jsonschema import validate
+from jsonschema import validate, exceptions
 import json
 import requests
+from warlock import InvalidOperation # For exception handling only
 
 # Load links schema
 f = open('common/schemas/links.json','r')
@@ -38,7 +41,8 @@ class Link_Collection(object):
             or not 'success' in json_data\
             or not 'data' in json_data['success']\
             or 'error' in result.json():
-                raise Exception('The server issued a bad response.')
+                raise Exception('The server issued a bad response: '+\
+                          str(result.json()))
 
             links = json_data['success']['data']['_links']
 
@@ -78,7 +82,7 @@ class Link(object):
         self.schema = schema
         self.rel = rel
         self.methods = methods
-        self.parameters = []
+        self.parameters = [] # Makes sure that parameters is always defined.
 
         self.parameters = self.__parse_parameters(href)
 
@@ -98,7 +102,8 @@ class Link(object):
                 if '<' in __url_string:
                     start_position = __url_string.index('<')
                     end_position = __url_string[start_position:].index('>')+1
-                    parameter_string = __url_string[start_position:(start_position+end_position)]
+                    parameter_string = __url_string[start_position:\
+                        (start_position+end_position)]
                     name_start_position = parameter_string.index(':')+1
                     parameter_name = parameter_string[name_start_position:-1]
                     parameter_type = parameter_string[1:name_start_position-1]
@@ -111,77 +116,130 @@ class Link(object):
                         'required':True
                     })
                     count += 1
-                    print(parameter_string, parameter_name, __url_string)
                 else:
                     break
             except ValueError as ve:
                 break
         return parameter_list
 
-def print_route_header(verbosity):
-    if verbosity:
-        pass
-    else:
-        print('\033[4m{0:3s} {1:20s} {2:28s} {3:25s}\033[0m'.format(
-              ' ID', 'Route Name', 'Description', 'Methods Allowed'
-        ))
-#        print('{0}'.format('='*80))
+    def input_parameters(self):
+        if self.parameters == []:
+            return self.href
+        if self.href == None:
+            raise Exception('input_parameters: URL cannot be None')
 
-def print_route_footer(verbosity):
-    print()
+        __url_string = self.href
+        print('Please enter the following parameters:')
+        for p in self.parameters:
+            while True:
+                try:
+                    input_value = input('  '+p['name']+' : ')
+                    if p['type'] == int:
+                        input_value = int(input_value)
 
-def print_route(link, verbosity):
-    if verbosity:
-        pass
-    else:
-        print_route_table(link, verbosity)
+                    if not (input_value == None or input_value == '')\
+                    or not p['required']:
+                        __parameter = __url_string[\
+                            __url_string.index('<'):__url_string.index('>')+1]
+                        __url_string = __url_string.replace\
+                            (__parameter, str(input_value))
+                        break
+                    else:
+                        raise ValueError()
+                except ValueError as ve:
+                    print('  Invalid value provided. {0} needs to be a {1}'\
+                          .format(p['name'], \
+                          'string' if p['type'] == str else 'int'\
+                         )
+                    )
+                except Exception:
+                    raise
+        return __url_string
 
-def print_route_table(link, verbosity):
-    name = textwrap.wrap(link.name, width=20)
-    description = textwrap.wrap(link.description, width=28)
-#    href = textwrap.wrap(link.href, width=25)
-    href = []
-    allow = textwrap.wrap(link.headers['allow'], width = 25)
+    def input_dataitems(self, 
+                        schema_properties=None, 
+                        schema_required=None,
+                        data_item=None,
+                        update_mode=False
+    ):
+        if schema_properties == None:
+            raise KeyError('A dict of schema properties must be provided.')
+        if data_item == None:
+            raise KeyError("For some reasons (this shouldn't happen), there "+\
+                "is no data item.")
 
-    sizes = [len(name), len(description), len(href), len(allow)]
-    max_size = max(sizes)
-    underline_counter = max_size - 1
-
-    counter = 0
-    while True:
-        if counter == max_size:
-            break
-
-        name_print = ''
-        description_print = ''
-        href_print = ''
-        allow_print = ''
-        if counter == 0:
-            identifier = str(link.identifier).rjust(3, ' ')
-        else:
-            identifier = ''
-
+        print('This request requires data...')
         try:
-            if counter < len(name):
-                name_print = name[counter]
-            if counter < len(description):
-                description_print = description[counter]
-            if counter < len(href):
-                href_print = href[counter]
-            if counter < len(allow):
-                allow_print = allow[counter]
-            print('{0:3s} {1:20s} {2:28s} {3:25s}'.format(
-                identifier
-               ,name_print
-               ,description_print
-               ,allow_print
-            ))
-        except Exception as e:
-            print('error: '+repr(e))
-        counter += 1
+            for k in schema_properties.keys():
+                while True:
+                    try:
+                        if not k in data_item:
+                            break
+                        if type(data_item[k]) == None:
+                            break
 
-#    print('{0}'.format('-'*80))
+                        prompt_string = '  '+k+\
+                            ' ('+schema_properties[k]['description']+')'
+                        if update_mode:
+                            prompt_string += ' [' + str(data_item[k]) + ']'
+                        prompt_string += ': '
 
-    return
+                        temp = input(prompt_string)
+
+                        if k in schema_required \
+                        and temp == ''\
+                        and not update_mode:
+                            raise ValueError('{0} is a required property.'\
+                                .format(k))
+                        elif temp == '':
+                            if update_mode:
+                                break
+                            if type(data_item[k]) == int:
+                                break
+                            temp = None
+
+                        if type(data_item[k]) == int:
+                            data_item[k] = int(temp)
+                        else:
+                            data_item[k] = temp
+                        break
+                    except ValueError as ve:
+                        if type(data_item[k]) == int:
+                            print('{0} must be an integer number'\
+                                .format(k))
+                        else:
+                            print(ve)
+                    except TypeError as te:
+                        print(te)
+                    except KeyError:
+                        raise
+                    except InvalidOperation as io:
+                        print(io)
+                    except Exception as e:
+                        print(repr(e))
+            print()
+            return data_item
+        except Exception:
+            raise
+
+    def get_schema(self):
+        try:
+            if self.schema == None:
+                return
+
+            r = requests.get(self.schema)
+
+            if not r.status_code == 200:
+                raise Exception('Schema not found at {0}'.format(self.schema))
+
+            if 'success' in r.json():
+                if 'data' in r.json()['success']:
+                    return r.json()['success']['data']
+            else:
+                raise Exception('Schema not found. Expected {"success":{'+
+                                '"data":{...schema...}} but found {0}'\
+                                .format(r.json()))
+        except Exception:
+            raise
 
 

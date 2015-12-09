@@ -1,2 +1,8 @@
 Device89:2015-12-08 13:34:11.350947: *** Notification read aloud over blutooth ***
 Device89:2015-12-08 13:38:55.596106: *** New notification to test Bluetooth emulation ***
+Device89:2015-12-08 22:58:07.649272: A message
+Device89:2015-12-08 23:00:11.137773: Hello!
+Device89:2015-12-09 01:15:22.995215: Hello
+Device89:2015-12-09 01:30:26.960027: This is a note
+Device89:2015-12-09 01:36:31.822328: J
+Device89:2015-12-09 01:40:47.809762: @!
