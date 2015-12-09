@@ -35,11 +35,16 @@ class Link_Collection(object):
                 raise Exception('Server name is not set.')
 
             result = requests.get(server_name)
+            if not result.status_code == 200: 
+                raise Exception('The server issued a bad response: '+\
+                          str(result.json()))
+
             json_data = result.json()
 
             if not result.status_code == 200\
             or not 'success' in json_data\
             or not 'data' in json_data['success']\
+            or not '_links' in json_data['success']['data']\
             or 'error' in result.json():
                 raise Exception('The server issued a bad response: '+\
                           str(result.json()))
@@ -47,7 +52,7 @@ class Link_Collection(object):
             links = json_data['success']['data']['_links']
 
             if links == None:
-                raise Exception('The link list was empty.')
+                raise ValueError('The link list was empty.')
 
             # Define a sort function for the links list of objects
             # Reference -
@@ -61,6 +66,12 @@ class Link_Collection(object):
                 validate(links[link], __schema__)
                 new_link = Link_Schema(strict=True).load(links[link]).data
                 self.links.append(new_link)
+        except ValueError as ve:
+            raise Exception(
+                      'The server response was badly formed. Is this a '+\
+                      'supported service? It must provide links based on the '+\
+                      'links.json schema. Error reported was: '+str(ve)
+                  )
         except Exception as e:
             raise
 
