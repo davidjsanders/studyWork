@@ -131,16 +131,22 @@ and ask the user to enter the data.
 
 
 def do_command(method='GET', line=None):
+    data = None
+    header = None
+
     data, header = Utilities().do_method(
         method=method,
         command=line, 
         links=g_links
     )
-    print()
-    for t in header:
-        print(t, header[t])
-    print()
-    pprint(data)
+    if not header == None \
+    and not dict(header) == {}:
+        print()
+        for t in sorted(header):
+            print(t, header[t])
+    if not data == None:
+        print()
+        pprint(data)
 
 
 #

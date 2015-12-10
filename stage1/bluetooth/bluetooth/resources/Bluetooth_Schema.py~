@@ -17,22 +17,19 @@ class Bluetooth_Schema(Resource):
                         "message":
                         {
                             "type": "string",
-                            "description":"The message text to be broadcast",
+                            "description":"The notification text",
                             "default":"new note"
                         },
                         "sender":
                         {
                             "type": "string",
-                            "description":"The id (free-form) of the device "+\
-                                          "that sent the message.",
+                            "description":"The notification text",
                             "default":"unknown"
                         },
                         "sensitivity":
                         {
                             "enum" : ["low", "normal", "high", None],
-                            "description":"The sensitivity of the message "+\
-                                          "(N.B. This is not currently used "+\
-                                          "but provided for future use.)",
+                            "description":"The sensitivity of the notification",
                             "default":"normal"
                         }
                     },

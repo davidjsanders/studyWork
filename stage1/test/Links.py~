@@ -70,7 +70,7 @@ class Link_Collection(object):
             raise Exception(
                       'The server response was badly formed. Is this a '+\
                       'supported service? It must provide links based on the '+\
-                      'links.json schema.'+'\n\n'+str(ve)
+                      'links.json schema. Error reported was: '+str(ve)
                   )
         except Exception as e:
             raise
@@ -203,11 +203,12 @@ class Link(object):
                             raise ValueError('{0} is a required property.'\
                                 .format(k))
                         elif temp == '':
-                            if update_mode:
-                                break
-                            if type(data_item[k]) == int:
-                                break
-                            temp = None
+                            break
+#                            if update_mode:
+#                                break
+#                            if type(data_item[k]) == int:
+#                                break
+#                            temp = None
 
                         if type(data_item[k]) == int:
                             data_item[k] = int(temp)

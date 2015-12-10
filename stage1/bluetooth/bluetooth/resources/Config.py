@@ -6,5 +6,5 @@ server_name = 'localhost'
 
 controlkey_master = 'ABC123'
 schema_filename = 'schemas/bluetooth.json'
-
+ext_mode = False
 

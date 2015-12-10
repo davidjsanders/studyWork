@@ -35,6 +35,7 @@ COPY bluetooth/ /bluetooth/
 COPY bluetooth/main.py /bluetooth/bluetooth/
 COPY bluetooth/resources/Config.py /bluetooth/bluetooth/resources/
 COPY bluetooth/resources/Response.py /bluetooth/bluetooth/resources/
+COPY bluetooth/resources/Bluetooth_Schema.py /bluetooth/bluetooth/resources/
 COPY schemas/ /bluetooth/schemas/
 #COPY schemas/links.json /bluetooth/schemas/
 #COPY schemas/notification.json /bluetooth/schemas/

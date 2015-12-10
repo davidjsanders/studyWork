@@ -345,6 +345,10 @@ class Notification_One(Resource):
             return_message = 'The notification '+str(id)+' does not exist.'
             return_status = 404
             return_success_fail = 'error'
+        except RuntimeError as re:
+            return_message = str(re)
+            return_status = 400
+            return_success_fail = 'error'
         except Exception as e:
             return_status = 400
             return_message = {'error':'Data not posted. '+\

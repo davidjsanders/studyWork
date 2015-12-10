@@ -140,7 +140,9 @@ class Notification_All(Resource):
             bluetooth_device = Config.get_key('bluetooth')
             if not bluetooth_device == None:
                 try:
-                    payload = {"message":note.note}
+                    payload = {"sender":Config.server_name+":"\
+                                   +Config.port_number,
+                               "message":note.note}
                     r = requests.post(
                             bluetooth_device, data=json.dumps(payload))
                 except Exception as e:

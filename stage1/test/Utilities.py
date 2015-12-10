@@ -33,41 +33,46 @@ class Utilities(object):
 
 
     def do_method(self, method=None, command=None, links=None):
-        if (not type(method) == str \
-        and not type(command) == str) \
-        or method == None \
-        or command == None \
-        or links == None:
-            raise Exception('{0} {1} is invalid!'.format(method, command))
-
-        if not method.upper() in ['GET','PUT','POST','DELETE','OPTIONS','HEAD']:
-            raise Exception('{0} is an invalid method!'.format(method))
-
-        args = command.split()
-        if len(args) < 1:
-            raise Exception('correct usage: get <route>, where <route> '+\
-                            'is a number.')
-        if links == []:
-            raise Exception('The routes command must be executed before {0}'\
-                            .format(method))
-        command = int(command)
+        return_status = 200
 
         try:
-            route = int(command)
+            if (not type(method) == str \
+            and not type(command) == str) \
+            or method == None \
+            or command == None \
+            or links == None:
+                return_status = 400
+                raise Exception('{0} {1} is invalid!'.format(method, command))
 
-            if route < 0:
-                raise ValueError("The route cannot be less than zero.")
-            elif len(links.links) < 1:
-                raise IndexError("There are no routes. The commands "+\
-                                 "server <http://server> and routes "+\
-                                 "must be executed before {0}"\
+            if not method.upper() in ['GET','PUT','POST','DELETE','OPTIONS','HEAD']:
+                return_status = 400
+                raise Exception('{0} is an invalid method!'.format(method))
+
+            args = command.split()
+            if len(args) < 1:
+                return_status = 400
+                raise Exception('correct usage: get <route>, where <route> '+\
+                                'is a number.')
+            if links == [] or len(links.links) < 1:
+                return_status = 400
+                raise IndexError("There are no routes. The server must be "+\
+                                 "set and the routes commands "+\
+                                 "executed before issuing a {0} command."\
                                  .format(method))
+
+            command = int(command)
+            route = int(command)
+            if route < 0:
+                return_status = 400
+                raise ValueError("The route cannot be less than zero.")
             elif route >= len(links.links):
+                return_status = 404
                 error = "The route {0} doesn't exist. ".format(route)+\
                         "Run routes to view available routes."
                 raise IndexError(error)
             if not method in links.links[route].methods:
-                raise Exception('HTTP 405 - This route does not support {0}'\
+                return_status = 405
+                raise ValueError('This route does not support {0}'\
                                 .format(method))
 
             methods = Methods()
@@ -91,8 +96,8 @@ class Utilities(object):
 
         except Exception as e:
             error = Utilities().error_handler(
-                        error_text='{0}'.format(str(e))
+                        error_text='{0}'.format(str(e)),
+                        error_status=return_status
                     )
-#            pprint(error)
             return error, []
 

@@ -203,11 +203,7 @@ class Link(object):
                             raise ValueError('{0} is a required property.'\
                                 .format(k))
                         elif temp == '':
-                            if update_mode:
-                                break
-                            if type(data_item[k]) == int:
-                                break
-                            temp = None
+                            break
 
                         if type(data_item[k]) == int:
                             data_item[k] = int(temp)
