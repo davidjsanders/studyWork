@@ -41,6 +41,10 @@ rm -r -f /etc/nginx/sites-enabled/default
 ln -s /notifications/notifications_uwsgi.conf /etc/nginx/conf.d/notifications_uwsgi.conf
 service nginx start
 #
+# Create/Update database
+#
+sqlite3 datavol/notifications-${serverName}-${portToUse}.db < datavol/db_build.sql
+#
 # Start UWSGI and pass the notes_final.ini file.
 #
 /flask/bin/uwsgi notifications_uwsgi.ini

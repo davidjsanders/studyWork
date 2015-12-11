@@ -8,6 +8,12 @@ controlkey_master = 'ABC123'
 __schema_filename__ = 'schemas/notification.json'
 __pair_schema_filename__ = 'schemas/pair.json'
 
+def get_database():
+    return 'datavol/notifications-'+\
+           str(server_name)+'-'+\
+           str(port_number)+\
+           '.db'
+
 def set_contexts(self, schema=None):
     if schema == None or not type(schema) == dict:
         return {}
@@ -55,7 +61,7 @@ def get_key(key=None):
             return db_records[0]
 
     except Exception as e:
-        raise Exception('Something went wrong!')
+        raise Exception('Something went wrong '+repr(e))
 
 def set_key(key=None, value=None):
     if key==None or value==None:
@@ -81,7 +87,7 @@ def set_key(key=None, value=None):
 
         return get_key(key)
     except Exception as e:
-        raise Exception('Something went wrong!')
+        raise Exception('Something went wrong!'+repr(e))
 
 def delete_key(key=None):
     if key==None:
@@ -108,7 +114,7 @@ def delete_key(key=None):
         return True
 
     except Exception as e:
-        raise Exception('Something went wrong!')
+        raise Exception('Something went wrong!'+repr(e))
 
 def check_key(key=None):
     if key==None:
@@ -129,6 +135,6 @@ def check_key(key=None):
         else:
             return False;
     except Exception as e:
-        raise Exception('Something went wrong!')
+        raise Exception('Something went wrong!'+repr(e))
 
 

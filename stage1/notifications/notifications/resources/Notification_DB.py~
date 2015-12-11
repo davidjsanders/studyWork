@@ -43,11 +43,13 @@ class Notification_DB(object):
         return_list = []
 
         try:
+            print('Check! '+str(self.database_name))
             self.database_name = Config.get_database()
 
             db_connection = sqlite3.connect(self.database_name)
             database_opened = True
 
+            print('Check!')
             db_cursor = db_connection.cursor()
             cursor_opened = True
 
