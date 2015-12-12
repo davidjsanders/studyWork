@@ -26,8 +26,21 @@ class Utilities(object):
         print('{0}'.format('='*80))
         print('URL:       ', link.href)
         print('Methods:   ', str(link.methods))
-        print('Schema:    ', str(link.schema))
-        print('Parameters:',str(link.parameters))
+        if not link.schema == None:
+            print('Schema:    ', str(link.schema))
+        if not link.parameters == []:
+            print()
+            print('Parameters')
+            print('----------')
+            for idx, p in enumerate(link.parameters):
+                print('  {0}: {1} {2} {3}'\
+                    .format(
+                        p['id']+1, 
+                        p['name'], 
+                        str(p['type']),
+                        'required' if p['required'] else ''
+                    )
+                )
         print()
         print()
 
@@ -95,6 +108,8 @@ class Utilities(object):
             return data_set, headers
 
         except Exception as e:
+            if return_status == 200:
+                return_status = 400
             error = Utilities().error_handler(
                         error_text='{0}'.format(str(e)),
                         error_status=return_status

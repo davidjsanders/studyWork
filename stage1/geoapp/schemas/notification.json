@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "sensitivity": 
+            {
+                "enum" : ["low", "normal", "high", null],
+                "description":"The sensitivity of the notification",
+                "default":"normal"
+            },
+        "note": 
+            {
+             "type": "string", 
+             "description":"The notification text",
+             "default":"new note"
+            },
+        "identifier": 
+            {
+             "type": "number", 
+             "description":"The identifier (read only)",
+             "default":0,
+             "minimum":0
+            },
+        "action":
+            {
+             "type": "string", 
+             "description":"What action is taken when the notification is selected",
+             "default": "new action"
+            }
+        },
+    "additionalProperties":false,
+    "required": ["note","action"]
+}

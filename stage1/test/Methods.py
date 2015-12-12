@@ -50,12 +50,12 @@ class Methods(object):
 
             data = result.json()
 
-            if 'success' in data:
-                if 'data' in data['success']:
-                    data = data['success']['data']
-                    if type(data) == list \
-                    and len(data) == 1:
-                        data = data[0]
+#            if 'success' in data:
+#                if 'data' in data['success']:
+#                    data = data['success']['data']
+#                    if type(data) == list \
+#                    and len(data) == 1:
+#                        data = data[0]
 
             return data, result.headers
         except Exception:
@@ -137,11 +137,12 @@ class Methods(object):
             url_string = get_route.input_parameters()
 
             original_data, headers = self.__fetch_data(url_string)
-            get_data = requests.get(url_string,
-                                  headers={'Content-Type':'application/json'}
-                     )
+#            get_data = requests.get(url_string,
+#                                  headers={'Content-Type':'application/json'}
+#                     )
 
-            return get_data.json(), headers
+#            return get_data.json(), headers
+            return original_data, headers
         except Exception as e:
             raise
 
@@ -151,13 +152,8 @@ class Methods(object):
         try:
             route = int(route_identifier)
             del_route = link_collection.links[route]
-
             url_string = del_route.input_parameters()
-
-            original_data, headers = self.__fetch_data(url_string)
-
-            delete = requests.delete(url_string,
-                                     headers={'Content-Type':'application/json'}
+            delete = requests.delete(url_string
                      )
 
             return delete.json(), delete.headers
