@@ -10,7 +10,7 @@ class Notification_DB(object):
 
     # Reference: http://flask.pocoo.org/docs/0.10/patterns/sqlite3/
     @app.teardown_appcontext
-    def db_close(self, exception=None):
+    def db_close(self):
         database = getattr(g, '_database', None)
         if database is not None:
             database.close()
@@ -44,7 +44,7 @@ class Notification_DB(object):
         return_list = []
 
         try:
-            db_records = self.db_execute(
+            db_records = Config.db_execute(
                 sql_statement='select key, value from notifications',
                 multiple=True
             )
@@ -62,7 +62,7 @@ class Notification_DB(object):
         or key < 0:
             raise KeyError('Key must be greater than or equal to zero')
 
-        db_records = self.db_execute(
+        db_records = Config.db_execute(
             sql_statement='select key, value from notifications '+\
                           'where key = ?',
             args=(key,),
@@ -77,12 +77,11 @@ class Notification_DB(object):
 
     def delete_one(self, key):
         try:
-            db_records = self.db_execute(
+            db_records = Config.db_execute(
                 sql_statement='delete from notifications '+ \
                               'where key = ?',
                 args=(key, )
             )
-
             self.db_get().commit()
         except Exception as e:
             raise
@@ -91,7 +90,7 @@ class Notification_DB(object):
 
     def delete_all(self):
         try:
-            db_records = self.db_execute(
+            db_records = Config.db_execute(
                 sql_statement='delete from notifications'
             )
             self.db_get().commit()
@@ -104,7 +103,7 @@ class Notification_DB(object):
         updated_data = False
 
         try:
-            db_records = self.db_execute(
+            db_records = Config.db_execute(
                 sql_statement='update notifications '+ \
                               'set value = ? '+ \
                               'where key = ?',
@@ -120,19 +119,23 @@ class Notification_DB(object):
 
     def insert(self, note):
         try:
-            db_records = self.db_execute(
+            print('Insert - step 1')
+            db_records = Config.db_execute(
                 sql_statement='select ifnull(max(key),0) from notifications',
                 multiple=False
             )
 
+            print('Insert - step 2')
             note.identifier = db_records[0] + 1
 
-            db_records = self.db_execute(
+            print('Insert - step 3')
+            db_records = Config.db_execute(
                 sql_statement='insert into notifications (key, value) '+ \
                               'values (?, ?)',
                 args=(note.identifier, note.dump())
             )
 
+            print('Insert - step 4')
             self.db_get().commit()
         except Exception as e:
             raise

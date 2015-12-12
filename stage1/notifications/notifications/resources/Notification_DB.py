@@ -10,7 +10,7 @@ class Notification_DB(object):
 
     # Reference: http://flask.pocoo.org/docs/0.10/patterns/sqlite3/
     @app.teardown_appcontext
-    def db_close(self, exception=None):
+    def db_close(self):
         database = getattr(g, '_database', None)
         if database is not None:
             database.close()
