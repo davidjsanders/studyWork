@@ -1,2 +1,1 @@
-{"date": "2015-12-12 14:41:29.826640", "bluetooth-device": "dasanderUty01:89", "sender": "dasanderUty01:82", "message": "Notification @0941 EST @1441 UTC. Hello David."}
-{"date": "2015-12-12 14:42:50.461278", "bluetooth-device": "dasanderUty01:89", "sender": "dasanderUty01:82", "message": "*** You have entered Littletown. This is area is a high risk STI Infection area. Remember: Safe Sex is Good Sex"}
+{"date": "2015-12-12 19:42:10.792808", "message": "*** A new notification @ 1442EST ***", "sender": "dasanderUty01:82", "bluetooth-device": "dasanderUty01:89"}

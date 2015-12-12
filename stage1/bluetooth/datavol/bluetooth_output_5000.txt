@@ -1,2 +1,0 @@
-unknown >> Device5000:2015-12-09 20:35:48.685651: *** This is a test ***
-{"message": "*** Manual Test Message ***", "sender": "test/interpreter.py", "bluetooth-device": "localhost:5000", "date": "2015-12-09 21:02:18.615286"}

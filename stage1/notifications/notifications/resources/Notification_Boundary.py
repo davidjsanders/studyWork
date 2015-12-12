@@ -140,8 +140,8 @@ class Notification_All(Resource):
             bluetooth_device = Config.get_key('bluetooth')
             if not bluetooth_device == None:
                 try:
-                    payload = {"sender":Config.server_name+":"\
-                                   +Config.port_number,
+                    payload = {"sender":str(Config.server_name)+":"\
+                                   +str(Config.port_number),
                                "message":note.note}
                     r = requests.post(
                             bluetooth_device, data=json.dumps(payload))
@@ -150,7 +150,7 @@ class Notification_All(Resource):
                     # but let the caller the know.
                     return_message += \
                         ' (Bluetooth set BUT transmission failed - bad URL?) '+\
-                        bluetooth_device
+                        bluetooth_device + '. Error is '+repr(e)+'.'
 
         except exceptions.ValidationError as ve:
             return_status = 400
@@ -263,7 +263,7 @@ class Notification_One(Resource):
             return_status = 400
         
         return Response_Object(
-                return_list,
+                return_list[0],
                 return_status,
                 return_success_fail,
                 return_message
@@ -301,6 +301,7 @@ class Notification_One(Resource):
                     pass
                 else:
                     temp.load(raw_json) # Force a validation error
+
             temp.load(note.dump(schema_context))
 
             noteDB.update_one(note.identifier, note.dump(schema_context))

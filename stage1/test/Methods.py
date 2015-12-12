@@ -102,7 +102,8 @@ class Methods(object):
 
             url_string = put_route.input_parameters()
 
-            original_data, headers = self.__fetch_data(url_string)
+            raw_data, headers = self.__fetch_data(url_string)
+            original_data = raw_data['success']['data']
 
             schema = put_route.get_schema()
             schema_properties = schema['properties']
@@ -153,8 +154,7 @@ class Methods(object):
             route = int(route_identifier)
             del_route = link_collection.links[route]
             url_string = del_route.input_parameters()
-            delete = requests.delete(url_string
-                     )
+            delete = requests.delete(url_string)
 
             return delete.json(), delete.headers
         except Exception:
