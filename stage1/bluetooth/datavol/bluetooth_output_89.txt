@@ -1,5 +1,2 @@
-{"message": "test/interpreter.py", "date": "2015-12-10 02:05:21.127075", "sender": "test/interpreter.py", "bluetooth-device": "dasanderUty01:89"}
-{"message": "*** 21:03EST 02:03UTC.  TEST MESSAGE SHOUTED! ***", "date": "2015-12-10 02:05:40.149540", "sender": "test/interpreter.py", "bluetooth-device": "dasanderUty01:89"}
-{"message": "*** This is a test notification ***", "date": "2015-12-10 02:07:00.202742", "sender": "dasanderUty01:83", "bluetooth-device": "dasanderUty01:89"}
-{"message": "*** NOTIFICATION ***", "bluetooth-device": "dasanderUty01:89", "sender": "dasanderUty01:82", "date": "2015-12-10 22:54:59.473028"}
-{"message": "This is a test notification", "bluetooth-device": "dasanderUty01:89", "sender": "dasanderUty01:82", "date": "2015-12-11 00:43:46.221120"}
+{"date": "2015-12-12 14:41:29.826640", "bluetooth-device": "dasanderUty01:89", "sender": "dasanderUty01:82", "message": "Notification @0941 EST @1441 UTC. Hello David."}
+{"date": "2015-12-12 14:42:50.461278", "bluetooth-device": "dasanderUty01:89", "sender": "dasanderUty01:82", "message": "*** You have entered Littletown. This is area is a high risk STI Infection area. Remember: Safe Sex is Good Sex"}
