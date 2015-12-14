@@ -140,18 +140,20 @@ class Notification_All(Resource):
             bluetooth_device = Config.get_key('bluetooth')
             if not bluetooth_device == None:
                 try:
-                    print('Server', Config.server_name, 'Port', Config.port_number)
                     payload = {"sender":str(Config.server_name)+":"\
                                    +str(Config.port_number),
                                "message":note.note}
                     r = requests.post(
                             bluetooth_device, data=json.dumps(payload))
-                    print(r.json())
+                    if r.status_code != 200:
+                        raise Exception(str(r.status_code)+str(r.json()))
                 except Exception as e:
                     # Ignore any errors trying to get to bluetooth
                     # but let the caller the know.
+                    return_success_fail = 'warning'
                     return_message += \
-                        ' (Bluetooth set BUT transmission failed - bad URL?) '+\
+                        '. (Bluetooth set BUT transmission '+\
+                        'failed - could not reach device: ) '+\
                         bluetooth_device + '. Error is '+repr(e)+'.'
 
         except exceptions.ValidationError as ve:

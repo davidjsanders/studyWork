@@ -1,1 +1,5 @@
 {"date": "2015-12-12 19:42:10.792808", "message": "*** A new notification @ 1442EST ***", "sender": "dasanderUty01:82", "bluetooth-device": "dasanderUty01:89"}
+{"bluetooth-device": "dasanderUty01:89", "sender": "me", "date": "2015-12-14 21:26:24.911329", "message": "This is a test"}
+{"bluetooth-device": "dasanderUty01:89", "sender": "localhost:5000", "date": "2015-12-14 21:36:30.524775", "message": "This is a new note @ 1636EST"}
+{"bluetooth-device": "dasanderUty01:89", "sender": "dasanderUty01:82", "date": "2015-12-14 21:39:07.092282", "message": "** NOTIFICATION: Remember, Safe Sex is Good Sex! **"}
+{"date": "2015-12-14 21:50:45.206816", "message": "Test that will work", "bluetooth-device": "dasanderUty01:89", "sender": "dasanderUty01:82"}

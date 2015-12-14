@@ -8,29 +8,33 @@ controlkey_master = 'ABC123'
 __schema_filename__ = 'schemas/notification.json'
 __pair_schema_filename__ = 'schemas/pair.json'
 
-def db_close():
-    database = getattr(app.app_context().g, '_database', None)
-    if database is not None:
-        database.close()
+def db_close(database=None):
+    try:
+        if database is not None:
+            database.close()
+    except Exception:
+        raise
 
 def db_get():
-    database = None
-    database = getattr(app.app_context().g, '_database', None)
-
-    if database == None:
+    try:
         database_name = get_database()
-        database = app.app_context().g._database = sqlite3.connect(database_name)
+        database = sqlite3.connect(database_name)
 
-    if database == None:
-        raise Exception('Unable to connect to database.')
+        if database == None:
+            raise Exception('Unable to connect to database.')
 
-    return database
+        return database
+    except Exception:
+        raise
 
-def db_execute(sql_statement=None, args=(), multiple=False):
+def db_execute(database=None, sql_statement=None, args=(), multiple=False):
     if sql_statement == None:
         return []
 
-    return_data = db_get().execute(sql_statement, args)\
+    if database == None:
+        database = db_get()
+
+    return_data = database.execute(sql_statement, args)\
                       .fetchall()
 
     if not multiple:
@@ -67,13 +71,14 @@ def get_key(key=None):
     if key==None:
         return False
 
-    db_get()
+    database = db_get()
     try:
         db_key = db_execute(
+            database=database,
             sql_statement='select value from configuration where key = ?',
             args=(key,)
         )
-        db_close()
+        db_close(database)
         if db_key == [] or db_key[0] == '':
             return None # Default to a locked state if database is empty!
 
@@ -82,19 +87,19 @@ def get_key(key=None):
         raise
 
 def set_key(key=None, value=None):
-    print('Set 1')
     if key==None or value==None:
         return False
 
-    print('Set 2')
+    database = db_get()
     try:
         db_key = db_execute(
+            database=database,
             sql_statement='insert or replace into configuration '+\
                           '(key, value) values (?, ?)',
             args=(key, value)
         )
-        db_get().commit()
-        db_close()
+        database.commit()
+        database.close()
         return get_key(key)
     except Exception as e:
         raise
@@ -103,15 +108,16 @@ def delete_key(key=None):
     if key==None:
         return False
 
-    database_name = 'datavol/notifications.db'
+    database = db_get()
     try:
         db_key = db_execute(
+            database=database,
             sql_statement='delete from configuration '+\
                           'where key = ?',
             args=(key,)
         )
-        db_get().commit()
-        db_close()
+        database.commit()
+        database.close()
         return True
     except Exception as e:
         raise

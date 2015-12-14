@@ -145,11 +145,15 @@ class Notification_All(Resource):
                                "message":note.note}
                     r = requests.post(
                             bluetooth_device, data=json.dumps(payload))
+                    if r.status_code != 200:
+                        raise Exception(str(r.status_code)+str(r.json()))
                 except Exception as e:
                     # Ignore any errors trying to get to bluetooth
                     # but let the caller the know.
+                    return_success_fail = 'warning'
                     return_message += \
-                        ' (Bluetooth set BUT transmission failed - bad URL?) '+\
+                        '. Bluetooth set BUT transmission '+\
+                        'failed - could not reach device '+\
                         bluetooth_device + '. Error is '+repr(e)+'.'
 
         except exceptions.ValidationError as ve:
