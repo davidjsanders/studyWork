@@ -4,7 +4,7 @@ from marshmallow \
 
 # Import jsonschema for Schema validation
 from jsonschema import validate, exceptions, Draft3Validator
-from notifications.resources.Config import Config
+import notifications.resources.Config as Config
 
 # Import JSON for JavaScript Object Notation serialization
 import json
@@ -117,6 +117,7 @@ class Notification(object):
         # Create a private instance of the schema
         __n_schema = self.Notification_Schema(many=False)
         self.__set_context(__n_schema, schema_context)
+
         if type(schema_context) == dict:
             if 'pre-lollipop' in schema_context\
             or not 'android' in schema_context:

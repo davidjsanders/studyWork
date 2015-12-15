@@ -46,7 +46,6 @@ class Notification(object):
             if type(self.context) == dict:
                 if ('locked' in self.context and self.context['locked'])\
                 and ('android' in self.context and self.context['android']):
-#                    if 'sensitivity' in str(data):
                     if not data.sensitivity == None:
                         print('Got sensitivity :)')
                         print(str(data))
@@ -117,6 +116,7 @@ class Notification(object):
         # Create a private instance of the schema
         __n_schema = self.Notification_Schema(many=False)
         self.__set_context(__n_schema, schema_context)
+
         if type(schema_context) == dict:
             if 'pre-lollipop' in schema_context\
             or not 'android' in schema_context:

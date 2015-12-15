@@ -47,4 +47,5 @@ sqlite3 datavol/notifications-${serverName}-${portToUse}.db < datavol/db_build.s
 #
 # Start UWSGI and pass the notes_final.ini file.
 #
+runLocally=False; export runLocally
 /flask/bin/uwsgi notifications_uwsgi.ini

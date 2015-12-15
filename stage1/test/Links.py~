@@ -135,6 +135,7 @@ class Link(object):
 
     def input_parameters(self):
         if self.parameters == []:
+            print('No parameters. Returning.')
             return self.href
         if self.href == None:
             raise Exception('input_parameters: URL cannot be None')
@@ -204,11 +205,6 @@ class Link(object):
                                 .format(k))
                         elif temp == '':
                             break
-#                            if update_mode:
-#                                break
-#                            if type(data_item[k]) == int:
-#                                break
-#                            temp = None
 
                         if type(data_item[k]) == int:
                             data_item[k] = int(temp)

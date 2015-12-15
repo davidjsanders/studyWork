@@ -8,6 +8,66 @@ controlkey_master = 'ABC123'
 __schema_filename__ = 'schemas/notification.json'
 __pair_schema_filename__ = 'schemas/pair.json'
 
+def initialize():
+    database_okay = False
+    db = db_get()
+
+    try:
+        get_key('android')
+        database_okay=True
+    except sqlite3.OperationalError as sqlOE:
+        print("Warning: Configuration table doesn't exist. It will be created.")
+    except Exception:
+        raise
+
+    if not database_okay:
+        db_execute(
+            database=db,
+            sql_statement='create table configuration '+
+                          '(key string primary key, value string)'
+        )
+        db_execute(
+            database=db,
+            sql_statement='insert into configuration values (?, ?)',
+            args=('android','FALSE')
+        )
+        db_execute(
+            database=db,
+            sql_statement='insert into configuration values (?, ?)',
+            args=('pre-lollipop','FALSE')
+        )
+        db_execute(
+            database=db,
+            sql_statement='insert into configuration values (?, ?)',
+            args=('locked','TRUE')
+        )
+        db_execute(
+            database=db,
+            sql_statement='insert into configuration values (?, ?)',
+            args=('bluetooth',None)
+        )
+        db.commit()
+
+    database_okay = False
+    try:
+        db_execute(
+            database=db,
+            sql_statement='select * from notifications'
+        )
+        database_okay = True
+    except sqlite3.OperationalError as sqlOE:
+        print("Warning: Notifications table doesn't exist. It will be created.")
+    except Exception:
+        raise
+
+    if not database_okay:
+        db_execute(
+            database=db,
+            sql_statement='create table notifications '+
+                          '(key number primary key, value string)'
+        )
+
+
 def db_close(database=None):
     try:
         if database is not None:
@@ -136,7 +196,7 @@ def check_key(key=None):
         if db_records == None:
             return True # Default to a locked state if database is empty!
 
-        if db_records[0].upper() == 'TRUE':
+        if db_records.upper() == 'TRUE':
             return True;
         else:
             return False;

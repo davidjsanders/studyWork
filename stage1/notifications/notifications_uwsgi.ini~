@@ -1,5 +1,6 @@
 [uwsgi]
 socket=127.0.0.1:3031
+#chdir=/home/dasander/Documents/studyWork/stage1/notesuwsgi/
 chdir = /notifications/
 wsgi-file=runserver.py
 callable=app

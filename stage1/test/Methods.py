@@ -63,27 +63,30 @@ class Methods(object):
 
     def post(self, link_collection=None, route_identifier=-1):
         try:
+            temp = None
             route = int(route_identifier)
             post_route = link_collection.links[route]
 
             url_string = post_route.input_parameters()
 
-            schema = post_route.get_schema()
-            schema_properties = schema['properties']
-            schema_required = schema['required']
-            object_factory = warlock.model_factory(schema)
+            if not url_string == post_route.href:
+                schema = post_route.get_schema()
+                schema_properties = schema['properties']
+                schema_required = schema['required']
+                object_factory = warlock.model_factory(schema)
 
-            data_dict = {}
-            for key in schema_properties.keys():
-                data_dict[str(key)] = schema_properties[key]['default']
+                data_dict = {}
+                for key in schema_properties.keys():
+                    data_dict[str(key)] = schema_properties[key]['default']
 
-            temp = object_factory(**data_dict)
+                temp = object_factory(**data_dict)
 
-            temp = post_route.input_dataitems(
+                temp = post_route.input_dataitems(
                        schema_properties,
                        schema_required,
                        temp,
                        update_mode=False)
+
             insert = requests.post(url_string,
                                    data=json.dumps(temp),
                                    headers={'Content-Type':'application/json'}
@@ -97,26 +100,29 @@ class Methods(object):
 
     def put(self, link_collection=None, route_identifier=-1):
         try:
+            temp = None
             route = int(route_identifier)
             put_route = link_collection.links[route]
 
             url_string = put_route.input_parameters()
 
-            raw_data, headers = self.__fetch_data(url_string)
-            original_data = raw_data['success']['data']
+            if not put_route.schema == None:
+                raw_data, headers = self.__fetch_data(url_string)
+                original_data = raw_data['success']['data']
 
-            schema = put_route.get_schema()
-            schema_properties = schema['properties']
-            schema_required = schema['required']
-            object_factory = warlock.model_factory(schema)
+                schema = put_route.get_schema()
+                schema_properties = schema['properties']
+                schema_required = schema['required']
+                object_factory = warlock.model_factory(schema)
 
-            temp = object_factory(**original_data)
+                temp = object_factory(**original_data)
 
-            temp = put_route.input_dataitems(
+                temp = put_route.input_dataitems(
                        schema_properties,
                        schema_required,
                        temp,
                        update_mode=True)
+                print('Made it through if')
 
             update = requests.put(url_string,
                                   data=json.dumps(temp),
@@ -138,11 +144,6 @@ class Methods(object):
             url_string = get_route.input_parameters()
 
             original_data, headers = self.__fetch_data(url_string)
-#            get_data = requests.get(url_string,
-#                                  headers={'Content-Type':'application/json'}
-#                     )
-
-#            return get_data.json(), headers
             return original_data, headers
         except Exception as e:
             raise

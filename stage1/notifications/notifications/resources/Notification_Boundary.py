@@ -28,6 +28,8 @@ class Notification_All(Resource):
         and 'locked' in schema:
             raise RuntimeError('Device is locked.')
 
+        return schema
+
     def get(self, controlkey=None):
         try:
             raw_list=[]
@@ -38,7 +40,7 @@ class Notification_All(Resource):
             if controlkey == None or not controlkey == Config.controlkey_master:
                 raise RuntimeError('Control Key does not match.')
 
-            self.set_contexts(schema_context)
+            schema_context = self.set_contexts(schema_context)
 
             return_message = 'success'
             return_status = 200
