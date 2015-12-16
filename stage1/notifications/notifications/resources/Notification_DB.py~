@@ -1,9 +1,36 @@
+"""
+    module: Notification_DB.py
+    ------------------------------------------------------------------------
+    Author:      David J. Sanders
+    Student No:  H00035340
+    Last Update: 15 December 2015
+    Update:      Revise documentation
+    ------------------------------------------------------------------------
+    Overivew:    The persistence layer for notification objects.
+
+    Purpose:     Defines the database members, functions, and operations for the 
+                 Notification 'class'
+
+    Called By:   n/a
+
+    References
+    ----------
+
+"""
+# Import the configuration package
 import notifications.resources.Config as Config
+
+# Import the app and api contexts
 from notifications import app, api
+
+# Import the notification class
 from notifications.resources.Notification import Notification
+
+# Import jsonschema validation and exception functions
 from jsonschema import validate, exceptions
+
+# Import SQLite3 for persistence. Could be anything, e.g. redis
 import sqlite3
-from flask import g
 
 class Notification_DB(object):
     database_name = None
@@ -77,7 +104,8 @@ class Notification_DB(object):
                 database=database,
                 sql_statement='delete from notifications'
             )
-            Config.db_get().commit()
+            database.commit()
+            Config.db_close(database)
         except Exception as e:
             raise
         
@@ -96,7 +124,8 @@ class Notification_DB(object):
                 args=(value, key)
             )
 
-            Config.db_get().commit()
+            database.commit()
+            Config.db_close(database)
         except Exception as e:
             print('The exception happend here!', repr(e))
             raise
@@ -122,7 +151,7 @@ class Notification_DB(object):
             )
 
             database.commit()
-            print('Done commit to ', database)
+            Config.db_close(database)
         except Exception as e:
             raise
 

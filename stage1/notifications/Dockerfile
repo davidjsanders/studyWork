@@ -36,6 +36,7 @@ COPY notifications/resources/Notification_Boundary.py /notifications/notificatio
 COPY notifications/resources/Notification_DB.py /notifications/notifications/resources/
 COPY notifications/resources/Notification.py /notifications/notifications/resources/
 COPY notifications/resources/Notification_Schema.py /notifications/notifications/resources/
+COPY notifications/resources/Notification_Helper.py /notifications/notifications/resources/
 COPY notifications/resources/Notification_Pair.py /notifications/notifications/resources/
 COPY notifications/resources/Notification_Lock.py /notifications/notifications/resources/
 COPY notifications/resources/Notification_Pair_Schema.py /notifications/notifications/resources/

@@ -12,35 +12,17 @@ import json
 import requests
 
 class Notification_All(Resource):
-    database_name = 'datavol/notifications.db'
-
-    def set_contexts(self, schema=None):
-        if schema == None or not type(schema) == dict:
-            return
-
-        if Config.check_key('android'):
-            schema['android'] = True
-        if Config.check_key('locked'):
-            schema['locked'] = True
-        if Config.check_key('pre-lollipop'):
-            schema['pre-lollipop'] = True
-        if 'pre-lollipop' in schema \
-        and 'locked' in schema:
-            raise RuntimeError('Device is locked.')
-
-        return schema
-
     def get(self, controlkey=None):
         try:
             raw_list=[]
             return_list = []
-            return_dict = ''
             schema_context={}
 
             if controlkey == None or not controlkey == Config.controlkey_master:
                 raise RuntimeError('Control Key does not match.')
 
-            schema_context = self.set_contexts(schema_context)
+            schema_context = Config.set_contexts()
+            Config.check_prelollipop(schema_context)
 
             return_message = 'success'
             return_status = 200
@@ -125,7 +107,7 @@ class Notification_All(Resource):
             if controlkey == None or not controlkey == Config.controlkey_master:
                 raise RuntimeError('Control Key does not match.')
 
-            self.set_contexts(schema_context)
+            Config.set_contexts()
 
             raw_json = reqparse.request.get_data().decode('utf-8')
             json_data = json.loads(raw_json)
@@ -191,23 +173,6 @@ class Notification_All(Resource):
         ).response()
 
 class Notification_One(Resource):
-    database_name = 'datavol/notifications.db'
-    return_dict = {}
-
-    def set_contexts(self, schema=None):
-        if schema == None or not type(schema) == dict:
-            return
-
-        if Config.check_key('android'):
-            schema['android'] = True
-        if Config.check_key('locked'):
-            schema['locked'] = True
-        if Config.check_key('pre-lollipop'):
-            schema['pre-lollipop'] = True
-        if 'pre-lollipop' in schema \
-        and 'locked' in schema:
-            raise RuntimeError('Device is locked.')
-
     def get(self, id, controlkey=None):
         try:
             return_list = []
@@ -220,7 +185,8 @@ class Notification_One(Resource):
             if controlkey == None or not controlkey == Config.controlkey_master:
                 raise RuntimeError('Control Key does not match.')
 
-            self.set_contexts(schema_context)
+            schema_context = Config.set_contexts()
+            Config.check_prelollipop(schema_context)
 
             noteDB = Notification_DB()
             note = Notification()
@@ -286,7 +252,8 @@ class Notification_One(Resource):
             if controlkey == None or not controlkey == Config.controlkey_master:
                 raise RuntimeError('Control Key does not match.')
 
-            self.set_contexts(schema_context)
+            schema_context = Config.set_contexts()
+            Config.check_prelollipop(schema_context)
 
             noteDB = Notification_DB()
             note = Notification()

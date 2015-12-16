@@ -1,3 +1,22 @@
+"""
+    module: Notification.py
+    ------------------------------------------------------------------------
+    Author:      David J. Sanders
+    Student No:  H00035340
+    Last Update: 15 December 2015
+    Update:      Revise documentation
+    ------------------------------------------------------------------------
+    Overivew:    The notification object.
+
+    Purpose:     Defines the members, functions, and operations of the 
+                 Notification 'class'
+
+    Called By:   n/a
+
+    References
+    ----------
+
+"""
 # Import marshmallow for light weight serialization & de-serialization
 from marshmallow \
     import Schema, fields, post_load, post_dump, pre_load, pre_dump
@@ -9,6 +28,9 @@ import notifications.resources.Config as Config
 # Import JSON for JavaScript Object Notation serialization
 import json
 
+#
+# Define the Notification class, with object as its ancestor
+#
 class Notification(object):
     # Define the schema as a class level variable
     # and load the schema from disk
@@ -18,23 +40,10 @@ class Notification(object):
 
     # Define the Marshmallow shcema
     class Notification_Schema(Schema):
-        note = fields.String(required=True)
-        action = fields.String(required=True)
-        sensitivity = fields.Method('get_sensitivity')
-        identifier = fields.Integer(required=True)
-
-        def get_sensitivity(self, note):
-            try:
-                if type(self.context) == str:
-                    return value
-                elif type(self.context) == dict:
-                    if 'pre-lollipop' in self.context:
-                        return 'not applicable'
-                    else:
-                        return note.sensitivity
-            except Exception as e:
-                print('Exception: '+repr(e))
-            return note.sensitivity
+        note = fields.String(required=True)            # The notification text
+        action = fields.String(required=True)          # The action to take
+        sensitivity = fields.String(required=False)    # The sensitivity
+        identifier = fields.Integer(required=True)     # A unique ID
 
         # pre_dump is called before the data is serialized to JSON. At this
         # point, a check is made to see whether the device is an Android
@@ -47,8 +56,6 @@ class Notification(object):
                 if ('locked' in self.context and self.context['locked'])\
                 and ('android' in self.context and self.context['android']):
                     if not data.sensitivity == None:
-                        print('Got sensitivity :)')
-                        print(str(data))
                         if data.sensitivity.upper() == 'HIGH':
                             raise exceptions.ValidationError('Will be ignored')
 
@@ -72,7 +79,8 @@ class Notification(object):
 
     # Class representation when used with repr(x) or str(x)
     def __repr__(self):
-        return 'Notification(<identifier={self.identifier!r}>)'.format(self=self)
+        return 'Notification(<identifier={self.identifier!r}>)'\
+            .format(self=self)
 
     # Class representation as a string when used with str(x)
     def __str__(self):
@@ -83,6 +91,14 @@ class Notification(object):
         return return_string
 
     def __set_context(self, schema=None, schema_context=None):
+        '''
+__set_context(schema=the_schema, schema_context=the_context)
+Used to set the Marshmallow context to set KV pairs in a built-in context
+key. This allows context to be passed to the serialization method to change
+what will (or won't) be shared. In this instance, we use it to set whether the
+device is Android, pre-lollipop, and locked. These are used later to not show
+notifications that are sensitive on Android post-lollipop devices.
+        '''
         try:
             if not schema_context == None\
             and not schema == None:
@@ -94,6 +110,9 @@ class Notification(object):
                 else:
                     raise TypeError('Context is not dict, list, or string')
 
+                # Update the Marshmallow context depending on the type of
+                # variable passed, dictionary, list, or string. Lists are
+                # assumed to contain list of contexts all equal to True.
                 if type(schema_context) == dict:
                     for key in schema_context:
                         schema.context[key] = schema_context[key]
@@ -109,11 +128,17 @@ class Notification(object):
             print('Exception: '+repr(e))
             raise
 
+    # Serialization to dump the content of the object to JSON.
     def dump(self, schema_context=None):
+        '''
+dump(schema_context=the_context)
+Serializes the content of the object into JSON format and restricts data format
+based on the context.
+        '''
         # Create a variable for the return element
         return_string = None
 
-        # Create a private instance of the schema
+        # Create a private instance of the schema and set context
         __n_schema = self.Notification_Schema(many=False)
         self.__set_context(__n_schema, schema_context)
 
@@ -139,24 +164,34 @@ class Notification(object):
         return return_string
 
     def load(self, json_data, strict=False, schema_context=None):
+        '''
+load(json_data=data, strict=False, schema_context=the_context)
+De-serializes JSON format data into an object. strict enforces strict schema
+adherence and is not currently used. schema_context ensures the correct
+expectations for the sensitivity of the data.
+        '''
+
+        # Because this is complex logic, a current step indicator is used to
+        # return a program location in any exception that may occur.
         current_step = 0
 
         try:
+            # Modify the json data to replace ' wiht " and None with 'null'
+            # so it complies with JSON standards expected by the JSON package.
             __temp_json = json_data.replace("'",'"').replace('None','null')
 
             # Load the provided JSON string into a dict
             __json_data = json.loads(__temp_json)
 
             current_step += 1
-            # Step 1 - Validate the JSON data against the schema
+            # Step 1 - Validate the JSON data against the schema using
+            #          the jsonschema package and comparing the object to the
+            #          schema.
             #          An exception will be raised if there is an issue.
             validate(__json_data, Notification.__schema__)
 
             current_step += 1
             # Step 2 - Use marshmallow to deserialize the JSON data.
-#            if not 'notification' in __json_data:
-#                raise exceptions.ValidationError('Object is not a notification')
-#                abort(400, message='Not a notification object')
             __n_schema = self.Notification_Schema(many=False, strict=False)
             __n_schema.context = {}
             self.__set_context(__n_schema, schema_context)
@@ -173,6 +208,7 @@ class Notification(object):
             if 'sensitivity' in __result:
                 self.sensitivity = __result['sensitivity']
 
+        # Raised if the schema and data did not match
         except exceptions.ValidationError as v:
             exception_string = 'Data issue: ** '
             exception_string += str(__json_data) + ' **; '
@@ -190,6 +226,8 @@ class Notification(object):
                 exception_string += ' ' + key
                 exception_string += ',' if idx < max_length else '. '
             raise exceptions.ValidationError(exception_string)
+
+        # Raised for any other exception
         except Exception as e:
             raise Exception('An unknown exception occured at {1}: {0}'\
                   .format(str(e), current_step))
