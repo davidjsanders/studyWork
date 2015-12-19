@@ -10,6 +10,47 @@ from jsonschema import validate, exceptions
 import json
 import datetime
 
+class Pair(Resource):
+    def post(self):
+        return Pair_Schema().get()
+
+
+class Pair_Schema(Resource):
+    def get(self):
+        try:
+            # Return the schema
+            return_status = 200
+            return_success_fail = 'success'
+            return_message = 'notification pair schema'
+            return_list = {
+                "$schema": "http://json-schema.org/draft-04/schema#",
+                "type": "object",
+                "properties":
+                {
+                    "href": 
+                    {
+                     "type": "string", 
+                     "description":"The link url to the Bluetooth device",
+                     "default":"http://<server>:<port>/<connection>"}
+                },
+                "required":["href"]
+            }
+        except Exception as e:
+            return_status = 400
+            return_success_fail = 'error'
+            return_message = 'An error occurred. '+repr(e)
+            return_list = []
+
+        # Return the HTTP response object with data and status. The Response_
+        # Object class will create an HTTP Response with the correct data,
+        # status code, and mimetype.
+        return Response_Object(
+            data=return_list,
+            status=return_status,
+            success_fail=return_success_fail,
+            message=return_message
+        ).response()
+
 class Bluetooth_Helper(Resource):
     def get(self):
         links = {'_links':{}}
@@ -52,6 +93,29 @@ class Bluetooth_Helper(Resource):
                     'and post new bluetooth.',
                 'methods':['POST','OPTIONS','HEAD']}
 
+            links['_links']['pair'] = {
+                'identifier':3,
+                'href':'http://'+Config.server_name+':'+ \
+                    str(Config.port_number)+\
+                    api.url_for(Bluetooth_Helper, _external=Config.ext_mode)+\
+                    'pair',
+                'schema':'http://'+Config.server_name+':'+ \
+                    str(Config.port_number)+\
+                    api.url_for(Pair_Schema, _external=Config.ext_mode),
+                'rel':'pair',
+                'description':'Invoke device pairing.',
+                'methods':['GET','POST','OPTIONS','HEAD']}
+
+            links['_links']['pair-schema'] = {
+                'identifier':4,
+                'href':'http://'+Config.server_name+':'+ \
+                    str(Config.port_number)+\
+                    api.url_for(Bluetooth_Helper, _external=Config.ext_mode)+\
+                    'pair/schema',
+                'rel':'pair-schema',
+                'description':'Display the device pairing schema.',
+                'methods':['GET','OPTIONS','HEAD']}
+
         return Response_Object(
                 data=links,
                 status=return_status,
@@ -90,7 +154,7 @@ class Say_Aloud(Resource):
 
 
             validate(textToSay, schema['success']['data'])
-            f.write(json.dumps(output_dict))
+            f.write(json.dumps(output_dict)+"\n")
             f.close()
         except Exception as e:
             return_status = 400
@@ -111,6 +175,10 @@ api.add_resource(Say_Aloud,
                  '/v1_00/bluetooth')
 api.add_resource(Bluetooth_Schema,
                  '/v1_00/bluetooth/schema')
+api.add_resource(Pair,
+                 '/v1_00/pair')
+api.add_resource(Pair_Schema,
+                 '/v1_00/pair/schema')
 api.add_resource(Bluetooth_Helper,
                  '/v1_00/')
 

@@ -326,16 +326,18 @@ Check a key/value pair and return true if it is set to TRUE.
         return False
 
     try:
+        # Get the key's value
         db_records = get_key(key)
 
+        # If it doesn't exist (i.e. we got no results) default to True
         if db_records == None:
             return True 
 
+        # If it contains the string (NB NOT a bool) 'TRUE'
         if db_records.upper() == 'TRUE':
             return True;
         else:
             return False;
     except Exception as e:
         raise
-
 

@@ -11,30 +11,20 @@ import json
 import datetime
 
 class Pair(Resource):
-    def post(self):
-        return Pair_Schema().get()
+    def get(self):
+        pass
 
 
 class Pair_Schema(Resource):
     def get(self):
         try:
+            schema = {"href":"Blah!"}
             # Return the schema
             return_status = 200
             return_success_fail = 'success'
             return_message = 'notification pair schema'
-            return_list = {
-                "$schema": "http://json-schema.org/draft-04/schema#",
-                "type": "object",
-                "properties":
-                {
-                    "href": 
-                    {
-                     "type": "string", 
-                     "description":"The link url to the Bluetooth device",
-                     "default":"http://<server>:<port>/<connection>"}
-                },
-                "required":["href"]
-            }
+            return_list = schema
+            print(schema)
         except Exception as e:
             return_status = 400
             return_success_fail = 'error'
@@ -104,7 +94,7 @@ class Bluetooth_Helper(Resource):
                     api.url_for(Pair_Schema, _external=Config.ext_mode),
                 'rel':'pair',
                 'description':'Invoke device pairing.',
-                'methods':['POST','OPTIONS','HEAD']}
+                'methods':['GET','POST','OPTIONS','HEAD']}
 
             links['_links']['pair-schema'] = {
                 'identifier':4,

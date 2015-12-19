@@ -1,58 +1,106 @@
+"""
+    module: Notification_Pair.py
+    ------------------------------------------------------------------------
+    Author:      David J. Sanders
+    Student No:  H00035340
+    Last Update: 15 December 2015
+    Update:      Revise documentation
+    ------------------------------------------------------------------------
+    Overivew:    Emulate Bluetooth pairing.
+
+    Purpose:     Defines a set of behaviours to emulate pairing a device with
+                 another Bluetooth device.
+
+    Called By:   ** many **
+
+    References
+    ----------
+
+"""
+# Import the flask_restful components
 from flask_restful import Resource, Api, reqparse, abort
+
+# Import the app and api contexts
 from notifications import app, api
 
+# Import the configuration package
 import notifications.resources.Config as Config
+
+# Import the response object to build HTTP responses
 from notifications.resources.Response import Response_Object
+
+# Import the pairing Schema
 from notifications.resources.Notification_Pair_Schema \
     import Notification_Pair_Schema
 
+# Import JSON, jsonschema, and http requests packages
 from jsonschema import validate, exceptions
 import json
 import requests
 
 class Notification_Pair(Resource):
+    '''
+Notification_Pair()
+-------------------
+The Notification_Pair object handles routes for get, post, and delete on the
+emulated device, allowing pairing with this device and ONE Bluetooth device.
+Get, reports back on pairing status; Post, creates a new pairing; Delete, un-
+pairs a device.
+    '''
     def process(self, controlkey=None, method='GET', pair_url=None):
+        '''
+process(controlkey='XXX', method='VERB', pair_url='http://...')
+The process method is a helper method which is called by the routes and collects
+frequently used logic together.
+        '''
         try:
+            # Set the default return flags to show success; exceptions will 
+            # change these as required.
             raw_list=[]
             return_list = []
             return_status = 200
-            return_message = 'Bluetooth pair'
+            return_message = 'Bluetooth pair' # Annotated with other text
             return_success_fail = 'success'
             schema_context={}
 
+            # Check the control key is provided and matches
             if controlkey == None or not controlkey == Config.controlkey_master:
                 raise RuntimeError('Control Key does not match.')
 
+            # GET - i.e. are we paired? If yes, return Bluetooth device
             if method.upper() == 'GET':
                 return_list = Config.get_key('bluetooth')
                 if return_list == None:
                     raise RuntimeError('Bluetooth is not paired.')
                 return_message += 'ed to '+return_list
+
+            # DELETE - i.e. unpair this device
             elif method.upper() == 'DELETE':
                 paired_device = Config.get_key('bluetooth')
-                if paired_device == None:
+                if paired_device == None or paired_device == '':
                     raise RuntimeError('Bluetooth is not paired.')
-                return_list = Config.delete_key('bluetooth')
+                return_list = Config.set_key('bluetooth','')
                 return_message += 'ing un-paired from {0}.'\
                                       .format(paired_device)
+            # POST - i.e. pair this device
             elif method.upper() == 'POST':
                 return_list = Config.set_key('bluetooth', pair_url)
                 return_message += 'ed to '+pair_url
                 pass
 
-        except exceptions.ValidationError as ve:
-            return_message = ve.message
-            return_status = 400
-            return_success_fail = 'error'
+        # An exception of some kind has occurred.
         except RuntimeError as re:
-            return_message = str(re)
+            return_message = 'Device issue: '+str(re)
             return_status = 400
             return_success_fail = 'error'
         except Exception as e:
-            return_message = repr(e)
+            return_message = 'Exception Raised: '+repr(e)
             return_status = 400
             return_success_fail = 'error'
 
+        # Return the HTTP response object with data and status. The Response_
+        # Object class will create an HTTP Response with the correct data,
+        # status code, and mimetype.
         return Response_Object(
                 return_list,
                 return_status,
@@ -61,22 +109,78 @@ class Notification_Pair(Resource):
             ).response()
 
     def get(self, controlkey=None):
+        '''get(controlkey='XXX') - Find out if the device is paired'''
+        # Call the helper and process the GET
         return self.process(controlkey=controlkey, method='GET')
 
     def delete(self, controlkey=None):
+        '''delete(controlkey='XXX') - Un-pair the device'''
+        # Call the helper and process the DELETE
         return self.process(controlkey=controlkey, method='DELETE')
 
     def post(self, controlkey=None):
+        '''post(controlkey='XXX') - Pair the device'''
+        # Extract the raw JSON data from the HTTP request and load it into
+        # a dictionary.
         raw_json = reqparse.request.get_data().decode('utf-8')
         json_data = json.loads(raw_json)
-        schema = json.loads(
-                     Notification_Pair_Schema().get().data.decode('utf-8')
-                 )['success']['data']
 
-        validate(json_data, schema)
+        # Get the schema required for Bluetooth pairing
+        ## NB: This needs to change. The schema is currently retrieved from
+        ##     the notification object when it should be retrieved from the
+        ##     Bluetooth device; this will also be a good way to check the
+        ##     device actually exists!
 
-        bluetooth_url = json_data['href']
+        if not 'href' in json_data:
+            raise ValueError('Data passed contains no href for device.')
 
+        try:
+            # Check the url has a trailing /
+            if not json_data['href'][-1] == '/':
+                json_data['href'] += '/'
+
+            # Post the request to the device, adding 'pair' to the URL
+            r = requests.post(json_data['href']+'pair')
+
+            # Check the return status for 200 (Ok)
+            if not r.status_code == 200:
+                raise Exception('The device was not found. Return status is '+\
+                          str(r.status_code)
+                      )
+
+            # Load the schema
+            raw_schema = str(r.json()['success']['data'])
+            schema = json.loads(raw_schema.replace("'",'"'))
+
+            # The raw data passed in the request is validated against the 
+            # Bluetooth pairing schema.
+            validate(json_data, schema)
+
+            # Form the URL for posting to the bluetooth device
+            json_data['href'] += 'bluetooth'
+            bluetooth_url = json_data['href']
+
+            # Build a message to the device stating now paired.
+            sender = str(Config.server_name)+":"+str(Config.port_number)
+            payload = {"sender":sender,
+                       "message":"Bluetooth device paired with "+sender}
+
+            # Use http to post the message to the bluetooth device
+            r = requests.post(
+                    bluetooth_url, data=json.dumps(payload))
+
+        # If an exception occurs, return error data
+        except Exception as e:
+            return Response_Object(
+                    data=None,
+                    status=400, # Bad request
+                    success_fail='error',
+                    message='An exception occurred: '+repr(e)+'. '+\
+                            'Remember only the device root must be used, e.g. '+\
+                            'http://servername:port/v9_99/'
+                ).response()
+
+        # Now we can call the helper and process the request
         return self.process(
                    controlkey=controlkey,
                    method='POST', 

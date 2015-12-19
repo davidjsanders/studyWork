@@ -30,6 +30,8 @@ server_name = 'localhost'    # Default server name if not provided
 controlkey_master = 'ABC123' # Control key to emulate secure communications
                              # between services
 
+unlock_code = 1234           # Simple code to emulate device lock/unlock
+
 # Schema Files
 __schema_filename__ = 'schemas/notification.json'  # Notification schema
 __pair_schema_filename__ = 'schemas/pair.json'     # Pairing shcema
