@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties":
+    {
+        "href": 
+        {
+         "type": "string", 
+         "description":"The link url to the Bluetooth device",
+         "default":"http://<server>:<port>/<connection>"}
+    },
+    "required":["href"]
+}
