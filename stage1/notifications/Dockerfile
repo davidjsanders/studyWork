@@ -28,7 +28,7 @@ RUN mkdir /notifications/schemas
 #
 COPY startup.sh /notifications/
 COPY runserver.py /notifications/
-COPY notifications_uwsgi.ini /notifications/
+#COPY notifications_uwsgi.ini /notifications/
 COPY notifications/__init__.py /notifications/notifications/
 COPY notifications/ /notifications/
 COPY notifications/main.py /notifications/notifications/
@@ -40,6 +40,7 @@ COPY notifications/resources/Notification_Helper.py /notifications/notifications
 COPY notifications/resources/Notification_Pair.py /notifications/notifications/resources/
 COPY notifications/resources/Notification_Lock.py /notifications/notifications/resources/
 COPY notifications/resources/Notification_Pair_Schema.py /notifications/notifications/resources/
+COPY notifications/resources/Uwsgi_Statistics.py /notifications/notifications/resources/
 COPY notifications/resources/Response.py /notifications/notifications/resources/
 COPY notifications/resources/Config.py /notifications/notifications/resources/
 COPY schemas/ /notifications/schemas/

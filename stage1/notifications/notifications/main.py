@@ -51,10 +51,12 @@ from notifications.resources.Notification_Pair import Notification_Pair
 from notifications.resources.Notification_Pair_Schema \
     import Notification_Pair_Schema
 
+# Import the uWSGI Statistics Object
+from notifications.resources.Uwsgi_Statistics import Uwsgi_Statistics
+
 # Import the Notification Objects
 from notifications.resources.Notification_Boundary \
     import Notification_All, Notification_One
-
 
 #
 # Configure web service routes
@@ -72,4 +74,5 @@ api.add_resource(Notification_Pair,
 api.add_resource(Notification_Pair_Schema,
                  '/v1_00/pair/schema')
 api.add_resource(Notification_Lock, '/v1_00/lock')
+api.add_resource(Uwsgi_Statistics, '/v1_00/stats')
 

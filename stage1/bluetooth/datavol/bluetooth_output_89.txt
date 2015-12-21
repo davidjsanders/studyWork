@@ -1,12 +1,1 @@
-{"date": "2015-12-12 19:42:10.792808", "message": "*** A new notification @ 1442EST ***", "sender": "dasanderUty01:82", "bluetooth-device": "dasanderUty01:89"}
-{"bluetooth-device": "dasanderUty01:89", "sender": "me", "date": "2015-12-14 21:26:24.911329", "message": "This is a test"}
-{"bluetooth-device": "dasanderUty01:89", "sender": "localhost:5000", "date": "2015-12-14 21:36:30.524775", "message": "This is a new note @ 1636EST"}
-{"bluetooth-device": "dasanderUty01:89", "sender": "dasanderUty01:82", "date": "2015-12-14 21:39:07.092282", "message": "** NOTIFICATION: Remember, Safe Sex is Good Sex! **"}
-{"date": "2015-12-14 21:50:45.206816", "message": "Test that will work", "bluetooth-device": "dasanderUty01:89", "sender": "dasanderUty01:82"}
-{"sender": "dasanderUty01:5000", "bluetooth-device": "dasanderUty01:89", "date": "2015-12-19 22:06:24.695696", "message": "This is a test notification"}
-{"sender": "me", "bluetooth-device": "dasanderUty01:89", "date": "2015-12-19 22:07:39.139791", "message": "this is a test"}
-{"sender": "dasanderUty01:5000", "bluetooth-device": "dasanderUty01:89", "date": "2015-12-19 22:08:17.792729", "message": "This is a test notification @1708"}
-{"sender": "dasanderUty01:5000", "bluetooth-device": "dasanderUty01:89", "date": "2015-12-19 22:11:24.815862", "message": "Pairing with dasanderUty01:5000"}
-{"sender": "dasanderUty01:5000", "bluetooth-device": "dasanderUty01:89", "date": "2015-12-19 22:12:15.835615", "message": "Pairing with dasanderUty01:5000"}
-{"sender": "dasanderUty01:5000", "bluetooth-device": "dasanderUty01:89", "date": "2015-12-19 22:16:54.927851", "message": "Pairing with dasanderUty01:5000"}
-{"sender": "dasanderUty01:5000", "bluetooth-device": "dasanderUty01:89", "date": "2015-12-19 22:19:12.831651", "message": "Pairing with dasanderUty01:5000"}
+{"bluetooth-device": "dasanderUty01:89", "message": "** 19:56EST Note: This is a test notification", "sender": "dasanderUty01:82", "date": "2015-12-21 00:56:45.874592"}

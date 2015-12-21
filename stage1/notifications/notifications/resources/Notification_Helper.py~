@@ -3,8 +3,9 @@
     ------------------------------------------------------------------------
     Author:      David J. Sanders
     Student No:  H00035340
-    Last Update: 15 December 2015
-    Update:      Revise documentation
+    Last Update: 20 December 2015
+    Update:      Add new route for uWSGI statistics
+                 Revise documentation
     ------------------------------------------------------------------------
     Overivew:    The helper module returns the routes available to a caller.
 
@@ -39,6 +40,9 @@ from notifications.resources.Notification_Schema import Notification_Schema
 
 # Import the notification response package to get the URL
 from notifications.resources.Response import Response_Object
+
+# Import the uWSGI Statistics Object
+from notifications.resources.Uwsgi_Statistics import Uwsgi_Statistics
 
 class Notification_Helper(Resource):
     '''
@@ -137,6 +141,15 @@ The only method available. Returns the data as a JSON dataset.
                 'rel':'lock',
                 'description':'Device unlock',
                 'methods':['PUT','OPTIONS','HEAD']}
+
+            # Link 7: Get uWSGI statistics
+            links['_links']['uwsgi-statistics'] = {
+                'identifier':5,
+                'href':'http://'+Config.server_name+':'+str(Config.port_number)+\
+                    api.url_for(Uwsgi_Statistics, _external=ext_mode),
+                'rel':'stats',
+                'description':'Get statistics for the uWSGI service',
+                'methods':['GET','OPTIONS','HEAD']}
 
         # Return the HTTP response object with data and status. The Response_
         # Object class will create an HTTP Response with the correct data,

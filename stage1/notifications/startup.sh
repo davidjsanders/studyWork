@@ -35,7 +35,21 @@ echo "        uwsgi_pass 127.0.0.1:3031;" >> notifications_uwsgi.conf
 echo "    }" >> notifications_uwsgi.conf
 echo "}" >> notifications_uwsgi.conf
 #
-# Start nginx
+# Build the notifications_uqsgi.ini file
+#
+echo "[uwsgi]" > notifications_uwsgi.ini
+echo "socket=127.0.0.1:3031" >> notifications_uwsgi.ini
+echo "chdir = /notifications/" >> notifications_uwsgi.ini
+echo "wsgi-file=runserver.py" >> notifications_uwsgi.ini
+echo "callable=app" >> notifications_uwsgi.ini
+echo "workers=2" >> notifications_uwsgi.ini
+echo "processes=4" >> notifications_uwsgi.ini
+echo "threads=1" >> notifications_uwsgi.ini
+echo "stats=127.0.0.1:9191" >> notifications_uwsgi.ini
+echo "stats-http=127.0.0.1:9191" >> notifications_uwsgi.ini
+#
+# Start nginx. Remove the default sites and symbolically link the configuration
+# file to the nginx conifugration directory.
 #
 rm -r -f /etc/nginx/sites-enabled/default
 ln -s /notifications/notifications_uwsgi.conf /etc/nginx/conf.d/notifications_uwsgi.conf

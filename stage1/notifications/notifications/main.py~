@@ -55,6 +55,45 @@ from notifications.resources.Notification_Pair_Schema \
 from notifications.resources.Notification_Boundary \
     import Notification_All, Notification_One
 
+#
+# Object for statistics
+#
+class Uwsgi_Statistics(Resource):
+    def get(self):
+        # Set the default return flags to show success; exceptions will 
+        # change these as required.
+        return_message = 'Statistics from uwsgi server'
+        return_status = 200
+        return_success_fail = 'success'
+        return_data = ''
+        
+        try:
+            stat_server = 'http://' + \
+                          Config.server_name + ':9191'
+            r = requests.get(stat_server)
+            if r.status_code != 200:
+                return_message = 'An error occured due to a return status of '+\
+                                 str(r.status_code)
+                return_success_fail = 'error'
+                return_status = r.status_code
+            else:
+                return_data = r.json()
+        except Exception as e:
+            return_message = 'An error occured. '+\
+                             repr(e)
+            return_success_fail = 'error'
+            return_status = 400
+
+        # Return the HTTP response object with data and status. The Response_
+        # Object class will create an HTTP Response with the correct data,
+        # status code, and mimetype.
+        return Response_Object(
+                   data=links,
+                   status=return_status).response()
+
+#
+# Configure web service routes
+#
 api.add_resource(Notification_Schema,
                  '/v1_00/notifications/schema')
 api.add_resource(Notification_All,
@@ -68,3 +107,5 @@ api.add_resource(Notification_Pair,
 api.add_resource(Notification_Pair_Schema,
                  '/v1_00/pair/schema')
 api.add_resource(Notification_Lock, '/v1_00/lock')
+api.add_resource(Uwsgi_Statistics, '/v1_00/stats')
+
