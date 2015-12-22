@@ -57,7 +57,9 @@ class Notification(object):
                 and ('android' in self.context and self.context['android']):
                     if not data.sensitivity == None:
                         if data.sensitivity.upper() == 'HIGH':
-                            raise exceptions.ValidationError('Will be ignored')
+                            raise exceptions.ValidationError(
+                                      Config.DEVICE_LOCKED_SENTINEL
+                                  )
 
 
     # Class initializer

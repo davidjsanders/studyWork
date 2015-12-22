@@ -44,6 +44,7 @@ COPY notifications/resources/Uwsgi_Statistics.py /notifications/notifications/re
 COPY notifications/resources/Response.py /notifications/notifications/resources/
 COPY notifications/resources/Config.py /notifications/notifications/resources/
 COPY schemas/ /notifications/schemas/
+COPY schemas/pair.json /notifications/schemas/
 COPY schemas/links.json /notifications/schemas/
 COPY schemas/notification.json /notifications/schemas/
 COPY datavol/notifications.db /notifications/datavol/notifications.db

@@ -1,1 +1,11 @@
 {"bluetooth-device": "dasanderUty01:89", "message": "** 19:56EST Note: This is a test notification", "sender": "dasanderUty01:82", "date": "2015-12-21 00:56:45.874592"}
+{"message": "Bluetooth device paired with dasanderUty01:5000", "date": "2015-12-22 16:05:02.028000", "bluetooth-device": "dasanderUty01:89", "sender": "dasanderUty01:5000"}
+{"message": "Test notification", "date": "2015-12-22 16:05:51.026460", "bluetooth-device": "dasanderUty01:89", "sender": "dasanderUty01:5000"}
+{"message": "Test Action", "date": "2015-12-22 16:10:26.555139", "bluetooth-device": "dasanderUty01:89", "sender": "dasanderUty01:5000"}
+{"message": "Test Note", "date": "2015-12-22 16:11:42.850802", "bluetooth-device": "dasanderUty01:89", "sender": "dasanderUty01:5000"}
+{"message": "Test Note", "date": "2015-12-22 16:15:03.943522", "bluetooth-device": "dasanderUty01:89", "sender": "dasanderUty01:5000"}
+{"message": "This is a test note.", "date": "2015-12-22 16:18:55.827417", "bluetooth-device": "dasanderUty01:89", "sender": "dasanderUty01:5000"}
+{"message": "** NEW@1121 This is a notification", "date": "2015-12-22 16:22:10.071980", "bluetooth-device": "dasanderUty01:89", "sender": "dasanderUty01:5000"}
+{"message": "This is a general notification, e.g., you got a text from John.", "date": "2015-12-22 16:22:58.440580", "bluetooth-device": "dasanderUty01:89", "sender": "dasanderUty01:5000"}
+{"message": "Test Notification", "date": "2015-12-22 16:26:55.270043", "bluetooth-device": "dasanderUty01:89", "sender": "dasanderUty01:5000"}
+{"message": "This is a notification", "date": "2015-12-22 16:54:53.177789", "bluetooth-device": "dasanderUty01:89", "sender": "dasanderUty01:5000"}

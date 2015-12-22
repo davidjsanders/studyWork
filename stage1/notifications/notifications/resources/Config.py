@@ -3,8 +3,9 @@
     ------------------------------------------------------------------------
     Author:      David J. Sanders
     Student No:  H00035340
-    Last Update: 15 December 2015
-    Update:      Revise documentation
+    Last Update: 22 December 2015
+    Update:      Add device_locked sentinel
+                 Revise documentation
     ------------------------------------------------------------------------
     Overivew:    Config package contains the 'library' of common routines and
                  settings.
@@ -23,6 +24,9 @@ from notifications import app, api
 
 #import the SQLite3 package to connect to the database
 import sqlite3
+
+DEVICE_LOCKED_SENTINEL = \
+    'DEVICE_LOCKED!'         # Used as a constant
 
 port_number = 5000           # Default port number if not provided
 server_name = 'localhost'    # Default server name if not provided

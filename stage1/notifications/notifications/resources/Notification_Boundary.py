@@ -3,9 +3,17 @@
     ------------------------------------------------------------------------
     Author:      David J. Sanders
     Student No:  H00035340
-    Last Update: 15 December 2015
-    Update:      Revise documentation
+    Last Update: 22 December 2015
+
+    Updates
     ------------------------------------------------------------------------
+    22 Dec 15: Change behaviour when device locked - prevent updates/changes
+               at individual level. Permit delete at collection level.
+    22 Dec 15: Investigate bug when updating only sensitivity - FIXED
+    22 Dec 15: Add sequence steps to aid debugging
+    15 Dec 15: Revise documentation
+    ------------------------------------------------------------------------
+
     Overivew:    The boundary layer for notification objects is used to manage
                  all interactions between a human or machine and notification
                  objects.
@@ -101,40 +109,54 @@ marshalled as Notification objects, then dumped to JSON. This approach allows
 the schema context to be used to decide which notifications to return (or 
 fields)
         '''
+
+
+        # As this is complex logic, a sequence counter is included to
+        # facilitate debugging.
+        sequence_step = 0
+        caller = 'Notification_Boundary:Notification_All:Get'
+
+        # Start - Main logic
+        # --------------------------------------------------------------------
         try:
-            raw_list=[]        # A raw list used to contain db results
-            return_list = []   # The list that will be returned to the user
+            sequence_step += 1
+            # Create a response object
+            response_object = Response_Object(
+                                  data=[],
+                                  message='Notifications found')
+
+            sequence_step += 1
             schema_context={}  # A schema context to define variable elements
                                # which cause the serialization schema to 
                                # dynamically adapt.
 
+            sequence_step += 1
             # The simple control key check. This would typically be stronger
             # cryptographic controls but is not as the focus of this work is
             # privacy and not security.
             if controlkey == None or not controlkey == Config.controlkey_master:
                 raise RuntimeError('Control Key does not match.')
 
+            sequence_step += 1
             # Set the schema contexts. Find out the type of devices being
             # emulated and then store them in a context dictionary.
             schema_context = Config.set_contexts()
 
+            sequence_step += 1
             # Check if the device being emulated is a pre-lollipop Android 
             # device; if it is, and the device is locked, raise an exception to
             # prevent any notifications being displayed.
             Config.check_prelollipop(schema_context)
 
-            # Set the default return flags to show success; exceptions will 
-            # change these as required.
-            return_message = 'success'
-            return_status = 200
-            return_success_fail = 'success'
-
+            sequence_step += 1
             # Create an instance of the database class
             noteDB = Notification_DB()
 
+            sequence_step += 1
             # Execute the query to get ALL notifications
             raw_list = noteDB.query_all()
 
+            sequence_step += 1
             # For every result returned from the database object, create a
             # notification object and then serialize it based on the schema
             # context; for example, if a device is being emulated as an Android
@@ -142,55 +164,108 @@ fields)
             # be returned when locked - this is when exceptions.ValidationError
             # is raised and ignored (i.e. not dumped)
             for row in raw_list:
-                note = Notification()
-                note.load(row)
-
                 try:
-                    appending_note = json.loads(
+                    sequence_step += 1
+                    # Create a new notification object
+                    note = Notification()
+
+                    sequence_step += 1
+                    # Load the data from the database and validate the data
+                    note.load(row, schema_context=schema_context)
+
+                    sequence_step += 1
+                    # Dump the newly loaded row so we can invoke the schema
+                    # context rules (K/V pairs) and let the schema decide 
+                    # whether the row should be returned or not. Rows not to
+                    # be returned will raise a ValidationError with DEVICE_
+                    # LOCKED_SENTINEL set.
+                    response_object.response_data.append(
                         note.dump(
                             schema_context=schema_context
                         )
                     )
-                    return_list.append(appending_note)
+
+
+                # EXCEPTION HANDLERS
+                # ------------------------------------------------------------
+
                 except exceptions.ValidationError as ve:
-                    pass # A validate error means ignore, don't pass data back
+                    # If this is a data error, raise it.
+                    if str(ve) != Config.DEVICE_LOCKED_SENTINEL:
+                        raise
+                    # If not, the error means ignore, don't pass data back, as
+                    # the device is locked and the schema has asked for this
+                    # row to be ignored
                 except Exception:
                     raise # Something else happened, so inform caller
 
-            # Check that there are notifications to return.
-            if return_list == []:
-                return_message = 'No notifications.'
-            else:
-                return_message = 'notifications found'
-        # If validation occurs at the outer try level, then there is bad data
-        # in the database, which should not be possible.
+            sequence_step += 1
+            # Check that there are notifications to return. IE, data has been
+            # output from the schema - there could be hundreds of notifications
+            # but all might be ignored due to context.
+            if response_object.response_data == []:
+                raise IOError('No notifications.')
+
+
+
+        # EXCEPTION HANDLERS
+        # --------------------------------------------------------------------
+
+        # IOError means no notifications were found, so return a 404
+        except IOError as ioe:
+            response_object.set_failure(
+                failure_message=str(ioe), 
+                status_code=404,
+                step=sequence_step,
+                caller=caller)
+
+        # Validation Error is typically raised for either a data problem - the
+        # data passed is badly formed OR the device is locked. In the latter, a
+        # constant is used for the validation error text when the device is 
+        # locked; if the validation error matches this a 403 (Forbidden) is
+        # returned. This SHOULD NOT be reached
         except exceptions.ValidationError as ve:
-            return_message = ve.message
-            return_status = 400
-            return_success_fail = 'error'
+            if str(ve) == Config.DEVICE_LOCKED_SENTINEL:
+                return_status = 403
+                return_message_text = 'Device is locked'
+            else:
+                return_status = 400
+                return_message_text = 'Validation error of: '+\
+                    str(ve)
+            return_message_text += '. At step {0}'.format(sequence_step)
+            response_object.set_failure(
+                return_message_text, 
+                status_code=return_status,
+                step=sequence_step,
+                caller=caller)
+
         # Runtime error is raised if the device is pre-lollipop Android and
         # locked. This allows us to set the correct return status to HTTP 403 
         # (Forbidden) (Fielding, et al., 1999)
         except RuntimeError as re:
-            return_message = str(re)
-            return_status = 403
-            return_success_fail = 'error'
+            response_object.set_failure(
+                str(re),
+                status_code=403,
+                step=sequence_step,
+                caller=caller)
+
         # A general exception occurred which was unexpected; therefore, the
         # exception is returned as a failure.
         except Exception as e:
-            return_message = repr(e)
-            return_status = 400
-            return_success_fail = 'error'
+            response_object.set_failure(
+                repr(e),
+                step=sequence_step,
+                caller=caller)
 
+
+
+        # End - Return response
+        # --------------------------------------------------------------------
         # Return the HTTP response object with data and status. The Response_
         # Object class will create an HTTP Response with the correct data,
         # status code, and mimetype.
-        return Response_Object(
-                return_list,
-                return_status,
-                return_success_fail,
-                return_message
-            ).response()
+        return response_object.response()
+
 
     def delete(self, controlkey=None):
         '''
@@ -201,12 +276,14 @@ control key). In a production system, the control key would be considerably
 stronger to protect API interaction.
         '''
 
-        # Set the default return flags to show success; exceptions will 
-        # change these as required.
-        return_message = 'Notifications deleted'
-        return_status = 200
-        return_success_fail = 'success'
+        # Create a response object
+        response_object = Response_Object(
+                              data=[],
+                              message='Notifications deleted')
 
+
+        # Start - Main logic
+        # --------------------------------------------------------------------
         try:
             # The simple control key check. As per GET.
             if controlkey == None or not controlkey == Config.controlkey_master:
@@ -217,23 +294,24 @@ stronger to protect API interaction.
 
             # Delete everything
             noteDB.delete_all()
+
+
+
+        # EXCEPTION HANDLERS
+        # --------------------------------------------------------------------
         # A general exception occurred which was unexpected; therefore, the
         # exception is returned as a failure.
         except Exception as e:
-            return_status = 400
-            return_message = {'error':'Data not deleted. '+\
-                repr(e)}
-            return_success_fail = 'error'
+            response_object.set_failure(repr(e), status_code=400)
+
+
         
+        # End - Return response
+        # --------------------------------------------------------------------
         # Return the HTTP response object with data and status. The Response_
         # Object class will create an HTTP Response with the correct data,
         # status code, and mimetype.
-        return Response_Object(
-                [],
-                return_status,
-                return_success_fail,
-                return_message
-            ).response()
+        return response_object.response()
 
 
     def post(self, controlkey=None):
@@ -244,54 +322,71 @@ notification ID, so this is a POST interaction rather than a PUT. The posted
 data will be validated against the schema and then added to the database.
         '''
 
-        # Set the default return flags to show success; exceptions will 
-        # change these as required.
-        return_data = []
-        return_message = 'Notification created'
-        return_status = 201    # Notice status 201 Created not 200 OK
-                               # (Fielding, et al., 1999)
-        return_success_fail = 'success'
+        # Start - Main logic
+        # --------------------------------------------------------------------
+
+        # As this is complex logic, a sequence counter is included to
+        # facilitate debugging.
+        sequence_step = 0
+        caller = 'Notification_Boundary:Notification_All:Post'
+
+        sequence_step += 1
+        # Create a response object
+        response_object = Response_Object(
+                              data=[],
+                              message='Notification created.')
 
         try:
+            sequence_step += 1
             # Set the schema context
             schema_context = {}
 
+            sequence_step += 1
             # Perform the basic control key check; see GET
             if controlkey == None or not controlkey == Config.controlkey_master:
                 raise RuntimeError('Control Key does not match.')
 
+            sequence_step += 1
             # Set the contexts for the action
             Config.set_contexts()
 
+            sequence_step += 1
             # Extract the raw JSON data from the HTTP request and load it into
             # a dictionary.
             raw_json = reqparse.request.get_data().decode('utf-8')
             json_data = json.loads(raw_json)
 
+            sequence_step += 1
             # Create an empty notification object and load the raw data. The
             # load method will perform all validation with any errors being
             # caught by exception handling.
             note = Notification()
             note.load(raw_json, schema_context)
 
+            sequence_step += 1
             # When the notification is created, it is valid and so can be
             # persisted in the database.
             noteDB = Notification_DB()
             noteDB.insert(note)
 
+            sequence_step += 1
             # Return the data that was passed back to the caller.
-            return_data = note.dump(schema_context)
+            response_object.response_data = note.dump(schema_context)
 
-            # Bluetooth
-            # ---------
+
+            # Start - Bluetooth logic
+            # ----------------------------------------------------------------
             # If this 'device' has been paired with a bluetooth device, then
             # the notification is passed to the Bluetooth device.
 
+            sequence_step += 1
             # Find out if the device is 'paired'
             bluetooth_device = Config.get_key('bluetooth')
 
+            sequence_step += 1
             if not bluetooth_device == None:    # The device IS paired
                 try:
+                    sequence_step += 1
                     # Create a data payload to pass with the request containing
                     # the sender (a Bluetooth device can be paired more than 
                     # once) and the message
@@ -299,65 +394,81 @@ data will be validated against the schema and then added to the database.
                                    +str(Config.port_number),
                                "message":note.note}
 
+                    sequence_step += 1
                     # Use http to post the message to the bluetooth device
                     r = requests.post(
                             bluetooth_device, data=json.dumps(payload))
 
+                    sequence_step += 1
                     # If the response is not 200 (Ok), then raise an exception
                     if r.status_code != 200:
-                        raise Exception(str(r.status_code)+str(r.json()))
+                        raise Exception(str(r.status_code)+' '+str(r.json()))
+
+
+                # EXCEPTION HANDLERS
+                # ------------------------------------------------------------
                 except Exception as e:
                     # Ignore any errors trying to get to bluetooth but let the 
                     # caller the know by changing the return state to 'warning'
                     # and including the exception details.
-                    return_success_fail = 'warning'
-                    return_message += \
-                        '. Bluetooth set BUT transmission '+\
-                        'failed - could not reach device '+\
-                        bluetooth_device + '. Error is '+repr(e)+'.'
+                    response_object.set_warning(
+                        warning_message = response_object.response_message +\
+                            '. Bluetooth set BUT transmission '+\
+                            'failed - could not reach device '+\
+                            bluetooth_device + '. Error is '+repr(e)+'. ',
+                        step=sequence_step,
+                        caller=caller)
 
+
+
+        # EXCEPTION HANDLERS
+        # --------------------------------------------------------------------
         # a ValidationError can be raised by the load method of the notification
         # object; this is caused by badly formatted JSON data, e.g. 
         # {"notes":"Notification",...} instead of {"note":"Notification",...}
         except exceptions.ValidationError as ve:
-            return_status = 400
-            return_message = {'error':'Data not posted. '+\
-                str(ve)}
-            return_success_fail = 'error'
-            return_data = []
+            response_object.set_failure(
+                'Data not posted. '+str(ve)+'. ',
+                step=sequence_step,
+                caller=caller
+            )
+
         # a KeyError can be raised by badly formed JSON data, especially when
         # there is no data!
         except KeyError as ke:
-            return_status = 400
-            return_message = str(ke) + '. No valid key found in: ' +\
-                reqparse.request.get_data().decode('utf-8')
-            return_success_fail = 'error'
-            return_data = []
+            response_object.set_failure(
+                'No valid key found in: '+str(ke)+'. ',
+                step=sequence_step,
+                caller=caller
+            )
+
         # Runtime error is raised if the device is pre-lollipop Android and
         # locked. This allows us to set the correct return status to HTTP 403 
         # (Forbidden) (Fielding, et al., 1999)
         except RuntimeError as re:
-            return_status = 403
-            return_message = str(re)
-            return_success_fail = 'error'
-            return_data = []
+            response_object.set_failure(
+                str(re),
+                status_code=403,
+                step=sequence_step,
+                caller=caller)
+
         # General Exception
         except Exception as e:
-            return_status = 400
-            return_message = {'error':'Data not posted. '+\
-                repr(e)}
-            return_success_fail = 'error'
-            return_data = []
+            response_object.set_failure(
+                'Data not posted. '+repr(e),
+                step=sequence_step,
+                caller=caller)
 
+
+
+        # End - Return response
+        # --------------------------------------------------------------------
         # Return the HTTP response object with data and status. The Response_
         # Object class will create an HTTP Response with the correct data,
         # status code, and mimetype.
-        return Response_Object(
-            return_data,
-            return_status,
-            return_success_fail,
-            return_message
-        ).response()
+        return response_object.response()
+
+
 
 class Notification_One(Resource):
     '''
@@ -379,38 +490,50 @@ marshalled as a Notification object, then dumped to JSON. This approach allows
 the schema context to be used to decide which notifications to return (or 
 fields)
         '''
-        try:
-            # Set the default return flags to show success; exceptions will 
-            # change these as required.
-            return_list = []
-            return_string = ''
-            return_message = 'success'
-            return_status = 200
-            return_success_fail = 'success'
+        # Start - Main logic
+        # --------------------------------------------------------------------
 
+        # As this is complex logic, a sequence counter is included to
+        # facilitate debugging.
+        sequence_step = 0
+        caller = 'Notification_Boundary:Notification_One:Get'
+
+        sequence_step += 1
+        # Create a response object
+        response_object = Response_Object(
+                              data=[],
+                              message='Notification retrieved.')
+
+        try:
+            sequence_step += 1
             # Set the schema context and check the control key, as above
             schema_context={}
             if controlkey == None or not controlkey == Config.controlkey_master:
                 raise RuntimeError('Control Key does not match.')
 
+            sequence_step += 1
             # Set the schema contexts. Find out the type of devices being
             # emulated and then store them in a context dictionary.
             schema_context = Config.set_contexts()
 
+            sequence_step += 1
             # Check if the device being emulated is a pre-lollipop Android 
             # device; if it is, and the device is locked, raise an exception to
             # prevent any notifications being displayed.
             Config.check_prelollipop(schema_context)
 
+            sequence_step += 1
             # Create a new notification and db objects
             noteDB = Notification_DB()
             note = Notification()
 
+            sequence_step += 1
             # Load the notification from the persistent store / database
             # Data will be automatically validated against the schema by the
             # load method
             note.load(noteDB.query_one(id))
 
+            sequence_step += 1
             # Create the JSON dump of the data from the object
             try:
                 appending_note = json.loads(
@@ -418,62 +541,94 @@ fields)
                         schema_context=schema_context
                     )
                 )
-                return_list.append(appending_note)
+                response_object.response_data.append(appending_note)
+
+            # EXCEPTION HANDLERS
+            # ----------------------------------------------------------------
             # If a validation error occurs then the schema context has prevented
             # the data being returned (see GET in Notification_All)
             except exceptions.ValidationError as ve:
-                pass # A validate error means ignore, don't pass data back
+                if str(ve) != Config.DEVICE_LOCKED_SENTINEL:
+                    raise
+                # A validate error means ignore IF the device is locked, so the
+                # data is not passed back and the exception is ignored.
             except Exception:
                 raise # Something else happened, so inform caller
 
+            sequence_step += 1
             # Check if the return list is empty.
-            if return_list == []:
+            if response_object.response_data == []:
                 # Check if it's empty because of context
                 if 'android' in schema_context\
                 and 'locked' in schema_context:
                     # It is, so inform the user that it can't be shown with a
                     # 403 (Forbidden) status
-                    return_message = 'Notification is sensitive and cannot '+\
-                        'be displayed because device is locked.'
-                    return_status = 403
+                    raise ValidationError(Config.DEVICE_LOCKED_SENTINEL)
                 else:
                     # Otherwise return a 404 - Not found status although we
                     # should NEVER reach here as the load will return an Index
                     # Error if not found.
-                    return_message = 'Notification not found.'
-                    return_status = 404
-                # In either case, set the status to error
-                return_success_fail = 'error'
+                    raise IndexError('Notification not found.')
 
+            sequence_step += 1
             # Ignore anythin else and return only the first row
-            return_list = return_list[0]
+            response_object.response_data = response_object.response_data[0]
 
+
+
+        # EXCEPTION HANDLERS
+        # --------------------------------------------------------------------
         # IndexError is raised by the load method if the notification cannot
         # be found; e.g. get id=1812812812891289128912
         except IndexError as ie:
-            return_message = 'The notification '+str(id)+' does not exist.'
-            return_status = 404
-            return_success_fail = 'error'
+            response_object.set_failure(
+                'The notification '+str(id)+' does not exist. ',
+                status_code=404,
+                step=sequence_step,
+                caller=caller)
+
         except RuntimeError as re:
-            return_message = str(re)
-            return_status = 403
-            return_success_fail = 'error'
+            response_object.set_failure(
+                str(re),
+                status_code=403,
+                step=sequence_step,
+                caller=caller)
+
+        # Validation Error is typically raised for either a data problem - the
+        # data passed is badly formed OR the device is locked. In the latter, a
+        # constant is used for the validation error text when the device is 
+        # locked; if the validation error matches this a 403 (Forbidden) is
+        # returned.
+        except exceptions.ValidationError as ve:
+            if str(ve) == Config.DEVICE_LOCKED_SENTINEL:
+                return_status = 403
+                return_message_text = 'Device is locked'
+            else:
+                return_status = 400
+                return_message_text = 'Validation error of: '+\
+                    str(ve)
+            response_object.set_failure(
+                return_message_text, 
+                status_code=return_status,
+                step=sequence_step,
+                caller=caller)
+
         # A general exception has occurred, so let the caller know.
         except Exception as e:
-            return_message = repr(e)
-            return_status = 400
-            return_success_fail = 'error'
-            return_status = 400
+            response_object.set_failure(
+                'Data not posted. '+repr(e),
+                step=sequence_step,
+                caller=caller)
         
+
+        # End - Return response
+        # --------------------------------------------------------------------
         # Return the HTTP response object with data and status. The Response_
         # Object class will create an HTTP Response with the correct data,
         # status code, and mimetype.
-        return Response_Object(
-                return_list,
-                return_status,
-                return_success_fail,
-                return_message
-            ).response()
+        return response_object.response()
+
+
 
     def put(self, id, controlkey=None):
         '''
@@ -488,44 +643,64 @@ a lollipop Android device to a pre-lollipop Android device DOES affect data,
 removing contents from the sensitivity field.
         '''
 
-        # Set the default return flags to show success; exceptions will 
-        # change these as required.
-        return_data = []
-        return_status = 200
-        return_message = 'Notification updated.'
-        return_success_fail = 'success'
+        # Start - Main logic
+        # --------------------------------------------------------------------
+
+        # As this is complex logic, a sequence counter is included to
+        # facilitate debugging.
+        sequence_step = 0
+        caller = 'Notification_Boundary:Notification_One:Put'
+
+        sequence_step += 1
+        # Create a response object
+        response_object = Response_Object(
+                              data=[],
+                              message='Notification updated.')
 
         try:
+            sequence_step += 1
+            # Check the device is not locked
+            if Config.check_key('locked'):
+                raise exceptions.ValidationError(Config.DEVICE_LOCKED_SENTINEL)
+
+            sequence_step += 1
             # Set the schema context and check the control key, as above
             schema_context = {}
             if controlkey == None or not controlkey == Config.controlkey_master:
                 raise RuntimeError('Control Key does not match.')
 
+            sequence_step += 1
             # Set the schema contexts. Find out the type of devices being
             # emulated and then store them in a context dictionary.
             schema_context = Config.set_contexts()
 
+            sequence_step += 1
             # Check if the device being emulated is a pre-lollipop Android 
             # device; if it is, and the device is locked, raise an exception to
             # prevent any notifications being displayed.
             Config.check_prelollipop(schema_context)
 
+            sequence_step += 1
             # Create a new notification and db objects
             noteDB = Notification_DB()
             note = Notification()
 
+            sequence_step += 1
             # Load the existing notification
             note.load(noteDB.query_one(id), schema_context)
 
+            sequence_step += 1
             # Create a temporary notification object to contain the new data
             # being passed by the caller
             temp = Notification()
 
+            sequence_step += 1
             # Extract the raw JSON data from the HTTP request and load it into
             # a dictionary.
             raw_json = reqparse.request.get_data().decode('utf-8')
             new_note = json.loads(raw_json)
 
+            sequence_step += 1
             # Check the raw json data for specific keys. If the keys are found,
             # update the existing notification with the passed data.
             for key in new_note.keys():
@@ -544,52 +719,83 @@ removing contents from the sensitivity field.
                 else:
                     temp.load(raw_json)
 
+            sequence_step += 1
             # Validate the data update by loading it into the temporary
             # notification object. If it fails validation, an exception is 
             # rasied
             temp.load(note.dump(schema_context))
 
+            sequence_step += 1
             # If here, then the data is valid, so update the database. This
             # approach is a 'little' convoluted because key/value is used to
             # store the data rather than just telling the notification to
             # persist itself.
             noteDB.update_one(note.identifier, note.dump(schema_context))
 
+            sequence_step += 1
             # Pass back the updated notification
-            return_data = note.dump(schema_context)
+            response_object.response_data = note.dump(schema_context)
+
+
+
+        # EXCEPTION HANDLERS
+        # --------------------------------------------------------------------
+
         # IndexError specifies the original notification doesn't exist, so it
         # can't be updated. Therefore, a 404 (not found) error is returned.
         except IndexError as ie:
-            return_message = 'The notification '+str(id)+' does not exist.'
-            return_status = 404
-            return_success_fail = 'error'
+            response_object.set_failure(
+                'The notification '+str(id)+' does not exist. ',
+                status_code=404,
+                step=sequence_step,
+                caller=caller)
+
         # Any other exception is returned as a 400 (bad request). This typically
         # occurs when data is bad or not provided, e.g. executing a CURL -X PUT
         # but not providing a -d '{"note":"notification",....}', etc.
         except ValueError as e:
-            return_status = 400
-            return_message = {'error':'Data not posted. The data is '+\
-                'badly formed. Please check your data. '+\
-                repr(e)}
-            return_success_fail = 'error'
-            return_data = []
+            response_object.set_failure(
+                'Data not posted. The data is badly formed. Please '+\
+                    'check your data. '+\
+                    str(e),
+                step=sequence_step,
+                caller=caller)
+
+        # Validation Error is typically raised for either a data problem - the
+        # data passed is badly formed OR the device is locked. In the latter, a
+        # constant is used for the validation error text when the device is 
+        # locked; if the validation error matches this a 403 (Forbidden) is
+        # returned.
+        except exceptions.ValidationError as ve:
+            if str(ve) == Config.DEVICE_LOCKED_SENTINEL:
+                return_status = 403
+                return_message_text = 'Device is locked'
+            else:
+                return_status = 400
+                return_message_text = 'Validation error of: '+\
+                    str(ve)
+            response_object.set_failure(
+                return_message_text, 
+                status_code=return_status,
+                step=sequence_step,
+                caller=caller)
+
         # Some other exception has occured so let caller know.
         except Exception as e:
-            return_status = 400
-            return_message = {'error':'Data not posted. '+\
-                repr(e)}
-            return_success_fail = 'error'
-            return_data = []
+            response_object.set_failure(
+                'Data not posted. '+repr(e),
+                step=sequence_step,
+                caller=caller)
+
+
         
+        # End - Return response
+        # --------------------------------------------------------------------
         # Return the HTTP response object with data and status. The Response_
         # Object class will create an HTTP Response with the correct data,
         # status code, and mimetype.
-        return Response_Object(
-                return_data,
-                return_status,
-                return_success_fail,
-                return_message
-            ).response()
+        return response_object.response()
+
 
     def delete(self, id, controlkey=None):
         '''
@@ -599,14 +805,15 @@ database using the entity controller (Notification_DB.py) to ensure it exists
 and then deleted.
         '''
 
-        try:
-            # Set the default return flags to show success; exceptions will 
-            # change these as required.
-            return_data = []
-            return_status = 200
-            return_message = 'Notification deleted'
-            return_success_fail = 'success'
+        # Start - Main logic
+        # --------------------------------------------------------------------
 
+        # Create a response object
+        response_object = Response_Object(
+                              data=[],
+                              message='Notification deleted.')
+
+        try:
             # Check the control key, as above
             if controlkey == None or not controlkey == Config.controlkey_master:
                 raise RuntimeError('Control Key does not match.')
@@ -621,28 +828,28 @@ and then deleted.
             # Delete the notification
             noteDB.delete_one(id)
 
+
+
+        # EXCEPTION HANDLERS
+        # --------------------------------------------------------------------
+
         # IndexError means the notification doesn't exist, as above
         except IndexError as ie:
-            return_message = 'The notification '+str(id)+' does not exist.'
-            return_status = 404
-            return_success_fail = 'error'
+            response_object.set_failure(
+                'The notification '+str(id)+' does not exist. ',
+                status_code=404)
+
         # Some other exception has occured so let caller know.
         except Exception as e:
-            return_status = 400
-            return_message = {'error':'Data not posted. '+\
-                repr(e)}
-            return_success_fail = 'error'
-            return_data = []
-        
+            response_object.set_failure('Data not posted. '+repr(e))
+
+
+
+        # End - Return response
+        # --------------------------------------------------------------------
         # Return the HTTP response object with data and status. The Response_
         # Object class will create an HTTP Response with the correct data,
-        # status code, and mimetype. Notice that return_data is left as an
-        # empty list.
-        return Response_Object(
-                return_data,
-                return_status,
-                return_success_fail,
-                return_message
-            ).response()
+        # status code, and mimetype.
+        return response_object.response()
 
 

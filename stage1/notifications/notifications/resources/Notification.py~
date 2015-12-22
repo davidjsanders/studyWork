@@ -42,26 +42,8 @@ class Notification(object):
     class Notification_Schema(Schema):
         note = fields.String(required=True)            # The notification text
         action = fields.String(required=True)          # The action to take
-#        sensitivity = fields.Method('get_sensitivity') # The sensitivity
         sensitivity = fields.String(required=False)    # The sensitivity
         identifier = fields.Integer(required=True)     # A unique ID
-
-        #
-        # get_sensitivity field for the schema is set based on a function
-        # If the device is not pre-lollipop
-        #
-#        def get_sensitivity(self, note):
-#            try:
-#                if type(self.context) == str:
-#                    return value
-#                elif type(self.context) == dict:
-#                    if 'pre-lollipop' in self.context:
-#                        return 'not applicable'
-#                    else:
-#                        return note.sensitivity
-#            except Exception as e:
-#                print('Exception: '+repr(e))
-#            return note.sensitivity
 
         # pre_dump is called before the data is serialized to JSON. At this
         # point, a check is made to see whether the device is an Android
@@ -156,7 +138,7 @@ based on the context.
         # Create a variable for the return element
         return_string = None
 
-        # Create a private instance of the schema
+        # Create a private instance of the schema and set context
         __n_schema = self.Notification_Schema(many=False)
         self.__set_context(__n_schema, schema_context)
 
