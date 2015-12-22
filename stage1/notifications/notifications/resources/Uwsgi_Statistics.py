@@ -36,36 +36,36 @@ import requests
 #
 class Uwsgi_Statistics(Resource):
     def get(self):
-        # Set the default return flags to show success; exceptions will 
-        # change these as required.
-        return_message = 'Statistics from uwsgi server'
-        return_status = 200
-        return_success_fail = 'success'
-        return_data = ''
-        
+        response_object = Response_Object(
+            message = 'Statistics from uwsgi server.'
+        )
         try:
             stat_server = 'http://localhost:9191/'
             r = requests.get(stat_server)
             if r.status_code != 200:
-                return_message = 'An error occured due to a return status of '+\
-                                 str(r.status_code)
-                return_success_fail = 'error'
-                return_status = r.status_code
+                response_object.raise_for_status()
             else:
-                return_data = r.json()
+                response_object.response_data = r.json()
+        except requests.exceptions.HTTPError as he:
+            response_object.set_failure(
+                failure_message = 'An HTTP error occured. '+str(he),
+                status_code = he.response.status_code
+            )
+        except requests.exceptions.ConnectionError as ce:
+            response_object.set_failure(
+                failure_message = 'A connection error occured. '+str(ce)+'. '\
+                    'Please Note: stats are only supported when running the '+\
+                    'app on uWSGI.',
+                status_code = 500
+            )
         except Exception as e:
-            return_message = 'An error occured. '+\
-                             repr(e)
-            return_success_fail = 'error'
-            return_status = 400
+            response_object.set_failure(
+                failure_message = 'An error occured. '+repr(e),
+                status_code = 500
+            )
 
         # Return the HTTP response object with data and status. The Response_
         # Object class will create an HTTP Response with the correct data,
         # status code, and mimetype.
-        return Response_Object(
-                return_data,
-                return_status,
-                return_success_fail,
-                return_message
-            ).response()
+        return response_object.response()
 

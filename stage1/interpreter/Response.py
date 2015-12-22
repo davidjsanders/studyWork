@@ -6,9 +6,7 @@
     Last Update: 22 December 2015
     Updates
     ------------------------------------------------------------------------
-    22 Dec 2015: Update to include additional functionality - set error and
-                 set warning
-    15 Dec 2015: Revise documentation
+    22 Dec 2015: Added to Interpreter
     ------------------------------------------------------------------------
     Overivew:    The class definition for creating HTTP responses.
 
@@ -36,7 +34,7 @@ standard.
     '''
     def __init__(
         self,
-        data,
+        data=None,
         status=200,
         success_fail='success',
         message='done',

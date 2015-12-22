@@ -54,35 +54,8 @@ process(method='VERB')
 The process method is a helper method which is called by the routes and collects
 frequently used logic together.
         '''
+        response_object = Response_Object(data=None)
         try:
-            # Parse any arguments provided with the request. This SHOULD only
-            # be required with a PUT request when the unlock code MUST be passed
-            # as JSON data.
-
-            # Set the __unlock_code to None, so we know if it has NOT been
-            # passed.
-            __unlock_code = None
-
-            # Setup the parser to parse the requests
-            parser = reqparse.RequestParser()
-            parser.add_argument('unlock_code', type=int)
-
-            # Execute the parse
-            return_range = parser.parse_args()
-
-            # Set the unlock code.
-            __unlock_code = return_range['unlock_code']
-
-
-            # Set the default return flags to show success; exceptions will 
-            # change these as required.
-            raw_list=[]
-            return_state = True
-            return_status = 200
-            return_message = 'Device lock status: ' # This is always appended
-                                                    # with additional text.
-            return_success_fail = 'success'
-
             # GET is used to check the lock status
             if method.upper() == 'GET':
                 # Get the current lock status from a K/V pair
@@ -91,55 +64,69 @@ frequently used logic together.
                 # K/V values are strings. If it's TRUE (i.e. locked) then return
                 # locked otherwiser return unlocked.
                 if locked.upper() == 'TRUE':
-                    return_message += 'locked'
+                    response_object.response_data = True
+                    response_object.response_message = 'Device is locked.'
                 else:
-                    return_state = False
-                    return_message += 'unlocked'
-
+                    response_object.response_data = False
+                    response_object.response_message = 'Device is unlocked.'
+                
             # POST locks the device, regardless of current status.
             elif method.upper() == 'POST':
                 locked = Config.set_key('locked', 'TRUE')
-                return_message += 'locked'
-                return_state = True
+                response_object.response_data = True
+                response_object.response_message = 'Device is locked.'
 
             # PUT unlocks the device BUT only if it's locked. If not currently
             # locked, an error is raised.
             elif method.upper() == 'PUT':
                 # Check device IS locked
                 if Config.get_key('locked').upper() == 'TRUE':
+                    # Parse any arguments provided with the request. This SHOULD
+                    # only be required with a PUT request when the unlock code
+                    # MUST be passed as JSON data.
+
+                    # Set the __unlock_code to None, so we know if it has NOT 
+                    # been passed.
+                    __unlock_code = None
+
+                    # Setup the parser to parse the requests
+                    parser = reqparse.RequestParser()
+                    parser.add_argument('unlock_code', type=int)
+
+                    # Execute the parse
+                    return_range = parser.parse_args()
+
+                    # Set the unlock code.
+                    __unlock_code = return_range['unlock_code']
+
                     # Check unlock code is correct.
                     if __unlock_code == None \
                     or __unlock_code != Config.unlock_code:
-                        return_message = 'Unlock code is not correct.'
-                        return_state = False
-                        return_status = 403 # Forbidden
-                        return_success_fail = 'error'
+                        response_object.set_failure(
+                            failure_message = 'Unlock code is not correct.',
+                            status_code = 403
+                        )
                     else:
                         locked = Config.set_key('locked', 'FALSE')
-                        return_message += 'unlocked'
-                        return_state = True
+                        response_object.response_data = True
+                        response_object.response_message = 'Device is unlocked.'
                 # Otherwise report error to caller
                 else:
-                    return_message = 'Device is not locked.'
-                    return_state = False
-                    return_status = 400 # Bad request
-                    return_success_fail = 'error'
+                    response_object.set_failure(
+                        failure_message = 'Device is not locked.',
+                        status_code = 400
+                    )
         # An unknown exception needs to be passed back to the caller.
         except Exception as e:
-            return_message = repr(e)
-            return_status = 400
-            return_state = 'UNKNOWN'
-            return_success_fail = 'error'
+            response_object.set_failure(
+                failure_message = repr(e),
+                status_code = 400
+            )
 
         # Return the HTTP response object with data and status. The Response_
         # Object class will create an HTTP Response with the correct data,
         # status code, and mimetype.
-        return Response_Object(
-                return_state,
-                return_status,
-                return_success_fail,
-                return_message
-            ).response()
+        return response_object.response()
 
     def get(self):
         '''

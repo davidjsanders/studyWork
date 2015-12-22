@@ -62,6 +62,10 @@
         (Accessed: 19 December 2015).
 
 """
+
+# Import modules
+# ----------------------------------------------------------------------------
+
 # Import the configuration package
 import notifications.resources.Config as Config
 
@@ -87,6 +91,10 @@ from jsonschema import exceptions
 import json
 import requests
 
+
+
+# Notification_All class
+# ----------------------------------------------------------------------------
 class Notification_All(Resource):
     '''
 Notification_All()
@@ -470,6 +478,8 @@ data will be validated against the schema and then added to the database.
 
 
 
+# Notification_One class
+# ----------------------------------------------------------------------------
 class Notification_One(Resource):
     '''
 Notification_One()

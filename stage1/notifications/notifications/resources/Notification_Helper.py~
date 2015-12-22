@@ -58,10 +58,15 @@ get()
 -----
 The only method available. Returns the data as a JSON dataset.
         '''
+        response_object = Response_Object(
+            data={'_links':{}},
+            message='Available routes (links) for this service'
+        )
+
         ext_mode = False       # Do not include http://server... as this will
                                # be manipulated before returning.
 
-        links = {'_links':{}}  # The dictionary of links that will be returned.
+#        links = {'_links':{}}  # The dictionary of links that will be returned.
         return_status = 200    # The default return status.
 
         # Use the application context of the Flask app to be able to call the
@@ -78,7 +83,7 @@ The only method available. Returns the data as a JSON dataset.
             #
 
             # Link 1: The helper
-            links['_links']['self'] = {
+            response_object.response_data['_links']['self'] = {
                 'identifier':0,
                 'href':'http://'+Config.server_name+':'+str(Config.port_number)+\
                     api.url_for(Notification_Helper, _external=ext_mode),
@@ -87,7 +92,7 @@ The only method available. Returns the data as a JSON dataset.
                 'methods':['GET','OPTIONS','HEAD']}
 
             # Link 2: The collection of notifications
-            links['_links']['notifications'] = {
+            response_object.response_data['_links']['notifications'] = {
                 'identifier':1,
                 'href':'http://'+Config.server_name+':'+str(Config.port_number)+\
                     api.url_for(Notification_Helper, _external=ext_mode)+\
@@ -100,7 +105,7 @@ The only method available. Returns the data as a JSON dataset.
                 'methods':['GET','POST', 'DELETE','OPTIONS','HEAD']}
 
             # Link 3: The operations on a single notification
-            links['_links']['notifications_list'] = {
+            response_object.response_data['_links']['notifications_list'] = {
                 'identifier':2,
                 'href':'http://'+Config.server_name+':'+str(Config.port_number)+\
                     api.url_for(Notification_Helper, _external=ext_mode)+\
@@ -112,7 +117,7 @@ The only method available. Returns the data as a JSON dataset.
                 'methods':['GET','PUT', 'DELETE','OPTIONS','HEAD']}
 
             # Link 4: The Bluetooth pairing
-            links['_links']['notifications_pair'] = {
+            response_object.response_data['_links']['notifications_pair'] = {
                 'identifier':3,
                 'href':'http://'+Config.server_name+':'+str(Config.port_number)+\
                     api.url_for(Notification_Helper, _external=ext_mode)+\
@@ -124,7 +129,7 @@ The only method available. Returns the data as a JSON dataset.
                 'methods':['GET','POST', 'DELETE','OPTIONS','HEAD']}
 
             # Link 5: The device lock status
-            links['_links']['lock'] = {
+            response_object.response_data['_links']['lock'] = {
                 'identifier':4,
                 'href':'http://'+Config.server_name+':'+str(Config.port_number)+\
                     api.url_for(Notification_Lock, _external=ext_mode),
@@ -133,7 +138,7 @@ The only method available. Returns the data as a JSON dataset.
                 'methods':['GET','POST','OPTIONS','HEAD']}
 
             # Link 6: The unlock link
-            links['_links']['unlock'] = {
+            response_object.response_data['_links']['unlock'] = {
                 'identifier':5,
                 'href':'http://'+Config.server_name+':'+str(Config.port_number)+\
                     api.url_for(Notification_Lock, _external=ext_mode)+\
@@ -143,8 +148,8 @@ The only method available. Returns the data as a JSON dataset.
                 'methods':['PUT','OPTIONS','HEAD']}
 
             # Link 7: Get uWSGI statistics
-            links['_links']['uwsgi-statistics'] = {
-                'identifier':5,
+            response_object.response_data['_links']['uwsgi-statistics'] = {
+                'identifier':6,
                 'href':'http://'+Config.server_name+':'+str(Config.port_number)+\
                     api.url_for(Uwsgi_Statistics, _external=ext_mode),
                 'rel':'stats',
@@ -154,8 +159,9 @@ The only method available. Returns the data as a JSON dataset.
         # Return the HTTP response object with data and status. The Response_
         # Object class will create an HTTP Response with the correct data,
         # status code, and mimetype.
-        return Response_Object(
-                   data=links,
-                   status=return_status).response()
+        return response_object.response()
+#        return Response_Object(
+#                   data=links,
+#                   status=return_status).response()
 
 

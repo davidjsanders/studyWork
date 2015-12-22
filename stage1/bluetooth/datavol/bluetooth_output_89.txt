@@ -9,3 +9,4 @@
 {"message": "This is a general notification, e.g., you got a text from John.", "date": "2015-12-22 16:22:58.440580", "bluetooth-device": "dasanderUty01:89", "sender": "dasanderUty01:5000"}
 {"message": "Test Notification", "date": "2015-12-22 16:26:55.270043", "bluetooth-device": "dasanderUty01:89", "sender": "dasanderUty01:5000"}
 {"message": "This is a notification", "date": "2015-12-22 16:54:53.177789", "bluetooth-device": "dasanderUty01:89", "sender": "dasanderUty01:5000"}
+{"sender": "dasanderUty01:5000", "bluetooth-device": "dasanderUty01:89", "message": "Bluetooth device paired with dasanderUty01:5000", "date": "2015-12-22 19:47:23.095259"}

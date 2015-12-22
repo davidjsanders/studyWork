@@ -37,25 +37,21 @@ schema for a notification.
     '''
     def get(self):
         ''' get() - Return the schema '''
-        return_list = []
+        response_object = Response_Object(message='Notification schema.')
         # Get the schema from the Notification module
         try:
-            return_status = 200
-            return_success_fail = 'success'
-            return_message = 'notification schema'
-            return_list = Notification.__schema__      # Class variable
+            # Use the class variable to get the pre-loaded schema. NOTE: this
+            # means changes to the schema only occur at initial run - probably
+            # should change it!
+            response_object.response_data = Notification.__schema__
         except Exception as e:
-            return_message = 'An exception occurred: '+repr(e)
-            return_success_fail = 'error'
-            return_status = 400
+            response_object.set_failure(
+                failure_message = 'An exception occurred: '+repr(e),
+                status_code = 500
+            )
 
         # Return the HTTP response object with data and status. The Response_
         # Object class will create an HTTP Response with the correct data,
         # status code, and mimetype.
-        return Response_Object(
-            return_list,
-            return_status,
-            return_success_fail,
-            return_message
-        ).response()
+        return response_object.response()
 

@@ -38,30 +38,22 @@ the schema for pairing an emulated device with a Bluetooth device.
     '''
     def get(self):
         ''' get() - Return the schema '''
-        return_list = []
+        response_object = Response_Object()
         try:
             # Load the schema from a file - this needs to change!
             f = open(Config.__pair_schema_filename__,'r')
-            schema = json.load(f)
+            response_object.response_data = json.load(f)
             f.close()
-            # Return the schema
-            return_status = 200
-            return_success_fail = 'success'
-            return_message = 'notification pair schema'
-            return_list = schema
         # If somethings goes wrong, return the exception.
         except Exception as e:
-            return_message = 'An exception occurred: '+repr(e)
-            return_success_fail = 'error'
-            return_status = 400
+            response_object.set_failure(
+                failure_message='Fetching schema and an exception '+\
+                                'was raised: '+repr(e),
+                status_code=500
+            )
 
         # Return the HTTP response object with data and status. The Response_
         # Object class will create an HTTP Response with the correct data,
         # status code, and mimetype.
-        return Response_Object(
-            return_list,
-            return_status,
-            return_success_fail,
-            return_message
-        ).response()
+        return response_object.response()
 

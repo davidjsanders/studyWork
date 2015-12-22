@@ -8,6 +8,7 @@
     ------------------------------------------------------------------------
     22 Dec 2015: Update to include additional functionality - set error and
                  set warning
+    22 Dec 2015: Added None as a default to data
     15 Dec 2015: Revise documentation
     ------------------------------------------------------------------------
     Overivew:    The class definition for creating HTTP responses.
@@ -36,7 +37,7 @@ standard.
     '''
     def __init__(
         self,
-        data,
+        data=None,
         status=200,
         success_fail='success',
         message='done',
@@ -96,7 +97,7 @@ can include:
 
     def set_warning(
         self,
-        failure_message='Warnings occurred',
+        warning_message='Warnings occurred',
         status_code=400,
         caller="UNK",
         step=None

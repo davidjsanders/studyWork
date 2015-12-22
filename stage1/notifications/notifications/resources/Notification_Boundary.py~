@@ -796,6 +796,7 @@ removing contents from the sensitivity field.
         # status code, and mimetype.
         return response_object.response()
 
+
     def delete(self, id, controlkey=None):
         '''
 delete(id=12345, controlKey='XXX')
@@ -804,14 +805,15 @@ database using the entity controller (Notification_DB.py) to ensure it exists
 and then deleted.
         '''
 
-        try:
-            # Set the default return flags to show success; exceptions will 
-            # change these as required.
-            return_data = []
-            return_status = 200
-            return_message = 'Notification deleted'
-            return_success_fail = 'success'
+        # Start - Main logic
+        # --------------------------------------------------------------------
 
+        # Create a response object
+        response_object = Response_Object(
+                              data=[],
+                              message='Notification deleted.')
+
+        try:
             # Check the control key, as above
             if controlkey == None or not controlkey == Config.controlkey_master:
                 raise RuntimeError('Control Key does not match.')
@@ -826,28 +828,28 @@ and then deleted.
             # Delete the notification
             noteDB.delete_one(id)
 
+
+
+        # EXCEPTION HANDLERS
+        # --------------------------------------------------------------------
+
         # IndexError means the notification doesn't exist, as above
         except IndexError as ie:
-            return_message = 'The notification '+str(id)+' does not exist.'
-            return_status = 404
-            return_success_fail = 'error'
+            response_object.set_failure(
+                'The notification '+str(id)+' does not exist. ',
+                status_code=404)
+
         # Some other exception has occured so let caller know.
         except Exception as e:
-            return_status = 400
-            return_message = {'error':'Data not posted. '+\
-                repr(e)}
-            return_success_fail = 'error'
-            return_data = []
-        
+            response_object.set_failure('Data not posted. '+repr(e))
+
+
+
+        # End - Return response
+        # --------------------------------------------------------------------
         # Return the HTTP response object with data and status. The Response_
         # Object class will create an HTTP Response with the correct data,
-        # status code, and mimetype. Notice that return_data is left as an
-        # empty list.
-        return Response_Object(
-                return_data,
-                return_status,
-                return_success_fail,
-                return_message
-            ).response()
+        # status code, and mimetype.
+        return response_object.response()
 
 
