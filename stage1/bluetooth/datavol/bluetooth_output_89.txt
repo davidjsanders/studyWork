@@ -10,3 +10,5 @@
 {"message": "Test Notification", "date": "2015-12-22 16:26:55.270043", "bluetooth-device": "dasanderUty01:89", "sender": "dasanderUty01:5000"}
 {"message": "This is a notification", "date": "2015-12-22 16:54:53.177789", "bluetooth-device": "dasanderUty01:89", "sender": "dasanderUty01:5000"}
 {"sender": "dasanderUty01:5000", "bluetooth-device": "dasanderUty01:89", "message": "Bluetooth device paired with dasanderUty01:5000", "date": "2015-12-22 19:47:23.095259"}
+{"bluetooth-device": "dasanderUty01:89", "date": "2015-12-27 20:39:24.869506", "sender": "dasanderUty01:82", "message": "Bluetooth device paired with dasanderUty01:82"}
+{"bluetooth-device": "dasanderUty01:89", "date": "2015-12-27 20:39:40.680270", "sender": "dasanderUty01:82", "message": "This is a new notification"}
