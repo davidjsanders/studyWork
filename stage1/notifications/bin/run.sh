@@ -1,8 +1,9 @@
 #!/bin/bash
 portToUse=$1
 serverName=$2
-if [ "$1x" == "x" ]; then portToUse='5000'; echo "Defaulting to port 5000"; fi
-if [ "$2x" == "x" ]; then serverName='localhost'; echo "Defaulting to localhost"; fi
+echo "Host is ${hostname}"
+if [ "$1x" == "x" ]; then portToUse='5000'; echo "Defaulting to port: $portToUse"; fi
+if [ "$2x" == "x" ]; then serverName=`hostname`; echo "Defaulting to server name: $serverName"; fi
 echo ""
 echo -n "Starting port $portToUse with server name $serverName>> "
 docker run -p $portToUse:$portToUse --name notifications$portToUse \
