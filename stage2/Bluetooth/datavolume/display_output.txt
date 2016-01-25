@@ -1,0 +1,15 @@
+--------------------------------------------------------------------------------
+Broadcast from: bob handset2
+Shown on screen at: 2016-01-24 18:53:03.128883 (EST/EDT)
+Message: This is the message to broadcast.
+
+--------------------------------------------------------------------------------
+Broadcast from: bob handset2
+Shown on screen at: 2016-01-24 18:53:07.632866 (EST/EDT)
+Message: Another message to broadcast.
+
+--------------------------------------------------------------------------------
+Broadcast from: bob handset2
+Shown on screen at: 2016-01-24 19:01:11.283403 (EST/EDT)
+Message: Another message to broadcast.
+
