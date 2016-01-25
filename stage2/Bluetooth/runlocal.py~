@@ -32,6 +32,7 @@ from flask_restful import Api
 # Import the app, and api modules from the notes app (__init__.py) so that
 # they can be accessed globally by any module within this package.
 from Bluetooth import app, api
+from BluetoothReceiver import apiR
 
 app.run(host='0.0.0.0', port=5000, debug=True, threaded=True)
 

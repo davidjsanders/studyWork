@@ -1,7 +1,8 @@
 from flask_restful import Resource, Api, reqparse, abort
 from flask import Response
-from Bluetooth import app, api, pair_control_object
-from BluetoothReceiver import apiR
+from Bluetooth \
+    import app, api, pair_control_object, broadcast_control_object
+from BluetoothBoundary import apiR
 import json
 
 class BroadcastBoundary(Resource):
@@ -15,7 +16,7 @@ class BroadcastBoundary(Resource):
         or not 'key' in json_data:
             return
 
-        return pair_control_object.broadcast_message(
+        return broadcast_control_object.broadcast_message(
                 devicename = devicename,
                 text = json_data['message'],
                 key = json_data['key']

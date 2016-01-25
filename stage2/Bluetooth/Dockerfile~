@@ -21,7 +21,7 @@ FROM dsanderscan/pythonbase
 # Create the directory structures
 RUN mkdir /Bluetooth
 RUN mkdir /Bluetooth/Bluetooth
-RUN mkdir /Bluetooth/BluetoothReceiver
+RUN mkdir /Bluetooth/BluetoothBoundary
 RUN mkdir /Bluetooth/BluetoothSender
 #
 # copy the files required for the application
@@ -32,11 +32,11 @@ COPY Bluetooth/Control.py /Bluetooth/Bluetooth/
 COPY Bluetooth/__init__.py /Bluetooth/Bluetooth/
 COPY Bluetooth/main.py /Bluetooth/Bluetooth/
 COPY Bluetooth/PairingDatabase.py /Bluetooth/Bluetooth/
-COPY Bluetooth/PairingControl.py /Bluetooth/Bluetooth/
-COPY BluetoothReceiver/BroadcastBoundary.py /Bluetooth/BluetoothReceiver/
-COPY BluetoothReceiver/__init__.py /Bluetooth/BluetoothReceiver/
-COPY BluetoothReceiver/main.py /Bluetooth/BluetoothReceiver/
-COPY BluetoothReceiver/PairBoundary.py /Bluetooth/BluetoothReceiver/
+COPY BluetoothBoundary/Versions_Boundary.py /Bluetooth/BluetoothBoundary/
+COPY BluetoothBoundary/BroadcastBoundary.py /Bluetooth/BluetoothBoundary/
+COPY BluetoothBoundary/__init__.py /Bluetooth/BluetoothBoundary/
+COPY BluetoothBoundary/main.py /Bluetooth/BluetoothBoundary/
+COPY BluetoothBoundary/PairBoundary.py /Bluetooth/BluetoothBoundary/
 #
 # Set the working directory for the container
 #

@@ -24,7 +24,7 @@ from Bluetooth import app
 # command line, e.g. python3 /some/folder/notes/runserver.py
 #appR = Flask(__name__)
 # Create an Api object inheriting app
-#apiR = Api(app)
+apiR = Api(app)
 
 # Import the main.py module
-import BluetoothReceiver.main
+import BluetoothBoundary.main
