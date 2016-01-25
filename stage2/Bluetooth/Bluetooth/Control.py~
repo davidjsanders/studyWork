@@ -120,6 +120,7 @@ class Control(object):
                        "type":response,
                        "data":data,
                        "message":message}
+        print(return_dict)
         return Response(
             json.dumps(return_dict),
             status=status,

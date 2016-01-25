@@ -52,7 +52,7 @@ echo "stats-http=127.0.0.1:9191" >> bluetooth_uwsgi.ini
 # file to the nginx conifugration directory.
 #
 rm -r -f /etc/nginx/sites-enabled/default
-ln -s /Bluetooth/bluetooth_uwsgi.conf /etc/nginx/conf.d/bluetooth_uwsgi.conf
+ln -s /notifications/bluetooth_uwsgi.conf /etc/nginx/conf.d/bluetooth_uwsgi.conf
 service nginx start
 #
 # Create/Update database

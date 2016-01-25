@@ -32,4 +32,4 @@ pair_control_object = Control.Control()
 
 # Import the main.py module
 import Bluetooth.main
-
+import BluetoothReceiver.main

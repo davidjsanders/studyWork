@@ -32,6 +32,7 @@ COPY Bluetooth/Control.py /Bluetooth/Bluetooth/
 COPY Bluetooth/__init__.py /Bluetooth/Bluetooth/
 COPY Bluetooth/main.py /Bluetooth/Bluetooth/
 COPY Bluetooth/PairingDatabase.py /Bluetooth/Bluetooth/
+COPY Bluetooth/PairingControl.py /Bluetooth/Bluetooth/
 COPY BluetoothReceiver/BroadcastBoundary.py /Bluetooth/BluetoothReceiver/
 COPY BluetoothReceiver/__init__.py /Bluetooth/BluetoothReceiver/
 COPY BluetoothReceiver/main.py /Bluetooth/BluetoothReceiver/
