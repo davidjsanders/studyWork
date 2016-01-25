@@ -115,7 +115,11 @@ class Control(object):
             return self.do_response(message="{0} un-paired.".format(devicename))
 
 
-    def do_response(self, status=200, response='success', data=None, message=''):
+    def do_response(self,
+                    status=200,
+                    response='success',
+                    data=None,
+                    message=''):
         return_dict = {"status":status,
                        "type":response,
                        "data":data,
