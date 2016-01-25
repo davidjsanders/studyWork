@@ -8,3 +8,18 @@ Broadcast from: davidhandsfree
 Shown on screen at: 2016-01-25 01:30:25.192377 (UTC/UTC)
 Message: Broadcasted message
 
+--------------------------------------------------------------------------------
+Broadcast from: davidhandsfree
+Shown on screen at: 2016-01-24 20:39:36.351292 (EST/EST)
+Message: Broadcasted message
+
+--------------------------------------------------------------------------------
+Broadcast from: davidhandsfree
+Shown on screen at: 2016-01-24 20:41:32.059451 (EST/EST)
+Message: Broadcasted message
+
+--------------------------------------------------------------------------------
+Broadcast from: davidhandsfree
+Shown on screen at: 2016-01-24 20:44:53.593031 (EST/EST)
+Message: Broadcasted message
+
