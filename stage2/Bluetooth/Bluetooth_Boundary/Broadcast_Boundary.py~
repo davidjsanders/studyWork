@@ -1,12 +1,14 @@
 from flask_restful import Resource, Api, reqparse, abort
 from flask import Response
 from Bluetooth \
-    import app, api, pair_control_object, broadcast_control_object
-from BluetoothBoundary import apiR
+    import app, api, pair_control_object, broadcast_control_object, control
+from Bluetooth_Boundary import apiR
 import json
 
-class BroadcastBoundary(Resource):
+class Broadcast_Boundary(Resource):
     def post(self, devicename):
+        control.log(log_message='Starting broadcast to "{0}"'.format(devicename))
+
         raw_data = None
         raw_data = reqparse.request.get_data().decode('utf-8')
         if raw_data == None or raw_data == '':
@@ -16,11 +18,18 @@ class BroadcastBoundary(Resource):
         or not 'key' in json_data:
             return
 
-        return broadcast_control_object.broadcast_message(
+        control.log(log_message='Broadcasting >> {0}'\
+            .format(json_data['message']))
+
+        return_state = broadcast_control_object.broadcast_message(
                 devicename = devicename,
                 text = json_data['message'],
                 key = json_data['key']
             )
+
+        control.log(log_message='Completed broadcast to "{0}"'.format(devicename))
+
+        return return_state
 
 
 

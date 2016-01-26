@@ -1,0 +1,29 @@
+2016-01-25 20:00:38.461940: UNPAIR DEVICE START: with "bob handset35"
+2016-01-25 20:00:38.464655: UNPAIR DEVICE ERROR: bob handset35 is not paired
+2016-01-25 20:00:38.464792: UNPAIR DEVICE FINISH: with "bob handset35" (error 404)
+2016-01-25 20:00:48.086315: PAIR DEVICE START: with "bob handset35"
+2016-01-25 20:00:48.091627: PAIR DEVICE FINISH: with "bob handset35" (success 200)
+2016-01-25 20:00:52.366566: BROADCAST START: on behalf of "bob handset35"
+2016-01-25 20:00:52.367436: BROADCASTING: Send "** Bluetooth Broadcast Test **" on behalf of "bob handset35"
+2016-01-25 20:00:52.367681: BROADCAST FINISH: on behalf of "bob handset35" (success 200)
+2016-01-25 20:00:57.518411: UNPAIR DEVICE START: with "bob handset35"
+2016-01-25 20:00:57.524356: UNPAIR DEVICE FINISH: with "bob handset35" (success 200)
+2016-01-25 20:00:58.438621: UNPAIR DEVICE START: with "bob handset35"
+2016-01-25 20:00:58.439179: UNPAIR DEVICE ERROR: bob handset35 is not paired
+2016-01-25 20:00:58.439267: UNPAIR DEVICE FINISH: with "bob handset35" (error 404)
+2016-01-25 20:01:03.823604: BROADCAST START: on behalf of "bob handset35"
+2016-01-25 20:01:03.824551: BROADCAST ERROR: Device is not paired
+2016-01-25 20:01:03.824653: BROADCAST FINISH: on behalf of "bob handset35" (error 403)
+2016-01-25 20:01:58.006056: PAIR DEVICE START: with "bob handset35"
+2016-01-25 20:01:58.013518: PAIR DEVICE FINISH: with "bob handset35" (success 200)
+2016-01-25 20:02:02.553179: BROADCAST START: on behalf of "bob handset35"
+2016-01-25 20:02:02.554163: BROADCASTING: Send "** Bluetooth Broadcast Test **" on behalf of "bob handset35"
+2016-01-25 20:02:02.554478: BROADCAST FINISH: on behalf of "bob handset35" (success 200)
+2016-01-25 20:02:04.609515: PAIR DEVICE START: with "bob handset35"
+2016-01-25 20:02:04.609688: PAIR DEVICE ERROR: The device is already paired.
+2016-01-25 20:02:04.609884: PAIR DEVICE FINISH: with "bob handset35" (error 409)
+2016-01-25 20:02:10.041060: UNPAIR DEVICE START: with "bob handset35"
+2016-01-25 20:02:10.046913: UNPAIR DEVICE FINISH: with "bob handset35" (success 200)
+2016-01-25 20:02:13.793556: BROADCAST START: on behalf of "bob handset35"
+2016-01-25 20:02:13.794448: BROADCAST ERROR: Device is not paired
+2016-01-25 20:02:13.794557: BROADCAST FINISH: on behalf of "bob handset35" (error 403)

@@ -15,7 +15,7 @@ class Pairing_Control(object):
 
 
     def __init__(self):
-        self.__pairing_db = PairingDatabase.Pairing_Database()
+        self.__pairing_db = Pairing_Database.Pairing_Database()
         self.__controller = Control.Control_v1_00()
 
     def check_pairing(self, devicename):
@@ -27,6 +27,8 @@ class Pairing_Control(object):
         message = 'Device is paired.'
         pairing = self.check_pairing(devicename)
 
+        self.__controller.log(log_message='Start PAIR INFO for "{0}"'\
+            .format(devicename))
         if pairing == []:
             success = 'error'
             status = '404'
@@ -36,16 +38,24 @@ class Pairing_Control(object):
         data = {"device":devicename,
                 "key":pairing}
 
-        return self.__controller.do_response(message=message,
-                                data=data,
-                                status=status,
-                                response=success)
+        return_value = self.__controller.do_response(message=message,
+                                                     data=data,
+                                                     status=status,
+                                                     response=success)
+
+        self.__controller.log(log_message='Finish PAIR INFO for "{0}" ({1})'\
+            .format(devicename, success))
+
+        return return_value
 
     def pair_device(self, devicename):
         success = 'success'
         status = '200'
         message = 'Device successfully paired.'
         existing_key = self.check_pairing(devicename) or None
+
+        self.__controller.log(log_message='Start PAIR DEVICE for "{0}"'\
+            .format(devicename))
 
         if existing_key != None:
             success = 'error'
@@ -56,19 +66,40 @@ class Pairing_Control(object):
         else:
             data = {"device":devicename,
                     "key":self.__pairing_db.pair_device(devicename)}
-        return self.__controller.do_response(message=message,
-                                data=data,
-                                status=status,
-                                response=success)
+
+        return_value = self.__controller.do_response(message=message,
+                                                   data=data,
+                                                   status=status,
+                                                   response=success)
+
+        self.__controller.log(
+             log_message='Finish PAIR DEVICE for "{0}" ({1} {2})'\
+                .format(devicename, success, status)
+        )
+
+        return return_value
 
     def pair_unpair(self, devicename):
+        self.__controller.log(log_message='Start UNPAIR DEVICE for "{0}"'\
+            .format(devicename))
+
         if not self.check_pairing(devicename):
+            self.__controller.log(
+                 log_message='Finish UNPAIR DEVICE for "{0}" ({1} {2})'\
+                    .format(devicename, 'error', '404')
+            )
             return self.__controller.do_response(status="404",
                                     response='error',
                                     message="{0} is not paired."\
                                         .format(devicename))
+
         if self.__pairing_db.remove_pairing(devicename):
-            return self.__controller.do_response(message="{0} un-paired.".format(devicename))
+            self.__controller.log(
+                 log_message='Finish UNPAIR DEVICE for "{0}" ({1} {2})'\
+                    .format(devicename, 'success', '200')
+            )
+            return self.__controller.do_response(
+                message="{0} un-paired.".format(devicename))
 
 
 #

@@ -7,6 +7,22 @@ import datetime, time, json
 # SuperClass.
 # ----------------------------------------------------------------------------
 class Control(object):
+    __log_file = 'datavolume/Log_File.txt'
+
+
+    def log(self,
+            log_message=None
+    ):
+        now = datetime.datetime.now()
+        f = None
+        try:
+            f = open(self.__log_file, 'a')
+            f.write('{0}: {1}'.format(now,log_message)+"\n")
+        except Exception:
+            raise
+        finally:
+            if not f == None:
+                f.close()
 
     def do_response(self,
                     status=200,

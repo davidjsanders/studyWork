@@ -1,70 +1,140 @@
 --------------------------------------------------------------------------------
 Broadcast from: bob handset
-Read aloud at: 2016-01-25 13:49:02.983635 (EST/EDT)
-Message: You got a text from Jane Doe.
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Read aloud at: 2016-01-25 13:58:03.979186 (EST/EDT)
-Message: You got a text from Jane Doe.
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Read aloud at: 2016-01-25 15:51:38.695522 (EST/EDT)
+Broadcast at: 2016-01-25 18:32:00.224406 (EST/EDT)
 Message: ** Bluetooth Broadcast Test **
 
 --------------------------------------------------------------------------------
 Broadcast from: bob handset
-Read aloud at: 2016-01-25 15:51:42.183759 (EST/EDT)
+Broadcast at: 2016-01-25 18:33:50.053554 (EST/EDT)
 Message: ** Bluetooth Broadcast Test **
 
 --------------------------------------------------------------------------------
 Broadcast from: bob handset
-Read aloud at: 2016-01-25 15:54:11.294744 (EST/EDT)
+Broadcast at: 2016-01-25 18:36:25.975171 (EST/EST)
 Message: ** Bluetooth Broadcast Test **
 
 --------------------------------------------------------------------------------
 Broadcast from: bob handset
-Read aloud at: 2016-01-25 15:57:02.412361 (EST/EDT)
+Broadcast at: 2016-01-25 18:53:16.598910 (EST/EDT)
 Message: ** Bluetooth Broadcast Test **
 
 --------------------------------------------------------------------------------
 Broadcast from: bob handset
-Read aloud at: 2016-01-25 16:00:50.085139 (EST/EDT)
+Broadcast at: 2016-01-25 19:04:01.678769 (EST/EDT)
 Message: ** Bluetooth Broadcast Test **
 
 --------------------------------------------------------------------------------
 Broadcast from: bob handset
-Read aloud at: 2016-01-25 16:02:06.680574 (EST/EDT)
+Broadcast at: 2016-01-25 19:05:14.185167 (EST/EDT)
 Message: ** Bluetooth Broadcast Test **
 
 --------------------------------------------------------------------------------
 Broadcast from: bob handset
-Read aloud at: 2016-01-25 16:13:50.010107 (EST/EDT)
+Broadcast at: 2016-01-25 19:06:00.907024 (EST/EDT)
 Message: ** Bluetooth Broadcast Test **
 
 --------------------------------------------------------------------------------
 Broadcast from: bob handset
-Read aloud at: 2016-01-25 16:14:16.146895 (EST/EDT)
+Broadcast at: 2016-01-25 19:06:03.202493 (EST/EDT)
 Message: ** Bluetooth Broadcast Test **
 
 --------------------------------------------------------------------------------
 Broadcast from: bob handset
-Read aloud at: 2016-01-25 16:15:29.166196 (EST/EDT)
+Broadcast at: 2016-01-25 19:06:53.596414 (EST/EDT)
 Message: ** Bluetooth Broadcast Test **
 
 --------------------------------------------------------------------------------
 Broadcast from: bob handset
-Read aloud at: 2016-01-25 16:18:38.412612 (EST/EDT)
+Broadcast at: 2016-01-25 19:07:26.542105 (EST/EDT)
 Message: ** Bluetooth Broadcast Test **
 
 --------------------------------------------------------------------------------
 Broadcast from: bob handset
-Read aloud at: 2016-01-25 16:19:49.839068 (EST/EDT)
+Broadcast at: 2016-01-25 19:08:33.520681 (EST/EDT)
 Message: ** Bluetooth Broadcast Test **
 
 --------------------------------------------------------------------------------
 Broadcast from: bob handset
-Read aloud at: 2016-01-25 16:24:19.790918 (EST/EST)
+Broadcast at: 2016-01-25 19:09:58.948120 (EST/EDT)
+Message: ** Bluetooth Broadcast Test **
+
+--------------------------------------------------------------------------------
+Broadcast from: bob handset
+Broadcast at: 2016-01-25 19:13:28.867417 (EST/EDT)
+Message: ** Bluetooth Broadcast Test **
+
+--------------------------------------------------------------------------------
+Broadcast from: bob handset
+Broadcast at: 2016-01-25 19:13:31.042928 (EST/EDT)
+Message: ** Bluetooth Broadcast Test **
+
+--------------------------------------------------------------------------------
+Broadcast from: bob handset
+Broadcast at: 2016-01-25 19:13:43.723348 (EST/EDT)
+Message: ** Bluetooth Broadcast Test **
+
+--------------------------------------------------------------------------------
+Broadcast from: bob handset
+Broadcast at: 2016-01-25 19:14:02.110954 (EST/EDT)
+Message: ** Bluetooth Broadcast Test **
+
+--------------------------------------------------------------------------------
+Broadcast from: bob handset
+Broadcast at: 2016-01-25 19:14:26.317593 (EST/EDT)
+Message: ** Bluetooth Broadcast Test **
+
+--------------------------------------------------------------------------------
+Broadcast from: bob handset
+Broadcast at: 2016-01-25 19:14:27.445400 (EST/EDT)
+Message: ** Bluetooth Broadcast Test **
+
+--------------------------------------------------------------------------------
+Broadcast from: bob handset
+Broadcast at: 2016-01-25 19:15:21.703684 (EST/EDT)
+Message: ** Bluetooth Broadcast Test **
+
+--------------------------------------------------------------------------------
+Broadcast from: bob handset
+Broadcast at: 2016-01-25 19:15:22.855057 (EST/EDT)
+Message: ** Bluetooth Broadcast Test **
+
+--------------------------------------------------------------------------------
+Broadcast from: bob handset
+Broadcast at: 2016-01-25 19:16:23.116846 (EST/EDT)
+Message: ** Bluetooth Broadcast Test **
+
+--------------------------------------------------------------------------------
+Broadcast from: bob handset
+Broadcast at: 2016-01-25 19:16:23.929508 (EST/EDT)
+Message: ** Bluetooth Broadcast Test **
+
+--------------------------------------------------------------------------------
+Broadcast from: bob handset
+Broadcast at: 2016-01-25 19:17:12.716366 (EST/EDT)
+Message: ** Bluetooth Broadcast Test **
+
+--------------------------------------------------------------------------------
+Broadcast from: bob handset
+Broadcast at: 2016-01-25 19:17:13.526404 (EST/EDT)
+Message: ** Bluetooth Broadcast Test **
+
+--------------------------------------------------------------------------------
+Broadcast from: bob handset35
+Broadcast at: 2016-01-25 19:47:43.552166 (EST/EST)
+Message: ** Bluetooth Broadcast Test **
+
+--------------------------------------------------------------------------------
+Broadcast from: bob handset35
+Broadcast at: 2016-01-25 19:54:06.583614 (EST/EDT)
+Message: ** Bluetooth Broadcast Test **
+
+--------------------------------------------------------------------------------
+Broadcast from: bob handset35
+Broadcast at: 2016-01-25 20:00:52.367524 (EST/EDT)
+Message: ** Bluetooth Broadcast Test **
+
+--------------------------------------------------------------------------------
+Broadcast from: bob handset35
+Broadcast at: 2016-01-25 20:02:02.554285 (EST/EST)
 Message: ** Bluetooth Broadcast Test **
 

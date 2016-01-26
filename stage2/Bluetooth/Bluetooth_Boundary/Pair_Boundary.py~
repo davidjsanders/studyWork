@@ -1,0 +1,25 @@
+from flask_restful import Resource, Api, reqparse, abort
+from flask import Response
+from Bluetooth import app, api, pair_control_object, control
+from Bluetooth_Boundary import apiR
+
+class Pair_Boundary(Resource):
+    def get(self, devicename):
+        control.log(log_message='Starting pair GET for "{0}"'.format(devicename))
+        return_value = pair_control_object.pair_info(devicename)
+        control.log(log_message='Finished pair GET for "{0}"'.format(devicename))
+        return return_value
+
+    def post(self, devicename):
+        control.log(log_message='Starting pair POST for "{0}"'.format(devicename))
+        return_value = pair_control_object.pair_device(devicename)
+        control.log(log_message='Finished pair POST for "{0}"'.format(devicename))
+        return return_value
+
+    def delete(self, devicename):
+        control.log(log_message='Starting pair DELETE for "{0}"'.format(devicename))
+        return_value = pair_control_object.pair_unpair(devicename)
+        control.log(log_message='Finished pair DELETE for "{0}"'.format(devicename))
+        return return_value
+
+

@@ -28,14 +28,16 @@ RUN mkdir /Bluetooth/BluetoothSender
 #
 COPY runserver.py /Bluetooth/
 COPY startup.sh /Bluetooth/
-COPY Bluetooth/Control.py /Bluetooth/Bluetooth/
 COPY Bluetooth/__init__.py /Bluetooth/Bluetooth/
 COPY Bluetooth/main.py /Bluetooth/Bluetooth/
-COPY Bluetooth/PairingDatabase.py /Bluetooth/Bluetooth/
-COPY BluetoothBoundary/Versions_Boundary.py /Bluetooth/BluetoothBoundary/
-COPY BluetoothBoundary/BroadcastBoundary.py /Bluetooth/BluetoothBoundary/
+COPY Bluetooth/Control.py /Bluetooth/Bluetooth/
+COPY Bluetooth/Pairing_Database.py /Bluetooth/Bluetooth/
+COPY Bluetooth/Pairing_Control.py /Bluetooth/Bluetooth/
+COPY Bluetooth/Broadcast_Control.py /Bluetooth/Bluetooth/
 COPY BluetoothBoundary/__init__.py /Bluetooth/BluetoothBoundary/
 COPY BluetoothBoundary/main.py /Bluetooth/BluetoothBoundary/
+COPY BluetoothBoundary/Versions_Boundary.py /Bluetooth/BluetoothBoundary/
+COPY BluetoothBoundary/BroadcastBoundary.py /Bluetooth/BluetoothBoundary/
 COPY BluetoothBoundary/PairBoundary.py /Bluetooth/BluetoothBoundary/
 #
 # Set the working directory for the container
