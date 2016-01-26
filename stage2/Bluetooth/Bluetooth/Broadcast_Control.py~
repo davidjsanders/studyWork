@@ -35,21 +35,30 @@ class Broadcast_Control(object):
             status = '403'
             message = 'Device is not paired'
             pairing_key = None
+            self.__controller.log(
+                log_message='BROADCAST ERROR: {0}'\
+                    .format(message))
         elif pairing_key != key:
             success = 'error'
             status = '403'
             message = 'Device pairing key is incorrect!'
             pairing_key = None
+            self.__controller.log(
+                log_message='BROADCAST ERROR: {0}'\
+                    .format(message))
         elif text == '' or text == None:
             success = 'error'
             status = '403'
             message = 'Cannot broadcast an empty message'
             pairing_key = None
+            self.__controller.log(
+                log_message='BROADCAST ERROR: {0}'\
+                    .format(message))
         else:
             try:
 
                 self.__controller.log(
-                     log_message='BROADCASTING: Send "{1}" on behalf of "{0}"' \
+                     log_message='BROADCASTING: Send "{0}" on behalf of "{1}"' \
                         .format(text, devicename))
 
                 now = datetime.datetime.now()
@@ -65,6 +74,15 @@ class Broadcast_Control(object):
                     f.write('Message: {0}'.format(text)+"\n\n")
                     f.close()
 
+                payload_data = {
+                                "key":"1234-5678-9012-3456",
+                                "message":text
+                               }
+                # Fire and forget!
+                request_response = requests.post(
+                     'http://192.168.0.210:82/v1_00/broadcast/bob%20handset',
+                     data=json.dumps(payload_data)
+                    )
             except:
                 raise
 

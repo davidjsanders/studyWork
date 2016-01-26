@@ -2,7 +2,7 @@ from flask_restful import Resource, Api, reqparse, abort
 from flask import Response
 #from Phone import Phone_Database
 from Phone import Control
-import datetime, time, json
+import datetime, time, json, requests
 
 #
 # SuperClass.
@@ -42,7 +42,6 @@ class Notification_Control(object):
             message = 'Notification control key does not match!'
         else:
             try:
-
                 now = datetime.datetime.now()
                 tz = time.tzname[0]
                 tzdst = time.tzname[1]
@@ -58,6 +57,20 @@ class Notification_Control(object):
                     f.write('Action           : {0}'.format(action)+"\n\n")
                     f.close()
 
+                #TODO - GET THE DEVICE PAIR INFO. USING TEST DATA CURRENTLY
+
+                payload_data = {
+                                "key":"1234-5678-9012-3456",
+                                "message":text
+                               }
+
+                # Fire and forget! If there's an error, add it as a warning
+                request_response = requests.post(
+                     'http://192.168.0.210:82/v1_00/broadcast/bob%20handset',
+                     data=json.dumps(payload_data)
+                    )
+                if request_response.status_code != 200:
+                    data['warnings'] = request_response.json()
             except:
                 raise
 

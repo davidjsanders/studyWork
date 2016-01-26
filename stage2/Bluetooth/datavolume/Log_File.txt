@@ -27,3 +27,21 @@
 2016-01-25 20:02:13.793556: BROADCAST START: on behalf of "bob handset35"
 2016-01-25 20:02:13.794448: BROADCAST ERROR: Device is not paired
 2016-01-25 20:02:13.794557: BROADCAST FINISH: on behalf of "bob handset35" (error 403)
+2016-01-25 21:22:26.479018: BROADCAST START: on behalf of "bob handset"
+2016-01-25 21:22:26.480472: BROADCASTING: Send "This is a notification" on behalf of "bob handset"
+2016-01-25 21:22:26.480806: BROADCAST FINISH: on behalf of "bob handset" (success 200)
+2016-01-25 21:22:52.380049: BROADCAST START: on behalf of "bob handset"
+2016-01-25 21:22:52.381598: BROADCASTING: Send "At 21:22 EST, this is a notification" on behalf of "bob handset"
+2016-01-25 21:22:52.381918: BROADCAST FINISH: on behalf of "bob handset" (success 200)
+2016-01-25 21:23:49.283383: BROADCAST START: on behalf of "bobs handset"
+2016-01-25 21:23:49.284182: BROADCAST ERROR: Device is not paired
+2016-01-25 21:23:49.284281: BROADCAST FINISH: on behalf of "bobs handset" (error 403)
+2016-01-25 21:25:31.532304: BROADCAST START: on behalf of "bobs handset"
+2016-01-25 21:25:31.533196: BROADCAST ERROR: Device is not paired
+2016-01-25 21:25:31.533309: BROADCAST FINISH: on behalf of "bobs handset" (error 403)
+2016-01-25 21:26:12.653019: BROADCAST START: on behalf of "bob handset"
+2016-01-25 21:26:12.653944: BROADCASTING: Send "At 21:26 EST, this is a notification" on behalf of "bob handset"
+2016-01-25 21:26:12.654242: BROADCAST FINISH: on behalf of "bob handset" (success 200)
+2016-01-25 21:29:32.239057: BROADCAST START: on behalf of "bob handset"
+2016-01-25 21:29:32.239942: BROADCASTING: Send "*** You have entered an area known for high STI infection rates! Remember: Safe sex is good sex" on behalf of "bob handset"
+2016-01-25 21:29:32.240245: BROADCAST FINISH: on behalf of "bob handset" (success 200)

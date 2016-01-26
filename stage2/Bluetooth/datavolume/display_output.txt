@@ -138,3 +138,23 @@ Broadcast from: bob handset35
 Broadcast at: 2016-01-25 20:02:02.554285 (EST/EST)
 Message: ** Bluetooth Broadcast Test **
 
+--------------------------------------------------------------------------------
+Broadcast from: bob handset
+Broadcast at: 2016-01-25 21:22:26.480605 (EST/EST)
+Message: This is a notification
+
+--------------------------------------------------------------------------------
+Broadcast from: bob handset
+Broadcast at: 2016-01-25 21:22:52.381738 (EST/EST)
+Message: At 21:22 EST, this is a notification
+
+--------------------------------------------------------------------------------
+Broadcast from: bob handset
+Broadcast at: 2016-01-25 21:26:12.654060 (EST/EST)
+Message: At 21:26 EST, this is a notification
+
+--------------------------------------------------------------------------------
+Broadcast from: bob handset
+Broadcast at: 2016-01-25 21:29:32.240058 (EST/EST)
+Message: *** You have entered an area known for high STI infection rates! Remember: Safe sex is good sex
+
