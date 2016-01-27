@@ -1,5 +1,6 @@
 from flask_restful import Resource, Api, reqparse, abort
 from flask import Response
+from Phone.Phone_Database import Phone_Database
 
 import datetime, time, json
 
@@ -8,6 +9,25 @@ import datetime, time, json
 # ----------------------------------------------------------------------------
 class Control(object):
     __log_file = 'datavolume/Log_File.txt'
+    __phone_db = None
+
+    def __init__(self):
+        self.__phone_db = Phone_Database()
+
+
+    def persist_notification(
+        self,
+        sender=None,
+        date_string=None,
+        notification=None,
+        action=None
+    ):
+        self.__phone_db.save_notification(
+            sender,
+            date_string,
+            notification,
+            action
+        )
 
 
     def log(self,
@@ -17,8 +37,7 @@ class Control(object):
         f = None
         try:
             f = open(self.__log_file, 'a')
-            f.write('Logged at: {0}: {1}'.format(now,log_message)+"\n")
-            f.write("\n")
+            f.write('{0}: {1}'.format(now,log_message)+"\n")
         except Exception:
             raise
         finally:

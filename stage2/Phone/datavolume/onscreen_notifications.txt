@@ -1,42 +1,138 @@
 --------------------------------------------------------------------------------
-Notification from: monitorApp
-Received at      : 2016-01-25 21:13:23.560842 (EST/EDT)
-Notification     : This is a notification
-Action           : do something
+Notification from: Test
+Received at      : 2016-01-26 19:03:35.297319 (EST/EDT)
+Notification     : This is a notification!
+Action           : do this
 
 --------------------------------------------------------------------------------
-Notification from: monitorApp
-Received at      : 2016-01-25 21:22:26.460549 (EST/EDT)
-Notification     : This is a notification
-Action           : do something
+Notification from: David J. Sanders
+Received at      : 2016-01-26 20:10:41.945339 (EST/EDT)
+Notification     : Test database insert of notification.
+Action           : actionX
 
 --------------------------------------------------------------------------------
-Notification from: monitorApp
-Received at      : 2016-01-25 21:22:52.372450 (EST/EDT)
-Notification     : At 21:22 EST, this is a notification
-Action           : do something
+Notification from: David J. Sanders
+Received at      : 2016-01-26 20:11:10.211045 (EST/EDT)
+Notification     : Test database insert of notification.
+Action           : actionX
 
 --------------------------------------------------------------------------------
-Notification from: monitorApp
-Received at      : 2016-01-25 21:23:49.272076 (EST/EDT)
-Notification     : At 21:23 EST, this is a notification
-Action           : do something
+Notification from: David J. Sanders
+Received at      : 2016-01-26 20:13:00.054820 (EST/EDT)
+Notification     : Test database insert of notification.
+Action           : actionX
 
 --------------------------------------------------------------------------------
-Notification from: monitorApp
-Received at      : 2016-01-25 21:25:31.522992 (EST/EDT)
-Notification     : At 21:25 EST, this is a notification
-Action           : do something
+Notification from: David J. Sanders
+Received at      : 2016-01-26 20:13:09.174776 (EST/EDT)
+Notification     : Test database insert of notification.
+Action           : actionX
 
 --------------------------------------------------------------------------------
-Notification from: monitorApp
-Received at      : 2016-01-25 21:26:12.644442 (EST/EDT)
-Notification     : At 21:26 EST, this is a notification
-Action           : do something
+Notification from: David J. Sanders
+Received at      : 2016-01-26 20:14:44.211094 (EST/EDT)
+Notification     : Test database insert of notification.
+Action           : actionX
 
 --------------------------------------------------------------------------------
-Notification from: monitorApp
-Received at      : 2016-01-25 21:29:32.236190 (EST/EDT)
-Notification     : *** You have entered an area known for high STI infection rates! Remember: Safe sex is good sex
-Action           : openmap(x,y)
+Notification from: David J. Sanders
+Received at      : 2016-01-26 20:16:22.326738 (EST/EDT)
+Notification     : Second test database insert of notification.
+Action           : actionX
+
+--------------------------------------------------------------------------------
+Notification from: David J. Sanders
+Received at      : 2016-01-26 20:17:42.921393 (EST/EDT)
+Notification     : Third test database insert of notification.
+Action           : actionX
+
+--------------------------------------------------------------------------------
+Notification from: David J. Sanders
+Received at      : 2016-01-26 20:26:32.630414 (EST/EDT)
+Notification     : Third test database insert of notification.
+Action           : actionX
+
+--------------------------------------------------------------------------------
+Notification from: David J. Sanders
+Received at      : 2016-01-26 20:27:27.656298 (EST/EDT)
+Notification     : Third test database insert of notification.
+Action           : actionX
+
+--------------------------------------------------------------------------------
+Notification from: David J. Sanders
+Received at      : 2016-01-26 20:27:43.696983 (EST/EDT)
+Notification     : Third test database insert of notification.
+Action           : actionX
+
+--------------------------------------------------------------------------------
+Notification from: David J. Sanders
+Received at      : 2016-01-26 20:28:07.177290 (EST/EDT)
+Notification     : Third test database insert of notification.
+Action           : actionX
+
+--------------------------------------------------------------------------------
+Notification from: David J. Sanders
+Received at      : 2016-01-26 20:28:38.802644 (EST/EDT)
+Notification     : Third test database insert of notification.
+Action           : actionX
+
+--------------------------------------------------------------------------------
+Notification from: David J. Sanders
+Received at      : 2016-01-26 20:29:04.931030 (EST/EDT)
+Notification     : Third test database insert of notification.
+Action           : actionX
+
+--------------------------------------------------------------------------------
+Notification from: David J. Sanders
+Received at      : 2016-01-26 20:29:24.636226 (EST/EDT)
+Notification     : Third test database insert of notification.
+Action           : actionX
+
+--------------------------------------------------------------------------------
+Notification from: David J. Sanders
+Received at      : 2016-01-26 20:31:08.552842 (EST/EDT)
+Notification     : Third test database insert of notification.
+Action           : actionX
+
+--------------------------------------------------------------------------------
+Notification from: David J. Sanders
+Received at      : 2016-01-26 20:31:31.193090 (EST/EDT)
+Notification     : Third test database insert of notification.
+Action           : actionX
+
+--------------------------------------------------------------------------------
+Notification from: David J. Sanders
+Received at      : 2016-01-26 20:40:05.379797 (EST/EDT)
+Notification     : Another test database insert of notification.
+Action           : actionX
+
+--------------------------------------------------------------------------------
+Notification from: David J. Sanders
+Received at      : 2016-01-26 20:40:24.381053 (EST/EDT)
+Notification     : Another test database insert of notification.
+Action           : actionX
+
+--------------------------------------------------------------------------------
+Notification from: David J. Sanders
+Received at      : 2016-01-26 20:47:04.069414 (EST/EST)
+Notification     : Another test database insert of notification, this time via Docker.
+Action           : actionX
+
+--------------------------------------------------------------------------------
+Notification from: David J. Sanders
+Received at      : 2016-01-26 20:47:53.318987 (EST/EST)
+Notification     : Another test database insert of notification, this time via Docker.
+Action           : actionX
+
+--------------------------------------------------------------------------------
+Notification from: David J. Sanders
+Received at      : 2016-01-26 20:50:24.772402 (EST/EST)
+Notification     : Another test database insert of notification, this time via Docker.
+Action           : actionX
+
+--------------------------------------------------------------------------------
+Notification from: David J. Sanders
+Received at      : 2016-01-26 20:52:12.749846 (EST/EST)
+Notification     : Another test database insert of notification, this time via Docker.
+Action           : actionX
 

@@ -1,5 +1,6 @@
 from flask_restful import Resource, Api, reqparse, abort
 from flask import Response
+from Phone.Phone_Database import Phone_Database
 
 import datetime, time, json
 
@@ -8,6 +9,29 @@ import datetime, time, json
 # ----------------------------------------------------------------------------
 class Control(object):
     __log_file = 'datavolume/Log_File.txt'
+    __phone_db = None
+
+    def __init__(self):
+        self.__phone_db = Phone_Database()
+
+
+    def persist_notification(
+        self,
+        sender=None,
+        date_string=None,
+        notification=None,
+        action=None
+    ):
+        self.__phone_db.save_notification(
+            sender,
+            date_string,
+            notification,
+            action
+        )
+
+
+    def get_bluetooth(self):
+        return self.__phone_db.get_bluetooth_device()
 
 
     def log(self,

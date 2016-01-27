@@ -1,7 +1,7 @@
 #
 # Dockerfile
 # ----------
-# Purpose - build the Docker container image for the Bluetooth device
+# Purpose - build the Docker container image for the Phone device
 #           to enable the application to run on any platform that
 #           supports Docker.
 #
@@ -19,27 +19,29 @@
 FROM dsanderscan/pythonbase
 #
 # Create the directory structures
-RUN mkdir /Bluetooth
-RUN mkdir /Bluetooth/Bluetooth
-RUN mkdir /Bluetooth/BluetoothBoundary
-RUN mkdir /Bluetooth/BluetoothSender
+RUN mkdir /Phone
+RUN mkdir /Phone/Phone
+RUN mkdir /Phone/Phone_Boundary
 #
 # copy the files required for the application
 #
-COPY runserver.py /Bluetooth/
-COPY startup.sh /Bluetooth/
-COPY Bluetooth/__init__.py /Bluetooth/Bluetooth/
-COPY Bluetooth/main.py /Bluetooth/Bluetooth/
-COPY Bluetooth/Control.py /Bluetooth/Bluetooth/
-COPY Bluetooth/Pairing_Database.py /Bluetooth/Bluetooth/
-COPY Bluetooth/Pairing_Control.py /Bluetooth/Bluetooth/
-COPY Bluetooth/Broadcast_Control.py /Bluetooth/Bluetooth/
-COPY Bluetooth_Boundary/__init__.py /Bluetooth/Bluetooth_Boundary/
-COPY Bluetooth_Boundary/main.py /Bluetooth/Bluetooth_Boundary/
-COPY Bluetooth_Boundary/Versions_Boundary.py /Bluetooth/Bluetooth_Boundary/
-COPY Bluetooth_Boundary/Broadcast_Boundary.py /Bluetooth/Bluetooth_Boundary/
-COPY Bluetooth_Boundary/Pair_Boundary.py /Bluetooth/Bluetooth_Boundary/
+COPY runserver.py /Phone/
+COPY startup.sh /Phone/
+COPY Phone/__init__.py /Phone/Phone/
+COPY Phone/main.py /Phone/Phone/
+COPY Phone/Control.py /Phone/Phone/
+COPY Phone/Location_Control.py /Phone/Phone/
+COPY Phone/Lock_Control.py /Phone/Phone/
+COPY Phone/Notification_Control.py /Phone/Phone/
+COPY Phone/Phone_Database.py /Phone/Phone/
+COPY Phone_Boundary/__init__.py /Phone/Phone_Boundary/
+COPY Phone_Boundary/main.py /Phone/Phone_Boundary/
+COPY Phone_Boundary/Location_Boundary.py /Phone/Phone_Boundary/
+COPY Phone_Boundary/Lock_Boundary.py /Phone/Phone_Boundary/
+COPY Phone_Boundary/Notification_Boundary.py /Phone/Phone_Boundary/
+COPY Phone_Boundary/Unlock_Boundary.py /Phone/Phone_Boundary/
+COPY Phone_Boundary/Versions_Boundary.py /Phone/Phone_Boundary/
 #
 # Set the working directory for the container
 #
-WORKDIR /Bluetooth/
+WORKDIR /Phone/

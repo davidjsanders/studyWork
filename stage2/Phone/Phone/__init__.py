@@ -23,6 +23,8 @@ from flask_restful import Api
 from Phone import Control
 #from Phone import Broadcast_Control
 from Phone import Notification_Control
+from Phone import Location_Control
+from Phone import Lock_Control
 
 # The app is this application and set when the Python file is run from the
 # command line, e.g. python3 /some/folder/notes/runserver.py
@@ -32,6 +34,8 @@ api = Api(app)
 
 #Setup objects for pairing and broadcasting.
 notification_control_object = Notification_Control.Notification_Control_v1_00()
+location_control_object = Location_Control.Location_Control_v1_00()
+lock_control_object = Lock_Control.Lock_Control_v1_00()
 #broadcast_control_object = Broadcast_Control.Broadcast_Control_v1_00()
 control = Control.Control_v1_00()
 

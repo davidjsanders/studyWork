@@ -18,5 +18,5 @@ docker run -p $portToUse:$portToUse --name stage2_phone$portToUse \
     -e portToUse=$portToUse \
     -e serverName="$serverName" \
     -e TZ=`date +%Z` \
-    -v $PWD/datavolume:/Bluetooth/datavolume \
-    -d dsanders/stage2_phone /bin/bash -c /Bluetooth/startup.sh \
+    -v $PWD/datavolume:/Phone/datavolume \
+    -d dsanders/stage2_phone /bin/bash -c /Phone/startup.sh \

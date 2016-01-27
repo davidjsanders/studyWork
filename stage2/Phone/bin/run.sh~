@@ -13,10 +13,10 @@ echo -n "Starting port $portToUse with server name $serverName>> "
 # serverName: the name of the server, rather than localhost
 # TZ: the timezone setting. Taken from the container host
 #
-docker run -p $portToUse:$portToUse --name stage2_bluetooth$portToUse \
+docker run -p $portToUse:$portToUse --name stage2_phone$portToUse \
     --net=isolated_nw \
     -e portToUse=$portToUse \
     -e serverName="$serverName" \
     -e TZ=`date +%Z` \
     -v $PWD/datavolume:/Bluetooth/datavolume \
-    -d dsanders/stage2_bluetooth /bin/bash -c /Bluetooth/startup.sh \
+    -d dsanders/stage2_phone /bin/bash -c /Bluetooth/startup.sh \
