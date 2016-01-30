@@ -2,13 +2,14 @@ from flask_restful import Resource, Api, reqparse, abort
 from flask import Response
 #from Phone import Phone_Database
 from Phone import Control
-import datetime, time, json, requests
+import datetime, time, json, requests, os
 
 #
 # SuperClass.
 # ----------------------------------------------------------------------------
 class Notification_Control(object):
     __controller = None
+    #TODO Change this to be stored in the database
     __output_devices = [
                         'datavolume/onscreen_notifications.txt'
                        ]
@@ -41,6 +42,49 @@ class Notification_Control(object):
                 action=json_data['action']
                 if not key == '1234-5678-9012-3456':
                     raise ValueError('Notification control key incorrect.')
+
+                data = {"action":action,
+                        "notification":text}
+                now = datetime.datetime.now()
+                tz = time.tzname[0]
+                tzdst = time.tzname[1]
+
+                for outputfile in self.__output_devices:
+                    f = open(outputfile,'a')
+                    f.write(('-'*80)+"\n")
+                    f.write('Notification from: {0}'.format(sender)+"\n")
+                    f.write('Received at      : {0} ({1}/{2})'\
+                        .format(now, tz, tzdst)+"\n")
+                    f.write('Notification     : {0}'.format(text)+"\n")
+                    f.write('Action           : {0}'.format(action)+"\n\n")
+                    f.close()
+
+                self.__controller.persist_notification(
+                    sender=sender,
+                    date_string='{0} ({1}/{2})'.format(now, tz, tzdst),
+                    notification=text,
+                    action=action
+                )
+
+                bluetooth_device = self.__controller.get_bluetooth()
+                if bluetooth_device != []\
+                and bluetooth_device != None:
+                    phonename = self.__controller.get_value('phonename')
+                    payload_data = {
+                                    "key":"1234-5678-9012-3456",
+                                    "message":text
+                                   }
+                    request_response = requests.post(
+                         bluetooth_device+'/broadcast/'+phonename,
+                         data=json.dumps(payload_data)
+                    )
+                    if request_response.status_code != 200:
+                        data['warnings'] = request_response.json()
+            except requests.exceptions.ConnectionError as rce:
+                    # Connection error means we could not reach the Bluetooth
+                    # device. Ignore it but add a warning to the output as the
+                    # notification was still delivered.
+                    data['warnings'] = 'Bluetooth Error: device did not respond'
             except KeyError as ke:
                 success = 'error'
                 status = '400'
@@ -54,50 +98,6 @@ class Notification_Control(object):
             except Exception as e:
                 raise
 
-            if continue_sentinel:
-                data = {"action":action,
-                        "notification":text}
-                try:
-                    now = datetime.datetime.now()
-                    tz = time.tzname[0]
-                    tzdst = time.tzname[1]
-
-                    for outputfile in self.__output_devices:
-                        print('Incoming Notification! Bing Bong!')
-                        f = open(outputfile,'a')
-                        f.write(('-'*80)+"\n")
-                        f.write('Notification from: {0}'.format(sender)+"\n")
-                        f.write('Received at      : {0} ({1}/{2})'\
-                            .format(now, tz, tzdst)+"\n")
-                        f.write('Notification     : {0}'.format(text)+"\n")
-                        f.write('Action           : {0}'.format(action)+"\n\n")
-                        f.close()
-                    self.__controller.persist_notification(
-                        sender=sender,
-                        date_string='{0} ({1}/{2})'.format(now, tz, tzdst),
-                        notification=text,
-                        action=action
-                    )
-                    bluetooth_device = self.__controller.get_bluetooth()
-                    if bluetooth_device != []\
-                    or bluetooth_device != None:
-                        payload_data = {
-                                        "key":"1234-5678-9012-3456",
-                                        "message":text
-                                       }
-                        request_response = requests.post(
-                             bluetooth_device,
-                             data=json.dumps(payload_data)
-                            )
-                        if request_response.status_code != 200:
-                            data['warnings'] = request_response.json()
-                except requests.exceptions.ConnectionError as rce:
-                    # Connection error means we could not reach the Bluetooth
-                    # device. Ignore it but add a warning to the output as the
-                    # notification was still delivered.
-                    data['warnings'] = 'Bluetooth Error: device did not respond'
-                except:
-                    raise
 
         return_value = self.__controller.do_response(message=message,
                                                      data=data,

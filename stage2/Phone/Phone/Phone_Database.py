@@ -5,13 +5,14 @@ class Phone_Database(object):
     __db_conn = None
     __db_cursor = None
 
-    def __init__(self):
-        self.__db_name = 'datavolume/phone.db'
-        self.__db_conn = None
-        self.__db_cursor = None
+    def __init__(self, server_name=None, port_number=None):
+        if server_name != None and port_number != None:
+            self.__db_name = 'datavolume/phone-'+server_name+'-'+str(port_number)+'.db'
+            self.__db_conn = None
+            self.__db_cursor = None
 
-        self.__validate_config_table()
-        self.__validate_notification_table()
+            self.__validate_config_table()
+            self.__validate_notification_table()
 
 
     def __open_db(self):
@@ -41,11 +42,8 @@ class Phone_Database(object):
             print(repr(e))
             raise
         finally:
-            self.__db_exec('insert or replace into config values (?,?)',
-                          ('phone','ABCD-EFGH'))
-            self.__db_exec('insert or replace into config values (?,?)',
-                          ('locked','unlocked'))
-            self.__db_conn.commit()
+            self.set_key('phonename','noname')
+            self.set_key('locked','unlocked')
             self.__close_db()
 
 
@@ -77,6 +75,43 @@ class Phone_Database(object):
             self.__close_db()
 
 
+    def set_key(self, key=None, value=None):
+        if key == None:
+            return None
+
+        try:
+            self.__open_db()
+            self.__db_exec('insert or replace into config values (?,?)',
+                          (key,value))
+            self.__db_conn.commit()
+        except Exception as e:
+            print(repr(e))
+            raise
+        finally:
+            self.__close_db()
+
+
+    def get_key(self, key=None):
+        if key == None:
+            return None
+
+        returned = []
+        try:
+            self.__open_db()
+            self.__db_exec('select value from config where key = ?',
+                          (key,))
+            returned = self.__db_cursor.fetchall()
+            if returned != []:
+                returned = returned[0][0] # Only return first value
+        except Exception as e:
+            print(repr(e))
+            raise
+        finally:
+            self.__close_db()
+
+        return returned
+
+
     def __db_exec(self, sql_statement=None, sql_parameters=()):
         if sql_statement == None:
             return None
@@ -102,22 +137,7 @@ class Phone_Database(object):
 
 
     def get_bluetooth_device(self):
-        returned = None
-        try:
-            self.__open_db()
-            self.__db_exec('select value from config where key = ?',
-                           ('bluetooth',))
-            returned = self.__db_cursor.fetchall()
-            if not returned == []:
-                if type(returned) == list:
-                    returned = returned[0][0]
-        except Exception as e:
-            print(repr(e))
-        finally:
-            self.__close_db()
-
-        return returned
-
+        return self.get_key('bluetooth')
 
     def set_bluetooth_device(self, devicename):
         returned = None
@@ -140,24 +160,6 @@ class Phone_Database(object):
 
         return returned
 
-
-    def check_pairing(self, devicename):
-        returned = None
-        try:
-            self.__open_db()
-            self.__db_exec('select key from paired_devices where device = ?',
-                           (devicename,))
-            returned = self.__db_cursor.fetchall()
-            if not returned == []:
-                if type(returned) == list:
-                    returned = returned[0][0]
-
-        except Exception as e:
-            print(repr(e))
-        finally:
-            self.__close_db()
-
-        return returned
 
     def save_notification(
         self,
@@ -183,32 +185,3 @@ class Phone_Database(object):
 
         return True
 
-
-    def pair_device(self, devicename):
-        try:
-            pairing_key = '1234-5678-9012-3456'
-
-            self.__open_db()
-            self.__db_exec('insert or replace into '+\
-                           'paired_devices values (?, ?)',
-                           (devicename, pairing_key))
-            self.__db_conn.commit()
-        except:
-            raise
-        finally:
-            self.__close_db()
-
-        return pairing_key
-
-    def remove_pairing(self, devicename):
-        try:
-            self.__open_db()
-            self.__db_exec('delete from paired_devices where device = ?',
-                           (devicename,))
-            self.__db_conn.commit()
-        except:
-            raise
-        finally:
-            self.__close_db()
-
-        return True

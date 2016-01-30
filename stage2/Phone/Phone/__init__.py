@@ -19,6 +19,9 @@ from flask import Flask
 # Import the module Api from the flask_restful package
 from flask_restful import Api
 
+# Import werkzueg
+from werkzeug import serving
+
 # Import PairControl
 from Phone import Control
 #from Phone import Broadcast_Control
@@ -32,12 +35,15 @@ app = Flask(__name__)
 # Create an Api object inheriting app
 api = Api(app)
 
-#Setup objects for pairing and broadcasting.
-notification_control_object = Notification_Control.Notification_Control_v1_00()
-location_control_object = Location_Control.Location_Control_v1_00()
-lock_control_object = Lock_Control.Lock_Control_v1_00()
-#broadcast_control_object = Broadcast_Control.Broadcast_Control_v1_00()
-control = Control.Control_v1_00()
+#if not serving.is_running_from_reloader():
+try:
+    #Setup objects for pairing and broadcasting.
+    notification_control_object = Notification_Control.Notification_Control_v1_00()
+    location_control_object = Location_Control.Location_Control_v1_00()
+    lock_control_object = Lock_Control.Lock_Control_v1_00()
+    control = Control.Control_v1_00()
+except KeyError as ke:
+    print(ke)
 
 # Import the main.py module
 import Phone.main
