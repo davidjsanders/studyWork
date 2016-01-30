@@ -22,6 +22,9 @@ from flask_restful import Api
 # Import werkzueg
 from werkzeug import serving
 
+# Import atexit
+import atexit
+
 # Import the threading module
 import threading
 
@@ -57,6 +60,13 @@ if not serving.is_running_from_reloader():
     )
     thread_job.setDaemon(True)
     thread_job.start()
+
+    # Reference https://docs.python.org/2/library/atexit.html
+    # Register an exit handler - in case we need to do any close out stuff on
+    # our thread.
+    atexit.register(Notification_Processor.redis_close,
+                    thread=thread_job,
+                    controller=control)
 
 # Import the main.py module
 import Notification_Service.main

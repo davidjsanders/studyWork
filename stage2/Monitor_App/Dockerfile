@@ -1,0 +1,45 @@
+#
+# Dockerfile
+# ----------
+# Purpose - build the Docker container image for the Monitor_App device
+#           to enable the application to run on any platform that
+#           supports Docker.
+#
+# MAINTAINER David Sanders <dsanders_can@outlook.com>
+#
+# Revision History
+# -----------------------------------------------------------------------------
+# Date         | By             | Reason
+# -----------------------------------------------------------------------------
+# 24 Jan 2015  | D Sanders      | First version.
+#
+#
+# Use the base Python image which includes Python3, Flask, Flask_Restful, and
+# 
+FROM dsanderscan/pythonbase
+#
+# Create the directory structures
+RUN mkdir /Monitor_App
+RUN mkdir /Monitor_App/Monitor_App
+RUN mkdir /Monitor_App/Monitor_App_Boundary
+#
+# copy the files required for the application
+#
+COPY runserver.py /Monitor_App/
+COPY startup.sh /Monitor_App/
+COPY Monitor_App/__init__.py /Monitor_App/Monitor_App/
+COPY Monitor_App/main.py /Monitor_App/Monitor_App/
+COPY Monitor_App/Control.py /Monitor_App/Monitor_App/
+COPY Monitor_App/App_Launched_Control.py /Monitor_App/Monitor_App/
+COPY Monitor_App/Location_Processor.py /Monitor_App/Monitor_App/
+COPY Monitor_App/Monitor_App_Database.py /Monitor_App/Monitor_App/
+COPY Monitor_App/State_Control.py /Monitor_App/Monitor_App/
+COPY Monitor_App_Boundary/__init__.py /Monitor_App/Monitor_App_Boundary/
+COPY Monitor_App_Boundary/main.py /Monitor_App/Monitor_App_Boundary/
+COPY Monitor_App_Boundary/State_Boundary.py /Monitor_App/Monitor_App_Boundary/
+COPY Monitor_App_Boundary/App_Launched_Boundary.py /Monitor_App/Monitor_App_Boundary/
+COPY Monitor_App_Boundary/Versions_Boundary.py /Monitor_App/Monitor_App_Boundary/
+#
+# Set the working directory for the container
+#
+WORKDIR /Monitor_App/

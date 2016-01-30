@@ -1,11 +1,18 @@
-from Notification_Service import Control
 import redis
 import requests
 import json
 
+def redis_close(thread=None, controller=None):
+    # Although not used in this app, the thread close event logic would allow
+    # us to do any last tasks.
+    if not thread == None\
+    and not controller == None:
+        print('Closing background thread.')
+    else:
+        print('Thread was none!')
+
 def redis_processor(control_object=None):
-    __controller = Control.Control_v1_00()
-    redis_pubsub = __controller.get_queue()
+    redis_pubsub = control_object.get_queue()
 
     for message in redis_pubsub.listen():
         if message['type'].upper() == 'MESSAGE':
@@ -52,7 +59,7 @@ def redis_processor(control_object=None):
             except requests.exceptions.ConnectionError as rce:
                 print_error(str(rce))
                 try:
-                    __controller.persist_notification(
+                    control_object.persist_notification(
                         sender,
                         recipient,
                         text,
