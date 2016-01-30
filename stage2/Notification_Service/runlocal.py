@@ -34,5 +34,10 @@ from flask_restful import Api
 from Notification_Service import app, api
 from Notification_Service_Boundary import apiR
 
-app.run(host='0.0.0.0', port=5000, debug=True, threaded=True)
+app.run(host='0.0.0.0',
+        port=5000,
+        debug=True,
+        threaded=True)
+#,
+#        use_reloader=False)
 

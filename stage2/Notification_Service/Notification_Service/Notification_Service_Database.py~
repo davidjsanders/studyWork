@@ -1,16 +1,15 @@
 import sqlite3
 
-class Phone_Database(object):
+class Notification_Service_Database(object):
     __db_name = None
     __db_conn = None
     __db_cursor = None
 
     def __init__(self):
-        self.__db_name = 'datavolume/phone.db'
+        self.__db_name = 'datavolume/Notification_Service.db'
         self.__db_conn = None
         self.__db_cursor = None
 
-        self.__validate_config_table()
         self.__validate_notification_table()
 
 
@@ -26,49 +25,23 @@ class Phone_Database(object):
                 self.__db_conn.close()
 
 
-    def __validate_config_table(self):
-        _returned = None
-
-        try:
-            self.__open_db()
-            self.__db_exec('select * from config')
-        except sqlite3.OperationalError as oe:
-            self.__db_cursor.execute(
-                    'create table config '+\
-                    '(key string primary key not null, value string)'
-                )
-        except Exception as e:
-            print(repr(e))
-            raise
-        finally:
-            self.__db_exec('insert or replace into config values (?,?)',
-                          ('phone','ABCD-EFGH'))
-            self.__db_exec('insert or replace into config values (?,?)',
-                          ('locked','unlocked'))
-            self.__db_conn.commit()
-            self.__close_db()
-
-
     def __validate_notification_table(self):
         _returned = None
 
         try:
             self.__open_db()
             self.__db_exec('select * from notifications')
-            self.__db_exec('delete from notifications '+\
-                           'where notification_read != 0'
-                          )
-            self.__db_conn.commit()
         except sqlite3.OperationalError as oe:
+            print(str(oe))
             self.__db_cursor.execute(
                     'CREATE TABLE notifications( '+\
                     '  id integer primary key autoincrement, '+\
                     '  sender string not null, '+\
-                    '  date_string string not null, '+\
+                    '  recipient string not null,' +\
                     '  notification string not null, '+\
                     '  action string not null, '+\
-                    '  notification_read int not null '+\
-                    ');'
+                    '  event_date string not null '+\
+                    ')'
                 )
         except Exception as e:
             print(repr(e))
@@ -101,38 +74,21 @@ class Phone_Database(object):
         self.__db_conn = None
 
 
-    def get_bluetooth_device(self):
+    def get_notifications(
+        self,
+        recipient=None
+    ):
+        if recipient == None:
+            return []
+
         returned = None
         try:
             self.__open_db()
-            self.__db_exec('select value from config where key = ?',
-                           ('bluetooth',))
+            self.__db_exec('select * from notifications '+\
+                           'where recipient = ?',
+                           (recipient,))
             returned = self.__db_cursor.fetchall()
-            if not returned == []:
-                if type(returned) == list:
-                    returned = returned[0][0]
-        except Exception as e:
-            print(repr(e))
-        finally:
-            self.__close_db()
-
-        return returned
-
-
-    def set_bluetooth_device(self, devicename):
-        returned = None
-        try:
-            self.__open_db()
-            self.__db_exec('insert into config values (?,?)',
-                          ('bluetooth', devicename))
             self.__db_conn.commit()
-            self.__db_exec('select value from config '+\
-                           'where key = ? and value = ?',
-                           ('bluetooth', devicename))
-            returned = self.__db_cursor.fetchall()
-            if not returned == []:
-                if type(returned) == list:
-                    returned = returned[0][0]
         except Exception as e:
             print(repr(e))
         finally:
@@ -141,41 +97,49 @@ class Phone_Database(object):
         return returned
 
 
-    def check_pairing(self, devicename):
-        returned = None
+    def clear_notifications(
+        self,
+        recipient=None
+    ):
+        if recipient == None:
+            return []
+
+        returned = True
         try:
             self.__open_db()
-            self.__db_exec('select key from paired_devices where device = ?',
-                           (devicename,))
-            returned = self.__db_cursor.fetchall()
-            if not returned == []:
-                if type(returned) == list:
-                    returned = returned[0][0]
-
+            self.__db_exec('delete from notifications '+\
+                           'where recipient = ?',
+                           (recipient,))
+            self.__db_conn.commit()
         except Exception as e:
+            returned = False
             print(repr(e))
         finally:
             self.__close_db()
 
         return returned
+
 
     def save_notification(
         self,
         sender=None,
-        date_string=None,
-        notification=None,
-        action=None
+        recipient=None,
+        text=None,
+        action=None,
+        event_date=None
     ):
         returned = None
         try:
             self.__open_db()
-            self.__db_exec('insert into notifications '+\
-                           ' (sender, date_string, notification, '+\
-                           'action, notification_read) '+\
-                           ' values (?,?,?,?, 0)',
-                           (sender, date_string, notification, action))
+            self.__db_exec('insert into notifications ('+\
+                           ' sender, '+\
+                           ' recipient, '+\
+                           ' notification, '+\
+                           ' action, '+\
+                           ' event_date) '+\
+                           'values (?,?,?,?,?)',
+                           (sender, recipient, text, action, event_date))
             self.__db_conn.commit()
-
         except Exception as e:
             print(repr(e))
         finally:
@@ -183,32 +147,3 @@ class Phone_Database(object):
 
         return True
 
-
-    def pair_device(self, devicename):
-        try:
-            pairing_key = '1234-5678-9012-3456'
-
-            self.__open_db()
-            self.__db_exec('insert or replace into '+\
-                           'paired_devices values (?, ?)',
-                           (devicename, pairing_key))
-            self.__db_conn.commit()
-        except:
-            raise
-        finally:
-            self.__close_db()
-
-        return pairing_key
-
-    def remove_pairing(self, devicename):
-        try:
-            self.__open_db()
-            self.__db_exec('delete from paired_devices where device = ?',
-                           (devicename,))
-            self.__db_conn.commit()
-        except:
-            raise
-        finally:
-            self.__close_db()
-
-        return True

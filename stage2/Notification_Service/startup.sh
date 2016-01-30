@@ -1,4 +1,8 @@
 #
+# Start Redis
+#
+redis-server &
+#
 # $portToUse is an environment variable required to set the nginx configuration
 # (see below). We check the variable has been set - if it hasn't, then the
 # default of 5000 is used.

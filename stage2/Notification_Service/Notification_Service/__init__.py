@@ -19,17 +19,18 @@ from flask import Flask
 # Import the module Api from the flask_restful package
 from flask_restful import Api
 
+# Import werkzueg
+from werkzeug import serving
+
 # Import the threading module
 import threading
 
 # Import PairControl
 from Notification_Service import Control
-#from Notification_Service import Broadcast_Control
-from Notification_Service import Notification_Control
+#from Notification_Service import Notification_Control
 from Notification_Service import Notification_Receiver
 from Notification_Service import Notification_Processor
-from Notification_Service import Location_Control
-from Notification_Service import Lock_Control
+from Notification_Service import Notification_Push_Control
 
 # The app is this application and set when the Python file is run from the
 # command line, e.g. python3 /some/folder/notes/runserver.py
@@ -38,21 +39,24 @@ app = Flask(__name__)
 api = Api(app)
 
 #Setup objects for pairing and broadcasting.
-notification_control_object = Notification_Control.Notification_Control_v1_00()
+#notification_control_object = Notification_Control.Notification_Control_v1_00()
 notification_receiver_object = \
     Notification_Receiver.Notification_Receiver_v1_00()
-location_control_object = Location_Control.Location_Control_v1_00()
-lock_control_object = Lock_Control.Lock_Control_v1_00()
-#broadcast_control_object = Broadcast_Control.Broadcast_Control_v1_00()
+notification_push_control = \
+    Notification_Push_Control.Notification_Push_Control_v1_00()
 control = Control.Control_v1_00()
 
 # Setup threaded background job
-thread_job = threading.Thread(
-    target=Notification_Processor.redis_processor,
-    args=(control,)
-)
-thread_job.setDaemon(True)
-thread_job.start()
+# Check app is NOT reloaded or spawned
+# Reference: http://werkzeug.pocoo.org/docs/0.10/serving/#werkzeug.serving.is_running_from_reloader
+#
+if not serving.is_running_from_reloader():
+    thread_job = threading.Thread(
+        target=Notification_Processor.redis_processor,
+        args=(control,)
+    )
+    thread_job.setDaemon(True)
+    thread_job.start()
 
 # Import the main.py module
 import Notification_Service.main

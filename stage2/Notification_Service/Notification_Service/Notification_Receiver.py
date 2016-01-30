@@ -9,7 +9,6 @@ import redis
 # ----------------------------------------------------------------------------
 class Notification_Receiver(object):
     __controller = None
-    __redis = {'host':'localhost', 'port':6379, 'db':0}
 
     def __init__(self):
         self.__controller = Control.Control_v1_00()
@@ -37,6 +36,7 @@ class Notification_Receiver(object):
                 key=json_data['key']
                 sender=json_data['sender']
                 action=json_data['action']
+                recipient=json_data['recipient']
                 if not key == '1234-5678-9012-3456':
                     raise ValueError('Notification control key incorrect.')
             except KeyError as ke:
@@ -63,18 +63,14 @@ class Notification_Receiver(object):
                     # Dispatch notification to redis pub/sub to enable fast
                     # collection of notifications and then let another thread
                     # take time to process.
-                    redis_instance = redis.StrictRedis(**self.__redis)
 
-                    redis_instance.publish(
-                        'notification_store',
-                        '{0}<<*>>{1}<<*>>{2}<<*>>{3}'.format(
-                            sender,
-                            text,
-                            action,
-                            str(now)+'('+tz+'/'+tzdst+')'
-                        )
+                    self.__controller.queue_notification(
+                        sender,
+                        recipient,
+                        text,
+                        action,
+                        str(now)+'('+tz+'/'+tzdst+')'
                     )
-
                 except:
                     raise
 

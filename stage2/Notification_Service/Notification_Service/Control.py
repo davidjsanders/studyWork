@@ -3,7 +3,7 @@ from flask import Response
 from Notification_Service.Notification_Service_Database \
     import Notification_Service_Database
 
-import datetime, time, json
+import datetime, time, json, redis
 
 #
 # SuperClass.
@@ -11,6 +11,7 @@ import datetime, time, json
 class Control(object):
     __log_file = 'datavolume/Log_File.txt'
     __Notification_Service_db = None
+    __redis = {'host':'localhost', 'port':6379, 'db':0}
 
     def __init__(self):
         self.__Notification_Service_db = Notification_Service_Database()
@@ -19,20 +20,59 @@ class Control(object):
     def persist_notification(
         self,
         sender=None,
-        date_string=None,
+        recipient=None,
         notification=None,
-        action=None
+        action=None,
+        event_date=None
     ):
         self.__Notification_Service_db.save_notification(
             sender,
-            date_string,
+            recipient,
             notification,
-            action
+            action,
+            event_date
         )
 
 
-    def get_bluetooth(self):
-        return self.__Notification_Service_db.get_bluetooth_device()
+    def queue_notification(
+        self,
+        sender=None,
+        recipient=None,
+        text=None,
+        action=None,
+        event_date=None
+    ):
+        redis_instance = redis.StrictRedis(**self.__redis)
+        return redis_instance.publish(
+            'notification_store',
+            '{0}<<*>>{1}<<*>>{2}<<*>>{3}<<*>>{4}'.format(
+                sender,
+                recipient,
+                text,
+                action,
+                event_date
+            )
+        )
+
+
+    def get_queue(self):
+        redis_instance = redis.StrictRedis(**self.__redis)
+        redis_pubsub = redis_instance.pubsub()
+        redis_pubsub.subscribe('notification_store')
+        return redis_pubsub
+
+
+    def fetch_notifications(
+        self,
+        recipient=None
+    ):
+        return self.__Notification_Service_db.get_notifications(recipient)
+
+    def clear_notification(
+        self,
+        identifier=None
+    ):
+        return self.__Notification_Service_db.clear_notification(identifier)
 
 
     def log(self,

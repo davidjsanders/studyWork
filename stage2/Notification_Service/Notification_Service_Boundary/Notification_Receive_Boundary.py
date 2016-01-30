@@ -2,7 +2,6 @@ from flask_restful import Resource, Api, reqparse, abort
 from flask import Response
 from Notification_Service \
     import app, api, control, \
-           notification_control_object, \
            notification_receiver_object
 
 from Notification_Service_Boundary import apiR

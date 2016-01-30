@@ -22,7 +22,6 @@ class Location_Control(object):
         message = 'Location.'
         data = None
 
-
         continue_sentinel = True
         try:
             if json_string == None\
