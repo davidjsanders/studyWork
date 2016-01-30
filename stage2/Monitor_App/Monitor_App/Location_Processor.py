@@ -6,9 +6,9 @@ from datetime import datetime
 def location_processor(control_object=None):
     while True:
         state = control_object.get_state()
-        if state.upper() == 'ON':
+        if state.upper() == 'ON': # Only check if we've been switched on.
             do_location_check(control_object)
-        time.sleep(30)
+        time.sleep(30) # Only check every 30 seconds.
 
 def do_location_check(control_object=None):
     recipient = control_object.get_value('recipient')
@@ -28,26 +28,37 @@ def do_location_check(control_object=None):
             if returned_data['response'] == 'success':
                 x = returned_data['data']['x']
                 y = returned_data['data']['y']
-                xy = (x, y)
-                if xy == (22.123, 211.072):
-                    timeNow = time.time()
-                    timeThen = None
-                    issue_notification = True
+                payload_data = {
+                    "key":"1234-5678-9012-3456", "x":x, "y":y
+                }
+                check_response = requests.get(
+                    'http://192.168.0.210:91/v1_00'+'/check',
+                    data=json.dumps(payload_data)
+                )
+                if check_response.status_code in (200,201)\
+                and check_response.json()['response'] == 'success':
+                    xy = (x, y)
+                    hotspot_yn = check_response.json()['data']['hotspot']
+                    if hotspot_yn:
+                        timeNow = time.time()
+                        timeThen = None
+                        issue_notification = True
 
-                    lastXY = control_object.get_value(str(xy))
+                        lastXY = control_object.get_value(str(xy))
 
-                    if lastXY == None:
-                        lastXY = control_object.set_value(str(xy), str(timeNow))
-                    else:
-                        timeString = time.ctime(lastXY)
-                        tempTime = datetime.strptime(timeString,
-                                                     '%a %b %d %H:%M:%S %Y')
-                        timeThen = time.mktime(tempTime.timetuple())
-                        timePassed = timeNow - timeThen
-                        if timePassed < (60 * 5):    # 60 * 5 = 5 minutes
-                            issue_notification = False
+                        if lastXY == None:
+                            lastXY = control_object.set_value(str(xy),
+                                                              str(timeNow))
                         else:
-                            control_object.set_value(str(xy), str(timeNow))
+                            timeString = time.ctime(lastXY)
+                            tempTime = datetime.strptime(timeString,
+                                                         '%a %b %d %H:%M:%S %Y')
+                            timeThen = time.mktime(tempTime.timetuple())
+                            timePassed = timeNow - timeThen
+                            if timePassed < (60 * 5):    # 60 * 5 = 5 minutes
+                                issue_notification = False
+                            else:
+                                control_object.set_value(str(xy), str(timeNow))
 
                     if issue_notification:
                         raise_location_notification(

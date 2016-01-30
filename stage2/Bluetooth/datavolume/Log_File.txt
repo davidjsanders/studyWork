@@ -54,3 +54,12 @@
 2016-01-26 20:50:24.794933: BROADCAST START: on behalf of "bob handset"
 2016-01-26 20:50:24.795826: BROADCASTING: Send "Another test database insert of notification, this time via Docker." on behalf of "bob handset"
 2016-01-26 20:50:24.796107: BROADCAST FINISH: on behalf of "bob handset" (success 200)
+2016-01-30 16:11:52.384923: BROADCAST START: on behalf of "bob handset"
+2016-01-30 16:11:52.386580: BROADCASTING: Send "You have entered an area known for high rates of STI infections and drug use. Remember: Safe sex is good sex!" on behalf of "bob handset"
+2016-01-30 16:11:52.387279: BROADCAST FINISH: on behalf of "bob handset" (success 200)
+2016-01-30 16:15:35.249560: BROADCAST START: on behalf of "bob handset"
+2016-01-30 16:15:35.250520: BROADCASTING: Send "You have entered an area known for high rates of STI infections and drug use. Remember: Safe sex is good sex!" on behalf of "bob handset"
+2016-01-30 16:15:35.250823: BROADCAST FINISH: on behalf of "bob handset" (success 200)
+2016-01-30 16:16:34.208834: BROADCAST START: on behalf of "bob handset"
+2016-01-30 16:16:34.209729: BROADCASTING: Send "The application Grindr has been launched. Remember: Safe sex is good sex!" on behalf of "bob handset"
+2016-01-30 16:16:34.210069: BROADCAST FINISH: on behalf of "bob handset" (success 200)

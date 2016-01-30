@@ -1,30 +1,12 @@
 --------------------------------------------------------------------------------
 Notification from: Monitor_App
-Received at      : 2016-01-30 14:45:06.036453 (EST/EST)
+Received at      : 2016-01-30 16:15:35.233613 (EST/EST)
 Notification     : You have entered an area known for high rates of STI infections and drug use. Remember: Safe sex is good sex!
 Action           : openMap(22.123, 211.072)
 
 --------------------------------------------------------------------------------
 Notification from: Monitor_App
-Received at      : 2016-01-30 14:45:20.356006 (EST/EST)
-Notification     : The application ManHunt has been launched. Remember: Safe sex is good sex!
-Action           : none
-
---------------------------------------------------------------------------------
-Notification from: Monitor_App
-Received at      : 2016-01-30 14:45:31.975166 (EST/EST)
-Notification     : The application Grindr has been launched. Remember: Safe sex is good sex!
-Action           : none
-
---------------------------------------------------------------------------------
-Notification from: Monitor_App
-Received at      : 2016-01-30 14:48:49.550280 (EST/EST)
-Notification     : You have entered an area known for high rates of STI infections and drug use. Remember: Safe sex is good sex!
-Action           : openMap(22.123, 211.072)
-
---------------------------------------------------------------------------------
-Notification from: Monitor_App
-Received at      : 2016-01-30 14:49:43.091039 (EST/EST)
+Received at      : 2016-01-30 16:16:34.187615 (EST/EST)
 Notification     : The application Grindr has been launched. Remember: Safe sex is good sex!
 Action           : none
 

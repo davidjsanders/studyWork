@@ -173,3 +173,18 @@ Broadcast from: bob handset
 Broadcast at: 2016-01-26 20:50:24.795927 (EST/EST)
 Message: Another test database insert of notification, this time via Docker.
 
+--------------------------------------------------------------------------------
+Broadcast from: bob handset
+Broadcast at: 2016-01-30 16:11:52.386709 (EST/EST)
+Message: You have entered an area known for high rates of STI infections and drug use. Remember: Safe sex is good sex!
+
+--------------------------------------------------------------------------------
+Broadcast from: bob handset
+Broadcast at: 2016-01-30 16:15:35.250642 (EST/EST)
+Message: You have entered an area known for high rates of STI infections and drug use. Remember: Safe sex is good sex!
+
+--------------------------------------------------------------------------------
+Broadcast from: bob handset
+Broadcast at: 2016-01-30 16:16:34.209876 (EST/EST)
+Message: The application Grindr has been launched. Remember: Safe sex is good sex!
+
