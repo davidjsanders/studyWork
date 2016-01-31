@@ -1,7 +1,7 @@
 from flask_restful import Resource, Api, reqparse, abort
 from flask import Response
 from Phone import app, api, control #, pair_control_object
-from Phone_Boundary import apiR
+#from Phone_Boundary import apiR
 
 class Versions_Boundary(Resource):
     def get(self):

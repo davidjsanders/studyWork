@@ -13,18 +13,5 @@
     2015)
 
 """
-# Import the module Flask from the flask package
-from flask import Flask
-
-# Import the module Api from the flask_restful package
-from flask_restful import Api
-from Phone import app
-
-# The app is this application and set when the Python file is run from the
-# command line, e.g. python3 /some/folder/notes/runserver.py
-#appR = Flask(__name__)
-# Create an Api object inheriting app
-apiR = Api(app)
-
 # Import the main.py module
 import Phone_Boundary.main

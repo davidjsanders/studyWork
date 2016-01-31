@@ -23,10 +23,10 @@ class Version_1_00_Boundary(Resource):
                 "description":"Version 1.00. First Release.",
                 "available":"2015-01-25",
                 "links":{
-                            "action":"pair",
-                            "url":"/v1_00/pair",
-                            "rel":"pair device",
-                            "methods":["GET","POST","DELETE"]
+                            "action":"self",
+                            "url":"/v1_00",
+                            "rel":"self",
+                            "methods":["GET"]
                         }
                }
         return control.do_response(
