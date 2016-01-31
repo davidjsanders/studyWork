@@ -59,17 +59,8 @@ class Pairing_Control(object):
         self.__controller.log(log_message='PAIR DEVICE START: with "{0}"'\
             .format(devicename))
 
-        if existing_key != None:
-            success = 'error'
-            status = '409'
-            message = 'The device is already paired.'
-            data = {"device":devicename,
-                    "key":existing_key}
-            self.__controller.log(log_message='PAIR DEVICE ERROR: {0}'\
-                .format(message))
-        else:
-            data = {"device":devicename,
-                    "key":self.__pairing_db.pair_device(devicename)}
+        data = {"device":devicename,
+                "key":self.__pairing_db.pair_device(devicename)}
 
         return_value = self.__controller.do_response(message=message,
                                                    data=data,

@@ -1,190 +1,25 @@
 --------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-25 18:32:00.224406 (EST/EDT)
-Message: ** Bluetooth Broadcast Test **
+Broadcast from: localhost_5000
+Broadcast at: 2016-01-31 12:22:14.680897 (EST/EST)
+Message: This is a notification to test the Phone
 
 --------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-25 18:33:50.053554 (EST/EDT)
-Message: ** Bluetooth Broadcast Test **
+Broadcast from: localhost_5000
+Broadcast at: 2016-01-31 14:07:01.840975 (EST/EST)
+Message: This is a notification to test the Phone
 
 --------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-25 18:36:25.975171 (EST/EST)
-Message: ** Bluetooth Broadcast Test **
+Broadcast from: localhost_5000
+Broadcast at: 2016-01-31 14:11:28.658917 (EST/EST)
+Message: This is a notification to test the Phone
 
 --------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-25 18:53:16.598910 (EST/EDT)
-Message: ** Bluetooth Broadcast Test **
+Broadcast from: localhost_5000
+Broadcast at: 2016-01-31 14:27:13.629667 (EST/EST)
+Message: This is a notification to test the Phone
 
 --------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-25 19:04:01.678769 (EST/EDT)
-Message: ** Bluetooth Broadcast Test **
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-25 19:05:14.185167 (EST/EDT)
-Message: ** Bluetooth Broadcast Test **
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-25 19:06:00.907024 (EST/EDT)
-Message: ** Bluetooth Broadcast Test **
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-25 19:06:03.202493 (EST/EDT)
-Message: ** Bluetooth Broadcast Test **
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-25 19:06:53.596414 (EST/EDT)
-Message: ** Bluetooth Broadcast Test **
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-25 19:07:26.542105 (EST/EDT)
-Message: ** Bluetooth Broadcast Test **
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-25 19:08:33.520681 (EST/EDT)
-Message: ** Bluetooth Broadcast Test **
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-25 19:09:58.948120 (EST/EDT)
-Message: ** Bluetooth Broadcast Test **
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-25 19:13:28.867417 (EST/EDT)
-Message: ** Bluetooth Broadcast Test **
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-25 19:13:31.042928 (EST/EDT)
-Message: ** Bluetooth Broadcast Test **
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-25 19:13:43.723348 (EST/EDT)
-Message: ** Bluetooth Broadcast Test **
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-25 19:14:02.110954 (EST/EDT)
-Message: ** Bluetooth Broadcast Test **
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-25 19:14:26.317593 (EST/EDT)
-Message: ** Bluetooth Broadcast Test **
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-25 19:14:27.445400 (EST/EDT)
-Message: ** Bluetooth Broadcast Test **
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-25 19:15:21.703684 (EST/EDT)
-Message: ** Bluetooth Broadcast Test **
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-25 19:15:22.855057 (EST/EDT)
-Message: ** Bluetooth Broadcast Test **
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-25 19:16:23.116846 (EST/EDT)
-Message: ** Bluetooth Broadcast Test **
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-25 19:16:23.929508 (EST/EDT)
-Message: ** Bluetooth Broadcast Test **
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-25 19:17:12.716366 (EST/EDT)
-Message: ** Bluetooth Broadcast Test **
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-25 19:17:13.526404 (EST/EDT)
-Message: ** Bluetooth Broadcast Test **
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset35
-Broadcast at: 2016-01-25 19:47:43.552166 (EST/EST)
-Message: ** Bluetooth Broadcast Test **
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset35
-Broadcast at: 2016-01-25 19:54:06.583614 (EST/EDT)
-Message: ** Bluetooth Broadcast Test **
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset35
-Broadcast at: 2016-01-25 20:00:52.367524 (EST/EDT)
-Message: ** Bluetooth Broadcast Test **
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset35
-Broadcast at: 2016-01-25 20:02:02.554285 (EST/EST)
-Message: ** Bluetooth Broadcast Test **
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-25 21:22:26.480605 (EST/EST)
-Message: This is a notification
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-25 21:22:52.381738 (EST/EST)
-Message: At 21:22 EST, this is a notification
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-25 21:26:12.654060 (EST/EST)
-Message: At 21:26 EST, this is a notification
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-25 21:29:32.240058 (EST/EST)
-Message: *** You have entered an area known for high STI infection rates! Remember: Safe sex is good sex
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-26 20:28:38.819688 (EST/EST)
-Message: Third test database insert of notification.
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-26 20:47:53.346365 (EST/EST)
-Message: Another test database insert of notification, this time via Docker.
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-26 20:50:24.795927 (EST/EST)
-Message: Another test database insert of notification, this time via Docker.
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-30 16:11:52.386709 (EST/EST)
-Message: You have entered an area known for high rates of STI infections and drug use. Remember: Safe sex is good sex!
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-30 16:15:35.250642 (EST/EST)
-Message: You have entered an area known for high rates of STI infections and drug use. Remember: Safe sex is good sex!
-
---------------------------------------------------------------------------------
-Broadcast from: bob handset
-Broadcast at: 2016-01-30 16:16:34.209876 (EST/EST)
-Message: The application Grindr has been launched. Remember: Safe sex is good sex!
+Broadcast from: localhost_5000
+Broadcast at: 2016-01-31 14:28:36.729173 (EST/EST)
+Message: This is a notification to test the Phone
 

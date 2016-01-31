@@ -1,0 +1,114 @@
+--------------------------------------------------------------------------------
+Notification from: dasanderUty01-5000
+Received at      : 2016-01-31 12:22:14.664475 (EST/EDT)
+Notification     : This is a notification to test the Phone
+Action           : do something
+
+--------------------------------------------------------------------------------
+Notification from: dasanderUty01-5000
+Received at      : 2016-01-31 12:22:35.632869 (EST/EDT)
+Notification     : This is a notification to test the Phone
+Action           : do something
+
+--------------------------------------------------------------------------------
+Notification from: dasanderUty01-5000
+Received at      : 2016-01-31 14:07:01.830461 (EST/EDT)
+Notification     : This is a notification to test the Phone
+Action           : do something
+
+--------------------------------------------------------------------------------
+Notification from: dasanderUty01-5000
+Received at      : 2016-01-31 14:11:28.648183 (EST/EDT)
+Notification     : This is a notification to test the Phone
+Action           : do something
+
+--------------------------------------------------------------------------------
+Notification from: dasanderUty01-5000
+Received at      : 2016-01-31 14:27:02.123354 (EST/EDT)
+Notification     : This is a notification to test the Phone
+Action           : do something
+
+--------------------------------------------------------------------------------
+Notification from: dasanderUty01-5000
+Received at      : 2016-01-31 14:27:13.619281 (EST/EDT)
+Notification     : This is a notification to test the Phone
+Action           : do something
+
+--------------------------------------------------------------------------------
+Notification from: dasanderUty01-5000
+Received at      : 2016-01-31 14:27:29.515682 (EST/EDT)
+Notification     : This is a notification to test the Phone
+Action           : do something
+
+--------------------------------------------------------------------------------
+Notification from: dasanderUty01-5000
+Received at      : 2016-01-31 14:28:36.718364 (EST/EDT)
+Notification     : This is a notification to test the Phone
+Action           : do something
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-01-31 16:08:45.244193 (EST/EDT)
+Notification     : You have entered an area known for high rates of STI infections and drug use. Remember: Safe sex is good sex!
+Action           : openMap(22.123, 211.072)
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-01-31 16:10:40.185098 (EST/EDT)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-01-31 16:11:50.609149 (EST/EDT)
+Notification     : The application manHUNT has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-01-31 16:15:45.690133 (EST/EDT)
+Notification     : You have entered an area known for high rates of STI infections and drug use. Remember: Safe sex is good sex!
+Action           : openMap(22.123, 211.072)
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-01-31 16:45:49.370424 (EST/EDT)
+Notification     : This is the first notification
+Action           : no action required
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-01-31 16:50:06.099828 (EST/EDT)
+Notification     : This is a notification sent while the device is running.
+Action           : no action required
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-01-31 16:53:06.856830 (EST/EDT)
+Notification     : This is the first notification
+Action           : no action required
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-01-31 16:53:06.870434 (EST/EDT)
+Notification     : This is the second notification
+Action           : no action required
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-01-31 16:53:06.879458 (EST/EDT)
+Notification     : This is the third notification
+Action           : no action required
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-01-31 16:54:36.002116 (EST/EDT)
+Notification     : This is a notification sent while the device is running.
+Action           : no action required
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-01-31 17:00:30.674586 (EST/EDT)
+Notification     : Do this
+Action           : none
+

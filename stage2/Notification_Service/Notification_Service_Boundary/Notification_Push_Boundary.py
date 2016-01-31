@@ -7,7 +7,7 @@ from Notification_Service \
 from Notification_Service_Boundary import apiR
 
 class Notification_Push_Boundary(Resource):
-    def get(self):
+    def post(self):
         raw_data = None
         raw_data = reqparse.request.get_data().decode('utf-8')
         return_state = notification_push_control\

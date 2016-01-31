@@ -1,7 +1,5 @@
-from flask_restful import Resource, Api, reqparse, abort
-from flask import Response
-from Phone import app, api, control, location_control_object
-from Phone_Boundary import apiR
+from flask_restful import Resource, reqparse
+from Phone import location_control_object
 
 class Location_Boundary(Resource):
     def get(self):

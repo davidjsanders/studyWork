@@ -63,3 +63,78 @@
 2016-01-30 16:16:34.208834: BROADCAST START: on behalf of "bob handset"
 2016-01-30 16:16:34.209729: BROADCASTING: Send "The application Grindr has been launched. Remember: Safe sex is good sex!" on behalf of "bob handset"
 2016-01-30 16:16:34.210069: BROADCAST FINISH: on behalf of "bob handset" (success 200)
+2016-01-31 12:08:04.062514: PAIR DEVICE START: with "localhost_5000"
+2016-01-31 12:08:04.068404: PAIR DEVICE FINISH: with "localhost_5000" (success 200)
+2016-01-31 12:08:58.014969: PAIR DEVICE START: with "localhost_5000"
+2016-01-31 12:08:58.015125: PAIR DEVICE ERROR: The device is already paired.
+2016-01-31 12:08:58.015318: PAIR DEVICE FINISH: with "localhost_5000" (error 409)
+2016-01-31 12:13:19.783348: PAIR DEVICE START: with "localhost_5000"
+2016-01-31 12:13:19.789105: PAIR DEVICE FINISH: with "localhost_5000" (success 200)
+2016-01-31 12:13:56.928061: PAIR DEVICE START: with "localhost_5000"
+2016-01-31 12:13:56.933871: PAIR DEVICE FINISH: with "localhost_5000" (success 200)
+2016-01-31 12:14:02.177323: UNPAIR DEVICE START: with "localhost_5000"
+2016-01-31 12:14:02.182153: UNPAIR DEVICE FINISH: with "localhost_5000" (success 200)
+2016-01-31 12:14:08.137799: PAIR DEVICE START: with "localhost_5000"
+2016-01-31 12:14:08.142191: PAIR DEVICE FINISH: with "localhost_5000" (success 200)
+2016-01-31 12:15:46.220564: UNPAIR DEVICE START: with "localhost_5000"
+2016-01-31 12:15:46.226283: UNPAIR DEVICE FINISH: with "localhost_5000" (success 200)
+2016-01-31 12:16:13.638803: PAIR DEVICE START: with "localhost_5000"
+2016-01-31 12:16:13.643372: PAIR DEVICE FINISH: with "localhost_5000" (success 200)
+2016-01-31 12:16:21.350613: UNPAIR DEVICE START: with "localhost_5000"
+2016-01-31 12:16:21.356538: UNPAIR DEVICE FINISH: with "localhost_5000" (success 200)
+2016-01-31 12:16:26.575606: PAIR DEVICE START: with "localhost_5000"
+2016-01-31 12:16:26.578636: PAIR DEVICE FINISH: with "localhost_5000" (success 200)
+2016-01-31 12:22:14.679915: BROADCAST START: on behalf of "localhost_5000"
+2016-01-31 12:22:14.680788: BROADCASTING: Send "This is a notification to test the Phone" on behalf of "localhost_5000"
+2016-01-31 12:22:14.681140: BROADCAST FINISH: on behalf of "localhost_5000" (success 200)
+2016-01-31 12:34:01.841440: PAIR DEVICE START: with "localhost_5000"
+2016-01-31 12:34:01.846906: PAIR DEVICE FINISH: with "localhost_5000" (success 200)
+2016-01-31 12:34:08.621780: PAIR DEVICE START: with "localhost_5000"
+2016-01-31 12:34:08.626834: PAIR DEVICE FINISH: with "localhost_5000" (success 200)
+2016-01-31 14:01:10.024314: PAIR DEVICE START: with "localhost_5000"
+2016-01-31 14:01:10.030458: PAIR DEVICE FINISH: with "localhost_5000" (success 200)
+2016-01-31 14:02:37.772207: PAIR DEVICE START: with "localhost_5000"
+2016-01-31 14:02:37.779633: PAIR DEVICE FINISH: with "localhost_5000" (success 200)
+2016-01-31 14:03:47.775272: PAIR DEVICE START: with "localhost_5000"
+2016-01-31 14:03:47.782505: PAIR DEVICE FINISH: with "localhost_5000" (success 200)
+2016-01-31 14:06:11.509026: PAIR DEVICE START: with "localhost_5000"
+2016-01-31 14:06:11.516131: PAIR DEVICE FINISH: with "localhost_5000" (success 200)
+2016-01-31 14:06:46.998317: PAIR DEVICE START: with "localhost_5000"
+2016-01-31 14:06:47.005953: PAIR DEVICE FINISH: with "localhost_5000" (success 200)
+2016-01-31 14:07:01.839947: BROADCAST START: on behalf of "localhost_5000"
+2016-01-31 14:07:01.840870: BROADCASTING: Send "This is a notification to test the Phone" on behalf of "localhost_5000"
+2016-01-31 14:07:01.841165: BROADCAST FINISH: on behalf of "localhost_5000" (success 200)
+2016-01-31 14:07:19.289716: UNPAIR DEVICE START: with "localhost_5000"
+2016-01-31 14:07:19.295432: UNPAIR DEVICE FINISH: with "localhost_5000" (success 200)
+2016-01-31 14:09:35.746775: PAIR DEVICE START: with "localhost_5000"
+2016-01-31 14:09:35.751592: PAIR DEVICE FINISH: with "localhost_5000" (success 200)
+2016-01-31 14:11:20.138238: PAIR DEVICE START: with "localhost_5000"
+2016-01-31 14:11:20.142698: PAIR DEVICE FINISH: with "localhost_5000" (success 200)
+2016-01-31 14:11:28.657876: BROADCAST START: on behalf of "localhost_5000"
+2016-01-31 14:11:28.658805: BROADCASTING: Send "This is a notification to test the Phone" on behalf of "localhost_5000"
+2016-01-31 14:11:28.659110: BROADCAST FINISH: on behalf of "localhost_5000" (success 200)
+2016-01-31 14:19:55.549044: UNPAIR DEVICE START: with "localhost_5000"
+2016-01-31 14:19:55.554796: UNPAIR DEVICE FINISH: with "localhost_5000" (success 200)
+2016-01-31 14:22:18.559447: UNPAIR DEVICE START: with "localhost_5000"
+2016-01-31 14:22:18.559972: UNPAIR DEVICE ERROR: localhost_5000 is not paired
+2016-01-31 14:22:18.560074: UNPAIR DEVICE FINISH: with "localhost_5000" (error 404)
+2016-01-31 14:22:35.444377: PAIR DEVICE START: with "localhost_5000"
+2016-01-31 14:22:35.449459: PAIR DEVICE FINISH: with "localhost_5000" (success 200)
+2016-01-31 14:22:41.875920: UNPAIR DEVICE START: with "localhost_5000"
+2016-01-31 14:22:41.879228: UNPAIR DEVICE FINISH: with "localhost_5000" (success 200)
+2016-01-31 14:22:52.100127: PAIR DEVICE START: with "localhost_5000"
+2016-01-31 14:22:52.105525: PAIR DEVICE FINISH: with "localhost_5000" (success 200)
+2016-01-31 14:27:10.691458: PAIR DEVICE START: with "localhost_5000"
+2016-01-31 14:27:10.698721: PAIR DEVICE FINISH: with "localhost_5000" (success 200)
+2016-01-31 14:27:13.628746: BROADCAST START: on behalf of "localhost_5000"
+2016-01-31 14:27:13.629574: BROADCASTING: Send "This is a notification to test the Phone" on behalf of "localhost_5000"
+2016-01-31 14:27:13.629836: BROADCAST FINISH: on behalf of "localhost_5000" (success 200)
+2016-01-31 14:28:33.438391: PAIR DEVICE START: with "localhost_5000"
+2016-01-31 14:28:33.443402: PAIR DEVICE FINISH: with "localhost_5000" (success 200)
+2016-01-31 14:28:36.728173: BROADCAST START: on behalf of "localhost_5000"
+2016-01-31 14:28:36.729071: BROADCASTING: Send "This is a notification to test the Phone" on behalf of "localhost_5000"
+2016-01-31 14:28:36.729362: BROADCAST FINISH: on behalf of "localhost_5000" (success 200)
+2016-01-31 14:31:55.084768: PAIR DEVICE START: with "localhost_5000"
+2016-01-31 14:31:55.091948: PAIR DEVICE FINISH: with "localhost_5000" (success 200)
+2016-01-31 14:31:58.320762: UNPAIR DEVICE START: with "localhost_5000"
+2016-01-31 14:31:58.324689: UNPAIR DEVICE FINISH: with "localhost_5000" (success 200)

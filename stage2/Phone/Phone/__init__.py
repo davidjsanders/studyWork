@@ -27,7 +27,12 @@ from Phone import Control
 #from Phone import Broadcast_Control
 from Phone import Notification_Control
 from Phone import Location_Control
-from Phone import Lock_Control
+from Phone_Config_Control \
+    import Config_Lock_Control,\
+           Config_Pair_Control,\
+           Config_Monitor_App_Control,\
+           Config_Launch_Control, \
+           Config_Push_Notifications_Control
 
 # The app is this application and set when the Python file is run from the
 # command line, e.g. python3 /some/folder/notes/runserver.py
@@ -36,14 +41,20 @@ app = Flask(__name__)
 api = Api(app)
 
 #if not serving.is_running_from_reloader():
-try:
-    #Setup objects for pairing and broadcasting.
-    notification_control_object = Notification_Control.Notification_Control_v1_00()
-    location_control_object = Location_Control.Location_Control_v1_00()
-    lock_control_object = Lock_Control.Lock_Control_v1_00()
-    control = Control.Control_v1_00()
-except KeyError as ke:
-    print(ke)
+#try:
+#Setup objects for pairing and broadcasting.
+notification_control_object = Notification_Control.Notification_Control_v1_00()
+location_control_object = Location_Control.Location_Control_v1_00()
+lock_control_object = Config_Lock_Control.Config_Lock_Control()
+launch_control_object = Config_Launch_Control.Config_Launch_Control()
+monitor_app_control_object = \
+    Config_Monitor_App_Control.Config_Monitor_App_Control()
+push_control_object = \
+    Config_Push_Notifications_Control.Config_Push_Notifications_Control()
+pair_control_object = Config_Pair_Control.Config_Pair_Control()
+control = Control.Control_v1_00()
+#except KeyError as ke:
+#    print(ke)
 
 # Import the main.py module
 import Phone.main

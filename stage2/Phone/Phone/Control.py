@@ -16,14 +16,23 @@ class Control(object):
 
 
     def __init__(self):
-        # Get hostname and port from OS
-        port_number = os.environ['portToUse']
-        server_name = os.environ['serverName']
-
-        if server_name == None:
-            server_name = 'localhost'
-        if port_number == None:
-            port_number = 5000
+        # Get hostname and port from OS. If the environment variables have not
+        # been set, e.g. the app is being run locally, then catch an exception
+        # and default to Flask's built-in server, localhost on port 5000.
+        #
+        stage = 0      # A stage indicator to know which variable caused the
+                       # exception
+        try:
+            stage += 1
+            port_number = os.environ['portToUse']
+            stage += 1
+            server_name = os.environ['serverName']
+        except KeyError as ke:
+            if stage == 1:
+                port_number = 5000
+                server_name = 'localhost'
+            else:
+                server_name = 'localhost'
 
         self.__server_name = server_name
         self.__port_number = port_number
@@ -48,10 +57,17 @@ class Control(object):
 
 
     def set_value(self, key=None, value=None):
-        if key == None or value == None:
+        if key == None:
             return None
 
         return self.__phone_db.set_key(key, value)
+
+
+    def clear_value(self, key=None):
+        if key == None:
+            return None
+
+        return self.__phone_db.clear_key(key)
 
 
     def persist_notification(
@@ -71,6 +87,10 @@ class Control(object):
 
     def get_bluetooth(self):
         return self.__phone_db.get_bluetooth_device()
+
+
+    def set_bluetooth(self, devicename=None):
+        return self.__phone_db.set_bluetooth_device(devicename)
 
 
     def log(self,

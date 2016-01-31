@@ -1,13 +1,12 @@
-from flask_restful import Resource, Api, reqparse, abort
+from flask_restful import Resource
 from flask import Response
-#from Phone import Phone_Database
 from Phone import Control
-import datetime, time, json, requests
+import json
 
 #
 # SuperClass.
 # ----------------------------------------------------------------------------
-class Lock_Control(object):
+class Config_Lock_Control(object):
     __controller = None
 
     def __init__(self):
@@ -18,7 +17,10 @@ class Lock_Control(object):
         success = 'success'
         status = '200'
         message = 'Device lock status.'
-        data = {'locked':True}
+        data = None
+
+        current_state = self.__controller.get_value('locked')
+        data = {'locked':current_state}
 
         return_value = self.__controller.do_response(message=message,
                                                      data=data,
@@ -32,7 +34,10 @@ class Lock_Control(object):
         success = 'success'
         status = '200'
         message = 'Lock device action.'
-        data = {'locked':True}
+        data = None
+
+        lock_state = self.__controller.set_value('locked','locked')
+        data = {'locked':lock_state}
 
         return_value = self.__controller.do_response(message=message,
                                                      data=data,
@@ -58,6 +63,9 @@ class Lock_Control(object):
             key = json_data['key']
             if not key == '1234-5678-9012-3456':
                 raise ValueError('Unlock key incorrect.')
+
+            lock_state = self.__controller.set_value('locked','unlocked')
+            data = {'locked':lock_state}
         except KeyError as ke:
             success = 'error'
             status = '400'
@@ -86,6 +94,6 @@ class Lock_Control(object):
 #
 # Version 1.00
 # ----------------------------------------------------------------------------
-class Lock_Control_v1_00(Lock_Control):
+class Config_Lock_Control_v1_00(Config_Lock_Control):
     def future(self):
         pass

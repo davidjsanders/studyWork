@@ -1,9 +1,8 @@
-from flask_restful import Resource, Api, reqparse, abort
+from flask_restful import Resource, reqparse
 from flask import Response
-from Phone import app, api, control, lock_control_object
-#from Phone_Boundary import apiR
+from Phone import app, api, lock_control_object
 
-class Unlock_Boundary(Resource):
+class Config_Unlock_Boundary(Resource):
     def put(self):
         raw_data = None
         raw_data = reqparse.request.get_data().decode('utf-8')

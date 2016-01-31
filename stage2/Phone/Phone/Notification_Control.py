@@ -9,7 +9,6 @@ import datetime, time, json, requests, os
 # ----------------------------------------------------------------------------
 class Notification_Control(object):
     __controller = None
-    #TODO Change this to be stored in the database
 
     def __init__(self):
         self.__controller = Control.Control_v1_00()
@@ -37,7 +36,7 @@ class Notification_Control(object):
                 key=json_data['key']
                 sender=json_data['sender']
                 action=json_data['action']
-                if not key == '1234-5678-9012-3456':
+                if not key == 'NS1234-5678-9012-3456':
                     raise ValueError('Notification control key incorrect.')
 
                 data = {"action":action,
@@ -99,20 +98,24 @@ class Notification_Control(object):
         self,
         notification=None
     ):
+        request_response = None
+
         try:
             bluetooth_device = self.__controller.get_bluetooth()
             if bluetooth_device != []\
             and bluetooth_device != None:
+                bluetooth_key = self.__controller.get_value(bluetooth_device)
                 phonename = self.__controller.get_value('phonename')
-                payload_data = {
-                                "key":"1234-5678-9012-3456",
-                                "message":notification
-                               }
-                request_response = requests.post(
-                     bluetooth_device+'/broadcast/'+phonename,
-                     data=json.dumps(payload_data)
-                )
-                return request_response
+                if not (bluetooth_key == None or phonename == None):
+                    payload_data = {
+                                    "key":bluetooth_key,
+                                    "message":notification
+                                   }
+                    request_response = requests.post(
+                         bluetooth_device+'/broadcast/'+phonename,
+                         data=json.dumps(payload_data)
+                    )
+            return request_response
         except requests.exceptions.ConnectionError as rce:
             raise requests.exceptions.ConnectionError(rce)
         except:

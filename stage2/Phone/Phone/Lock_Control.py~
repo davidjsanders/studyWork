@@ -1,8 +1,7 @@
-from flask_restful import Resource, Api, reqparse, abort
+from flask_restful import Resource
 from flask import Response
-#from Phone import Phone_Database
 from Phone import Control
-import datetime, time, json, requests
+#import datetime, time, json, requests
 
 #
 # SuperClass.
@@ -12,6 +11,7 @@ class Lock_Control(object):
 
     def __init__(self):
         self.__controller = Control.Control_v1_00()
+
 
     def is_locked(self):
         success = 'success'

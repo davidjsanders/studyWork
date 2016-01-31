@@ -3,6 +3,8 @@ import requests
 import json
 
 def redis_close(thread=None, controller=None):
+    # Although not used in this app, the thread close event logic would allow
+    # us to do any last tasks.
     if not thread == None\
     and not controller == None:
         print('Closing background thread.')
@@ -32,7 +34,7 @@ def redis_processor(control_object=None):
                 }
 
                 request_response = requests.post(
-                    recipient,
+                    recipient+'/notification',
                     data=json.dumps(payload_data)
                 )
                 if request_response.status_code != 201:

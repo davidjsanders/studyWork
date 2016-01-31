@@ -27,14 +27,14 @@ def redis_processor(control_object=None):
                 event_date = message_fields[4]
 
                 payload_data = {
-                    "key":"1234-5678-9012-3456",
+                    "key":"NS1234-5678-9012-3456",
                     "message":text,
                     "sender":sender,
                     "action":action
                 }
 
                 request_response = requests.post(
-                    recipient,
+                    recipient+'/notification',
                     data=json.dumps(payload_data)
                 )
                 if request_response.status_code != 201:

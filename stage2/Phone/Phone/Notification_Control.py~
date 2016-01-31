@@ -9,7 +9,6 @@ import datetime, time, json, requests, os
 # ----------------------------------------------------------------------------
 class Notification_Control(object):
     __controller = None
-    #TODO Change this to be stored in the database
 
     def __init__(self):
         self.__controller = Control.Control_v1_00()
@@ -99,21 +98,24 @@ class Notification_Control(object):
         self,
         notification=None
     ):
+        request_response = None
+
         try:
             bluetooth_device = self.__controller.get_bluetooth()
             if bluetooth_device != []\
             and bluetooth_device != None:
+                bluetooth_key = self.__controller.get_value(bluetooth_device)
                 phonename = self.__controller.get_value('phonename')
-                payload_data = {
-                                "key":"1234-5678-9012-3456",
-                                "message":notification
-                               }
-                request_response = requests.post(
-                     bluetooth_device+'/broadcast/'+phonename,
-                     data=json.dumps(payload_data)
-                )
-                print('{0}'.format(request_response.status_code))
-                return request_response
+                if not (bluetooth_key == None or phonename == None):
+                    payload_data = {
+                                    "key":bluetooth_key,
+                                    "message":notification
+                                   }
+                    request_response = requests.post(
+                         bluetooth_device+'/broadcast/'+phonename,
+                         data=json.dumps(payload_data)
+                    )
+            return request_response
         except requests.exceptions.ConnectionError as rce:
             raise requests.exceptions.ConnectionError(rce)
         except:
