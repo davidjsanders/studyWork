@@ -4,5 +4,15 @@ from Phone import app, api
 from Phone_Boundary.Versions_Boundary \
     import Versions_Boundary, Version_1_00_Boundary
 
+#if not serving.is_running_from_reloader():
+try:
+    #Setup objects for pairing and broadcasting.
+    notification_control_object = Notification_Control.Notification_Control_v1_00()
+    location_control_object = Location_Control.Location_Control_v1_00()
+    lock_control_object = Lock_Control.Lock_Control_v1_00()
+    control = Control.Control_v1_00()
+except KeyError as ke:
+    print(ke)
+
 api.add_resource(Versions_Boundary, '/')
 api.add_resource(Version_1_00_Boundary, '/v1_00')

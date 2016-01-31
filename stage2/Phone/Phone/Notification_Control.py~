@@ -10,14 +10,9 @@ import datetime, time, json, requests, os
 class Notification_Control(object):
     __controller = None
     #TODO Change this to be stored in the database
-    __output_devices = [
-                        'datavolume/onscreen_notifications.txt'
-                       ]
 
     def __init__(self):
-        port_number = os.environ['portToUse']
-        server_name = os.environ['serverName']
-        self.__controller = Control.Control_v1_00(server_name, port_number)
+        self.__controller = Control.Control_v1_00()
 
     def incoming_notification(
         self,
@@ -51,15 +46,12 @@ class Notification_Control(object):
                 tz = time.tzname[0]
                 tzdst = time.tzname[1]
 
-                for outputfile in self.__output_devices:
-                    f = open(outputfile,'a')
-                    f.write(('-'*80)+"\n")
-                    f.write('Notification from: {0}'.format(sender)+"\n")
-                    f.write('Received at      : {0} ({1}/{2})'\
-                        .format(now, tz, tzdst)+"\n")
-                    f.write('Notification     : {0}'.format(text)+"\n")
-                    f.write('Action           : {0}'.format(action)+"\n\n")
-                    f.close()
+                self.__display_notification(
+                    sender=sender,
+                    date_string='{0} ({1}/{2})'.format(now, tz, tzdst),
+                    notification=text,
+                    action=action
+                )
 
                 self.__controller.persist_notification(
                     sender=sender,
@@ -68,25 +60,17 @@ class Notification_Control(object):
                     action=action
                 )
 
-                bluetooth_device = self.__controller.get_bluetooth()
-                if bluetooth_device != []\
-                and bluetooth_device != None:
-                    phonename = self.__controller.get_value('phonename')
-                    payload_data = {
-                                    "key":"1234-5678-9012-3456",
-                                    "message":text
-                                   }
-                    request_response = requests.post(
-                         bluetooth_device+'/broadcast/'+phonename,
-                         data=json.dumps(payload_data)
-                    )
-                    if request_response.status_code != 200:
-                        data['warnings'] = request_response.json()
+                response = self.__issue_bluetooth(
+                    notification=text
+                )
+                if response != None and response.status_code != 200:
+                    data['warnings'] = response.json()
+
             except requests.exceptions.ConnectionError as rce:
-                    # Connection error means we could not reach the Bluetooth
-                    # device. Ignore it but add a warning to the output as the
-                    # notification was still delivered.
-                    data['warnings'] = 'Bluetooth Error: device did not respond'
+                # Connection error means we could not reach the Bluetooth
+                # device. Ignore it but add a warning to the output as the
+                # notification was still delivered.
+                data['warnings'] = 'Bluetooth Error: device did not respond'
             except KeyError as ke:
                 success = 'error'
                 status = '400'
@@ -98,8 +82,10 @@ class Notification_Control(object):
                 message = str(ve)
                 continue_sentinel = False
             except Exception as e:
+                success = 'error'
+                status = '400'
+                message = 'Badly formed request!'
                 raise
-
 
         return_value = self.__controller.do_response(message=message,
                                                      data=data,
@@ -107,6 +93,50 @@ class Notification_Control(object):
                                                      response=success)
 
         return return_value
+
+
+    def __issue_bluetooth(
+        self,
+        notification=None
+    ):
+        try:
+            bluetooth_device = self.__controller.get_bluetooth()
+            if bluetooth_device != []\
+            and bluetooth_device != None:
+                phonename = self.__controller.get_value('phonename')
+                payload_data = {
+                                "key":"1234-5678-9012-3456",
+                                "message":notification
+                               }
+                request_response = requests.post(
+                     bluetooth_device+'/broadcast/'+phonename,
+                     data=json.dumps(payload_data)
+                )
+                print('{0}'.format(request_response.status_code))
+                return request_response
+        except requests.exceptions.ConnectionError as rce:
+            raise requests.exceptions.ConnectionError(rce)
+        except:
+            raise
+
+    def __display_notification(
+        self,
+        sender=None,
+        date_string=None,
+        notification=None,
+        action=None
+    ):
+        try:
+            outputfile = self.__controller.get_value('output_device')
+            f = open(outputfile,'a')
+            f.write(('-'*80)+"\n")
+            f.write('Notification from: {0}'.format(sender)+"\n")
+            f.write('Received at      : {0}'.format(date_string)+"\n")
+            f.write('Notification     : {0}'.format(notification)+"\n")
+            f.write('Action           : {0}'.format(action)+"\n\n")
+            f.close()
+        except:
+            raise
 
 
 #

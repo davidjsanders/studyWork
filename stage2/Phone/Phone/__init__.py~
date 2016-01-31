@@ -35,17 +35,6 @@ app = Flask(__name__)
 # Create an Api object inheriting app
 api = Api(app)
 
-#if not serving.is_running_from_reloader():
-# Get hostname and port from OS
-try:
-    #Setup objects for pairing and broadcasting.
-    notification_control_object = Notification_Control.Notification_Control_v1_00()
-    location_control_object = Location_Control.Location_Control_v1_00()
-    lock_control_object = Lock_Control.Lock_Control_v1_00()
-    control = Control.Control_v1_00()
-except KeyError as ke:
-    print(ke)
-
 # Import the main.py module
 import Phone.main
 

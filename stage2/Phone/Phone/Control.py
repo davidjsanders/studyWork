@@ -14,6 +14,7 @@ class Control(object):
     __server_name=None
     __port_number=0
 
+
     def __init__(self):
         # Get hostname and port from OS
         port_number = os.environ['portToUse']
@@ -33,6 +34,10 @@ class Control(object):
         self.__phone_db.set_key('server_name', server_name)
         self.__phone_db.set_key('port_number', port_number)
         self.__phone_db.set_key('phonename', server_name+'_'+str(port_number))
+        self.__phone_db.set_key('output_device',
+           'datavolume/onscreen_notifications-'+server_name+\
+           '-'+str(port_number)+'.txt'
+        )
 
 
     def get_value(self, key=None):
