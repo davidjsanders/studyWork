@@ -164,6 +164,8 @@ class Phone_Database(object):
         finally:
             self.set_key('phonename','noname')
             self.set_key('locked','unlocked')
+            self.set_key('x','0.0')
+            self.set_key('y','0.0')
             self.__close_db()
 
 

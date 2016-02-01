@@ -129,6 +129,16 @@ class Notification_Control(object):
         action=None
     ):
         try:
+            self.__controller.write_screen(
+                'Notification from: {0}'.format(sender))
+            self.__controller.write_screen(
+                'Received at      : {0}'.format(date_string))
+            self.__controller.write_screen(
+                'Notification     : {0}'.format(notification))
+            self.__controller.write_screen(
+                'Action           : {0}'.format(action))
+            self.__controller.write_screen(' ')
+
             outputfile = self.__controller.get_value('output_device')
             f = open(outputfile,'a')
             f.write(('-'*80)+"\n")

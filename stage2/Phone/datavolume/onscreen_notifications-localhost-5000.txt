@@ -112,3 +112,135 @@ Received at      : 2016-01-31 17:00:30.674586 (EST/EDT)
 Notification     : Do this
 Action           : none
 
+--------------------------------------------------------------------------------
+Notification from: SMS:David
+Received at      : 2016-01-31 20:12:13.627569 (EST/EDT)
+Notification     : Hello David! How are you?
+Action           : read
+
+--------------------------------------------------------------------------------
+Notification from: SMS:David
+Received at      : 2016-01-31 20:13:08.277637 (EST/EDT)
+Notification     : Hello David! How are you?
+Action           : read
+
+--------------------------------------------------------------------------------
+Notification from: MonitorApp
+Received at      : 2016-01-31 20:15:12.098320 (EST/EDT)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+
+--------------------------------------------------------------------------------
+Notification from: MonitorApp
+Received at      : 2016-01-31 20:16:44.237478 (EST/EDT)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+
+--------------------------------------------------------------------------------
+Notification from: MonitorApp
+Received at      : 2016-01-31 20:18:32.457571 (EST/EDT)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+
+--------------------------------------------------------------------------------
+Notification from: MonitorApp
+Received at      : 2016-01-31 20:19:08.427821 (EST/EDT)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+
+--------------------------------------------------------------------------------
+Notification from: MonitorApp
+Received at      : 2016-01-31 20:19:40.980487 (EST/EDT)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+
+--------------------------------------------------------------------------------
+Notification from: MonitorApp
+Received at      : 2016-01-31 20:20:16.102212 (EST/EDT)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+
+--------------------------------------------------------------------------------
+Notification from: MonitorApp
+Received at      : 2016-01-31 20:22:35.770663 (EST/EDT)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+
+--------------------------------------------------------------------------------
+Notification from: SMS:David
+Received at      : 2016-01-31 20:23:37.997308 (EST/EDT)
+Notification     : Hello David! How are you?
+Action           : read
+
+--------------------------------------------------------------------------------
+Notification from: MonitorApp
+Received at      : 2016-01-31 20:25:04.592730 (EST/EDT)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+
+--------------------------------------------------------------------------------
+Notification from: MonitorApp
+Received at      : 2016-01-31 20:28:12.799493 (EST/EDT)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+
+--------------------------------------------------------------------------------
+Notification from: SMS:David
+Received at      : 2016-01-31 20:28:28.215903 (EST/EDT)
+Notification     : Hello David! How are you?
+Action           : read
+
+--------------------------------------------------------------------------------
+Notification from: SMS:David
+Received at      : 2016-01-31 20:29:06.682533 (EST/EDT)
+Notification     : Hello David! How are you?
+Action           : read
+
+--------------------------------------------------------------------------------
+Notification from: MonitorApp
+Received at      : 2016-01-31 20:29:12.289895 (EST/EDT)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+
+--------------------------------------------------------------------------------
+Notification from: SMS:David
+Received at      : 2016-01-31 20:31:43.584432 (EST/EDT)
+Notification     : Hello David! How are you?
+Action           : read
+
+--------------------------------------------------------------------------------
+Notification from: MonitorApp
+Received at      : 2016-01-31 20:31:52.224329 (EST/EDT)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+
+--------------------------------------------------------------------------------
+Notification from: MonitorApp
+Received at      : 2016-01-31 20:32:50.378621 (EST/EDT)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+
+--------------------------------------------------------------------------------
+Notification from: SMS:David
+Received at      : 2016-01-31 20:32:51.538513 (EST/EDT)
+Notification     : Hello David! How are you?
+Action           : read
+
+--------------------------------------------------------------------------------
+Notification from: SMS:David
+Received at      : 2016-01-31 20:34:11.893687 (EST/EDT)
+Notification     : Hello David! How are you?
+Action           : read
+
+--------------------------------------------------------------------------------
+Notification from: MonitorApp
+Received at      : 2016-01-31 20:34:16.597931 (EST/EDT)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+
+--------------------------------------------------------------------------------
+Notification from: MonitorApp
+Received at      : 2016-01-31 20:35:04.191740 (EST/EDT)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+

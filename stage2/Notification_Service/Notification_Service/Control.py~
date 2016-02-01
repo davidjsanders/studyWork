@@ -56,7 +56,7 @@ class Control(object):
 
 
     def get_queue(self):
-        redis_instance = redis.StrictRedis(**__redis)
+        redis_instance = redis.StrictRedis(**self.__redis)
         redis_pubsub = redis_instance.pubsub()
         redis_pubsub.subscribe('notification_store')
         return redis_pubsub

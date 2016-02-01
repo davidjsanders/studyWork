@@ -2,7 +2,7 @@ from flask_restful import Resource, Api, reqparse, abort
 from flask import Response
 from Phone.Phone_Database import Phone_Database
 
-import datetime, time, json, os
+import datetime, time, json, os, redis
 
 #
 # SuperClass.
@@ -10,6 +10,7 @@ import datetime, time, json, os
 class Control(object):
     __log_file = 'datavolume/Log_File.txt'
     __phone_db = None
+    __redis = {'host':'localhost', 'port':6379, 'db':0}
 
     __server_name=None
     __port_number=0
@@ -91,6 +92,16 @@ class Control(object):
 
     def set_bluetooth(self, devicename=None):
         return self.__phone_db.set_bluetooth_device(devicename)
+
+
+    def write_screen(self, output_line=None):
+        if output_line == None:
+            return
+        redis_instance = redis.StrictRedis(**self.__redis)
+        return redis_instance.publish(
+            'output_screen',
+            '{0}\n'.format(output_line)
+            )
 
 
     def log(self,

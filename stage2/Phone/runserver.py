@@ -63,9 +63,4 @@ from flask_restful import Api
 # they can be accessed globally by any module within this package.
 from Phone import app, api
 
-# Import the boundary apiR module
-#from Phone_Boundary import apiR
-
-# UNCOMMENT to run locally
-#app.run(host='0.0.0.0', port=5000, debug=True, threaded=True)
 

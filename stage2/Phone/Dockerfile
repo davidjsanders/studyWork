@@ -12,35 +12,66 @@
 # Date         | By             | Reason
 # -----------------------------------------------------------------------------
 # 24 Jan 2015  | D Sanders      | First version.
+# 31 Jan 2015  | D Sanders      | Update to include config boundary & controls
 #
-#
-# Use the base Python image which includes Python3, Flask, Flask_Restful, and
+# Use the base Python image which includes Python3, Flask, and Flask_Restful
 # 
 FROM dsanderscan/pythonbase
 #
+# Install additional apps for this module
+#
+# Install Redis
+#
+RUN apt-get install -y redis-server
+#
+# Install the python Redis module
+#
+RUN /flask/bin/pip install redis
+#
 # Create the directory structures
+#
 RUN mkdir /Phone
 RUN mkdir /Phone/Phone
 RUN mkdir /Phone/Phone_Boundary
+RUN mkdir /Phone/Phone_Config_Boundary
+RUN mkdir /Phone/Phone_Config_Control
 #
 # copy the files required for the application
 #
 COPY runserver.py /Phone/
 COPY startup.sh /Phone/
-COPY Phone/__init__.py /Phone/Phone/
-COPY Phone/main.py /Phone/Phone/
 COPY Phone/Control.py /Phone/Phone/
+COPY Phone/__init__.py /Phone/Phone/
 COPY Phone/Location_Control.py /Phone/Phone/
-COPY Phone/Lock_Control.py /Phone/Phone/
+COPY Phone/main.py /Phone/Phone/
 COPY Phone/Notification_Control.py /Phone/Phone/
 COPY Phone/Phone_Database.py /Phone/Phone/
-COPY Phone_Boundary/__init__.py /Phone/Phone_Boundary/
+#
+# Boundary
+#
 COPY Phone_Boundary/main.py /Phone/Phone_Boundary/
 COPY Phone_Boundary/Location_Boundary.py /Phone/Phone_Boundary/
-COPY Phone_Boundary/Lock_Boundary.py /Phone/Phone_Boundary/
 COPY Phone_Boundary/Notification_Boundary.py /Phone/Phone_Boundary/
-COPY Phone_Boundary/Unlock_Boundary.py /Phone/Phone_Boundary/
-COPY Phone_Boundary/Versions_Boundary.py /Phone/Phone_Boundary/
+#
+# Config Boundary
+#
+COPY Phone_Config_Boundary/Config_Launch_Boundary.py /Phone/Phone_Config_Boundary/
+COPY Phone_Config_Boundary/Config_Location_Boundary.py /Phone/Phone_Config_Boundary/
+COPY Phone_Config_Boundary/Config_Lock_Boundary.py /Phone/Phone_Config_Boundary/
+COPY Phone_Config_Boundary/Config_Monitor_App_Boundary.py /Phone/Phone_Config_Boundary/
+COPY Phone_Config_Boundary/Config_Pair_Boundary.py /Phone/Phone_Config_Boundary/
+COPY Phone_Config_Boundary/Config_Push_Notifications_Boundary.py /Phone/Phone_Config_Boundary/
+COPY Phone_Config_Boundary/Config_Unlock_Boundary.py /Phone/Phone_Config_Boundary/
+COPY Phone_Config_Boundary/main.py /Phone/Phone_Config_Boundary/
+#
+# Config Control
+#
+COPY Phone_Config_Control/Config_Launch_Control.py /Phone/Phone_Config_Control/
+COPY Phone_Config_Control/Config_Location_Control.py /Phone/Phone_Config_Control/
+COPY Phone_Config_Control/Config_Lock_Control.py /Phone/Phone_Config_Control/
+COPY Phone_Config_Control/Config_Monitor_App_Control.py /Phone/Phone_Config_Control/
+COPY Phone_Config_Control/Config_Pair_Control.py /Phone/Phone_Config_Control/
+COPY Phone_Config_Control/Config_Push_Notifications_Control.py /Phone/Phone_Config_Control/
 #
 # Set the working directory for the container
 #

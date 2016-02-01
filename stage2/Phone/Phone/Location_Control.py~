@@ -43,6 +43,7 @@ class Location_Control(object):
             message = str(ve)
             continue_sentinel = False
         except Exception as e:
+            continue_sentinel = False
             raise
             #return repr(e)
 

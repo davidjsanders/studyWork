@@ -32,7 +32,8 @@ from Phone_Config_Control \
            Config_Pair_Control,\
            Config_Monitor_App_Control,\
            Config_Launch_Control, \
-           Config_Push_Notifications_Control
+           Config_Push_Notifications_Control, \
+           Config_Location_Control
 
 # The app is this application and set when the Python file is run from the
 # command line, e.g. python3 /some/folder/notes/runserver.py
@@ -52,6 +53,7 @@ monitor_app_control_object = \
 push_control_object = \
     Config_Push_Notifications_Control.Config_Push_Notifications_Control()
 pair_control_object = Config_Pair_Control.Config_Pair_Control()
+config_location_control_object = Config_Location_Control.Config_Location_Control()
 control = Control.Control_v1_00()
 #except KeyError as ke:
 #    print(ke)

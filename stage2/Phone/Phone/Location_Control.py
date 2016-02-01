@@ -48,8 +48,9 @@ class Location_Control(object):
             #return repr(e)
 
         if continue_sentinel:
-            data = {"x":22.123,
-                    "y":211.072}
+            x = float(self.__controller.get_value('x'))
+            y = float(self.__controller.get_value('y'))
+            data = {"x":x,"y":y}
 
         return_value = self.__controller.do_response(message=message,
                                                      data=data,

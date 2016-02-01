@@ -59,6 +59,10 @@ service nginx start
 #
 #sqlite3 datavol/notifications-${serverName}-${portToUse}.db < datavol/db_build.sql
 #
+# Start Redis
+#
+redis-server &
+#
 # Start UWSGI and pass the notes_final.ini file.
 #
 #runLocally=False; export runLocally

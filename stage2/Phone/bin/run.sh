@@ -13,7 +13,7 @@ echo -n "Starting port $portToUse with server name $serverName>> "
 # serverName: the name of the server, rather than localhost
 # TZ: the timezone setting. Taken from the container host
 #
-docker run -p $portToUse:$portToUse --name stage2_phone$portToUse \
+docker run -p 16379:6379 -p $portToUse:$portToUse --name stage2_phone$portToUse \
     --net=isolated_nw \
     -e portToUse=$portToUse \
     -e serverName="$serverName" \

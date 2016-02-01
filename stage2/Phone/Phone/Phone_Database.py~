@@ -26,7 +26,7 @@ class Phone_Database(object):
             self.__db_exec('delete from config where key = ?',
                           (key,))
             self.__db_conn.commit()
-            return_value = value
+            return_value = True
         except Exception as e:
             print(repr(e))
             raise

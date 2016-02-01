@@ -1,6 +1,42 @@
 --------------------------------------------------------------------------------
-Notification from: test
-Received at      : 2016-01-30 18:55:51.105457 (EST/EST)
-Notification     : This is a notification
-Action           : something
+Notification from: MonitorApp
+Received at      : 2016-01-31 20:59:59.142498 (EST/EST)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+
+--------------------------------------------------------------------------------
+Notification from: MonitorApp
+Received at      : 2016-01-31 21:01:27.017592 (EST/EST)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+
+--------------------------------------------------------------------------------
+Notification from: SMS:David
+Received at      : 2016-01-31 21:01:41.372818 (EST/EST)
+Notification     : Hello David! How are you?
+Action           : read
+
+--------------------------------------------------------------------------------
+Notification from: SMS:David
+Received at      : 2016-01-31 21:02:50.001467 (EST/EST)
+Notification     : Hello David! How are you?
+Action           : read
+
+--------------------------------------------------------------------------------
+Notification from: MonitorApp
+Received at      : 2016-01-31 21:02:57.611585 (EST/EST)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+
+--------------------------------------------------------------------------------
+Notification from: MonitorApp
+Received at      : 2016-01-31 21:07:00.606579 (EST/EST)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+
+--------------------------------------------------------------------------------
+Notification from: SMS:David
+Received at      : 2016-01-31 21:07:10.465757 (EST/EST)
+Notification     : Hello David! How are you?
+Action           : read
 
