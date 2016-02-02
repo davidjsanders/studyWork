@@ -11,7 +11,7 @@ class Notification_Control(object):
     __controller = None
 
     def __init__(self):
-        self.__controller = Control.Control_v1_00()
+        self.__controller = Control.global_controller
 
     def incoming_notification(
         self,
@@ -129,15 +129,13 @@ class Notification_Control(object):
         action=None
     ):
         try:
-            self.__controller.write_screen(
-                'Notification from: {0}'.format(sender))
-            self.__controller.write_screen(
-                'Received at      : {0}'.format(date_string))
-            self.__controller.write_screen(
-                'Notification     : {0}'.format(notification))
-            self.__controller.write_screen(
-                'Action           : {0}'.format(action))
-            self.__controller.write_screen(' ')
+            self.__controller.log('Notification received')
+            self.__controller.log('-'*79)
+            self.__controller.log('Notification from: {0}'.format(sender))
+            self.__controller.log('Received at      : {0}'.format(date_string))
+            self.__controller.log('Notification     : {0}'.format(notification))
+            self.__controller.log('Action           : {0}'.format(action))
+            self.__controller.log('')
 
             outputfile = self.__controller.get_value('output_device')
             f = open(outputfile,'a')
@@ -151,9 +149,5 @@ class Notification_Control(object):
             raise
 
 
-#
-# Version 1.00
-# ----------------------------------------------------------------------------
-class Notification_Control_v1_00(Notification_Control):
-    def future(self):
-        pass
+notification_control_object = Notification_Control()
+

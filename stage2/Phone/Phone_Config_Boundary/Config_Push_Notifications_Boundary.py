@@ -1,5 +1,6 @@
 from flask_restful import Resource, reqparse
-from Phone import push_control_object
+from Phone_Config_Control.Config_Push_Notifications_Control \
+    import push_control_object
 
 class Config_Push_Notifications_Boundary(Resource):
     def post(self):

@@ -1,5 +1,6 @@
 from flask_restful import Resource, reqparse
-from Phone import config_location_control_object
+from Phone_Config_Control.Config_Location_Control \
+    import config_location_control_object
 
 class Config_Location_Boundary(Resource):
     def post(self):

@@ -7,7 +7,7 @@ class Config_Pair_Control(object):
     __controller = None
 
     def __init__(self):
-        self.__controller = Control.Control_v1_00()
+        self.__controller = Control.global_controller
 
 
     def is_paired(self):
@@ -72,7 +72,7 @@ class Config_Pair_Control(object):
 
         except requests.exceptions.ConnectionError as rce:
             success = 'warning'
-            status = '500'
+            status = '200'
             message = 'Phone un-paired from {0}'.format(device_paired)+\
                       '; however, the response from the Bluetooth device was'+\
                       ' a connection error: {0}'.format(str(rce))+'. '+\

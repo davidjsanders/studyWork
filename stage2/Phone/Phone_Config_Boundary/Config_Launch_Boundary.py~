@@ -1,5 +1,6 @@
 from flask_restful import Resource, reqparse
-from Phone import monitor_app_control_object
+from Phone_Config_Control.Config_Launch_Control \
+    import launch_control_object
 
 class Config_Launch_Boundary(Resource):
     def post(self, app):

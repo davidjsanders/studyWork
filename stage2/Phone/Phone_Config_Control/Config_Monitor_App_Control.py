@@ -7,7 +7,7 @@ class Config_Monitor_App_Control(object):
     __controller = None
 
     def __init__(self):
-        self.__controller = Control.Control_v1_00()
+        self.__controller = Control.global_controller
 
 
     def is_launched(self, json_string=None):
@@ -208,4 +208,6 @@ class Config_Monitor_App_Control(object):
                                                      response=success)
 
         return return_value
+
+monitor_app_control_object = Config_Monitor_App_Control()
 

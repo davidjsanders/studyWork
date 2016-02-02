@@ -7,7 +7,7 @@ class Config_Push_Notifications_Control(object):
     __controller = None
 
     def __init__(self):
-        self.__controller = Control.Control_v1_00()
+        self.__controller = Control.global_controller
 
 
     def request_push(self, json_string=None):
@@ -63,7 +63,8 @@ class Config_Push_Notifications_Control(object):
             message = 'Phone cannot communicate with notification '+\
                       'service running at {0}'.format(service)+\
                       '; the response from the monitor app was'+\
-                      ' a connection error: {0}'.format(str(rce))+'.'
+                      ' a connection error: {0}'.format(str(rce))+'.'+\
+                      'The service is probably not running.'
         except KeyError as ke:
             success = 'error'
             status = '400'

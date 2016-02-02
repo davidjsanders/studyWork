@@ -7,7 +7,7 @@ class Config_Launch_Control(object):
     __controller = None
 
     def __init__(self):
-        self.__controller = Control.Control_v1_00()
+        self.__controller = Control.global_controller
 
 
     def launch(self, app=None, json_string=None):
@@ -122,5 +122,6 @@ class Config_Launch_Control(object):
             raise
             #return repr(e)
 
+launch_control_object = Config_Launch_Control()
 
 

@@ -7,7 +7,7 @@ class Config_Lock_Control(object):
     __controller = None
 
     def __init__(self):
-        self.__controller = Control.Control_v1_00()
+        self.__controller = Control.global_controller
 
 
     def is_locked(self):
@@ -81,5 +81,6 @@ class Config_Lock_Control(object):
 
         return return_value
 
+lock_control_object = Config_Lock_Control()
 
 

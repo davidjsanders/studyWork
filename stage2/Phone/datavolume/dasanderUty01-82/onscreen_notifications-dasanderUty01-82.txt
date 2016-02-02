@@ -1,0 +1,18 @@
+--------------------------------------------------------------------------------
+Notification from: SMS:David
+Received at      : 2016-02-01 21:34:25.940717 (EST/EST)
+Notification     : Hello David! How are you?
+Action           : read
+
+--------------------------------------------------------------------------------
+Notification from: MonitorApp
+Received at      : 2016-02-01 21:34:29.751071 (EST/EST)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+
+--------------------------------------------------------------------------------
+Notification from: MonitorApp
+Received at      : 2016-02-01 21:36:58.085346 (EST/EST)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+

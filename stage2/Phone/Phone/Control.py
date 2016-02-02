@@ -3,12 +3,13 @@ from flask import Response
 from Phone.Phone_Database import Phone_Database
 
 import datetime, time, json, os, redis
+from textwrap import wrap
 
 #
 # SuperClass.
 # ----------------------------------------------------------------------------
 class Control(object):
-    __log_file = 'datavolume/Log_File.txt'
+    __log_file = None
     __phone_db = None
     __redis = {'host':'localhost', 'port':6379, 'db':0}
 
@@ -40,14 +41,21 @@ class Control(object):
 
         self.__phone_db = Phone_Database(self.__server_name,
                                          self.__port_number)
+        self.__log_file = 'datavolume/'+server_name+'-'+\
+                          str(port_number)+'/log.txt'
 
         self.__phone_db.set_key('server_name', server_name)
         self.__phone_db.set_key('port_number', port_number)
         self.__phone_db.set_key('phonename', server_name+'_'+str(port_number))
         self.__phone_db.set_key('output_device',
-           'datavolume/onscreen_notifications-'+server_name+\
+           'datavolume/'+server_name+'-'+str(port_number)+\
+           '/onscreen_notifications-'+server_name+\
            '-'+str(port_number)+'.txt'
         )
+        self.log('*'*78)
+        self.log('{0}:{1} Started'.format(server_name, port_number))
+        self.log('*'*78)
+        self.log()
 
 
     def get_value(self, key=None):
@@ -111,7 +119,18 @@ class Control(object):
         f = None
         try:
             f = open(self.__log_file, 'a')
-            f.write('{0}: {1}'.format(now,log_message)+"\n")
+            if log_message == None or log_message == '':
+                f.write("{0:>28s}\n".format(str(now)+': '))
+                self.write_screen("\n")
+            else:
+                wrapped80 = wrap(log_message, 79)
+                time_line = [str(now)]
+                for line in wrapped80:
+                    time_line.append('')
+                for i, line in enumerate(wrapped80):
+                    f.write('{0:>28s}{1}'.format(time_line[i]+': ', line)+"\n")
+                for line in wrapped80:
+                    self.write_screen(line+"\n")
         except Exception:
             raise
         finally:
@@ -133,12 +152,5 @@ class Control(object):
             mimetype='application/json')
 
 
-#
-# Version 1.00
-# ----------------------------------------------------------------------------
-# 30 Jan 2016: Updated to add multiple devices based on server name and port
-#
-class Control_v1_00(Control):
-    def future(self):
-        pass
+global_controller = Control()
 

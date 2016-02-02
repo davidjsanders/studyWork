@@ -1,6 +1,7 @@
 from flask_restful import Resource, Api, reqparse, abort
 from flask import Response
-from Phone import app, api, control, notification_control_object
+from Phone import app, api
+from Phone.Notification_Control import notification_control_object
 #from Phone_Boundary import apiR
 
 class Notification_Boundary(Resource):

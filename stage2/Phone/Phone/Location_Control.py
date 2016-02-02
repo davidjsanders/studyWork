@@ -11,7 +11,7 @@ class Location_Control(object):
     __controller = None
 
     def __init__(self):
-        self.__controller = Control.Control_v1_00()
+        self.__controller = Control.global_controller
 
     def location_request(
         self,
@@ -59,9 +59,5 @@ class Location_Control(object):
 
         return return_value
 
-#
-# Version 1.00
-# ----------------------------------------------------------------------------
-class Location_Control_v1_00(Location_Control):
-    def future(self):
-        pass
+location_control_object = Location_Control()
+

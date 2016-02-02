@@ -1,6 +1,7 @@
 from flask_restful import Resource, reqparse
 from flask import Response
-from Phone import app, api, lock_control_object
+from Phone import app, api
+from Phone_Config_Control.Config_Lock_Control import lock_control_object
 
 class Config_Unlock_Boundary(Resource):
     def put(self):

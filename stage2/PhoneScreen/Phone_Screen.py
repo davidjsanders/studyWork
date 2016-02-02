@@ -1,5 +1,16 @@
-import redis
-import atexit
+import redis, atexit, os
+
+# Get OS Environment Variables
+
+try:
+    server_name = os.environ.get('serverName')
+    redis_port = os.environ.get('redis_port')
+except KeyError as ke:
+    print('An error occurred!')
+    print('------------------')
+    print('{0}'.format(ke))
+except:
+    raise
 
 def close_out():
     print('')
@@ -9,7 +20,7 @@ def close_out():
 
 close_action = 'Closed by '
 
-r = redis.StrictRedis(host='dasanderUty01', port=16379, db=0)
+r = redis.StrictRedis(host=server_name, port=redis_port, db=0)
 r_pubsub = r.pubsub()
 r_pubsub.subscribe('output_screen')
 

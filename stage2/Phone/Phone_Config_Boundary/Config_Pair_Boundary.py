@@ -1,5 +1,5 @@
 from flask_restful import Resource, reqparse
-from Phone import pair_control_object
+from Phone_Config_Control.Config_Pair_Control import pair_control_object
 
 class Config_Pair_Boundary(Resource):
     def get(self):

@@ -55,6 +55,7 @@ COPY Phone_Boundary/Notification_Boundary.py /Phone/Phone_Boundary/
 #
 # Config Boundary
 #
+COPY Phone_Config_Boundary/Config_Help_Boundary.py /Phone/Phone_Config_Boundary/
 COPY Phone_Config_Boundary/Config_Launch_Boundary.py /Phone/Phone_Config_Boundary/
 COPY Phone_Config_Boundary/Config_Location_Boundary.py /Phone/Phone_Config_Boundary/
 COPY Phone_Config_Boundary/Config_Lock_Boundary.py /Phone/Phone_Config_Boundary/
@@ -66,6 +67,7 @@ COPY Phone_Config_Boundary/main.py /Phone/Phone_Config_Boundary/
 #
 # Config Control
 #
+COPY Phone_Config_Control/Config_Help_Control.py /Phone/Phone_Config_Control/
 COPY Phone_Config_Control/Config_Launch_Control.py /Phone/Phone_Config_Control/
 COPY Phone_Config_Control/Config_Location_Control.py /Phone/Phone_Config_Control/
 COPY Phone_Config_Control/Config_Lock_Control.py /Phone/Phone_Config_Control/

@@ -1,5 +1,6 @@
 from flask_restful import Resource, reqparse
-from Phone import monitor_app_control_object
+from Phone_Config_Control.Config_Monitor_App_Control \
+    import monitor_app_control_object
 
 class Config_Monitor_App_Boundary(Resource):
     def get(self):

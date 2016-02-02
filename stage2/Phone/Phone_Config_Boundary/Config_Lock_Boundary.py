@@ -1,7 +1,7 @@
 from flask_restful import Resource, Api, reqparse, abort
 from flask import Response
-from Phone import app, api, control, lock_control_object
-#from Phone_Boundary import apiR
+from Phone import app, api
+from Phone_Config_Control.Config_Lock_Control import lock_control_object
 
 class Config_Lock_Boundary(Resource):
     def get(self):

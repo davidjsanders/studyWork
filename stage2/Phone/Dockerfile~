@@ -12,9 +12,9 @@
 # Date         | By             | Reason
 # -----------------------------------------------------------------------------
 # 24 Jan 2015  | D Sanders      | First version.
+# 31 Jan 2015  | D Sanders      | Update to include config boundary & controls
 #
-#
-# Use the base Python image which includes Python3, Flask, Flask_Restful, and
+# Use the base Python image which includes Python3, Flask, and Flask_Restful
 # 
 FROM dsanderscan/pythonbase
 #
@@ -40,10 +40,10 @@ RUN mkdir /Phone/Phone_Config_Control
 #
 COPY runserver.py /Phone/
 COPY startup.sh /Phone/
-COPY Phone/__init__.py /Phone/Phone/
-COPY Phone/main.py /Phone/Phone/
 COPY Phone/Control.py /Phone/Phone/
+COPY Phone/__init__.py /Phone/Phone/
 COPY Phone/Location_Control.py /Phone/Phone/
+COPY Phone/main.py /Phone/Phone/
 COPY Phone/Notification_Control.py /Phone/Phone/
 COPY Phone/Phone_Database.py /Phone/Phone/
 #
@@ -55,14 +55,15 @@ COPY Phone_Boundary/Notification_Boundary.py /Phone/Phone_Boundary/
 #
 # Config Boundary
 #
-COPY Phone_Config_Boundary/main.py /Phone/Phone_Config_Boundary/
-COPY Phone_Config_Boundary/Config_Location_Boundary.py /Phone/Phone_Config_Boundary/
+COPY Phone_Config_Boundary/Config_Help_Boundary.py /Phone/Phone_Config_Boundary/
 COPY Phone_Config_Boundary/Config_Launch_Boundary.py /Phone/Phone_Config_Boundary/
+COPY Phone_Config_Boundary/Config_Location_Boundary.py /Phone/Phone_Config_Boundary/
 COPY Phone_Config_Boundary/Config_Lock_Boundary.py /Phone/Phone_Config_Boundary/
 COPY Phone_Config_Boundary/Config_Monitor_App_Boundary.py /Phone/Phone_Config_Boundary/
-COPY Phone_Config_Boundary/Config_Unlock_Boundary.py /Phone/Phone_Config_Boundary/
 COPY Phone_Config_Boundary/Config_Pair_Boundary.py /Phone/Phone_Config_Boundary/
 COPY Phone_Config_Boundary/Config_Push_Notifications_Boundary.py /Phone/Phone_Config_Boundary/
+COPY Phone_Config_Boundary/Config_Unlock_Boundary.py /Phone/Phone_Config_Boundary/
+COPY Phone_Config_Boundary/main.py /Phone/Phone_Config_Boundary/
 #
 # Config Control
 #

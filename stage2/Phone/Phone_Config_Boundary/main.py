@@ -9,12 +9,14 @@ from Phone_Config_Boundary.Config_Push_Notifications_Boundary \
 from Phone_Config_Boundary.Config_Launch_Boundary import Config_Launch_Boundary
 from Phone_Config_Boundary.Config_Location_Boundary \
     import Config_Location_Boundary
+from Phone_Config_Boundary.Config_Help_Boundary import Config_Help_Boundary
 
-api.add_resource(Config_Monitor_App_Boundary, '/v1_00/config/monitor')
-api.add_resource(Config_Lock_Boundary, '/v1_00/config/lock')
-api.add_resource(Config_Unlock_Boundary, '/v1_00/config/unlock')
-api.add_resource(Config_Pair_Boundary, '/v1_00/config/pair')
+api.add_resource(Config_Help_Boundary, '/v1_00/config/help')
 api.add_resource(Config_Launch_Boundary, '/v1_00/config/launch/<string:app>')
-api.add_resource(Config_Push_Notifications_Boundary,'/v1_00/config/push')
 api.add_resource(Config_Location_Boundary, '/v1_00/config/location')
+api.add_resource(Config_Lock_Boundary, '/v1_00/config/lock')
+api.add_resource(Config_Monitor_App_Boundary, '/v1_00/config/monitor')
+api.add_resource(Config_Pair_Boundary, '/v1_00/config/pair')
+api.add_resource(Config_Push_Notifications_Boundary,'/v1_00/config/push')
+api.add_resource(Config_Unlock_Boundary, '/v1_00/config/unlock')
 

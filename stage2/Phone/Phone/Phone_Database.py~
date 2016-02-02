@@ -1,4 +1,4 @@
-import sqlite3
+import sqlite3, os
 
 class Phone_Database(object):
     __db_name = None
@@ -6,9 +6,18 @@ class Phone_Database(object):
     __db_cursor = None
 
     def __init__(self, server_name=None, port_number=None):
+        print(repr(__db_name))
         if server_name != None and port_number != None:
-            self.__db_name = 'datavolume/phone-'+\
-                             server_name+'-'+str(port_number)+'.db'
+            try:
+                os.mkdir('datavolume/'+server_name+'-'+str(port_number))
+            except OSError as ose:
+                if ose.errno == 17: # File exists error
+                    pass # Ignore it
+                else:
+                    raise
+            print('In database __init__')
+            self.__db_name = 'datavolume/'+server_name+'-'+str(port_number)+\
+                             '/phone.db'
             self.__db_conn = None
             self.__db_cursor = None
 
@@ -28,7 +37,6 @@ class Phone_Database(object):
             self.__db_conn.commit()
             return_value = True
         except Exception as e:
-            print(repr(e))
             raise
         finally:
             self.__close_db()
@@ -49,7 +57,6 @@ class Phone_Database(object):
             self.__db_conn.commit()
             return_value = value
         except Exception as e:
-            print(repr(e))
             raise
         finally:
             self.__close_db()
@@ -70,7 +77,6 @@ class Phone_Database(object):
             if returned != []:
                 returned = returned[0][0] # Only return first value
         except Exception as e:
-            print(repr(e))
             raise
         finally:
             self.__close_db()
@@ -104,7 +110,7 @@ class Phone_Database(object):
             self.__db_conn.commit()
 
         except Exception as e:
-            print(repr(e))
+            raise
         finally:
             self.__close_db()
 
@@ -122,7 +128,6 @@ class Phone_Database(object):
                 raise Exception('Cursor does not exist!')
             self.__db_cursor.execute(sql_statement, sql_parameters)
         except Exception as e:
-            print(repr(e))
             raise
 
 
@@ -140,11 +145,11 @@ class Phone_Database(object):
             self.__db_conn = sqlite3.connect(self.__db_name)
             self.__db_cursor = self.__db_conn.cursor()
         except Exception as e:
-            print(repr(e))
             if not self.__db_cursor == None:
                 self.__db_cursor.close()
             if not self.__db_conn == None:
                 self.__db_conn.close()
+            raise
 
 
     def __validate_config_table(self):
@@ -159,11 +164,12 @@ class Phone_Database(object):
                     '(key string primary key not null, value string)'
                 )
         except Exception as e:
-            print(repr(e))
             raise
         finally:
             self.set_key('phonename','noname')
             self.set_key('locked','unlocked')
+            self.set_key('x','0.0')
+            self.set_key('y','0.0')
             self.__close_db()
 
 
@@ -189,7 +195,6 @@ class Phone_Database(object):
                     ');'
                 )
         except Exception as e:
-            print(repr(e))
             raise
         finally:
             self.__close_db()

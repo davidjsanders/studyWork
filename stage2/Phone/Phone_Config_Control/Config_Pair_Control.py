@@ -7,7 +7,7 @@ class Config_Pair_Control(object):
     __controller = None
 
     def __init__(self):
-        self.__controller = Control.Control_v1_00()
+        self.__controller = Control.global_controller
 
 
     def is_paired(self):
@@ -163,4 +163,5 @@ class Config_Pair_Control(object):
 
         return return_value
 
+pair_control_object = Config_Pair_Control()
 

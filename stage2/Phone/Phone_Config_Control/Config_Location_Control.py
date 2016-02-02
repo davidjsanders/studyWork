@@ -7,7 +7,7 @@ class Config_Location_Control(object):
     __controller = None
 
     def __init__(self):
-        self.__controller = Control.Control_v1_00()
+        self.__controller = Control.global_controller
 
 
     def set_loc(self, json_string=None):
@@ -95,4 +95,6 @@ class Config_Location_Control(object):
                                                      response=success)
 
         return return_value
+
+config_location_control_object = Config_Location_Control()
 
