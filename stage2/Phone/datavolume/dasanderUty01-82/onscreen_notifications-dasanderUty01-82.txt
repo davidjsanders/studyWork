@@ -190,3 +190,33 @@ Received at      : 2016-02-02 21:16:24.808891 (EST/EST)
 Notification     : This is a sensitive text message which has been read aloud by Bluetooth
 Action           : test
 
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-03 17:13:54.560641 (EST/EST)
+Notification     : This is a test notification to validate Bluetooth device
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-03 17:14:40.812700 (EST/EST)
+Notification     : This is a test notification to validate Bluetooth device
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-03 17:14:57.490507 (EST/EST)
+Notification     : This is a test notification to validate Bluetooth device
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-03 17:15:02.603177 (EST/EST)
+Notification     : This is a test notification to validate Bluetooth device
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-03 17:15:14.219353 (EST/EST)
+Notification     : This is a test notification to validate Bluetooth device
+Action           : none
+

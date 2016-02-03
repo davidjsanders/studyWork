@@ -1,15 +1,17 @@
 from flask_restful import Resource
 from flask import Response
-from Bluetooth import Control, Pairing_Control
+from Bluetooth.Control \
+    import global_control as global_control
+from Bluetooth.Pairing_Control \
+    import global_pair_control as pair_control_object
 import json, requests
 
 class Config_Output_Control(object):
-    __controller = None
-    __pair_controller = None
+    __controller = global_control
+    __pair_controller = pair_control_object
 
     def __init__(self):
-        self.__pair_controller = Pairing_Control.Pairing_Control_v1_00()
-        self.__controller = Control.Control_v1_00()
+        pass
 
 
     def set_output(self, devicename=None, json_string=None):

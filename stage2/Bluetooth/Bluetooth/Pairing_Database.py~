@@ -1,4 +1,4 @@
-import sqlite3
+import sqlite3, os
 
 class Pairing_Database(object):
 
@@ -7,7 +7,24 @@ class Pairing_Database(object):
     __db_cursor = None
 
     def __init__(self):
-        self.__db_name = 'datavolume/pairing.db'
+        stage = 0
+        try:
+            stage += 1
+            port_number = os.environ['portToUse']
+            stage += 1
+            server_name = os.environ['serverName']
+        except KeyError as ke:
+            if stage == 1:
+                port_number = 5000
+                server_name = 'localhost'
+            else:
+                server_name = 'localhost'
+
+        self.__server_name = server_name
+        self.__port_number = port_number
+
+        self.__db_name = 'datavolume/'+server_name+'-'+\
+            str(port_number)+'-pairing.db'
         self.__db_conn = None
         self.__db_cursor = None
 
@@ -214,7 +231,7 @@ class Pairing_Database(object):
             self.__db_exec('select output_item, file_name '+\
                            'from output_devices '+\
                            'where device = ? '+\
-                           'output_item = ?',
+                           'and output_item = ?',
                            (devicename, output_item))
             returned = self.__db_cursor.fetchall()
         except Exception as e:

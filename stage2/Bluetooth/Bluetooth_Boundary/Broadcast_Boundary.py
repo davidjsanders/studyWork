@@ -1,7 +1,12 @@
 from flask_restful import Resource, Api, reqparse, abort
 from flask import Response
 from Bluetooth \
-    import app, api, pair_control_object, broadcast_control_object, control
+    import app, api
+from Bluetooth.Control import global_control as control
+from Bluetooth.Pairing_Control \
+    import global_pair_control as pair_control_object
+from Bluetooth.Broadcast_Control \
+    import global_broadcast_control as broadcast_control_object
 from Bluetooth_Boundary import apiR
 import json
 

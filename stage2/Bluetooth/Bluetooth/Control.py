@@ -38,11 +38,4 @@ class Control(object):
             status=status,
             mimetype='application/json')
 
-
-#
-# Version 1.00
-# ----------------------------------------------------------------------------
-class Control_v1_00(Control):
-    def future(self):
-        pass
-
+global_control = Control()

@@ -31,8 +31,9 @@ app = Flask(__name__)
 api = Api(app)
 
 #Setup objects for pairing and broadcasting.
-pair_control_object = Pairing_Control.Pairing_Control_v1_00()
-broadcast_control_object = Broadcast_Control.Broadcast_Control_v1_00()
+#pair_control_object = Pairing_Control.Pairing_Control_v1_00()
+#broadcast_control_object = Broadcast_Control.Broadcast_Control_v1_00()
+#control = Control.Control_v1_00()
 
 # Import the main.py module
 import Bluetooth.main

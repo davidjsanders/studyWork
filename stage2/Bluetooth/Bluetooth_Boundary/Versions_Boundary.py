@@ -1,7 +1,9 @@
 from flask_restful import Resource, Api, reqparse, abort
 from flask import Response
-from Bluetooth import app, api, pair_control_object
+from Bluetooth import app, api
 from Bluetooth_Boundary import apiR
+from Bluetooth.Pairing_Control \
+    import global_pair_control as pair_control_object
 
 class Versions_Boundary(Resource):
     def get(self):

@@ -11,12 +11,11 @@ class Pairing_Control(object):
     __pairing_db = None
     __config_database = 'datavolume/config.db'
     __display_filename = 'datavolume/display_output.txt'
-    __controller = None
+    __controller = Control.global_control
 
 
     def __init__(self):
         self.__pairing_db = Pairing_Database.Pairing_Database()
-        self.__controller = Control.Control_v1_00()
 
     def check_pairing(self, devicename):
         return self.__pairing_db.check_pairing(devicename)
@@ -139,10 +138,4 @@ class Pairing_Control(object):
                                                    file_name)
 
 
-#
-# Version 1.00
-# ----------------------------------------------------------------------------
-class Pairing_Control_v1_00(Pairing_Control):
-    def future(self):
-        pass
-
+global_pair_control = Pairing_Control()

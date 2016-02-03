@@ -11,12 +11,12 @@ class Pairing_Control(object):
     __pairing_db = None
     __config_database = 'datavolume/config.db'
     __display_filename = 'datavolume/display_output.txt'
-    __controller = None
+    __controller = Control.global_control
 
 
     def __init__(self):
         self.__pairing_db = Pairing_Database.Pairing_Database()
-        self.__controller = Control.Control_v1_00()
+        #self.__controller = Control.Control_v1_00()
 
     def check_pairing(self, devicename):
         return self.__pairing_db.check_pairing(devicename)
@@ -125,10 +125,18 @@ class Pairing_Control(object):
         return self.__pairing_db.remove_output_device(devicename, output_item)
 
 
-#
-# Version 1.00
-# ----------------------------------------------------------------------------
-class Pairing_Control_v1_00(Pairing_Control):
-    def future(self):
-        pass
+    def add_output_device(self,
+                          devicename=None,
+                          output_item=None,
+                          file_name=None):
+        if devicename == None or output_item == None or file_name == None:
+            return False
+        if output_item == 'Default audio device':
+            raise KeyError('Cannot add the default audio device.')
 
+        return self.__pairing_db.add_output_device(devicename,
+                                                   output_item,
+                                                   file_name)
+
+
+global_pair_control = Pairing_Control()

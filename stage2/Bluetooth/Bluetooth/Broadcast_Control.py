@@ -5,15 +5,8 @@ import datetime, time, json
 # SuperClass.
 # ----------------------------------------------------------------------------
 class Broadcast_Control(object):
-    __output_devices = [
-                        'datavolume/broadcasted_output.txt',
-                        'datavolume/display_output.txt'
-                       ]
-    __controller = None
-
-    def __init__(self):
-        self.__controller = Control.Control_v1_00()
-
+    __output_devices = []
+    __controller = Control.global_control
 
     def broadcast_message(self, devicename='Unknown', text=None, key=None):
         success = 'success'
@@ -26,7 +19,7 @@ class Broadcast_Control(object):
         self.__controller.log(log_message='BROADCAST START: on behalf of "{0}"'\
             .format(devicename))
 
-        pair_control_object = Pairing_Control.Pairing_Control_v1_00()
+        pair_control_object = Pairing_Control.global_pair_control
 
         pairing_key = pair_control_object.check_pairing(devicename)
 
@@ -70,7 +63,6 @@ class Broadcast_Control(object):
                 )
 
                 for outputfile in self.__output_devices:
-                    print('Sending output to {0}'.format(outputfile[0]))
                     f = open(outputfile[1],'a')
                     f.write(('-'*80)+"\n")
                     f.write('Bluetooth output device: {0}'\
@@ -96,10 +88,4 @@ class Broadcast_Control(object):
 
         return return_value
 
-#
-# Version 1.00
-# ----------------------------------------------------------------------------
-class Broadcast_Control_v1_00(Broadcast_Control):
-    def future(self):
-        pass
-
+global_broadcast_control = Broadcast_Control()

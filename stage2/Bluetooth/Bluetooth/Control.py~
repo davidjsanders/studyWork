@@ -1,6 +1,5 @@
 from flask_restful import Resource, Api, reqparse, abort
 from flask import Response
-from Phone.Phone_Database import Phone_Database
 
 import datetime, time, json
 
@@ -39,11 +38,4 @@ class Control(object):
             status=status,
             mimetype='application/json')
 
-
-#
-# Version 1.00
-# ----------------------------------------------------------------------------
-class Control_v1_00(Control):
-    def future(self):
-        pass
-
+global_control = Control()

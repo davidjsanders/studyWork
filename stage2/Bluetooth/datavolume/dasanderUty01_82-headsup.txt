@@ -1,7 +1,0 @@
---------------------------------------------------------------------------------
-Bluetooth output device: Head-up Display
---------------------------------------------------------------------------------
-Broadcast from: dasanderUty01_82
-Broadcast at: 2016-02-02 21:15:59.323377 (EST/EST)
-Message: This is a sensitive text message which has been read aloud by Bluetooth
-

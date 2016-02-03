@@ -1,0 +1,24 @@
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-03 17:17:58.888674 (EST/EST)
+Notification     : This is a test notification to validate Bluetooth device
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-03 17:18:27.235708 (EST/EST)
+Notification     : This is a test notification to validate Bluetooth device
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-03 17:20:50.366187 (EST/EST)
+Notification     : This is a test notification to validate Bluetooth device
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-03 17:27:52.932904 (EST/EST)
+Notification     : This is a test notification to validate Bluetooth device
+Action           : none
+

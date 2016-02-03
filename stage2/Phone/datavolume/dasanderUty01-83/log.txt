@@ -1,0 +1,60 @@
+2016-02-03 17:17:34.722346: ******************************************************************************
+2016-02-03 17:17:34.726853: dasanderUty01:83 Started
+2016-02-03 17:17:34.727571: ******************************************************************************
+2016-02-03 17:17:34.728460: 
+2016-02-03 17:17:58.888274: Location_Control:incoming_notification:start
+2016-02-03 17:17:58.888685: Location_Control:incoming_notification:display_notification
+2016-02-03 17:17:58.888936: 
+2016-02-03 17:17:58.890134: Notification received
+2016-02-03 17:17:58.890949: -------------------------------------------------------------------------------
+2016-02-03 17:17:58.892004: Notification from: test
+2016-02-03 17:17:58.892736: Received at      : 2016-02-03 17:17:58.888674 (EST/EST)
+2016-02-03 17:17:58.893531: Notification     : This is a test notification to validate Bluetooth device
+2016-02-03 17:17:58.894391: Action           : none
+2016-02-03 17:17:58.895054: 
+2016-02-03 17:17:58.896224: Location_Control:incoming_notification:persist_notification
+2016-02-03 17:17:58.901615: Location_Control:incoming_notification:issue_bluetooth
+2016-02-03 17:17:58.909148: Location_Control:incoming_notification:end
+2016-02-03 17:17:58.909395: 
+2016-02-03 17:18:27.234970: Location_Control:incoming_notification:start
+2016-02-03 17:18:27.235728: Location_Control:incoming_notification:display_notification
+2016-02-03 17:18:27.235977: 
+2016-02-03 17:18:27.237467: Notification received
+2016-02-03 17:18:27.238401: -------------------------------------------------------------------------------
+2016-02-03 17:18:27.239384: Notification from: test
+2016-02-03 17:18:27.240087: Received at      : 2016-02-03 17:18:27.235708 (EST/EST)
+2016-02-03 17:18:27.240792: Notification     : This is a test notification to validate Bluetooth device
+2016-02-03 17:18:27.241506: Action           : none
+2016-02-03 17:18:27.242214: 
+2016-02-03 17:18:27.243644: Location_Control:incoming_notification:persist_notification
+2016-02-03 17:18:27.249398: Location_Control:incoming_notification:issue_bluetooth
+2016-02-03 17:18:27.250108: Location_Control:incoming_notification:end
+2016-02-03 17:18:27.250288: 
+2016-02-03 17:20:50.365841: Location_Control:incoming_notification:start
+2016-02-03 17:20:50.366198: Location_Control:incoming_notification:display_notification
+2016-02-03 17:20:50.366404: 
+2016-02-03 17:20:50.367231: Notification received
+2016-02-03 17:20:50.367993: -------------------------------------------------------------------------------
+2016-02-03 17:20:50.369044: Notification from: test
+2016-02-03 17:20:50.369789: Received at      : 2016-02-03 17:20:50.366187 (EST/EST)
+2016-02-03 17:20:50.370576: Notification     : This is a test notification to validate Bluetooth device
+2016-02-03 17:20:50.371350: Action           : none
+2016-02-03 17:20:50.372074: 
+2016-02-03 17:20:50.373320: Location_Control:incoming_notification:persist_notification
+2016-02-03 17:20:50.379044: Location_Control:incoming_notification:issue_bluetooth
+2016-02-03 17:20:50.386845: Location_Control:incoming_notification:end
+2016-02-03 17:20:50.387130: 
+2016-02-03 17:27:52.932587: Location_Control:incoming_notification:start
+2016-02-03 17:27:52.932915: Location_Control:incoming_notification:display_notification
+2016-02-03 17:27:52.933166: 
+2016-02-03 17:27:52.934030: Notification received
+2016-02-03 17:27:52.934821: -------------------------------------------------------------------------------
+2016-02-03 17:27:52.935869: Notification from: test
+2016-02-03 17:27:52.936602: Received at      : 2016-02-03 17:27:52.932904 (EST/EST)
+2016-02-03 17:27:52.937365: Notification     : This is a test notification to validate Bluetooth device
+2016-02-03 17:27:52.938177: Action           : none
+2016-02-03 17:27:52.938904: 
+2016-02-03 17:27:52.940148: Location_Control:incoming_notification:persist_notification
+2016-02-03 17:27:52.943192: Location_Control:incoming_notification:issue_bluetooth
+2016-02-03 17:27:52.943822: Location_Control:incoming_notification:end
+2016-02-03 17:27:52.944007: 

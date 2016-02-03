@@ -1,14 +1,4 @@
-2016-02-02 21:11:35.224681: BROADCAST START: on behalf of "dasanderUty01_82"
-2016-02-02 21:11:35.225906: BROADCASTING: Send "This is a sensitive text message which has been read aloud by Bluetooth" on behalf of "dasanderUty01_82"
-2016-02-02 21:11:35.226446: BROADCAST FINISH: on behalf of "dasanderUty01_82" (success 200)
-2016-02-02 21:14:45.195260: PAIR DEVICE START: with "dasanderUty01_82"
-2016-02-02 21:14:45.204634: PAIR DEVICE FINISH: with "dasanderUty01_82" (success 200)
-2016-02-02 21:15:12.511718: BROADCAST START: on behalf of "dasanderUty01_82"
-2016-02-02 21:15:12.513042: BROADCASTING: Send "This is a sensitive text message which has been read aloud by Bluetooth" on behalf of "dasanderUty01_82"
-2016-02-02 21:15:12.513807: BROADCAST FINISH: on behalf of "dasanderUty01_82" (success 200)
-2016-02-02 21:15:59.322167: BROADCAST START: on behalf of "dasanderUty01_82"
-2016-02-02 21:15:59.323287: BROADCASTING: Send "This is a sensitive text message which has been read aloud by Bluetooth" on behalf of "dasanderUty01_82"
-2016-02-02 21:15:59.323932: BROADCAST FINISH: on behalf of "dasanderUty01_82" (success 200)
-2016-02-02 21:16:24.825158: BROADCAST START: on behalf of "dasanderUty01_82"
-2016-02-02 21:16:24.826308: BROADCASTING: Send "This is a sensitive text message which has been read aloud by Bluetooth" on behalf of "dasanderUty01_82"
-2016-02-02 21:16:24.826822: BROADCAST FINISH: on behalf of "dasanderUty01_82" (success 200)
+2016-02-03 17:27:59.906865: PAIR DEVICE START: with "dasanderUty01_83"
+2016-02-03 17:27:59.916901: PAIR DEVICE FINISH: with "dasanderUty01_83" (success 200)
+2016-02-03 17:28:14.512268: UNPAIR DEVICE START: with "dasanderUty01_83"
+2016-02-03 17:28:14.516673: UNPAIR DEVICE FINISH: with "dasanderUty01_83" (success 200)
