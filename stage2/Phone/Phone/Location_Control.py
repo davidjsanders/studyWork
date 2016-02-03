@@ -17,6 +17,8 @@ class Location_Control(object):
         self,
         json_string = None
     ):
+        self.__controller.log('Location_Control:location_request:start',
+                              screen=False)
         success = 'success'
         status = '200'
         message = 'Location.'
@@ -32,31 +34,43 @@ class Location_Control(object):
             key = json_data['key']
             if not key == '1234-5678-9012-3456':
                 raise ValueError('Location control key incorrect.')
+            x = float(self.__controller.get_value('x'))
+            y = float(self.__controller.get_value('y'))
+            data = {"x":x,"y":y}
         except KeyError as ke:
             success = 'error'
             status = '400'
             message = 'Badly formed request!'
-            continue_sentinel = False
+            self.__controller.log('Location_Control:location_request:{0}'\
+                .format(str(ke)),
+                screen=False
+            )
         except ValueError as ve:
             success = 'error'
             status = '403'
             message = str(ve)
-            continue_sentinel = False
+            self.__controller.log('Location_Control:location_request:{0}'\
+                .format(str(ve)),
+                screen=False
+            )
         except Exception as e:
             continue_sentinel = False
+            self.__controller.log('Location_Control:location_request:{0}'\
+                .format(repr(e)),
+                screen=False
+            )
             raise
             #return repr(e)
-
-        if continue_sentinel:
-            x = float(self.__controller.get_value('x'))
-            y = float(self.__controller.get_value('y'))
-            data = {"x":x,"y":y}
 
         return_value = self.__controller.do_response(message=message,
                                                      data=data,
                                                      status=status,
                                                      response=success)
 
+        self.__controller.log('Location_Control:location_request:end',
+                              screen=False)
+        self.__controller.log('',
+                              screen=False)
         return return_value
 
 location_control_object = Location_Control()

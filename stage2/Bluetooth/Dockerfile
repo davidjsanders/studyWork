@@ -23,6 +23,8 @@ RUN mkdir /Bluetooth
 RUN mkdir /Bluetooth/Bluetooth
 RUN mkdir /Bluetooth/BluetoothBoundary
 RUN mkdir /Bluetooth/BluetoothSender
+RUN mkdir /Bluetooth/Bluetooth_Config_Boundary
+RUN mkdir /Bluetooth/Bluetooth_Config_Control
 #
 # copy the files required for the application
 #
@@ -39,6 +41,10 @@ COPY Bluetooth_Boundary/main.py /Bluetooth/Bluetooth_Boundary/
 COPY Bluetooth_Boundary/Versions_Boundary.py /Bluetooth/Bluetooth_Boundary/
 COPY Bluetooth_Boundary/Broadcast_Boundary.py /Bluetooth/Bluetooth_Boundary/
 COPY Bluetooth_Boundary/Pair_Boundary.py /Bluetooth/Bluetooth_Boundary/
+#
+COPY Bluetooth_Config_Boundary/main.py /Bluetooth/Bluetooth_Config_Boundary/
+COPY Bluetooth_Config_Boundary/Config_Output_Boundary.py /Bluetooth/Bluetooth_Config_Boundary/
+COPY Bluetooth_Config_Control/Config_Output_Control.py /Bluetooth/Bluetooth_Config_Control/
 #
 # Set the working directory for the container
 #

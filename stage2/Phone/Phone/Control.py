@@ -113,7 +113,8 @@ class Control(object):
 
 
     def log(self,
-            log_message=None
+            log_message=None,
+            screen=True
     ):
         now = datetime.datetime.now()
         f = None
@@ -129,8 +130,9 @@ class Control(object):
                     time_line.append('')
                 for i, line in enumerate(wrapped80):
                     f.write('{0:>28s}{1}'.format(time_line[i]+': ', line)+"\n")
-                for line in wrapped80:
-                    self.write_screen(line+"\n")
+                if screen:
+                    for line in wrapped80:
+                        self.write_screen(line+"\n")
         except Exception:
             raise
         finally:

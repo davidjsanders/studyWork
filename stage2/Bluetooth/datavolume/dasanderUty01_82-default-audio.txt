@@ -1,0 +1,28 @@
+--------------------------------------------------------------------------------
+Bluetooth output device: Default audio device
+--------------------------------------------------------------------------------
+Broadcast from: dasanderUty01_82
+Broadcast at: 2016-02-02 21:11:35.225997 (EST/EDT)
+Message: This is a sensitive text message which has been read aloud by Bluetooth
+
+--------------------------------------------------------------------------------
+Bluetooth output device: Default audio device
+--------------------------------------------------------------------------------
+Broadcast from: dasanderUty01_82
+Broadcast at: 2016-02-02 21:15:12.513154 (EST/EST)
+Message: This is a sensitive text message which has been read aloud by Bluetooth
+
+--------------------------------------------------------------------------------
+Bluetooth output device: Default audio device
+--------------------------------------------------------------------------------
+Broadcast from: dasanderUty01_82
+Broadcast at: 2016-02-02 21:15:59.323377 (EST/EST)
+Message: This is a sensitive text message which has been read aloud by Bluetooth
+
+--------------------------------------------------------------------------------
+Bluetooth output device: Default audio device
+--------------------------------------------------------------------------------
+Broadcast from: dasanderUty01_82
+Broadcast at: 2016-02-02 21:16:24.826405 (EST/EST)
+Message: This is a sensitive text message which has been read aloud by Bluetooth
+

@@ -65,8 +65,16 @@ class Broadcast_Control(object):
                 tz = time.tzname[0]
                 tzdst = time.tzname[1]
 
+                self.__output_devices = pair_control_object.get_output_devices(
+                    devicename
+                )
+
                 for outputfile in self.__output_devices:
-                    f = open(outputfile,'a')
+                    print('Sending output to {0}'.format(outputfile[0]))
+                    f = open(outputfile[1],'a')
+                    f.write(('-'*80)+"\n")
+                    f.write('Bluetooth output device: {0}'\
+                            .format(outputfile[0])+"\n")
                     f.write(('-'*80)+"\n")
                     f.write('Broadcast from: {0}'.format(devicename)+"\n")
                     f.write('Broadcast at: {0} ({1}/{2})'\

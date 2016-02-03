@@ -59,17 +59,8 @@ class Pairing_Control(object):
         self.__controller.log(log_message='PAIR DEVICE START: with "{0}"'\
             .format(devicename))
 
-        if existing_key != None:
-            success = 'error'
-            status = '409'
-            message = 'The device is already paired.'
-            data = {"device":devicename,
-                    "key":existing_key}
-            self.__controller.log(log_message='PAIR DEVICE ERROR: {0}'\
-                .format(message))
-        else:
-            data = {"device":devicename,
-                    "key":self.__pairing_db.pair_device(devicename)}
+        data = {"device":devicename,
+                "key":self.__pairing_db.pair_device(devicename)}
 
         return_value = self.__controller.do_response(message=message,
                                                    data=data,
@@ -107,6 +98,31 @@ class Pairing_Control(object):
             )
             return self.__controller.do_response(
                 message="{0} un-paired.".format(devicename))
+
+
+    def get_output_devices(self, devicename=None):
+        if devicename == None:
+            return []
+
+        return self.__pairing_db.get_output_devices(devicename)
+
+
+    def remove_output_device(self, devicename=None, output_item=None):
+        if devicename == None or output_item == None:
+            return False
+        if output_item == 'Default audio device':
+            raise KeyError('Cannot remove default audio device.')
+
+        valid_output_item = self.__pairing_db.get_output_device(
+             devicename,
+             output_item
+            )
+
+        if valid_output_item == [] or valid_output_item == None:
+            raise KeyError('Output item {0} does not exist for device {1}'\
+                           .format(output_item, devicename))
+
+        return self.__pairing_db.remove_output_device(devicename, output_item)
 
 
 #

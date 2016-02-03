@@ -214,7 +214,7 @@ class Pairing_Database(object):
             self.__db_exec('select output_item, file_name '+\
                            'from output_devices '+\
                            'where device = ? '+\
-                           'and output_item = ?',
+                           'output_item = ?',
                            (devicename, output_item))
             returned = self.__db_cursor.fetchall()
         except Exception as e:

@@ -100,6 +100,45 @@ class Pairing_Control(object):
                 message="{0} un-paired.".format(devicename))
 
 
+    def get_output_devices(self, devicename=None):
+        if devicename == None:
+            return []
+
+        return self.__pairing_db.get_output_devices(devicename)
+
+
+    def remove_output_device(self, devicename=None, output_item=None):
+        if devicename == None or output_item == None:
+            return False
+        if output_item == 'Default audio device':
+            raise KeyError('Cannot remove default audio device.')
+
+        valid_output_item = self.__pairing_db.get_output_device(
+             devicename,
+             output_item
+            )
+
+        if valid_output_item == [] or valid_output_item == None:
+            raise KeyError('Output item {0} does not exist for device {1}'\
+                           .format(output_item, devicename))
+
+        return self.__pairing_db.remove_output_device(devicename, output_item)
+
+
+    def add_output_device(self,
+                          devicename=None,
+                          output_item=None,
+                          file_name=None):
+        if devicename == None or output_item == None or file_name == None:
+            return False
+        if output_item == 'Default audio device':
+            raise KeyError('Cannot add the default audio device.')
+
+        return self.__pairing_db.add_output_device(devicename,
+                                                   output_item,
+                                                   file_name)
+
+
 #
 # Version 1.00
 # ----------------------------------------------------------------------------

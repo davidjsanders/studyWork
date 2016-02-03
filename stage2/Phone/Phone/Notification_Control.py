@@ -17,6 +17,8 @@ class Notification_Control(object):
         self,
         json_string=None
     ):
+        self.__controller.log('Location_Control:incoming_notification:start',
+                              screen=False)
         success = 'success'
         status = '201'
         message = 'Notification received. Thank you.'
@@ -45,6 +47,11 @@ class Notification_Control(object):
                 tz = time.tzname[0]
                 tzdst = time.tzname[1]
 
+                self.__controller.log(
+                    'Location_Control:incoming_notification:{0}'\
+                    .format('display_notification'),
+                    screen=False
+                )
                 self.__display_notification(
                     sender=sender,
                     date_string='{0} ({1}/{2})'.format(now, tz, tzdst),
@@ -52,6 +59,11 @@ class Notification_Control(object):
                     action=action
                 )
 
+                self.__controller.log(
+                    'Location_Control:incoming_notification:{0}'\
+                    .format('persist_notification'),
+                    screen=False
+                )
                 self.__controller.persist_notification(
                     sender=sender,
                     date_string='{0} ({1}/{2})'.format(now, tz, tzdst),
@@ -59,6 +71,11 @@ class Notification_Control(object):
                     action=action
                 )
 
+                self.__controller.log(
+                  'Location_Control:incoming_notification:{0}'\
+                     .format('issue_bluetooth'),
+                     screen=False
+                )
                 response = self.__issue_bluetooth(
                     notification=text
                 )
@@ -70,22 +87,41 @@ class Notification_Control(object):
                 # device. Ignore it but add a warning to the output as the
                 # notification was still delivered.
                 data['warnings'] = 'Bluetooth Error: device did not respond'
+                self.__controller.log(
+                    'Location_Control:incoming_notification:{0}'\
+                    .format(str(rce),
+                    screen=False)
+                )
             except KeyError as ke:
                 success = 'error'
                 status = '400'
                 message = 'Badly formed request!'
-                continue_sentinel = False
+                self.__controller.log(
+                  'Location_Control:incoming_notification:{0}'.format(str(ke)),
+                  screen=False
+                )
             except ValueError as ve:
                 success = 'error'
                 status = '403'
                 message = str(ve)
-                continue_sentinel = False
+                self.__controller.log(
+                  'Location_Control:incoming_notification:{0}'.format(str(ve)),
+                  screen=False
+                )
             except Exception as e:
                 success = 'error'
                 status = '400'
                 message = 'Badly formed request!'
+                self.__controller.log(
+                  'Location_Control:incoming_notification:{0}'.format(repr(e)),
+                  screen=False
+                )
                 raise
 
+        self.__controller.log('Location_Control:incoming_notification:end',
+                              screen=False)
+        self.__controller.log('',
+                              screen=False)
         return_value = self.__controller.do_response(message=message,
                                                      data=data,
                                                      status=status,
@@ -129,6 +165,7 @@ class Notification_Control(object):
         action=None
     ):
         try:
+            self.__controller.log('')
             self.__controller.log('Notification received')
             self.__controller.log('-'*79)
             self.__controller.log('Notification from: {0}'.format(sender))

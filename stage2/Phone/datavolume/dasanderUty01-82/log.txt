@@ -1,39 +1,445 @@
-2016-02-01 21:34:18.671945: Command executed
-2016-02-01 21:34:18.679026: -------------------------------------------------------------------------------
-2016-02-01 21:34:18.680363: Command executed: Help
-2016-02-01 21:34:18.681429: 
-2016-02-01 21:34:25.944228: Notification received
-2016-02-01 21:34:25.950862: -------------------------------------------------------------------------------
-2016-02-01 21:34:25.952173: Notification from: SMS:David
-2016-02-01 21:34:25.953167: Received at      : 2016-02-01 21:34:25.940717 (EST/EST)
-2016-02-01 21:34:25.954470: Notification     : Hello David! How are you?
-2016-02-01 21:34:25.955741: Action           : read
-2016-02-01 21:34:25.956878: 
-2016-02-01 21:34:29.751107: Notification received
-2016-02-01 21:34:29.752071: -------------------------------------------------------------------------------
-2016-02-01 21:34:29.753224: Notification from: MonitorApp
-2016-02-01 21:34:29.754196: Received at      : 2016-02-01 21:34:29.751071 (EST/EST)
-2016-02-01 21:34:29.755278: Notification     : *** You have entered an area known for high STI Infection
+2016-02-02 19:17:17.571876: ******************************************************************************
+2016-02-02 19:17:17.576944: dasanderUty01:82 Started
+2016-02-02 19:17:17.577815: ******************************************************************************
+2016-02-02 19:17:17.578720: 
+2016-02-02 19:17:30.013850: Location_Control:incoming_notification:start
+2016-02-02 19:17:30.016007: Location_Control:incoming_notification:display_notification
+2016-02-02 19:17:30.016936: 
+2016-02-02 19:17:30.017666: Notification received
+2016-02-02 19:17:30.018402: -------------------------------------------------------------------------------
+2016-02-02 19:17:30.019381: Notification from: MonitorApp
+2016-02-02 19:17:30.020060: Received at      : 2016-02-02 19:17:30.015983 (EST/EST)
+2016-02-02 19:17:30.020740: Notification     : *** You have entered an area known for high STI Infection
                           : Rates. Remember; Safe sex is good sex!
-2016-02-01 21:34:29.757290: Action           : openMap(x,y)
-2016-02-01 21:34:29.758401: 
-2016-02-01 21:36:33.675781: ******************************************************************************
-2016-02-01 21:36:33.680742: dasanderUty01:82 Started
-2016-02-01 21:36:33.681578: ******************************************************************************
-2016-02-01 21:36:33.682619: 
-2016-02-01 21:36:43.969905: Command executed
-2016-02-01 21:36:43.971799: -------------------------------------------------------------------------------
-2016-02-01 21:36:43.972829: Command executed: Help
-2016-02-01 21:36:43.973571: 
-2016-02-01 21:36:58.085415: Notification received
-2016-02-01 21:36:58.086460: -------------------------------------------------------------------------------
-2016-02-01 21:36:58.087616: Notification from: MonitorApp
-2016-02-01 21:36:58.088490: Received at      : 2016-02-01 21:36:58.085346 (EST/EST)
-2016-02-01 21:36:58.089416: Notification     : *** You have entered an area known for high STI Infection
+2016-02-02 19:17:30.022027: Action           : openMap(x,y)
+2016-02-02 19:17:30.022689: 
+2016-02-02 19:17:30.024085: Location_Control:incoming_notification:persist_notification
+2016-02-02 19:17:30.029774: Location_Control:incoming_notification:issue_bluetooth
+2016-02-02 19:17:30.031108: Location_Control:incoming_notification:end
+2016-02-02 19:17:30.031862: 
+2016-02-02 19:17:48.444990: Location_Control:location_request:start
+2016-02-02 19:17:48.446056: Location_Control:location_request:Location control key incorrect.
+2016-02-02 19:17:48.447899: Location_Control:location_request:end
+2016-02-02 19:17:48.448760: 
+2016-02-02 19:18:00.165506: Location_Control:location_request:start
+2016-02-02 19:18:00.167344: Location_Control:location_request:end
+2016-02-02 19:18:00.168172: 
+2016-02-02 19:18:54.252967: ******************************************************************************
+2016-02-02 19:18:54.257992: dasanderUty01:82 Started
+2016-02-02 19:18:54.258793: ******************************************************************************
+2016-02-02 19:18:54.259808: 
+2016-02-02 19:18:59.368899: Location_Control:location_request:start
+2016-02-02 19:18:59.371248: Location_Control:location_request:Location control key incorrect.
+2016-02-02 19:18:59.374067: Location_Control:location_request:end
+2016-02-02 19:18:59.375130: 
+2016-02-02 19:19:07.415258: Location_Control:location_request:start
+2016-02-02 19:19:07.416210: Location_Control:location_request:Location control key incorrect.
+2016-02-02 19:19:07.417048: Location_Control:location_request:end
+2016-02-02 19:19:07.417801: 
+2016-02-02 19:19:15.231611: Location_Control:location_request:start
+2016-02-02 19:19:15.233964: Location_Control:location_request:end
+2016-02-02 19:19:15.235218: 
+2016-02-02 19:19:26.296191: Location_Control:incoming_notification:start
+2016-02-02 19:19:26.297477: Location_Control:incoming_notification:display_notification
+2016-02-02 19:19:26.298487: 
+2016-02-02 19:19:26.299157: Notification received
+2016-02-02 19:19:26.300104: -------------------------------------------------------------------------------
+2016-02-02 19:19:26.301472: Notification from: MonitorApp
+2016-02-02 19:19:26.302316: Received at      : 2016-02-02 19:19:26.297450 (EST/EST)
+2016-02-02 19:19:26.303044: Notification     : *** You have entered an area known for high STI Infection
                           : Rates. Remember; Safe sex is good sex!
-2016-02-01 21:36:58.091021: Action           : openMap(x,y)
-2016-02-01 21:36:58.091937: 
-2016-02-01 21:37:30.040212: ******************************************************************************
-2016-02-01 21:37:30.044822: dasanderUty01:82 Started
-2016-02-01 21:37:30.045765: ******************************************************************************
-2016-02-01 21:37:30.046791: 
+2016-02-02 19:19:26.304235: Action           : openMap(x,y)
+2016-02-02 19:19:26.304879: 
+2016-02-02 19:19:26.306009: Location_Control:incoming_notification:persist_notification
+2016-02-02 19:19:26.312515: Location_Control:incoming_notification:issue_bluetooth
+2016-02-02 19:19:26.313784: Location_Control:incoming_notification:end
+2016-02-02 19:19:26.314541: 
+2016-02-02 19:20:08.761972: Location_Control:location_request:start
+2016-02-02 19:20:08.764043: Location_Control:location_request:end
+2016-02-02 19:20:08.765025: 
+2016-02-02 19:20:11.314009: Location_Control:incoming_notification:start
+2016-02-02 19:20:11.314979: Location_Control:incoming_notification:display_notification
+2016-02-02 19:20:11.315935: 
+2016-02-02 19:20:11.317027: Notification received
+2016-02-02 19:20:11.318172: -------------------------------------------------------------------------------
+2016-02-02 19:20:11.319377: Notification from: MonitorApp
+2016-02-02 19:20:11.320373: Received at      : 2016-02-02 19:20:11.314963 (EST/EST)
+2016-02-02 19:20:11.321265: Notification     : *** You have entered an area known for high STI Infection
+                          : Rates. Remember; Safe sex is good sex!
+2016-02-02 19:20:11.322875: Action           : openMap(x,y)
+2016-02-02 19:20:11.323699: 
+2016-02-02 19:20:11.325004: Location_Control:incoming_notification:persist_notification
+2016-02-02 19:20:11.331418: Location_Control:incoming_notification:issue_bluetooth
+2016-02-02 19:20:11.332806: Location_Control:incoming_notification:end
+2016-02-02 19:20:11.333738: 
+2016-02-02 19:23:47.791930: ******************************************************************************
+2016-02-02 19:23:47.797008: dasanderUty01:82 Started
+2016-02-02 19:23:47.797920: ******************************************************************************
+2016-02-02 19:23:47.798971: 
+2016-02-02 19:23:54.299809: Location_Control:incoming_notification:start
+2016-02-02 19:23:54.300609: Location_Control:incoming_notification:display_notification
+2016-02-02 19:23:54.300868: 
+2016-02-02 19:23:54.302512: Notification received
+2016-02-02 19:23:54.303588: -------------------------------------------------------------------------------
+2016-02-02 19:23:54.304950: Notification from: MonitorApp
+2016-02-02 19:23:54.305979: Received at      : 2016-02-02 19:23:54.300588 (EST/EST)
+2016-02-02 19:23:54.306935: Notification     : *** You have entered an area known for high STI Infection
+                          : Rates. Remember; Safe sex is good sex!
+2016-02-02 19:23:54.308663: Action           : openMap(x,y)
+2016-02-02 19:23:54.309648: 
+2016-02-02 19:23:54.311348: Location_Control:incoming_notification:persist_notification
+2016-02-02 19:23:54.317353: Location_Control:incoming_notification:issue_bluetooth
+2016-02-02 19:23:54.317957: Location_Control:incoming_notification:end
+2016-02-02 19:23:54.318130: 
+2016-02-02 19:23:56.938315: Location_Control:location_request:start
+2016-02-02 19:23:56.939568: Location_Control:location_request:end
+2016-02-02 19:23:56.939762: 
+2016-02-02 19:25:14.021509: Location_Control:incoming_notification:start
+2016-02-02 19:25:14.021834: Location_Control:incoming_notification:display_notification
+2016-02-02 19:25:14.022047: 
+2016-02-02 19:25:14.023027: Notification received
+2016-02-02 19:25:14.025930: -------------------------------------------------------------------------------
+2016-02-02 19:25:14.027322: Notification from: MonitorApp
+2016-02-02 19:25:14.028467: Received at      : 2016-02-02 19:25:14.021824 (EST/EST)
+2016-02-02 19:25:14.029730: Notification     : *** You have entered an area known for high STI Infection
+                          : Rates. Remember; Safe sex is good sex!
+2016-02-02 19:25:14.031842: Action           : openMap(x,y)
+2016-02-02 19:25:14.032721: 
+2016-02-02 19:25:14.034232: Location_Control:incoming_notification:persist_notification
+2016-02-02 19:25:14.040400: Location_Control:incoming_notification:issue_bluetooth
+2016-02-02 19:25:14.041179: Location_Control:incoming_notification:end
+2016-02-02 19:25:14.041498: 
+2016-02-02 19:25:16.165112: Location_Control:location_request:start
+2016-02-02 19:25:16.166357: Location_Control:location_request:end
+2016-02-02 19:25:16.166557: 
+2016-02-02 19:47:13.630025: Command executed
+2016-02-02 19:47:13.630894: -------------------------------------------------------------------------------
+2016-02-02 19:47:13.631836: Command executed: Help
+2016-02-02 19:47:13.632513: 
+2016-02-02 19:51:40.319742: Location_Control:incoming_notification:start
+2016-02-02 19:51:40.320073: Location_Control:incoming_notification:display_notification
+2016-02-02 19:51:40.320268: 
+2016-02-02 19:51:40.321065: Notification received
+2016-02-02 19:51:40.321887: -------------------------------------------------------------------------------
+2016-02-02 19:51:40.322917: Notification from: test
+2016-02-02 19:51:40.323640: Received at      : 2016-02-02 19:51:40.320063 (EST/EST)
+2016-02-02 19:51:40.324379: Notification     : test
+2016-02-02 19:51:40.325081: Action           : test
+2016-02-02 19:51:40.325807: 
+2016-02-02 19:51:40.327019: Location_Control:incoming_notification:persist_notification
+2016-02-02 19:51:40.332607: Location_Control:incoming_notification:issue_bluetooth
+2016-02-02 19:51:40.352750: Location_Control:incoming_notification:Expecting value: line 1 column 1 (char
+                          : 0)
+2016-02-02 19:51:40.353078: Location_Control:incoming_notification:end
+2016-02-02 19:51:40.353238: 
+2016-02-02 19:53:02.234606: Location_Control:incoming_notification:start
+2016-02-02 19:53:02.234900: Location_Control:incoming_notification:display_notification
+2016-02-02 19:53:02.235069: 
+2016-02-02 19:53:02.235824: Notification received
+2016-02-02 19:53:02.236503: -------------------------------------------------------------------------------
+2016-02-02 19:53:02.237442: Notification from: test
+2016-02-02 19:53:02.238088: Received at      : 2016-02-02 19:53:02.234891 (EST/EST)
+2016-02-02 19:53:02.238748: Notification     : test
+2016-02-02 19:53:02.239381: Action           : test
+2016-02-02 19:53:02.240001: 
+2016-02-02 19:53:02.241086: Location_Control:incoming_notification:persist_notification
+2016-02-02 19:53:02.244050: Location_Control:incoming_notification:issue_bluetooth
+2016-02-02 19:53:02.263228: Location_Control:incoming_notification:Expecting value: line 1 column 1 (char
+                          : 0)
+2016-02-02 19:53:02.263523: Location_Control:incoming_notification:end
+2016-02-02 19:53:02.263664: 
+2016-02-02 19:53:51.108408: Location_Control:incoming_notification:start
+2016-02-02 19:53:51.108737: Location_Control:incoming_notification:display_notification
+2016-02-02 19:53:51.108933: 
+2016-02-02 19:53:51.109780: Notification received
+2016-02-02 19:53:51.110547: -------------------------------------------------------------------------------
+2016-02-02 19:53:51.111582: Notification from: test
+2016-02-02 19:53:51.112305: Received at      : 2016-02-02 19:53:51.108728 (EST/EST)
+2016-02-02 19:53:51.113043: Notification     : test
+2016-02-02 19:53:51.113791: Action           : test
+2016-02-02 19:53:51.114496: 
+2016-02-02 19:53:51.115748: Location_Control:incoming_notification:persist_notification
+2016-02-02 19:53:51.121608: Location_Control:incoming_notification:issue_bluetooth
+2016-02-02 19:53:51.131735: Location_Control:incoming_notification:end
+2016-02-02 19:53:51.131983: 
+2016-02-02 19:54:11.348896: Location_Control:incoming_notification:start
+2016-02-02 19:54:11.349224: Location_Control:incoming_notification:display_notification
+2016-02-02 19:54:11.349477: 
+2016-02-02 19:54:11.350300: Notification received
+2016-02-02 19:54:11.351051: -------------------------------------------------------------------------------
+2016-02-02 19:54:11.352074: Notification from: test
+2016-02-02 19:54:11.352792: Received at      : 2016-02-02 19:54:11.349214 (EST/EST)
+2016-02-02 19:54:11.353570: Notification     : test
+2016-02-02 19:54:11.354289: Action           : test
+2016-02-02 19:54:11.354993: 
+2016-02-02 19:54:11.356201: Location_Control:incoming_notification:persist_notification
+2016-02-02 19:54:11.361657: Location_Control:incoming_notification:issue_bluetooth
+2016-02-02 19:54:11.369941: Location_Control:incoming_notification:end
+2016-02-02 19:54:11.370190: 
+2016-02-02 19:58:38.255009: Location_Control:incoming_notification:start
+2016-02-02 19:58:38.255333: Location_Control:incoming_notification:display_notification
+2016-02-02 19:58:38.255527: 
+2016-02-02 19:58:38.256335: Notification received
+2016-02-02 19:58:38.257087: -------------------------------------------------------------------------------
+2016-02-02 19:58:38.258207: Notification from: test
+2016-02-02 19:58:38.258931: Received at      : 2016-02-02 19:58:38.255323 (EST/EST)
+2016-02-02 19:58:38.259668: Notification     : test
+2016-02-02 19:58:38.260370: Action           : test
+2016-02-02 19:58:38.261069: 
+2016-02-02 19:58:38.262343: Location_Control:incoming_notification:persist_notification
+2016-02-02 19:58:38.266669: Location_Control:incoming_notification:issue_bluetooth
+2016-02-02 19:58:38.274899: Location_Control:incoming_notification:end
+2016-02-02 19:58:38.275171: 
+2016-02-02 19:59:20.635978: Location_Control:incoming_notification:start
+2016-02-02 19:59:20.636276: Location_Control:incoming_notification:display_notification
+2016-02-02 19:59:20.636445: 
+2016-02-02 19:59:20.637157: Notification received
+2016-02-02 19:59:20.638016: -------------------------------------------------------------------------------
+2016-02-02 19:59:20.639096: Notification from: test
+2016-02-02 19:59:20.639781: Received at      : 2016-02-02 19:59:20.636267 (EST/EST)
+2016-02-02 19:59:20.640446: Notification     : test
+2016-02-02 19:59:20.641098: Action           : test
+2016-02-02 19:59:20.641794: 
+2016-02-02 19:59:20.642901: Location_Control:incoming_notification:persist_notification
+2016-02-02 19:59:20.648484: Location_Control:incoming_notification:issue_bluetooth
+2016-02-02 19:59:20.659036: Location_Control:incoming_notification:end
+2016-02-02 19:59:20.659309: 
+2016-02-02 20:00:01.306440: Location_Control:incoming_notification:start
+2016-02-02 20:00:01.306894: Location_Control:incoming_notification:display_notification
+2016-02-02 20:00:01.307114: 
+2016-02-02 20:00:01.308237: Notification received
+2016-02-02 20:00:01.309140: -------------------------------------------------------------------------------
+2016-02-02 20:00:01.310266: Notification from: test
+2016-02-02 20:00:01.311001: Received at      : 2016-02-02 20:00:01.306883 (EST/EST)
+2016-02-02 20:00:01.311758: Notification     : test
+2016-02-02 20:00:01.312483: Action           : test
+2016-02-02 20:00:01.313199: 
+2016-02-02 20:00:01.314473: Location_Control:incoming_notification:persist_notification
+2016-02-02 20:00:01.319574: Location_Control:incoming_notification:issue_bluetooth
+2016-02-02 20:00:01.330291: Location_Control:incoming_notification:end
+2016-02-02 20:00:01.330539: 
+2016-02-02 20:00:36.100761: Location_Control:incoming_notification:start
+2016-02-02 20:00:36.101583: Location_Control:incoming_notification:display_notification
+2016-02-02 20:00:36.101852: 
+2016-02-02 20:00:36.103306: Notification received
+2016-02-02 20:00:36.104158: -------------------------------------------------------------------------------
+2016-02-02 20:00:36.105240: Notification from: test
+2016-02-02 20:00:36.106038: Received at      : 2016-02-02 20:00:36.101561 (EST/EST)
+2016-02-02 20:00:36.106726: Notification     : This is a sensitive text message which has been read aloud
+                          : by Bluetooth
+2016-02-02 20:00:36.107924: Action           : test
+2016-02-02 20:00:36.108593: 
+2016-02-02 20:00:36.110070: Location_Control:incoming_notification:persist_notification
+2016-02-02 20:00:36.115789: Location_Control:incoming_notification:issue_bluetooth
+2016-02-02 20:00:36.129993: Location_Control:incoming_notification:end
+2016-02-02 20:00:36.130252: 
+2016-02-02 20:06:17.456680: Location_Control:incoming_notification:start
+2016-02-02 20:06:17.457013: Location_Control:incoming_notification:display_notification
+2016-02-02 20:06:17.457210: 
+2016-02-02 20:06:17.458140: Notification received
+2016-02-02 20:06:17.458983: -------------------------------------------------------------------------------
+2016-02-02 20:06:17.460049: Notification from: test
+2016-02-02 20:06:17.460787: Received at      : 2016-02-02 20:06:17.457004 (EST/EST)
+2016-02-02 20:06:17.461574: Notification     : This is a sensitive text message which has been read aloud
+                          : by Bluetooth
+2016-02-02 20:06:17.462885: Action           : test
+2016-02-02 20:06:17.463589: 
+2016-02-02 20:06:17.464827: Location_Control:incoming_notification:persist_notification
+2016-02-02 20:06:17.470115: Location_Control:incoming_notification:issue_bluetooth
+2016-02-02 20:06:17.479710: Location_Control:incoming_notification:end
+2016-02-02 20:06:17.479960: 
+2016-02-02 20:08:20.213635: Location_Control:incoming_notification:start
+2016-02-02 20:08:20.213969: Location_Control:incoming_notification:display_notification
+2016-02-02 20:08:20.214182: 
+2016-02-02 20:08:20.215068: Notification received
+2016-02-02 20:08:20.215873: -------------------------------------------------------------------------------
+2016-02-02 20:08:20.216900: Notification from: test
+2016-02-02 20:08:20.217658: Received at      : 2016-02-02 20:08:20.213960 (EST/EST)
+2016-02-02 20:08:20.218314: Notification     : This is a sensitive text message which has been read aloud
+                          : by Bluetooth
+2016-02-02 20:08:20.219434: Action           : test
+2016-02-02 20:08:20.220048: 
+2016-02-02 20:08:20.221144: Location_Control:incoming_notification:persist_notification
+2016-02-02 20:08:20.226286: Location_Control:incoming_notification:issue_bluetooth
+2016-02-02 20:08:20.234392: Location_Control:incoming_notification:end
+2016-02-02 20:08:20.234667: 
+2016-02-02 20:17:55.419521: Location_Control:incoming_notification:start
+2016-02-02 20:17:55.419891: Location_Control:incoming_notification:display_notification
+2016-02-02 20:17:55.420127: 
+2016-02-02 20:17:55.421032: Notification received
+2016-02-02 20:17:55.421863: -------------------------------------------------------------------------------
+2016-02-02 20:17:55.422922: Notification from: test
+2016-02-02 20:17:55.423663: Received at      : 2016-02-02 20:17:55.419878 (EST/EST)
+2016-02-02 20:17:55.424421: Notification     : This is a sensitive text message which has been read aloud
+                          : by Bluetooth
+2016-02-02 20:17:55.425758: Action           : test
+2016-02-02 20:17:55.426394: 
+2016-02-02 20:17:55.427539: Location_Control:incoming_notification:persist_notification
+2016-02-02 20:17:55.433392: Location_Control:incoming_notification:issue_bluetooth
+2016-02-02 20:17:55.441032: Location_Control:incoming_notification:end
+2016-02-02 20:17:55.441279: 
+2016-02-02 20:18:24.660520: Location_Control:incoming_notification:start
+2016-02-02 20:18:24.660843: Location_Control:incoming_notification:display_notification
+2016-02-02 20:18:24.661038: 
+2016-02-02 20:18:24.662027: Notification received
+2016-02-02 20:18:24.662924: -------------------------------------------------------------------------------
+2016-02-02 20:18:24.663956: Notification from: test
+2016-02-02 20:18:24.664672: Received at      : 2016-02-02 20:18:24.660833 (EST/EST)
+2016-02-02 20:18:24.665459: Notification     : This is a sensitive text message which has been read aloud
+                          : by Bluetooth
+2016-02-02 20:18:24.666643: Action           : test
+2016-02-02 20:18:24.667272: 
+2016-02-02 20:18:24.668368: Location_Control:incoming_notification:persist_notification
+2016-02-02 20:18:24.673949: Location_Control:incoming_notification:issue_bluetooth
+2016-02-02 20:18:24.681562: Location_Control:incoming_notification:end
+2016-02-02 20:18:24.681809: 
+2016-02-02 20:19:09.846055: Location_Control:incoming_notification:start
+2016-02-02 20:19:09.846381: Location_Control:incoming_notification:display_notification
+2016-02-02 20:19:09.846576: 
+2016-02-02 20:19:09.847389: Notification received
+2016-02-02 20:19:09.848154: -------------------------------------------------------------------------------
+2016-02-02 20:19:09.849245: Notification from: test
+2016-02-02 20:19:09.850078: Received at      : 2016-02-02 20:19:09.846371 (EST/EST)
+2016-02-02 20:19:09.850846: Notification     : This is a sensitive text message which has been read aloud
+                          : by Bluetooth
+2016-02-02 20:19:09.852150: Action           : test
+2016-02-02 20:19:09.852832: 
+2016-02-02 20:19:09.853971: Location_Control:incoming_notification:persist_notification
+2016-02-02 20:19:09.859748: Location_Control:incoming_notification:issue_bluetooth
+2016-02-02 20:19:09.867895: Location_Control:incoming_notification:end
+2016-02-02 20:19:09.868168: 
+2016-02-02 20:20:50.001784: Location_Control:incoming_notification:start
+2016-02-02 20:20:50.002121: Location_Control:incoming_notification:display_notification
+2016-02-02 20:20:50.002317: 
+2016-02-02 20:20:50.003121: Notification received
+2016-02-02 20:20:50.003866: -------------------------------------------------------------------------------
+2016-02-02 20:20:50.004913: Notification from: test
+2016-02-02 20:20:50.005675: Received at      : 2016-02-02 20:20:50.002111 (EST/EST)
+2016-02-02 20:20:50.006416: Notification     : This is a sensitive text message which has been read aloud
+                          : by Bluetooth
+2016-02-02 20:20:50.007700: Action           : test
+2016-02-02 20:20:50.008415: 
+2016-02-02 20:20:50.009684: Location_Control:incoming_notification:persist_notification
+2016-02-02 20:20:50.015692: Location_Control:incoming_notification:issue_bluetooth
+2016-02-02 20:20:50.024387: Location_Control:incoming_notification:end
+2016-02-02 20:20:50.024653: 
+2016-02-02 20:21:10.586450: Location_Control:incoming_notification:start
+2016-02-02 20:21:10.586775: Location_Control:incoming_notification:display_notification
+2016-02-02 20:21:10.586975: 
+2016-02-02 20:21:10.587784: Notification received
+2016-02-02 20:21:10.588524: -------------------------------------------------------------------------------
+2016-02-02 20:21:10.589609: Notification from: test
+2016-02-02 20:21:10.590340: Received at      : 2016-02-02 20:21:10.586765 (EST/EST)
+2016-02-02 20:21:10.591088: Notification     : This is a sensitive text message which has been read aloud
+                          : by Bluetooth
+2016-02-02 20:21:10.592370: Action           : test
+2016-02-02 20:21:10.593073: 
+2016-02-02 20:21:10.594293: Location_Control:incoming_notification:persist_notification
+2016-02-02 20:21:10.599803: Location_Control:incoming_notification:issue_bluetooth
+2016-02-02 20:21:10.607525: Location_Control:incoming_notification:end
+2016-02-02 20:21:10.607771: 
+2016-02-02 20:39:06.499341: Location_Control:incoming_notification:start
+2016-02-02 20:39:06.499668: Location_Control:incoming_notification:display_notification
+2016-02-02 20:39:06.499863: 
+2016-02-02 20:39:06.500658: Notification received
+2016-02-02 20:39:06.501436: -------------------------------------------------------------------------------
+2016-02-02 20:39:06.502510: Notification from: test
+2016-02-02 20:39:06.503221: Received at      : 2016-02-02 20:39:06.499658 (EST/EST)
+2016-02-02 20:39:06.503951: Notification     : This is a sensitive text message which has been read aloud
+                          : by Bluetooth
+2016-02-02 20:39:06.505223: Action           : test
+2016-02-02 20:39:06.505955: 
+2016-02-02 20:39:06.507165: Location_Control:incoming_notification:persist_notification
+2016-02-02 20:39:06.512890: Location_Control:incoming_notification:issue_bluetooth
+2016-02-02 20:39:06.521451: Location_Control:incoming_notification:end
+2016-02-02 20:39:06.521700: 
+2016-02-02 21:09:33.145357: Location_Control:incoming_notification:start
+2016-02-02 21:09:33.145699: Location_Control:incoming_notification:display_notification
+2016-02-02 21:09:33.145896: 
+2016-02-02 21:09:33.146721: Notification received
+2016-02-02 21:09:33.147460: -------------------------------------------------------------------------------
+2016-02-02 21:09:33.148489: Notification from: test
+2016-02-02 21:09:33.149209: Received at      : 2016-02-02 21:09:33.145689 (EST/EST)
+2016-02-02 21:09:33.149995: Notification     : This is a sensitive text message which has been read aloud
+                          : by Bluetooth
+2016-02-02 21:09:33.151300: Action           : test
+2016-02-02 21:09:33.152010: 
+2016-02-02 21:09:33.153234: Location_Control:incoming_notification:persist_notification
+2016-02-02 21:09:33.158390: Location_Control:incoming_notification:issue_bluetooth
+2016-02-02 21:09:33.166764: Location_Control:incoming_notification:end
+2016-02-02 21:09:33.167016: 
+2016-02-02 21:10:18.910237: Location_Control:incoming_notification:start
+2016-02-02 21:10:18.910556: Location_Control:incoming_notification:display_notification
+2016-02-02 21:10:18.910729: 
+2016-02-02 21:10:18.911567: Notification received
+2016-02-02 21:10:18.912390: -------------------------------------------------------------------------------
+2016-02-02 21:10:18.913604: Notification from: test
+2016-02-02 21:10:18.914462: Received at      : 2016-02-02 21:10:18.910547 (EST/EST)
+2016-02-02 21:10:18.915327: Notification     : This is a sensitive text message which has been read aloud
+                          : by Bluetooth
+2016-02-02 21:10:18.916904: Action           : test
+2016-02-02 21:10:18.917761: 
+2016-02-02 21:10:18.918904: Location_Control:incoming_notification:persist_notification
+2016-02-02 21:10:18.924831: Location_Control:incoming_notification:issue_bluetooth
+2016-02-02 21:10:18.932746: Location_Control:incoming_notification:end
+2016-02-02 21:10:18.932991: 
+2016-02-02 21:11:35.206100: Location_Control:incoming_notification:start
+2016-02-02 21:11:35.206427: Location_Control:incoming_notification:display_notification
+2016-02-02 21:11:35.206622: 
+2016-02-02 21:11:35.207603: Notification received
+2016-02-02 21:11:35.208510: -------------------------------------------------------------------------------
+2016-02-02 21:11:35.209656: Notification from: test
+2016-02-02 21:11:35.210386: Received at      : 2016-02-02 21:11:35.206417 (EST/EST)
+2016-02-02 21:11:35.211129: Notification     : This is a sensitive text message which has been read aloud
+                          : by Bluetooth
+2016-02-02 21:11:35.212409: Action           : test
+2016-02-02 21:11:35.213113: 
+2016-02-02 21:11:35.214360: Location_Control:incoming_notification:persist_notification
+2016-02-02 21:11:35.219971: Location_Control:incoming_notification:issue_bluetooth
+2016-02-02 21:11:35.228417: Location_Control:incoming_notification:end
+2016-02-02 21:11:35.228688: 
+2016-02-02 21:15:12.494143: Location_Control:incoming_notification:start
+2016-02-02 21:15:12.494465: Location_Control:incoming_notification:display_notification
+2016-02-02 21:15:12.494661: 
+2016-02-02 21:15:12.495474: Notification received
+2016-02-02 21:15:12.496221: -------------------------------------------------------------------------------
+2016-02-02 21:15:12.497260: Notification from: test
+2016-02-02 21:15:12.498030: Received at      : 2016-02-02 21:15:12.494456 (EST/EST)
+2016-02-02 21:15:12.498787: Notification     : This is a sensitive text message which has been read aloud
+                          : by Bluetooth
+2016-02-02 21:15:12.500088: Action           : test
+2016-02-02 21:15:12.500795: 
+2016-02-02 21:15:12.502019: Location_Control:incoming_notification:persist_notification
+2016-02-02 21:15:12.507465: Location_Control:incoming_notification:issue_bluetooth
+2016-02-02 21:15:12.515612: Location_Control:incoming_notification:end
+2016-02-02 21:15:12.515872: 
+2016-02-02 21:15:59.303914: Location_Control:incoming_notification:start
+2016-02-02 21:15:59.304274: Location_Control:incoming_notification:display_notification
+2016-02-02 21:15:59.304471: 
+2016-02-02 21:15:59.305277: Notification received
+2016-02-02 21:15:59.306117: -------------------------------------------------------------------------------
+2016-02-02 21:15:59.307160: Notification from: test
+2016-02-02 21:15:59.307895: Received at      : 2016-02-02 21:15:59.304263 (EST/EST)
+2016-02-02 21:15:59.308648: Notification     : This is a sensitive text message which has been read aloud
+                          : by Bluetooth
+2016-02-02 21:15:59.309969: Action           : test
+2016-02-02 21:15:59.310688: 
+2016-02-02 21:15:59.311915: Location_Control:incoming_notification:persist_notification
+2016-02-02 21:15:59.317937: Location_Control:incoming_notification:issue_bluetooth
+2016-02-02 21:15:59.325772: Location_Control:incoming_notification:end
+2016-02-02 21:15:59.326094: 
+2016-02-02 21:16:24.808567: Location_Control:incoming_notification:start
+2016-02-02 21:16:24.808901: Location_Control:incoming_notification:display_notification
+2016-02-02 21:16:24.809110: 
+2016-02-02 21:16:24.810001: Notification received
+2016-02-02 21:16:24.810807: -------------------------------------------------------------------------------
+2016-02-02 21:16:24.811847: Notification from: test
+2016-02-02 21:16:24.812584: Received at      : 2016-02-02 21:16:24.808891 (EST/EST)
+2016-02-02 21:16:24.813372: Notification     : This is a sensitive text message which has been read aloud
+                          : by Bluetooth
+2016-02-02 21:16:24.814559: Action           : test
+2016-02-02 21:16:24.815213: 
+2016-02-02 21:16:24.816299: Location_Control:incoming_notification:persist_notification
+2016-02-02 21:16:24.820982: Location_Control:incoming_notification:issue_bluetooth
+2016-02-02 21:16:24.828650: Location_Control:incoming_notification:end
+2016-02-02 21:16:24.828975: 
