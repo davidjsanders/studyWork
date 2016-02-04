@@ -52,6 +52,7 @@ class Control(object):
            '/onscreen_notifications-'+server_name+\
            '-'+str(port_number)+'.txt'
         )
+        self.log()
         self.log('*'*78)
         self.log('{0}:{1} Started'.format(server_name, port_number))
         self.log('*'*78)

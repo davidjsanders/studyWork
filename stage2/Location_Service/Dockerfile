@@ -22,6 +22,8 @@ FROM dsanderscan/pythonbase
 RUN mkdir /Location_Service
 RUN mkdir /Location_Service/Location_Service
 RUN mkdir /Location_Service/Location_Service_Boundary
+RUN mkdir /Location_Service/Location_Service_Config_Boundary
+RUN mkdir /Location_Service/Location_Service_Config_Control
 #
 # copy the files required for the application
 #
@@ -35,7 +37,9 @@ COPY Location_Service/Location_Service_Database.py /Location_Service/Location_Se
 COPY Location_Service_Boundary/__init__.py /Location_Service/Location_Service_Boundary/
 COPY Location_Service_Boundary/main.py /Location_Service/Location_Service_Boundary/
 COPY Location_Service_Boundary/Check_Boundary.py /Location_Service/Location_Service_Boundary/
-COPY Location_Service_Boundary/Versions_Boundary.py /Location_Service/Location_Service_Boundary/
+COPY Location_Service_Config_Boundary/Config_Hotspot_Boundary.py /Location_Service/Location_Service_Config_Boundary/
+COPY Location_Service_Config_Boundary/main.py /Location_Service/Location_Service_Config_Boundary/
+COPY Location_Service_Config_Control/Config_Hotspot_Control.py /Location_Service/Location_Service_Config_Control/
 #
 # Set the working directory for the container
 #

@@ -1,7 +1,7 @@
 from flask_restful import Resource, Api, reqparse, abort
 from flask import Response
 from Bluetooth import Pairing_Database
-from Bluetooth import Control
+from Bluetooth.Control import global_control
 import datetime, time, json
 
 #
@@ -11,12 +11,11 @@ class Pairing_Control(object):
     __pairing_db = None
     __config_database = 'datavolume/config.db'
     __display_filename = 'datavolume/display_output.txt'
-    __controller = Control.global_control
+    __controller = global_control
 
 
     def __init__(self):
         self.__pairing_db = Pairing_Database.Pairing_Database()
-        #self.__controller = Control.Control_v1_00()
 
     def check_pairing(self, devicename):
         return self.__pairing_db.check_pairing(devicename)
@@ -27,14 +26,14 @@ class Pairing_Control(object):
         message = 'Device is paired.'
         pairing = self.check_pairing(devicename)
 
-        self.__controller.log(log_message='PAIR INFO START: for "{0}"'\
+        self.__controller.log('Pairing request received for "{0}"'\
             .format(devicename))
         if pairing == []:
             success = 'error'
             status = '404'
             message = 'Device is not paired'
             pairing = None
-            self.__controller.log(log_message='PAIR INFO ERROR: {0}'\
+            self.__controller.log('A pairing error occurred: {0}'\
                 .format(message))
 
         data = {"device":devicename,
@@ -45,7 +44,7 @@ class Pairing_Control(object):
                                                      status=status,
                                                      response=success)
 
-        self.__controller.log(log_message='PAIR INFO FINISH: for "{0}" ({1})'\
+        self.__controller.log('Device "{0}" pairing request complete ({1})'\
             .format(devicename, success))
 
         return return_value

@@ -58,3 +58,113 @@
 2016-02-03 17:27:52.943192: Location_Control:incoming_notification:issue_bluetooth
 2016-02-03 17:27:52.943822: Location_Control:incoming_notification:end
 2016-02-03 17:27:52.944007: 
+2016-02-03 17:41:01.984411: 
+2016-02-03 17:41:01.988999: ******************************************************************************
+2016-02-03 17:41:01.990199: dasanderUty01:83 Started
+2016-02-03 17:41:01.990879: ******************************************************************************
+2016-02-03 17:41:01.991775: 
+2016-02-03 17:41:18.456847: Location_Control:incoming_notification:start
+2016-02-03 17:41:18.457265: Location_Control:incoming_notification:display_notification
+2016-02-03 17:41:18.457475: 
+2016-02-03 17:41:18.458659: Notification received
+2016-02-03 17:41:18.459452: -------------------------------------------------------------------------------
+2016-02-03 17:41:18.460471: Notification from: test
+2016-02-03 17:41:18.461186: Received at      : 2016-02-03 17:41:18.457254 (EST/EST)
+2016-02-03 17:41:18.461920: Notification     : This is a test notification to validate Bluetooth device
+2016-02-03 17:41:18.462724: Action           : none
+2016-02-03 17:41:18.463419: 
+2016-02-03 17:41:18.464642: Location_Control:incoming_notification:persist_notification
+2016-02-03 17:41:18.470149: Location_Control:incoming_notification:issue_bluetooth
+2016-02-03 17:41:18.478436: Location_Control:incoming_notification:end
+2016-02-03 17:41:18.478679: 
+2016-02-03 17:42:39.619616: Location_Control:incoming_notification:start
+2016-02-03 17:42:39.619931: Location_Control:incoming_notification:display_notification
+2016-02-03 17:42:39.620123: 
+2016-02-03 17:42:39.620931: Notification received
+2016-02-03 17:42:39.621675: -------------------------------------------------------------------------------
+2016-02-03 17:42:39.622790: Notification from: test
+2016-02-03 17:42:39.623521: Received at      : 2016-02-03 17:42:39.619921 (EST/EST)
+2016-02-03 17:42:39.624255: Notification     : This is a test notification to validate Bluetooth device
+2016-02-03 17:42:39.625010: Action           : none
+2016-02-03 17:42:39.625712: 
+2016-02-03 17:42:39.626985: Location_Control:incoming_notification:persist_notification
+2016-02-03 17:42:39.632817: Location_Control:incoming_notification:issue_bluetooth
+2016-02-03 17:42:39.641482: Location_Control:incoming_notification:end
+2016-02-03 17:42:39.641751: 
+2016-02-03 17:46:27.549893: Location_Control:incoming_notification:start
+2016-02-03 17:46:27.550687: Location_Control:incoming_notification:display_notification
+2016-02-03 17:46:27.550934: 
+2016-02-03 17:46:27.552415: Notification received
+2016-02-03 17:46:27.553213: -------------------------------------------------------------------------------
+2016-02-03 17:46:27.554223: Notification from: test
+2016-02-03 17:46:27.554928: Received at      : 2016-02-03 17:46:27.550664 (EST/EST)
+2016-02-03 17:46:27.555637: Notification     : This is a test notification to validate Bluetooth device
+2016-02-03 17:46:27.556348: Action           : none
+2016-02-03 17:46:27.557007: 
+2016-02-03 17:46:27.558469: Location_Control:incoming_notification:persist_notification
+2016-02-03 17:46:27.563525: Location_Control:incoming_notification:issue_bluetooth
+2016-02-03 17:46:27.577224: Location_Control:incoming_notification:end
+2016-02-03 17:46:27.577497: 
+2016-02-03 17:48:47.514033: Location_Control:incoming_notification:start
+2016-02-03 17:48:47.514502: Location_Control:incoming_notification:display_notification
+2016-02-03 17:48:47.514720: 
+2016-02-03 17:48:47.515861: Notification received
+2016-02-03 17:48:47.516783: -------------------------------------------------------------------------------
+2016-02-03 17:48:47.517839: Notification from: test
+2016-02-03 17:48:47.518630: Received at      : 2016-02-03 17:48:47.514489 (EST/EST)
+2016-02-03 17:48:47.519405: Notification     : This is a test notification to validate Bluetooth device
+2016-02-03 17:48:47.520182: Action           : none
+2016-02-03 17:48:47.520916: 
+2016-02-03 17:48:47.522245: Location_Control:incoming_notification:persist_notification
+2016-02-03 17:48:47.527281: Location_Control:incoming_notification:issue_bluetooth
+2016-02-03 17:48:47.535175: Location_Control:incoming_notification:end
+2016-02-03 17:48:47.535442: 
+2016-02-03 18:29:53.449839: Location_Control:incoming_notification:start
+2016-02-03 18:29:53.450224: Location_Control:incoming_notification:display_notification
+2016-02-03 18:29:53.450396: 
+2016-02-03 18:29:53.451338: Notification received
+2016-02-03 18:29:53.452288: -------------------------------------------------------------------------------
+2016-02-03 18:29:53.453357: Notification from: test
+2016-02-03 18:29:53.454139: Received at      : 2016-02-03 18:29:53.450215 (EST/EST)
+2016-02-03 18:29:53.454895: Notification     : This is a test notification to validate Bluetooth device
+2016-02-03 18:29:53.455662: Action           : none
+2016-02-03 18:29:53.456364: 
+2016-02-03 18:29:53.457588: Location_Control:incoming_notification:persist_notification
+2016-02-03 18:29:53.462532: Location_Control:incoming_notification:issue_bluetooth
+2016-02-03 18:29:53.484321: Location_Control:incoming_notification:end
+2016-02-03 18:29:53.484591: 
+2016-02-03 18:33:52.626570: Location_Control:incoming_notification:start
+2016-02-03 18:33:52.626910: Location_Control:incoming_notification:display_notification
+2016-02-03 18:33:52.629041: 
+2016-02-03 18:33:52.629875: Notification received
+2016-02-03 18:33:52.630683: -------------------------------------------------------------------------------
+2016-02-03 18:33:52.631595: Notification from: test
+2016-02-03 18:33:52.632229: Received at      : 2016-02-03 18:33:52.626899 (EST/EST)
+2016-02-03 18:33:52.632877: Notification     : This is a test notification to validate Bluetooth device
+2016-02-03 18:33:52.633541: Action           : none
+2016-02-03 18:33:52.634202: 
+2016-02-03 18:33:52.635295: Location_Control:incoming_notification:persist_notification
+2016-02-03 18:33:52.638312: Location_Control:incoming_notification:issue_bluetooth
+2016-02-03 18:33:52.646013: Location_Control:incoming_notification:end
+2016-02-03 18:33:52.646311: 
+2016-02-03 21:19:45.256845: Location_Control:location_request:start
+2016-02-03 21:19:45.258117: Location_Control:location_request:end
+2016-02-03 21:19:45.258316: 
+2016-02-03 21:20:15.302568: Location_Control:location_request:start
+2016-02-03 21:20:15.303820: Location_Control:location_request:end
+2016-02-03 21:20:15.304016: 
+2016-02-03 21:20:45.350292: Location_Control:location_request:start
+2016-02-03 21:20:45.351491: Location_Control:location_request:end
+2016-02-03 21:20:45.351679: 
+2016-02-03 21:21:15.397554: Location_Control:location_request:start
+2016-02-03 21:21:15.399075: Location_Control:location_request:end
+2016-02-03 21:21:15.399279: 
+2016-02-03 21:21:45.426354: Location_Control:location_request:start
+2016-02-03 21:21:45.427599: Location_Control:location_request:end
+2016-02-03 21:21:45.427793: 
+2016-02-03 21:22:15.462986: Location_Control:location_request:start
+2016-02-03 21:22:15.464192: Location_Control:location_request:end
+2016-02-03 21:22:15.464381: 
+2016-02-03 21:22:45.493796: Location_Control:location_request:start
+2016-02-03 21:22:45.495039: Location_Control:location_request:end
+2016-02-03 21:22:45.495235: 

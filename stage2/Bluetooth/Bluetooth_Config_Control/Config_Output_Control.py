@@ -33,10 +33,15 @@ class Config_Output_Control(object):
             if not key == '1234-5678-9012-3456':
                 raise IndexError('Bluetooth key incorrect.')
 
+            self.__controller.log(
+                log_message=
+                    'Request to add "{0}" to device "{1}" with filename {2}'\
+                    .format(output_item, devicename, file_name))
+
             pairing_key = self.__pair_controller.check_pairing(devicename)
 
             if pairing_key == []:
-                raise ValueError('Device is not paired')
+                raise ValueError('Device {0} is not paired'.format(devicename))
             else:
                 state = self.__pair_controller\
                     .add_output_device(devicename,
@@ -47,19 +52,35 @@ class Config_Output_Control(object):
                         "output-item":output_item,
                         "file-name":'datavolume/'+devicename+'-'+file_name,
                         "state":"added" if state == True else "not added"}
+                self.__controller.log(
+                    log_message=
+                        'Output "{0}" added to device "{1}" (filename: {2})'\
+                        .format(output_item, devicename, file_name))
         except KeyError as ke:
             success = 'error'
             status = '400'
             message = str(ke)
+            self.__controller.log(
+                log_message='Output device error: A key is missing: {0}'\
+                    .format(message))
         except ValueError as ve:
             success = 'error'
             status = '400'
             message = str(ve)
+            self.__controller.log(
+                log_message='Output device error: {0}'\
+                    .format(message))
         except IndexError as ie:
             success = 'error'
             status = '403'
             message = str(ie)
+            self.__controller.log(
+                log_message='Output device error: {0}'\
+                    .format(message))
         except Exception as e:
+            self.__controller.log(
+                log_message='Output device error: {0}'\
+                    .format(repr(e)))
             raise
 
         return_value = self.__controller.do_response(message=message,
@@ -77,6 +98,10 @@ class Config_Output_Control(object):
         data = None
 
         try:
+            self.__controller.log(
+                 log_message=
+                    'Request to get list of outputs for device "{0}"'\
+                    .format(devicename))
             pairing_key = self.__pair_controller.check_pairing(devicename)
 
             if pairing_key == []:
@@ -85,18 +110,31 @@ class Config_Output_Control(object):
 
                 data = {"outputs":
                     self.__pair_controller.get_output_devices(devicename)}
+                self.__controller.log(
+                    log_message=
+                        'Outputs "{0}" setup for device "{1}"'\
+                        .format(data['outputs'], devicename))
         except KeyError as ke:
             success = 'error'
             status = '400'
             message = 'Badly formed request!'
+            self.__controller.log(
+                log_message='Output device error: A key is missing: {0}'\
+                    .format(message))
         except ValueError as ve:
             success = 'error'
             status = '400'
             message = str(ve)
+            self.__controller.log(
+                log_message='Output device error: {0}'\
+                    .format(message))
         except IndexError as ie:
             success = 'error'
             status = '403'
             message = str(ie)
+            self.__controller.log(
+                log_message='Output device error: {0}'\
+                    .format(message))
         except Exception as e:
             raise
 
@@ -126,10 +164,15 @@ class Config_Output_Control(object):
             if not key == '1234-5678-9012-3456':
                 raise IndexError('Bluetooth key incorrect.')
 
+            self.__controller.log(
+                 log_message=
+                    'Request to remove "{0}" from device "{1}"'\
+                    .format(output_item, devicename))
+
             pairing_key = self.__pair_controller.check_pairing(devicename)
 
             if pairing_key == []:
-                raise ValueError('Device is not paired')
+                raise ValueError('Device {0} is not paired'.format(devicename))
             else:
                 state = self.__pair_controller\
                     .remove_output_device(devicename, output_item)
@@ -137,19 +180,35 @@ class Config_Output_Control(object):
                 data = {"device":devicename,
                         "output-item":output_item,
                         "state":"deleted" if state == True else "not deleted"}
+                self.__controller.log(
+                    log_message=
+                        'Output "{0}" removed from device "{1}"'\
+                        .format(output_item, devicename))
         except KeyError as ke:
             success = 'error'
             status = '400'
             message = str(ke)
+            self.__controller.log(
+                log_message='Output device error: A key is missing: {0}'\
+                    .format(message))
         except ValueError as ve:
             success = 'error'
             status = '400'
             message = str(ve)
+            self.__controller.log(
+                log_message='Output device error: {0}'\
+                    .format(message))
         except IndexError as ie:
             success = 'error'
             status = '403'
             message = str(ie)
+            self.__controller.log(
+                log_message='Output device error: {0}'\
+                    .format(message))
         except Exception as e:
+            self.__controller.log(
+                log_message='Output device error: {0}'\
+                    .format(message))
             raise
 
         return_value = self.__controller.do_response(message=message,

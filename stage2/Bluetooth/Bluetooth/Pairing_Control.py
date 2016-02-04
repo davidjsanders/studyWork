@@ -1,7 +1,7 @@
 from flask_restful import Resource, Api, reqparse, abort
 from flask import Response
 from Bluetooth import Pairing_Database
-from Bluetooth import Control
+from Bluetooth.Control import global_control
 import datetime, time, json
 
 #
@@ -11,7 +11,7 @@ class Pairing_Control(object):
     __pairing_db = None
     __config_database = 'datavolume/config.db'
     __display_filename = 'datavolume/display_output.txt'
-    __controller = Control.global_control
+    __controller = global_control
 
 
     def __init__(self):
@@ -26,14 +26,14 @@ class Pairing_Control(object):
         message = 'Device is paired.'
         pairing = self.check_pairing(devicename)
 
-        self.__controller.log(log_message='PAIR INFO START: for "{0}"'\
+        self.__controller.log('Pairing status request received for "{0}"'\
             .format(devicename))
         if pairing == []:
             success = 'error'
             status = '404'
             message = 'Device is not paired'
             pairing = None
-            self.__controller.log(log_message='PAIR INFO ERROR: {0}'\
+            self.__controller.log('A pairing error occurred: {0}'\
                 .format(message))
 
         data = {"device":devicename,
@@ -44,7 +44,7 @@ class Pairing_Control(object):
                                                      status=status,
                                                      response=success)
 
-        self.__controller.log(log_message='PAIR INFO FINISH: for "{0}" ({1})'\
+        self.__controller.log('Device "{0}" pairing request complete ({1})'\
             .format(devicename, success))
 
         return return_value
@@ -55,7 +55,7 @@ class Pairing_Control(object):
         message = 'Device successfully paired.'
         existing_key = self.check_pairing(devicename) or None
 
-        self.__controller.log(log_message='PAIR DEVICE START: with "{0}"'\
+        self.__controller.log(log_message='Pair request from "{0}"'\
             .format(devicename))
 
         data = {"device":devicename,
@@ -67,22 +67,22 @@ class Pairing_Control(object):
                                                    response=success)
 
         self.__controller.log(
-             log_message='PAIR DEVICE FINISH: with "{0}" ({1} {2})'\
+             log_message='Paired with "{0}" ({1} {2})'\
                 .format(devicename, success, status)
         )
 
         return return_value
 
     def pair_unpair(self, devicename):
-        self.__controller.log(log_message='UNPAIR DEVICE START: with "{0}"'\
+        self.__controller.log(log_message='Un-pair request received form "{0}"'\
             .format(devicename))
 
         if not self.check_pairing(devicename):
             self.__controller.log(
-                log_message='UNPAIR DEVICE ERROR: {0} is not paired'\
+                log_message='Un-pair error: {0} is not paired'\
                     .format(devicename))
             self.__controller.log(
-                 log_message='UNPAIR DEVICE FINISH: with "{0}" ({1} {2})'\
+                 log_message='Un-pair error "{0}" ({1} {2})'\
                     .format(devicename, 'error', '404')
             )
             return self.__controller.do_response(status="404",
@@ -92,7 +92,7 @@ class Pairing_Control(object):
 
         if self.__pairing_db.remove_pairing(devicename):
             self.__controller.log(
-                 log_message='UNPAIR DEVICE FINISH: with "{0}" ({1} {2})'\
+                 log_message='Device "{0}" un-paired. ({1} {2})'\
                     .format(devicename, 'success', '200')
             )
             return self.__controller.do_response(

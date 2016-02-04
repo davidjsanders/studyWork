@@ -19,8 +19,7 @@ from flask import Flask
 # Import the module Api from the flask_restful package
 from flask_restful import Api
 
-# Import PairControl
-from Location_Service import Control
+# Import controls
 from Location_Service import Check_Control
 
 # The app is this application and set when the Python file is run from the
@@ -31,8 +30,8 @@ api = Api(app)
 
 #Setup objects for pairing and broadcasting.
 #notification_control_object = Notification_Control.Notification_Control_v1_00()
-check_control = Check_Control.Check_Control_v1_00()
-control = Control.Control_v1_00()
+#check_control = Check_Control.Check_Control_v1_00()
+#control = Control.Control_v1_00()
 
 # Import the main.py module
 import Location_Service.main

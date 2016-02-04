@@ -3,57 +3,92 @@ from flask import Response
 from Location_Service.Location_Service_Database \
     import Location_Service_Database
 
-import datetime, time, json
+import datetime, time, json, os
+from textwrap import wrap
 
-#
-# SuperClass.
-# ----------------------------------------------------------------------------
 class Control(object):
-    __log_file = 'datavolume/Log_File.txt'
-    __Location_Service_db = None
+    __log_file = None
+    __location_service_db = None
 
     def __init__(self):
-        self.__Location_Service_db = Location_Service_Database()
+        # Get hostname and port from OS. If the environment variables have not
+        # been set, e.g. the app is being run locally, then catch an exception
+        # and default to Flask's built-in server, localhost on port 5000.
+        #
+        stage = 0      # A stage indicator to know which variable caused the
+                       # exception
+        try:
+            stage += 1
+            port_number = os.environ['portToUse']
+            stage += 1
+            server_name = os.environ['serverName']
+        except KeyError as ke:
+            if stage == 1:
+                port_number = 5000
+                server_name = 'localhost'
+            else:
+                server_name = 'localhost'
+
+        self.__server_name = server_name
+        self.__port_number = port_number
+
+        self.__location_service_db = \
+            Location_Service_Database(server_name, port_number)
+        self.__log_file = 'datavolume/'+server_name+'-'+str(port_number)+\
+            '-log.txt'
+        self.log()
+        self.log('*'*78)
+        self.log('Location Service {0}:{1} Started'\
+            .format(server_name, port_number))
+        self.log('*'*78)
+        self.log()
+
+    def get_hotspots(self):
+        return self.__location_service_db.get_hotspots()
 
 
-    def get_state(self):
-        return self.__Location_Service_db.get_state()
+    def get_hotspot(self, location):
+        return self.__location_service_db.get_hotspot_by_name(location)
 
 
-    def set_state(self, state=None):
-        return self.__Location_Service_db.set_state(state)
+    def save_hotspot(self, location, upperX, upperY, lowerX, lowerY, desc):
+        return self.__location_service_db.set_hotspot(
+            location,
+            upperX,
+            upperY,
+            lowerX,
+            lowerY,
+            desc
+        )
 
 
-    def set_value(self, key=None, value=None):
-        return self.__Location_Service_db.set_value(key, value)
+    def delete_hotspot(self, location):
+        return self.__location_service_db.clear_hotspot(location)
 
-
-    def get_value(self, key=None):
-        return self.__Location_Service_db.get_value(key)
-
-
-    def clear_value(self, key=None):
-        return self.set_value(key, None)
-
-
-    def check_location(self):
-        state = self.get_state()
-        if state.upper() == 'ON':
-            print('Checking location for hot spot!')
 
     def log(self,
-            log_message=None
+            log_message=None,
+            screen=True
     ):
         now = datetime.datetime.now()
         f = None
         try:
             f = open(self.__log_file, 'a')
-            f.write('{0}: {1}'.format(now,log_message)+"\n")
+            if log_message == None or log_message == '':
+                f.write("{0:>28s}\n".format(str(now)+': '))
+            else:
+                wrapped80 = wrap(log_message, 79)
+                time_line = [str(now)]
+                for line in wrapped80:
+                    time_line.append('')
+                for i, line in enumerate(wrapped80):
+                    f.write('{0:>28s}{1}'.format(time_line[i]+': ', line)+"\n")
         except Exception:
             raise
         finally:
             if not f == None:
                 f.close()
+
 
     def do_response(self,
                     status=200,
@@ -81,10 +116,5 @@ class Control(object):
         print('{0}'.format('-'*80))
         print('*** {0} ***'.format(error_message))
         print('{0}'.format('-'*80))
-#
-# Version 1.00
-# ----------------------------------------------------------------------------
-class Control_v1_00(Control):
-    def future(self):
-        pass
 
+global_control = Control()

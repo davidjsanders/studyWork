@@ -1,0 +1,42 @@
+--------------------------------------------------------------------------------
+Bluetooth output device: Default audio device
+--------------------------------------------------------------------------------
+Broadcast from: dasanderUty01_83
+Broadcast at: 2016-02-03 17:41:18.475876 (EST/EDT)
+Message: This is a test notification to validate Bluetooth device
+
+--------------------------------------------------------------------------------
+Bluetooth output device: Default audio device
+--------------------------------------------------------------------------------
+Broadcast from: dasanderUty01_83
+Broadcast at: 2016-02-03 17:42:39.638856 (EST/EDT)
+Message: This is a test notification to validate Bluetooth device
+
+--------------------------------------------------------------------------------
+Bluetooth output device: Default audio device
+--------------------------------------------------------------------------------
+Broadcast from: dasanderUty01_83
+Broadcast at: 2016-02-03 17:46:27.574009 (EST/EDT)
+Message: This is a test notification to validate Bluetooth device
+
+--------------------------------------------------------------------------------
+Bluetooth output device: Default audio device
+--------------------------------------------------------------------------------
+Broadcast from: dasanderUty01_83
+Broadcast at: 2016-02-03 17:48:47.532736 (EST/EDT)
+Message: This is a test notification to validate Bluetooth device
+
+--------------------------------------------------------------------------------
+Bluetooth output device: Default audio device
+--------------------------------------------------------------------------------
+Broadcast from: dasanderUty01_83
+Broadcast at: 2016-02-03 18:29:53.481254 (EST/EST)
+Message: This is a test notification to validate Bluetooth device
+
+--------------------------------------------------------------------------------
+Bluetooth output device: Default audio device
+--------------------------------------------------------------------------------
+Broadcast from: dasanderUty01_83
+Broadcast at: 2016-02-03 18:33:52.643676 (EST/EST)
+Message: This is a test notification to validate Bluetooth device
+

@@ -39,6 +39,7 @@ def do_location_check(control_object=None):
                 and check_response.json()['response'] == 'success':
                     xy = (x, y)
                     hotspot_yn = check_response.json()['data']['hotspot']
+                    issue_notification = False
                     if hotspot_yn:
                         timeNow = time.time()
                         timeThen = None

@@ -38,7 +38,6 @@ COPY Bluetooth/Pairing_Control.py /Bluetooth/Bluetooth/
 COPY Bluetooth/Broadcast_Control.py /Bluetooth/Bluetooth/
 COPY Bluetooth_Boundary/__init__.py /Bluetooth/Bluetooth_Boundary/
 COPY Bluetooth_Boundary/main.py /Bluetooth/Bluetooth_Boundary/
-COPY Bluetooth_Boundary/Versions_Boundary.py /Bluetooth/Bluetooth_Boundary/
 COPY Bluetooth_Boundary/Broadcast_Boundary.py /Bluetooth/Bluetooth_Boundary/
 COPY Bluetooth_Boundary/Pair_Boundary.py /Bluetooth/Bluetooth_Boundary/
 #

@@ -1,0 +1,76 @@
+2016-02-03 20:58:27.739099: 
+2016-02-03 20:58:27.739283: ******************************************************************************
+2016-02-03 20:58:27.739696: Location Service dasanderUty01:91 Started
+2016-02-03 20:58:27.739830: ******************************************************************************
+2016-02-03 20:58:27.740195: 
+2016-02-03 20:58:44.245581: Location service request to check (850.0,850.0)
+2016-02-03 20:58:44.247265: Location (850.0,850.0) not in any hot spot.
+2016-02-03 20:59:00.469842: Request to add hotspot "Hotspotty" at (230,389)-(350,465) as "Area known for
+                          : high intravenous drug use."
+2016-02-03 20:59:00.476239: Added hotspot "Hotspotty" at (350,465)-(230,389) as "Area known for high
+                          : intravenous drug use."
+2016-02-03 20:59:06.404486: Location service request to check (850.0,850.0)
+2016-02-03 20:59:06.405355: Location (850.0,850.0) not in any hot spot.
+2016-02-03 20:59:19.628888: Request to add hotspot "Hotspotty" at (230,389)-(350,465) as "Area known for
+                          : high intravenous drug use."
+2016-02-03 20:59:19.634281: Added hotspot "Hotspotty" at (350,465)-(230,389) as "Area known for high
+                          : intravenous drug use."
+2016-02-03 20:59:39.597643: Location service request to check (850.0,850.0)
+2016-02-03 20:59:39.598441: Location (850.0,850.0) not in any hot spot.
+2016-02-03 21:00:03.462670: Location service request to check (250.0,400.0)
+2016-02-03 21:00:03.463511: Location (250.0,400.0) not in any hot spot.
+2016-02-03 21:01:58.511662: 
+2016-02-03 21:01:58.511821: ******************************************************************************
+2016-02-03 21:01:58.512234: Location Service dasanderUty01:91 Started
+2016-02-03 21:01:58.512371: ******************************************************************************
+2016-02-03 21:01:58.512740: 
+2016-02-03 21:02:13.509649: Request to add hotspot "Hotspotty" at (230,389)-(350,465) as "Area known for
+                          : high intravenous drug use."
+2016-02-03 21:02:13.510420: Hotspot config error: TypeError("save_hotspot() got an unexpected keyword
+                          : argument 'description'",)
+2016-02-03 21:03:25.848716: 
+2016-02-03 21:03:25.848877: ******************************************************************************
+2016-02-03 21:03:25.849298: Location Service dasanderUty01:91 Started
+2016-02-03 21:03:25.849434: ******************************************************************************
+2016-02-03 21:03:25.849804: 
+2016-02-03 21:03:27.864148: Request to add hotspot "Hotspotty" at (230,389)-(350,465) as "Area known for
+                          : high intravenous drug use."
+2016-02-03 21:03:27.871775: Added hotspot "Hotspotty" at (350,465)-(230,389) as "Area known for high
+                          : intravenous drug use."
+2016-02-03 21:03:32.998532: Location service request to check (250.0,400.0)
+2016-02-03 21:03:32.999445: Location (250.0,400.0) found in 1 hot spot.
+2016-02-03 21:03:40.462376: Location service request to check (2250.0,400.0)
+2016-02-03 21:03:40.463148: Location (2250.0,400.0) not in any hot spot.
+2016-02-03 21:03:54.111063: Location service request to check (250.0,400.0)
+2016-02-03 21:03:54.111831: Location (250.0,400.0) found in 1 hot spot.
+2016-02-03 21:04:16.928060: Request to add hotspot "AnyTown" at (230,389)-(350,465) as "Area known for high
+                          : intravenous drug use."
+2016-02-03 21:04:16.933698: Added hotspot "AnyTown" at (350,465)-(230,389) as "Area known for high
+                          : intravenous drug use."
+2016-02-03 21:04:39.640342: Location service request to show all hotspots
+2016-02-03 21:04:39.641085: Location Service returned the following hotspots: [('Hotspotty', 350.0, 465.0,
+                          : 230.0, 389.0, 'Area known for high intravenous drug use.'), ('AnyTown', 350.0,
+                          : 465.0, 230.0, 389.0, 'Area known for high intravenous drug use.')]
+2016-02-03 21:04:47.761097: Location service request to check (250.0,400.0)
+2016-02-03 21:04:47.761879: Location (250.0,400.0) found in 2 hot spot.
+2016-02-03 21:10:34.525090: 
+2016-02-03 21:10:34.525252: ******************************************************************************
+2016-02-03 21:10:34.525662: Location Service dasanderUty01:91 Started
+2016-02-03 21:10:34.525798: ******************************************************************************
+2016-02-03 21:10:34.526202: 
+2016-02-03 21:10:41.975972: Location service request to check (250.0,400.0)
+2016-02-03 21:10:41.977662: Location (250.0,400.0) found in 2 hot spot.
+2016-02-03 21:19:45.264326: Location service request to check (250.0,400.0)
+2016-02-03 21:19:45.265141: Location (250.0,400.0) found in 2 hot spot.
+2016-02-03 21:20:15.309780: Location service request to check (250.0,400.0)
+2016-02-03 21:20:15.310660: Location (250.0,400.0) found in 2 hot spot.
+2016-02-03 21:20:45.367534: Location service request to check (250.0,400.0)
+2016-02-03 21:20:45.368282: Location (250.0,400.0) found in 2 hot spot.
+2016-02-03 21:21:15.411608: Location service request to check (250.0,400.0)
+2016-02-03 21:21:15.412351: Location (250.0,400.0) found in 2 hot spot.
+2016-02-03 21:21:45.433524: Location service request to check (250.0,400.0)
+2016-02-03 21:21:45.434426: Location (250.0,400.0) found in 2 hot spot.
+2016-02-03 21:22:15.469776: Location service request to check (250.0,400.0)
+2016-02-03 21:22:15.470547: Location (250.0,400.0) found in 2 hot spot.
+2016-02-03 21:22:45.510422: Location service request to check (250.0,400.0)
+2016-02-03 21:22:45.511167: Location (250.0,400.0) found in 2 hot spot.

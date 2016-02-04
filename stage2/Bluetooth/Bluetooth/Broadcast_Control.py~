@@ -8,11 +8,6 @@ class Broadcast_Control(object):
     __output_devices = []
     __controller = Control.global_control
 
-    def __init__(self):
-        pass
-        #self.__controller = Control.Control_v1_00()
-
-
     def broadcast_message(self, devicename='Unknown', text=None, key=None):
         success = 'success'
         status = '200'
@@ -21,7 +16,7 @@ class Broadcast_Control(object):
                 "action":"broadcast",
                 "message":text}
 
-        self.__controller.log(log_message='BROADCAST START: on behalf of "{0}"'\
+        self.__controller.log(log_message='Broadcast request from "{0}"'\
             .format(devicename))
 
         pair_control_object = Pairing_Control.global_pair_control
@@ -34,7 +29,7 @@ class Broadcast_Control(object):
             message = 'Device is not paired'
             pairing_key = None
             self.__controller.log(
-                log_message='BROADCAST ERROR: {0}'\
+                log_message='Broadcasting error: {0}'\
                     .format(message))
         elif pairing_key != key:
             success = 'error'
@@ -42,7 +37,7 @@ class Broadcast_Control(object):
             message = 'Device pairing key is incorrect!'
             pairing_key = None
             self.__controller.log(
-                log_message='BROADCAST ERROR: {0}'\
+                log_message='Broadcasting error: {0}'\
                     .format(message))
         elif text == '' or text == None:
             success = 'error'
@@ -50,13 +45,13 @@ class Broadcast_Control(object):
             message = 'Cannot broadcast an empty message'
             pairing_key = None
             self.__controller.log(
-                log_message='BROADCAST ERROR: {0}'\
+                log_message='Broadcasting error: {0}'\
                     .format(message))
         else:
             try:
 
                 self.__controller.log(
-                     log_message='BROADCASTING: Send "{0}" on behalf of "{1}"' \
+                     log_message='Broadcasting "{0}" on behalf of "{1}"' \
                         .format(text, devicename))
 
                 now = datetime.datetime.now()
@@ -83,7 +78,7 @@ class Broadcast_Control(object):
                 raise
 
         self.__controller.log(
-            log_message='BROADCAST FINISH: on behalf of "{0}" ({1} {2})'\
+            log_message='Broadcasting on behalf of "{0}" finished. ({1} {2})'\
                 .format(devicename, success, status))
 
         return_value = self.__controller.do_response(message=message,

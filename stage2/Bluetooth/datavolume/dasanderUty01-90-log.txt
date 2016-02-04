@@ -1,0 +1,33 @@
+2016-02-03 18:27:33.098645: 
+2016-02-03 18:27:33.098803: ******************************************************************************
+2016-02-03 18:27:33.099216: dasanderUty01:90 Started
+2016-02-03 18:27:33.099338: ******************************************************************************
+2016-02-03 18:27:33.099707: 
+2016-02-03 18:27:53.067438: Pair request from "dasanderUty01_83"
+2016-02-03 18:27:53.076871: Paired with "dasanderUty01_83" (success 200)
+2016-02-03 18:28:09.327799: Request to add "speaker" to device "dasanderUty01_83" with filename speaker.txt
+2016-02-03 18:28:09.334127: Output "speaker" added to device "dasanderUty01_83" (filename: speaker.txt)
+2016-02-03 18:29:27.000867: Request to remove "speaker" from device "dasanderUty01_83"
+2016-02-03 18:29:27.006560: Output "speaker" removed from device "dasanderUty01_83"
+2016-02-03 18:29:53.479459: Broadcast request from "dasanderUty01_83"
+2016-02-03 18:29:53.480936: Broadcasting "This is a test notification to validate Bluetooth device" on
+                          : behalf of "dasanderUty01_83"
+2016-02-03 18:29:53.481877: Broadcasting on behalf of "dasanderUty01_83" finished. (success 200)
+2016-02-03 18:30:14.114752: Request to remove "speaker" from device "dasanderUty01_83"
+2016-02-03 18:30:14.115856: Output device error: A key is missing: 'Output item speaker does not exist for
+                          : device dasanderUty01_83'
+2016-02-03 18:30:30.213657: Un-pair request received form "dasanderUty01_83"
+2016-02-03 18:30:30.217201: Device "dasanderUty01_83" un-paired. (success 200)
+2016-02-03 18:33:09.663094: 
+2016-02-03 18:33:09.663232: ******************************************************************************
+2016-02-03 18:33:09.663637: dasanderUty01:90 Started
+2016-02-03 18:33:09.663758: ******************************************************************************
+2016-02-03 18:33:09.664126: 
+2016-02-03 18:33:47.136234: Pair request from "dasanderUty01_83"
+2016-02-03 18:33:47.146679: Paired with "dasanderUty01_83" (success 200)
+2016-02-03 18:33:52.642667: Broadcast request from "dasanderUty01_83"
+2016-02-03 18:33:52.643411: Broadcasting "This is a test notification to validate Bluetooth device" on
+                          : behalf of "dasanderUty01_83"
+2016-02-03 18:33:52.644187: Broadcasting on behalf of "dasanderUty01_83" finished. (success 200)
+2016-02-03 18:34:07.663256: Un-pair request received form "dasanderUty01_83"
+2016-02-03 18:34:07.666868: Device "dasanderUty01_83" un-paired. (success 200)

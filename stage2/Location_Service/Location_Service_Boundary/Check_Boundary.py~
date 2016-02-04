@@ -1,7 +1,7 @@
 from flask_restful import Resource, Api, reqparse, abort
 from flask import Response
 from Location_Service \
-    import app, api, control, \
+    import app, api, \
            check_control
 
 from Location_Service_Boundary import apiR
