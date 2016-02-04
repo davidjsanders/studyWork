@@ -74,3 +74,167 @@
 2016-02-03 21:22:15.470547: Location (250.0,400.0) found in 2 hot spot.
 2016-02-03 21:22:45.510422: Location service request to check (250.0,400.0)
 2016-02-03 21:22:45.511167: Location (250.0,400.0) found in 2 hot spot.
+2016-02-04 13:00:20.707040: 
+2016-02-04 13:00:20.707456: ******************************************************************************
+2016-02-04 13:00:20.707935: Location Service dasanderUty01:91 Started
+2016-02-04 13:00:20.708092: ******************************************************************************
+2016-02-04 13:00:20.708520: 
+2016-02-04 13:04:44.201476: Location service request to check (0.0,0.0)
+2016-02-04 13:04:44.203062: Location (0.0,0.0) not in any hot spot.
+2016-02-04 13:05:14.244388: Location service request to check (0.0,0.0)
+2016-02-04 13:05:14.245156: Location (0.0,0.0) not in any hot spot.
+2016-02-04 13:17:26.557578: Location service request to check (0.0,0.0)
+2016-02-04 13:17:26.558331: Location (0.0,0.0) not in any hot spot.
+2016-02-04 13:18:54.023151: Location service request to check (0.0,0.0)
+2016-02-04 13:18:54.023830: Location (0.0,0.0) not in any hot spot.
+2016-02-04 13:19:24.064834: Location service request to check (0.0,0.0)
+2016-02-04 13:19:24.065515: Location (0.0,0.0) not in any hot spot.
+2016-02-04 13:19:54.078576: Location service request to check (0.0,0.0)
+2016-02-04 13:19:54.079297: Location (0.0,0.0) not in any hot spot.
+2016-02-04 13:20:24.091051: Location service request to check (30.0,150.0)
+2016-02-04 13:20:24.091734: Location (30.0,150.0) not in any hot spot.
+2016-02-04 13:20:54.129305: Location service request to check (30.0,150.0)
+2016-02-04 13:20:54.130128: Location (30.0,150.0) not in any hot spot.
+2016-02-04 13:21:54.199485: Location service request to check (30.0,150.0)
+2016-02-04 13:21:54.200170: Location (30.0,150.0) not in any hot spot.
+2016-02-04 13:22:24.216323: Location service request to check (30.0,150.0)
+2016-02-04 13:22:24.217074: Location (30.0,150.0) not in any hot spot.
+2016-02-04 13:22:54.256758: Location service request to check (30.0,150.0)
+2016-02-04 13:22:54.257505: Location (30.0,150.0) not in any hot spot.
+2016-02-04 13:23:24.290144: Location service request to check (30.0,150.0)
+2016-02-04 13:23:24.290901: Location (30.0,150.0) not in any hot spot.
+2016-02-04 13:23:54.324447: Location service request to check (30.0,150.0)
+2016-02-04 13:23:54.325182: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:22:17.980021: Location service request to check (30.0,150.0)
+2016-02-04 14:22:17.980687: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:22:48.032390: Location service request to check (30.0,150.0)
+2016-02-04 14:22:48.033131: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:23:18.070917: Location service request to check (30.0,150.0)
+2016-02-04 14:23:18.071715: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:23:48.108530: Location service request to check (30.0,150.0)
+2016-02-04 14:23:48.109256: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:24:18.152684: Location service request to check (30.0,150.0)
+2016-02-04 14:24:18.153417: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:24:48.210611: Location service request to check (30.0,150.0)
+2016-02-04 14:24:48.211413: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:25:18.255161: Location service request to check (30.0,150.0)
+2016-02-04 14:25:18.255886: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:25:48.306550: Location service request to check (30.0,150.0)
+2016-02-04 14:25:48.307316: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:26:18.339838: Location service request to check (30.0,150.0)
+2016-02-04 14:26:18.340568: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:26:48.383058: Location service request to check (30.0,150.0)
+2016-02-04 14:26:48.384422: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:27:18.407110: Location service request to check (30.0,150.0)
+2016-02-04 14:27:18.407844: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:27:48.453772: Location service request to check (30.0,150.0)
+2016-02-04 14:27:48.455207: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:28:18.486332: Location service request to check (30.0,150.0)
+2016-02-04 14:28:18.487130: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:28:48.524479: Location service request to check (30.0,150.0)
+2016-02-04 14:28:48.525865: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:29:18.570008: Location service request to check (30.0,150.0)
+2016-02-04 14:29:18.570695: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:29:48.612317: Location service request to check (30.0,150.0)
+2016-02-04 14:29:48.613002: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:30:18.656496: Location service request to check (30.0,150.0)
+2016-02-04 14:30:18.657202: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:30:48.708017: Location service request to check (30.0,150.0)
+2016-02-04 14:30:48.708782: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:31:18.732723: Location service request to check (30.0,150.0)
+2016-02-04 14:31:18.733454: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:31:48.780273: Location service request to check (30.0,150.0)
+2016-02-04 14:31:48.780949: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:32:18.814496: Location service request to check (30.0,150.0)
+2016-02-04 14:32:18.815296: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:32:48.870063: Location service request to check (30.0,150.0)
+2016-02-04 14:32:48.870776: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:33:18.911415: Location service request to check (30.0,150.0)
+2016-02-04 14:33:18.912153: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:33:48.966305: Location service request to check (30.0,150.0)
+2016-02-04 14:33:48.967125: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:34:18.981993: Location service request to check (30.0,150.0)
+2016-02-04 14:34:18.982657: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:34:49.034958: Location service request to check (30.0,150.0)
+2016-02-04 14:34:49.035745: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:35:19.079399: Location service request to check (30.0,150.0)
+2016-02-04 14:35:19.080129: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:35:49.135065: Location service request to check (30.0,150.0)
+2016-02-04 14:35:49.135791: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:38:29.231900: Location service request to check (30.0,150.0)
+2016-02-04 14:38:29.232655: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:38:59.273786: Location service request to check (30.0,150.0)
+2016-02-04 14:38:59.274453: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:39:29.304811: Location service request to check (30.0,150.0)
+2016-02-04 14:39:29.305563: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:39:59.345304: Location service request to check (30.0,150.0)
+2016-02-04 14:39:59.345967: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:40:29.385128: Location service request to check (30.0,150.0)
+2016-02-04 14:40:29.385866: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:40:59.424599: Location service request to check (30.0,150.0)
+2016-02-04 14:40:59.425328: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:41:29.463951: Location service request to check (30.0,150.0)
+2016-02-04 14:41:29.464621: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:41:59.505664: Location service request to check (30.0,150.0)
+2016-02-04 14:41:59.506394: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:42:29.535561: Location service request to check (30.0,150.0)
+2016-02-04 14:42:29.536227: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:42:59.558601: Location service request to check (30.0,150.0)
+2016-02-04 14:42:59.559364: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:43:29.581616: Location service request to check (30.0,150.0)
+2016-02-04 14:43:29.582349: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:43:59.610095: Location service request to check (30.0,150.0)
+2016-02-04 14:43:59.610757: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:44:29.650360: Location service request to check (30.0,150.0)
+2016-02-04 14:44:29.651136: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:44:59.686139: Location service request to check (30.0,150.0)
+2016-02-04 14:44:59.686878: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:45:29.727565: Location service request to check (30.0,150.0)
+2016-02-04 14:45:29.728324: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:46:59.775197: Location service request to check (30.0,150.0)
+2016-02-04 14:46:59.775958: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:47:29.817951: Location service request to check (30.0,150.0)
+2016-02-04 14:47:29.818688: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:47:59.860064: Location service request to check (30.0,150.0)
+2016-02-04 14:47:59.860726: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:48:29.882825: Location service request to check (30.0,150.0)
+2016-02-04 14:48:29.883595: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:48:59.909242: Location service request to check (30.0,150.0)
+2016-02-04 14:48:59.909918: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:49:29.938551: Location service request to check (30.0,150.0)
+2016-02-04 14:49:29.939333: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:49:59.980480: Location service request to check (30.0,150.0)
+2016-02-04 14:49:59.981144: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:50:29.992339: Location service request to check (30.0,150.0)
+2016-02-04 14:50:29.993003: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:51:00.030912: Location service request to check (30.0,150.0)
+2016-02-04 14:51:00.031601: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:51:30.067485: Location service request to check (30.0,150.0)
+2016-02-04 14:51:30.068150: Location (30.0,150.0) not in any hot spot.
+2016-02-04 14:52:00.108364: Location service request to check (30.0,150.0)
+2016-02-04 14:52:00.109112: Location (30.0,150.0) not in any hot spot.
+2016-02-04 17:34:58.623849: 
+2016-02-04 17:34:58.624006: ******************************************************************************
+2016-02-04 17:34:58.624416: Location Service dasanderUty01:91 Started
+2016-02-04 17:34:58.624550: ******************************************************************************
+2016-02-04 17:34:58.624918: 
+2016-02-04 17:35:42.537620: Location service request to check (30.0,110.0)
+2016-02-04 17:35:42.539054: Location (30.0,110.0) not in any hot spot.
+2016-02-04 17:36:12.581864: Location service request to check (30.0,110.0)
+2016-02-04 17:36:12.582555: Location (30.0,110.0) not in any hot spot.
+2016-02-04 17:37:17.695329: Location service request to check (30.0,110.0)
+2016-02-04 17:37:17.696678: Location (30.0,110.0) not in any hot spot.
+2016-02-04 17:37:47.728745: Location service request to check (30.0,110.0)
+2016-02-04 17:37:47.729436: Location (30.0,110.0) not in any hot spot.
+2016-02-04 17:38:17.743795: Location service request to check (300.0,400.0)
+2016-02-04 17:38:17.744606: Location (300.0,400.0) found in 2 hot spot.
+2016-02-04 17:38:47.800818: Location service request to check (300.0,400.0)
+2016-02-04 17:38:47.802445: Location (300.0,400.0) found in 2 hot spot.
+2016-02-04 17:39:17.842139: Location service request to check (30.0,400.0)
+2016-02-04 17:39:17.842919: Location (30.0,400.0) not in any hot spot.
+2016-02-04 17:39:47.873174: Location service request to check (30.0,400.0)
+2016-02-04 17:39:47.873901: Location (30.0,400.0) not in any hot spot.
+2016-02-04 17:54:56.396907: Location service request to check (30.0,400.0)
+2016-02-04 17:54:56.397570: Location (30.0,400.0) not in any hot spot.
+2016-02-04 17:56:26.501174: Location service request to check (30.0,400.0)
+2016-02-04 17:56:26.501836: Location (30.0,400.0) not in any hot spot.

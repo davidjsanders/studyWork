@@ -220,3 +220,87 @@ Received at      : 2016-02-03 17:15:14.219353 (EST/EST)
 Notification     : This is a test notification to validate Bluetooth device
 Action           : none
 
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-04 15:26:10.835388 (EST/EST)
+Notification     : just testing
+Action           : do
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-04 15:27:26.049680 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-04 15:27:35.075541 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-04 15:28:24.796538 (EST/EST)
+Notification     : just testing
+Action           : do
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-04 15:35:48.052938 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-04 15:36:39.279973 (EST/EST)
+Notification     : The application facebook has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-04 15:39:14.988850 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-04 15:39:26.958924 (EST/EST)
+Notification     : The application manhunt has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-04 15:41:02.840302 (EST/EST)
+Notification     : The application manhunt has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-04 15:41:11.943216 (EST/EST)
+Notification     : The application manhunt has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-04 15:42:17.669865 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-04 15:42:26.822104 (EST/EST)
+Notification     : The application manhunt has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-04 15:42:52.569790 (EST/EST)
+Notification     : The application manhunt has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-04 16:42:57.181350 (EST/EST)
+Notification     : The application manhunt has been launched. Remember: Safe sex is good sex!
+Action           : none
+

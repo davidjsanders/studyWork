@@ -1,8 +1,8 @@
 from flask_restful import Resource, Api, reqparse, abort
 from flask import Response
-from Monitor_App \
-    import app, api, control, \
-           state_control
+from Monitor_App import app, api
+from Monitor_App.Control import global_control as control
+from Monitor_App.State_Control import global_state_control as state_control
 
 from Monitor_App_Boundary import apiR
 

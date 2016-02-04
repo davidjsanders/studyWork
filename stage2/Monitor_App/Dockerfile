@@ -30,6 +30,7 @@ COPY startup.sh /Monitor_App/
 COPY Monitor_App/__init__.py /Monitor_App/Monitor_App/
 COPY Monitor_App/main.py /Monitor_App/Monitor_App/
 COPY Monitor_App/Control.py /Monitor_App/Monitor_App/
+COPY Monitor_App/App_Control.py /Monitor_App/Monitor_App/
 COPY Monitor_App/App_Launched_Control.py /Monitor_App/Monitor_App/
 COPY Monitor_App/Location_Processor.py /Monitor_App/Monitor_App/
 COPY Monitor_App/Monitor_App_Database.py /Monitor_App/Monitor_App/
@@ -38,7 +39,7 @@ COPY Monitor_App_Boundary/__init__.py /Monitor_App/Monitor_App_Boundary/
 COPY Monitor_App_Boundary/main.py /Monitor_App/Monitor_App_Boundary/
 COPY Monitor_App_Boundary/State_Boundary.py /Monitor_App/Monitor_App_Boundary/
 COPY Monitor_App_Boundary/App_Launched_Boundary.py /Monitor_App/Monitor_App_Boundary/
-COPY Monitor_App_Boundary/Versions_Boundary.py /Monitor_App/Monitor_App_Boundary/
+COPY Monitor_App_Boundary/App_Boundary.py /Monitor_App/Monitor_App_Boundary/
 #
 # Set the working directory for the container
 #

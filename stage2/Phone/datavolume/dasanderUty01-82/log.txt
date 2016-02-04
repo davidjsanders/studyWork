@@ -519,3 +519,729 @@
 2016-02-03 17:15:14.231585: Location_Control:incoming_notification:issue_bluetooth
 2016-02-03 17:15:14.232367: Location_Control:incoming_notification:end
 2016-02-03 17:15:14.232556: 
+2016-02-04 13:00:36.442084: 
+2016-02-04 13:00:36.448091: ******************************************************************************
+2016-02-04 13:00:36.449130: dasanderUty01:82 Started
+2016-02-04 13:00:36.449787: ******************************************************************************
+2016-02-04 13:00:36.450687: 
+2016-02-04 13:04:44.191565: Location_Control:location_request:start
+2016-02-04 13:04:44.193916: Location_Control:location_request:end
+2016-02-04 13:04:44.194169: 
+2016-02-04 13:05:14.238708: Location_Control:location_request:start
+2016-02-04 13:05:14.239823: Location_Control:location_request:end
+2016-02-04 13:05:14.239995: 
+2016-02-04 13:17:06.998462: 
+2016-02-04 13:17:07.003147: ******************************************************************************
+2016-02-04 13:17:07.004271: dasanderUty01:82 Started
+2016-02-04 13:17:07.005000: ******************************************************************************
+2016-02-04 13:17:07.006017: 
+2016-02-04 13:17:26.550816: Location_Control:location_request:start
+2016-02-04 13:17:26.552230: Location_Control:location_request:end
+2016-02-04 13:17:26.552433: 
+2016-02-04 13:18:17.777428: 
+2016-02-04 13:18:17.781883: ******************************************************************************
+2016-02-04 13:18:17.783110: dasanderUty01:82 Started
+2016-02-04 13:18:17.783847: ******************************************************************************
+2016-02-04 13:18:17.784847: 
+2016-02-04 13:18:54.017200: Location_Control:location_request:start
+2016-02-04 13:18:54.018435: Location_Control:location_request:end
+2016-02-04 13:18:54.018615: 
+2016-02-04 13:19:24.059123: Location_Control:location_request:start
+2016-02-04 13:19:24.060321: Location_Control:location_request:end
+2016-02-04 13:19:24.060512: 
+2016-02-04 13:19:54.072994: Location_Control:location_request:start
+2016-02-04 13:19:54.074226: Location_Control:location_request:end
+2016-02-04 13:19:54.074419: 
+2016-02-04 13:20:24.085461: Location_Control:location_request:start
+2016-02-04 13:20:24.086701: Location_Control:location_request:end
+2016-02-04 13:20:24.086896: 
+2016-02-04 13:20:54.123350: Location_Control:location_request:start
+2016-02-04 13:20:54.124583: Location_Control:location_request:end
+2016-02-04 13:20:54.124775: 
+2016-02-04 13:21:54.193883: Location_Control:location_request:start
+2016-02-04 13:21:54.195148: Location_Control:location_request:end
+2016-02-04 13:21:54.195351: 
+2016-02-04 13:22:24.210447: Location_Control:location_request:start
+2016-02-04 13:22:24.211687: Location_Control:location_request:end
+2016-02-04 13:22:24.211885: 
+2016-02-04 13:22:54.250793: Location_Control:location_request:start
+2016-02-04 13:22:54.252026: Location_Control:location_request:end
+2016-02-04 13:22:54.252242: 
+2016-02-04 13:23:24.284298: Location_Control:location_request:start
+2016-02-04 13:23:24.285498: Location_Control:location_request:end
+2016-02-04 13:23:24.285691: 
+2016-02-04 13:23:54.318573: Location_Control:location_request:start
+2016-02-04 13:23:54.319817: Location_Control:location_request:end
+2016-02-04 13:23:54.320017: 
+2016-02-04 14:22:17.972018: Location_Control:location_request:start
+2016-02-04 14:22:17.973246: Location_Control:location_request:end
+2016-02-04 14:22:17.973437: 
+2016-02-04 14:22:48.015088: Location_Control:location_request:start
+2016-02-04 14:22:48.016343: Location_Control:location_request:end
+2016-02-04 14:22:48.016543: 
+2016-02-04 14:23:18.063751: Location_Control:location_request:start
+2016-02-04 14:23:18.064949: Location_Control:location_request:end
+2016-02-04 14:23:18.065140: 
+2016-02-04 14:23:48.094818: Location_Control:location_request:start
+2016-02-04 14:23:48.096696: Location_Control:location_request:end
+2016-02-04 14:23:48.096960: 
+2016-02-04 14:24:18.145658: Location_Control:location_request:start
+2016-02-04 14:24:18.146877: Location_Control:location_request:end
+2016-02-04 14:24:18.147142: 
+2016-02-04 14:24:48.191302: Location_Control:location_request:start
+2016-02-04 14:24:48.193657: Location_Control:location_request:end
+2016-02-04 14:24:48.193914: 
+2016-02-04 14:25:18.247858: Location_Control:location_request:start
+2016-02-04 14:25:18.249055: Location_Control:location_request:end
+2016-02-04 14:25:18.249246: 
+2016-02-04 14:25:48.292288: Location_Control:location_request:start
+2016-02-04 14:25:48.293604: Location_Control:location_request:end
+2016-02-04 14:25:48.293800: 
+2016-02-04 14:26:18.330487: Location_Control:location_request:start
+2016-02-04 14:26:18.332923: Location_Control:location_request:end
+2016-02-04 14:26:18.333184: 
+2016-02-04 14:26:48.364503: Location_Control:location_request:start
+2016-02-04 14:26:48.365696: Location_Control:location_request:end
+2016-02-04 14:26:48.365890: 
+2016-02-04 14:27:18.400024: Location_Control:location_request:start
+2016-02-04 14:27:18.401220: Location_Control:location_request:end
+2016-02-04 14:27:18.401411: 
+2016-02-04 14:27:48.438072: Location_Control:location_request:start
+2016-02-04 14:27:48.439717: Location_Control:location_request:end
+2016-02-04 14:27:48.439971: 
+2016-02-04 14:28:18.479538: Location_Control:location_request:start
+2016-02-04 14:28:18.480735: Location_Control:location_request:end
+2016-02-04 14:28:18.480927: 
+2016-02-04 14:28:48.502613: Location_Control:location_request:start
+2016-02-04 14:28:48.503883: Location_Control:location_request:end
+2016-02-04 14:28:48.504085: 
+2016-02-04 14:29:18.563259: Location_Control:location_request:start
+2016-02-04 14:29:18.564449: Location_Control:location_request:end
+2016-02-04 14:29:18.564640: 
+2016-02-04 14:29:48.605747: Location_Control:location_request:start
+2016-02-04 14:29:48.606868: Location_Control:location_request:end
+2016-02-04 14:29:48.607105: 
+2016-02-04 14:30:18.649333: Location_Control:location_request:start
+2016-02-04 14:30:18.650526: Location_Control:location_request:end
+2016-02-04 14:30:18.650715: 
+2016-02-04 14:30:48.689845: Location_Control:location_request:start
+2016-02-04 14:30:48.691076: Location_Control:location_request:end
+2016-02-04 14:30:48.691276: 
+2016-02-04 14:31:18.725379: Location_Control:location_request:start
+2016-02-04 14:31:18.726574: Location_Control:location_request:end
+2016-02-04 14:31:18.726763: 
+2016-02-04 14:31:48.766775: Location_Control:location_request:start
+2016-02-04 14:31:48.768225: Location_Control:location_request:end
+2016-02-04 14:31:48.768427: 
+2016-02-04 14:32:18.806801: Location_Control:location_request:start
+2016-02-04 14:32:18.808042: Location_Control:location_request:end
+2016-02-04 14:32:18.808237: 
+2016-02-04 14:32:48.852127: Location_Control:location_request:start
+2016-02-04 14:32:48.853340: Location_Control:location_request:end
+2016-02-04 14:32:48.853532: 
+2016-02-04 14:33:18.904300: Location_Control:location_request:start
+2016-02-04 14:33:18.905505: Location_Control:location_request:end
+2016-02-04 14:33:18.905714: 
+2016-02-04 14:33:48.959348: Location_Control:location_request:start
+2016-02-04 14:33:48.960600: Location_Control:location_request:end
+2016-02-04 14:33:48.960793: 
+2016-02-04 14:34:18.974973: Location_Control:location_request:start
+2016-02-04 14:34:18.976188: Location_Control:location_request:end
+2016-02-04 14:34:18.976382: 
+2016-02-04 14:34:49.018994: Location_Control:location_request:start
+2016-02-04 14:34:49.020189: Location_Control:location_request:end
+2016-02-04 14:34:49.020377: 
+2016-02-04 14:35:19.072263: Location_Control:location_request:start
+2016-02-04 14:35:19.073504: Location_Control:location_request:end
+2016-02-04 14:35:19.073699: 
+2016-02-04 14:35:49.128286: Location_Control:location_request:start
+2016-02-04 14:35:49.129487: Location_Control:location_request:end
+2016-02-04 14:35:49.129680: 
+2016-02-04 14:38:29.225704: Location_Control:location_request:start
+2016-02-04 14:38:29.226910: Location_Control:location_request:end
+2016-02-04 14:38:29.227144: 
+2016-02-04 14:38:59.268242: Location_Control:location_request:start
+2016-02-04 14:38:59.269439: Location_Control:location_request:end
+2016-02-04 14:38:59.269628: 
+2016-02-04 14:39:29.298893: Location_Control:location_request:start
+2016-02-04 14:39:29.300138: Location_Control:location_request:end
+2016-02-04 14:39:29.300332: 
+2016-02-04 14:39:59.339672: Location_Control:location_request:start
+2016-02-04 14:39:59.340871: Location_Control:location_request:end
+2016-02-04 14:39:59.341062: 
+2016-02-04 14:40:29.379241: Location_Control:location_request:start
+2016-02-04 14:40:29.380443: Location_Control:location_request:end
+2016-02-04 14:40:29.380635: 
+2016-02-04 14:40:59.418707: Location_Control:location_request:start
+2016-02-04 14:40:59.419948: Location_Control:location_request:end
+2016-02-04 14:40:59.420145: 
+2016-02-04 14:41:29.458114: Location_Control:location_request:start
+2016-02-04 14:41:29.459358: Location_Control:location_request:end
+2016-02-04 14:41:29.459561: 
+2016-02-04 14:41:59.499822: Location_Control:location_request:start
+2016-02-04 14:41:59.501022: Location_Control:location_request:end
+2016-02-04 14:41:59.501211: 
+2016-02-04 14:42:29.529721: Location_Control:location_request:start
+2016-02-04 14:42:29.530920: Location_Control:location_request:end
+2016-02-04 14:42:29.531160: 
+2016-02-04 14:42:59.552762: Location_Control:location_request:start
+2016-02-04 14:42:59.553962: Location_Control:location_request:end
+2016-02-04 14:42:59.554152: 
+2016-02-04 14:43:29.575776: Location_Control:location_request:start
+2016-02-04 14:43:29.576979: Location_Control:location_request:end
+2016-02-04 14:43:29.577168: 
+2016-02-04 14:43:59.604540: Location_Control:location_request:start
+2016-02-04 14:43:59.605735: Location_Control:location_request:end
+2016-02-04 14:43:59.605925: 
+2016-02-04 14:44:29.644519: Location_Control:location_request:start
+2016-02-04 14:44:29.645729: Location_Control:location_request:end
+2016-02-04 14:44:29.645919: 
+2016-02-04 14:44:59.680293: Location_Control:location_request:start
+2016-02-04 14:44:59.681501: Location_Control:location_request:end
+2016-02-04 14:44:59.681693: 
+2016-02-04 14:45:29.721676: Location_Control:location_request:start
+2016-02-04 14:45:29.722871: Location_Control:location_request:end
+2016-02-04 14:45:29.723106: 
+2016-02-04 14:46:59.769170: Location_Control:location_request:start
+2016-02-04 14:46:59.770384: Location_Control:location_request:end
+2016-02-04 14:46:59.770573: 
+2016-02-04 14:47:29.811976: Location_Control:location_request:start
+2016-02-04 14:47:29.813183: Location_Control:location_request:end
+2016-02-04 14:47:29.813372: 
+2016-02-04 14:47:59.854202: Location_Control:location_request:start
+2016-02-04 14:47:59.855445: Location_Control:location_request:end
+2016-02-04 14:47:59.855644: 
+2016-02-04 14:48:29.876972: Location_Control:location_request:start
+2016-02-04 14:48:29.878171: Location_Control:location_request:end
+2016-02-04 14:48:29.878361: 
+2016-02-04 14:48:59.903588: Location_Control:location_request:start
+2016-02-04 14:48:59.904787: Location_Control:location_request:end
+2016-02-04 14:48:59.904995: 
+2016-02-04 14:49:29.932688: Location_Control:location_request:start
+2016-02-04 14:49:29.933889: Location_Control:location_request:end
+2016-02-04 14:49:29.934082: 
+2016-02-04 14:49:59.974698: Location_Control:location_request:start
+2016-02-04 14:49:59.975929: Location_Control:location_request:end
+2016-02-04 14:49:59.976125: 
+2016-02-04 14:50:29.986468: Location_Control:location_request:start
+2016-02-04 14:50:29.987709: Location_Control:location_request:end
+2016-02-04 14:50:29.987909: 
+2016-02-04 14:51:00.024779: Location_Control:location_request:start
+2016-02-04 14:51:00.026008: Location_Control:location_request:end
+2016-02-04 14:51:00.026695: 
+2016-02-04 14:51:30.061928: Location_Control:location_request:start
+2016-02-04 14:51:30.063171: Location_Control:location_request:end
+2016-02-04 14:51:30.063374: 
+2016-02-04 14:52:00.102422: Location_Control:location_request:start
+2016-02-04 14:52:00.103671: Location_Control:location_request:end
+2016-02-04 14:52:00.103869: 
+2016-02-04 15:15:44.081142: 
+2016-02-04 15:15:44.085536: ******************************************************************************
+2016-02-04 15:15:44.086720: dasanderUty01:82 Started
+2016-02-04 15:15:44.087487: ******************************************************************************
+2016-02-04 15:15:44.088503: 
+2016-02-04 15:16:03.068787: Location_Control:location_request:start
+2016-02-04 15:16:03.070185: Location_Control:location_request:end
+2016-02-04 15:16:03.070384: 
+2016-02-04 15:16:33.106555: Location_Control:location_request:start
+2016-02-04 15:16:33.107834: Location_Control:location_request:end
+2016-02-04 15:16:33.108032: 
+2016-02-04 15:17:03.121360: Location_Control:location_request:start
+2016-02-04 15:17:03.122584: Location_Control:location_request:end
+2016-02-04 15:17:03.122781: 
+2016-02-04 15:17:33.160344: Location_Control:location_request:start
+2016-02-04 15:17:33.162883: Location_Control:location_request:end
+2016-02-04 15:17:33.163205: 
+2016-02-04 15:18:03.186559: Location_Control:location_request:start
+2016-02-04 15:18:03.187841: Location_Control:location_request:end
+2016-02-04 15:18:03.188039: 
+2016-02-04 15:18:33.216686: Location_Control:location_request:start
+2016-02-04 15:18:33.217891: Location_Control:location_request:end
+2016-02-04 15:18:33.218081: 
+2016-02-04 15:19:03.251813: Location_Control:location_request:start
+2016-02-04 15:19:03.253042: Location_Control:location_request:end
+2016-02-04 15:19:03.253233: 
+2016-02-04 15:19:33.287568: Location_Control:location_request:start
+2016-02-04 15:19:33.288781: Location_Control:location_request:end
+2016-02-04 15:19:33.288971: 
+2016-02-04 15:20:03.329353: Location_Control:location_request:start
+2016-02-04 15:20:03.330540: Location_Control:location_request:end
+2016-02-04 15:20:03.330726: 
+2016-02-04 15:20:33.369478: Location_Control:location_request:start
+2016-02-04 15:20:33.370677: Location_Control:location_request:end
+2016-02-04 15:20:33.370864: 
+2016-02-04 15:21:03.408786: Location_Control:location_request:start
+2016-02-04 15:21:03.409978: Location_Control:location_request:end
+2016-02-04 15:21:03.410162: 
+2016-02-04 15:21:33.449419: Location_Control:location_request:start
+2016-02-04 15:21:33.450609: Location_Control:location_request:end
+2016-02-04 15:21:33.450794: 
+2016-02-04 15:22:03.483750: Location_Control:location_request:start
+2016-02-04 15:22:03.484943: Location_Control:location_request:end
+2016-02-04 15:22:03.485127: 
+2016-02-04 15:22:33.529251: Location_Control:location_request:start
+2016-02-04 15:22:33.530476: Location_Control:location_request:end
+2016-02-04 15:22:33.530664: 
+2016-02-04 15:23:03.567624: Location_Control:location_request:start
+2016-02-04 15:23:03.568819: Location_Control:location_request:end
+2016-02-04 15:23:03.569006: 
+2016-02-04 15:23:33.586468: Location_Control:location_request:start
+2016-02-04 15:23:33.587691: Location_Control:location_request:end
+2016-02-04 15:23:33.587881: 
+2016-02-04 15:24:03.631432: Location_Control:location_request:start
+2016-02-04 15:24:03.632639: Location_Control:location_request:end
+2016-02-04 15:24:03.632826: 
+2016-02-04 15:24:33.673397: Location_Control:location_request:start
+2016-02-04 15:24:33.674590: Location_Control:location_request:end
+2016-02-04 15:24:33.674777: 
+2016-02-04 15:25:03.710462: Location_Control:location_request:start
+2016-02-04 15:25:03.711703: Location_Control:location_request:end
+2016-02-04 15:25:03.711901: 
+2016-02-04 15:25:33.750465: Location_Control:location_request:start
+2016-02-04 15:25:33.751699: Location_Control:location_request:end
+2016-02-04 15:25:33.751895: 
+2016-02-04 15:26:03.788013: Location_Control:location_request:start
+2016-02-04 15:26:03.789207: Location_Control:location_request:end
+2016-02-04 15:26:03.789391: 
+2016-02-04 15:26:10.834793: Location_Control:incoming_notification:start
+2016-02-04 15:26:10.835401: Location_Control:incoming_notification:display_notification
+2016-02-04 15:26:10.835627: 
+2016-02-04 15:26:10.837111: Notification received
+2016-02-04 15:26:10.838093: -------------------------------------------------------------------------------
+2016-02-04 15:26:10.839233: Notification from: test
+2016-02-04 15:26:10.839920: Received at      : 2016-02-04 15:26:10.835388 (EST/EST)
+2016-02-04 15:26:10.840605: Notification     : just testing
+2016-02-04 15:26:10.841282: Action           : do
+2016-02-04 15:26:10.841951: 
+2016-02-04 15:26:10.843289: Location_Control:incoming_notification:persist_notification
+2016-02-04 15:26:10.848122: Location_Control:incoming_notification:issue_bluetooth
+2016-02-04 15:26:10.848701: Location_Control:incoming_notification:end
+2016-02-04 15:26:10.848868: 
+2016-02-04 15:26:33.829929: Location_Control:location_request:start
+2016-02-04 15:26:33.831174: Location_Control:location_request:end
+2016-02-04 15:26:33.831372: 
+2016-02-04 15:27:26.049372: Location_Control:incoming_notification:start
+2016-02-04 15:27:26.049689: Location_Control:incoming_notification:display_notification
+2016-02-04 15:27:26.049879: 
+2016-02-04 15:27:26.050714: Notification received
+2016-02-04 15:27:26.051590: -------------------------------------------------------------------------------
+2016-02-04 15:27:26.052537: Notification from: Monitor_App
+2016-02-04 15:27:26.053364: Received at      : 2016-02-04 15:27:26.049680 (EST/EST)
+2016-02-04 15:27:26.054038: Notification     : The application grindr has been launched. Remember: Safe sex
+                          : is good sex!
+2016-02-04 15:27:26.055303: Action           : none
+2016-02-04 15:27:26.056030: 
+2016-02-04 15:27:26.057254: Location_Control:incoming_notification:persist_notification
+2016-02-04 15:27:26.062656: Location_Control:incoming_notification:issue_bluetooth
+2016-02-04 15:27:26.063352: Location_Control:incoming_notification:end
+2016-02-04 15:27:26.063546: 
+2016-02-04 15:27:33.887369: Location_Control:location_request:start
+2016-02-04 15:27:33.888569: Location_Control:location_request:end
+2016-02-04 15:27:33.888755: 
+2016-02-04 15:27:35.075203: Location_Control:incoming_notification:start
+2016-02-04 15:27:35.075551: Location_Control:incoming_notification:display_notification
+2016-02-04 15:27:35.075746: 
+2016-02-04 15:27:35.076703: Notification received
+2016-02-04 15:27:35.077677: -------------------------------------------------------------------------------
+2016-02-04 15:27:35.078870: Notification from: Monitor_App
+2016-02-04 15:27:35.079823: Received at      : 2016-02-04 15:27:35.075541 (EST/EST)
+2016-02-04 15:27:35.080608: Notification     : The application grindr has been launched. Remember: Safe sex
+                          : is good sex!
+2016-02-04 15:27:35.082242: Action           : none
+2016-02-04 15:27:35.083110: 
+2016-02-04 15:27:35.084770: Location_Control:incoming_notification:persist_notification
+2016-02-04 15:27:35.091172: Location_Control:incoming_notification:issue_bluetooth
+2016-02-04 15:27:35.091769: Location_Control:incoming_notification:end
+2016-02-04 15:27:35.091929: 
+2016-02-04 15:28:03.916501: Location_Control:location_request:start
+2016-02-04 15:28:03.917710: Location_Control:location_request:end
+2016-02-04 15:28:03.918889: 
+2016-02-04 15:28:24.796240: Location_Control:incoming_notification:start
+2016-02-04 15:28:24.796547: Location_Control:incoming_notification:display_notification
+2016-02-04 15:28:24.796714: 
+2016-02-04 15:28:24.797485: Notification received
+2016-02-04 15:28:24.798256: -------------------------------------------------------------------------------
+2016-02-04 15:28:24.799253: Notification from: test
+2016-02-04 15:28:24.799947: Received at      : 2016-02-04 15:28:24.796538 (EST/EST)
+2016-02-04 15:28:24.800641: Notification     : just testing
+2016-02-04 15:28:24.801322: Action           : do
+2016-02-04 15:28:24.801980: 
+2016-02-04 15:28:24.803150: Location_Control:incoming_notification:persist_notification
+2016-02-04 15:28:24.808288: Location_Control:incoming_notification:issue_bluetooth
+2016-02-04 15:28:24.808841: Location_Control:incoming_notification:end
+2016-02-04 15:28:24.808997: 
+2016-02-04 15:28:33.959838: Location_Control:location_request:start
+2016-02-04 15:28:33.961034: Location_Control:location_request:end
+2016-02-04 15:28:33.961220: 
+2016-02-04 15:29:03.998477: Location_Control:location_request:start
+2016-02-04 15:29:03.999723: Location_Control:location_request:end
+2016-02-04 15:29:03.999920: 
+2016-02-04 15:29:34.038494: Location_Control:location_request:start
+2016-02-04 15:29:34.039737: Location_Control:location_request:end
+2016-02-04 15:29:34.039933: 
+2016-02-04 15:31:34.148671: Location_Control:location_request:start
+2016-02-04 15:31:34.149876: Location_Control:location_request:end
+2016-02-04 15:31:34.150063: 
+2016-02-04 15:32:04.187066: Location_Control:location_request:start
+2016-02-04 15:32:04.188269: Location_Control:location_request:end
+2016-02-04 15:32:04.188458: 
+2016-02-04 15:32:34.216638: Location_Control:location_request:start
+2016-02-04 15:32:34.217832: Location_Control:location_request:end
+2016-02-04 15:32:34.218019: 
+2016-02-04 15:33:04.239956: Location_Control:location_request:start
+2016-02-04 15:33:04.241147: Location_Control:location_request:end
+2016-02-04 15:33:04.241335: 
+2016-02-04 15:33:34.282010: Location_Control:location_request:start
+2016-02-04 15:33:34.283246: Location_Control:location_request:end
+2016-02-04 15:33:34.283444: 
+2016-02-04 15:34:04.316683: Location_Control:location_request:start
+2016-02-04 15:34:04.317881: Location_Control:location_request:end
+2016-02-04 15:34:04.318067: 
+2016-02-04 15:34:34.359765: Location_Control:location_request:start
+2016-02-04 15:34:34.360970: Location_Control:location_request:end
+2016-02-04 15:34:34.361157: 
+2016-02-04 15:35:04.396685: Location_Control:location_request:start
+2016-02-04 15:35:04.397905: Location_Control:location_request:end
+2016-02-04 15:35:04.398101: 
+2016-02-04 15:35:34.435597: Location_Control:location_request:start
+2016-02-04 15:35:34.436793: Location_Control:location_request:end
+2016-02-04 15:35:34.436981: 
+2016-02-04 15:35:48.052591: Location_Control:incoming_notification:start
+2016-02-04 15:35:48.052951: Location_Control:incoming_notification:display_notification
+2016-02-04 15:35:48.053200: 
+2016-02-04 15:35:48.054439: Notification received
+2016-02-04 15:35:48.055881: -------------------------------------------------------------------------------
+2016-02-04 15:35:48.057109: Notification from: Monitor_App
+2016-02-04 15:35:48.057971: Received at      : 2016-02-04 15:35:48.052938 (EST/EST)
+2016-02-04 15:35:48.058834: Notification     : The application grindr has been launched. Remember: Safe sex
+                          : is good sex!
+2016-02-04 15:35:48.060373: Action           : none
+2016-02-04 15:35:48.061181: 
+2016-02-04 15:35:48.062538: Location_Control:incoming_notification:persist_notification
+2016-02-04 15:35:48.069110: Location_Control:incoming_notification:issue_bluetooth
+2016-02-04 15:35:48.069718: Location_Control:incoming_notification:end
+2016-02-04 15:35:48.069879: 
+2016-02-04 15:36:04.450794: Location_Control:location_request:start
+2016-02-04 15:36:04.452033: Location_Control:location_request:end
+2016-02-04 15:36:04.452225: 
+2016-02-04 15:36:34.492901: Location_Control:location_request:start
+2016-02-04 15:36:34.494087: Location_Control:location_request:end
+2016-02-04 15:36:34.494273: 
+2016-02-04 15:36:39.279618: Location_Control:incoming_notification:start
+2016-02-04 15:36:39.279985: Location_Control:incoming_notification:display_notification
+2016-02-04 15:36:39.280246: 
+2016-02-04 15:36:39.281497: Notification received
+2016-02-04 15:36:39.282420: -------------------------------------------------------------------------------
+2016-02-04 15:36:39.283571: Notification from: Monitor_App
+2016-02-04 15:36:39.284462: Received at      : 2016-02-04 15:36:39.279973 (EST/EST)
+2016-02-04 15:36:39.285373: Notification     : The application facebook has been launched. Remember: Safe
+                          : sex is good sex!
+2016-02-04 15:36:39.287012: Action           : none
+2016-02-04 15:36:39.287906: 
+2016-02-04 15:36:39.289380: Location_Control:incoming_notification:persist_notification
+2016-02-04 15:36:39.295155: Location_Control:incoming_notification:issue_bluetooth
+2016-02-04 15:36:39.295744: Location_Control:incoming_notification:end
+2016-02-04 15:36:39.295910: 
+2016-02-04 15:37:04.535002: Location_Control:location_request:start
+2016-02-04 15:37:04.536198: Location_Control:location_request:end
+2016-02-04 15:37:04.536386: 
+2016-02-04 15:37:34.554473: Location_Control:location_request:start
+2016-02-04 15:37:34.555705: Location_Control:location_request:end
+2016-02-04 15:37:34.555901: 
+2016-02-04 15:38:04.598507: Location_Control:location_request:start
+2016-02-04 15:38:04.599760: Location_Control:location_request:end
+2016-02-04 15:38:04.599958: 
+2016-02-04 15:38:34.641054: Location_Control:location_request:start
+2016-02-04 15:38:34.642248: Location_Control:location_request:end
+2016-02-04 15:38:34.642437: 
+2016-02-04 15:39:14.988464: Location_Control:incoming_notification:start
+2016-02-04 15:39:14.988863: Location_Control:incoming_notification:display_notification
+2016-02-04 15:39:14.989099: 
+2016-02-04 15:39:14.990141: Notification received
+2016-02-04 15:39:14.991475: -------------------------------------------------------------------------------
+2016-02-04 15:39:14.992982: Notification from: Monitor_App
+2016-02-04 15:39:14.994053: Received at      : 2016-02-04 15:39:14.988850 (EST/EST)
+2016-02-04 15:39:14.995100: Notification     : The application grindr has been launched. Remember: Safe sex
+                          : is good sex!
+2016-02-04 15:39:14.996662: Action           : none
+2016-02-04 15:39:14.997516: 
+2016-02-04 15:39:14.998969: Location_Control:incoming_notification:persist_notification
+2016-02-04 15:39:15.004368: Location_Control:incoming_notification:issue_bluetooth
+2016-02-04 15:39:15.004933: Location_Control:incoming_notification:end
+2016-02-04 15:39:15.005091: 
+2016-02-04 15:39:26.958597: Location_Control:incoming_notification:start
+2016-02-04 15:39:26.959023: Location_Control:incoming_notification:display_notification
+2016-02-04 15:39:26.959260: 
+2016-02-04 15:39:26.960164: Notification received
+2016-02-04 15:39:26.961153: -------------------------------------------------------------------------------
+2016-02-04 15:39:26.962579: Notification from: Monitor_App
+2016-02-04 15:39:26.963866: Received at      : 2016-02-04 15:39:26.958924 (EST/EST)
+2016-02-04 15:39:26.964839: Notification     : The application manhunt has been launched. Remember: Safe
+                          : sex is good sex!
+2016-02-04 15:39:26.966684: Action           : none
+2016-02-04 15:39:26.967712: 
+2016-02-04 15:39:26.969083: Location_Control:incoming_notification:persist_notification
+2016-02-04 15:39:26.974817: Location_Control:incoming_notification:issue_bluetooth
+2016-02-04 15:39:26.975403: Location_Control:incoming_notification:end
+2016-02-04 15:39:26.975595: 
+2016-02-04 15:39:34.710884: Location_Control:location_request:start
+2016-02-04 15:39:34.712122: Location_Control:location_request:end
+2016-02-04 15:39:34.712311: 
+2016-02-04 15:41:02.840002: Location_Control:incoming_notification:start
+2016-02-04 15:41:02.840311: Location_Control:incoming_notification:display_notification
+2016-02-04 15:41:02.840480: 
+2016-02-04 15:41:02.841533: Notification received
+2016-02-04 15:41:02.842673: -------------------------------------------------------------------------------
+2016-02-04 15:41:02.844022: Notification from: Monitor_App
+2016-02-04 15:41:02.844762: Received at      : 2016-02-04 15:41:02.840302 (EST/EST)
+2016-02-04 15:41:02.845430: Notification     : The application manhunt has been launched. Remember: Safe
+                          : sex is good sex!
+2016-02-04 15:41:02.846611: Action           : none
+2016-02-04 15:41:02.847362: 
+2016-02-04 15:41:02.848519: Location_Control:incoming_notification:persist_notification
+2016-02-04 15:41:02.854594: Location_Control:incoming_notification:issue_bluetooth
+2016-02-04 15:41:02.855205: Location_Control:incoming_notification:end
+2016-02-04 15:41:02.855372: 
+2016-02-04 15:41:11.942835: Location_Control:incoming_notification:start
+2016-02-04 15:41:11.943227: Location_Control:incoming_notification:display_notification
+2016-02-04 15:41:11.943430: 
+2016-02-04 15:41:11.944465: Notification received
+2016-02-04 15:41:11.945582: -------------------------------------------------------------------------------
+2016-02-04 15:41:11.946869: Notification from: Monitor_App
+2016-02-04 15:41:11.947938: Received at      : 2016-02-04 15:41:11.943216 (EST/EST)
+2016-02-04 15:41:11.948941: Notification     : The application manhunt has been launched. Remember: Safe
+                          : sex is good sex!
+2016-02-04 15:41:11.950739: Action           : none
+2016-02-04 15:41:11.951761: 
+2016-02-04 15:41:11.953363: Location_Control:incoming_notification:persist_notification
+2016-02-04 15:41:11.959318: Location_Control:incoming_notification:issue_bluetooth
+2016-02-04 15:41:11.959887: Location_Control:incoming_notification:end
+2016-02-04 15:41:11.960046: 
+2016-02-04 15:41:14.543705: Location_Control:location_request:start
+2016-02-04 15:41:14.544913: Location_Control:location_request:end
+2016-02-04 15:41:14.545097: 
+2016-02-04 15:41:44.573926: Location_Control:location_request:start
+2016-02-04 15:41:44.575198: Location_Control:location_request:end
+2016-02-04 15:41:44.575396: 
+2016-02-04 15:42:14.610730: Location_Control:location_request:start
+2016-02-04 15:42:14.611958: Location_Control:location_request:end
+2016-02-04 15:42:14.612148: 
+2016-02-04 15:42:17.669543: Location_Control:incoming_notification:start
+2016-02-04 15:42:17.669875: Location_Control:incoming_notification:display_notification
+2016-02-04 15:42:17.670070: 
+2016-02-04 15:42:17.671121: Notification received
+2016-02-04 15:42:17.672133: -------------------------------------------------------------------------------
+2016-02-04 15:42:17.673294: Notification from: Monitor_App
+2016-02-04 15:42:17.677545: Received at      : 2016-02-04 15:42:17.669865 (EST/EST)
+2016-02-04 15:42:17.678483: Notification     : The application grindr has been launched. Remember: Safe sex
+                          : is good sex!
+2016-02-04 15:42:17.679869: Action           : none
+2016-02-04 15:42:17.680553: 
+2016-02-04 15:42:17.681677: Location_Control:incoming_notification:persist_notification
+2016-02-04 15:42:17.687683: Location_Control:incoming_notification:issue_bluetooth
+2016-02-04 15:42:17.688299: Location_Control:incoming_notification:end
+2016-02-04 15:42:17.688458: 
+2016-02-04 15:42:26.821804: Location_Control:incoming_notification:start
+2016-02-04 15:42:26.822112: Location_Control:incoming_notification:display_notification
+2016-02-04 15:42:26.822280: 
+2016-02-04 15:42:26.823475: Notification received
+2016-02-04 15:42:26.824383: -------------------------------------------------------------------------------
+2016-02-04 15:42:26.825471: Notification from: Monitor_App
+2016-02-04 15:42:26.826301: Received at      : 2016-02-04 15:42:26.822104 (EST/EST)
+2016-02-04 15:42:26.827174: Notification     : The application manhunt has been launched. Remember: Safe
+                          : sex is good sex!
+2016-02-04 15:42:26.828636: Action           : none
+2016-02-04 15:42:26.829452: 
+2016-02-04 15:42:26.830842: Location_Control:incoming_notification:persist_notification
+2016-02-04 15:42:26.836057: Location_Control:incoming_notification:issue_bluetooth
+2016-02-04 15:42:26.836613: Location_Control:incoming_notification:end
+2016-02-04 15:42:26.836783: 
+2016-02-04 15:42:44.649136: Location_Control:location_request:start
+2016-02-04 15:42:44.650333: Location_Control:location_request:end
+2016-02-04 15:42:44.650518: 
+2016-02-04 15:42:52.569454: Location_Control:incoming_notification:start
+2016-02-04 15:42:52.569801: Location_Control:incoming_notification:display_notification
+2016-02-04 15:42:52.569998: 
+2016-02-04 15:42:52.571003: Notification received
+2016-02-04 15:42:52.572013: -------------------------------------------------------------------------------
+2016-02-04 15:42:52.572985: Notification from: Monitor_App
+2016-02-04 15:42:52.573664: Received at      : 2016-02-04 15:42:52.569790 (EST/EST)
+2016-02-04 15:42:52.574343: Notification     : The application manhunt has been launched. Remember: Safe
+                          : sex is good sex!
+2016-02-04 15:42:52.575591: Action           : none
+2016-02-04 15:42:52.576256: 
+2016-02-04 15:42:52.577371: Location_Control:incoming_notification:persist_notification
+2016-02-04 15:42:52.582880: Location_Control:incoming_notification:issue_bluetooth
+2016-02-04 15:42:52.583476: Location_Control:incoming_notification:end
+2016-02-04 15:42:52.583640: 
+2016-02-04 15:43:14.686532: Location_Control:location_request:start
+2016-02-04 15:43:14.688083: Location_Control:location_request:end
+2016-02-04 15:43:14.688338: 
+2016-02-04 15:43:44.737165: Location_Control:location_request:start
+2016-02-04 15:43:44.738362: Location_Control:location_request:end
+2016-02-04 15:43:44.738548: 
+2016-02-04 16:36:10.602210: Location_Control:location_request:start
+2016-02-04 16:36:10.603466: Location_Control:location_request:end
+2016-02-04 16:36:10.603661: 
+2016-02-04 16:36:40.637304: Location_Control:location_request:start
+2016-02-04 16:36:40.638529: Location_Control:location_request:end
+2016-02-04 16:36:40.638718: 
+2016-02-04 16:37:10.680046: Location_Control:location_request:start
+2016-02-04 16:37:10.681240: Location_Control:location_request:end
+2016-02-04 16:37:10.681429: 
+2016-02-04 16:37:40.722154: Location_Control:location_request:start
+2016-02-04 16:37:40.723381: Location_Control:location_request:end
+2016-02-04 16:37:40.723580: 
+2016-02-04 16:38:40.797648: Location_Control:location_request:start
+2016-02-04 16:38:40.798853: Location_Control:location_request:end
+2016-02-04 16:38:40.799089: 
+2016-02-04 16:39:10.827157: Location_Control:location_request:start
+2016-02-04 16:39:10.828370: Location_Control:location_request:end
+2016-02-04 16:39:10.828556: 
+2016-02-04 16:39:40.870898: Location_Control:location_request:start
+2016-02-04 16:39:40.872133: Location_Control:location_request:end
+2016-02-04 16:39:40.872324: 
+2016-02-04 16:40:10.890295: Location_Control:location_request:start
+2016-02-04 16:40:10.891561: Location_Control:location_request:end
+2016-02-04 16:40:10.891760: 
+2016-02-04 16:41:10.965956: Location_Control:location_request:start
+2016-02-04 16:41:10.967202: Location_Control:location_request:end
+2016-02-04 16:41:10.967400: 
+2016-02-04 16:41:41.008248: Location_Control:location_request:start
+2016-02-04 16:41:41.009318: Location_Control:location_request:end
+2016-02-04 16:41:41.009483: 
+2016-02-04 16:42:11.043179: Location_Control:location_request:start
+2016-02-04 16:42:11.044379: Location_Control:location_request:end
+2016-02-04 16:42:11.044567: 
+2016-02-04 16:42:41.085872: Location_Control:location_request:start
+2016-02-04 16:42:41.087112: Location_Control:location_request:end
+2016-02-04 16:42:41.087309: 
+2016-02-04 16:42:57.181057: Location_Control:incoming_notification:start
+2016-02-04 16:42:57.181359: Location_Control:incoming_notification:display_notification
+2016-02-04 16:42:57.181529: 
+2016-02-04 16:42:57.182363: Notification received
+2016-02-04 16:42:57.183193: -------------------------------------------------------------------------------
+2016-02-04 16:42:57.184141: Notification from: Monitor_App
+2016-02-04 16:42:57.184797: Received at      : 2016-02-04 16:42:57.181350 (EST/EST)
+2016-02-04 16:42:57.185456: Notification     : The application manhunt has been launched. Remember: Safe
+                          : sex is good sex!
+2016-02-04 16:42:57.186610: Action           : none
+2016-02-04 16:42:57.187541: 
+2016-02-04 16:42:57.188812: Location_Control:incoming_notification:persist_notification
+2016-02-04 16:42:57.194408: Location_Control:incoming_notification:issue_bluetooth
+2016-02-04 16:42:57.195130: Location_Control:incoming_notification:end
+2016-02-04 16:42:57.195323: 
+2016-02-04 16:43:11.128822: Location_Control:location_request:start
+2016-02-04 16:43:11.130013: Location_Control:location_request:end
+2016-02-04 16:43:11.130199: 
+2016-02-04 16:43:41.171409: Location_Control:location_request:start
+2016-02-04 16:43:41.172622: Location_Control:location_request:end
+2016-02-04 16:43:41.172808: 
+2016-02-04 16:44:41.244752: Location_Control:location_request:start
+2016-02-04 16:44:41.245959: Location_Control:location_request:end
+2016-02-04 16:44:41.246157: 
+2016-02-04 16:45:11.284376: Location_Control:location_request:start
+2016-02-04 16:45:11.285573: Location_Control:location_request:end
+2016-02-04 16:45:11.285759: 
+2016-02-04 16:45:41.327159: Location_Control:location_request:start
+2016-02-04 16:45:41.328359: Location_Control:location_request:end
+2016-02-04 16:45:41.328545: 
+2016-02-04 16:46:11.354479: Location_Control:location_request:start
+2016-02-04 16:46:11.355732: Location_Control:location_request:end
+2016-02-04 16:46:11.355929: 
+2016-02-04 16:46:41.396569: Location_Control:location_request:start
+2016-02-04 16:46:41.397772: Location_Control:location_request:end
+2016-02-04 16:46:41.397958: 
+2016-02-04 17:20:17.834476: Location_Control:location_request:start
+2016-02-04 17:20:17.835834: Location_Control:location_request:end
+2016-02-04 17:20:17.836067: 
+2016-02-04 17:20:47.872500: Location_Control:location_request:start
+2016-02-04 17:20:47.873701: Location_Control:location_request:end
+2016-02-04 17:20:47.873888: 
+2016-02-04 17:21:17.895791: Location_Control:location_request:start
+2016-02-04 17:21:17.896984: Location_Control:location_request:end
+2016-02-04 17:21:17.897170: 
+2016-02-04 17:21:47.927815: Location_Control:location_request:start
+2016-02-04 17:21:47.929008: Location_Control:location_request:end
+2016-02-04 17:21:47.929194: 
+2016-02-04 17:22:17.950962: Location_Control:location_request:start
+2016-02-04 17:22:17.952166: Location_Control:location_request:end
+2016-02-04 17:22:17.952354: 
+2016-02-04 17:22:47.983404: Location_Control:location_request:start
+2016-02-04 17:22:47.984615: Location_Control:location_request:end
+2016-02-04 17:22:47.984804: 
+2016-02-04 17:23:17.998652: Location_Control:location_request:start
+2016-02-04 17:23:17.999893: Location_Control:location_request:end
+2016-02-04 17:23:18.000091: 
+2016-02-04 17:23:48.036227: Location_Control:location_request:start
+2016-02-04 17:23:48.037435: Location_Control:location_request:end
+2016-02-04 17:23:48.037622: 
+2016-02-04 17:24:18.074332: Location_Control:location_request:start
+2016-02-04 17:24:18.075592: Location_Control:location_request:end
+2016-02-04 17:24:18.075790: 
+2016-02-04 17:24:48.106576: Location_Control:location_request:start
+2016-02-04 17:24:48.107854: Location_Control:location_request:end
+2016-02-04 17:24:48.108050: 
+2016-02-04 17:25:18.149248: Location_Control:location_request:start
+2016-02-04 17:25:18.150443: Location_Control:location_request:end
+2016-02-04 17:25:18.150632: 
+2016-02-04 17:25:48.191650: Location_Control:location_request:start
+2016-02-04 17:25:48.192856: Location_Control:location_request:end
+2016-02-04 17:25:48.193042: 
+2016-02-04 17:26:18.227598: Location_Control:location_request:start
+2016-02-04 17:26:18.228804: Location_Control:location_request:end
+2016-02-04 17:26:18.228991: 
+2016-02-04 17:26:48.264339: Location_Control:location_request:start
+2016-02-04 17:26:48.265538: Location_Control:location_request:end
+2016-02-04 17:26:48.265725: 
+2016-02-04 17:27:18.300510: Location_Control:location_request:start
+2016-02-04 17:27:18.301753: Location_Control:location_request:end
+2016-02-04 17:27:18.301951: 
+2016-02-04 17:27:48.342875: Location_Control:location_request:start
+2016-02-04 17:27:48.344111: Location_Control:location_request:end
+2016-02-04 17:27:48.344327: 
+2016-02-04 17:28:18.380364: Location_Control:location_request:start
+2016-02-04 17:28:18.381568: Location_Control:location_request:end
+2016-02-04 17:28:18.381756: 
+2016-02-04 17:28:48.420293: Location_Control:location_request:start
+2016-02-04 17:28:48.421502: Location_Control:location_request:end
+2016-02-04 17:28:48.421687: 
+2016-02-04 17:29:18.458105: Location_Control:location_request:start
+2016-02-04 17:29:18.459355: Location_Control:location_request:end
+2016-02-04 17:29:18.459556: 
+2016-02-04 17:29:48.498664: Location_Control:location_request:start
+2016-02-04 17:29:48.499890: Location_Control:location_request:end
+2016-02-04 17:29:48.500086: 
+2016-02-04 17:30:47.402391: Location_Control:location_request:start
+2016-02-04 17:30:47.403648: Location_Control:location_request:end
+2016-02-04 17:30:47.403842: 
+2016-02-04 17:35:42.529892: Location_Control:location_request:start
+2016-02-04 17:35:42.531143: Location_Control:location_request:end
+2016-02-04 17:35:42.531336: 
+2016-02-04 17:36:12.575980: Location_Control:location_request:start
+2016-02-04 17:36:12.577177: Location_Control:location_request:end
+2016-02-04 17:36:12.577380: 
+2016-02-04 17:37:17.687710: Location_Control:location_request:start
+2016-02-04 17:37:17.688912: Location_Control:location_request:end
+2016-02-04 17:37:17.689100: 
+2016-02-04 17:37:47.722713: Location_Control:location_request:start
+2016-02-04 17:37:47.723942: Location_Control:location_request:end
+2016-02-04 17:37:47.724134: 
+2016-02-04 17:38:17.737994: Location_Control:location_request:start
+2016-02-04 17:38:17.739243: Location_Control:location_request:end
+2016-02-04 17:38:17.739441: 
+2016-02-04 17:38:47.793076: Location_Control:location_request:start
+2016-02-04 17:38:47.794275: Location_Control:location_request:end
+2016-02-04 17:38:47.794465: 
+2016-02-04 17:39:17.835493: Location_Control:location_request:start
+2016-02-04 17:39:17.836738: Location_Control:location_request:end
+2016-02-04 17:39:17.836961: 
+2016-02-04 17:39:47.866922: Location_Control:location_request:start
+2016-02-04 17:39:47.868172: Location_Control:location_request:end
+2016-02-04 17:39:47.868362: 
+2016-02-04 17:54:56.390843: Location_Control:location_request:start
+2016-02-04 17:54:56.392091: Location_Control:location_request:end
+2016-02-04 17:54:56.392282: 
+2016-02-04 17:56:26.495136: Location_Control:location_request:start
+2016-02-04 17:56:26.496341: Location_Control:location_request:end
+2016-02-04 17:56:26.496528: 

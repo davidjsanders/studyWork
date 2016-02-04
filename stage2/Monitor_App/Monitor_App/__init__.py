@@ -29,9 +29,7 @@ import atexit
 import threading
 
 # Import PairControl
-from Monitor_App import Control
-from Monitor_App import State_Control
-from Monitor_App import App_Launched_Control
+from Monitor_App.Control import global_control
 from Monitor_App import Location_Processor
 
 # The app is this application and set when the Python file is run from the
@@ -40,12 +38,6 @@ app = Flask(__name__)
 # Create an Api object inheriting app
 api = Api(app)
 
-#Setup objects for pairing and broadcasting.
-#notification_control_object = Notification_Control.Notification_Control_v1_00()
-state_control = State_Control.State_Control_v1_00()
-app_launched_control = App_Launched_Control.App_Launched_Control_v1_00()
-control = Control.Control_v1_00()
-
 # Setup threaded background job
 # Check app is NOT reloaded or spawned
 # Reference: http://werkzeug.pocoo.org/docs/0.10/serving/#werkzeug.serving.is_running_from_reloader
@@ -53,7 +45,7 @@ control = Control.Control_v1_00()
 if not serving.is_running_from_reloader():
     thread_job = threading.Thread(
         target=Location_Processor.location_processor,
-        args=(control,)
+        args=(global_control,)
     )
     thread_job.setDaemon(True)
     thread_job.start()

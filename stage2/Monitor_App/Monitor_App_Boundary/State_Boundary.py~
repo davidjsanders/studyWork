@@ -1,8 +1,9 @@
 from flask_restful import Resource, Api, reqparse, abort
 from flask import Response
 from Monitor_App \
-    import app, api, control, \
-           state_control
+    import app, api
+from Monitor_App.Control import global_control as control
+from Monitor_App.State_Control import global_state_control as state_control
 
 from Monitor_App_Boundary import apiR
 
@@ -12,7 +13,6 @@ class State_Boundary(Resource):
 
 class State_Change_Boundary(Resource):
     def post(self, state=None):
-        print('In state change boundary')
         if state.upper() not in ('ON','OFF'):
             return_state = control.do_response(
                 response='error',

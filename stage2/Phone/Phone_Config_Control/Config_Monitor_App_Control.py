@@ -66,8 +66,9 @@ class Config_Monitor_App_Control(object):
 
             key = json_data['key']
             monitor_app = json_data['monitor-app']
-            service = json_data['service']
+            service = json_data['notification-service']
             recipient = json_data['recipient']
+            location_service = json_data['location-service']
 
             if not key == '1234-5678-9012-3456':
                 raise ValueError('Pairing key incorrect.')
@@ -80,7 +81,8 @@ class Config_Monitor_App_Control(object):
 
             payload = {
                        "key":"1234-5678-9012-3456",
-                       "service":service,
+                       "notification-service":service,
+                       "location-service":location_service,
                        "recipient":recipient
                       }
             request_response = requests.post(monitor_app_url,

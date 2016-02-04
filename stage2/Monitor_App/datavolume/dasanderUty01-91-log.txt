@@ -1,0 +1,120 @@
+2016-02-04 16:36:10.608401: Location service request to check (30.0,110.0)
+2016-02-04 16:36:10.609219: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 16:36:40.643338: Location service request to check (30.0,110.0)
+2016-02-04 16:36:40.644062: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 16:37:10.685663: Location service request to check (30.0,110.0)
+2016-02-04 16:37:10.686291: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 16:37:40.728057: Location service request to check (30.0,110.0)
+2016-02-04 16:37:40.728824: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 16:38:40.803682: Location service request to check (30.0,110.0)
+2016-02-04 16:38:40.804314: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 16:39:10.832975: Location service request to check (30.0,110.0)
+2016-02-04 16:39:10.833668: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 16:39:40.876859: Location service request to check (30.0,110.0)
+2016-02-04 16:39:40.877551: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 16:40:10.896376: Location service request to check (30.0,110.0)
+2016-02-04 16:40:10.897135: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 16:41:10.971913: Location service request to check (30.0,110.0)
+2016-02-04 16:41:10.972547: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 16:41:41.013526: Location service request to check (30.0,110.0)
+2016-02-04 16:41:41.014154: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 16:42:11.048866: Location service request to check (30.0,110.0)
+2016-02-04 16:42:11.049496: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 16:42:41.091834: Location service request to check (30.0,110.0)
+2016-02-04 16:42:41.092464: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 16:43:11.134771: Location service request to check (30.0,110.0)
+2016-02-04 16:43:11.135494: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 16:43:41.177108: Location service request to check (30.0,110.0)
+2016-02-04 16:43:41.177801: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 16:44:41.250700: Location service request to check (30.0,110.0)
+2016-02-04 16:44:41.251405: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 16:45:11.290228: Location service request to check (30.0,110.0)
+2016-02-04 16:45:11.290924: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 16:45:41.334870: Location service request to check (30.0,110.0)
+2016-02-04 16:45:41.335539: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 16:46:11.360113: Location service request to check (30.0,110.0)
+2016-02-04 16:46:11.360778: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 16:46:41.403781: Location service request to check (30.0,110.0)
+2016-02-04 16:46:41.404534: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 17:20:17.841205: Location service request to check (30.0,110.0)
+2016-02-04 17:20:17.841923: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 17:20:47.878593: Location service request to check (30.0,110.0)
+2016-02-04 17:20:47.879317: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 17:21:17.901864: Location service request to check (30.0,110.0)
+2016-02-04 17:21:17.902557: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 17:21:47.933736: Location service request to check (30.0,110.0)
+2016-02-04 17:21:47.934366: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 17:22:17.957179: Location service request to check (30.0,110.0)
+2016-02-04 17:22:17.957870: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 17:22:47.989653: Location service request to check (30.0,110.0)
+2016-02-04 17:22:47.990349: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 17:23:18.004662: Location service request to check (30.0,110.0)
+2016-02-04 17:23:18.005294: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 17:23:48.042537: Location service request to check (30.0,110.0)
+2016-02-04 17:23:48.043267: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 17:24:18.080197: Location service request to check (30.0,110.0)
+2016-02-04 17:24:18.080822: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 17:24:48.112665: Location service request to check (30.0,110.0)
+2016-02-04 17:24:48.113299: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 17:25:18.155390: Location service request to check (30.0,110.0)
+2016-02-04 17:25:18.156080: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 17:25:48.197648: Location service request to check (30.0,110.0)
+2016-02-04 17:25:48.198279: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 17:26:18.233861: Location service request to check (30.0,110.0)
+2016-02-04 17:26:18.234566: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 17:26:48.270137: Location service request to check (30.0,110.0)
+2016-02-04 17:26:48.270765: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 17:27:18.306391: Location service request to check (30.0,110.0)
+2016-02-04 17:27:18.307046: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 17:27:48.349071: Location service request to check (30.0,110.0)
+2016-02-04 17:27:48.349764: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 17:28:18.388775: Location service request to check (30.0,110.0)
+2016-02-04 17:28:18.389473: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 17:28:48.426205: Location service request to check (30.0,110.0)
+2016-02-04 17:28:48.426856: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 17:29:18.463889: Location service request to check (30.0,110.0)
+2016-02-04 17:29:18.464517: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 17:29:48.504817: Location service request to check (30.0,110.0)
+2016-02-04 17:29:48.505503: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)
+2016-02-04 17:30:47.408510: Location service request to check (30.0,110.0)
+2016-02-04 17:30:47.409145: Location service error: UnboundLocalError("local variable 'returned' referenced
+                          : before assignment",)

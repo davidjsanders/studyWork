@@ -29,10 +29,9 @@ import atexit
 import threading
 
 # Import PairControl
-from Monitor_App import Control
-#from Monitor_App import Notification_Processor
+from Monitor_App.Control import global_control
 from Monitor_App import State_Control
-from Monitor_App import App_Launched_Control
+from Monitor_App import Location_Processor
 
 # The app is this application and set when the Python file is run from the
 # command line, e.g. python3 /some/folder/notes/runserver.py
@@ -43,20 +42,18 @@ api = Api(app)
 #Setup objects for pairing and broadcasting.
 #notification_control_object = Notification_Control.Notification_Control_v1_00()
 state_control = State_Control.State_Control_v1_00()
-app_launched_control = App_Launched_Control.App_Launched_Control_v1_00()
-control = Control.Control_v1_00()
 
 # Setup threaded background job
 # Check app is NOT reloaded or spawned
 # Reference: http://werkzeug.pocoo.org/docs/0.10/serving/#werkzeug.serving.is_running_from_reloader
 #
-#if not serving.is_running_from_reloader():
-#    thread_job = threading.Thread(
-#        target=Notification_Processor.redis_processor,
-#        args=(control,)
-#    )
-#    thread_job.setDaemon(True)
-#    thread_job.start()
+if not serving.is_running_from_reloader():
+    thread_job = threading.Thread(
+        target=Location_Processor.location_processor,
+        args=(global_control,)
+    )
+    thread_job.setDaemon(True)
+    thread_job.start()
 
     # Reference https://docs.python.org/2/library/atexit.html
     # Register an exit handler - in case we need to do any close out stuff on
