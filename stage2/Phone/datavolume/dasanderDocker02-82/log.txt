@@ -1,0 +1,147 @@
+2016-02-06 02:48:32.220615: 
+2016-02-06 02:48:32.225487: ******************************************************************************
+2016-02-06 02:48:32.226513: dasanderDocker02:82 Started
+2016-02-06 02:48:32.227293: ******************************************************************************
+2016-02-06 02:48:32.228267: 
+2016-02-06 02:56:11.717010: Location_Control:incoming_notification:start
+2016-02-06 02:56:11.717809: Location_Control:incoming_notification:display_notification
+2016-02-06 02:56:11.718172: 
+2016-02-06 02:56:11.720152: Notification received
+2016-02-06 02:56:11.721466: -------------------------------------------------------------------------------
+2016-02-06 02:56:11.723547: Notification from: test
+2016-02-06 02:56:11.725042: Received at      : 2016-02-06 02:56:11.717785 (UTC/UTC)
+2016-02-06 02:56:11.726471: Notification     : This is a test notification for logging.
+2016-02-06 02:56:11.728003: Action           : Do something!
+2016-02-06 02:56:11.729442: 
+2016-02-06 02:56:11.732330: Location_Control:incoming_notification:persist_notification
+2016-02-06 02:56:12.068689: Location_Control:incoming_notification:issue_bluetooth
+2016-02-06 02:56:12.069428: Location_Control:incoming_notification:end
+2016-02-06 02:56:12.069604: 
+2016-02-06 02:56:12.078593: Location_Control:incoming_notification:start
+2016-02-06 02:56:12.078960: Location_Control:incoming_notification:display_notification
+2016-02-06 02:56:12.079163: 
+2016-02-06 02:56:12.080136: Notification received
+2016-02-06 02:56:12.081469: -------------------------------------------------------------------------------
+2016-02-06 02:56:12.082686: Notification from: test
+2016-02-06 02:56:12.083610: Received at      : 2016-02-06 02:56:12.078949 (UTC/UTC)
+2016-02-06 02:56:12.085367: Notification     : This is a test notification for logging.
+2016-02-06 02:56:12.086591: Action           : Do something!
+2016-02-06 02:56:12.087743: 
+2016-02-06 02:56:12.089457: Location_Control:incoming_notification:persist_notification
+2016-02-06 02:56:12.258376: Location_Control:incoming_notification:issue_bluetooth
+2016-02-06 02:56:12.259799: Location_Control:incoming_notification:end
+2016-02-06 02:56:12.260098: 
+2016-02-06 02:56:12.270327: Location_Control:incoming_notification:start
+2016-02-06 02:56:12.271148: Location_Control:incoming_notification:display_notification
+2016-02-06 02:56:12.271571: 
+2016-02-06 02:56:12.273503: Notification received
+2016-02-06 02:56:12.274994: -------------------------------------------------------------------------------
+2016-02-06 02:56:12.276836: Notification from: test
+2016-02-06 02:56:12.278565: Received at      : 2016-02-06 02:56:12.271126 (UTC/UTC)
+2016-02-06 02:56:12.280134: Notification     : Mary had a little lamb, its fleece was white as snow; and
+                          : everywhere that Mary went, that lamb was sure to go.
+2016-02-06 02:56:12.282082: Action           : Do something!
+2016-02-06 02:56:12.282880: 
+2016-02-06 02:56:12.284651: Location_Control:incoming_notification:persist_notification
+2016-02-06 02:56:12.380456: Location_Control:incoming_notification:issue_bluetooth
+2016-02-06 02:56:12.381088: Location_Control:incoming_notification:end
+2016-02-06 02:56:12.381265: 
+2016-02-06 02:56:12.388333: Location_Control:incoming_notification:start
+2016-02-06 02:56:12.388560: Location_Control:incoming_notification:display_notification
+2016-02-06 02:56:12.388768: 
+2016-02-06 02:56:12.389499: Notification received
+2016-02-06 02:56:12.390490: -------------------------------------------------------------------------------
+2016-02-06 02:56:12.391816: Notification from: test
+2016-02-06 02:56:12.392725: Received at      : 2016-02-06 02:56:12.388549 (UTC/UTC)
+2016-02-06 02:56:12.393691: Notification     : Mary had a little lamb, its fleece was white as snow; and
+                          : everywhere that Mary went, that lamb was sure to go.
+2016-02-06 02:56:12.395498: Action           : Do something!
+2016-02-06 02:56:12.396420: 
+2016-02-06 02:56:12.397901: Location_Control:incoming_notification:persist_notification
+2016-02-06 02:56:12.529613: Location_Control:incoming_notification:issue_bluetooth
+2016-02-06 02:56:12.530353: Location_Control:incoming_notification:end
+2016-02-06 02:56:12.530532: 
+2016-02-06 02:56:12.539297: Location_Control:incoming_notification:start
+2016-02-06 02:56:12.539554: Location_Control:incoming_notification:display_notification
+2016-02-06 02:56:12.539746: 
+2016-02-06 02:56:12.540580: Notification received
+2016-02-06 02:56:12.541948: -------------------------------------------------------------------------------
+2016-02-06 02:56:12.544149: Notification from: test
+2016-02-06 02:56:12.545589: Received at      : 2016-02-06 02:56:12.539543 (UTC/UTC)
+2016-02-06 02:56:12.546988: Notification     : Mary had a little lamb, its fleece was white as snow; and
+                          : everywhere that Mary went, that lamb was sure to go.
+2016-02-06 02:56:12.549120: Action           : Do something!
+2016-02-06 02:56:12.550602: 
+2016-02-06 02:56:12.552521: Location_Control:incoming_notification:persist_notification
+2016-02-06 02:56:12.647633: Location_Control:incoming_notification:issue_bluetooth
+2016-02-06 02:56:12.648236: Location_Control:incoming_notification:end
+2016-02-06 02:56:12.648411: 
+2016-02-06 02:56:12.655182: Location_Control:incoming_notification:start
+2016-02-06 02:56:12.655438: Location_Control:incoming_notification:display_notification
+2016-02-06 02:56:12.655630: 
+2016-02-06 02:56:12.656367: Notification received
+2016-02-06 02:56:12.657145: -------------------------------------------------------------------------------
+2016-02-06 02:56:12.658209: Notification from: test
+2016-02-06 02:56:12.659001: Received at      : 2016-02-06 02:56:12.655427 (UTC/UTC)
+2016-02-06 02:56:12.659783: Notification     : The quick brown fox jumped over the lazy dog; the only
+                          : sentence in the English language to contain every letter of the alphabet (3rd
+                          : issue)
+2016-02-06 02:56:12.661853: Action           : Do something!
+2016-02-06 02:56:12.662573: 
+2016-02-06 02:56:12.663852: Location_Control:incoming_notification:persist_notification
+2016-02-06 02:56:12.910629: Location_Control:incoming_notification:issue_bluetooth
+2016-02-06 02:56:12.911399: Location_Control:incoming_notification:end
+2016-02-06 02:56:12.911583: 
+2016-02-06 02:56:12.918928: Location_Control:incoming_notification:start
+2016-02-06 02:56:12.919206: Location_Control:incoming_notification:display_notification
+2016-02-06 02:56:12.919439: 
+2016-02-06 02:56:12.920250: Notification received
+2016-02-06 02:56:12.921051: -------------------------------------------------------------------------------
+2016-02-06 02:56:12.922197: Notification from: test
+2016-02-06 02:56:12.923008: Received at      : 2016-02-06 02:56:12.919194 (UTC/UTC)
+2016-02-06 02:56:12.923873: Notification     : The quick brown fox jumped over the lazy dog; the only
+                          : sentence in the English language to contain every letter of the alphabet (3rd
+                          : issue)
+2016-02-06 02:56:12.926055: Action           : Do something!
+2016-02-06 02:56:12.926912: 
+2016-02-06 02:56:12.928147: Location_Control:incoming_notification:persist_notification
+2016-02-06 02:56:13.021589: Location_Control:incoming_notification:issue_bluetooth
+2016-02-06 02:56:13.022508: Location_Control:incoming_notification:end
+2016-02-06 02:56:13.022766: 
+2016-02-06 03:05:28.904038: 
+2016-02-06 03:05:28.909618: ******************************************************************************
+2016-02-06 03:05:28.911511: dasanderDocker02:82 Started
+2016-02-06 03:05:28.912654: ******************************************************************************
+2016-02-06 03:05:28.914172: 
+2016-02-06 03:09:34.581390: Location_Control:incoming_notification:start
+2016-02-06 03:09:34.582420: Location_Control:incoming_notification:display_notification
+2016-02-06 03:09:34.582750: 
+2016-02-06 03:09:34.584552: Notification received
+2016-02-06 03:09:34.585716: -------------------------------------------------------------------------------
+2016-02-06 03:09:34.586940: Notification from: test
+2016-02-06 03:09:34.587833: Received at      : 2016-02-06 03:09:34.582395 (UTC/UTC)
+2016-02-06 03:09:34.588731: Notification     : The quick brown fox jumped over the lazy dog; the only
+                          : sentence in the English language to contain every letter of the alphabet (3rd
+                          : issue)
+2016-02-06 03:09:34.592608: Action           : Do something!
+2016-02-06 03:09:34.593659: 
+2016-02-06 03:09:34.595459: Location_Control:incoming_notification:persist_notification
+2016-02-06 03:09:36.214263: Location_Control:incoming_notification:issue_bluetooth
+2016-02-06 03:09:36.215488: Location_Control:incoming_notification:end
+2016-02-06 03:09:36.215812: 
+2016-02-06 03:09:36.230215: Location_Control:incoming_notification:start
+2016-02-06 03:09:36.230790: Location_Control:incoming_notification:display_notification
+2016-02-06 03:09:36.231088: 
+2016-02-06 03:09:36.232829: Notification received
+2016-02-06 03:09:36.234212: -------------------------------------------------------------------------------
+2016-02-06 03:09:36.236413: Notification from: test
+2016-02-06 03:09:36.238084: Received at      : 2016-02-06 03:09:36.230772 (UTC/UTC)
+2016-02-06 03:09:36.239780: Notification     : The quick brown fox jumped over the lazy dog; the only
+                          : sentence in the English language to contain every letter of the alphabet (3rd
+                          : issue)
+2016-02-06 03:09:36.244116: Action           : Do something!
+2016-02-06 03:09:36.245179: 
+2016-02-06 03:09:36.246982: Location_Control:incoming_notification:persist_notification
+2016-02-06 03:09:36.414433: Location_Control:incoming_notification:issue_bluetooth
+2016-02-06 03:09:36.415198: Location_Control:incoming_notification:end
+2016-02-06 03:09:36.415375: 

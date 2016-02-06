@@ -32,7 +32,6 @@ from flask_restful import Api
 # Import the app, and api modules from the notes app (__init__.py) so that
 # they can be accessed globally by any module within this package.
 from Notification_Service import app, api
-from Notification_Service_Boundary import apiR
 
 app.run(host='0.0.0.0',
         port=5000,

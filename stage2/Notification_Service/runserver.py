@@ -63,9 +63,6 @@ from flask_restful import Api
 # they can be accessed globally by any module within this package.
 from Notification_Service import app, api
 
-# Import the boundary apiR module
-from Notification_Service_Boundary import apiR
-
 # UNCOMMENT to run locally
 #app.run(host='0.0.0.0', port=5000, debug=True, threaded=True)
 

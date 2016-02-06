@@ -1,4 +1,4 @@
-import sqlite3
+import sqlite3, os
 
 class Notification_Service_Database(object):
     __db_name = None
@@ -6,7 +6,28 @@ class Notification_Service_Database(object):
     __db_cursor = None
 
     def __init__(self):
-        self.__db_name = 'datavolume/Notification_Service.db'
+        # Get hostname and port from OS. If the environment variables have not
+        # been set, e.g. the app is being run locally, then catch an exception
+        # and default to Flask's built-in server, localhost on port 5000.
+        #
+        stage = 0      # A stage indicator to know which variable caused the
+                       # exception
+        try:
+            stage += 1
+            port_number = os.environ['portToUse']
+            stage += 1
+            server_name = os.environ['serverName']
+        except KeyError as ke:
+            if stage == 1:
+                port_number = 5000
+                server_name = 'localhost'
+            else:
+                server_name = 'localhost'
+
+        self.__server_name = server_name
+        self.__port_number = port_number
+        self.__db_name = 'datavolume/'+server_name+'-'+str(port_number)+\
+            '-notifications.db'
         self.__db_conn = None
         self.__db_cursor = None
 

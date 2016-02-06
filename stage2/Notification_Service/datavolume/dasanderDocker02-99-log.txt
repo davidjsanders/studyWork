@@ -1,0 +1,336 @@
+2016-02-06 01:19:50.435293: 
+2016-02-06 01:19:50.435521: ******************************************************************************
+2016-02-06 01:19:50.436347: dasanderDocker02:99 Started
+2016-02-06 01:19:50.436528: ******************************************************************************
+2016-02-06 01:19:50.437252: 
+2016-02-06 01:43:09.434014: 
+2016-02-06 01:43:09.434224: ******************************************************************************
+2016-02-06 01:43:09.434677: dasanderDocker02:99 Started
+2016-02-06 01:43:09.434853: ******************************************************************************
+2016-02-06 01:43:09.435252: 
+2016-02-06 01:48:48.763650: 
+2016-02-06 01:48:48.763798: ******************************************************************************
+2016-02-06 01:48:48.764239: dasanderDocker02:99 Started
+2016-02-06 01:48:48.764381: ******************************************************************************
+2016-02-06 01:48:48.764789: 
+2016-02-06 01:51:01.576676: 
+2016-02-06 01:51:01.576833: ******************************************************************************
+2016-02-06 01:51:01.577266: dasanderDocker02:99 Started
+2016-02-06 01:51:01.577407: ******************************************************************************
+2016-02-06 01:51:01.577810: 
+2016-02-06 01:53:12.099745: Saved Notification: test for http://192.168.0.210:82/v1_00; Note: This is a
+                          : test notification for logging.; Action: Do something!; on 2016-02-06
+                          : 01:51:04.692874(UTC/UTC)
+2016-02-06 01:54:41.660788: 
+2016-02-06 01:54:41.660917: ******************************************************************************
+2016-02-06 01:54:41.661349: dasanderDocker02:99 Started
+2016-02-06 01:54:41.661516: ******************************************************************************
+2016-02-06 01:54:41.661916: 
+2016-02-06 01:54:46.807133: test---http://192.168.0.210:82/v1_00---This is a test notification for logging.
+                          : ---Do something!---2016-02-06 01:54:46.804310(UTC/UTC)
+2016-02-06 01:56:54.179740: Saved Notification: test for http://192.168.0.210:82/v1_00; Note: This is a
+                          : test notification for logging.; Action: Do something!; on 2016-02-06
+                          : 01:54:46.804310(UTC/UTC)
+2016-02-06 01:57:14.590958: 
+2016-02-06 01:57:14.591113: ******************************************************************************
+2016-02-06 01:57:14.591546: dasanderDocker02:99 Started
+2016-02-06 01:57:14.591688: ******************************************************************************
+2016-02-06 01:57:14.592090: 
+2016-02-06 01:57:15.943193: Queued test---http://192.168.0.210:82/v1_00---This is a test notification for
+                          : logging.---Do something!---2016-02-06 01:57:15.938457(UTC/UTC)
+2016-02-06 01:58:43.020865: 
+2016-02-06 01:58:43.021071: ******************************************************************************
+2016-02-06 01:58:43.021546: dasanderDocker02:99 Started
+2016-02-06 01:58:43.021688: ******************************************************************************
+2016-02-06 01:58:43.022087: 
+2016-02-06 01:59:37.779676: Queued test---http://192.168.0.210:82/v1_00---Mary had a little lamb, its
+                          : fleece was white as snow; and everywhere that Mary went, that lamb was sure to
+                          : go.---Do something!---2016-02-06 01:59:37.778153(UTC/UTC)
+2016-02-06 02:01:45.267016: Saved Notification: test for http://192.168.0.210:82/v1_00; Note: Mary had a
+                          : little lamb, its fleece was white as snow; and everywhere that Mary went, that
+                          : lamb was sure to go.; Action: Do something!; on 2016-02-06
+                          : 01:59:37.778153(UTC/UTC)
+2016-02-06 02:04:10.364835: 
+2016-02-06 02:04:10.364974: ******************************************************************************
+2016-02-06 02:04:10.365401: dasanderDocker02:99 Started
+2016-02-06 02:04:10.365546: ******************************************************************************
+2016-02-06 02:04:10.365972: 
+2016-02-06 02:04:10.427351: Redis message received!
+2016-02-06 02:04:16.647459: Redis message received!
+2016-02-06 02:04:16.655382: Queued test---http://192.168.0.210:82/v1_00---Mary had a little lamb, its
+                          : fleece was white as snow; and everywhere that Mary went, that lamb was sure to
+                          : go.---Do something!---2016-02-06 02:04:16.644643(UTC/UTC)
+2016-02-06 02:06:24.369855: Saved Notification: test for http://192.168.0.210:82/v1_00; Note: Mary had a
+                          : little lamb, its fleece was white as snow; and everywhere that Mary went, that
+                          : lamb was sure to go.; Action: Do something!; on 2016-02-06
+                          : 02:04:16.644643(UTC/UTC)
+2016-02-06 02:21:14.456948: 
+2016-02-06 02:21:14.457073: ******************************************************************************
+2016-02-06 02:21:14.457500: dasanderDocker02:99 Started
+2016-02-06 02:21:14.457647: ******************************************************************************
+2016-02-06 02:21:14.458052: 
+2016-02-06 02:21:14.515924: Redis message received!
+2016-02-06 02:21:19.562511: Redis message received!
+2016-02-06 02:21:19.563042: Redis message ['test', 'http://192.168.0.210:82/v1_00', 'Mary had a little
+                          : lamb, its fleece was white as snow; and everywhere that Mary went, that lamb
+                          : was sure to go.', 'Do something!', '2016-02-06 02:21:19.560870(UTC/UTC)']
+                          : received!
+2016-02-06 02:21:19.563123: Queued test---http://192.168.0.210:82/v1_00---Mary had a little lamb, its
+                          : fleece was white as snow; and everywhere that Mary went, that lamb was sure to
+                          : go.---Do something!---2016-02-06 02:21:19.560870(UTC/UTC)
+2016-02-06 02:23:26.833525: Saved Notification: test for http://192.168.0.210:82/v1_00; Note: Mary had a
+                          : little lamb, its fleece was white as snow; and everywhere that Mary went, that
+                          : lamb was sure to go.; Action: Do something!; on 2016-02-06
+                          : 02:21:19.560870(UTC/UTC)
+2016-02-06 02:28:00.469825: 
+2016-02-06 02:28:00.470035: ******************************************************************************
+2016-02-06 02:28:00.470483: dasanderDocker02:99 Started
+2016-02-06 02:28:00.470628: ******************************************************************************
+2016-02-06 02:28:00.471057: 
+2016-02-06 02:28:00.534234: Redis message received!
+2016-02-06 02:28:41.530426: Queued test---http://192.168.0.210:82/v1_00---The quick brown fox jumped over
+                          : the lazy dog; the only sentence in the English language to contain every letter
+                          : of the alphabet---Do something!---2016-02-06 02:28:41.528839(UTC/UTC)
+2016-02-06 02:28:41.533068: Redis message received!
+2016-02-06 02:28:41.533538: Redis: message received! ['test', 'http://192.168.0.210:82/v1_00', 'The quick
+                          : brown fox jumped over the lazy dog; the only sentence in the English language
+                          : to contain every letter of the alphabet', 'Do something!', '2016-02-06
+                          : 02:28:41.528839(UTC/UTC)']
+2016-02-06 02:28:41.534041: Redis: Payload {'action': 'Do something!', 'sender': 'test', 'key':
+                          : 'NS1234-5678-9012-3456', 'message': 'The quick brown fox jumped over the lazy
+                          : dog; the only sentence in the English language to contain every letter of the
+                          : alphabet'}
+2016-02-06 02:28:41.534459: Redis: issuing http request to http://192.168.0.210:82/v1_00/notification
+2016-02-06 02:29:01.201794: 
+2016-02-06 02:29:01.202020: ******************************************************************************
+2016-02-06 02:29:01.202491: dasanderDocker02:99 Started
+2016-02-06 02:29:01.202650: ******************************************************************************
+2016-02-06 02:29:01.203132: 
+2016-02-06 02:29:01.264738: Redis message received!
+2016-02-06 02:29:14.127434: Redis message received!
+2016-02-06 02:29:14.127439: Queued test---http://192.168.0.210:82/v1_00---The quick brown fox jumped over
+                          : the lazy dog; the only sentence in the English language to contain every letter
+                          : of the alphabet (2nd issue)---Do something!---2016-02-06
+                          : 02:29:14.124444(UTC/UTC)
+2016-02-06 02:29:14.128261: Redis: message received! ['test', 'http://192.168.0.210:82/v1_00', 'The quick
+                          : brown fox jumped over the lazy dog; the only sentence in the English language
+                          : to contain every letter of the alphabet (2nd issue)', 'Do something!',
+                          : '2016-02-06 02:29:14.124444(UTC/UTC)']
+2016-02-06 02:29:14.128910: Redis: Payload {'key': 'NS1234-5678-9012-3456', 'message': 'The quick brown fox
+                          : jumped over the lazy dog; the only sentence in the English language to contain
+                          : every letter of the alphabet (2nd issue)', 'sender': 'test', 'action': 'Do
+                          : something!'}
+2016-02-06 02:29:14.129285: Redis: issuing http request to http://192.168.0.210:82/v1_00/notification
+2016-02-06 02:36:25.584140: 
+2016-02-06 02:36:25.584356: ******************************************************************************
+2016-02-06 02:36:25.584805: dasanderDocker02:99 Started
+2016-02-06 02:36:25.584948: ******************************************************************************
+2016-02-06 02:36:25.585356: 
+2016-02-06 02:36:25.651043: Redis message received!
+2016-02-06 02:36:36.301335: Redis message received!
+2016-02-06 02:36:36.301956: Redis: message received! ['test', 'http://192.168.0.210:82/v1_00', 'The quick
+                          : brown fox jumped over the lazy dog; the only sentence in the English language
+                          : to contain every letter of the alphabet (3rd issue)', 'Do something!',
+                          : '2016-02-06 02:36:36.299381(UTC/UTC)']
+2016-02-06 02:36:36.302427: Redis: Payload {'sender': 'test', 'message': 'The quick brown fox jumped over
+                          : the lazy dog; the only sentence in the English language to contain every letter
+                          : of the alphabet (3rd issue)', 'key': 'NS1234-5678-9012-3456', 'action': 'Do
+                          : something!'}
+2016-02-06 02:36:36.302895: Redis: issuing http request to http://192.168.0.210:82/v1_00/notification
+2016-02-06 02:36:36.303100: Queued test---http://192.168.0.210:82/v1_00---The quick brown fox jumped over
+                          : the lazy dog; the only sentence in the English language to contain every letter
+                          : of the alphabet (3rd issue)---Do something!---2016-02-06
+                          : 02:36:36.299381(UTC/UTC)
+2016-02-06 02:38:43.507800: Redis: Persisting notification because HTTPConnectionPool(host='192.168.0.210',
+                          : port=82): Max retries exceeded with url: /v1_00/notification (Caused by
+                          : NewConnectionError('<requests.packages.urllib3.connection.HTTPConnection object
+                          : at 0x7f71b4277198>: Failed to establish a new connection: [Errno 110]
+                          : Connection timed out',))
+2016-02-06 02:38:43.880097: Saved Notification: test for http://192.168.0.210:82/v1_00; Note: The quick
+                          : brown fox jumped over the lazy dog; the only sentence in the English language
+                          : to contain every letter of the alphabet (3rd issue); Action: Do something!; on
+                          : 2016-02-06 02:36:36.299381(UTC/UTC)
+2016-02-06 02:41:16.181384: 
+2016-02-06 02:41:16.181516: ******************************************************************************
+2016-02-06 02:41:16.181961: dasanderDocker02:99 Started
+2016-02-06 02:41:16.182113: ******************************************************************************
+2016-02-06 02:41:16.182519: 
+2016-02-06 02:41:16.245035: Redis message received!
+2016-02-06 02:41:23.715640: Redis message received!
+2016-02-06 02:41:23.716568: Redis: message received! ['test', 'http://192.168.0.210:82/v1_00', 'The quick
+                          : brown fox jumped over the lazy dog; the only sentence in the English language
+                          : to contain every letter of the alphabet (3rd issue)', 'Do something!',
+                          : '2016-02-06 02:41:23.712614(UTC/UTC)']
+2016-02-06 02:41:23.717357: Redis: Payload {'action': 'Do something!', 'sender': 'test', 'key':
+                          : 'NS1234-5678-9012-3456', 'message': 'The quick brown fox jumped over the lazy
+                          : dog; the only sentence in the English language to contain every letter of the
+                          : alphabet (3rd issue)'}
+2016-02-06 02:41:23.717990: Redis: issuing http request to http://192.168.0.210:82/v1_00/notification
+2016-02-06 02:41:23.719295: Queued test---http://192.168.0.210:82/v1_00---The quick brown fox jumped over
+                          : the lazy dog; the only sentence in the English language to contain every letter
+                          : of the alphabet (3rd issue)---Do something!---2016-02-06
+                          : 02:41:23.712614(UTC/UTC)
+2016-02-06 02:41:53.766991: Redis: Persisting notification because HTTPConnectionPool(host='192.168.0.210',
+                          : port=82): Max retries exceeded with url: /v1_00/notification (Caused by
+                          : ConnectTimeoutError(<requests.packages.urllib3.connection.HTTPConnection object
+                          : at 0x7fa4cdd5f198>, 'Connection to 192.168.0.210 timed out. (connect
+                          : timeout=30)'))
+2016-02-06 02:41:54.207899: Saved Notification: test for http://192.168.0.210:82/v1_00; Note: The quick
+                          : brown fox jumped over the lazy dog; the only sentence in the English language
+                          : to contain every letter of the alphabet (3rd issue); Action: Do something!; on
+                          : 2016-02-06 02:41:23.712614(UTC/UTC)
+2016-02-06 02:56:11.710287: Redis message received!
+2016-02-06 02:56:11.710525: Redis: message received! ['test', 'http://10.4.0.4:82/v1_00', 'This is a test
+                          : notification for logging.', 'Do something!', '2016-02-06
+                          : 01:51:04.692874(UTC/UTC)']
+2016-02-06 02:56:11.710900: Redis: Payload {'action': 'Do something!', 'sender': 'test', 'key':
+                          : 'NS1234-5678-9012-3456', 'message': 'This is a test notification for logging.'}
+2016-02-06 02:56:11.711156: Redis: issuing http request to http://10.4.0.4:82/v1_00/notification
+2016-02-06 02:56:12.073652: Redis: http request response 201
+2016-02-06 02:56:12.074243: Redis message received!
+2016-02-06 02:56:12.074476: Redis: message received! ['test', 'http://10.4.0.4:82/v1_00', 'This is a test
+                          : notification for logging.', 'Do something!', '2016-02-06
+                          : 01:54:46.804310(UTC/UTC)']
+2016-02-06 02:56:12.074913: Redis: Payload {'action': 'Do something!', 'sender': 'test', 'key':
+                          : 'NS1234-5678-9012-3456', 'message': 'This is a test notification for logging.'}
+2016-02-06 02:56:12.075246: Redis: issuing http request to http://10.4.0.4:82/v1_00/notification
+2016-02-06 02:56:12.264718: Redis: http request response 201
+2016-02-06 02:56:12.265299: Redis message received!
+2016-02-06 02:56:12.265600: Redis: message received! ['test', 'http://10.4.0.4:82/v1_00', 'Mary had a
+                          : little lamb, its fleece was white as snow; and everywhere that Mary went, that
+                          : lamb was sure to go.', 'Do something!', '2016-02-06 01:59:37.778153(UTC/UTC)']
+2016-02-06 02:56:12.266122: Redis: Payload {'action': 'Do something!', 'sender': 'test', 'key':
+                          : 'NS1234-5678-9012-3456', 'message': 'Mary had a little lamb, its fleece was
+                          : white as snow; and everywhere that Mary went, that lamb was sure to go.'}
+2016-02-06 02:56:12.266649: Redis: issuing http request to http://10.4.0.4:82/v1_00/notification
+2016-02-06 02:56:12.384286: Redis: http request response 201
+2016-02-06 02:56:12.384688: Redis message received!
+2016-02-06 02:56:12.384876: Redis: message received! ['test', 'http://10.4.0.4:82/v1_00', 'Mary had a
+                          : little lamb, its fleece was white as snow; and everywhere that Mary went, that
+                          : lamb was sure to go.', 'Do something!', '2016-02-06 02:04:16.644643(UTC/UTC)']
+2016-02-06 02:56:12.385211: Redis: Payload {'action': 'Do something!', 'sender': 'test', 'key':
+                          : 'NS1234-5678-9012-3456', 'message': 'Mary had a little lamb, its fleece was
+                          : white as snow; and everywhere that Mary went, that lamb was sure to go.'}
+2016-02-06 02:56:12.385517: Redis: issuing http request to http://10.4.0.4:82/v1_00/notification
+2016-02-06 02:56:12.535249: Redis: http request response 201
+2016-02-06 02:56:12.535653: Redis message received!
+2016-02-06 02:56:12.535836: Redis: message received! ['test', 'http://10.4.0.4:82/v1_00', 'Mary had a
+                          : little lamb, its fleece was white as snow; and everywhere that Mary went, that
+                          : lamb was sure to go.', 'Do something!', '2016-02-06 02:21:19.560870(UTC/UTC)']
+2016-02-06 02:56:12.536174: Redis: Payload {'action': 'Do something!', 'sender': 'test', 'key':
+                          : 'NS1234-5678-9012-3456', 'message': 'Mary had a little lamb, its fleece was
+                          : white as snow; and everywhere that Mary went, that lamb was sure to go.'}
+2016-02-06 02:56:12.536481: Redis: issuing http request to http://10.4.0.4:82/v1_00/notification
+2016-02-06 02:56:12.651139: Redis: http request response 201
+2016-02-06 02:56:12.651464: Redis message received!
+2016-02-06 02:56:12.651634: Redis: message received! ['test', 'http://10.4.0.4:82/v1_00', 'The quick brown
+                          : fox jumped over the lazy dog; the only sentence in the English language to
+                          : contain every letter of the alphabet (3rd issue)', 'Do something!', '2016-02-06
+                          : 02:36:36.299381(UTC/UTC)']
+2016-02-06 02:56:12.652016: Redis: Payload {'action': 'Do something!', 'sender': 'test', 'key':
+                          : 'NS1234-5678-9012-3456', 'message': 'The quick brown fox jumped over the lazy
+                          : dog; the only sentence in the English language to contain every letter of the
+                          : alphabet (3rd issue)'}
+2016-02-06 02:56:12.652348: Redis: issuing http request to http://10.4.0.4:82/v1_00/notification
+2016-02-06 02:56:12.914530: Redis: http request response 201
+2016-02-06 02:56:12.915016: Redis message received!
+2016-02-06 02:56:12.915193: Redis: message received! ['test', 'http://10.4.0.4:82/v1_00', 'The quick brown
+                          : fox jumped over the lazy dog; the only sentence in the English language to
+                          : contain every letter of the alphabet (3rd issue)', 'Do something!', '2016-02-06
+                          : 02:41:23.712614(UTC/UTC)']
+2016-02-06 02:56:12.915571: Redis: Payload {'action': 'Do something!', 'sender': 'test', 'key':
+                          : 'NS1234-5678-9012-3456', 'message': 'The quick brown fox jumped over the lazy
+                          : dog; the only sentence in the English language to contain every letter of the
+                          : alphabet (3rd issue)'}
+2016-02-06 02:56:12.915904: Redis: issuing http request to http://10.4.0.4:82/v1_00/notification
+2016-02-06 02:56:13.025680: Redis: http request response 201
+2016-02-06 03:02:06.224619: 
+2016-02-06 03:02:06.224903: ******************************************************************************
+2016-02-06 03:02:06.225346: dasanderDocker02:99 Started
+2016-02-06 03:02:06.225491: ******************************************************************************
+2016-02-06 03:02:06.225901: 
+2016-02-06 03:02:50.558619: Queued test---http://192.168.0.210:82/v1_00---The quick brown fox jumped over
+                          : the lazy dog; the only sentence in the English language to contain every letter
+                          : of the alphabet (3rd issue)---Do something!---2016-02-06
+                          : 03:02:50.556936(UTC/UTC)
+2016-02-06 03:02:50.559415: Redis: *** START HANDLING ***
+2016-02-06 03:02:50.559907: Redis: message received! ['test', 'http://192.168.0.210:82/v1_00', 'The quick
+                          : brown fox jumped over the lazy dog; the only sentence in the English language
+                          : to contain every letter of the alphabet (3rd issue)', 'Do something!',
+                          : '2016-02-06 03:02:50.556936(UTC/UTC)']
+2016-02-06 03:02:50.560579: Redis: Payload {'message': 'The quick brown fox jumped over the lazy dog; the
+                          : only sentence in the English language to contain every letter of the alphabet
+                          : (3rd issue)', 'sender': 'test', 'key': 'NS1234-5678-9012-3456', 'action': 'Do
+                          : something!'}
+2016-02-06 03:02:50.560947: Redis: issuing http request to http://192.168.0.210:82/v1_00/notification
+2016-02-06 03:03:20.601379: Redis: Persisting notification because HTTPConnectionPool(host='192.168.0.210',
+                          : port=82): Max retries exceeded with url: /v1_00/notification (Caused by
+                          : ConnectTimeoutError(<requests.packages.urllib3.connection.HTTPConnection object
+                          : at 0x7f8f0af21198>, 'Connection to 192.168.0.210 timed out. (connect
+                          : timeout=30)'))
+2016-02-06 03:03:20.601964: Redis: *** STOP HANDLING WITH WARNING - MESSAGE PERSISTED ***
+2016-02-06 03:03:21.149832: Saved Notification: test for http://192.168.0.210:82/v1_00; Note: The quick
+                          : brown fox jumped over the lazy dog; the only sentence in the English language
+                          : to contain every letter of the alphabet (3rd issue); Action: Do something!; on
+                          : 2016-02-06 03:02:50.556936(UTC/UTC)
+2016-02-06 03:04:16.486783: 
+2016-02-06 03:04:16.487027: ******************************************************************************
+2016-02-06 03:04:16.487471: dasanderDocker02:99 Started
+2016-02-06 03:04:16.487615: ******************************************************************************
+2016-02-06 03:04:16.488024: 
+2016-02-06 03:04:19.331415: 
+2016-02-06 03:04:19.331768: Redis: *** START HANDLING ***
+2016-02-06 03:04:19.332190: Redis: message received! ['test', 'http://192.168.0.210:82/v1_00', 'The quick
+                          : brown fox jumped over the lazy dog; the only sentence in the English language
+                          : to contain every letter of the alphabet (3rd issue)', 'Do something!',
+                          : '2016-02-06 03:04:19.329178(UTC/UTC)']
+2016-02-06 03:04:19.332707: Redis: Payload {'message': 'The quick brown fox jumped over the lazy dog; the
+                          : only sentence in the English language to contain every letter of the alphabet
+                          : (3rd issue)', 'sender': 'test', 'key': 'NS1234-5678-9012-3456', 'action': 'Do
+                          : something!'}
+2016-02-06 03:04:19.333169: Redis: issuing http request to http://192.168.0.210:82/v1_00/notification
+2016-02-06 03:04:19.335181: Queued test---http://192.168.0.210:82/v1_00---The quick brown fox jumped over
+                          : the lazy dog; the only sentence in the English language to contain every letter
+                          : of the alphabet (3rd issue)---Do something!---2016-02-06
+                          : 03:04:19.329178(UTC/UTC)
+2016-02-06 03:04:49.382123: Redis: Persisting notification because HTTPConnectionPool(host='192.168.0.210',
+                          : port=82): Max retries exceeded with url: /v1_00/notification (Caused by
+                          : ConnectTimeoutError(<requests.packages.urllib3.connection.HTTPConnection object
+                          : at 0x7fb45b99a198>, 'Connection to 192.168.0.210 timed out. (connect
+                          : timeout=30)'))
+2016-02-06 03:04:49.383050: Redis: *** STOP HANDLING WITH WARNING - MESSAGE PERSISTED ***
+2016-02-06 03:04:49.383342: 
+2016-02-06 03:04:49.494442: Saved Notification: test for http://192.168.0.210:82/v1_00; Note: The quick
+                          : brown fox jumped over the lazy dog; the only sentence in the English language
+                          : to contain every letter of the alphabet (3rd issue); Action: Do something!; on
+                          : 2016-02-06 03:04:19.329178(UTC/UTC)
+2016-02-06 03:09:34.570914: 
+2016-02-06 03:09:34.571193: Redis: *** START HANDLING ***
+2016-02-06 03:09:34.571470: Redis: message received! ['test', 'http://10.4.0.4:82/v1_00', 'The quick brown
+                          : fox jumped over the lazy dog; the only sentence in the English language to
+                          : contain every letter of the alphabet (3rd issue)', 'Do something!', '2016-02-06
+                          : 03:02:50.556936(UTC/UTC)']
+2016-02-06 03:09:34.572071: Redis: Payload {'message': 'The quick brown fox jumped over the lazy dog; the
+                          : only sentence in the English language to contain every letter of the alphabet
+                          : (3rd issue)', 'sender': 'test', 'key': 'NS1234-5678-9012-3456', 'action': 'Do
+                          : something!'}
+2016-02-06 03:09:34.572601: Redis: issuing http request to http://10.4.0.4:82/v1_00/notification
+2016-02-06 03:09:36.221350: Redis: http request response 201
+2016-02-06 03:09:36.221758: Redis: message dispatched to http://10.4.0.4:82/v1_00
+2016-02-06 03:09:36.222068: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-06 03:09:36.222355: 
+2016-02-06 03:09:36.222732: 
+2016-02-06 03:09:36.222903: Redis: *** START HANDLING ***
+2016-02-06 03:09:36.223109: Redis: message received! ['test', 'http://10.4.0.4:82/v1_00', 'The quick brown
+                          : fox jumped over the lazy dog; the only sentence in the English language to
+                          : contain every letter of the alphabet (3rd issue)', 'Do something!', '2016-02-06
+                          : 03:04:19.329178(UTC/UTC)']
+2016-02-06 03:09:36.223767: Redis: Payload {'message': 'The quick brown fox jumped over the lazy dog; the
+                          : only sentence in the English language to contain every letter of the alphabet
+                          : (3rd issue)', 'sender': 'test', 'key': 'NS1234-5678-9012-3456', 'action': 'Do
+                          : something!'}
+2016-02-06 03:09:36.224370: Redis: issuing http request to http://10.4.0.4:82/v1_00/notification
+2016-02-06 03:09:36.418963: Redis: http request response 201
+2016-02-06 03:09:36.419179: Redis: message dispatched to http://10.4.0.4:82/v1_00
+2016-02-06 03:09:36.419349: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-06 03:09:36.419503: 

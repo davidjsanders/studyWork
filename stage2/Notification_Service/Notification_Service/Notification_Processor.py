@@ -20,6 +20,10 @@ def redis_processor(control_object=None):
             message_fields = message['data'].decode('utf-8').split('<<*>>', 5)
 
             try:
+                control_object.log()
+                control_object.log('Redis: *** START HANDLING ***')
+                control_object.log('Redis: message received! {0}'\
+                  .format(message_fields))
                 sender = message_fields[0]
                 recipient = message_fields[1]
                 text = message_fields[2]
@@ -32,11 +36,19 @@ def redis_processor(control_object=None):
                     "sender":sender,
                     "action":action
                 }
+                control_object.log('Redis: Payload {0}'\
+                  .format(payload_data))
 
+                control_object.log('Redis: issuing http request to {0}'\
+                  .format(recipient+'/notification'))
                 request_response = requests.post(
                     recipient+'/notification',
-                    data=json.dumps(payload_data)
+                    data=json.dumps(payload_data),
+                    timeout=30
                 )
+                control_object.log('Redis: http request response {0}'\
+                  .format(request_response.status_code))
+
                 if request_response.status_code != 201:
                     error_text = \
                         'Unable to communicate with phone due to error. '
@@ -53,12 +65,23 @@ def redis_processor(control_object=None):
                                          .format(request_response.status_code)+\
                                       '; '+request_response.json()
 
+                    control_object.log('Redis: *** STOP HANDLING '+\
+                        'WITH ERROR ***')
                     print_error(error_text)
                 else:
-                    print('Notification sent to phone')
+                    control_object.log('Redis: message dispatched to {0}'\
+                      .format(recipient))
+                    control_object.log('Redis: *** STOP HANDLING '+\
+                        'WITH SUCCESS ***')
+                    control_object.log()
             except requests.exceptions.ConnectionError as rce:
                 print_error(str(rce))
                 try:
+                    control_object.log('Redis: Persisting notification '+\
+                      'because {0}'.format(str(rce)))
+                    control_object.log('Redis: *** STOP HANDLING '+\
+                        'WITH WARNING - MESSAGE PERSISTED ***')
+                    control_object.log()
                     control_object.persist_notification(
                         sender,
                         recipient,
@@ -69,8 +92,12 @@ def redis_processor(control_object=None):
                 except Exception as e:
                     raise
             except KeyError as ke:
+                control_object.log('Redis: *** STOP HANDLING '+\
+                    'WITH ERROR ***')
                 print_error(str(ke))
             except Exception as e:
+                control_object.log('Redis: *** STOP HANDLING '+\
+                    'WITH ERROR ***')
                 print_error(repr(e))
 
 def print_error(error_message=None):

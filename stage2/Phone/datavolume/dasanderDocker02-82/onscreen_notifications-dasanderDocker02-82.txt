@@ -1,0 +1,54 @@
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-06 02:56:11.717785 (UTC/UTC)
+Notification     : This is a test notification for logging.
+Action           : Do something!
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-06 02:56:12.078949 (UTC/UTC)
+Notification     : This is a test notification for logging.
+Action           : Do something!
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-06 02:56:12.271126 (UTC/UTC)
+Notification     : Mary had a little lamb, its fleece was white as snow; and everywhere that Mary went, that lamb was sure to go.
+Action           : Do something!
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-06 02:56:12.388549 (UTC/UTC)
+Notification     : Mary had a little lamb, its fleece was white as snow; and everywhere that Mary went, that lamb was sure to go.
+Action           : Do something!
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-06 02:56:12.539543 (UTC/UTC)
+Notification     : Mary had a little lamb, its fleece was white as snow; and everywhere that Mary went, that lamb was sure to go.
+Action           : Do something!
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-06 02:56:12.655427 (UTC/UTC)
+Notification     : The quick brown fox jumped over the lazy dog; the only sentence in the English language to contain every letter of the alphabet (3rd issue)
+Action           : Do something!
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-06 02:56:12.919194 (UTC/UTC)
+Notification     : The quick brown fox jumped over the lazy dog; the only sentence in the English language to contain every letter of the alphabet (3rd issue)
+Action           : Do something!
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-06 03:09:34.582395 (UTC/UTC)
+Notification     : The quick brown fox jumped over the lazy dog; the only sentence in the English language to contain every letter of the alphabet (3rd issue)
+Action           : Do something!
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-06 03:09:36.230772 (UTC/UTC)
+Notification     : The quick brown fox jumped over the lazy dog; the only sentence in the English language to contain every letter of the alphabet (3rd issue)
+Action           : Do something!
+

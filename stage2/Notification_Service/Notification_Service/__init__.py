@@ -29,11 +29,8 @@ import atexit
 import threading
 
 # Import PairControl
-from Notification_Service import Control
-#from Notification_Service import Notification_Control
-from Notification_Service import Notification_Receiver
+from Notification_Service.Control import global_control as control
 from Notification_Service import Notification_Processor
-from Notification_Service import Notification_Push_Control
 
 # The app is this application and set when the Python file is run from the
 # command line, e.g. python3 /some/folder/notes/runserver.py
@@ -41,13 +38,6 @@ app = Flask(__name__)
 # Create an Api object inheriting app
 api = Api(app)
 
-#Setup objects for pairing and broadcasting.
-#notification_control_object = Notification_Control.Notification_Control_v1_00()
-notification_receiver_object = \
-    Notification_Receiver.Notification_Receiver_v1_00()
-notification_push_control = \
-    Notification_Push_Control.Notification_Push_Control_v1_00()
-control = Control.Control_v1_00()
 
 # Setup threaded background job
 # Check app is NOT reloaded or spawned

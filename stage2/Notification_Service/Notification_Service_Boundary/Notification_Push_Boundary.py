@@ -1,10 +1,10 @@
 from flask_restful import Resource, Api, reqparse, abort
 from flask import Response
 from Notification_Service \
-    import app, api, control, \
-           notification_push_control
-
-from Notification_Service_Boundary import apiR
+    import app, api
+from Notification_Service.Notification_Push_Control \
+    import global_notification_push_control as notification_push_control
+from Notification_Service.Control import global_control as control
 
 class Notification_Push_Boundary(Resource):
     def post(self):

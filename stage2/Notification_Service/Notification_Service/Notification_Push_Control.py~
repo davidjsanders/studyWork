@@ -1,8 +1,7 @@
 from flask_restful import Resource, Api, reqparse, abort
 from flask import Response
-from Notification_Service import Control
+from Notification_Service.Control import global_control
 import datetime, time, json, requests
-import redis
 
 #
 # SuperClass.
@@ -12,7 +11,7 @@ class Notification_Push_Control(object):
     __redis = {'host':'localhost', 'port':6379, 'db':0}
 
     def __init__(self):
-        self.__controller = Control.Control_v1_00()
+        self.__controller = global_control
 
     def push_notifications(
         self,
@@ -40,7 +39,6 @@ class Notification_Push_Control(object):
 
             if not notification_list == None:
                 counter = 0
-#                redis_instance = redis.StrictRedis(**self.__redis)
                 for notification in notification_list:
                     counter += 1
                     self.__controller.queue_notification(
@@ -50,16 +48,6 @@ class Notification_Push_Control(object):
                             notification[4],
                             notification[5]
                     )
-#                    clients_receiving = redis_instance.publish(
-#                        'notification_store',
-#                        '{0}<<*>>{1}<<*>>{2}<<*>>{3}<<*>>{4}'.format(
-#                            notification[1],
-#                            notification[2],
-#                            notification[3],
-#                            notification[4],
-#                            notification[5]
-#                        )
-#                    )
                     self.__controller.clear_notification(notification[0])
 
             data={

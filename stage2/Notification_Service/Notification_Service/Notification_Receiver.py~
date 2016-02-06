@@ -1,6 +1,6 @@
 from flask_restful import Resource, Api, reqparse, abort
 from flask import Response
-from Notification_Service import Control
+from Notification_Service.Control import global_control
 import datetime, time, json, requests
 import redis
 
@@ -9,10 +9,9 @@ import redis
 # ----------------------------------------------------------------------------
 class Notification_Receiver(object):
     __controller = None
-    __redis = {'host':'localhost', 'port':6379, 'db':0}
 
     def __init__(self):
-        self.__controller = Control.Control_v1_00()
+        self.__controller = global_control
 
     def incoming_notification(
         self,
@@ -43,14 +42,18 @@ class Notification_Receiver(object):
             except KeyError as ke:
                 success = 'error'
                 status = '400'
-                message = 'Badly formed request!'
+                message = 'Badly formed request Missing {0}!'.format(ke)
+                self.__controller.log(message)
                 continue_sentinel = False
             except ValueError as ve:
                 success = 'error'
                 status = '403'
                 message = str(ve)
+                self.__controller.log(message)
                 continue_sentinel = False
             except Exception as e:
+                self.__controller.log('Unexpected exception: {0}'\
+                    .format(repr(e)))
                 raise
 
             if continue_sentinel:
@@ -72,20 +75,15 @@ class Notification_Receiver(object):
                         action,
                         str(now)+'('+tz+'/'+tzdst+')'
                     )
-
-#                    redis_instance = redis.StrictRedis(**self.__redis)
-
-#                    clients_receiving = redis_instance.publish(
-#                        'notification_store',
-#                        '{0}<<*>>{1}<<*>>{2}<<*>>{3}<<*>>{4}'.format(
-#                            sender,
-#                            recipient,
-#                            text,
-#                            action,
-#                            str(now)+'('+tz+'/'+tzdst+')'
-#                        )
-#                    )
-
+                    self.__controller.log('Queued {0}---{1}---{2}---{3}---{4}'\
+                        .format(
+                            sender,
+                            recipient,
+                            text,
+                            action,
+                            str(now)+'('+tz+'/'+tzdst+')'
+                        )
+                    )
                 except:
                     raise
 
@@ -97,9 +95,4 @@ class Notification_Receiver(object):
         return return_value
 
 
-#
-# Version 1.00
-# ----------------------------------------------------------------------------
-class Notification_Receiver_v1_00(Notification_Receiver):
-    def future(self):
-        pass
+global_notification_receiver_control = Notification_Receiver()

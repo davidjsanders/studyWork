@@ -1,6 +1,6 @@
 from flask_restful import Resource, Api, reqparse, abort
 from flask import Response
-from Notification_Service import Control
+from Notification_Service.Control import global_control
 import datetime, time, json, requests
 
 #
@@ -11,7 +11,7 @@ class Notification_Push_Control(object):
     __redis = {'host':'localhost', 'port':6379, 'db':0}
 
     def __init__(self):
-        self.__controller = Control.Control_v1_00()
+        self.__controller = global_control
 
     def push_notifications(
         self,
@@ -76,9 +76,4 @@ class Notification_Push_Control(object):
         return return_value
 
 
-#
-# Version 1.00
-# ----------------------------------------------------------------------------
-class Notification_Push_Control_v1_00(Notification_Push_Control):
-    def future(self):
-        pass
+global_notification_push_control = Notification_Push_Control()

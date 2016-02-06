@@ -1,10 +1,6 @@
-from flask_restful import Resource, Api, reqparse, abort
-from flask import Response
-from Notification_Service \
-    import app, api, control, \
-           notification_receiver_object
-
-from Notification_Service_Boundary import apiR
+from flask_restful import Resource, reqparse
+from Notification_Service.Notification_Receiver \
+    import global_notification_receiver_control as notification_receiver_object
 
 class Notification_Receive_Boundary(Resource):
     def post(self):

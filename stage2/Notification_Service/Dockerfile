@@ -11,7 +11,8 @@
 # -----------------------------------------------------------------------------
 # Date         | By             | Reason
 # -----------------------------------------------------------------------------
-# 24 Jan 2015  | D Sanders      | First version.
+# 24 Jan 2016  | D Sanders      | First version.
+# 05 Feb 2016  | D Sanders      | Update logging, multi-use, superclass & docker
 #
 #
 # Use the base Python image which includes Python3, Flask, Flask_Restful, and
@@ -46,13 +47,11 @@ COPY Notification_Service/Notification_Processor.py /Notification_Service/Notifi
 COPY Notification_Service/Notification_Receiver.py /Notification_Service/Notification_Service/
 COPY Notification_Service/Notification_Service_Database.py /Notification_Service/Notification_Service/
 COPY Notification_Service/Notification_Push_Control.py /Notification_Service/Notification_Service/
-COPY Notification_Service_Boundary/__init__.py /Notification_Service/Notification_Service_Boundary/
 COPY Notification_Service_Boundary/main.py /Notification_Service/Notification_Service_Boundary/
 COPY Notification_Service_Boundary/Notification_Receive_Boundary.py \
     /Notification_Service/Notification_Service_Boundary/
 COPY Notification_Service_Boundary/Notification_Push_Boundary.py \
     /Notification_Service/Notification_Service_Boundary/
-COPY Notification_Service_Boundary/Versions_Boundary.py /Notification_Service/Notification_Service_Boundary/
 #
 # Set the working directory for the container
 #
