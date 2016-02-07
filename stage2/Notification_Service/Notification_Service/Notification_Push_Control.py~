@@ -76,9 +76,4 @@ class Notification_Push_Control(object):
         return return_value
 
 
-#
-# Version 1.00
-# ----------------------------------------------------------------------------
-class Notification_Push_Control_v1_00(Notification_Push_Control):
-    def future(self):
-        pass
+global_notification_push_control = Notification_Push_Control()

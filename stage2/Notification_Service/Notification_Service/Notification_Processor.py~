@@ -20,6 +20,7 @@ def redis_processor(control_object=None):
             message_fields = message['data'].decode('utf-8').split('<<*>>', 5)
 
             try:
+                control_object.log()
                 control_object.log('Redis: *** START HANDLING ***')
                 control_object.log('Redis: message received! {0}'\
                   .format(message_fields))
@@ -72,6 +73,7 @@ def redis_processor(control_object=None):
                       .format(recipient))
                     control_object.log('Redis: *** STOP HANDLING '+\
                         'WITH SUCCESS ***')
+                    control_object.log()
             except requests.exceptions.ConnectionError as rce:
                 print_error(str(rce))
                 try:
@@ -79,6 +81,7 @@ def redis_processor(control_object=None):
                       'because {0}'.format(str(rce)))
                     control_object.log('Redis: *** STOP HANDLING '+\
                         'WITH WARNING - MESSAGE PERSISTED ***')
+                    control_object.log()
                     control_object.persist_notification(
                         sender,
                         recipient,

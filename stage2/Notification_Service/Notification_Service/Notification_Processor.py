@@ -5,11 +5,16 @@ import json
 def redis_close(thread=None, controller=None):
     # Although not used in this app, the thread close event logic would allow
     # us to do any last tasks.
+    controller.log()
+    controller.log('*'*79)
+    controller.log('Server closing')
+    controller.log('*'*79)
+    controller.log()
     if not thread == None\
     and not controller == None:
-        print('Closing background thread.')
+        controller.log('Closing background thread.')
     else:
-        print('Thread was none!')
+        controller.log('Thread was none!')
 
 def redis_processor(control_object=None):
     redis_pubsub = control_object.get_queue()
@@ -65,6 +70,7 @@ def redis_processor(control_object=None):
                                          .format(request_response.status_code)+\
                                       '; '+request_response.json()
 
+                    controller.log(error_text)
                     control_object.log('Redis: *** STOP HANDLING '+\
                         'WITH ERROR ***')
                     print_error(error_text)

@@ -22,6 +22,7 @@ class Notification_Receiver(object):
         message = 'Notification received. Thank you.'
         data = None
 
+        self.__controller.log('Notification being received.')
 
         if json_string == None\
         or json_string == '':
@@ -39,6 +40,13 @@ class Notification_Receiver(object):
                 recipient=json_data['recipient']
                 if not key == '1234-5678-9012-3456':
                     raise ValueError('Notification control key incorrect.')
+
+                self.__controller.log('Notification from {0} for {1}'\
+                                     .format(sender,recipient))
+
+                self.__controller.log('Notification is {0} with action "{1}"'\
+                                     .format(text, action))
+
             except KeyError as ke:
                 success = 'error'
                 status = '400'
