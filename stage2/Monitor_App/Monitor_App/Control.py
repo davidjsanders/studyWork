@@ -3,7 +3,7 @@ from flask import Response
 from Monitor_App.Monitor_App_Database \
     import Monitor_App_Database
 
-import datetime, time, json, os
+import datetime, time, json, os, requests
 from textwrap import wrap
 
 #
@@ -89,12 +89,40 @@ class Control(object):
         if state.upper() == 'ON':
             print('Checking location for hot spot!')
 
+    def db_logger(self,
+                  central_logger=None,
+                  sender=None,
+                  log_type=None,
+                  log_message=None
+    ):
+        if central_logger == None:
+            return
+        try:
+            sender = self.__server_name + '_' + str(self.__port_number)
+            payload_data = {
+                "sender":sender,
+                "log-type":"normal",
+                "message":log_message
+            }
+            requests.post(
+                central_logger,
+                data=json.dumps(payload_data),
+                timeout=10 # If nothing after 10s. ignore central
+            ) # Ignore return from central logger
+        except Exception as e:
+            print(repr(e))
+
+
     def log(self,
             log_message=None
     ):
         now = datetime.datetime.now()
         f = None
         try:
+            central_logger = self.get_value('logger')
+            if central_logger not in ('', [], None) and log_message != None:
+                sender = self.__server_name + '_' + str(self.__port_number)
+                self.db_logger(central_logger, sender, 'normal', log_message)
             f = open(self.__log_file, 'a')
             if log_message == None or log_message == '':
                 f.write("{0:>28s}\n".format(str(now)+': '))

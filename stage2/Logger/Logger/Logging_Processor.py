@@ -3,11 +3,14 @@ import requests
 import json
 
 def redis_close(thread=None, controller=None):
-    if not thread == None\
-    and not controller == None:
-        controller.log('Closing background thread.')
-    else:
-        controller.log('Thread was none!')
+    print()
+    print(' * Central logging system shutting down')
+    print()
+#    if not thread == None\
+#    and not controller == None:
+#        controller.log('Closing background thread.')
+#    else:
+#        controller.log('Thread was none!')
 
 
 def redis_processor(control_object=None):

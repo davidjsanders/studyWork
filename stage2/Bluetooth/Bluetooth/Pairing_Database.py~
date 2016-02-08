@@ -5,6 +5,8 @@ class Pairing_Database(object):
     __db_name = 'datavolume/pairing.db'
     __db_conn = None
     __db_cursor = None
+    __server_name = None
+    __port_number = None
 
     def __init__(self):
         stage = 0

@@ -38,7 +38,7 @@ class Control(object):
         self.__Monitor_App_db = Monitor_App_Database()
 
         self.__log_file = 'datavolume/'+server_name+'-'+\
-                          str(port_number)+'/log.txt'
+                          str(port_number)+'-log.txt'
 
         self.log()
         self.log('*'*78)

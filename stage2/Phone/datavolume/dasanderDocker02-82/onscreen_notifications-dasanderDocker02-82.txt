@@ -52,3 +52,159 @@ Received at      : 2016-02-06 03:09:36.230772 (UTC/UTC)
 Notification     : The quick brown fox jumped over the lazy dog; the only sentence in the English language to contain every letter of the alphabet (3rd issue)
 Action           : Do something!
 
+--------------------------------------------------------------------------------
+Notification from: monitor_app
+Received at      : 2016-02-07 19:48:41.766466 (UTC/UTC)
+Notification     : You have entered an area know for high STI Infection Rates; remember: Safe sex is good sex
+Action           : openmap(12,34)
+
+--------------------------------------------------------------------------------
+Notification from: monitor_app
+Received at      : 2016-02-07 19:49:55.080389 (UTC/UTC)
+Notification     : You have entered an area know for high STI Infection Rates; remember: Safe sex is good sex
+Action           : openmap(12,34)
+
+--------------------------------------------------------------------------------
+Notification from: monitor_app
+Received at      : 2016-02-07 19:56:03.994938 (UTC/UTC)
+Notification     : You have entered an area know for high STI Infection Rates; remember: Safe sex is good sex
+Action           : openmap(12,34)
+
+--------------------------------------------------------------------------------
+Notification from: monitor_app
+Received at      : 2016-02-07 20:00:57.015907 (UTC/UTC)
+Notification     : You have entered an area know for high STI Infection Rates; remember: Safe sex is good sex
+Action           : openmap(12,34)
+
+--------------------------------------------------------------------------------
+Notification from: monitor_app
+Received at      : 2016-02-07 20:01:14.102821 (UTC/UTC)
+Notification     : You have entered an area know for high STI Infection Rates; remember: Safe sex is good sex
+Action           : openmap(12,34)
+
+--------------------------------------------------------------------------------
+Notification from: monitor_app
+Received at      : 2016-02-07 20:03:04.413841 (UTC/UTC)
+Notification     : You have entered an area know for high STI Infection Rates; remember: Safe sex is good sex
+Action           : openmap(12,34)
+
+--------------------------------------------------------------------------------
+Notification from: monitor_app
+Received at      : 2016-02-07 20:06:37.716932 (UTC/UTC)
+Notification     : You have entered an area know for high STI Infection Rates; remember: Safe sex is good sex
+Action           : openmap(12,34)
+
+--------------------------------------------------------------------------------
+Notification from: monitor_app
+Received at      : 2016-02-07 20:07:16.888043 (UTC/UTC)
+Notification     : You have entered an area know for high STI Infection Rates; remember: Safe sex is good sex
+Action           : openmap(12,34)
+
+--------------------------------------------------------------------------------
+Notification from: monitor_app
+Received at      : 2016-02-07 20:10:55.127435 (UTC/UTC)
+Notification     : You have entered an area know for high STI Infection Rates; remember: Safe sex is good sex
+Action           : openmap(12,34)
+
+--------------------------------------------------------------------------------
+Notification from: monitor_app
+Received at      : 2016-02-07 20:11:56.286630 (UTC/UTC)
+Notification     : You have entered an area know for high STI Infection Rates; remember: Safe sex is good sex
+Action           : openmap(12,34)
+
+--------------------------------------------------------------------------------
+Notification from: monitor_app
+Received at      : 2016-02-07 20:13:09.527051 (UTC/UTC)
+Notification     : You have entered an area know for high STI Infection Rates; remember: Safe sex is good sex
+Action           : openmap(12,34)
+
+--------------------------------------------------------------------------------
+Notification from: monitor_app
+Received at      : 2016-02-07 20:16:02.580725 (UTC/UTC)
+Notification     : You have entered an area know for high STI Infection Rates; remember: Safe sex is good sex
+Action           : openmap(12,34)
+
+--------------------------------------------------------------------------------
+Notification from: monitor_app
+Received at      : 2016-02-07 20:16:05.757187 (UTC/UTC)
+Notification     : You have entered an area know for high STI Infection Rates; remember: Safe sex is good sex
+Action           : openmap(12,34)
+
+--------------------------------------------------------------------------------
+Notification from: monitor_app
+Received at      : 2016-02-07 20:16:43.509488 (UTC/UTC)
+Notification     : This is a message senf to the phone!
+Action           : openmap(12,34)
+
+--------------------------------------------------------------------------------
+Notification from: monitor_app
+Received at      : 2016-02-07 20:17:11.109902 (UTC/UTC)
+Notification     : This is a message senf to the phone!
+Action           : openmap(12,34)
+
+--------------------------------------------------------------------------------
+Notification from: monitor_app
+Received at      : 2016-02-07 20:21:05.176539 (UTC/UTC)
+Notification     : This is a message senf to the phone!
+Action           : openmap(12,34)
+
+--------------------------------------------------------------------------------
+Notification from: monitor_app
+Received at      : 2016-02-07 20:21:49.125140 (UTC/UTC)
+Notification     : The quick brown fox jumped over the lazy dog.
+Action           : openmap(12,34)
+
+--------------------------------------------------------------------------------
+Notification from: monitor_app
+Received at      : 2016-02-07 20:24:59.879795 (UTC/UTC)
+Notification     : Mary had a little lamb, its fleece was white as snow.
+Action           : openmap(12,34)
+
+--------------------------------------------------------------------------------
+Notification from: monitor_app
+Received at      : 2016-02-07 20:27:53.595080 (UTC/UTC)
+Notification     : Mary had a little lamb, its fleece was white as snow.
+Action           : openmap(12,34)
+
+--------------------------------------------------------------------------------
+Notification from: monitor_app
+Received at      : 2016-02-07 20:28:43.869435 (UTC/UTC)
+Notification     : Mary had a little lamb, its fleece was white as snow.
+Action           : openmap(12,34)
+
+--------------------------------------------------------------------------------
+Notification from: monitor_app
+Received at      : 2016-02-07 20:51:26.453191 (UTC/UTC)
+Notification     : Mary had a little lamb, its fleece was white as snow.
+Action           : openmap(12,34)
+
+--------------------------------------------------------------------------------
+Notification from: monitor_app
+Received at      : 2016-02-07 20:51:47.185209 (UTC/UTC)
+Notification     : Hello David.
+Action           : openmap(12,34)
+
+--------------------------------------------------------------------------------
+Notification from: monitor_app
+Received at      : 2016-02-07 20:57:13.435105 (UTC/UTC)
+Notification     : Hello David.
+Action           : openmap(12,34)
+
+--------------------------------------------------------------------------------
+Notification from: monitor_app
+Received at      : 2016-02-07 20:58:18.713014 (UTC/UTC)
+Notification     : Hello David.
+Action           : openmap(12,34)
+
+--------------------------------------------------------------------------------
+Notification from: monitor_app
+Received at      : 2016-02-07 21:04:08.774215 (UTC/UTC)
+Notification     : Hello David J. Sanders, this is a notification.
+Action           : openmap(12,34)
+
+--------------------------------------------------------------------------------
+Notification from: monitor_app
+Received at      : 2016-02-07 21:06:37.576877 (UTC/UTC)
+Notification     : Hello David J. Sanders, this is a notification.
+Action           : openmap(12,34)
+

@@ -11,7 +11,9 @@
 # -----------------------------------------------------------------------------
 # Date         | By             | Reason
 # -----------------------------------------------------------------------------
-# 24 Jan 2015  | D Sanders      | First version.
+# 24 Jan 2016  | D Sanders      | First version.
+# 31 Jan 2016  | D Sanders      | Update to include config boundary & controls
+# 07 Jan 2016  | D Sanders      | Add config control & centralized logging
 #
 #
 # Use the base Python image which includes Python3, Flask, Flask_Restful, and
@@ -22,6 +24,8 @@ FROM dsanderscan/pythonbase
 RUN mkdir /Monitor_App
 RUN mkdir /Monitor_App/Monitor_App
 RUN mkdir /Monitor_App/Monitor_App_Boundary
+RUN mkdir /Monitor_App/Monitor_App_Config_Boundary
+RUN mkdir /Monitor_App/Monitor_App_Config_Control
 #
 # copy the files required for the application
 #
@@ -40,6 +44,12 @@ COPY Monitor_App_Boundary/main.py /Monitor_App/Monitor_App_Boundary/
 COPY Monitor_App_Boundary/State_Boundary.py /Monitor_App/Monitor_App_Boundary/
 COPY Monitor_App_Boundary/App_Launched_Boundary.py /Monitor_App/Monitor_App_Boundary/
 COPY Monitor_App_Boundary/App_Boundary.py /Monitor_App/Monitor_App_Boundary/
+COPY Monitor_App_Config_Boundary/Config_Logger_Boundary.py \
+    /Monitor_App/Monitor_App_Config_Boundary/
+COPY Monitor_App_Config_Boundary/main.py \
+    /Monitor_App/Monitor_App_Config_Boundary/
+COPY Monitor_App_Config_Control/Config_Logger_Control.py \
+    /Monitor_App/Monitor_App_Config_Control/
 #
 # Set the working directory for the container
 #

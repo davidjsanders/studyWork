@@ -18,7 +18,7 @@ class Log_Control(object):
         status = '200'
         message = 'Logging Service, update log.'
 
-        data = self.__controller.get_log(sender)
+        data = {"log":self.__controller.get_log(sender)}
 
         return  self.__controller.do_response(message=message,
                                               data=data,
@@ -59,6 +59,7 @@ class Log_Control(object):
               "message":text,
               "timestamp":now
             }
+            print('Logging data: {0}'.format(data))
 
         except Exception as e:
             success = 'error'

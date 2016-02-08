@@ -1,6 +1,7 @@
 from Phone import app, api
 from Phone_Config_Boundary.Config_Lock_Boundary import Config_Lock_Boundary
 from Phone_Config_Boundary.Config_Unlock_Boundary import Config_Unlock_Boundary
+from Phone_Config_Boundary.Config_Logger_Boundary import Config_Logger_Boundary
 from Phone_Config_Boundary.Config_Pair_Boundary import Config_Pair_Boundary
 from Phone_Config_Boundary.Config_Monitor_App_Boundary \
     import Config_Monitor_App_Boundary
@@ -15,6 +16,7 @@ api.add_resource(Config_Help_Boundary, '/v1_00/config/help')
 api.add_resource(Config_Launch_Boundary, '/v1_00/config/launch/<string:app>')
 api.add_resource(Config_Location_Boundary, '/v1_00/config/location')
 api.add_resource(Config_Lock_Boundary, '/v1_00/config/lock')
+api.add_resource(Config_Logger_Boundary, '/v1_00/config/logger')
 api.add_resource(Config_Monitor_App_Boundary, '/v1_00/config/monitor')
 api.add_resource(Config_Pair_Boundary, '/v1_00/config/pair')
 api.add_resource(Config_Push_Notifications_Boundary,'/v1_00/config/push')

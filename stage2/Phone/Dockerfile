@@ -11,8 +11,9 @@
 # -----------------------------------------------------------------------------
 # Date         | By             | Reason
 # -----------------------------------------------------------------------------
-# 24 Jan 2015  | D Sanders      | First version.
-# 31 Jan 2015  | D Sanders      | Update to include config boundary & controls
+# 24 Jan 2016  | D Sanders      | First version.
+# 31 Jan 2016  | D Sanders      | Update to include config boundary & controls
+# 07 Jan 2016  | D Sanders      | Add centralized logging
 #
 # Use the base Python image which includes Python3, Flask, and Flask_Restful
 # 
@@ -59,6 +60,7 @@ COPY Phone_Config_Boundary/Config_Help_Boundary.py /Phone/Phone_Config_Boundary/
 COPY Phone_Config_Boundary/Config_Launch_Boundary.py /Phone/Phone_Config_Boundary/
 COPY Phone_Config_Boundary/Config_Location_Boundary.py /Phone/Phone_Config_Boundary/
 COPY Phone_Config_Boundary/Config_Lock_Boundary.py /Phone/Phone_Config_Boundary/
+COPY Phone_Config_Boundary/Config_Logger_Boundary.py /Phone/Phone_Config_Boundary/
 COPY Phone_Config_Boundary/Config_Monitor_App_Boundary.py /Phone/Phone_Config_Boundary/
 COPY Phone_Config_Boundary/Config_Pair_Boundary.py /Phone/Phone_Config_Boundary/
 COPY Phone_Config_Boundary/Config_Push_Notifications_Boundary.py /Phone/Phone_Config_Boundary/
@@ -71,6 +73,7 @@ COPY Phone_Config_Control/Config_Help_Control.py /Phone/Phone_Config_Control/
 COPY Phone_Config_Control/Config_Launch_Control.py /Phone/Phone_Config_Control/
 COPY Phone_Config_Control/Config_Location_Control.py /Phone/Phone_Config_Control/
 COPY Phone_Config_Control/Config_Lock_Control.py /Phone/Phone_Config_Control/
+COPY Phone_Config_Control/Config_Logger_Control.py /Phone/Phone_Config_Control/
 COPY Phone_Config_Control/Config_Monitor_App_Control.py /Phone/Phone_Config_Control/
 COPY Phone_Config_Control/Config_Pair_Control.py /Phone/Phone_Config_Control/
 COPY Phone_Config_Control/Config_Push_Notifications_Control.py /Phone/Phone_Config_Control/

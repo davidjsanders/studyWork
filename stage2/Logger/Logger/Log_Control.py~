@@ -59,7 +59,7 @@ class Log_Control(object):
               "message":text,
               "timestamp":now
             }
-#            self.__controller.log(sender, log_type, message, now)
+            print('Logging data: {0}'.format(data))
 
         except Exception as e:
             success = 'error'

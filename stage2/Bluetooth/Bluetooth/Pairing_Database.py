@@ -31,7 +31,67 @@ class Pairing_Database(object):
         self.__db_cursor = None
 
         self.__validate_pairing_table()
+        self.__validate_config_table()
         self.__validate_output_table()
+
+
+    def clear_key(self, key=None):
+        if key == None:
+            return None
+
+        return_value = False
+        try:
+            self.__open_db()
+            self.__db_exec('delete from config where key = ?',
+                          (key,))
+            self.__db_conn.commit()
+            return_value = True
+        except Exception as e:
+            raise
+        finally:
+            self.__close_db()
+
+        return return_value
+
+
+
+    def set_key(self, key=None, value=None):
+        if key == None:
+            return None
+
+        return_value = False
+        try:
+            self.__open_db()
+            self.__db_exec('insert or replace into config values (?,?)',
+                          (key,value))
+            self.__db_conn.commit()
+            return_value = value
+        except Exception as e:
+            raise
+        finally:
+            self.__close_db()
+
+        return return_value
+
+
+    def get_key(self, key=None):
+        if key == None:
+            return None
+
+        returned = []
+        try:
+            self.__open_db()
+            self.__db_exec('select value from config where key = ?',
+                          (key,))
+            returned = self.__db_cursor.fetchall()
+            if returned != []:
+                returned = returned[0][0] # Only return first value
+        except Exception as e:
+            raise
+        finally:
+            self.__close_db()
+
+        return returned
 
 
     def __open_db(self):
@@ -56,6 +116,24 @@ class Pairing_Database(object):
             self.__db_cursor.execute(
                     'create table paired_devices '+\
                     '(device string not null primary key, key string)'
+                )
+        except Exception as e:
+            print(repr(e))
+            raise
+        finally:
+            self.__close_db()
+
+
+    def __validate_config_table(self):
+        _returned = None
+
+        try:
+            self.__open_db()
+            self.__db_exec('select * from config')
+        except sqlite3.OperationalError as oe:
+            self.__db_cursor.execute(
+                    'create table config '+\
+                    '(key string primary key not null, value string)'
                 )
         except Exception as e:
             print(repr(e))

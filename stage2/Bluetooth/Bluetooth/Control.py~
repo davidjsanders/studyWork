@@ -2,12 +2,14 @@ from flask_restful import Resource, Api, reqparse, abort
 from flask import Response
 
 import datetime, time, json, os
+from textwrap import wrap
 
 #
 # SuperClass.
 # ----------------------------------------------------------------------------
 class Control(object):
     __log_file = None
+    __pairing_db = None
 
     def __init__(self):
         stage = 0
@@ -28,11 +30,62 @@ class Control(object):
 
         self.__log_file = 'datavolume/'+server_name+'-'+\
                           str(port_number)+'-log.txt'
+
+        self.__pairing_db = Pairing_Database.Pairing_Database()
+
         self.log()
         self.log('*'*78)
         self.log('{0}:{1} Started'.format(server_name, port_number))
         self.log('*'*78)
         self.log()
+
+
+    def get_value(self, key=None):
+        if key == None:
+            return None
+
+        return self.__pairing_db.get_key(key)
+
+
+    def set_value(self, key=None, value=None):
+        if key == None:
+            return None
+
+        return self.__pairing_db.set_key(key, value)
+
+
+    def clear_value(self, key=None):
+        if key == None:
+            return None
+
+        return self.__pairing_db.clear_key(key)
+
+
+    def db_logger(self,
+                  central_logger=None,
+                  sender=None,
+                  log_type=None,
+                  log_message=None
+    ):
+        if central_logger == None:
+            return
+        try:
+            sender = self.__server_name + '_' + str(self.__port_number)
+            central_logger = self.get_value('logger')
+            if central_logger not in ('', [], None) and log_message != None:
+                self.db_logger(central_logger, sender, 'normal', log_message)
+            payload_data = {
+                "sender":sender,
+                "log-type":"normal",
+                "message":log_message
+            }
+            requests.post(
+                central_logger,
+                data=json.dumps(payload_data),
+                timeout=10 # If nothing after 10s. ignore central
+            ) # Ignore return from central logger
+        except Exception as e:
+            print(repr(e))
 
 
     def log(self,

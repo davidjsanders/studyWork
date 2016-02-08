@@ -145,3 +145,455 @@
 2016-02-06 03:09:36.414433: Location_Control:incoming_notification:issue_bluetooth
 2016-02-06 03:09:36.415198: Location_Control:incoming_notification:end
 2016-02-06 03:09:36.415375: 
+2016-02-07 19:47:14.116956: 
+2016-02-07 19:47:14.176187: ******************************************************************************
+2016-02-07 19:47:14.178106: dasanderDocker02:82 Started
+2016-02-07 19:47:14.179151: ******************************************************************************
+2016-02-07 19:47:14.180463: 
+2016-02-07 19:48:41.764064: Location_Control:incoming_notification:start
+2016-02-07 19:48:41.766498: Location_Control:incoming_notification:display_notification
+2016-02-07 19:48:41.767618: 
+2016-02-07 19:48:41.770270: Notification received
+2016-02-07 19:48:41.771950: -------------------------------------------------------------------------------
+2016-02-07 19:48:41.773922: Notification from: monitor_app
+2016-02-07 19:48:41.775049: Received at      : 2016-02-07 19:48:41.766466 (UTC/UTC)
+2016-02-07 19:48:41.776108: Notification     : You have entered an area know for high STI Infection Rates;
+                          : remember: Safe sex is good sex
+2016-02-07 19:48:41.777777: Action           : openmap(12,34)
+2016-02-07 19:48:41.778803: 
+2016-02-07 19:48:41.780172: Location_Control:incoming_notification:persist_notification
+2016-02-07 19:48:41.839855: Location_Control:incoming_notification:issue_bluetooth
+2016-02-07 19:48:41.841156: Location_Control:incoming_notification:end
+2016-02-07 19:48:41.841973: 
+2016-02-07 19:49:55.079369: Location_Control:incoming_notification:start
+2016-02-07 19:49:55.080462: Location_Control:incoming_notification:display_notification
+2016-02-07 19:49:55.081155: 
+2016-02-07 19:49:55.082507: Notification received
+2016-02-07 19:49:55.083811: -------------------------------------------------------------------------------
+2016-02-07 19:49:55.085495: Notification from: monitor_app
+2016-02-07 19:49:55.086619: Received at      : 2016-02-07 19:49:55.080389 (UTC/UTC)
+2016-02-07 19:49:55.087667: Notification     : You have entered an area know for high STI Infection Rates;
+                          : remember: Safe sex is good sex
+2016-02-07 19:49:55.089748: Action           : openmap(12,34)
+2016-02-07 19:49:55.091130: 
+2016-02-07 19:49:55.092941: Location_Control:incoming_notification:persist_notification
+2016-02-07 19:49:55.334497: Location_Control:incoming_notification:issue_bluetooth
+2016-02-07 19:49:55.335503: Location_Control:incoming_notification:end
+2016-02-07 19:49:55.335999: 
+2016-02-07 19:56:03.993511: Location_Control:incoming_notification:start
+2016-02-07 19:56:03.994965: Location_Control:incoming_notification:display_notification
+2016-02-07 19:56:03.995601: 
+2016-02-07 19:56:03.997211: Notification received
+2016-02-07 19:56:03.998420: -------------------------------------------------------------------------------
+2016-02-07 19:56:03.999791: Notification from: monitor_app
+2016-02-07 19:56:04.001006: Received at      : 2016-02-07 19:56:03.994938 (UTC/UTC)
+2016-02-07 19:56:04.002088: Notification     : You have entered an area know for high STI Infection Rates;
+                          : remember: Safe sex is good sex
+2016-02-07 19:56:04.003846: Action           : openmap(12,34)
+2016-02-07 19:56:04.004903: 
+2016-02-07 19:56:04.006270: Location_Control:incoming_notification:persist_notification
+2016-02-07 19:56:04.100660: Location_Control:incoming_notification:issue_bluetooth
+2016-02-07 19:56:04.101700: Location_Control:incoming_notification:end
+2016-02-07 19:56:04.102159: 
+2016-02-07 20:00:42.592116: 
+2016-02-07 20:00:42.596620: ******************************************************************************
+2016-02-07 20:00:42.599918: dasanderDocker02:82 Started
+2016-02-07 20:00:42.601029: ******************************************************************************
+2016-02-07 20:00:42.602333: 
+2016-02-07 20:00:57.014262: Location_Control:incoming_notification:start
+2016-02-07 20:00:57.015929: Location_Control:incoming_notification:display_notification
+2016-02-07 20:00:57.016833: 
+2016-02-07 20:00:57.018616: Notification received
+2016-02-07 20:00:57.019854: -------------------------------------------------------------------------------
+2016-02-07 20:00:57.021392: Notification from: monitor_app
+2016-02-07 20:00:57.022576: Received at      : 2016-02-07 20:00:57.015907 (UTC/UTC)
+2016-02-07 20:00:57.023791: Notification     : You have entered an area know for high STI Infection Rates;
+                          : remember: Safe sex is good sex
+2016-02-07 20:00:57.030004: Action           : openmap(12,34)
+2016-02-07 20:00:57.031221: 
+2016-02-07 20:00:57.032912: Location_Control:incoming_notification:persist_notification
+2016-02-07 20:00:57.111994: Location_Control:incoming_notification:issue_bluetooth
+2016-02-07 20:00:57.113435: Location_Control:incoming_notification:end
+2016-02-07 20:00:57.113947: 
+2016-02-07 20:01:14.101409: Location_Control:incoming_notification:start
+2016-02-07 20:01:14.102839: Location_Control:incoming_notification:display_notification
+2016-02-07 20:01:14.103478: 
+2016-02-07 20:01:14.105200: Notification received
+2016-02-07 20:01:14.106347: -------------------------------------------------------------------------------
+2016-02-07 20:01:14.107917: Notification from: monitor_app
+2016-02-07 20:01:14.109563: Received at      : 2016-02-07 20:01:14.102821 (UTC/UTC)
+2016-02-07 20:01:14.110895: Notification     : You have entered an area know for high STI Infection Rates;
+                          : remember: Safe sex is good sex
+2016-02-07 20:01:14.112834: Action           : openmap(12,34)
+2016-02-07 20:01:14.114107: 
+2016-02-07 20:01:14.115662: Location_Control:incoming_notification:persist_notification
+2016-02-07 20:01:14.688706: Location_Control:incoming_notification:issue_bluetooth
+2016-02-07 20:01:14.689942: Location_Control:incoming_notification:end
+2016-02-07 20:01:14.690745: 
+2016-02-07 20:03:04.413031: Location_Control:incoming_notification:start
+2016-02-07 20:03:04.413852: Location_Control:incoming_notification:display_notification
+2016-02-07 20:03:04.414374: 
+2016-02-07 20:03:04.415553: Notification received
+2016-02-07 20:03:04.416731: -------------------------------------------------------------------------------
+2016-02-07 20:03:04.418333: Notification from: monitor_app
+2016-02-07 20:03:04.419392: Received at      : 2016-02-07 20:03:04.413841 (UTC/UTC)
+2016-02-07 20:03:04.420547: Notification     : You have entered an area know for high STI Infection Rates;
+                          : remember: Safe sex is good sex
+2016-02-07 20:03:04.422245: Action           : openmap(12,34)
+2016-02-07 20:03:04.423381: 
+2016-02-07 20:03:04.424821: Location_Control:incoming_notification:persist_notification
+2016-02-07 20:03:04.481438: Location_Control:incoming_notification:issue_bluetooth
+2016-02-07 20:03:04.482579: Location_Control:incoming_notification:end
+2016-02-07 20:03:04.483117: 
+2016-02-07 20:06:28.640113: 
+2016-02-07 20:06:28.644773: ******************************************************************************
+2016-02-07 20:06:28.646174: dasanderDocker02:82 Started
+2016-02-07 20:06:28.647367: ******************************************************************************
+2016-02-07 20:06:28.649570: 
+2016-02-07 20:06:37.715040: Location_Control:incoming_notification:start
+2016-02-07 20:06:37.716961: Location_Control:incoming_notification:display_notification
+2016-02-07 20:06:37.717871: 
+2016-02-07 20:06:37.720125: Notification received
+2016-02-07 20:06:37.721638: -------------------------------------------------------------------------------
+2016-02-07 20:06:37.723470: Notification from: monitor_app
+2016-02-07 20:06:37.724897: Received at      : 2016-02-07 20:06:37.716932 (UTC/UTC)
+2016-02-07 20:06:37.726455: Notification     : You have entered an area know for high STI Infection Rates;
+                          : remember: Safe sex is good sex
+2016-02-07 20:06:37.728852: Action           : openmap(12,34)
+2016-02-07 20:06:37.730277: 
+2016-02-07 20:06:37.732182: Location_Control:incoming_notification:persist_notification
+2016-02-07 20:06:37.863306: Location_Control:incoming_notification:issue_bluetooth
+2016-02-07 20:06:37.864308: Location_Control:incoming_notification:end
+2016-02-07 20:06:37.864774: 
+2016-02-07 20:07:16.887283: Location_Control:incoming_notification:start
+2016-02-07 20:07:16.888054: Location_Control:incoming_notification:display_notification
+2016-02-07 20:07:16.888623: 
+2016-02-07 20:07:16.889696: Notification received
+2016-02-07 20:07:16.890966: -------------------------------------------------------------------------------
+2016-02-07 20:07:16.893739: Notification from: monitor_app
+2016-02-07 20:07:16.894841: Received at      : 2016-02-07 20:07:16.888043 (UTC/UTC)
+2016-02-07 20:07:16.896019: Notification     : You have entered an area know for high STI Infection Rates;
+                          : remember: Safe sex is good sex
+2016-02-07 20:07:16.897810: Action           : openmap(12,34)
+2016-02-07 20:07:16.898904: 
+2016-02-07 20:07:16.900358: Location_Control:incoming_notification:persist_notification
+2016-02-07 20:07:18.055646: Location_Control:incoming_notification:issue_bluetooth
+2016-02-07 20:07:18.056730: Location_Control:incoming_notification:end
+2016-02-07 20:07:18.057193: 
+2016-02-07 20:10:53.142117: 
+2016-02-07 20:10:53.147034: ******************************************************************************
+2016-02-07 20:10:53.148566: dasanderDocker02:82 Started
+2016-02-07 20:10:53.149750: ******************************************************************************
+2016-02-07 20:10:53.151179: 
+2016-02-07 20:10:55.125775: Location_Control:incoming_notification:start
+2016-02-07 20:10:55.127453: Location_Control:incoming_notification:display_notification
+2016-02-07 20:10:55.128306: 
+2016-02-07 20:10:55.130104: Notification received
+2016-02-07 20:10:55.131342: -------------------------------------------------------------------------------
+2016-02-07 20:10:55.132873: Notification from: monitor_app
+2016-02-07 20:10:55.134091: Received at      : 2016-02-07 20:10:55.127435 (UTC/UTC)
+2016-02-07 20:10:55.135312: Notification     : You have entered an area know for high STI Infection Rates;
+                          : remember: Safe sex is good sex
+2016-02-07 20:10:55.137157: Action           : openmap(12,34)
+2016-02-07 20:10:55.138326: 
+2016-02-07 20:10:55.139880: Location_Control:incoming_notification:persist_notification
+2016-02-07 20:10:55.805945: Location_Control:incoming_notification:issue_bluetooth
+2016-02-07 20:10:55.807243: Location_Control:incoming_notification:end
+2016-02-07 20:10:55.807865: 
+2016-02-07 20:11:54.862128: 
+2016-02-07 20:11:54.868323: ******************************************************************************
+2016-02-07 20:11:54.869928: dasanderDocker02:82 Started
+2016-02-07 20:11:54.871149: ******************************************************************************
+2016-02-07 20:11:54.872901: 
+2016-02-07 20:11:56.285110: Location_Control:incoming_notification:start
+2016-02-07 20:11:56.286656: Location_Control:incoming_notification:display_notification
+2016-02-07 20:11:56.287358: 
+2016-02-07 20:11:56.289093: Notification received
+2016-02-07 20:11:56.290285: -------------------------------------------------------------------------------
+2016-02-07 20:11:56.291652: Notification from: monitor_app
+2016-02-07 20:11:56.292825: Received at      : 2016-02-07 20:11:56.286630 (UTC/UTC)
+2016-02-07 20:11:56.294299: Notification     : You have entered an area know for high STI Infection Rates;
+                          : remember: Safe sex is good sex
+2016-02-07 20:11:56.297287: Action           : openmap(12,34)
+2016-02-07 20:11:56.298812: 
+2016-02-07 20:11:56.300922: Location_Control:incoming_notification:persist_notification
+2016-02-07 20:11:56.454022: Location_Control:incoming_notification:issue_bluetooth
+2016-02-07 20:11:56.455111: Location_Control:incoming_notification:end
+2016-02-07 20:11:56.455634: 
+2016-02-07 20:12:57.809025: 
+2016-02-07 20:12:58.181827: ******************************************************************************
+2016-02-07 20:12:58.188205: dasanderDocker02:82 Started
+2016-02-07 20:12:58.193991: ******************************************************************************
+2016-02-07 20:12:58.200329: 
+2016-02-07 20:13:09.516407: Location_Control:incoming_notification:start
+2016-02-07 20:13:09.527069: Location_Control:incoming_notification:display_notification
+2016-02-07 20:13:09.533137: 
+2016-02-07 20:13:09.540729: Notification received
+2016-02-07 20:13:09.547625: -------------------------------------------------------------------------------
+2016-02-07 20:13:09.554490: Notification from: monitor_app
+2016-02-07 20:13:09.561160: Received at      : 2016-02-07 20:13:09.527051 (UTC/UTC)
+2016-02-07 20:13:09.568046: Notification     : You have entered an area know for high STI Infection Rates;
+                          : remember: Safe sex is good sex
+2016-02-07 20:13:09.575832: Action           : openmap(12,34)
+2016-02-07 20:13:09.582868: 
+2016-02-07 20:13:09.590311: Location_Control:incoming_notification:persist_notification
+2016-02-07 20:13:09.757700: Location_Control:incoming_notification:issue_bluetooth
+2016-02-07 20:13:09.764954: Location_Control:incoming_notification:end
+2016-02-07 20:13:09.771150: 
+2016-02-07 20:16:01.416019: 
+2016-02-07 20:16:01.420463: ******************************************************************************
+2016-02-07 20:16:01.436469: dasanderDocker02:82 Started
+2016-02-07 20:16:01.442991: ******************************************************************************
+2016-02-07 20:16:01.449605: 
+2016-02-07 20:16:02.571147: Location_Control:incoming_notification:start
+2016-02-07 20:16:02.580742: Location_Control:incoming_notification:display_notification
+2016-02-07 20:16:02.587335: 
+2016-02-07 20:16:02.593682: Notification received
+2016-02-07 20:16:02.599861: -------------------------------------------------------------------------------
+2016-02-07 20:16:02.606465: Notification from: monitor_app
+2016-02-07 20:16:02.612908: Received at      : 2016-02-07 20:16:02.580725 (UTC/UTC)
+2016-02-07 20:16:02.619522: Notification     : You have entered an area know for high STI Infection Rates;
+                          : remember: Safe sex is good sex
+2016-02-07 20:16:02.626451: Action           : openmap(12,34)
+2016-02-07 20:16:02.632840: 
+2016-02-07 20:16:02.639460: Location_Control:incoming_notification:persist_notification
+2016-02-07 20:16:03.692508: Location_Control:incoming_notification:issue_bluetooth
+2016-02-07 20:16:03.699590: Location_Control:incoming_notification:end
+2016-02-07 20:16:03.705083: 
+2016-02-07 20:16:05.747218: Location_Control:incoming_notification:start
+2016-02-07 20:16:05.757203: Location_Control:incoming_notification:display_notification
+2016-02-07 20:16:05.762659: 
+2016-02-07 20:16:05.768933: Notification received
+2016-02-07 20:16:05.775077: -------------------------------------------------------------------------------
+2016-02-07 20:16:05.781495: Notification from: monitor_app
+2016-02-07 20:16:05.787279: Received at      : 2016-02-07 20:16:05.757187 (UTC/UTC)
+2016-02-07 20:16:05.793361: Notification     : You have entered an area know for high STI Infection Rates;
+                          : remember: Safe sex is good sex
+2016-02-07 20:16:05.800171: Action           : openmap(12,34)
+2016-02-07 20:16:05.806039: 
+2016-02-07 20:16:05.812291: Location_Control:incoming_notification:persist_notification
+2016-02-07 20:16:06.000351: Location_Control:incoming_notification:issue_bluetooth
+2016-02-07 20:16:06.007553: Location_Control:incoming_notification:end
+2016-02-07 20:16:06.013471: 
+2016-02-07 20:16:43.501870: Location_Control:incoming_notification:start
+2016-02-07 20:16:43.509501: Location_Control:incoming_notification:display_notification
+2016-02-07 20:16:43.515729: 
+2016-02-07 20:16:43.522149: Notification received
+2016-02-07 20:16:43.528575: -------------------------------------------------------------------------------
+2016-02-07 20:16:43.534832: Notification from: monitor_app
+2016-02-07 20:16:43.541182: Received at      : 2016-02-07 20:16:43.509488 (UTC/UTC)
+2016-02-07 20:16:43.547049: Notification     : This is a message senf to the phone!
+2016-02-07 20:16:43.553412: Action           : openmap(12,34)
+2016-02-07 20:16:43.559384: 
+2016-02-07 20:16:43.565703: Location_Control:incoming_notification:persist_notification
+2016-02-07 20:16:44.084002: Location_Control:incoming_notification:issue_bluetooth
+2016-02-07 20:16:44.091808: Location_Control:incoming_notification:end
+2016-02-07 20:16:44.097432: 
+2016-02-07 20:17:11.099099: Location_Control:incoming_notification:start
+2016-02-07 20:17:11.109919: Location_Control:incoming_notification:display_notification
+2016-02-07 20:17:11.115472: 
+2016-02-07 20:17:11.121719: Notification received
+2016-02-07 20:17:11.127453: -------------------------------------------------------------------------------
+2016-02-07 20:17:11.133719: Notification from: monitor_app
+2016-02-07 20:17:11.139583: Received at      : 2016-02-07 20:17:11.109902 (UTC/UTC)
+2016-02-07 20:17:11.145482: Notification     : This is a message senf to the phone!
+2016-02-07 20:17:11.151834: Action           : openmap(12,34)
+2016-02-07 20:17:11.157425: 
+2016-02-07 20:17:11.163641: Location_Control:incoming_notification:persist_notification
+2016-02-07 20:17:12.258482: Location_Control:incoming_notification:issue_bluetooth
+2016-02-07 20:17:12.265839: Location_Control:incoming_notification:end
+2016-02-07 20:17:12.270927: 
+2016-02-07 20:21:05.167870: Location_Control:incoming_notification:start
+2016-02-07 20:21:05.176552: Location_Control:incoming_notification:display_notification
+2016-02-07 20:21:05.184187: 
+2016-02-07 20:21:05.190524: Notification received
+2016-02-07 20:21:05.197892: -------------------------------------------------------------------------------
+2016-02-07 20:21:05.205180: Notification from: monitor_app
+2016-02-07 20:21:05.211571: Received at      : 2016-02-07 20:21:05.176539 (UTC/UTC)
+2016-02-07 20:21:05.217646: Notification     : This is a message senf to the phone!
+2016-02-07 20:21:05.223412: Action           : openmap(12,34)
+2016-02-07 20:21:05.229290: 
+2016-02-07 20:21:05.235711: Location_Control:incoming_notification:persist_notification
+2016-02-07 20:21:05.448598: Location_Control:incoming_notification:issue_bluetooth
+2016-02-07 20:21:05.456432: Location_Control:incoming_notification:end
+2016-02-07 20:21:05.461926: 
+2016-02-07 20:21:49.116566: Location_Control:incoming_notification:start
+2016-02-07 20:21:49.125151: Location_Control:incoming_notification:display_notification
+2016-02-07 20:21:49.131415: 
+2016-02-07 20:21:49.137695: Notification received
+2016-02-07 20:21:49.143608: -------------------------------------------------------------------------------
+2016-02-07 20:21:49.149816: Notification from: monitor_app
+2016-02-07 20:21:49.155464: Received at      : 2016-02-07 20:21:49.125140 (UTC/UTC)
+2016-02-07 20:21:49.161165: Notification     : The quick brown fox jumped over the lazy dog.
+2016-02-07 20:21:49.166917: Action           : openmap(12,34)
+2016-02-07 20:21:49.172476: 
+2016-02-07 20:21:49.179029: Location_Control:incoming_notification:persist_notification
+2016-02-07 20:21:49.383934: Location_Control:incoming_notification:issue_bluetooth
+2016-02-07 20:21:49.391396: Location_Control:incoming_notification:end
+2016-02-07 20:21:49.396836: 
+2016-02-07 20:24:41.032778: 
+2016-02-07 20:24:41.038126: ******************************************************************************
+2016-02-07 20:24:41.054108: dasanderDocker02:82 Started
+2016-02-07 20:24:41.059736: ******************************************************************************
+2016-02-07 20:24:41.066288: 
+2016-02-07 20:24:59.869073: Location_Control:incoming_notification:start
+2016-02-07 20:24:59.879816: Location_Control:incoming_notification:display_notification
+2016-02-07 20:24:59.886950: 
+2016-02-07 20:24:59.895114: Notification received
+2016-02-07 20:24:59.901323: -------------------------------------------------------------------------------
+2016-02-07 20:24:59.908649: Notification from: monitor_app
+2016-02-07 20:24:59.915298: Received at      : 2016-02-07 20:24:59.879795 (UTC/UTC)
+2016-02-07 20:24:59.922009: Notification     : Mary had a little lamb, its fleece was white as snow.
+2016-02-07 20:24:59.928901: Action           : openmap(12,34)
+2016-02-07 20:24:59.936067: 
+2016-02-07 20:24:59.943344: Location_Control:incoming_notification:persist_notification
+2016-02-07 20:25:01.078866: Location_Control:incoming_notification:issue_bluetooth
+2016-02-07 20:25:01.087961: Location_Control:incoming_notification:end
+2016-02-07 20:25:01.093761: 
+2016-02-07 20:27:53.585329: Location_Control:incoming_notification:start
+2016-02-07 20:27:53.595119: Location_Control:incoming_notification:display_notification
+2016-02-07 20:27:53.600252: 
+2016-02-07 20:27:53.605055: Notification received
+2016-02-07 20:27:53.610737: -------------------------------------------------------------------------------
+2016-02-07 20:27:53.616561: Notification from: monitor_app
+2016-02-07 20:27:53.622318: Received at      : 2016-02-07 20:27:53.595080 (UTC/UTC)
+2016-02-07 20:27:53.627917: Notification     : Mary had a little lamb, its fleece was white as snow.
+2016-02-07 20:27:53.632891: Action           : openmap(12,34)
+2016-02-07 20:27:53.637423: 
+2016-02-07 20:27:53.642639: Location_Control:incoming_notification:persist_notification
+2016-02-07 20:27:53.712003: Location_Control:incoming_notification:issue_bluetooth
+2016-02-07 20:27:53.716820: Location_Control:incoming_notification:end
+2016-02-07 20:27:53.721081: 
+2016-02-07 20:28:43.864598: Location_Control:incoming_notification:start
+2016-02-07 20:28:43.869447: Location_Control:incoming_notification:display_notification
+2016-02-07 20:28:43.873615: 
+2016-02-07 20:28:43.878209: Notification received
+2016-02-07 20:28:43.882855: -------------------------------------------------------------------------------
+2016-02-07 20:28:43.887807: Notification from: monitor_app
+2016-02-07 20:28:43.892378: Received at      : 2016-02-07 20:28:43.869435 (UTC/UTC)
+2016-02-07 20:28:43.897175: Notification     : Mary had a little lamb, its fleece was white as snow.
+2016-02-07 20:28:43.901790: Action           : openmap(12,34)
+2016-02-07 20:28:43.906346: 
+2016-02-07 20:28:43.911305: Location_Control:incoming_notification:persist_notification
+2016-02-07 20:28:45.531554: Location_Control:incoming_notification:issue_bluetooth
+2016-02-07 20:28:45.536786: Location_Control:incoming_notification:end
+2016-02-07 20:28:45.540682: 
+2016-02-07 20:51:26.450174: Location_Control:incoming_notification:start
+2016-02-07 20:51:26.453203: Location_Control:incoming_notification:display_notification
+2016-02-07 20:51:26.455432: 
+2016-02-07 20:51:26.458269: Notification received
+2016-02-07 20:51:26.461719: -------------------------------------------------------------------------------
+2016-02-07 20:51:26.464904: Notification from: monitor_app
+2016-02-07 20:51:26.467773: Received at      : 2016-02-07 20:51:26.453191 (UTC/UTC)
+2016-02-07 20:51:26.470741: Notification     : Mary had a little lamb, its fleece was white as snow.
+2016-02-07 20:51:26.473718: Action           : openmap(12,34)
+2016-02-07 20:51:26.476921: 
+2016-02-07 20:51:26.480132: Location_Control:incoming_notification:persist_notification
+2016-02-07 20:51:26.559978: Location_Control:incoming_notification:issue_bluetooth
+2016-02-07 20:51:26.563340: Location_Control:incoming_notification:end
+2016-02-07 20:51:26.565699: 
+2016-02-07 20:51:47.180194: Location_Control:incoming_notification:start
+2016-02-07 20:51:47.185225: Location_Control:incoming_notification:display_notification
+2016-02-07 20:51:47.188081: 
+2016-02-07 20:51:47.193538: Notification received
+2016-02-07 20:51:47.196713: -------------------------------------------------------------------------------
+2016-02-07 20:51:47.199821: Notification from: monitor_app
+2016-02-07 20:51:47.202727: Received at      : 2016-02-07 20:51:47.185209 (UTC/UTC)
+2016-02-07 20:51:47.205640: Notification     : Hello David.
+2016-02-07 20:51:47.208562: Action           : openmap(12,34)
+2016-02-07 20:51:47.211797: 
+2016-02-07 20:51:47.215024: Location_Control:incoming_notification:persist_notification
+2016-02-07 20:51:47.360594: Location_Control:incoming_notification:issue_bluetooth
+2016-02-07 20:51:47.364329: Location_Control:incoming_notification:end
+2016-02-07 20:51:47.367683: 
+2016-02-07 20:57:13.425586: Location_Control:incoming_notification:start
+2016-02-07 20:57:13.435118: Location_Control:incoming_notification:display_notification
+2016-02-07 20:57:13.440567: 
+2016-02-07 20:57:13.446174: Notification received
+2016-02-07 20:57:13.452014: -------------------------------------------------------------------------------
+2016-02-07 20:57:13.460928: Notification from: monitor_app
+2016-02-07 20:57:13.470592: Received at      : 2016-02-07 20:57:13.435105 (UTC/UTC)
+2016-02-07 20:57:13.476212: Notification     : Hello David.
+2016-02-07 20:57:13.482029: Action           : openmap(12,34)
+2016-02-07 20:57:13.487685: 
+2016-02-07 20:57:13.493741: Location_Control:incoming_notification:persist_notification
+2016-02-07 20:57:13.620463: Location_Control:incoming_notification:issue_bluetooth
+2016-02-07 20:57:13.627245: Location_Control:incoming_notification:end
+2016-02-07 20:57:13.632282: 
+2016-02-07 20:58:11.237885: 
+2016-02-07 20:58:11.242332: ******************************************************************************
+2016-02-07 20:58:11.256001: dasanderDocker02:82 Started
+2016-02-07 20:58:11.262153: ******************************************************************************
+2016-02-07 20:58:11.268320: 
+2016-02-07 20:58:18.703229: Location_Control:incoming_notification:start
+2016-02-07 20:58:18.713027: Location_Control:incoming_notification:display_notification
+2016-02-07 20:58:18.718819: 
+2016-02-07 20:58:18.725010: Notification received
+2016-02-07 20:58:18.730882: -------------------------------------------------------------------------------
+2016-02-07 20:58:18.737013: Notification from: monitor_app
+2016-02-07 20:58:18.742832: Received at      : 2016-02-07 20:58:18.713014 (UTC/UTC)
+2016-02-07 20:58:18.748601: Notification     : Hello David.
+2016-02-07 20:58:18.754609: Action           : openmap(12,34)
+2016-02-07 20:58:18.760436: 
+2016-02-07 20:58:18.766467: Location_Control:incoming_notification:persist_notification
+2016-02-07 20:58:18.936153: Location_Control:incoming_notification:issue_bluetooth
+2016-02-07 20:58:18.943164: Location_Control:incoming_notification:end
+2016-02-07 20:58:18.948492: 
+2016-02-07 21:03:44.166499: 
+2016-02-07 21:03:44.172561: ******************************************************************************
+2016-02-07 21:03:44.174791: dasanderDocker02:82 Started
+2016-02-07 21:03:44.176953: ******************************************************************************
+2016-02-07 21:03:44.179478: 
+2016-02-07 21:04:08.772558: Location_Control:incoming_notification:start
+2016-02-07 21:04:08.774236: Location_Control:incoming_notification:display_notification
+2016-02-07 21:04:08.775021: 
+2016-02-07 21:04:08.777490: Notification received
+2016-02-07 21:04:08.779221: -------------------------------------------------------------------------------
+2016-02-07 21:04:08.781406: Notification from: monitor_app
+2016-02-07 21:04:08.783160: Received at      : 2016-02-07 21:04:08.774215 (UTC/UTC)
+2016-02-07 21:04:08.784994: Notification     : Hello David J. Sanders, this is a notification.
+2016-02-07 21:04:08.786804: Action           : openmap(12,34)
+2016-02-07 21:04:08.788513: 
+2016-02-07 21:04:08.790618: Location_Control:incoming_notification:persist_notification
+2016-02-07 21:04:08.893397: Location_Control:incoming_notification:issue_bluetooth
+2016-02-07 21:04:08.894477: Location_Control:incoming_notification:end
+2016-02-07 21:04:08.895002: 
+2016-02-07 21:06:27.295913: 
+2016-02-07 21:06:27.300102: ******************************************************************************
+2016-02-07 21:06:27.313885: dasanderDocker02:82 Started
+2016-02-07 21:06:27.320115: ******************************************************************************
+2016-02-07 21:06:27.326336: 
+2016-02-07 21:06:37.561040: Location_Control:incoming_notification:start
+2016-02-07 21:06:37.576893: Location_Control:incoming_notification:display_notification
+2016-02-07 21:06:37.583473: 
+2016-02-07 21:06:37.593007: Notification received
+2016-02-07 21:06:37.601014: -------------------------------------------------------------------------------
+2016-02-07 21:06:37.608579: Notification from: monitor_app
+2016-02-07 21:06:37.615389: Received at      : 2016-02-07 21:06:37.576877 (UTC/UTC)
+2016-02-07 21:06:37.622047: Notification     : Hello David J. Sanders, this is a notification.
+2016-02-07 21:06:37.627860: Action           : openmap(12,34)
+2016-02-07 21:06:37.633858: 
+2016-02-07 21:06:37.639947: Location_Control:incoming_notification:persist_notification
+2016-02-07 21:06:38.320975: Location_Control:incoming_notification:issue_bluetooth
+2016-02-07 21:06:38.329572: Location_Control:incoming_notification:end
+2016-02-07 21:06:38.335236: 
+2016-02-07 21:32:31.760469: 
+2016-02-07 21:32:31.764749: ******************************************************************************
+2016-02-07 21:32:31.777931: dasanderDocker02:82 Started
+2016-02-07 21:32:31.785784: ******************************************************************************
+2016-02-07 21:32:31.792568: 
+2016-02-07 21:34:29.985438: 
+2016-02-07 21:34:29.989796: ******************************************************************************
+2016-02-07 21:34:29.991148: dasanderDocker02:82 Started
+2016-02-07 21:34:29.992167: ******************************************************************************
+2016-02-07 21:34:29.993469: 
+2016-02-07 21:35:30.383978: 
+2016-02-07 21:35:30.388970: ******************************************************************************
+2016-02-07 21:35:30.390379: dasanderDocker02:82 Started
+2016-02-07 21:35:30.391414: ******************************************************************************
+2016-02-07 21:35:30.392719: 
+2016-02-07 21:37:20.323818: 
+2016-02-07 21:37:20.328205: ******************************************************************************
+2016-02-07 21:37:20.329616: dasanderDocker02:82 Started
+2016-02-07 21:37:20.330633: ******************************************************************************
+2016-02-07 21:37:20.331906: 

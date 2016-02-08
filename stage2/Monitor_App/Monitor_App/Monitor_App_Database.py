@@ -74,7 +74,9 @@ class Monitor_App_Database(object):
         try:
             self.__open_db()
             self.__db_exec('select * from config')
-            self.__db_exec('delete from config')
+            self.__db_exec('delete from config '+\
+                           'where key in (?,?,?, ?)',
+                           ('recipient','location-service','service', 'state'))
             self.__db_conn.commit()
         except sqlite3.OperationalError as oe:
             print(str(oe))
