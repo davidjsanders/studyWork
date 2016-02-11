@@ -13,7 +13,7 @@
 # -----------------------------------------------------------------------------
 # 24 Jan 2016  | D Sanders      | First version.
 # 05 Feb 2016  | D Sanders      | Update logging, multi-use, superclass & docker
-#
+# 10 Feb 2016  | D Sanders      | Update logging to central logger
 #
 # Use the base Python image which includes Python3, Flask, Flask_Restful, and
 # 
@@ -23,6 +23,8 @@ FROM dsanderscan/pythonbase
 RUN mkdir /Notification_Service
 RUN mkdir /Notification_Service/Notification_Service
 RUN mkdir /Notification_Service/Notification_Service_Boundary
+RUN mkdir /Notification_Service/Notification_Service_Config_Boundary
+RUN mkdir /Notification_Service/Notification_Service_Config_Control
 #
 # Install additional apps for this module
 #
@@ -52,6 +54,12 @@ COPY Notification_Service_Boundary/Notification_Receive_Boundary.py \
     /Notification_Service/Notification_Service_Boundary/
 COPY Notification_Service_Boundary/Notification_Push_Boundary.py \
     /Notification_Service/Notification_Service_Boundary/
+COPY Notification_Service_Config_Boundary/main.py \
+    /Notification_Service/Notification_Service_Config_Boundary/
+COPY Notification_Service_Config_Boundary/Config_Logger_Boundary.py \
+    /Notification_Service/Notification_Service_Config_Boundary/
+COPY Notification_Service_Config_Control/Config_Logger_Control.py \
+    /Notification_Service/Notification_Service_Config_Control/
 #
 # Set the working directory for the container
 #

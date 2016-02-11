@@ -3,3 +3,5 @@ from flask import Response
 from Notification_Service import app, api
 
 import Notification_Service_Boundary.main
+from Notification_Service_Config_Boundary import main
+
