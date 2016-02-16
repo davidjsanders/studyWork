@@ -20,6 +20,11 @@ docker run -p $loggerPort:$loggerPort --name stage2_logger$loggerPort \
     -e TZ=`date +%Z` -v $PWD/Logger/datavolume:/Logger/datavolume \
     -d dsanders/stage2_logger /bin/bash -c /Logger/startup.sh
 sleep 1
+echo ""
+echo -n "Clear all logs: "
+curl -X DELETE -d '{"key":"1234-5678-9012-3456"}' http://$serverName:$loggerPort/v1_00/log
+echo ""
+sleep 1
 #
 # Bluetooth
 #

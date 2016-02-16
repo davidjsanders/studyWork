@@ -38,6 +38,15 @@ docker run -p $locPort:$locPort --name stage2_location_service$locPort \
     -e TZ=`date +%Z` -v $PWD/Location_Service/datavolume:/Location_Service/datavolume \
     -d dsanders/stage2_location_service /bin/bash -c /Location_Service/startup.sh
 sleep 1
+#
+# Monitor App
+#
+echo -n "Monitor App (port $monitorPort on $serverName): "
+docker run -p $monitorPort:$monitorPort --name stage2_monitor_app$monitorPort \
+    --net=isolated_nw -e portToUse=$monitorPort -e serverName="$serverName" \
+    -e TZ=`date +%Z` -v $PWD/Monitor_App/datavolume:/Monitor_App/datavolume \
+    -d dsanders/stage2_monitor_app /bin/bash -c /Monitor_App/startup.sh
+sleep 1
 echo ""
 echo "Services started."
 echo ""
@@ -46,6 +55,11 @@ sleep 2
 echo "done."
 echo ""
 echo "Configure logging."
+echo ""
+echo -n "Clear all logs: "
+curl -X DELETE -d '{"key":"1234-5678-9012-3456"}' http://$serverName:$loggerPort/v1_00/log
+echo ""
+sleep 1
 echo ""
 export loggerURL="http://"$serverIPName":"$loggerPort"/v1_00/log"
 export payload='{"key":"1234-5678-9012-3456","logger":"'$loggerURL'"}'
@@ -57,6 +71,10 @@ echo ""
 echo -n "Location Service: "
 sleep .5
 curl -X POST -d $payload http://$serverName:$locPort/v1_00/config/logger
+echo ""
+echo -n "Monitor App: "
+sleep .5
+curl -X POST -d $payload http://$serverName:$monitorPort/v1_00/config/logger
 echo ""
 echo ""
 echo "Logging configured."
