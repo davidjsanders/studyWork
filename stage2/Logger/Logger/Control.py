@@ -37,6 +37,9 @@ class Control(object):
         self.__log_file = 'datavolume/'+server_name+'-'+str(port_number)+\
             '-log.txt'
 
+    def delete_log(self):
+        return self.__logger_db.clear_log()
+
     def get_log(self, sender=None):
         if sender == None:
             return self.__logger_db.get_log()

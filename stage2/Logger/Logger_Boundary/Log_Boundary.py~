@@ -17,6 +17,6 @@ class Log_Boundary(Resource):
 
 
 class Log_Boundary_By_Sender(Resource):
-    def get(self, sender='unknown'):
+    def get(self, sender=None):
         return log_control.get_log_by_sender(sender)
 

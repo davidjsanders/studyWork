@@ -26,6 +26,63 @@ class Log_Control(object):
                                               response=success)
 
 
+    def delete_log(self, json_string=None):
+        success = 'success'
+        status = '200'
+        message = 'Logging Service, clear log.'
+        data = None
+
+        try:
+            if json_string == None\
+            or json_string == '':
+                raise KeyError('No JSON Data passed')
+
+            json_data = json.loads(json_string)
+
+            key = json_data['key']
+            if not key == '1234-5678-9012-3456':
+                raise ValueError('Logging control key incorrect.')
+
+            data = {'deleted':self.__controller.delete_log()}
+        except KeyError as ke:
+            success = 'error'
+            status = '400'
+            message = 'Badly formed request! Missing {0}'.format(str(ke))
+            self.__controller.log('INTERNAL',
+                            'unexpected',
+                            message=message,
+                            timestamp=str(datetime.datetime.now())
+            )
+        except ValueError as ve:
+            message = str(ve)
+            status = 403
+            success = 'Error'
+            self.__controller.log('INTERNAL',
+                            'unexpected',
+                            message=message,
+                            timestamp=str(datetime.datetime.now())
+            )
+        except Exception as e:
+            message = repr(e)
+            status = 500
+            success = 'error'
+            self.__controller.log('INTERNAL',
+                            'unexpected',
+                            message=message,
+                            timestamp=str(datetime.datetime.now())
+            )
+            raise
+
+        return_value = self.__controller.do_response(message=message,
+                                                     data=data,
+                                                     status=status,
+                                                     response=success)
+
+        return return_value
+
+
+
+
     def update_log(self, json_string=None):
         success = 'success'
         status = '200'

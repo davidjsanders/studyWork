@@ -126,9 +126,6 @@ class Logger_Database(object):
 
 
     def get_log_by_sender(self, sender=None):
-        if location == None:
-            return None
-
         try:
             self.__open_db()
             self.__db_exec('select * from log '+\

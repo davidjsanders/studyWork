@@ -2,7 +2,7 @@ from flask_restful import Resource, Api, reqparse, abort
 from flask import Response
 from Bluetooth import Pairing_Database
 
-import datetime, time, json, os
+import datetime, time, json, os, requests
 from textwrap import wrap
 
 #
@@ -71,10 +71,6 @@ class Control(object):
         if central_logger == None:
             return
         try:
-            sender = self.__server_name + '_' + str(self.__port_number)
-            central_logger = self.get_value('logger')
-            if central_logger not in ('', [], None) and log_message != None:
-                self.db_logger(central_logger, sender, 'normal', log_message)
             payload_data = {
                 "sender":sender,
                 "log-type":"normal",
@@ -95,6 +91,10 @@ class Control(object):
         now = datetime.datetime.now()
         f = None
         try:
+            sender = self.__server_name + '_' + str(self.__port_number)
+            central_logger = self.get_value('logger')
+            if central_logger not in ('', [], None) and log_message != None:
+                self.db_logger(central_logger, sender, 'normal', log_message)
             f = open(self.__log_file, 'a')
             if log_message == None or log_message == '':
                 f.write("{0:>28s}\n".format(str(now)+': '))

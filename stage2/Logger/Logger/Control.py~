@@ -2,13 +2,12 @@ from flask_restful import Resource, Api, reqparse, abort
 from flask import Response
 from Logger.Logger_Database import Logger_Database
 
-import datetime, time, json, os, redis
+import datetime, time, json, os
 from textwrap import wrap
 
 class Control(object):
     __log_file = None
     __logger_db = None
-    __redis = {'host':'localhost', 'port':6379, 'db':0}
 
     def __init__(self):
         # Get hostname and port from OS. If the environment variables have not

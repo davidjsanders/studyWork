@@ -15,6 +15,11 @@ class Log_Boundary(Resource):
         raw_data = reqparse.request.get_data().decode('utf-8')
         return log_control.update_log(json_string=raw_data)
 
+    def delete(self):
+        raw_data = None
+        raw_data = reqparse.request.get_data().decode('utf-8')
+        return log_control.delete_log(json_string=raw_data)
+
 
 class Log_Boundary_By_Sender(Resource):
     def get(self, sender=None):

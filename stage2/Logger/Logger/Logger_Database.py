@@ -165,9 +165,6 @@ class Logger_Database(object):
     def clear_log(
         self
     ):
-        if location == None:
-            return False
-
         returned = False
         try:
             self.__open_db()
