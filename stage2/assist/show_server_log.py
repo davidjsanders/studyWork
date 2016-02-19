@@ -105,7 +105,7 @@ try:
 
     r = requests.get(log_service)
     if r.status_code not in (200, 201):
-        raise ValueError(str(r.status_code)+': '+r.text)
+        raise requests.exceptions.HTTPError(str(r.status_code)+': '+r.text)
 
     json_data = r.json()
     if json_data['data']['log'] == None:
@@ -125,8 +125,13 @@ try:
         print_log(log=json_data['data']['log'])
     else:
         print_single_log(log=json_data['data']['log'])
+
+    print()
+    print('\033[1m\033[4m{0:<132s}\033[0m'.format('End of logs'))
 except requests.exceptions.ConnectionError as rce:
-    print('Unable to connect to {0}'.format(args.logger))
+    print('Unable to connect to {0}. Error {1}'.format(args.logger, rce))
+except requests.exceptions.HTTPError as he:
+    print('Unable to process logs. Error {0}'.format(he))
 except ValueError as ve:
     print(str(ve))
 except KeyError as ke:
@@ -134,7 +139,5 @@ except KeyError as ke:
 except Exception as e:
     print(repr(e))
 finally:
-    print()
-    print('\033[1m\033[4m{0:<132s}\033[0m'.format('End of logs'))
     print()
 

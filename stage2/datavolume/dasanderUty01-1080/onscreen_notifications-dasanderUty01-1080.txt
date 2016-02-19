@@ -1,0 +1,30 @@
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-19 12:28:32.272497 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-19 12:29:59.147755 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-19 12:31:26.004711 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-19 12:31:51.083150 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-19 12:33:57.538531 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+

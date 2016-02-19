@@ -95,7 +95,8 @@ try:
     if server_info != None:
         log_service += server_info
 
-    print('\033[2J\033[1;1H\033[1m\033[4m{0:<132s}\033[0m'.format('Logs'))
+    print('\033[2J\033[1;1H')
+    print('\033[1m\033[4m{0:<132s}\033[0m'.format('Logs'))
     print('Service: {0}'\
           .format(server_info[1:] if server_info != None else '** All **'))
     print('Logger : {0}'.format(args.logger))
@@ -124,8 +125,13 @@ try:
         print_log(log=json_data['data']['log'])
     else:
         print_single_log(log=json_data['data']['log'])
+
+    print()
+    print('\033[1m\033[4m{0:<132s}\033[0m'.format('End of logs'))
 except requests.exceptions.ConnectionError as rce:
-    print('Unable to connect to {0}'.format(args.logger))
+    print('Unable to connect to {0}. Error {1}'.format(args.logger, rce))
+except requests.exceptions.HTTPError as he:
+    print('Unable to process logs. Error {0}'.format(he))
 except ValueError as ve:
     print(str(ve))
 except KeyError as ke:
@@ -133,7 +139,5 @@ except KeyError as ke:
 except Exception as e:
     print(repr(e))
 finally:
-    print()
-    print('\033[1m\033[4m{0:<132s}\033[0m'.format('End of logs'))
     print()
 
