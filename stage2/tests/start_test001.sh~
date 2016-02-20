@@ -282,12 +282,12 @@ do_delete "${data}" \
            $test_id
 
 # Stop Jing's phone
-((test_id++))
-stop_phone Jing
+#((test_id++))
+#stop_phone Jing
 
 # Setup Bob's phone
-((test_id++))
-stop_phone Bob
+#((test_id++))
+#stop_phone Bob
 
 echo ""
 echo "${bold}Tests completed at "$(date)".                                          ${normal}"
