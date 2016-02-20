@@ -28,7 +28,7 @@ def do_location_check(control_object=None):
 
         control_object.log('Location requested.')
         request_response = requests.get(
-            recipient+'/location',
+            recipient.replace('/notification','/location'),
             data=json.dumps(payload_data)
         )
         if request_response.status_code in (200,201):

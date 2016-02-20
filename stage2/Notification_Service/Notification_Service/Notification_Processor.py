@@ -45,9 +45,9 @@ def redis_processor(control_object=None):
                   .format(payload_data))
 
                 control_object.log('Redis: issuing http request to {0}'\
-                  .format(recipient+'/notification'))
+                  .format(recipient))
                 request_response = requests.post(
-                    recipient+'/notification',
+                    recipient,
                     data=json.dumps(payload_data),
                     timeout=30
                 )

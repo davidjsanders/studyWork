@@ -69,10 +69,10 @@ class Config_Hotspot_Control(object):
             hotspots = self.__controller.get_hotspot(location)
             if hotspots != None and hotspots != []:
                 data={"hotspot":location,
-                  "upperX":hotspots[0][1],
-                  "upperY":hotspots[0][2],
-                  "lowerX":hotspots[0][3],
-                  "lowerY":hotspots[0][4],
+                  "upper-x":hotspots[0][1],
+                  "upper-y":hotspots[0][2],
+                  "lower-x":hotspots[0][3],
+                  "lower-y":hotspots[0][4],
                   "description":hotspots[0][5]
                  }
             else:

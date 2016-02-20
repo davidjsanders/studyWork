@@ -48,7 +48,7 @@ class App_Launched_Control(object):
                     "action":"none"
                 }
                 request_response = requests.post(
-                    service+'/notification',
+                    service,
                     data=json.dumps(payload_data)
                 )
                 self.__controller.log(

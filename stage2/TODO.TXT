@@ -1,0 +1,3 @@
+Fix Monitor App - Add new data item location-url and store it.
+Fix Monitor App - Log shows issue happens after line 56 in Location_Processor.py
+Fix Monitor App - Add more detail IF location request returns nothing

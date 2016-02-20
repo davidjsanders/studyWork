@@ -67,7 +67,7 @@ class App_Launched_Control(object):
                     self.__controller.log(log_string)
         except requests.exceptions.ConnectionError as rce:
             message = 'Unable to connect to the notification service '+\
-                      'to issue notification!'
+                      'to issue notification for {0}!'.format(application)
             status = 400
             success = 'warning'
             data = {"recipient":recipient or None, "service":service or None}

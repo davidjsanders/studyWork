@@ -28,7 +28,7 @@ def do_location_check(control_object=None):
 
         control_object.log('Location requested.')
         request_response = requests.get(
-            recipient+'/location',
+            recipient.replace('/notification','/location'),
             data=json.dumps(payload_data)
         )
         if request_response.status_code in (200,201):
@@ -45,7 +45,6 @@ def do_location_check(control_object=None):
                     location_service+'/check',
                     data=json.dumps(payload_data)
                 )
-                print('before IF')
                 if check_response.status_code in (200,201)\
                 and check_response.json()['response'] == 'success':
                     xy = (x, y)
@@ -91,7 +90,6 @@ def do_location_check(control_object=None):
                             timeStamp=str(time.ctime(timeNow))
                         )
                 else:
-                    print('?? How here?')
                     control_object.log(
                         'Location check returned {0}: {1}'\
                            .format(check_response.status_code,

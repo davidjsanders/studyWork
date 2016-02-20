@@ -328,3 +328,73 @@
 2016-02-19 12:33:49.144180: Location Service dasanderUty01:104 Started
 2016-02-19 12:33:49.151322: ******************************************************************************
 2016-02-19 12:33:49.161288: 
+2016-02-19 17:27:21.890909: 
+2016-02-19 17:27:21.891745: ******************************************************************************
+2016-02-19 17:27:21.908842: Location Service dasanderUty01:104 Started
+2016-02-19 17:27:21.918008: ******************************************************************************
+2016-02-19 17:27:21.925880: 
+2016-02-19 17:38:38.404958: 
+2016-02-19 17:38:38.405413: ******************************************************************************
+2016-02-19 17:38:38.422660: Location Service dasanderUty01:104 Started
+2016-02-19 17:38:38.429060: ******************************************************************************
+2016-02-19 17:38:38.435532: 
+2016-02-19 17:41:46.349299: 
+2016-02-19 17:41:46.349769: ******************************************************************************
+2016-02-19 17:41:46.364291: Location Service dasanderUty01:104 Started
+2016-02-19 17:41:46.371268: ******************************************************************************
+2016-02-19 17:41:46.378038: 
+2016-02-19 18:47:13.046951: 
+2016-02-19 18:47:13.047412: ******************************************************************************
+2016-02-19 18:47:13.065037: Location Service dasanderUty01:104 Started
+2016-02-19 18:47:13.072245: ******************************************************************************
+2016-02-19 18:47:13.079610: 
+2016-02-19 18:49:52.392866: 
+2016-02-19 18:49:52.393323: ******************************************************************************
+2016-02-19 18:49:52.408754: Location Service dasanderUty01:104 Started
+2016-02-19 18:49:52.415835: ******************************************************************************
+2016-02-19 18:49:52.425519: 
+2016-02-19 20:16:48.240520: Request to get hotspot "downtown"
+2016-02-19 20:16:48.250669: Config hotspot error: Hotspot downtown does not exist.
+2016-02-19 20:19:05.254980: Hotspot config error: A key is missing: 'upper-x'
+2016-02-19 20:19:32.399804: Hotspot config error: A key is missing: 'description'
+2016-02-19 20:20:44.585425: Request to add hotspot "downtown" at (50,50)-(200,200) as "The downtown
+                          : hotspot"
+2016-02-19 20:20:44.601387: Added hotspot "downtown" at (200,200)-(50,50) as "The downtown hotspot"
+2016-02-19 20:20:45.124315: Request to get hotspot "downtown"
+2016-02-19 20:20:45.130984: Location Service returned the following information for hotspot downtown:
+                          : {'upperX': 200.0, 'hotspot': 'downtown', 'upperY': 200.0, 'description': 'The
+                          : downtown hotspot', 'lowerX': 50.0, 'lowerY': 50.0}
+2016-02-19 20:22:25.494028: Location service request to show all hotspots
+2016-02-19 20:22:25.501380: Location Service returned the following hotspots: [('downtown', 200.0, 200.0,
+                          : 50.0, 50.0, 'The downtown hotspot')]
+2016-02-19 20:23:34.454469: 
+2016-02-19 20:23:34.454909: ******************************************************************************
+2016-02-19 20:23:34.470792: Location Service dasanderUty01:104 Started
+2016-02-19 20:23:34.477832: ******************************************************************************
+2016-02-19 20:23:34.487310: 
+2016-02-19 20:24:15.102110: Request to add hotspot "downtown" at (50,50)-(200,200) as "The downtown
+                          : hotspot"
+2016-02-19 20:24:15.116797: Added hotspot "downtown" at (200,200)-(50,50) as "The downtown hotspot"
+2016-02-19 20:24:15.639679: Request to get hotspot "downtown"
+2016-02-19 20:24:15.647358: Location Service returned the following information for hotspot downtown:
+                          : {'upper-x': 200.0, 'hotspot': 'downtown', 'lower-y': 50.0, 'upper-y': 200.0,
+                          : 'description': 'The downtown hotspot', 'lower-x': 50.0}
+2016-02-19 20:27:08.557926: Request to add hotspot "downtown" at (50,50)-(200,200) as "The downtown
+                          : hotspot"
+2016-02-19 20:27:08.572761: Added hotspot "downtown" at (200,200)-(50,50) as "The downtown hotspot"
+2016-02-19 20:27:09.095357: Request to get hotspot "downtown"
+2016-02-19 20:27:09.112100: Location Service returned the following information for hotspot downtown:
+                          : {'upper-x': 200.0, 'hotspot': 'downtown', 'lower-y': 50.0, 'upper-y': 200.0,
+                          : 'description': 'The downtown hotspot', 'lower-x': 50.0}
+2016-02-19 20:35:00.086025: 
+2016-02-19 20:35:00.086475: ******************************************************************************
+2016-02-19 20:35:00.102279: Location Service dasanderUty01:104 Started
+2016-02-19 20:35:00.112139: ******************************************************************************
+2016-02-19 20:35:00.119440: 
+2016-02-19 20:35:23.298688: Request to add hotspot "downtown" at (50,50)-(200,200) as "The downtown
+                          : hotspot"
+2016-02-19 20:35:23.313497: Added hotspot "downtown" at (200,200)-(50,50) as "The downtown hotspot"
+2016-02-19 20:35:23.838014: Request to get hotspot "downtown"
+2016-02-19 20:35:23.847989: Location Service returned the following information for hotspot downtown:
+                          : {'lower-y': 50.0, 'lower-x': 50.0, 'upper-y': 200.0, 'description': 'The
+                          : downtown hotspot', 'upper-x': 200.0, 'hotspot': 'downtown'}
