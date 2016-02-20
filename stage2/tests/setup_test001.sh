@@ -61,6 +61,11 @@ function start_phone {
 #    echo ""
 }
 
+echo ""
+echo "Validating Docker network exists (attempting to create it)"
+echo
+docker network create --driver bridge isolated_nw
+echo
 echo
 echo "${bold}Starting services.                                                             ${normal}"
 echo ""
