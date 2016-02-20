@@ -1,0 +1,41 @@
+
+Screen display starting.
+------------------------
+
+
+
+Notification received
+-------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 16:17:46.710963 (UTC/UTC)
+Notification     : The application grindr has been launched. Remember: Safe sex
+is good sex!
+Action           : none
+
+
+
+Notification received
+-------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 16:17:47.749187 (UTC/UTC)
+Notification     : Can you pick me up at Starbucks, please? Its the one at
+Clair and Gordon. Thanks John.
+Action           : open
+
+
+
+
+Notification received
+-------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 16:18:12.832924 (UTC/UTC)
+Notification     : You have entered an area known for high rates of STI
+infections and drug use. Remember: Safe sex is good sex!
+Action           : openMap(100.0, 100.0)
+
+
+
+
+Screen display terminated.
+--------------------------
+Closed by server; phone has probably been shutdown.

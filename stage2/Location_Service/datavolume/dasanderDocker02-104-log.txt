@@ -1,0 +1,18 @@
+2016-02-20 16:17:01.457117: 
+2016-02-20 16:17:01.458152: ******************************************************************************
+2016-02-20 16:17:01.459578: Location Service dasanderDocker02:104 Started
+2016-02-20 16:17:01.460376: ******************************************************************************
+2016-02-20 16:17:01.461591: 
+2016-02-20 16:17:42.366690: Location service request to check (0.0,0.0)
+2016-02-20 16:17:42.384826: Location (0.0,0.0) not in any hot spot.
+2016-02-20 16:17:50.345828: Request to add hotspot "downtown" at (50,50)-(200,200) as "The downtown
+                          : hotspot"
+2016-02-20 16:17:50.569402: Added hotspot "downtown" at (200,200)-(50,50) as "The downtown hotspot"
+2016-02-20 16:17:51.097424: Request to get hotspot "downtown"
+2016-02-20 16:17:51.122101: Location Service returned the following information for hotspot downtown:
+                          : {'description': 'The downtown hotspot', 'lower-y': 50.0, 'hotspot': 'downtown',
+                          : 'upper-y': 200.0, 'upper-x': 200.0, 'lower-x': 50.0}
+2016-02-20 16:18:12.477719: Location service request to check (100.0,100.0)
+2016-02-20 16:18:12.484024: Location (100.0,100.0) found in 1 hot spot.
+2016-02-20 16:18:42.908706: Location service request to check (100.0,100.0)
+2016-02-20 16:18:42.914390: Location (100.0,100.0) found in 1 hot spot.

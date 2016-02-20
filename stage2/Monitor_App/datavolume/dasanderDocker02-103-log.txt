@@ -1,0 +1,73 @@
+2016-02-20 16:17:12.234851: Monitor App dasanderDocker02:103 Started at 2016-02-20 16:17:12.234812
+2016-02-20 16:17:39.951008: State change request. Change to on
+2016-02-20 16:17:41.069844: State change request. Changed to on
+2016-02-20 16:17:42.275800: Location requested from http://10.4.0.4:1080/v1_00/location.
+2016-02-20 16:17:42.345186: Location request returned 200:{"data": {"x": 0.0, "y": 0.0}, "message":
+                          : "Location.", "response": "success", "status": "200"}
+2016-02-20 16:17:42.351589: Location request returned (0.0,0.0).
+2016-02-20 16:17:42.357939: Location Request checking if location (0.0,0.0) is in hotspot. Checking with
+                          : http://10.4.0.4:104/v1_00/check
+2016-02-20 16:17:42.392272: Hotspot check returned 200:{"data": {"hotspot": false, "y": 0.0, "x": 0.0},
+                          : "response": "warning", "status": "200", "message": "No hotspots found."}
+2016-02-20 16:17:42.378932: Request to monitor status of app grindr (Grindr is an app for men seeking men).
+2016-02-20 16:17:42.398205: Location check returned 200: {'message': 'No hotspots found.', 'status': '200',
+                          : 'data': {'hotspot': False, 'x': 0.0, 'y': 0.0}, 'response': 'warning'}
+2016-02-20 16:17:42.833149: Monitor App application set. grindr (Grindr is an app for men seeking men) is
+                          : now being monitored.
+2016-02-20 16:17:43.357613: Check monitoring status of app grindr.
+2016-02-20 16:17:43.374129: Monitor App application check. grindr (Grindr is an app for men seeking men) is
+                          : being monitored.
+2016-02-20 16:17:43.901544: Request to monitor status of app manhunt (ManHunt is a location based app for
+                          : men seeking men).
+2016-02-20 16:17:45.548848: Monitor App application set. manhunt (ManHunt is a location based app for men
+                          : seeking men) is now being monitored.
+2016-02-20 16:17:46.087705: Monitor App detected an application launch.
+2016-02-20 16:17:46.093773: Application facebook not on watch list. Ignored.
+2016-02-20 16:17:46.624147: Monitor App detected an application launch.
+2016-02-20 16:17:46.630304: Application grindr is on watch list.
+2016-02-20 16:17:46.677634: Notification raised with data:
+2016-02-20 16:17:46.685291: 201: {'message': 'Notification received. Thank you.', 'status': '201', 'data':
+                          : {'action': 'none', 'notification': 'The application grindr has been launched.
+                          : Remember: Safe sex is good sex!'}, 'response': 'success'}
+2016-02-20 16:17:47.213289: Monitor App detected an application launch.
+2016-02-20 16:17:47.220741: Application mailclient not on watch list. Ignored.
+2016-02-20 16:17:48.580947: Request to stop monitoring app grindr.
+2016-02-20 16:17:48.722204: Monitor App application set. grindr is no longer being monitored.
+2016-02-20 16:17:49.252402: Check monitoring status of app grindr.
+2016-02-20 16:17:49.274464: Application grindr not found.
+2016-02-20 16:17:49.809297: Monitor App detected an application launch.
+2016-02-20 16:17:49.819350: Application grindr not on watch list. Ignored.
+2016-02-20 16:18:12.428786: Location requested from http://10.4.0.4:1080/v1_00/location.
+2016-02-20 16:18:12.457116: Location request returned 200:{"data": {"x": 100.0, "y": 100.0}, "message":
+                          : "Location.", "response": "success", "status": "200"}
+2016-02-20 16:18:12.462470: Location request returned (100.0,100.0).
+2016-02-20 16:18:12.469863: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://10.4.0.4:104/v1_00/check
+2016-02-20 16:18:12.491223: Hotspot check returned 200:{"data": {"number": 1, "hotspots": [{"lower-y":
+                          : 50.0, "upper-y": 200.0, "description": "The downtown hotspot", "upper-x":
+                          : 200.0, "location": "downtown", "lower-x": 50.0}], "hotspot": true, "y": 100.0,
+                          : "x": 100.0}, "response": "success", "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 16:18:12.496984: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 16:18:12.749252: Location (100.0,100.0) has not been previously encountered.
+2016-02-20 16:18:12.757482: Location (100.0, 100.0)  hotspot notification being raised
+2016-02-20 16:18:12.809849: Location notification request returned: 201: {'message': 'Notification
+                          : received. Thank you.', 'status': '201', 'data': {'action': 'openMap(100.0,
+                          : 100.0)', 'notification': 'You have entered an area known for high rates of STI
+                          : infections and drug use. Remember: Safe sex is good sex!'}, 'response':
+                          : 'success'}
+2016-02-20 16:18:42.847682: Location requested from http://10.4.0.4:1080/v1_00/location.
+2016-02-20 16:18:42.884362: Location request returned 200:{"data": {"x": 100.0, "y": 100.0}, "message":
+                          : "Location.", "response": "success", "status": "200"}
+2016-02-20 16:18:42.891505: Location request returned (100.0,100.0).
+2016-02-20 16:18:42.898307: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://10.4.0.4:104/v1_00/check
+2016-02-20 16:18:42.921483: Hotspot check returned 200:{"data": {"number": 1, "hotspots": [{"lower-y":
+                          : 50.0, "upper-y": 200.0, "description": "The downtown hotspot", "upper-x":
+                          : 200.0, "location": "downtown", "lower-x": 50.0}], "hotspot": true, "y": 100.0,
+                          : "x": 100.0}, "response": "success", "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 16:18:42.928425: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 16:18:42.941220: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 16:18:53.310596: State change request. Change to off
+2016-02-20 16:18:53.525733: State change request. Changed to off
