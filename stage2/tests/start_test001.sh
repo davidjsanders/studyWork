@@ -85,9 +85,21 @@ function do_get {
 }
 
 function start_phone {
-    echo "Add "${1}" as a phone screen viewer. NOTE; output will not be available UNTIL phone shuts down"
-    PhoneScreen/Phone_Screen.py --server $serverIP --port 16379 > "${1}".txt &
+    echo "Add "${1}" as a phone screen viewer. NOTE; output will not be available UNTIL end of test."
+    docker run --name "stage2_phone_screen_"${1} \
+        -t dsanderscan/mscit_stage2_phone_screen \
+        /bin/bash \
+        -c "/Phone_Screen/Phone_Screen.py --server "$serverIP" --port 16379" > "${1}.txt" &
+#    PhoneScreen/Phone_Screen.py --server $serverIP --port 16379 > "${1}".txt &
     echo ""
+}
+
+function stop_phone {
+    echo -n "Stopping phone "${1}": "
+    docker stop "stage2_phone_screen_"${1}
+    echo -n "Removing name: "
+    docker rm -f "stage2_phone_screen_"${1}
+    echo
 }
 
 test_id=0
@@ -268,6 +280,14 @@ do_delete "${data}" \
            "/v1_00/config/monitor" \
            "Connect to Monitor App. " \
            $test_id
+
+# Stop Jing's phone
+((test_id++))
+stop_phone Jing
+
+# Setup Bob's phone
+((test_id++))
+stop_phone Bob
 
 echo ""
 echo "${bold}Tests completed at "$(date)".                                          ${normal}"
