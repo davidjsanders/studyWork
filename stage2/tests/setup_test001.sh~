@@ -36,13 +36,13 @@ function run_docker_phone {
     echo -n "Starting phone (port $phonePort on $serverName): "
     docker run -p 16379:6379 -p $phonePort:$phonePort \
         --name stage2_phone$phonePort \
-        --net=isolated_nw \
         -e portToUse=$phonePort \
         -e serverName="$serverName" \
         -e TZ=`date +%Z` \
         -v $PWD/datavolume:/Phone/datavolume \
         -d dsanderscan/mscit_stage2_phone /bin/bash -c /Phone/startup.sh \
     sleep 1
+#        --net=isolated_nw \
 }
 echo " "
 echo "Setting up variables"
@@ -53,7 +53,7 @@ echo " "
 echo "Starting services."
 echo ""
 run_docker $loggerPort "logger" "Logger"
-sleep 1
+sleep 2
 echo -n "Clear existing logs: "
 curl -X DELETE \
   -d '{"key":"1234-5678-9012-3456"}' http://$serverName:$loggerPort/v1_00/log
