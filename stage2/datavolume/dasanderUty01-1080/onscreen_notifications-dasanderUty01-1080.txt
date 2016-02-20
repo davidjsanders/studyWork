@@ -1708,3 +1708,615 @@ Received at      : 2016-02-19 20:35:21.078537 (EST/EST)
 Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
 Action           : open
 
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 08:39:24.138164 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 08:39:28.557290 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 08:42:18.011290 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 08:42:22.338975 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 08:46:20.215913 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 08:46:24.605193 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 08:46:56.951288 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 08:47:00.360725 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 08:47:01.406581 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 08:50:38.656858 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 08:50:42.083843 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 08:50:43.130728 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 08:52:34.253295 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 08:52:37.684801 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 08:52:38.736510 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 08:54:31.995857 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 08:54:35.411735 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 08:54:36.457484 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 08:55:56.626252 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 08:56:00.038081 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 08:56:01.090699 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 08:59:45.709564 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 08:59:49.144894 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 08:59:50.188171 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:02:19.670309 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 09:02:23.113634 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:02:24.154968 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:04:13.504345 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:04:17.763445 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:06:45.965197 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 09:06:49.403648 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:06:50.444517 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:09:54.861860 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:13:51.822068 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 09:13:55.261580 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:13:56.303760 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:16:04.009999 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 09:16:07.439041 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:16:08.484541 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:22:00.263691 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 09:22:03.688804 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:22:04.738759 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:25:14.847067 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 09:25:18.286645 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:25:19.327665 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:27:37.369921 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 09:27:40.809810 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:27:41.865026 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 09:27:45.820127 (EST/EST)
+Notification     : You have entered an area known for high rates of STI infections and drug use. Remember: Safe sex is good sex!
+Action           : openMap(100.0, 100.0)
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 09:32:49.222515 (EST/EST)
+Notification     : You have entered an area known for high rates of STI infections and drug use. Remember: Safe sex is good sex!
+Action           : openMap(100.0, 100.0)
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:33:54.471691 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 09:33:57.890072 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:33:58.928920 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:36:24.228874 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 09:36:27.645114 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:36:28.689310 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 09:38:14.697077 (EST/EST)
+Notification     : You have entered an area known for high rates of STI infections and drug use. Remember: Safe sex is good sex!
+Action           : openMap(100.0, 100.0)
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:39:39.331737 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 09:39:42.799997 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:39:43.845345 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 09:39:56.568290 (EST/EST)
+Notification     : You have entered an area known for high rates of STI infections and drug use. Remember: Safe sex is good sex!
+Action           : openMap(100.0, 100.0)
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:43:13.788539 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 09:43:17.246771 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:43:18.294951 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 09:43:31.893121 (EST/EST)
+Notification     : You have entered an area known for high rates of STI infections and drug use. Remember: Safe sex is good sex!
+Action           : openMap(100.0, 100.0)
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:45:58.391948 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 09:46:01.787099 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:46:02.829848 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:47:39.759626 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 09:47:43.221762 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:47:44.276469 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 09:48:15.859716 (EST/EST)
+Notification     : You have entered an area known for high rates of STI infections and drug use. Remember: Safe sex is good sex!
+Action           : openMap(100.0, 100.0)
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:54:28.241412 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 09:54:31.682328 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:54:32.726568 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 09:54:43.771514 (EST/EST)
+Notification     : You have entered an area known for high rates of STI infections and drug use. Remember: Safe sex is good sex!
+Action           : openMap(100.0, 100.0)
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:59:22.489893 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 09:59:25.954498 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 09:59:27.004780 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 09:59:33.231055 (EST/EST)
+Notification     : You have entered an area known for high rates of STI infections and drug use. Remember: Safe sex is good sex!
+Action           : openMap(100.0, 100.0)
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 10:03:22.107091 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 10:03:25.544441 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 10:03:26.595453 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 10:03:58.206358 (EST/EST)
+Notification     : You have entered an area known for high rates of STI infections and drug use. Remember: Safe sex is good sex!
+Action           : openMap(100.0, 100.0)
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 10:09:30.474983 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 10:09:33.920257 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 10:09:34.960408 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 10:12:59.290642 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 10:13:02.773939 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 10:13:03.817359 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 10:13:14.069067 (EST/EST)
+Notification     : You have entered an area known for high rates of STI infections and drug use. Remember: Safe sex is good sex!
+Action           : openMap(100.0, 100.0)
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 10:15:30.595849 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 10:15:34.018309 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 10:15:35.075237 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 10:18:05.106352 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 10:18:08.527371 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 10:18:09.576482 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 10:18:14.702718 (EST/EST)
+Notification     : You have entered an area known for high rates of STI infections and drug use. Remember: Safe sex is good sex!
+Action           : openMap(100.0, 100.0)
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 10:20:20.094101 (EST/EST)
+Notification     : This is a text message received via SMS
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 10:20:23.578332 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: SMS
+Received at      : 2016-02-20 10:20:24.615269 (EST/EST)
+Notification     : Can you pick me up at Starbucks, please? Its the one at Clair and Gordon. Thanks John.
+Action           : open
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-20 10:20:47.443971 (EST/EST)
+Notification     : You have entered an area known for high rates of STI infections and drug use. Remember: Safe sex is good sex!
+Action           : openMap(100.0, 100.0)
+

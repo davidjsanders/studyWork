@@ -69,6 +69,7 @@ class Config_Monitor_App_Control(object):
             service = json_data['notification-service']
             recipient = json_data['recipient']
             location_service = json_data['location-service']
+            location_provider = json_data['location-provider']
 
             if not key == '1234-5678-9012-3456':
                 raise ValueError('Pairing key incorrect.')
@@ -83,6 +84,7 @@ class Config_Monitor_App_Control(object):
                        "key":"1234-5678-9012-3456",
                        "notification-service":service,
                        "location-service":location_service,
+                       "location-provider":location_provider,
                        "recipient":recipient
                       }
             request_response = requests.post(monitor_app_url,
@@ -119,7 +121,7 @@ class Config_Monitor_App_Control(object):
         except KeyError as ke:
             success = 'error'
             status = '400'
-            message = 'Badly formed request!'
+            message = 'Badly formed request! Error: {0}'.format(ke)
         except ValueError as ve:
             success = 'error'
             status = '400'

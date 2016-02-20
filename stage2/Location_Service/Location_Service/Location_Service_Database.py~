@@ -117,7 +117,7 @@ class Location_Service_Database(object):
 
         try:
             self.__open_db()
-            self.__db_exec('select * from hotspots')
+            self.__db_exec('delete from hotspots')
         except sqlite3.OperationalError as oe:
             print(str(oe))
             self.__db_cursor.execute(

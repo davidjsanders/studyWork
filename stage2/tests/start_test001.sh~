@@ -10,7 +10,8 @@ export monitorPort=103
 export locPort=104
 export phonePort=1080
 export serverName="dasanderUty01"
-export serverIPName="http://192.168.0.210"
+export serverIP="192.168.0.210"
+export serverIPName="http://"$serverIP
 export phoneKey='"key":"NS1234-5678-9012-3456"'
 export genKey='"key":"1234-5678-9012-3456"'
 export test_pause="0.5"
@@ -21,6 +22,7 @@ export normal=$(tput sgr0)
 function pre_test {
     echo ""
     echo "${underline}Test $1: ${2}${normal}"
+    echo $(date)
 }
 
 function post_test {
@@ -82,13 +84,30 @@ function do_get {
     post_test
 }
 
+function start_phone {
+    echo "Add "${1}" as a phone screen viewer"
+    echo "Server: "$serverIP", Port: 16379"
+    PhoneScreen/Phone_Screen.py --server $serverIP --port 16379 > "${1}".txt &
+    echo ""
+}
+
+test_id=0
+
 echo $(tput clear)
 echo 
 echo "${bold}Starting tests at "$(date)"                                          ${normal}"
 echo ""
 
+# Setup Jing to be able to see the phone
+((test_id++))
+start_phone Jing
+
+# Setup Bob to be able to see the phone
+((test_id++))
+start_phone Bob
+
 # Send an SMS Message to the phone
-test_id=1
+((test_id++))
 export data='{'$phoneKey', "sender":"SMS", "message":"This is a text message received via SMS", "action":"open"}'
 do_post "${data}" \
          $phonePort \
@@ -102,7 +121,8 @@ export monitor_app='"monitor-app":"'$serverIPName':'$monitorPort'/v1_00"'
 export service='"notification-service":"'$serverIPName':'$notesvcPort'/v1_00/notification"'
 export recipient='"recipient":"'$serverIPName':'$phonePort'/v1_00/notification"'
 export location='"location-service":"'$serverIPName':'$locPort'/v1_00/check"'
-export data='{'$genKey', '$monitor_app', '$service', '$recipient', '$location'}'
+export provider='"location-provider":"'$serverIPName':'$phonePort'/v1_00/location"'
+export data='{'$genKey', '$monitor_app', '$service', '$recipient', '$location', '$provider'}'
 do_post "${data}" \
         $phonePort \
         "/v1_00/config/monitor" \
@@ -225,6 +245,30 @@ do_post "${data}" \
         "/v1_00/config/location" \
         "Set the phone current location to 100,100 (Notifications WILL be raised)" \
         $test_id
+
+# Pause for 1 minute
+echo "The phone will detect the location at the next timer check (every 30 seconds)"
+echo "So sleep for 1 minute before setting the location out of a hotspot"
+sleep 60
+
+echo ""
+# Set the phone current location to 1000,100
+((test_id++))
+export data='{'$genKey', "x":1000, "y":100}'
+do_post "${data}" \
+        $phonePort \
+        "/v1_00/config/location" \
+        "Set the phone current location to 1000,100 (Notifications WILL NOT be raised)" \
+        $test_id
+
+# Disconnect the Monitor App
+((test_id++))
+export data='{'$genKey'}'
+do_delete "${data}" \
+           $phonePort \
+           "/v1_00/config/monitor" \
+           "Connect to Monitor App. " \
+           $test_id
 
 echo ""
 echo "${bold}Tests completed at "$(date)".                                          ${normal}"

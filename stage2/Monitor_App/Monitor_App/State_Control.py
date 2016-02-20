@@ -61,15 +61,22 @@ class State_Control(object):
             state_set = self.__controller.set_state(state)
             self.__controller.log('{0} Changed to {1}'.format(message, state))
             if state.upper() == 'ON':
+                # Extract values from JSON data
                 recipient = json_data['recipient']
                 service = json_data['notification-service']
                 location_service = json_data['location-service']
+                location_provider = json_data['location-provider']
+
+                # Store values
                 recipient_set = \
                     self.__controller.set_value('recipient',recipient)
                 service_set = self.__controller.set_value('service',service)
                 location_service_set = \
                     self.__controller.set_value('location-service',
                                                 location_service)
+                location_provider = \
+                    self.__controller.set_value('location-provider',
+                                                location_provider)
             else:
                 recipient_set = self.__controller.clear_value('recipient')
                 service_set = self.__controller.clear_value('service')

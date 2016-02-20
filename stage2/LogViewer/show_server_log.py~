@@ -105,7 +105,7 @@ try:
 
     r = requests.get(log_service)
     if r.status_code not in (200, 201):
-        raise ValueError(str(r.status_code)+': '+r.text)
+        raise requests.exceptions.HTTPError(str(r.status_code)+': '+r.text)
 
     json_data = r.json()
     if json_data['data']['log'] == None:

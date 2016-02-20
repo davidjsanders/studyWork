@@ -18,7 +18,7 @@ class State_Control(object):
         message = 'Monitor App state.'
         data = None
 
-        self.__controller.log('{0} Status requested')
+        self.__controller.log('{0} Status requested'.format(message))
         state_set = self.__controller.get_state()
         recipient_set = self.__controller.get_value('recipient')
         service_set = self.__controller.get_value('service')

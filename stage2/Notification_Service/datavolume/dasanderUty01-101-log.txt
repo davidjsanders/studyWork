@@ -1868,3 +1868,1020 @@
 2016-02-19 20:35:20.147469: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
 2016-02-19 20:35:20.153893: Redis: *** STOP HANDLING WITH SUCCESS ***
 2016-02-19 20:35:20.160475: 
+2016-02-20 08:39:10.672209: 
+2016-02-20 08:39:10.672925: ******************************************************************************
+2016-02-20 08:39:10.688009: dasanderUty01:101 Started
+2016-02-20 08:39:10.694784: ******************************************************************************
+2016-02-20 08:39:10.701580: 
+2016-02-20 08:46:11.481623: 
+2016-02-20 08:46:11.482079: ******************************************************************************
+2016-02-20 08:46:11.496690: dasanderUty01:101 Started
+2016-02-20 08:46:11.503123: ******************************************************************************
+2016-02-20 08:46:11.509591: 
+2016-02-20 08:47:00.286230: Notification being received.
+2016-02-20 08:47:00.296226: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 08:47:00.302899: Notification is The application grindr has been launched. Remember: Safe sex is
+                          : good sex! with action "none"
+2016-02-20 08:47:00.311361: 
+2016-02-20 08:47:00.310894: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---The
+                          : application grindr has been launched. Remember: Safe sex is good sex!---none---
+                          : 2016-02-20 08:47:00.309662(EST/EST)
+2016-02-20 08:47:00.312405: Redis: *** START HANDLING ***
+2016-02-20 08:47:00.322821: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'none', '2016-02-20
+                          : 08:47:00.309662(EST/EST)']
+2016-02-20 08:47:00.333997: Redis: Payload {'key': 'NS1234-5678-9012-3456', 'sender': 'Monitor_App',
+                          : 'message': 'The application grindr has been launched. Remember: Safe sex is
+                          : good sex!', 'action': 'none'}
+2016-02-20 08:47:00.343225: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 08:47:00.465266: Redis: http request response 201
+2016-02-20 08:47:00.471728: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 08:47:00.478485: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 08:47:00.485136: 
+2016-02-20 08:50:30.371965: 
+2016-02-20 08:50:30.372426: ******************************************************************************
+2016-02-20 08:50:30.389417: dasanderUty01:101 Started
+2016-02-20 08:50:30.396001: ******************************************************************************
+2016-02-20 08:50:30.402846: 
+2016-02-20 08:50:42.007262: Notification being received.
+2016-02-20 08:50:42.016915: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 08:50:42.023963: Notification is The application grindr has been launched. Remember: Safe sex is
+                          : good sex! with action "none"
+2016-02-20 08:50:42.032688: 
+2016-02-20 08:50:42.032327: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---The
+                          : application grindr has been launched. Remember: Safe sex is good sex!---none---
+                          : 2016-02-20 08:50:42.031082(EST/EST)
+2016-02-20 08:50:42.033675: Redis: *** START HANDLING ***
+2016-02-20 08:50:42.050626: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'none', '2016-02-20
+                          : 08:50:42.031082(EST/EST)']
+2016-02-20 08:50:42.059119: Redis: Payload {'message': 'The application grindr has been launched. Remember:
+                          : Safe sex is good sex!', 'sender': 'Monitor_App', 'action': 'none', 'key':
+                          : 'NS1234-5678-9012-3456'}
+2016-02-20 08:50:42.066613: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 08:50:42.186125: Redis: http request response 201
+2016-02-20 08:50:42.193121: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 08:50:42.200088: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 08:50:42.206768: 
+2016-02-20 08:52:11.390227: 
+2016-02-20 08:52:11.390686: ******************************************************************************
+2016-02-20 08:52:11.406391: dasanderUty01:101 Started
+2016-02-20 08:52:11.413321: ******************************************************************************
+2016-02-20 08:52:11.419963: 
+2016-02-20 08:52:37.613835: Notification being received.
+2016-02-20 08:52:37.623650: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 08:52:37.630135: Notification is The application grindr has been launched. Remember: Safe sex is
+                          : good sex! with action "none"
+2016-02-20 08:52:37.638421: 
+2016-02-20 08:52:37.639176: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---The
+                          : application grindr has been launched. Remember: Safe sex is good sex!---none---
+                          : 2016-02-20 08:52:37.636896(EST/EST)
+2016-02-20 08:52:37.639427: Redis: *** START HANDLING ***
+2016-02-20 08:52:37.651301: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'none', '2016-02-20
+                          : 08:52:37.636896(EST/EST)']
+2016-02-20 08:52:37.659121: Redis: Payload {'message': 'The application grindr has been launched. Remember:
+                          : Safe sex is good sex!', 'sender': 'Monitor_App', 'action': 'none', 'key':
+                          : 'NS1234-5678-9012-3456'}
+2016-02-20 08:52:37.666481: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 08:52:37.787657: Redis: http request response 201
+2016-02-20 08:52:37.794004: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 08:52:37.800422: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 08:52:37.807274: 
+2016-02-20 08:54:23.651142: 
+2016-02-20 08:54:23.651608: ******************************************************************************
+2016-02-20 08:54:23.667172: dasanderUty01:101 Started
+2016-02-20 08:54:23.674273: ******************************************************************************
+2016-02-20 08:54:23.680980: 
+2016-02-20 08:54:35.330606: Notification being received.
+2016-02-20 08:54:35.342858: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 08:54:35.352505: Notification is The application grindr has been launched. Remember: Safe sex is
+                          : good sex! with action "none"
+2016-02-20 08:54:35.361966: 
+2016-02-20 08:54:35.363278: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---The
+                          : application grindr has been launched. Remember: Safe sex is good sex!---none---
+                          : 2016-02-20 08:54:35.360385(EST/EST)
+2016-02-20 08:54:35.363078: Redis: *** START HANDLING ***
+2016-02-20 08:54:35.373591: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'none', '2016-02-20
+                          : 08:54:35.360385(EST/EST)']
+2016-02-20 08:54:35.380738: Redis: Payload {'sender': 'Monitor_App', 'message': 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'action': 'none', 'key':
+                          : 'NS1234-5678-9012-3456'}
+2016-02-20 08:54:35.388741: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 08:54:35.514868: Redis: http request response 201
+2016-02-20 08:54:35.521774: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 08:54:35.528991: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 08:54:35.535219: 
+2016-02-20 08:55:59.970548: Notification being received.
+2016-02-20 08:55:59.979923: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 08:55:59.986806: Notification is The application grindr has been launched. Remember: Safe sex is
+                          : good sex! with action "none"
+2016-02-20 08:55:59.995088: 
+2016-02-20 08:55:59.995618: Redis: *** START HANDLING ***
+2016-02-20 08:55:59.994701: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---The
+                          : application grindr has been launched. Remember: Safe sex is good sex!---none---
+                          : 2016-02-20 08:55:59.993622(EST/EST)
+2016-02-20 08:56:00.002486: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'none', '2016-02-20
+                          : 08:55:59.993622(EST/EST)']
+2016-02-20 08:56:00.011434: Redis: Payload {'sender': 'Monitor_App', 'message': 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'action': 'none', 'key':
+                          : 'NS1234-5678-9012-3456'}
+2016-02-20 08:56:00.019845: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 08:56:00.141412: Redis: http request response 201
+2016-02-20 08:56:00.148210: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 08:56:00.154846: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 08:56:00.161226: 
+2016-02-20 08:59:35.017360: 
+2016-02-20 08:59:35.017824: ******************************************************************************
+2016-02-20 08:59:35.033752: dasanderUty01:101 Started
+2016-02-20 08:59:35.041728: ******************************************************************************
+2016-02-20 08:59:35.048349: 
+2016-02-20 08:59:49.067751: Notification being received.
+2016-02-20 08:59:49.076403: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 08:59:49.082966: Notification is The application grindr has been launched. Remember: Safe sex is
+                          : good sex! with action "none"
+2016-02-20 08:59:49.091746: 
+2016-02-20 08:59:49.091258: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---The
+                          : application grindr has been launched. Remember: Safe sex is good sex!---none---
+                          : 2016-02-20 08:59:49.090136(EST/EST)
+2016-02-20 08:59:49.092737: Redis: *** START HANDLING ***
+2016-02-20 08:59:49.106971: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'none', '2016-02-20
+                          : 08:59:49.090136(EST/EST)']
+2016-02-20 08:59:49.115420: Redis: Payload {'message': 'The application grindr has been launched. Remember:
+                          : Safe sex is good sex!', 'action': 'none', 'key': 'NS1234-5678-9012-3456',
+                          : 'sender': 'Monitor_App'}
+2016-02-20 08:59:49.123338: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 08:59:49.248418: Redis: http request response 201
+2016-02-20 08:59:49.255341: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 08:59:49.261844: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 08:59:49.268646: 
+2016-02-20 09:02:07.101362: 
+2016-02-20 09:02:07.101824: ******************************************************************************
+2016-02-20 09:02:07.117451: dasanderUty01:101 Started
+2016-02-20 09:02:07.124019: ******************************************************************************
+2016-02-20 09:02:07.131079: 
+2016-02-20 09:02:23.024991: Notification being received.
+2016-02-20 09:02:23.044204: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:02:23.050810: Notification is The application grindr has been launched. Remember: Safe sex is
+                          : good sex! with action "none"
+2016-02-20 09:02:23.058888: 
+2016-02-20 09:02:23.058503: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---The
+                          : application grindr has been launched. Remember: Safe sex is good sex!---none---
+                          : 2016-02-20 09:02:23.057369(EST/EST)
+2016-02-20 09:02:23.059885: Redis: *** START HANDLING ***
+2016-02-20 09:02:23.073873: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'none', '2016-02-20
+                          : 09:02:23.057369(EST/EST)']
+2016-02-20 09:02:23.083940: Redis: Payload {'key': 'NS1234-5678-9012-3456', 'action': 'none', 'message':
+                          : 'The application grindr has been launched. Remember: Safe sex is good sex!',
+                          : 'sender': 'Monitor_App'}
+2016-02-20 09:02:23.094798: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:02:23.218160: Redis: http request response 201
+2016-02-20 09:02:23.224873: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:02:23.231335: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 09:02:23.237957: 
+2016-02-20 09:04:04.089871: 
+2016-02-20 09:04:04.090331: ******************************************************************************
+2016-02-20 09:04:04.106088: dasanderUty01:101 Started
+2016-02-20 09:04:04.114079: ******************************************************************************
+2016-02-20 09:04:04.121180: 
+2016-02-20 09:05:43.629614: 
+2016-02-20 09:05:43.630069: ******************************************************************************
+2016-02-20 09:05:43.645225: dasanderUty01:101 Started
+2016-02-20 09:05:43.652077: ******************************************************************************
+2016-02-20 09:05:43.661279: 
+2016-02-20 09:06:35.994034: 
+2016-02-20 09:06:35.994500: ******************************************************************************
+2016-02-20 09:06:36.008964: dasanderUty01:101 Started
+2016-02-20 09:06:36.015822: ******************************************************************************
+2016-02-20 09:06:36.022672: 
+2016-02-20 09:06:49.325728: Notification being received.
+2016-02-20 09:06:49.335416: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:06:49.341990: Notification is The application grindr has been launched. Remember: Safe sex is
+                          : good sex! with action "none"
+2016-02-20 09:06:49.350689: 
+2016-02-20 09:06:49.351241: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---The
+                          : application grindr has been launched. Remember: Safe sex is good sex!---none---
+                          : 2016-02-20 09:06:49.349088(EST/EST)
+2016-02-20 09:06:49.351896: Redis: *** START HANDLING ***
+2016-02-20 09:06:49.362204: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'none', '2016-02-20
+                          : 09:06:49.349088(EST/EST)']
+2016-02-20 09:06:49.372556: Redis: Payload {'action': 'none', 'sender': 'Monitor_App', 'key':
+                          : 'NS1234-5678-9012-3456', 'message': 'The application grindr has been launched.
+                          : Remember: Safe sex is good sex!'}
+2016-02-20 09:06:49.380866: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:06:49.507027: Redis: http request response 201
+2016-02-20 09:06:49.513788: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:06:49.521721: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 09:06:49.528690: 
+2016-02-20 09:09:45.118121: 
+2016-02-20 09:09:45.118582: ******************************************************************************
+2016-02-20 09:09:45.135732: dasanderUty01:101 Started
+2016-02-20 09:09:45.141906: ******************************************************************************
+2016-02-20 09:09:45.148637: 
+2016-02-20 09:11:57.428802: 
+2016-02-20 09:11:57.429242: ******************************************************************************
+2016-02-20 09:11:57.445281: dasanderUty01:101 Started
+2016-02-20 09:11:57.452909: ******************************************************************************
+2016-02-20 09:11:57.461020: 
+2016-02-20 09:13:41.567780: 
+2016-02-20 09:13:41.568243: ******************************************************************************
+2016-02-20 09:13:41.583604: dasanderUty01:101 Started
+2016-02-20 09:13:41.590671: ******************************************************************************
+2016-02-20 09:13:41.597631: 
+2016-02-20 09:13:55.184085: Notification being received.
+2016-02-20 09:13:55.193825: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:13:55.200791: Notification is The application grindr has been launched. Remember: Safe sex is
+                          : good sex! with action "none"
+2016-02-20 09:13:55.209562: 
+2016-02-20 09:13:55.209171: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---The
+                          : application grindr has been launched. Remember: Safe sex is good sex!---none---
+                          : 2016-02-20 09:13:55.207907(EST/EST)
+2016-02-20 09:13:55.210470: Redis: *** START HANDLING ***
+2016-02-20 09:13:55.221911: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'none', '2016-02-20
+                          : 09:13:55.207907(EST/EST)']
+2016-02-20 09:13:55.230666: Redis: Payload {'key': 'NS1234-5678-9012-3456', 'message': 'The application
+                          : grindr has been launched. Remember: Safe sex is good sex!', 'action': 'none',
+                          : 'sender': 'Monitor_App'}
+2016-02-20 09:13:55.238424: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:13:55.366551: Redis: http request response 201
+2016-02-20 09:13:55.373120: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:13:55.380208: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 09:13:55.387276: 
+2016-02-20 09:15:53.467252: 
+2016-02-20 09:15:53.467727: ******************************************************************************
+2016-02-20 09:15:53.484011: dasanderUty01:101 Started
+2016-02-20 09:15:53.490734: ******************************************************************************
+2016-02-20 09:15:53.497621: 
+2016-02-20 09:16:07.351661: Notification being received.
+2016-02-20 09:16:07.361300: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:16:07.368372: Notification is The application grindr has been launched. Remember: Safe sex is
+                          : good sex! with action "none"
+2016-02-20 09:16:07.376319: 
+2016-02-20 09:16:07.379207: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---The
+                          : application grindr has been launched. Remember: Safe sex is good sex!---none---
+                          : 2016-02-20 09:16:07.374725(EST/EST)
+2016-02-20 09:16:07.377389: Redis: *** START HANDLING ***
+2016-02-20 09:16:07.397552: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'none', '2016-02-20
+                          : 09:16:07.374725(EST/EST)']
+2016-02-20 09:16:07.406165: Redis: Payload {'sender': 'Monitor_App', 'action': 'none', 'key':
+                          : 'NS1234-5678-9012-3456', 'message': 'The application grindr has been launched.
+                          : Remember: Safe sex is good sex!'}
+2016-02-20 09:16:07.414234: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:16:07.546222: Redis: http request response 201
+2016-02-20 09:16:07.552693: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:16:07.560010: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 09:16:07.567316: 
+2016-02-20 09:21:52.327796: 
+2016-02-20 09:21:52.328370: ******************************************************************************
+2016-02-20 09:21:52.344199: dasanderUty01:101 Started
+2016-02-20 09:21:52.354123: ******************************************************************************
+2016-02-20 09:21:52.361125: 
+2016-02-20 09:22:03.610553: Notification being received.
+2016-02-20 09:22:03.620025: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:22:03.627313: Notification is The application grindr has been launched. Remember: Safe sex is
+                          : good sex! with action "none"
+2016-02-20 09:22:03.636369: 
+2016-02-20 09:22:03.635577: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---The
+                          : application grindr has been launched. Remember: Safe sex is good sex!---none---
+                          : 2016-02-20 09:22:03.634205(EST/EST)
+2016-02-20 09:22:03.637351: Redis: *** START HANDLING ***
+2016-02-20 09:22:03.647987: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'none', '2016-02-20
+                          : 09:22:03.634205(EST/EST)']
+2016-02-20 09:22:03.655797: Redis: Payload {'sender': 'Monitor_App', 'action': 'none', 'message': 'The
+                          : application grindr has been launched. Remember: Safe sex is good sex!', 'key':
+                          : 'NS1234-5678-9012-3456'}
+2016-02-20 09:22:03.663391: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:22:03.795130: Redis: http request response 201
+2016-02-20 09:22:03.801816: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:22:03.809477: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 09:22:03.816344: 
+2016-02-20 09:22:11.217971: Notification being received.
+2016-02-20 09:22:11.228714: Notification from Monitor_App for
+                          : http://192.168.0.210:1080/v1_00/notification/notification
+2016-02-20 09:22:11.235736: Notification is You have entered an area known for high rates of STI infections
+                          : and drug use. Remember: Safe sex is good sex! with action "openMap(100.0,
+                          : 100.0)"
+2016-02-20 09:22:11.244389: 
+2016-02-20 09:22:11.244391: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification/notification
+                          : ---You have entered an area known for high rates of STI infections and drug
+                          : use. Remember: Safe sex is good sex!---openMap(100.0, 100.0)---2016-02-20
+                          : 09:22:11.243281(EST/EST)
+2016-02-20 09:22:11.245047: Redis: *** START HANDLING ***
+2016-02-20 09:22:11.252819: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification/notification', 'You have entered
+                          : an area known for high rates of STI infections and drug use. Remember: Safe sex
+                          : is good sex!', 'openMap(100.0, 100.0)', '2016-02-20 09:22:11.243281(EST/EST)']
+2016-02-20 09:22:11.260961: Redis: Payload {'sender': 'Monitor_App', 'action': 'openMap(100.0, 100.0)',
+                          : 'message': 'You have entered an area known for high rates of STI infections and
+                          : drug use. Remember: Safe sex is good sex!', 'key': 'NS1234-5678-9012-3456'}
+2016-02-20 09:22:11.268740: Redis: issuing http request to
+                          : http://192.168.0.210:1080/v1_00/notification/notification
+2016-02-20 09:22:11.283772: Redis: http request response 404
+2016-02-20 09:22:11.290404: Redis: *** STOP HANDLING WITH ERROR ***
+2016-02-20 09:25:06.616583: 
+2016-02-20 09:25:06.617022: ******************************************************************************
+2016-02-20 09:25:06.632746: dasanderUty01:101 Started
+2016-02-20 09:25:06.639900: ******************************************************************************
+2016-02-20 09:25:06.646786: 
+2016-02-20 09:25:18.209168: Notification being received.
+2016-02-20 09:25:18.219411: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:25:18.226293: Notification is The application grindr has been launched. Remember: Safe sex is
+                          : good sex! with action "none"
+2016-02-20 09:25:18.234777: 
+2016-02-20 09:25:18.234331: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---The
+                          : application grindr has been launched. Remember: Safe sex is good sex!---none---
+                          : 2016-02-20 09:25:18.233076(EST/EST)
+2016-02-20 09:25:18.235838: Redis: *** START HANDLING ***
+2016-02-20 09:25:18.247110: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'none', '2016-02-20
+                          : 09:25:18.233076(EST/EST)']
+2016-02-20 09:25:18.255233: Redis: Payload {'key': 'NS1234-5678-9012-3456', 'message': 'The application
+                          : grindr has been launched. Remember: Safe sex is good sex!', 'sender':
+                          : 'Monitor_App', 'action': 'none'}
+2016-02-20 09:25:18.263681: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:25:18.391339: Redis: http request response 201
+2016-02-20 09:25:18.399753: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:25:18.406332: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 09:25:18.413185: 
+2016-02-20 09:27:26.949906: 
+2016-02-20 09:27:26.950385: ******************************************************************************
+2016-02-20 09:27:26.965720: dasanderUty01:101 Started
+2016-02-20 09:27:26.975112: ******************************************************************************
+2016-02-20 09:27:26.982268: 
+2016-02-20 09:27:40.731470: Notification being received.
+2016-02-20 09:27:40.740566: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:27:40.747644: Notification is The application grindr has been launched. Remember: Safe sex is
+                          : good sex! with action "none"
+2016-02-20 09:27:40.756629: 
+2016-02-20 09:27:40.756126: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---The
+                          : application grindr has been launched. Remember: Safe sex is good sex!---none---
+                          : 2016-02-20 09:27:40.755064(EST/EST)
+2016-02-20 09:27:40.757671: Redis: *** START HANDLING ***
+2016-02-20 09:27:40.769938: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'none', '2016-02-20
+                          : 09:27:40.755064(EST/EST)']
+2016-02-20 09:27:40.781205: Redis: Payload {'sender': 'Monitor_App', 'action': 'none', 'key':
+                          : 'NS1234-5678-9012-3456', 'message': 'The application grindr has been launched.
+                          : Remember: Safe sex is good sex!'}
+2016-02-20 09:27:40.790762: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:27:40.917504: Redis: http request response 201
+2016-02-20 09:27:40.924132: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:27:40.930837: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 09:27:40.937413: 
+2016-02-20 09:27:45.744311: Notification being received.
+2016-02-20 09:27:45.761219: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:27:45.770295: Notification is You have entered an area known for high rates of STI infections
+                          : and drug use. Remember: Safe sex is good sex! with action "openMap(100.0,
+                          : 100.0)"
+2016-02-20 09:27:45.778679: 
+2016-02-20 09:27:45.779340: Redis: *** START HANDLING ***
+2016-02-20 09:27:45.778632: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---You have
+                          : entered an area known for high rates of STI infections and drug use. Remember:
+                          : Safe sex is good sex!---openMap(100.0, 100.0)---2016-02-20
+                          : 09:27:45.777576(EST/EST)
+2016-02-20 09:27:45.785763: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'You have entered an area known
+                          : for high rates of STI infections and drug use. Remember: Safe sex is good
+                          : sex!', 'openMap(100.0, 100.0)', '2016-02-20 09:27:45.777576(EST/EST)']
+2016-02-20 09:27:45.796616: Redis: Payload {'sender': 'Monitor_App', 'action': 'openMap(100.0, 100.0)',
+                          : 'key': 'NS1234-5678-9012-3456', 'message': 'You have entered an area known for
+                          : high rates of STI infections and drug use. Remember: Safe sex is good sex!'}
+2016-02-20 09:27:45.803486: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:27:45.923721: Redis: http request response 201
+2016-02-20 09:27:45.930528: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:27:45.937296: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 09:27:45.943596: 
+2016-02-20 09:32:49.156194: Notification being received.
+2016-02-20 09:32:49.163518: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:32:49.170317: Notification is You have entered an area known for high rates of STI infections
+                          : and drug use. Remember: Safe sex is good sex! with action "openMap(100.0,
+                          : 100.0)"
+2016-02-20 09:32:49.178351: 
+2016-02-20 09:32:49.179005: Redis: *** START HANDLING ***
+2016-02-20 09:32:49.178252: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---You have
+                          : entered an area known for high rates of STI infections and drug use. Remember:
+                          : Safe sex is good sex!---openMap(100.0, 100.0)---2016-02-20
+                          : 09:32:49.177474(EST/EST)
+2016-02-20 09:32:49.185742: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'You have entered an area known
+                          : for high rates of STI infections and drug use. Remember: Safe sex is good
+                          : sex!', 'openMap(100.0, 100.0)', '2016-02-20 09:32:49.177474(EST/EST)']
+2016-02-20 09:32:49.197195: Redis: Payload {'sender': 'Monitor_App', 'action': 'openMap(100.0, 100.0)',
+                          : 'key': 'NS1234-5678-9012-3456', 'message': 'You have entered an area known for
+                          : high rates of STI infections and drug use. Remember: Safe sex is good sex!'}
+2016-02-20 09:32:49.205023: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:32:49.332429: Redis: http request response 201
+2016-02-20 09:32:49.338889: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:32:49.345790: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 09:32:49.352152: 
+2016-02-20 09:33:46.396933: 
+2016-02-20 09:33:46.397389: ******************************************************************************
+2016-02-20 09:33:46.413485: dasanderUty01:101 Started
+2016-02-20 09:33:46.420502: ******************************************************************************
+2016-02-20 09:33:46.427784: 
+2016-02-20 09:33:57.817821: Notification being received.
+2016-02-20 09:33:57.826450: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:33:57.833170: Notification is The application grindr has been launched. Remember: Safe sex is
+                          : good sex! with action "none"
+2016-02-20 09:33:57.841149: 
+2016-02-20 09:33:57.840691: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---The
+                          : application grindr has been launched. Remember: Safe sex is good sex!---none---
+                          : 2016-02-20 09:33:57.839604(EST/EST)
+2016-02-20 09:33:57.842135: Redis: *** START HANDLING ***
+2016-02-20 09:33:57.853944: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'none', '2016-02-20
+                          : 09:33:57.839604(EST/EST)']
+2016-02-20 09:33:57.862091: Redis: Payload {'message': 'The application grindr has been launched. Remember:
+                          : Safe sex is good sex!', 'action': 'none', 'sender': 'Monitor_App', 'key':
+                          : 'NS1234-5678-9012-3456'}
+2016-02-20 09:33:57.871860: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:33:57.995746: Redis: http request response 201
+2016-02-20 09:33:58.003133: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:33:58.010161: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 09:33:58.017111: 
+2016-02-20 09:36:15.493796: 
+2016-02-20 09:36:15.494247: ******************************************************************************
+2016-02-20 09:36:15.509551: dasanderUty01:101 Started
+2016-02-20 09:36:15.518322: ******************************************************************************
+2016-02-20 09:36:15.525437: 
+2016-02-20 09:36:27.572680: Notification being received.
+2016-02-20 09:36:27.581406: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:36:27.588442: Notification is The application grindr has been launched. Remember: Safe sex is
+                          : good sex! with action "none"
+2016-02-20 09:36:27.597828: 
+2016-02-20 09:36:27.597125: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---The
+                          : application grindr has been launched. Remember: Safe sex is good sex!---none---
+                          : 2016-02-20 09:36:27.595905(EST/EST)
+2016-02-20 09:36:27.598887: Redis: *** START HANDLING ***
+2016-02-20 09:36:27.609613: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'none', '2016-02-20
+                          : 09:36:27.595905(EST/EST)']
+2016-02-20 09:36:27.619547: Redis: Payload {'message': 'The application grindr has been launched. Remember:
+                          : Safe sex is good sex!', 'action': 'none', 'sender': 'Monitor_App', 'key':
+                          : 'NS1234-5678-9012-3456'}
+2016-02-20 09:36:27.627811: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:36:27.749000: Redis: http request response 201
+2016-02-20 09:36:27.755486: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:36:27.762264: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 09:36:27.769510: 
+2016-02-20 09:38:14.636960: Notification being received.
+2016-02-20 09:38:14.643357: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:38:14.650210: Notification is You have entered an area known for high rates of STI infections
+                          : and drug use. Remember: Safe sex is good sex! with action "openMap(100.0,
+                          : 100.0)"
+2016-02-20 09:38:14.657674: 
+2016-02-20 09:38:14.657612: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---You have
+                          : entered an area known for high rates of STI infections and drug use. Remember:
+                          : Safe sex is good sex!---openMap(100.0, 100.0)---2016-02-20
+                          : 09:38:14.656803(EST/EST)
+2016-02-20 09:38:14.658321: Redis: *** START HANDLING ***
+2016-02-20 09:38:14.665756: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'You have entered an area known
+                          : for high rates of STI infections and drug use. Remember: Safe sex is good
+                          : sex!', 'openMap(100.0, 100.0)', '2016-02-20 09:38:14.656803(EST/EST)']
+2016-02-20 09:38:14.673901: Redis: Payload {'message': 'You have entered an area known for high rates of
+                          : STI infections and drug use. Remember: Safe sex is good sex!', 'action':
+                          : 'openMap(100.0, 100.0)', 'sender': 'Monitor_App', 'key':
+                          : 'NS1234-5678-9012-3456'}
+2016-02-20 09:38:14.681026: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:38:14.797545: Redis: http request response 201
+2016-02-20 09:38:14.804441: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:38:14.812114: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 09:38:14.818777: 
+2016-02-20 09:39:27.680137: 
+2016-02-20 09:39:27.680595: ******************************************************************************
+2016-02-20 09:39:27.697938: dasanderUty01:101 Started
+2016-02-20 09:39:27.705093: ******************************************************************************
+2016-02-20 09:39:27.711535: 
+2016-02-20 09:39:42.731314: Notification being received.
+2016-02-20 09:39:42.739907: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:39:42.746368: Notification is The application grindr has been launched. Remember: Safe sex is
+                          : good sex! with action "none"
+2016-02-20 09:39:42.754588: 
+2016-02-20 09:39:42.754121: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---The
+                          : application grindr has been launched. Remember: Safe sex is good sex!---none---
+                          : 2016-02-20 09:39:42.753076(EST/EST)
+2016-02-20 09:39:42.755790: Redis: *** START HANDLING ***
+2016-02-20 09:39:42.766281: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'none', '2016-02-20
+                          : 09:39:42.753076(EST/EST)']
+2016-02-20 09:39:42.774718: Redis: Payload {'action': 'none', 'message': 'The application grindr has been
+                          : launched. Remember: Safe sex is good sex!', 'key': 'NS1234-5678-9012-3456',
+                          : 'sender': 'Monitor_App'}
+2016-02-20 09:39:42.782035: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:39:42.902835: Redis: http request response 201
+2016-02-20 09:39:42.909680: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:39:42.917867: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 09:39:42.924443: 
+2016-02-20 09:39:56.506581: Notification being received.
+2016-02-20 09:39:56.513585: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:39:56.520412: Notification is You have entered an area known for high rates of STI infections
+                          : and drug use. Remember: Safe sex is good sex! with action "openMap(100.0,
+                          : 100.0)"
+2016-02-20 09:39:56.527717: 
+2016-02-20 09:39:56.527722: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---You have
+                          : entered an area known for high rates of STI infections and drug use. Remember:
+                          : Safe sex is good sex!---openMap(100.0, 100.0)---2016-02-20
+                          : 09:39:56.526808(EST/EST)
+2016-02-20 09:39:56.528426: Redis: *** START HANDLING ***
+2016-02-20 09:39:56.536362: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'You have entered an area known
+                          : for high rates of STI infections and drug use. Remember: Safe sex is good
+                          : sex!', 'openMap(100.0, 100.0)', '2016-02-20 09:39:56.526808(EST/EST)']
+2016-02-20 09:39:56.545036: Redis: Payload {'action': 'openMap(100.0, 100.0)', 'message': 'You have entered
+                          : an area known for high rates of STI infections and drug use. Remember: Safe sex
+                          : is good sex!', 'key': 'NS1234-5678-9012-3456', 'sender': 'Monitor_App'}
+2016-02-20 09:39:56.552034: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:39:56.674096: Redis: http request response 201
+2016-02-20 09:39:56.682211: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:39:56.688762: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 09:39:56.695476: 
+2016-02-20 09:43:03.006554: 
+2016-02-20 09:43:03.007046: ******************************************************************************
+2016-02-20 09:43:03.024409: dasanderUty01:101 Started
+2016-02-20 09:43:03.031391: ******************************************************************************
+2016-02-20 09:43:03.038385: 
+2016-02-20 09:43:17.180054: Notification being received.
+2016-02-20 09:43:17.188849: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:43:17.195476: Notification is The application grindr has been launched. Remember: Safe sex is
+                          : good sex! with action "none"
+2016-02-20 09:43:17.203597: 
+2016-02-20 09:43:17.204596: Redis: *** START HANDLING ***
+2016-02-20 09:43:17.207309: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---The
+                          : application grindr has been launched. Remember: Safe sex is good sex!---none---
+                          : 2016-02-20 09:43:17.202046(EST/EST)
+2016-02-20 09:43:17.214641: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'none', '2016-02-20
+                          : 09:43:17.202046(EST/EST)']
+2016-02-20 09:43:17.221802: Redis: Payload {'message': 'The application grindr has been launched. Remember:
+                          : Safe sex is good sex!', 'key': 'NS1234-5678-9012-3456', 'sender':
+                          : 'Monitor_App', 'action': 'none'}
+2016-02-20 09:43:17.229511: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:43:17.351649: Redis: http request response 201
+2016-02-20 09:43:17.358048: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:43:17.364823: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 09:43:17.372967: 
+2016-02-20 09:43:31.818936: Notification being received.
+2016-02-20 09:43:31.825435: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:43:31.832079: Notification is You have entered an area known for high rates of STI infections
+                          : and drug use. Remember: Safe sex is good sex! with action "openMap(100.0,
+                          : 100.0)"
+2016-02-20 09:43:31.846505: 
+2016-02-20 09:43:31.846291: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---You have
+                          : entered an area known for high rates of STI infections and drug use. Remember:
+                          : Safe sex is good sex!---openMap(100.0, 100.0)---2016-02-20
+                          : 09:43:31.845180(EST/EST)
+2016-02-20 09:43:31.847551: Redis: *** START HANDLING ***
+2016-02-20 09:43:31.855453: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'You have entered an area known
+                          : for high rates of STI infections and drug use. Remember: Safe sex is good
+                          : sex!', 'openMap(100.0, 100.0)', '2016-02-20 09:43:31.845180(EST/EST)']
+2016-02-20 09:43:31.864925: Redis: Payload {'message': 'You have entered an area known for high rates of
+                          : STI infections and drug use. Remember: Safe sex is good sex!', 'key':
+                          : 'NS1234-5678-9012-3456', 'sender': 'Monitor_App', 'action': 'openMap(100.0,
+                          : 100.0)'}
+2016-02-20 09:43:31.872256: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:43:31.998618: Redis: http request response 201
+2016-02-20 09:43:32.005607: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:43:32.014038: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 09:43:32.021025: 
+2016-02-20 09:46:01.723058: Notification being received.
+2016-02-20 09:46:01.729521: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:46:01.735902: Notification is The application grindr has been launched. Remember: Safe sex is
+                          : good sex! with action "none"
+2016-02-20 09:46:01.743113: 
+2016-02-20 09:46:01.743909: Redis: *** START HANDLING ***
+2016-02-20 09:46:01.743245: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---The
+                          : application grindr has been launched. Remember: Safe sex is good sex!---none---
+                          : 2016-02-20 09:46:01.742287(EST/EST)
+2016-02-20 09:46:01.750621: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'none', '2016-02-20
+                          : 09:46:01.742287(EST/EST)']
+2016-02-20 09:46:01.758256: Redis: Payload {'message': 'The application grindr has been launched. Remember:
+                          : Safe sex is good sex!', 'key': 'NS1234-5678-9012-3456', 'sender':
+                          : 'Monitor_App', 'action': 'none'}
+2016-02-20 09:46:01.767975: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:46:01.889278: Redis: http request response 201
+2016-02-20 09:46:01.895437: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:46:01.901841: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 09:46:01.908149: 
+2016-02-20 09:47:16.899418: 
+2016-02-20 09:47:16.899874: ******************************************************************************
+2016-02-20 09:47:16.915222: dasanderUty01:101 Started
+2016-02-20 09:47:16.921983: ******************************************************************************
+2016-02-20 09:47:16.928748: 
+2016-02-20 09:47:43.136182: Notification being received.
+2016-02-20 09:47:43.145006: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:47:43.152933: Notification is The application grindr has been launched. Remember: Safe sex is
+                          : good sex! with action "none"
+2016-02-20 09:47:43.165592: 
+2016-02-20 09:47:43.167397: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---The
+                          : application grindr has been launched. Remember: Safe sex is good sex!---none---
+                          : 2016-02-20 09:47:43.164236(EST/EST)
+2016-02-20 09:47:43.166491: Redis: *** START HANDLING ***
+2016-02-20 09:47:43.178147: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'none', '2016-02-20
+                          : 09:47:43.164236(EST/EST)']
+2016-02-20 09:47:43.185432: Redis: Payload {'key': 'NS1234-5678-9012-3456', 'sender': 'Monitor_App',
+                          : 'message': 'The application grindr has been launched. Remember: Safe sex is
+                          : good sex!', 'action': 'none'}
+2016-02-20 09:47:43.195881: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:47:43.327974: Redis: http request response 201
+2016-02-20 09:47:43.335549: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:47:43.342234: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 09:47:43.349588: 
+2016-02-20 09:48:15.795118: Notification being received.
+2016-02-20 09:48:15.801412: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:48:15.807596: Notification is You have entered an area known for high rates of STI infections
+                          : and drug use. Remember: Safe sex is good sex! with action "openMap(100.0,
+                          : 100.0)"
+2016-02-20 09:48:15.815173: 
+2016-02-20 09:48:15.815800: Redis: *** START HANDLING ***
+2016-02-20 09:48:15.822383: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'You have entered an area known
+                          : for high rates of STI infections and drug use. Remember: Safe sex is good
+                          : sex!', 'openMap(100.0, 100.0)', '2016-02-20 09:48:15.814319(EST/EST)']
+2016-02-20 09:48:15.818489: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---You have
+                          : entered an area known for high rates of STI infections and drug use. Remember:
+                          : Safe sex is good sex!---openMap(100.0, 100.0)---2016-02-20
+                          : 09:48:15.814319(EST/EST)
+2016-02-20 09:48:15.830158: Redis: Payload {'key': 'NS1234-5678-9012-3456', 'sender': 'Monitor_App',
+                          : 'message': 'You have entered an area known for high rates of STI infections and
+                          : drug use. Remember: Safe sex is good sex!', 'action': 'openMap(100.0, 100.0)'}
+2016-02-20 09:48:15.838403: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:48:15.964338: Redis: http request response 201
+2016-02-20 09:48:15.971205: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:48:15.977862: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 09:48:15.984478: 
+2016-02-20 09:54:14.912006: 
+2016-02-20 09:54:14.912459: ******************************************************************************
+2016-02-20 09:54:14.927983: dasanderUty01:101 Started
+2016-02-20 09:54:14.935277: ******************************************************************************
+2016-02-20 09:54:14.944750: 
+2016-02-20 09:54:31.609984: Notification being received.
+2016-02-20 09:54:31.618619: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:54:31.625603: Notification is The application grindr has been launched. Remember: Safe sex is
+                          : good sex! with action "none"
+2016-02-20 09:54:31.634037: 
+2016-02-20 09:54:31.633521: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---The
+                          : application grindr has been launched. Remember: Safe sex is good sex!---none---
+                          : 2016-02-20 09:54:31.632328(EST/EST)
+2016-02-20 09:54:31.635158: Redis: *** START HANDLING ***
+2016-02-20 09:54:31.648472: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'none', '2016-02-20
+                          : 09:54:31.632328(EST/EST)']
+2016-02-20 09:54:31.656255: Redis: Payload {'key': 'NS1234-5678-9012-3456', 'action': 'none', 'message':
+                          : 'The application grindr has been launched. Remember: Safe sex is good sex!',
+                          : 'sender': 'Monitor_App'}
+2016-02-20 09:54:31.663499: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:54:31.780163: Redis: http request response 201
+2016-02-20 09:54:31.786594: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:54:31.793396: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 09:54:31.800200: 
+2016-02-20 09:54:43.701359: Notification being received.
+2016-02-20 09:54:43.707869: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:54:43.714512: Notification is You have entered an area known for high rates of STI infections
+                          : and drug use. Remember: Safe sex is good sex! with action "openMap(100.0,
+                          : 100.0)"
+2016-02-20 09:54:43.721731: 
+2016-02-20 09:54:43.721709: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---You have
+                          : entered an area known for high rates of STI infections and drug use. Remember:
+                          : Safe sex is good sex!---openMap(100.0, 100.0)---2016-02-20
+                          : 09:54:43.720985(EST/EST)
+2016-02-20 09:54:43.722349: Redis: *** START HANDLING ***
+2016-02-20 09:54:43.730112: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'You have entered an area known
+                          : for high rates of STI infections and drug use. Remember: Safe sex is good
+                          : sex!', 'openMap(100.0, 100.0)', '2016-02-20 09:54:43.720985(EST/EST)']
+2016-02-20 09:54:43.737560: Redis: Payload {'key': 'NS1234-5678-9012-3456', 'action': 'openMap(100.0,
+                          : 100.0)', 'message': 'You have entered an area known for high rates of STI
+                          : infections and drug use. Remember: Safe sex is good sex!', 'sender':
+                          : 'Monitor_App'}
+2016-02-20 09:54:43.747977: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:54:43.875182: Redis: http request response 201
+2016-02-20 09:54:43.881510: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:54:43.888219: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 09:54:43.894784: 
+2016-02-20 09:57:34.305758: 
+2016-02-20 09:57:34.306220: ******************************************************************************
+2016-02-20 09:57:34.322042: dasanderUty01:101 Started
+2016-02-20 09:57:34.328609: ******************************************************************************
+2016-02-20 09:57:34.335036: 
+2016-02-20 09:59:25.878263: Notification being received.
+2016-02-20 09:59:25.888165: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:59:25.894685: Notification is The application grindr has been launched. Remember: Safe sex is
+                          : good sex! with action "none"
+2016-02-20 09:59:25.903328: 
+2016-02-20 09:59:25.902886: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---The
+                          : application grindr has been launched. Remember: Safe sex is good sex!---none---
+                          : 2016-02-20 09:59:25.901734(EST/EST)
+2016-02-20 09:59:25.904320: Redis: *** START HANDLING ***
+2016-02-20 09:59:25.915289: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'none', '2016-02-20
+                          : 09:59:25.901734(EST/EST)']
+2016-02-20 09:59:25.926278: Redis: Payload {'sender': 'Monitor_App', 'action': 'none', 'message': 'The
+                          : application grindr has been launched. Remember: Safe sex is good sex!', 'key':
+                          : 'NS1234-5678-9012-3456'}
+2016-02-20 09:59:25.937617: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:59:26.057541: Redis: http request response 201
+2016-02-20 09:59:26.064621: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:59:26.071305: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 09:59:26.078257: 
+2016-02-20 09:59:33.164566: Notification being received.
+2016-02-20 09:59:33.174335: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:59:33.180979: Notification is You have entered an area known for high rates of STI infections
+                          : and drug use. Remember: Safe sex is good sex! with action "openMap(100.0,
+                          : 100.0)"
+2016-02-20 09:59:33.188804: 
+2016-02-20 09:59:33.189545: Redis: *** START HANDLING ***
+2016-02-20 09:59:33.188804: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---You have
+                          : entered an area known for high rates of STI infections and drug use. Remember:
+                          : Safe sex is good sex!---openMap(100.0, 100.0)---2016-02-20
+                          : 09:59:33.187749(EST/EST)
+2016-02-20 09:59:33.196738: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'You have entered an area known
+                          : for high rates of STI infections and drug use. Remember: Safe sex is good
+                          : sex!', 'openMap(100.0, 100.0)', '2016-02-20 09:59:33.187749(EST/EST)']
+2016-02-20 09:59:33.206723: Redis: Payload {'sender': 'Monitor_App', 'action': 'openMap(100.0, 100.0)',
+                          : 'message': 'You have entered an area known for high rates of STI infections and
+                          : drug use. Remember: Safe sex is good sex!', 'key': 'NS1234-5678-9012-3456'}
+2016-02-20 09:59:33.213905: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:59:33.337217: Redis: http request response 201
+2016-02-20 09:59:33.343567: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 09:59:33.350196: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 09:59:33.356850: 
+2016-02-20 10:02:59.231998: 
+2016-02-20 10:02:59.232460: ******************************************************************************
+2016-02-20 10:02:59.247867: dasanderUty01:101 Started
+2016-02-20 10:02:59.257190: ******************************************************************************
+2016-02-20 10:02:59.266270: 
+2016-02-20 10:03:25.471058: Notification being received.
+2016-02-20 10:03:25.480614: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:03:25.487656: Notification is The application grindr has been launched. Remember: Safe sex is
+                          : good sex! with action "none"
+2016-02-20 10:03:25.496305: 
+2016-02-20 10:03:25.495915: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---The
+                          : application grindr has been launched. Remember: Safe sex is good sex!---none---
+                          : 2016-02-20 10:03:25.494583(EST/EST)
+2016-02-20 10:03:25.497236: Redis: *** START HANDLING ***
+2016-02-20 10:03:25.508358: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'none', '2016-02-20
+                          : 10:03:25.494583(EST/EST)']
+2016-02-20 10:03:25.516345: Redis: Payload {'message': 'The application grindr has been launched. Remember:
+                          : Safe sex is good sex!', 'key': 'NS1234-5678-9012-3456', 'sender':
+                          : 'Monitor_App', 'action': 'none'}
+2016-02-20 10:03:25.526084: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:03:25.651635: Redis: http request response 201
+2016-02-20 10:03:25.658490: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:03:25.666022: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 10:03:25.672674: 
+2016-02-20 10:03:58.133746: Notification being received.
+2016-02-20 10:03:58.143322: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:03:58.150638: Notification is You have entered an area known for high rates of STI infections
+                          : and drug use. Remember: Safe sex is good sex! with action "openMap(100.0,
+                          : 100.0)"
+2016-02-20 10:03:58.158663: 
+2016-02-20 10:03:58.158761: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---You have
+                          : entered an area known for high rates of STI infections and drug use. Remember:
+                          : Safe sex is good sex!---openMap(100.0, 100.0)---2016-02-20
+                          : 10:03:58.157568(EST/EST)
+2016-02-20 10:03:58.159456: Redis: *** START HANDLING ***
+2016-02-20 10:03:58.167494: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'You have entered an area known
+                          : for high rates of STI infections and drug use. Remember: Safe sex is good
+                          : sex!', 'openMap(100.0, 100.0)', '2016-02-20 10:03:58.157568(EST/EST)']
+2016-02-20 10:03:58.177626: Redis: Payload {'message': 'You have entered an area known for high rates of
+                          : STI infections and drug use. Remember: Safe sex is good sex!', 'key':
+                          : 'NS1234-5678-9012-3456', 'sender': 'Monitor_App', 'action': 'openMap(100.0,
+                          : 100.0)'}
+2016-02-20 10:03:58.185493: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:03:58.311985: Redis: http request response 201
+2016-02-20 10:03:58.318523: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:03:58.325417: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 10:03:58.332635: 
+2016-02-20 10:09:18.629367: 
+2016-02-20 10:09:18.629833: ******************************************************************************
+2016-02-20 10:09:18.645633: dasanderUty01:101 Started
+2016-02-20 10:09:18.652234: ******************************************************************************
+2016-02-20 10:09:18.659289: 
+2016-02-20 10:09:33.832750: Notification being received.
+2016-02-20 10:09:33.849225: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:09:33.856723: Notification is The application grindr has been launched. Remember: Safe sex is
+                          : good sex! with action "none"
+2016-02-20 10:09:33.864819: 
+2016-02-20 10:09:33.864444: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---The
+                          : application grindr has been launched. Remember: Safe sex is good sex!---none---
+                          : 2016-02-20 10:09:33.863242(EST/EST)
+2016-02-20 10:09:33.865756: Redis: *** START HANDLING ***
+2016-02-20 10:09:33.878256: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'none', '2016-02-20
+                          : 10:09:33.863242(EST/EST)']
+2016-02-20 10:09:33.885598: Redis: Payload {'key': 'NS1234-5678-9012-3456', 'action': 'none', 'sender':
+                          : 'Monitor_App', 'message': 'The application grindr has been launched. Remember:
+                          : Safe sex is good sex!'}
+2016-02-20 10:09:33.898418: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:09:34.018865: Redis: http request response 201
+2016-02-20 10:09:34.025303: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:09:34.031680: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 10:09:34.037927: 
+2016-02-20 10:12:45.215601: 
+2016-02-20 10:12:45.216106: ******************************************************************************
+2016-02-20 10:12:45.230491: dasanderUty01:101 Started
+2016-02-20 10:12:45.237245: ******************************************************************************
+2016-02-20 10:12:45.244665: 
+2016-02-20 10:13:02.684499: Notification being received.
+2016-02-20 10:13:02.693798: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:13:02.701032: Notification is The application grindr has been launched. Remember: Safe sex is
+                          : good sex! with action "none"
+2016-02-20 10:13:02.710140: 
+2016-02-20 10:13:02.709620: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---The
+                          : application grindr has been launched. Remember: Safe sex is good sex!---none---
+                          : 2016-02-20 10:13:02.708359(EST/EST)
+2016-02-20 10:13:02.711248: Redis: *** START HANDLING ***
+2016-02-20 10:13:02.722746: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'none', '2016-02-20
+                          : 10:13:02.708359(EST/EST)']
+2016-02-20 10:13:02.747892: Redis: Payload {'action': 'none', 'key': 'NS1234-5678-9012-3456', 'message':
+                          : 'The application grindr has been launched. Remember: Safe sex is good sex!',
+                          : 'sender': 'Monitor_App'}
+2016-02-20 10:13:02.756666: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:13:02.873963: Redis: http request response 201
+2016-02-20 10:13:02.880481: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:13:02.887232: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 10:13:02.894198: 
+2016-02-20 10:13:14.004845: Notification being received.
+2016-02-20 10:13:14.015172: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:13:14.021699: Notification is You have entered an area known for high rates of STI infections
+                          : and drug use. Remember: Safe sex is good sex! with action "openMap(100.0,
+                          : 100.0)"
+2016-02-20 10:13:14.029687: 
+2016-02-20 10:13:14.029650: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---You have
+                          : entered an area known for high rates of STI infections and drug use. Remember:
+                          : Safe sex is good sex!---openMap(100.0, 100.0)---2016-02-20
+                          : 10:13:14.028627(EST/EST)
+2016-02-20 10:13:14.030291: Redis: *** START HANDLING ***
+2016-02-20 10:13:14.037845: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'You have entered an area known
+                          : for high rates of STI infections and drug use. Remember: Safe sex is good
+                          : sex!', 'openMap(100.0, 100.0)', '2016-02-20 10:13:14.028627(EST/EST)']
+2016-02-20 10:13:14.045276: Redis: Payload {'action': 'openMap(100.0, 100.0)', 'key':
+                          : 'NS1234-5678-9012-3456', 'message': 'You have entered an area known for high
+                          : rates of STI infections and drug use. Remember: Safe sex is good sex!',
+                          : 'sender': 'Monitor_App'}
+2016-02-20 10:13:14.052354: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:13:14.174789: Redis: http request response 201
+2016-02-20 10:13:14.181344: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:13:14.188018: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 10:13:14.194630: 
+2016-02-20 10:15:33.946522: Notification being received.
+2016-02-20 10:15:33.956379: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:15:33.963606: Notification is The application grindr has been launched. Remember: Safe sex is
+                          : good sex! with action "none"
+2016-02-20 10:15:33.971466: 
+2016-02-20 10:15:33.971470: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---The
+                          : application grindr has been launched. Remember: Safe sex is good sex!---none---
+                          : 2016-02-20 10:15:33.970325(EST/EST)
+2016-02-20 10:15:33.972100: Redis: *** START HANDLING ***
+2016-02-20 10:15:33.980035: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'none', '2016-02-20
+                          : 10:15:33.970325(EST/EST)']
+2016-02-20 10:15:33.989618: Redis: Payload {'action': 'none', 'key': 'NS1234-5678-9012-3456', 'message':
+                          : 'The application grindr has been launched. Remember: Safe sex is good sex!',
+                          : 'sender': 'Monitor_App'}
+2016-02-20 10:15:33.998447: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:15:34.123449: Redis: http request response 201
+2016-02-20 10:15:34.130101: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:15:34.136586: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 10:15:34.143151: 
+2016-02-20 10:18:08.461315: Notification being received.
+2016-02-20 10:18:08.468176: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:18:08.474548: Notification is The application grindr has been launched. Remember: Safe sex is
+                          : good sex! with action "none"
+2016-02-20 10:18:08.481826: 
+2016-02-20 10:18:08.481789: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---The
+                          : application grindr has been launched. Remember: Safe sex is good sex!---none---
+                          : 2016-02-20 10:18:08.481088(EST/EST)
+2016-02-20 10:18:08.482426: Redis: *** START HANDLING ***
+2016-02-20 10:18:08.492529: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'none', '2016-02-20
+                          : 10:18:08.481088(EST/EST)']
+2016-02-20 10:18:08.501047: Redis: Payload {'action': 'none', 'key': 'NS1234-5678-9012-3456', 'message':
+                          : 'The application grindr has been launched. Remember: Safe sex is good sex!',
+                          : 'sender': 'Monitor_App'}
+2016-02-20 10:18:08.509252: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:18:08.628187: Redis: http request response 201
+2016-02-20 10:18:08.634810: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:18:08.641184: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 10:18:08.647921: 
+2016-02-20 10:18:14.638113: Notification being received.
+2016-02-20 10:18:14.644687: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:18:14.651624: Notification is You have entered an area known for high rates of STI infections
+                          : and drug use. Remember: Safe sex is good sex! with action "openMap(100.0,
+                          : 100.0)"
+2016-02-20 10:18:14.659386: 
+2016-02-20 10:18:14.659448: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---You have
+                          : entered an area known for high rates of STI infections and drug use. Remember:
+                          : Safe sex is good sex!---openMap(100.0, 100.0)---2016-02-20
+                          : 10:18:14.658496(EST/EST)
+2016-02-20 10:18:14.660042: Redis: *** START HANDLING ***
+2016-02-20 10:18:14.667239: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'You have entered an area known
+                          : for high rates of STI infections and drug use. Remember: Safe sex is good
+                          : sex!', 'openMap(100.0, 100.0)', '2016-02-20 10:18:14.658496(EST/EST)']
+2016-02-20 10:18:14.679063: Redis: Payload {'action': 'openMap(100.0, 100.0)', 'key':
+                          : 'NS1234-5678-9012-3456', 'message': 'You have entered an area known for high
+                          : rates of STI infections and drug use. Remember: Safe sex is good sex!',
+                          : 'sender': 'Monitor_App'}
+2016-02-20 10:18:14.685966: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:18:14.803867: Redis: http request response 201
+2016-02-20 10:18:14.809918: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:18:14.816191: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 10:18:14.822725: 
+2016-02-20 10:19:48.559105: 
+2016-02-20 10:19:48.559574: ******************************************************************************
+2016-02-20 10:19:48.574860: dasanderUty01:101 Started
+2016-02-20 10:19:48.582296: ******************************************************************************
+2016-02-20 10:19:48.589534: 
+2016-02-20 10:20:23.491732: Notification being received.
+2016-02-20 10:20:23.501659: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:20:23.508278: Notification is The application grindr has been launched. Remember: Safe sex is
+                          : good sex! with action "none"
+2016-02-20 10:20:23.516549: 
+2016-02-20 10:20:23.515975: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---The
+                          : application grindr has been launched. Remember: Safe sex is good sex!---none---
+                          : 2016-02-20 10:20:23.514946(EST/EST)
+2016-02-20 10:20:23.517638: Redis: *** START HANDLING ***
+2016-02-20 10:20:23.535843: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'none', '2016-02-20
+                          : 10:20:23.514946(EST/EST)']
+2016-02-20 10:20:23.545543: Redis: Payload {'sender': 'Monitor_App', 'action': 'none', 'message': 'The
+                          : application grindr has been launched. Remember: Safe sex is good sex!', 'key':
+                          : 'NS1234-5678-9012-3456'}
+2016-02-20 10:20:23.553081: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:20:23.681456: Redis: http request response 201
+2016-02-20 10:20:23.688308: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:20:23.695681: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 10:20:23.702389: 
+2016-02-20 10:20:47.378674: Notification being received.
+2016-02-20 10:20:47.385108: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:20:47.391595: Notification is You have entered an area known for high rates of STI infections
+                          : and drug use. Remember: Safe sex is good sex! with action "openMap(100.0,
+                          : 100.0)"
+2016-02-20 10:20:47.398977: 
+2016-02-20 10:20:47.399057: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---You have
+                          : entered an area known for high rates of STI infections and drug use. Remember:
+                          : Safe sex is good sex!---openMap(100.0, 100.0)---2016-02-20
+                          : 10:20:47.398134(EST/EST)
+2016-02-20 10:20:47.399663: Redis: *** START HANDLING ***
+2016-02-20 10:20:47.407214: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'You have entered an area known
+                          : for high rates of STI infections and drug use. Remember: Safe sex is good
+                          : sex!', 'openMap(100.0, 100.0)', '2016-02-20 10:20:47.398134(EST/EST)']
+2016-02-20 10:20:47.416665: Redis: Payload {'sender': 'Monitor_App', 'action': 'openMap(100.0, 100.0)',
+                          : 'message': 'You have entered an area known for high rates of STI infections and
+                          : drug use. Remember: Safe sex is good sex!', 'key': 'NS1234-5678-9012-3456'}
+2016-02-20 10:20:47.423513: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:20:47.550045: Redis: http request response 201
+2016-02-20 10:20:47.556535: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 10:20:47.562899: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 10:20:47.569601: 
+2016-02-20 10:32:51.361753: 
+2016-02-20 10:32:51.362221: ******************************************************************************
+2016-02-20 10:32:51.376667: dasanderUty01:101 Started
+2016-02-20 10:32:51.383285: ******************************************************************************
+2016-02-20 10:32:51.389560: 

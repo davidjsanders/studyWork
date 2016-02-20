@@ -40,12 +40,8 @@ class Control(object):
         self.__log_file = 'datavolume/'+server_name+'-'+\
                           str(port_number)+'-log.txt'
 
-        self.log()
-        self.log('*'*78)
-        self.log('Monitor App {0}:{1} Started'\
-            .format(server_name, port_number))
-        self.log('*'*78)
-        self.log()
+        self.log('Monitor App {0}:{1} Started at {2}'\
+            .format(server_name, port_number, datetime.datetime.now()))
 
 
     def get_apps(self):

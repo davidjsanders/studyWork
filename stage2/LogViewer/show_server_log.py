@@ -6,22 +6,21 @@ def print_log(log=None):
     if log == None:
         return
 
-    print('\033[1m\033[4m{0:<20s}|{1:<21s}|{2:<10s}|{3:<78s}\033[0m'\
+    print('\033[1m\033[4m{1:<21s}|{2:<10s}|{0:<20s}|{3:<78s}\033[0m'\
           .format('Sender','Time','Type','Log Message'))
 
-#    print('='*column_width)
     for row in log:
         wrapped_message = wrap(row[3], 78)
         loop = 0
         while loop < len(wrapped_message):
             if loop == 0:
-                print('{0:<20s}|{1:<21s}|{2:<10s}|{3:<78s}'\
+                print('{1:<21s}|{2:<10s}|{0:<20s}|{3:<78s}'\
                       .format(row[0][:20],
                               row[1][:21],
                               row[2][:10],
                               wrapped_message[loop]))
             else:
-                print('{0:<20s}|{1:<21s}|{2:<10s}|{3:<78s}'\
+                print('{1:<21s}|{2:<10s}|{0:<20s}|{3:<78s}'\
                       .format(' ',
                               ' ',
                               ' ',
@@ -35,7 +34,7 @@ def print_single_log(log=None):
 
     print('\033[1m\033[4m{0:<23s}|{1:<10s}|{2:<97s}\033[0m'\
           .format('Time','Type','Log Message'))
-#    print('='*column_width)
+
     for row in log:
         wrapped_message = wrap(row[3], 97)
         loop = 0
