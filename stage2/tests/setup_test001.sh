@@ -53,7 +53,7 @@ echo " "
 echo "Starting services."
 echo ""
 run_docker $loggerPort "logger" "Logger"
-sleep 1
+sleep 2
 echo -n "Clear existing logs: "
 curl -X DELETE \
   -d '{"key":"1234-5678-9012-3456"}' http://$serverName:$loggerPort/v1_00/log

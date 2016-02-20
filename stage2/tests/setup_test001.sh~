@@ -4,7 +4,7 @@ export bluePort=102
 export monitorPort=103
 export locPort=104
 export phonePort=1080
-export serverName=${hostname}
+export serverName=`hostname`
 export serverIPName="`ifconfig eth0 2>/dev/null|awk '/inet addr:/ {print $2}'|sed 's/addr://'`"
 
 function config_logging {
