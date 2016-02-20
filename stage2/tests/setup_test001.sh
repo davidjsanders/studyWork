@@ -27,14 +27,15 @@ function run_docker {
     # $3 - Directory path
     echo -n "Starting service $2 (port $1 on $serverName): "
     docker run -p $1:$1 --name stage2_$2$1 \
+        --net=isolated_nw -e portToUse=$1 -e serverName="$serverName" \
         -e TZ=`date +%Z` -v $PWD/$3/datavolume:/$3/datavolume \
         -d dsanderscan/mscit_stage2_$2 /bin/bash -c /$3/startup.sh
     sleep 1
-#        --net=isolated_nw -e portToUse=$1 -e serverName="$serverName" \
 }
 function run_docker_phone {
     echo -n "Starting phone (port $phonePort on $serverName): "
     docker run -p 16379:6379 -p $phonePort:$phonePort \
+        --net=isolated_nw \
         --name stage2_phone$phonePort \
         -e portToUse=$phonePort \
         -e serverName="$serverName" \
@@ -42,7 +43,6 @@ function run_docker_phone {
         -v $PWD/datavolume:/Phone/datavolume \
         -d dsanderscan/mscit_stage2_phone /bin/bash -c /Phone/startup.sh \
     sleep 1
-#        --net=isolated_nw \
 }
 echo " "
 echo "Setting up variables"
