@@ -6,6 +6,7 @@ export locPort=104
 export phonePort=1080
 export serverName=${hostname}
 export serverIPName="192.168.0.210"
+export serverIPName="`ifconfig eth0 2>/dev/null|awk '/inet addr:/ {print $2}'|sed 's/addr://'`"
 
 function config_logging {
     # $1 - Port number
