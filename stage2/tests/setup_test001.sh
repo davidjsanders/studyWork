@@ -61,7 +61,8 @@ function start_phone {
 #    echo ""
 }
 
-echo "${underline}Starting services.                                                             ${normal}"
+echo
+echo "${bold}Starting services.                                                             ${normal}"
 echo ""
 run_docker $loggerPort "logger" "Logger"
 sleep 2
@@ -104,3 +105,4 @@ echo ""
 echo "Logging configured."
 echo ""
 echo "${bold}Done.                                                                          ${normal}"
+echo
