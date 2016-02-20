@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t dsanders/stage2_logger .
+docker build -t dsanderscan/mscit_stage2_logger .

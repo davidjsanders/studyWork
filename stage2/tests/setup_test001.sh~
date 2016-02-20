@@ -29,7 +29,7 @@ function run_docker {
     docker run -p $1:$1 --name stage2_$2$1 \
         --net=isolated_nw -e portToUse=$1 -e serverName="$serverName" \
         -e TZ=`date +%Z` -v $PWD/$3/datavolume:/$3/datavolume \
-        -d dsanders/stage2_$2 /bin/bash -c /$3/startup.sh
+        -d dsanders/mscit_stage2_$2 /bin/bash -c /$3/startup.sh
     sleep 1
 }
 function run_docker_phone {
@@ -79,12 +79,5 @@ config_logging $notesvcPort "Notification Service"   # Notification Service
 config_logging $phonePort "Phone"                    # Phone
 echo ""
 echo "Logging configured."
-echo ""
-echo "Starting tests"
-echo ""
-echo -n "  Test 1 - Send an SMS Notification: "
-curl -X POST \
-  -d '{"key":"NS1234-5678-9012-3456", "sender":"SMS", "message":"This is a text message received via SMS", "action":"open"}' \
-  $serverName:$phonePort/v1_00/notification
 echo ""
 echo "Done."

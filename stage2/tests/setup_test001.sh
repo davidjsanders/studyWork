@@ -4,7 +4,7 @@ export bluePort=102
 export monitorPort=103
 export locPort=104
 export phonePort=1080
-export serverName="dasanderUty01"
+export serverName=${hostname}
 export serverIPName="192.168.0.210"
 
 function config_logging {
@@ -29,7 +29,7 @@ function run_docker {
     docker run -p $1:$1 --name stage2_$2$1 \
         --net=isolated_nw -e portToUse=$1 -e serverName="$serverName" \
         -e TZ=`date +%Z` -v $PWD/$3/datavolume:/$3/datavolume \
-        -d dsanders/stage2_$2 /bin/bash -c /$3/startup.sh
+        -d dsanders/mscit_stage2_$2 /bin/bash -c /$3/startup.sh
     sleep 1
 }
 function run_docker_phone {
