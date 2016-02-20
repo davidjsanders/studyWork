@@ -6,6 +6,9 @@ export locPort=104
 export phonePort=1080
 export serverName=`hostname`
 export serverIPName="`ifconfig eth0 2>/dev/null|awk '/inet addr:/ {print $2}'|sed 's/addr://'`"
+export bold=$(tput rev)
+export underline=$(tput smul)
+export normal=$(tput sgr0)
 
 function config_logging {
     # $1 - Port number
@@ -21,6 +24,7 @@ function config_logging {
     echo ""
     echo ""
 }
+
 function run_docker {
     # $1 - Port number
     # $2 - Container image name
@@ -32,6 +36,7 @@ function run_docker {
         -d dsanderscan/mscit_stage2_$2 /bin/bash -c /$3/startup.sh
     sleep 1
 }
+
 function run_docker_phone {
     echo -n "Starting phone (port $phonePort on $serverName): "
     docker run -p 16379:6379 -p $phonePort:$phonePort \
@@ -56,7 +61,7 @@ function start_phone {
 #    echo ""
 }
 
-echo "Starting services."
+echo "${underline}Starting services.${normal}"
 echo ""
 run_docker $loggerPort "logger" "Logger"
 sleep 2
@@ -78,6 +83,9 @@ echo -n "Pausing to let services complete start-up: "
 sleep 2
 echo "done."
 
+echo ""
+echo "${underline}Starting phone screens${normal}"
+echo ""
 # Setup Jing to be able to see the phone
 start_phone Jing
 
@@ -85,7 +93,7 @@ start_phone Jing
 start_phone Bob
 
 echo ""
-echo "Configure logging."
+echo "${underline}Configure logging.${normal}"
 echo ""
 config_logging $bluePort "Bluetooth"                 # Bluetooth
 config_logging $locPort "Location Service"           # Location Service
@@ -95,4 +103,4 @@ config_logging $phonePort "Phone"                    # Phone
 echo ""
 echo "Logging configured."
 echo ""
-echo "Done."
+echo "${bold}Done.${normal}"

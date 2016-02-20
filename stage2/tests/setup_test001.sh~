@@ -53,7 +53,7 @@ function start_phone {
         /bin/bash \
         -c "/Phone_Screen/Phone_Screen.py --server "$serverIPName" --port 16379" > "${1}.txt" &
 #    PhoneScreen/Phone_Screen.py --server $serverIP --port 16379 > "${1}".txt &
-    echo ""
+#    echo ""
 }
 
 echo "Starting services."
