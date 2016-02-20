@@ -18,14 +18,6 @@ function stop_service {
     echo ""
 }
 
-function stop_phone {
-#    echo -n "Stopping phone "${1}": "
-#    docker stop "stage2_phone_screen_"${1}
-    echo -n "Removing phone screen: "
-    docker rm -f "stage2_phone_screen_"${1}
-    echo
-}
-
 echo " "
 echo "Stopping services."
 echo ""
@@ -35,8 +27,6 @@ stop_service $locPort "location_service"
 stop_service $monitorPort "monitor_app"
 stop_service $notesvcPort "notification"
 stop_service $loggerPort "logger"
-stop_phone Jing
-stop_phone Bob
 echo "Services stopped."
 echo ""
 echo "Done."

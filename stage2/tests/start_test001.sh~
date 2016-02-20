@@ -118,6 +118,11 @@ start_phone Jing
 ((test_id++))
 start_phone Bob
 
+echo ""
+echo "Pause for 10 seconds to let the phone screens start"
+sleep 10
+echo ""
+
 # Send an SMS Message to the phone
 ((test_id++))
 export data='{'$phoneKey', "sender":"SMS", "message":"This is a text message received via SMS", "action":"open"}'

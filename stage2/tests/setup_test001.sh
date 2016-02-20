@@ -44,22 +44,30 @@ function run_docker_phone {
         -d dsanderscan/mscit_stage2_phone /bin/bash -c /Phone/startup.sh \
     sleep 1
 }
-echo " "
-echo "Setting up variables"
-echo " "
-#
-# Logger
-#
+
+function start_phone {
+    echo "Add "${1}" as a phone screen viewer. NOTE; output will not be available UNTIL end of test."
+    docker run --name "stage2_phone_screen_"${1} \
+        --net=isolated_nw \
+        -t dsanderscan/mscit_stage2_phone_screen \
+        /bin/bash \
+        -c "/Phone_Screen/Phone_Screen.py --server "$serverIPName" --port 16379" > "${1}.txt" &
+#    PhoneScreen/Phone_Screen.py --server $serverIP --port 16379 > "${1}".txt &
+    echo ""
+}
+
 echo "Starting services."
 echo ""
 run_docker $loggerPort "logger" "Logger"
 sleep 2
+
 echo -n "Clear existing logs: "
 curl -X DELETE \
   -d '{"key":"1234-5678-9012-3456"}' http://$serverName:$loggerPort/v1_00/log
 echo ""
 echo ""
 sleep 1
+
 run_docker $bluePort "bluetooth" "Bluetooth"                   # Bluetooth
 run_docker $locPort "location_service" "Location_Service"      # Location Service
 run_docker $monitorPort "monitor_app" "Monitor_App"            # Monitor App
@@ -69,6 +77,13 @@ echo ""
 echo -n "Pausing to let services complete start-up: "
 sleep 2
 echo "done."
+
+# Setup Jing to be able to see the phone
+start_phone Jing
+
+# Setup Bob to be able to see the phone
+start_phone Bob
+
 echo ""
 echo "Configure logging."
 echo ""

@@ -111,12 +111,12 @@ echo "${bold}Starting tests at "$(date)"                                        
 echo ""
 
 # Setup Jing to be able to see the phone
-((test_id++))
-start_phone Jing
+#((test_id++))
+#start_phone Jing
 
 # Setup Bob to be able to see the phone
-((test_id++))
-start_phone Bob
+#((test_id++))
+#start_phone Bob
 
 echo ""
 echo "Pause for 10 seconds to let the phone screens start"
