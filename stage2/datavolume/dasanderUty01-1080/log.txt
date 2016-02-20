@@ -6181,3 +6181,76 @@
 2016-02-20 10:32:52.884748: dasanderUty01:1080 Started
 2016-02-20 10:32:52.892304: ******************************************************************************
 2016-02-20 10:32:52.899900: 
+2016-02-20 11:14:09.053321: 
+2016-02-20 11:14:09.057983: ******************************************************************************
+2016-02-20 11:14:09.073475: dasanderUty01:1080 Started
+2016-02-20 11:14:09.080555: ******************************************************************************
+2016-02-20 11:14:09.088327: 
+2016-02-20 11:14:29.442219: Location_Control:incoming_notification:start
+2016-02-20 11:14:29.454712: Location_Control:incoming_notification:display_notification
+2016-02-20 11:14:29.463778: 
+2016-02-20 11:14:29.474366: Notification received
+2016-02-20 11:14:29.485729: -------------------------------------------------------------------------------
+2016-02-20 11:14:29.496726: Notification from: SMS
+2016-02-20 11:14:29.507272: Received at      : 2016-02-20 11:14:29.454689 (EST/EST)
+2016-02-20 11:14:29.520312: Notification     : This is a text message received via SMS
+2016-02-20 11:14:29.530684: Action           : open
+2016-02-20 11:14:29.539340: 
+2016-02-20 11:14:29.548814: Location_Control:incoming_notification:persist_notification
+2016-02-20 11:14:29.558734: Location_Control:incoming_notification:issue_bluetooth
+2016-02-20 11:14:29.566443: Location_Control:incoming_notification:end
+2016-02-20 11:14:29.573376: 
+2016-02-20 11:14:32.916524: Location_Control:incoming_notification:start
+2016-02-20 11:14:32.926430: Location_Control:incoming_notification:display_notification
+2016-02-20 11:14:32.933240: 
+2016-02-20 11:14:32.941176: Notification received
+2016-02-20 11:14:32.948919: -------------------------------------------------------------------------------
+2016-02-20 11:14:32.957374: Notification from: Monitor_App
+2016-02-20 11:14:32.965522: Received at      : 2016-02-20 11:14:32.926415 (EST/EST)
+2016-02-20 11:14:32.973448: Notification     : The application grindr has been launched. Remember: Safe sex
+                          : is good sex!
+2016-02-20 11:14:32.982682: Action           : none
+2016-02-20 11:14:32.990754: 
+2016-02-20 11:14:32.998876: Location_Control:incoming_notification:persist_notification
+2016-02-20 11:14:33.009865: Location_Control:incoming_notification:issue_bluetooth
+2016-02-20 11:14:33.016879: Location_Control:incoming_notification:end
+2016-02-20 11:14:33.023568: 
+2016-02-20 11:14:33.968671: Location_Control:incoming_notification:start
+2016-02-20 11:14:33.975758: Location_Control:incoming_notification:display_notification
+2016-02-20 11:14:33.982613: 
+2016-02-20 11:14:33.991299: Notification received
+2016-02-20 11:14:33.999094: -------------------------------------------------------------------------------
+2016-02-20 11:14:34.006996: Notification from: SMS
+2016-02-20 11:14:34.015137: Received at      : 2016-02-20 11:14:33.975744 (EST/EST)
+2016-02-20 11:14:34.023497: Notification     : Can you pick me up at Starbucks, please? Its the one at
+                          : Clair and Gordon. Thanks John.
+2016-02-20 11:14:34.032055: Action           : open
+2016-02-20 11:14:34.039879: 
+2016-02-20 11:14:34.048136: Location_Control:incoming_notification:persist_notification
+2016-02-20 11:14:34.058057: Location_Control:incoming_notification:issue_bluetooth
+2016-02-20 11:14:34.065186: Location_Control:incoming_notification:end
+2016-02-20 11:14:34.071686: 
+2016-02-20 11:14:36.039110: Location_Control:location_request:start
+2016-02-20 11:14:36.046357: Location_Control:location_request:end
+2016-02-20 11:14:36.052591: 
+2016-02-20 11:15:06.184333: Location_Control:location_request:start
+2016-02-20 11:15:06.192146: Location_Control:location_request:end
+2016-02-20 11:15:06.198483: 
+2016-02-20 11:15:06.353130: Location_Control:incoming_notification:start
+2016-02-20 11:15:06.359559: Location_Control:incoming_notification:display_notification
+2016-02-20 11:15:06.365993: 
+2016-02-20 11:15:06.373342: Notification received
+2016-02-20 11:15:06.380713: -------------------------------------------------------------------------------
+2016-02-20 11:15:06.388754: Notification from: Monitor_App
+2016-02-20 11:15:06.396079: Received at      : 2016-02-20 11:15:06.359540 (EST/EST)
+2016-02-20 11:15:06.403766: Notification     : You have entered an area known for high rates of STI
+                          : infections and drug use. Remember: Safe sex is good sex!
+2016-02-20 11:15:06.412364: Action           : openMap(100.0, 100.0)
+2016-02-20 11:15:06.419675: 
+2016-02-20 11:15:06.428385: Location_Control:incoming_notification:persist_notification
+2016-02-20 11:15:06.437651: Location_Control:incoming_notification:issue_bluetooth
+2016-02-20 11:15:06.444478: Location_Control:incoming_notification:end
+2016-02-20 11:15:06.452531: 
+2016-02-20 11:15:36.367307: Location_Control:location_request:start
+2016-02-20 11:15:36.375110: Location_Control:location_request:end
+2016-02-20 11:15:36.381555: 

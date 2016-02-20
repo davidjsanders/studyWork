@@ -9,8 +9,8 @@ export bluePort=102
 export monitorPort=103
 export locPort=104
 export phonePort=1080
-export serverName="dasanderUty01"
-export serverIP="192.168.0.210"
+export serverName=${hostname}
+export serverIP="`ifconfig eth0 2>/dev/null|awk '/inet addr:/ {print $2}'|sed 's/addr://'`"
 export serverIPName="http://"$serverIP
 export phoneKey='"key":"NS1234-5678-9012-3456"'
 export genKey='"key":"1234-5678-9012-3456"'
@@ -85,8 +85,7 @@ function do_get {
 }
 
 function start_phone {
-    echo "Add "${1}" as a phone screen viewer"
-    echo "Server: "$serverIP", Port: 16379"
+    echo "Add "${1}" as a phone screen viewer. NOTE; output will not be available UNTIL phone shuts down"
     PhoneScreen/Phone_Screen.py --server $serverIP --port 16379 > "${1}".txt &
     echo ""
 }

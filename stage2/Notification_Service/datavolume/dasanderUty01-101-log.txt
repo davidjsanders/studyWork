@@ -2885,3 +2885,52 @@
 2016-02-20 10:32:51.376667: dasanderUty01:101 Started
 2016-02-20 10:32:51.383285: ******************************************************************************
 2016-02-20 10:32:51.389560: 
+2016-02-20 11:14:07.449782: 
+2016-02-20 11:14:07.450228: ******************************************************************************
+2016-02-20 11:14:07.467971: dasanderUty01:101 Started
+2016-02-20 11:14:07.475379: ******************************************************************************
+2016-02-20 11:14:07.482116: 
+2016-02-20 11:14:32.847851: Notification being received.
+2016-02-20 11:14:32.862924: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 11:14:32.870088: Notification is The application grindr has been launched. Remember: Safe sex is
+                          : good sex! with action "none"
+2016-02-20 11:14:32.877963: 
+2016-02-20 11:14:32.877623: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---The
+                          : application grindr has been launched. Remember: Safe sex is good sex!---none---
+                          : 2016-02-20 11:14:32.876383(EST/EST)
+2016-02-20 11:14:32.879098: Redis: *** START HANDLING ***
+2016-02-20 11:14:32.889041: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'none', '2016-02-20
+                          : 11:14:32.876383(EST/EST)']
+2016-02-20 11:14:32.897049: Redis: Payload {'action': 'none', 'sender': 'Monitor_App', 'key':
+                          : 'NS1234-5678-9012-3456', 'message': 'The application grindr has been launched.
+                          : Remember: Safe sex is good sex!'}
+2016-02-20 11:14:32.904258: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 11:14:33.032410: Redis: http request response 201
+2016-02-20 11:14:33.038764: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 11:14:33.046033: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 11:14:33.052899: 
+2016-02-20 11:15:06.289192: Notification being received.
+2016-02-20 11:15:06.295530: Notification from Monitor_App for http://192.168.0.210:1080/v1_00/notification
+2016-02-20 11:15:06.314631: Notification is You have entered an area known for high rates of STI infections
+                          : and drug use. Remember: Safe sex is good sex! with action "openMap(100.0,
+                          : 100.0)"
+2016-02-20 11:15:06.321911: 
+2016-02-20 11:15:06.322566: Redis: *** START HANDLING ***
+2016-02-20 11:15:06.321946: Queued Monitor_App---http://192.168.0.210:1080/v1_00/notification---You have
+                          : entered an area known for high rates of STI infections and drug use. Remember:
+                          : Safe sex is good sex!---openMap(100.0, 100.0)---2016-02-20
+                          : 11:15:06.321017(EST/EST)
+2016-02-20 11:15:06.329306: Redis: message received! ['Monitor_App',
+                          : 'http://192.168.0.210:1080/v1_00/notification', 'You have entered an area known
+                          : for high rates of STI infections and drug use. Remember: Safe sex is good
+                          : sex!', 'openMap(100.0, 100.0)', '2016-02-20 11:15:06.321017(EST/EST)']
+2016-02-20 11:15:06.336464: Redis: Payload {'action': 'openMap(100.0, 100.0)', 'sender': 'Monitor_App',
+                          : 'key': 'NS1234-5678-9012-3456', 'message': 'You have entered an area known for
+                          : high rates of STI infections and drug use. Remember: Safe sex is good sex!'}
+2016-02-20 11:15:06.343560: Redis: issuing http request to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 11:15:06.462094: Redis: http request response 201
+2016-02-20 11:15:06.468772: Redis: message dispatched to http://192.168.0.210:1080/v1_00/notification
+2016-02-20 11:15:06.475303: Redis: *** STOP HANDLING WITH SUCCESS ***
+2016-02-20 11:15:06.482173: 
