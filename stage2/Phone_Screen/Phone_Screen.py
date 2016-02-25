@@ -26,7 +26,7 @@ try:
                              'server. Please note; this is simply the port '+\
                              '(e.g. 16379). '+\
                              'The port tells the Python redis client which '+\
-                             'port to use.',
+                             'port to use. ',
                         required=True)
     args = parser.parse_args()
     server_name = args.server
