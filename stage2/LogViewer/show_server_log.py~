@@ -53,11 +53,7 @@ try:
     module_description = 'Connect to the logging service and show the logs. '+\
                          'The logs from each Docker machine running a '+\
                          'component of the model are available either as '+\
-                         'a whole or individually. When viewed as a whole, '+\
-                         'the log report shows every machine; when viewed '+\
-                         'for a single machine, only that machines log is '+\
-                         'shown. The log will be large and can be piped to '+\
-                         'more or out to a file.'
+                         'a whole or individually.'
     logger_description = 'The URL identifier for the logging server, '+\
                          'If only the log URL is provide, e.g.: '+\
                          'http://server:port/v9_99/log, then the logs for '+\
