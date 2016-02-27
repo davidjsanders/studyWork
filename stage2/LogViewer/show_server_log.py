@@ -72,6 +72,22 @@ try:
                         type=str,
                         help=logger_description,
                         required=True)
+    parser.add_argument('--server',
+                        type=str,
+                        help='The name or IP address of the server. Please '+\
+                             'note; this is simply the server name '+\
+                             '(e.g. bob) and not the FQDN or http://server. '+\
+                             'The server name is used in the logging tables '+\
+                             'with the port number as the unique key.',
+                        required=False)
+    parser.add_argument('--port',
+                        type=int,
+                        help='The port number (e.g. 80) used by the server. '+\
+                             'Please note; this is simply the port '+\
+                             '(e.g. 8090). '+\
+                             'The port name is used in the logging tables '+\
+                             'with the server name as the unique key.',
+                        required=False)
     args = parser.parse_args()
     if args.server == None:
         server_name = 'all'
