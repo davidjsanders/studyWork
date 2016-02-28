@@ -127,7 +127,7 @@ class Control(object):
 
 
     def clear_value(self, key=None):
-        return self.set_value(key, None)
+        return self.__Notification_Service_db.clear_value(key)
 
 
     def db_logger(self,

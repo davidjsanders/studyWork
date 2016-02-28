@@ -2,7 +2,7 @@ from flask_restful import Resource, Api, reqparse, abort
 from flask import Response
 from Bluetooth import Pairing_Database
 
-import datetime, time, json, os
+import datetime, time, json, os, requests
 from textwrap import wrap
 
 #
@@ -35,9 +35,7 @@ class Control(object):
         self.__pairing_db = Pairing_Database.Pairing_Database()
 
         self.log()
-        self.log('*'*78)
         self.log('{0}:{1} Started'.format(server_name, port_number))
-        self.log('*'*78)
         self.log()
 
 

@@ -117,7 +117,7 @@ class Control(object):
                   central_logger=None,
                   sender=None,
                   log_type=None,
-                  message=None
+                  log_message=None
     ):
         if central_logger == None:
             return

@@ -34,11 +34,8 @@ class Control(object):
 
         self.__pairing_db = Pairing_Database.Pairing_Database()
 
-        self.log()
-        self.log('*'*78)
-        self.log('{0}:{1} Started'.format(server_name, port_number))
-        self.log('*'*78)
-        self.log()
+        self.log('Bluetooth Device {0}:{1} Started'\
+                 .format(server_name, port_number))
 
 
     def get_value(self, key=None):

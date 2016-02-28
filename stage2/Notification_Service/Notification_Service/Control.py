@@ -39,13 +39,9 @@ class Control(object):
         self.__Notification_Service_db = Notification_Service_Database()
         self.__log_file = 'datavolume/'+server_name+'-'+str(port_number)+\
             '-log.txt'
-        print('Logging to {0}'.format(self.__log_file))
 
-        self.log()
-        self.log('*'*78)
-        self.log('{0}:{1} Started'.format(server_name, port_number))
-        self.log('*'*78)
-        self.log()
+        self.log('Notification Service {0}:{1} Started'\
+                 .format(server_name, port_number))
 
         #self.__redis['host'] = server_name
         #self.__redis['port'] = 6379

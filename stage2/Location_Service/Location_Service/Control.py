@@ -36,12 +36,9 @@ class Control(object):
             Location_Service_Database(server_name, port_number)
         self.__log_file = 'datavolume/'+server_name+'-'+str(port_number)+\
             '-log.txt'
-        self.log()
-        self.log('*'*78)
+
         self.log('Location Service {0}:{1} Started'\
             .format(server_name, port_number))
-        self.log('*'*78)
-        self.log()
 
 
     def get_value(self, key=None):
