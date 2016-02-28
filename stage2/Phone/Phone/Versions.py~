@@ -1,8 +1,0 @@
-from flask_restful import Resource, Api, reqparse, abort
-from flask import Response
-from Bluetooth import app, api, pair_control_object
-from BluetoothReceiver import apiR
-
-class Versions(Resource):
-    def get(self):
-        return pair_control_object.version_info()

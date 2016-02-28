@@ -1,7 +1,0 @@
-from flask_restful import Resource, Api, reqparse, abort
-from flask import Response
-from Logger import app, api
-from Logger_Boundary.Log_Boundary import Log_Boundary
-
-api.add_resource(Log_Boundary, '/v1_00/log')
-
