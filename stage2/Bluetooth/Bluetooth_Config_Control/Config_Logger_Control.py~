@@ -108,6 +108,7 @@ class Config_Logger_Control(object):
                                                      data=data,
                                                      status=status,
                                                      response=success)
+        self.__controller.log(return_value)
 
         return return_value
 
