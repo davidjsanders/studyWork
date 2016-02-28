@@ -110,7 +110,7 @@ class Config_Logger_Control(object):
                                                      response=success)
         self.__controller.log("Logging request for Bluetooth. "+\
                               "Response: {0} - {1}".\
-                              format(status, data))
+                              format(status, return_value))
 
         return return_value
 

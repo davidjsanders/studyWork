@@ -108,7 +108,9 @@ class Config_Logger_Control(object):
                                                      data=data,
                                                      status=status,
                                                      response=success)
-        self.__controller.log(return_value)
+        self.__controller.log("Logging request for Bluetooth. "+\
+                              "Response: {0} - {1}".\
+                              format(status, data))
 
         return return_value
 
