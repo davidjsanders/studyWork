@@ -16,13 +16,14 @@ class Config_Logger_Control(object):
         message = 'Central logging status.'
 
         logger = self.__controller.get_value('logger')
+        if logger in ([], '', None):
+            logger = None
+
         data = {'logger':logger}
         return_value = self.__controller.do_response(message=message,
                                                      data=data,
                                                      status=status,
                                                      response=success)
-        if return_value in ([], '', None):
-            return_value = None
 
         return return_value
 

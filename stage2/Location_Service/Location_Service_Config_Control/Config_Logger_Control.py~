@@ -7,7 +7,7 @@ class Config_Logger_Control(object):
     __controller = None
 
     def __init__(self):
-        self.__controller = Control.global_controller
+        self.__controller = Control.global_control
 
 
     def get_logger(self):
@@ -108,6 +108,10 @@ class Config_Logger_Control(object):
                                                      data=data,
                                                      status=status,
                                                      response=success)
+
+        self.__controller.log("Logging request for Bluetooth. "+\
+                              "Response: {0} - {1}. Message = {2}".\
+                              format(status, data, message))
 
         return return_value
 

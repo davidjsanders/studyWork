@@ -109,6 +109,10 @@ class Config_Logger_Control(object):
                                                      status=status,
                                                      response=success)
 
+        self.__controller.log("Logging request for Notification Service. "+\
+                              "Response: {0} - {1}. Message = {2}".\
+                              format(status, data, message))
+
         return return_value
 
 logger_control_object = Config_Logger_Control()
