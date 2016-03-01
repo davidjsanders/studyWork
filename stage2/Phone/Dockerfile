@@ -17,7 +17,7 @@
 #
 # Use the base Python image which includes Python3, Flask, and Flask_Restful
 # 
-FROM dsanderscan/pythonbase
+FROM dsanderscan/mscit_stage2_base
 #
 # Install additional apps for this module
 #
@@ -27,7 +27,7 @@ RUN apt-get install -y redis-server
 #
 # Install the python Redis module
 #
-RUN /flask/bin/pip install redis
+RUN pip3 install redis
 #
 # Create the directory structures
 #
@@ -36,6 +36,7 @@ RUN mkdir /Phone/Phone
 RUN mkdir /Phone/Phone_Boundary
 RUN mkdir /Phone/Phone_Config_Boundary
 RUN mkdir /Phone/Phone_Config_Control
+RUN mkdir /Phone/datavolume
 #
 # copy the files required for the application
 #
@@ -81,3 +82,5 @@ COPY Phone_Config_Control/Config_Push_Notifications_Control.py /Phone/Phone_Conf
 # Set the working directory for the container
 #
 WORKDIR /Phone/
+ENTRYPOINT ["/bin/bash"] # Set the entrypoint
+CMD ["/Phone/startup.sh"]                                # Set default parameters

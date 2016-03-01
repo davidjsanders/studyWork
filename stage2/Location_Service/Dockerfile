@@ -16,7 +16,7 @@
 #
 # Use the base Python image which includes Python3, Flask, Flask_Restful, and
 # 
-FROM dsanderscan/pythonbase
+FROM dsanderscan/mscit_stage2_base
 #
 # Create the directory structures
 RUN mkdir /Location_Service
@@ -24,6 +24,7 @@ RUN mkdir /Location_Service/Location_Service
 RUN mkdir /Location_Service/Location_Service_Boundary
 RUN mkdir /Location_Service/Location_Service_Config_Boundary
 RUN mkdir /Location_Service/Location_Service_Config_Control
+RUN mkdir /Location_Service/datavolume
 #
 # copy the files required for the application
 #
@@ -55,3 +56,5 @@ COPY Location_Service_Config_Control/Config_Logger_Control.py \
 # Set the working directory for the container
 #
 WORKDIR /Location_Service/
+ENTRYPOINT ["/bin/bash"] # Set the entrypoint
+CMD ["/Location_Service/startup.sh"]                                # Set default parameters

@@ -1,4 +1,3 @@
-#!/flask/bin/python3
 import redis, atexit, os, argparse
 
 try:

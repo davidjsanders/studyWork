@@ -16,7 +16,7 @@
 #
 # Use the base Python image which includes Python3, Flask, Flask_Restful, and
 # 
-FROM dsanderscan/pythonbase
+FROM dsanderscan/mscit_stage2_base
 #
 # Install additional apps for this module
 #
@@ -26,12 +26,13 @@ RUN apt-get install -y redis-server
 #
 # Install the python Redis module
 #
-RUN /flask/bin/pip install redis
+RUN pip3 install redis
 #
 # Create the directory structures
 RUN mkdir /Logger
 RUN mkdir /Logger/Logger
 RUN mkdir /Logger/Logger_Boundary
+RUN mkdir /Logger/datavolume
 #
 # copy the files required for the application
 #
@@ -50,3 +51,5 @@ COPY Logger_Boundary/Log_Boundary.py /Logger/Logger_Boundary/
 # Set the working directory for the container
 #
 WORKDIR /Logger/
+ENTRYPOINT ["/bin/bash"] # Set the entrypoint
+CMD ["/Logger/startup.sh"]                                # Set default parameters

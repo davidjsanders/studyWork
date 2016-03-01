@@ -16,7 +16,7 @@
 #
 # Use the base Python image which includes Python3, Flask, Flask_Restful, and
 # 
-FROM dsanderscan/pythonbase
+FROM dsanderscan/mscit_stage2_base
 #
 # Create the directory structures
 RUN mkdir /Bluetooth
@@ -25,6 +25,7 @@ RUN mkdir /Bluetooth/BluetoothBoundary
 RUN mkdir /Bluetooth/BluetoothSender
 RUN mkdir /Bluetooth/Bluetooth_Config_Boundary
 RUN mkdir /Bluetooth/Bluetooth_Config_Control
+RUN mkdir /Bluetooth/datavolume
 #
 # copy the files required for the application
 #
@@ -50,3 +51,6 @@ COPY Bluetooth_Config_Control/Config_Logger_Control.py /Bluetooth/Bluetooth_Conf
 # Set the working directory for the container
 #
 WORKDIR /Bluetooth/
+ENTRYPOINT ["/bin/bash"]        # Set the entrypoint
+CMD ["/Bluetooth/startup.sh"]   # Set default parameters
+

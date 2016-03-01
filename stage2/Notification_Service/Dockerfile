@@ -17,7 +17,7 @@
 #
 # Use the base Python image which includes Python3, Flask, Flask_Restful, and
 # 
-FROM dsanderscan/pythonbase
+FROM dsanderscan/mscit_stage2_base
 #
 # Create the directory structures
 RUN mkdir /Notification_Service
@@ -25,6 +25,7 @@ RUN mkdir /Notification_Service/Notification_Service
 RUN mkdir /Notification_Service/Notification_Service_Boundary
 RUN mkdir /Notification_Service/Notification_Service_Config_Boundary
 RUN mkdir /Notification_Service/Notification_Service_Config_Control
+RUN mkdir /Notification_Service/datavolume
 #
 # Install additional apps for this module
 #
@@ -34,7 +35,7 @@ RUN apt-get install -y redis-server
 #
 # Install the python Redis module
 #
-RUN /flask/bin/pip install redis
+RUN pip3 install redis
 #
 # copy the files required for the application
 #
@@ -64,3 +65,5 @@ COPY Notification_Service_Config_Control/Config_Logger_Control.py \
 # Set the working directory for the container
 #
 WORKDIR /Notification_Service/
+ENTRYPOINT ["/bin/bash"] # Set the entrypoint
+CMD ["/Notification_Service/startup.sh"]                                # Set default parameters

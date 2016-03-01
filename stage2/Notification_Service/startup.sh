@@ -66,5 +66,5 @@ service nginx start
 # Start UWSGI and pass the notes_final.ini file.
 #
 #runLocally=False; export runLocally
-/flask/bin/uwsgi Notification_Service_uwsgi.ini
+uwsgi Notification_Service_uwsgi.ini
 #/flask/bin/python3 runserver.py

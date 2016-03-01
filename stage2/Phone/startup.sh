@@ -66,5 +66,5 @@ redis-server &
 # Start UWSGI and pass the notes_final.ini file.
 #
 #runLocally=False; export runLocally
-/flask/bin/uwsgi Phone_uwsgi.ini
-#/flask/bin/python3 runserver.py
+uwsgi Phone_uwsgi.ini
+

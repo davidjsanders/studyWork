@@ -18,14 +18,27 @@
 #
 # Use the base Python image which includes Python3, Flask, Flask_Restful, and
 # 
-FROM dsanderscan/pythonbase
+FROM dsanderscan/mscit_stage2_base
 #
+# Install additional apps for this module
+#
+# Install Redis
+#
+RUN apt-get install -y redis-server
+#
+# Install the python Redis module
+#
+RUN pip3 install redis
+#
+# Create the directory structures
+##
 # Create the directory structures
 RUN mkdir /Monitor_App
 RUN mkdir /Monitor_App/Monitor_App
 RUN mkdir /Monitor_App/Monitor_App_Boundary
 RUN mkdir /Monitor_App/Monitor_App_Config_Boundary
 RUN mkdir /Monitor_App/Monitor_App_Config_Control
+RUN mkdir /Monitor_App/datavolume
 #
 # copy the files required for the application
 #
@@ -54,3 +67,5 @@ COPY Monitor_App_Config_Control/Config_Logger_Control.py \
 # Set the working directory for the container
 #
 WORKDIR /Monitor_App/
+ENTRYPOINT ["/bin/bash"] # Set the entrypoint
+CMD ["/Monitor_App/startup.sh"]                                # Set default parameters

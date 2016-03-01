@@ -13,18 +13,15 @@
 # -----------------------------------------------------------------------------
 # 20 Feb 2016  | D Sanders      | First version.
 #
-#
-# Use the base Python image which includes Python3, Flask, Flask_Restful, and
-# 
-FROM dsanderscan/pythonbase
-#
-# Create the directory structures
-RUN mkdir /Log_Viewer
-#
-# copy the files required for the application
-#
-COPY show_server_log.py /Log_Viewer/
-#
-# Set the working directory for the container
-#
-WORKDIR /Log_Viewer/
+FROM debian                                   # Base Debian Linux image
+RUN apt-get update                            # Update core packages
+RUN apt-get install -y \
+    python3 \
+    python3-pip \
+&& rm -rf /var/lib/apt/lists/*                # Install python & clean packages
+RUN pip3 install requests                     # Install requests
+RUN mkdir /Log_Viewer                         # Create the directory structures
+COPY show_server_log.py /Log_Viewer/          # copy the files required for the application
+WORKDIR /Log_Viewer/                          # Set the working directory for the container
+ENTRYPOINT ["/Log_Viewer/show_server_log.py"] # Set the entrypoint
+CMD ["--help"]                                # Set default parameters
