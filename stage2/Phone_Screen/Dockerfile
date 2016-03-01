@@ -20,5 +20,5 @@ COPY Phone_Screen.py /Phone_Screen/
 #COPY Phone_Screen.py /Phone_Screen/           # copy the files required for the application
 WORKDIR /Phone_Screen/                        # Set the working directory for the container
 ENTRYPOINT ["python3"]  # Set the entrypoint
-CMD [" /Phone_Screen/Phone_Screen.py"]        # Set default parameters
+CMD ["/Phone_Screen/Phone_Screen.py"]        # Set default parameters
 
