@@ -11,15 +11,15 @@
 # -----------------------------------------------------------------------------
 # Date         | By             | Reason
 # -----------------------------------------------------------------------------
-# 24 Jan 2016  | D Sanders      | First version.
-# 31 Jan 2016  | D Sanders      | Update to include config boundary & controls
-# 07 Jan 2016  | D Sanders      | Add centralized logging
+# 02 Mar 2016  | D Sanders      | First version. Builds on stage2_phone
 #
 # Use the base Python image which includes Python3, Flask, and Flask_Restful
 # 
 FROM dsanderscan/mscit_stage2_phone
 COPY Phone/Control.py /Phone/Phone/
 COPY Phone/Notification_Control.py /Phone/Phone/
+COPY Phone_Config_Control/Config_Lock_Control.py /Phone/Phone_Config_Control/
+COPY Phone/Phone_Database.py /Phone/Phone/
 #
 #
 #

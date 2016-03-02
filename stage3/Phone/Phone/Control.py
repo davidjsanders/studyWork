@@ -53,7 +53,8 @@ class Control(object):
            '-'+str(port_number)+'.txt'
         )
 
-        self.log('Phone {0}:{1} Started'.format(server_name, port_number))
+        self.log('Phone {0}:{1} Started'.format(server_name, port_number),
+                 screen=False)
 
 
     def get_value(self, key=None):
@@ -75,21 +76,6 @@ class Control(object):
             return None
 
         return self.__phone_db.clear_key(key)
-
-
-    def persist_notification(
-        self,
-        sender=None,
-        date_string=None,
-        notification=None,
-        action=None
-    ):
-        self.__phone_db.save_notification(
-            sender,
-            date_string,
-            notification,
-            action
-        )
 
 
     def get_bluetooth(self):
@@ -123,7 +109,7 @@ class Control(object):
             payload_data = {
                 "sender":sender,
                 "log-type":"normal",
-                "message":"Stage3>>"+log_message
+                "message":log_message
             }
             requests.post(
                 central_logger,
@@ -178,6 +164,131 @@ class Control(object):
             json.dumps(return_dict),
             status=status,
             mimetype='application/json')
+
+
+    def handle_unlock(self):
+        self.log('Device has been unlocked. Handle any persisted '+\
+                 'notifications stored in local store.',
+                 screen=False)
+        notifications_persisted = self.__phone_db.get_notifications()
+        for note in notifications_persisted:
+            self.process_notification(
+                sender=note[0],
+                date_string=note[1],
+                notification=note[2],
+                action=note[3]
+            )
+            self.log('Showing {0}'.format(note[0]),
+                     screen=False)
+
+
+    def persist_notification(
+        self,
+        sender=None,
+        date_string=None,
+        notification=None,
+        action=None
+    ):
+        self.__phone_db.save_notification(
+            sender,
+            date_string,
+            notification,
+            action
+        )
+
+
+    def process_notification(
+        self,
+        sender=None,
+        date_string=None,
+        notification=None,
+        action=None
+    ):
+        self.log(
+            'Displaying notification on screen',
+            screen=False
+        )
+
+        self.display_notification(
+            sender=sender,
+            date_string=date_string,
+            notification=notification,
+            action=action
+        )
+
+        self.__phone_db.update_notification(
+            sender=sender,
+            date_string=date_string,
+            notification=notification,
+            action=action
+        )
+
+        self.log(
+            'Issuing notification to Bluetooth devices',
+            screen=False
+        )
+
+        self.issue_bluetooth(notification=notification)
+
+
+    def issue_bluetooth(
+        self,
+        notification=None
+    ):
+        request_response = None
+
+        try:
+            bluetooth_device = self.get_bluetooth()
+            if bluetooth_device != []\
+            and bluetooth_device != None:
+                bluetooth_key = self.get_value(bluetooth_device)
+                phonename = self.get_value('phonename')
+                if not (bluetooth_key == None or phonename == None):
+                    payload_data = {
+                                    "key":bluetooth_key,
+                                    "message":notification
+                                   }
+                    request_response = requests.post(
+                         bluetooth_device+'/broadcast/'+phonename,
+                         data=json.dumps(payload_data)
+                    )
+            return request_response
+        except requests.exceptions.ConnectionError as rce:
+            self.log(
+                'Bluetooth caused an exception: {0}'.format(rce),
+                screen=False
+            )
+#            raise requests.exceptions.ConnectionError(rce)
+        except:
+            raise
+
+    def display_notification(
+        self,
+        sender=None,
+        date_string=None,
+        notification=None,
+        action=None
+    ):
+        try:
+            self.log('')
+            self.log('Notification received')
+            self.log('-'*79)
+            self.log('Notification from: {0}'.format(sender))
+            self.log('Received at      : {0}'.format(date_string))
+            self.log('Notification     : {0}'.format(notification))
+            self.log('Action           : {0}'.format(action))
+            self.log('')
+
+            outputfile = self.get_value('output_device')
+            f = open(outputfile,'a')
+            f.write(('-'*80)+"\n")
+            f.write('Notification from: {0}'.format(sender)+"\n")
+            f.write('Received at      : {0}'.format(date_string)+"\n")
+            f.write('Notification     : {0}'.format(notification)+"\n")
+            f.write('Action           : {0}'.format(action)+"\n\n")
+            f.close()
+        except:
+            raise
 
 
 global_controller = Control()

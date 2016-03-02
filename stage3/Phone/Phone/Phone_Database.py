@@ -117,6 +117,32 @@ class Phone_Database(object):
         return True
 
 
+    def update_notification(
+        self,
+        sender=None,
+        date_string=None,
+        notification=None,
+        action=None
+    ):
+        returned = None
+        try:
+            self.__open_db()
+            self.__db_exec('update notifications '+\
+                           'set notification_read = 1 '+\
+                           'where sender = ? '+\
+                           'and date_string = ? '+\
+                           'and notification = ? '+\
+                           'and action = ?',
+                           (sender, date_string, notification, action))
+            self.__db_conn.commit()
+        except Exception as e:
+            raise
+        finally:
+            self.__close_db()
+
+        return True
+
+
     def get_notifications(
         self
     ):

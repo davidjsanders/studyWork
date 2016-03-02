@@ -111,7 +111,8 @@ class Config_Logger_Control(object):
 
         self.__controller.log("Logging request for Phone. "+\
                               "Response: {0} - {1}. Message = {2}".\
-                              format(status, data, message))
+                              format(status, data, message),
+                              screen=False)
 
         return return_value
 

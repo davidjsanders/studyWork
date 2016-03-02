@@ -17,8 +17,6 @@ class Notification_Control(object):
         self,
         json_string=None
     ):
-        self.__controller.log('Location_Control:incoming_notification:start',
-                              screen=False)
         success = 'success'
         status = '201'
         message = 'Notification received. Thank you.'
@@ -45,6 +43,12 @@ class Notification_Control(object):
                 if not key == 'NS1234-5678-9012-3456':
                     raise ValueError('Notification control key incorrect.')
 
+                lock_status = self.__controller.get_value('locked')
+                self.__controller.log('Checking lock status. Value is {0}'\
+                                      .format(lock_status),
+                                      screen=False
+                                     )
+
                 data = {"action":action,
                         "notification":text}
                 now = datetime.datetime.now()
@@ -52,22 +56,10 @@ class Notification_Control(object):
                 tzdst = time.tzname[1]
 
                 self.__controller.log(
-                    'Location_Control:incoming_notification:{0}'\
-                    .format('display_notification'),
+                    'Persisting notification to primary storage.',
                     screen=False
-                )
-                self.__display_notification(
-                    sender=sender,
-                    date_string='{0} ({1}/{2})'.format(now, tz, tzdst),
-                    notification=text,
-                    action=action
                 )
 
-                self.__controller.log(
-                    'Location_Control:incoming_notification:{0}'\
-                    .format('persist_notification'),
-                    screen=False
-                )
                 self.__controller.persist_notification(
                     sender=sender,
                     date_string='{0} ({1}/{2})'.format(now, tz, tzdst),
@@ -75,16 +67,43 @@ class Notification_Control(object):
                     action=action
                 )
 
-                self.__controller.log(
-                  'Location_Control:incoming_notification:{0}'\
-                     .format('issue_bluetooth'),
-                     screen=False
-                )
-                response = self.__issue_bluetooth(
-                    notification=text
-                )
-                if response != None and response.status_code != 200:
-                    data['warnings'] = response.json()
+                if lock_status.upper() == 'UNLOCKED':
+                    self.__controller.process_notification(
+                        sender=sender,
+                        date_string='{0} ({1}/{2})'.format(now, tz, tzdst),
+                        notification=text,
+                        action=action
+                    )
+#                    self.__controller.log(
+#                        'Displaying notification on screen',
+#                        screen=False
+#                    )
+#
+#                    self.__controller.display_notification(
+#                        sender=sender,
+#                        date_string='{0} ({1}/{2})'.format(now, tz, tzdst),
+#                        notification=text,
+#                        action=action
+#                    )
+#
+#                    self.__controller.log(
+#                        'Incoming notification issued to Bluetooth listeners',
+#                        screen=False
+#                    )
+#
+#                    response = self.__controller.issue_bluetooth(
+#                        notification=text
+#                    )
+#
+#                    if response != None and response.status_code != 200:
+#                        data['warnings'] = response.json()
+                else:
+                    self.__controller.log(
+                        'Notification will not be displayed because '+\
+                        'phone is locked.',
+                        screen=False
+                    )
+
 
             except requests.exceptions.ConnectionError as rce:
                 # Connection error means we could not reach the Bluetooth
@@ -92,7 +111,7 @@ class Notification_Control(object):
                 # notification was still delivered.
                 data['warnings'] = 'Bluetooth Error: device did not respond'
                 self.__controller.log(
-                    'Location_Control:incoming_notification:{0}'\
+                    'Bluetooth device caused an error: {0}'\
                     .format(str(rce),
                     screen=False)
                 )
@@ -101,7 +120,8 @@ class Notification_Control(object):
                 status = '400'
                 message = 'Badly formed request!'
                 self.__controller.log(
-                  'Location_Control:incoming_notification:{0}'.format(str(ke)),
+                  'Handling incoming notification with bad key:{0}'\
+                  .format(str(ke)),
                   screen=False
                 )
             except ValueError as ve:
@@ -109,7 +129,7 @@ class Notification_Control(object):
                 status = '403'
                 message = str(ve)
                 self.__controller.log(
-                  'Location_Control:incoming_notification:{0}'.format(str(ve)),
+                  'Incoming notification caused an error:{0}'.format(str(ve)),
                   screen=False
                 )
             except Exception as e:
@@ -117,15 +137,11 @@ class Notification_Control(object):
                 status = '400'
                 message = 'Badly formed request!'
                 self.__controller.log(
-                  'Location_Control:incoming_notification:{0}'.format(repr(e)),
+                  'Incoming notification caused exception :{0}'.format(repr(e)),
                   screen=False
                 )
                 raise
 
-        self.__controller.log('Location_Control:incoming_notification:end',
-                              screen=False)
-        self.__controller.log('',
-                              screen=False)
         return_value = self.__controller.do_response(message=message,
                                                      data=data,
                                                      status=status,
