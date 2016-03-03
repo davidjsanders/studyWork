@@ -135,7 +135,7 @@ class Control(object):
         if central_logger == None:
             return
         try:
-            sender = self.__server_name + '_' + str(self.__port_number)
+            sender = 'notify_svc_' + str(self.__port_number)
             payload_data = {
                 "sender":sender,
                 "log-type":"normal",
@@ -158,7 +158,7 @@ class Control(object):
         try:
             central_logger = self.get_value('logger')
             if central_logger not in ('', [], None) and log_message != None:
-                sender = self.__server_name + '_' + str(self.__port_number)
+                sender = 'notify_svc_' + str(self.__port_number)
                 self.db_logger(central_logger, sender, 'normal', log_message)
             f = open(self.__log_file, 'a')
             if log_message == None or log_message == '':

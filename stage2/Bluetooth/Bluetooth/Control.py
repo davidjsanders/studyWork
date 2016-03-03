@@ -88,7 +88,7 @@ class Control(object):
         now = datetime.datetime.now()
         f = None
         try:
-            sender = self.__server_name + '_' + str(self.__port_number)
+            sender = 'bluetooth_' + str(self.__port_number)
             central_logger = self.get_value('logger')
             if central_logger not in ('', [], None) and log_message != None:
                 self.db_logger(central_logger, sender, 'normal', log_message)
