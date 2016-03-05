@@ -20,11 +20,11 @@ FROM dsanderscan/mscit_stage2_log_viewer
 COPY show_server_log.py /Log_Viewer/
 
 # Set the working directory for the container
-WORKDIR /Log_Viewer/
+#WORKDIR /Log_Viewer/
 
 # Set the entrypoint
-ENTRYPOINT ["/Log_Viewer/show_server_log.py"]
+#ENTRYPOINT ["/Log_Viewer/show_server_log.py"]
 
 # Set default parameters
-CMD ["--help"]
+#CMD ["--help"]
 
