@@ -1,6 +1,6 @@
 echo ""
 echo "Building LogViewer"
-cd ../LogViewer
+cd LogViewer
 ./build.sh
 echo ""
 echo "Building Monitor App"
