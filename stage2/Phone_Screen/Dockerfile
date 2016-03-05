@@ -7,18 +7,32 @@
 #
 #
 FROM debian
-RUN apt-get update                            # Update core packages
+# Update core packages
+RUN apt-get update
 RUN apt-get install -y \
     python3 \
     python3-pip \
     redis-server \
-&& rm -rf /var/lib/apt/lists/*                # Install python & clean packages
-RUN pip3 install requests                     # Install requests
-RUN pip3 install redis                        # Install Redis
-RUN mkdir /Phone_Screen                       # Create the directory structures
+# Install python & clean packages
+&& rm -rf /var/lib/apt/lists/*
+
+# Install requests
+RUN pip3 install requests
+
+# Install Redis
+RUN pip3 install redis
+
+# Create the directory structures
+RUN mkdir /Phone_Screen
+
 COPY Phone_Screen.py /Phone_Screen/
-#COPY Phone_Screen.py /Phone_Screen/           # copy the files required for the application
-WORKDIR /Phone_Screen/                        # Set the working directory for the container
-ENTRYPOINT ["python3"]  # Set the entrypoint
-CMD ["/Phone_Screen/Phone_Screen.py"]        # Set default parameters
+
+# Set the working directory for the container
+WORKDIR /Phone_Screen/
+
+# Set the entrypoint
+ENTRYPOINT ["python3"]
+
+# Set default parameters
+CMD ["/Phone_Screen/Phone_Screen.py"]
 

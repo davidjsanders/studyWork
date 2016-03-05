@@ -82,5 +82,7 @@ COPY Phone_Config_Control/Config_Push_Notifications_Control.py /Phone/Phone_Conf
 # Set the working directory for the container
 #
 WORKDIR /Phone/
-ENTRYPOINT ["/bin/bash"] # Set the entrypoint
-CMD ["/Phone/startup.sh"]                                # Set default parameters
+# Set the entrypoint
+ENTRYPOINT ["/bin/bash"]
+# Set default parameters
+CMD ["/Phone/startup.sh"]

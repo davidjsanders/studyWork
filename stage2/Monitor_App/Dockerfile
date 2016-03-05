@@ -67,5 +67,7 @@ COPY Monitor_App_Config_Control/Config_Logger_Control.py \
 # Set the working directory for the container
 #
 WORKDIR /Monitor_App/
-ENTRYPOINT ["/bin/bash"] # Set the entrypoint
-CMD ["/Monitor_App/startup.sh"]                                # Set default parameters
+# Set the entrypoint
+ENTRYPOINT ["/bin/bash"]
+# Set default parameters
+CMD ["/Monitor_App/startup.sh"]

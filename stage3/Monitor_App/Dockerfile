@@ -32,5 +32,9 @@ COPY Monitor_App_Config_Control/Config_Message_Control.py \
     /Monitor_App/Monitor_App_Config_Control/
 #
 WORKDIR /Monitor_App/
-ENTRYPOINT ["/bin/bash"] # Set the entrypoint
-CMD ["/Monitor_App/startup.sh"]                                # Set default parameters
+
+# Set the entrypoint
+ENTRYPOINT ["/bin/bash"]
+
+# Set default parameters
+CMD ["/Monitor_App/startup.sh"]

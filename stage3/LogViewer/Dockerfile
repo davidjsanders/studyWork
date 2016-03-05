@@ -11,26 +11,10 @@
 # -----------------------------------------------------------------------------
 # Date         | By             | Reason
 # -----------------------------------------------------------------------------
-# 20 Feb 2016  | D Sanders      | First version.
+# 05 Mar 2016  | D Sanders      | First stage 3 version, based on stage 2.
 #
-
-# Base Debian Linux image
-FROM debian
-
-# Update core packages
-RUN apt-get update
-
-# Install python & clean packages
-RUN apt-get install -y \
-    python3 \
-    python3-pip \
-&& rm -rf /var/lib/apt/lists/*
-
-# Install requests
-RUN pip3 install requests
-
-# Create the directory structures
-RUN mkdir /Log_Viewer
+# Use the stage 2 container image
+FROM dsanderscan/mscit_stage2_log_viewer
 
 # copy the files required for the application
 COPY show_server_log.py /Log_Viewer/

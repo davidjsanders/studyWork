@@ -51,5 +51,7 @@ COPY Logger_Boundary/Log_Boundary.py /Logger/Logger_Boundary/
 # Set the working directory for the container
 #
 WORKDIR /Logger/
-ENTRYPOINT ["/bin/bash"] # Set the entrypoint
-CMD ["/Logger/startup.sh"]                                # Set default parameters
+# Set the entrypoint
+ENTRYPOINT ["/bin/bash"]
+# Set default parameters
+CMD ["/Logger/startup.sh"]

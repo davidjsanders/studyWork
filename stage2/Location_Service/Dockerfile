@@ -56,5 +56,7 @@ COPY Location_Service_Config_Control/Config_Logger_Control.py \
 # Set the working directory for the container
 #
 WORKDIR /Location_Service/
-ENTRYPOINT ["/bin/bash"] # Set the entrypoint
-CMD ["/Location_Service/startup.sh"]                                # Set default parameters
+# Set the entrypoint
+ENTRYPOINT ["/bin/bash"]
+# Set default parameters
+CMD ["/Location_Service/startup.sh"]
