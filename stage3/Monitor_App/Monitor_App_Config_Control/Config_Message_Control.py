@@ -41,7 +41,6 @@ class Config_Message_Control(object):
             self.__controller.log('General exception: {0}'.format(repr(e)))
             raise
 
-        self.__controller.log('No message defined - step 6')
         return return_value
 
 
