@@ -90,7 +90,7 @@ try:
                              'with the server name as the unique key.',
                         required=False)
     args = parser.parse_args()
-    if args.server == None:
+    if args.service == None:
         server_name = 'all'
         port_number = 0
         server_info = None
