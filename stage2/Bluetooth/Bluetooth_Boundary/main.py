@@ -7,3 +7,4 @@ from Bluetooth_Boundary.Broadcast_Boundary import Broadcast_Boundary
 
 apiR.add_resource(Broadcast_Boundary, '/v1_00/broadcast/<string:devicename>')
 apiR.add_resource(Pair_Boundary, '/v1_00/pair/<string:devicename>')
+
