@@ -8,8 +8,6 @@ from Location_Service.Check_Control \
 
 class Check_Boundary(Resource):
     def get(self):
-        return_state = check_control.check()
-
-        return return_state
+        return check_control.check()
 
 

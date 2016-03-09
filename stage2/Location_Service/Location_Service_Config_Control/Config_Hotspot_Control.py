@@ -47,7 +47,6 @@ class Config_Hotspot_Control(object):
             self.__controller.log(
                 log_message='Config hotspot error: {0}'\
                     .format(message))
-            raise
 
         return  self.__controller.do_response(message=message,
                                               data=data,
@@ -101,7 +100,6 @@ class Config_Hotspot_Control(object):
             self.__controller.log(
                 log_message='Config hotspot error: {0}'\
                     .format(message))
-            raise
 
         return  self.__controller.do_response(message=message,
                                               data=data,
@@ -145,7 +143,7 @@ class Config_Hotspot_Control(object):
                                            upperY=upperY,
                                            desc=description)
 
-            data = {"location":location,
+            data = {"hotspot":location,
                     "upper-x":upperX,
                     "upper-y":upperY,
                     "lower-x":lowerX,
@@ -178,10 +176,12 @@ class Config_Hotspot_Control(object):
                 log_message='Hotspot config error: {0}'\
                     .format(message))
         except Exception as e:
+            success = 'error'
+            status = '400'
+            message = repr(e)
             self.__controller.log(
                 log_message='Hotspot config error: {0}'\
                     .format(repr(e)))
-            raise
 
         return_value = self.__controller.do_response(message=message,
                                                      data=data,
@@ -219,7 +219,7 @@ class Config_Hotspot_Control(object):
 
             self.__controller.delete_hotspot(location)
 
-            data = {"location":None}
+            data = {"hotspot":None}
             self.__controller.log(
                 log_message=
                     'Deleted hotspot "{0}".'\
@@ -246,10 +246,12 @@ class Config_Hotspot_Control(object):
                 log_message='Hotspot config error: {0}'\
                     .format(message))
         except Exception as e:
+            success = 'error'
+            status = '400'
+            message = repr(e)
             self.__controller.log(
                 log_message='Hotspot config error: {0}'\
                     .format(repr(e)))
-            raise
 
         return_value = self.__controller.do_response(message=message,
                                                      data=data,

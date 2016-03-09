@@ -54,9 +54,14 @@ def do_location_check(control_object=None):
                     .format(x, y)+' is in hotspot. '+\
                     'Checking with {0}'.format(location_service)
                     )
+# OLD
+#                check_response = requests.get(
+#                    location_service,
+#                    data=json.dumps(payload_data)
+#                )
+# NEW
                 check_response = requests.get(
-                    location_service,
-                    data=json.dumps(payload_data)
+                    location_service+'?x={0}&y={1}'.format(x,y)
                 )
                 control_object.log('Hotspot check returned {0}:{1}'\
                     .format(check_response.status_code, check_response.text)
