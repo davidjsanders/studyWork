@@ -29,6 +29,7 @@ class Check_Control(object):
         y = query_data['y']
 
         try:
+
             self.__controller.log('Location service request to check '+\
                                   '({0},{1})'.format(x, y))
 
