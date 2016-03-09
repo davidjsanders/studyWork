@@ -118,7 +118,7 @@ class Pairing_Control(object):
             )
 
         if valid_output_item == [] or valid_output_item == None:
-            raise KeyError('Output item {0} does not exist for device {1}'\
+            raise ValueError('Output item {0} does not exist for device {1}'\
                            .format(output_item, devicename))
 
         return self.__pairing_db.remove_output_device(devicename, output_item)

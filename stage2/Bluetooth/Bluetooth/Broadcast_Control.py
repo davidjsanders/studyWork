@@ -25,7 +25,7 @@ class Broadcast_Control(object):
 
         if pairing_key == []:
             success = 'error'
-            status = '403'
+            status = '404'
             message = 'Device is not paired'
             pairing_key = None
             self.__controller.log(
@@ -41,7 +41,7 @@ class Broadcast_Control(object):
                     .format(message))
         elif text == '' or text == None:
             success = 'error'
-            status = '403'
+            status = '400'
             message = 'Cannot broadcast an empty message'
             pairing_key = None
             self.__controller.log(

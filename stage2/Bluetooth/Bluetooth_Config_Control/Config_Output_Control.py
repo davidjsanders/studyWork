@@ -65,7 +65,7 @@ class Config_Output_Control(object):
                     .format(message))
         except ValueError as ve:
             success = 'error'
-            status = '400'
+            status = '404'
             message = str(ve)
             self.__controller.log(
                 log_message='Output device error: {0}'\
@@ -123,7 +123,7 @@ class Config_Output_Control(object):
                     .format(message))
         except ValueError as ve:
             success = 'error'
-            status = '400'
+            status = '404'
             message = str(ve)
             self.__controller.log(
                 log_message='Output device error: {0}'\
@@ -136,6 +136,7 @@ class Config_Output_Control(object):
                 log_message='Output device error: {0}'\
                     .format(message))
         except Exception as e:
+            self.__controller.log('Exception: {0}'.format(repr(e)))
             raise
 
         return_value = self.__controller.do_response(message=message,
@@ -193,7 +194,7 @@ class Config_Output_Control(object):
                     .format(message))
         except ValueError as ve:
             success = 'error'
-            status = '400'
+            status = '404'
             message = str(ve)
             self.__controller.log(
                 log_message='Output device error: {0}'\

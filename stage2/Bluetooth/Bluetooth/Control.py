@@ -79,18 +79,23 @@ class Control(object):
                 timeout=10 # If nothing after 10s. ignore central
             ) # Ignore return from central logger
         except Exception as e:
+            self.log(log_message='Exception: {0}'.format(repr(e)),
+                log_to_central=False)
             print(repr(e))
 
 
     def log(self,
-            log_message=None
+            log_message=None,
+            log_to_central=True
     ):
         now = datetime.datetime.now()
         f = None
         try:
             sender = 'bluetooth_' + str(self.__port_number)
             central_logger = self.get_value('logger')
-            if central_logger not in ('', [], None) and log_message != None:
+            if central_logger not in ('', [], None) \
+            and log_to_central \
+            and log_message != None:
                 self.db_logger(central_logger, sender, 'normal', log_message)
             f = open(self.__log_file, 'a')
             if log_message == None or log_message == '':

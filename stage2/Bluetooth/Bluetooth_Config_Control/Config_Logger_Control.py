@@ -79,6 +79,8 @@ class Config_Logger_Control(object):
         data = None
 
         try:
+            self.__controller.log('Set Log request received: {0}'\
+                .format(json_string))
             if json_string == None\
             or json_string == '':
                 raise KeyError('Badly formed request!')
@@ -101,7 +103,11 @@ class Config_Logger_Control(object):
             status = '404'
             message = str(ve)
         except Exception as e:
-            raise
+            success = 'error'
+            status = '400'
+            message = repr(e)
+            self.__controller.log('Exception: {0}'.format(message))
+            #raise
             #return repr(e)
 
         return_value = self.__controller.do_response(message=message,
