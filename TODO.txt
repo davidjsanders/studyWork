@@ -1,0 +1,4 @@
+Fix Bluetooth config outputs - structure returns
+Fix Bluetooth config outputs - POST - Remove 'state'
+Consider changing stage2 and stage3 to v1_00 and v2_00 respectively
+Consider changing url in v2_00 to /v2_00

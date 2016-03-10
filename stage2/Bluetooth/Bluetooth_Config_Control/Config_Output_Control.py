@@ -108,8 +108,16 @@ class Config_Output_Control(object):
                 raise ValueError('Device is not paired')
             else:
 
-                data = {"outputs":
-                    self.__pair_controller.get_output_devices(devicename)}
+                outputs = self.__pair_controller.get_output_devices(devicename)
+                output_list = []
+
+                for output in outputs:
+                    output_list.append({"device":devicename,
+                                        "output-item":output[0],
+                                        "file-name":output[1],
+                                        "state":"ready"
+                                       })
+                data = {"outputs":output_list}
                 self.__controller.log(
                     log_message=
                         'Outputs "{0}" setup for device "{1}"'\
@@ -180,6 +188,7 @@ class Config_Output_Control(object):
                 print(state)
                 data = {"device":devicename,
                         "output-item":output_item,
+                        "file-name":"n/a",
                         "state":"deleted" if state == True else "not deleted"}
                 self.__controller.log(
                     log_message=

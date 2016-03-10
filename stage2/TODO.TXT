@@ -1,3 +1,0 @@
-Fix startup in all apps - delete from to validate table
-Fix logging - change sender to descriptive name
-Fix logging - change startup logging to simpler
