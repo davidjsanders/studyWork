@@ -36,9 +36,13 @@ class Control(object):
 
         self.__log_file = 'datavolume/'+server_name+'-'+str(port_number)+\
             '-log.txt'
+        self.file_clear()
+
 
     def delete_log(self):
+        self.file_clear()
         return self.__logger_db.clear_log()
+
 
     def get_log(self, sender=None):
         if sender == None:
@@ -54,40 +58,38 @@ class Control(object):
             timestamp=None
     ):
         now = str(datetime.datetime.now())
-#        if sender != None:
-#            _sender = sender[0:26]
-#        else:
-#            _sender = 'UNKNOWN'
-#        if log_type != None:
-#            _log_type = log_type[0:20] 
-#        else:
-#            _log_type = 'none'
-#        if timestamp != None:
-#            _timestamp = timestamp[0:26] 
-#        else:
-#            _timestamp = now
+        try:
+            self.file_log('{0},{1},{2},{3}'\
+                .format(sender,log_type,message,timestamp))
+        except Exception as e:
+            print('FILE LOG: Unknown exception! {0}'.format(repr(e)))
 
-        self.__logger_db.write_log(sender, log_type, message, timestamp)
+        try:
+            self.__logger_db.write_log(sender, log_type, message, timestamp)
+        except Exception as e:
+            print('DB LOG: Unknown exception! {0}'.format(repr(e)))
 
 
-    def oldlog(self,
-            log_message=None,
-            screen=True
-    ):
-        now = datetime.datetime.now()
+    def file_log(self, log_message=None):
         f = None
         try:
             f = open(self.__log_file, 'a')
-            if log_message == None or log_message == '':
-                f.write("{0:>28s}\n".format(str(now)+': '))
-            else:
-                wrapped80 = wrap(log_message, 79)
-                time_line = [str(now)]
-                for line in wrapped80:
-                    time_line.append('')
-                for i, line in enumerate(wrapped80):
-                    f.write('{0:>28s}{1}'.format(time_line[i]+': ', line)+"\n")
-        except Exception:
+            f.write('{0}'.format(log_message+"\n"))
+        except Exception as e:
+            raise
+        finally:
+            if not f == None:
+                f.close()
+
+
+    def file_clear(self):
+        now = str(datetime.datetime.now())
+        f = None
+        try:
+            f = open(self.__log_file, 'w')
+            f.write('{0},{1},{2},{3}'\
+                .format("LOGGER","INITIALIZE","Log file created.",now)+"\n")
+        except Exception as e:
             raise
         finally:
             if not f == None:

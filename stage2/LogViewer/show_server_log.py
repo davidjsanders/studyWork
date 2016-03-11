@@ -10,17 +10,22 @@ def print_log(log=None):
           .format('Sender','Time','Type','Log Message'))
 
     for row in log:
-        wrapped_message = wrap(row[3], 78)
+#        print(row['sender'])
+        sender = row['sender']
+        timestamp = row['timestamp']
+        log_type = row['log-type']
+        message = row['message']
+        wrapped_message = wrap(message, 78)
         loop = 0
         while loop < len(wrapped_message):
             if loop == 0:
-                print('{1:<21s}|{2:<10s}|{0:<20s}|{3:<78s}'\
-                      .format(row[0][:20],
-                              row[1][:21],
-                              row[2][:10],
+                print('{0:<21s}|{1:<10s}|{2:<20s}|{3:<78s}'\
+                      .format(timestamp[:21],
+                              log_type[:10],
+                              sender[:20],
                               wrapped_message[loop]))
             else:
-                print('{1:<21s}|{2:<10s}|{0:<20s}|{3:<78s}'\
+                print('{0:<21s}|{1:<10s}|{2:<20s}|{3:<78s}'\
                       .format(' ',
                               ' ',
                               ' ',
@@ -36,12 +41,16 @@ def print_single_log(log=None):
           .format('Time','Type','Log Message'))
 
     for row in log:
-        wrapped_message = wrap(row[3], 97)
+        sender = row['sender']
+        timestamp = row['timestamp']
+        log_type = row['log-type']
+        message = row['message']
+        wrapped_message = wrap(message, 97)
         loop = 0
         while loop < len(wrapped_message):
             if loop == 0:
                 print('{0:<23s}|{1:<10s}|{2:<97s}'\
-                      .format(row[1][:23], row[2][:10], wrapped_message[loop]))
+                      .format(timestamp[:23], log_type[:10], wrapped_message[loop]))
             else:
                 print('{0:<23s}|{1:<10s}|{2:<97s}'\
                       .format(' ', ' ', wrapped_message[loop]))
@@ -74,11 +83,11 @@ try:
                         required=True)
     parser.add_argument('--server',
                         type=str,
-                        help='The name or IP address of the server. Please '+\
+                        help='The service name of the server. Please '+\
                              'note; this is simply the server name '+\
-                             '(e.g. bob) and not the FQDN or http://server. '+\
+                             '(e.g. bob_321) not the FQDN or http://server. '+\
                              'The server name is used in the logging tables '+\
-                             'with the port number as the unique key.',
+                             'as the unique key.',
                         required=False)
     parser.add_argument('--port',
                         type=int,
@@ -96,8 +105,8 @@ try:
     else:
         server_name = args.server
         if args.port == None:
-            raise ValueError('If the server is specified, the port number '+\
-                             'must be provided too!')
+            server_info = '/'+str(server_name)
+            pass
         else:
             server_info = '/'+str(server_name)+'_'+str(args.port)
 

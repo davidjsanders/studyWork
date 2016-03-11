@@ -10,17 +10,21 @@ def print_log(log=None):
           .format('Sender','Time','Type','Log Message'))
 
     for row in log:
-        wrapped_message = wrap(row[3], 78)
+        sender = row['sender']
+        timestamp = row['timestamp']
+        log_type = row['log-type']
+        message = row['message']
+        wrapped_message = wrap(message, 78)
         loop = 0
         while loop < len(wrapped_message):
             if loop == 0:
-                print('{1:<21s}|{2:<10s}|{0:<20s}|{3:<78s}'\
-                      .format(row[0][:20],
-                              row[1][:21],
-                              row[2][:10],
+                print('{0:<21s}|{1:<10s}|{2:<20s}|{3:<78s}'\
+                      .format(timestamp[:21],
+                              log_type[:10],
+                              sender[:20],
                               wrapped_message[loop]))
             else:
-                print('{1:<21s}|{2:<10s}|{0:<20s}|{3:<78s}'\
+                print('{0:<21s}|{1:<10s}|{2:<20s}|{3:<78s}'\
                       .format(' ',
                               ' ',
                               ' ',
@@ -36,12 +40,16 @@ def print_single_log(log=None):
           .format('Time','Type','Log Message'))
 
     for row in log:
-        wrapped_message = wrap(row[3], 97)
+        sender = row['sender']
+        timestamp = row['timestamp']
+        log_type = row['log-type']
+        message = row['message']
+        wrapped_message = wrap(message, 97)
         loop = 0
         while loop < len(wrapped_message):
             if loop == 0:
                 print('{0:<23s}|{1:<10s}|{2:<97s}'\
-                      .format(row[1][:23], row[2][:10], wrapped_message[loop]))
+                      .format(timestamp[:23], log_type[:10], wrapped_message[loop]))
             else:
                 print('{0:<23s}|{1:<10s}|{2:<97s}'\
                       .format(' ', ' ', wrapped_message[loop]))

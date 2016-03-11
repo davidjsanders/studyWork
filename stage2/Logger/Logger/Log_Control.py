@@ -18,7 +18,20 @@ class Log_Control(object):
         status = '200'
         message = 'Logging Service, update log.'
 
-        data = {"log":self.__controller.get_log(sender)}
+        log_returned = []
+        log_contents = self.__controller.get_log(sender)
+        if not log_contents in ([], None, ''):
+            for log in log_contents:
+                log_returned.append(
+                  {
+                    "sender":log[0],
+                    "log-type":log[2],
+                    "message":log[3],
+                    "timestamp":log[1]
+                  }
+                )
+
+        data = {"log":log_returned}
 
         return  self.__controller.do_response(message=message,
                                               data=data,
@@ -43,7 +56,8 @@ class Log_Control(object):
             if not key == '1234-5678-9012-3456':
                 raise ValueError('Logging control key incorrect.')
 
-            data = {'deleted':self.__controller.delete_log()}
+            self.__controller.delete_log()
+            data = {'log':[]}
         except KeyError as ke:
             success = 'error'
             status = '400'
@@ -96,21 +110,39 @@ class Log_Control(object):
 
             json_data = json.loads(json_string)
 
-            sender = json_data['sender']
-            log_type = json_data['log-type']
-            text = json_data['message']
+            try:
+                sender = json_data['sender']
+                log_type = json_data['log-type']
+            except:
+                raise
+
+            try:
+                text = json_data['message']
+                if text in ('', None):
+                    raise KeyError('set timestamp')
+            except KeyError as ke:
+                text = 'No message; timestamp recorded.'
+
+            if sender in (None, '') \
+            or log_type in (None, ''):
+                raise ValueError(
+                  'Value errors: sender and log-type cannot be null'
+                )
+
             now = str(datetime.datetime.now())
 
             redis_instance = redis.StrictRedis(**self.__redis)
-            data = {"Processors receiving":redis_instance.publish(
+            redis_instance.publish(
                 'central_logger',
                 '{0}<<*>>{1}<<*>>{2}<<*>>{3}'.format(
                     sender,
                     log_type,
                     text,
                     now
-                )
-              ),
+              )
+            )
+
+            data = {
               "sender":sender,
               "log-type":log_type,
               "message":text,
@@ -122,10 +154,12 @@ class Log_Control(object):
             success = 'error'
             status = '400'
             message = repr(e)
-            self.__controller.oldlog(
-                log_message='Logging service error: {0}'\
-                    .format(message))
-            raise
+            self.__controller.log(
+                'LOGGER',
+                'INTERNAL ERROR',
+                repr(e),
+                str(datetime.datetime.now())
+            )
 
         return  self.__controller.do_response(message=message,
                                               data=data,

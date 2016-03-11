@@ -41,7 +41,8 @@ class Logger_Database(object):
 
         try:
             self.__open_db()
-            self.__db_exec('select * from log')
+            self.__db_exec('delete from log')
+            self.__db_conn.commit()
         except sqlite3.OperationalError as oe:
             print(str(oe))
             self.__db_cursor.execute(
