@@ -100,7 +100,7 @@ class Location_Service_Database(object):
 
         try:
             self.__open_db()
-            self.__db_exec('select * from config')
+            self.__db_exec('delete from config')
         except sqlite3.OperationalError as oe:
             self.__db_cursor.execute(
                     'create table config '+\

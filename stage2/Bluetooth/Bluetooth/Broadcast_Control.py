@@ -74,8 +74,8 @@ class Broadcast_Control(object):
                     f.write('Message: {0}'.format(text)+"\n\n")
                     f.close()
 
-            except:
-                raise
+            except Exception as e:
+                self.__controller.log('Exception {0}'.format(repr(e)))
 
         self.__controller.log(
             log_message='Broadcasting on behalf of "{0}" finished. ({1} {2})'\

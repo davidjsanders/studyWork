@@ -111,7 +111,8 @@ class Pairing_Database(object):
 
         try:
             self.__open_db()
-            self.__db_exec('select * from paired_devices')
+            self.__db_exec('delete from paired_devices')
+            self.__db_conn.commit()
         except sqlite3.OperationalError as oe:
             self.__db_cursor.execute(
                     'create table paired_devices '+\
@@ -129,7 +130,8 @@ class Pairing_Database(object):
 
         try:
             self.__open_db()
-            self.__db_exec('select * from config')
+            self.__db_exec('delete from config')
+            self.__db_conn.commit()
         except sqlite3.OperationalError as oe:
             self.__db_cursor.execute(
                     'create table config '+\
@@ -147,7 +149,8 @@ class Pairing_Database(object):
 
         try:
             self.__open_db()
-            self.__db_exec('select * from output_devices')
+            self.__db_exec('delete from output_devices')
+            self.__db_conn.commit()
         except sqlite3.OperationalError as oe:
             self.__db_cursor.execute(
                     'create table output_devices '+\

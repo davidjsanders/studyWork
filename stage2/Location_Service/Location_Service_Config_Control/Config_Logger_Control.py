@@ -47,7 +47,7 @@ class Config_Logger_Control(object):
                 raise ValueError('Logging key incorrect.')
 
             if logger in (None, '', []):
-                raise ValueError('The phone is not logging, '+\
+                raise ValueError('The service is not logging, '+\
                                  'so central logging cannot be switched off.')
 
             self.__controller.clear_value('logger')

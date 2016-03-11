@@ -59,7 +59,7 @@ class Check_Control(object):
                     log_message='Location ({0},{1}) found in {2} hot spot.'\
                                 .format(x, y, hotspot_counter))
             else:
-                success='warning'
+                success='success'
                 message = 'No hotspots found.'
                 data={"hotspot":False, "x":x, "y":y}
                 data['hotspots'] = []
