@@ -19,13 +19,20 @@ class State_Control(object):
         data = None
 
         self.__controller.log('{0} Status requested'.format(message))
+
         state_set = self.__controller.get_state()
         recipient_set = self.__controller.get_value('recipient')
         service_set = self.__controller.get_value('service')
+        location_service_set = self.__controller.get_value('location-service')
+        location_provider_set = self.__controller.get_value('location-provider')
+
         data = {"state":state_set,
                 "recipient":recipient_set,
-                "service":service_set
+                "service":service_set,
+                "location-service":location_service_set,
+                "location-provider":location_provider_set
                }
+
         self.__controller.log('{0} Status reported as {1}'\
             .format(message, data))
 
@@ -74,7 +81,7 @@ class State_Control(object):
                 location_service_set = \
                     self.__controller.set_value('location-service',
                                                 location_service)
-                location_provider = \
+                location_provider_set = \
                     self.__controller.set_value('location-provider',
                                                 location_provider)
             else:
@@ -82,11 +89,14 @@ class State_Control(object):
                 service_set = self.__controller.clear_value('service')
                 location_service_set = \
                     self.__controller.clear_value('location-service')
+                location_provider_set = \
+                    self.__controller.clear_value('location-provider')
 
             data = {"state":state_set,
                     "recipient":recipient_set,
                     "service":service_set,
-                    "location-service":location_service_set
+                    "location-service":location_service_set,
+                    "location_provider":location_provider_set
                    }
         except KeyError as ke:
             success = 'error'
@@ -103,7 +113,6 @@ class State_Control(object):
             status = '400'
             message = repr(e)
             self.__controller.log(message)
-            raise
 
         return  self.__controller.do_response(message=message,
                                               data=data,

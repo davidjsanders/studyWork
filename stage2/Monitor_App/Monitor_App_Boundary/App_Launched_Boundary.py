@@ -15,13 +15,16 @@ class App_Launched_Boundary(Resource):
             return app_launched_control.app_launched(application, raw_data)
         else:
             message='Monitor App is off and not tracking launches. Unable '+\
-                    'to identify if {0} should be monitored!'\
+                    'to identify if {0} should be monitored or not.'\
                     .format(application)
             control.log(message)
             return control.do_response(
                     status=400,
-                    response='warning',
-                    data={"state":"off"},
+                    response='error',
+                    data={
+                           "recipient":None,
+                           "notification-service":None
+                         },
                     message=message
                    )
 

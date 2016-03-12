@@ -124,11 +124,8 @@ def do_location_check(control_object=None):
                                    check_response.json()))
     except requests.exceptions.ConnectionError as rce:
         control_object.log('Exception {0}) '.format(str(rce)))
-        print(rce)
     except Exception as e:
         control_object.log('Exception {0}) '.format(repr(e)))
-        print(e)
-        raise
 
 
 def raise_location_notification(

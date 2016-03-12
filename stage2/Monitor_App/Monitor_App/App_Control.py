@@ -20,14 +20,29 @@ class App_Control(object):
 
         try:
             monitored_apps = self.__controller.get_apps()
-            data = {"apps":monitored_apps}
+            if monitored_apps in ([], None, ''):
+                raise IndexError('No applications are being monitored.')
 
+            monitored_app_list = []
+            for app in monitored_apps:
+                monitored_app_list.append(
+                  {
+                    "app":app[0].upper(),
+                    "description":app[1]
+                  }
+                )
+
+            data = {"apps":monitored_app_list}
+        except IndexError as ie:
+            message = str(ie)
+            status = 404
+            success = 'error'
+            self.__controller.log('{0}.'.format(message))
         except Exception as e:
             message = repr(e)
             status = 500
             success = 'error'
             self.__controller.log('Unexpected Error: {0}.'.format(message))
-            raise
 
         self.__controller.log('Request to get all apps monitored.')
 
@@ -38,7 +53,6 @@ class App_Control(object):
 
         return return_value
 
-        return "all"
 
     def get(self, application=None):
         success = 'success'
@@ -47,40 +61,30 @@ class App_Control(object):
         data = None
 
         try:
-
             self.__controller.log(
                 'Check monitoring status of app {0}.'.format(application))
             monitor_list = self.__controller.get_app(application)
-            if monitor_list in (None, [], ''):
-                success = 'error'
-                status = 404
-                message = 'Application {0} not found.'\
-                    .format(application)
-                self.__controller.log('{0}'.format(message))
-            else:
-                description = monitor_list[0][1]
-                if description in (None, [], ''):
-                    description = 'no description provided'
-                message += ' {0} ({1}) is being monitored.'\
-                    .format(application, description)
-                self.__controller.log('{0}'.format(message))
 
-        except KeyError as ke:
-            success = 'error'
-            status = '400'
-            message = 'Badly formed request! Missing {0}'.format(str(ke))
-            self.__controller.log('Key Error: {0}.'.format(message))
+            if monitor_list in (None, [], ''):
+                raise ValueError('Application {0} is not being monitored.'\
+                    .format(application))
+
+            description = monitor_list[0][1]
+            if description in (None, [], ''):
+                description = 'no description provided'
+
+            data = {"app":application.upper(), "description":description}
+            self.__controller.log('{0}'.format(message))
         except ValueError as ve:
             message = str(ve)
-            status = 400
-            success = 'warning'
-            self.__controller.log('Value Error: {0}.'.format(message))
+            status = 404
+            success = 'error'
+            self.__controller.log('{0}.'.format(message))
         except Exception as e:
             message = repr(e)
             status = 500
             success = 'error'
             self.__controller.log('Unexpected Error: {0}.'.format(message))
-            raise
 
         return_value = self.__controller.do_response(message=message,
                                                      data=data,
@@ -93,7 +97,7 @@ class App_Control(object):
     def set(self, application=None, json_string=None):
         success = 'success'
         status = 200
-        message = 'Monitor App application set.'
+        message = ''
         data = None
 
         try:
@@ -113,19 +117,19 @@ class App_Control(object):
                 'Request to monitor status of app {0} ({1}).'\
                 .format(application, description))
             app_list = self.__controller.set_app(application, description)
+
             if app_list in (None, [], ''):
-                success = 'error'
-                status = 404
-                message = 'Monitor App application {0} not created!'\
-                    .format(application)
-                self.__controller.log('{0}'.format(message))
-            else:
-                if description in (None, [], ''):
-                    description = 'no description provided'
-                message += ' {0} ({1}) is now being monitored.'\
-                    .format(application, description)
-                data = {"app":application, "description":description}
-                self.__controller.log('{0}'.format(message))
+                raise Exception('Monitor App application {0} not created!'\
+                    .format(application))
+
+            if description in (None, [], ''):
+                description = 'no description provided'
+
+            message = 'Application {0} ({1}) is now being monitored.'\
+                .format(application, description)
+
+            data = {"app":application.upper(), "description":description}
+            self.__controller.log('{0}'.format(message))
         except KeyError as ke:
             success = 'error'
             status = '400'
@@ -135,13 +139,12 @@ class App_Control(object):
             message = str(ve)
             status = 400
             success = 'warning'
-            self.__controller.log('Value Error: {0}.'.format(message))
+            self.__controller.log('{0}.'.format(message))
         except Exception as e:
             message = repr(e)
             status = 500
             success = 'error'
             self.__controller.log('Unexpected Error: {0}.'.format(message))
-            raise
 
         return_value = self.__controller.do_response(message=message,
                                                      data=data,
@@ -171,19 +174,19 @@ class App_Control(object):
 
             self.__controller.log(
                 'Request to stop monitoring app {0}.'.format(application))
+
             app_list = self.__controller.get_app(application)
             if app_list in (None, [], ''):
-                success = 'error'
-                status = 404
-                message = 'Application {0} is not being monitored!'\
-                    .format(application)
-                self.__controller.log('{0}'.format(message))
-            else:
-                app_list = self.__controller.delete_app(application)
-                if app_list:
-                    message += ' {0} is no longer being monitored.'\
-                        .format(application)
-                self.__controller.log('{0}'.format(message))
+                raise ValueError('Application {0} is not being monitored!'\
+                    .format(application))
+
+            app_list = self.__controller.delete_app(application)
+
+            message = 'Application {0} is no longer being monitored.'\
+                .format(application.upper())
+            data = None
+
+            self.__controller.log('{0}'.format(message))
         except KeyError as ke:
             success = 'error'
             status = '400'
@@ -191,15 +194,14 @@ class App_Control(object):
             self.__controller.log('Key Error: {0}.'.format(message))
         except ValueError as ve:
             message = str(ve)
-            status = 400
-            success = 'warning'
-            self.__controller.log('Value Error: {0}.'.format(message))
+            status = 404
+            success = 'error'
+            self.__controller.log('{0}.'.format(message))
         except Exception as e:
             message = repr(e)
             status = 500
             success = 'error'
             self.__controller.log('Unexpected Error: {0}.'.format(message))
-            raise
 
         return_value = self.__controller.do_response(message=message,
                                                      data=data,

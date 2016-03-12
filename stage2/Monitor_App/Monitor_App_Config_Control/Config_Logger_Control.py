@@ -25,6 +25,9 @@ class Config_Logger_Control(object):
                                                      status=status,
                                                      response=success)
 
+        self.__controller.log('Central logger configured to {0}'\
+            .format(logger)
+        )
         return return_value
 
 
@@ -47,22 +50,27 @@ class Config_Logger_Control(object):
                 raise ValueError('Logging key incorrect.')
 
             if logger in (None, '', []):
-                raise ValueError('The phone is not logging, '+\
+                raise ValueError('The Monitor App is not logging, '+\
                                  'so central logging cannot be switched off.')
 
             self.__controller.clear_value('logger')
+            self.__controller.log('Central logger configured to null')
             data = {'logger':None}
         except KeyError as ke:
             success = 'error'
             status = '400'
-            message = 'Badly formed request!'
+            message = 'Badly formed request! {0}'.format(str(ke))
+            self.__controller.log('Key Error: {0}'.format(message))
         except ValueError as ve:
             success = 'error'
             status = '400'
             message = str(ve)
+            self.__controller.log('Value Error: {0}'.format(message))
         except Exception as e:
-            raise
-            #return repr(e)
+            success = 'error'
+            status = '500'
+            message = repr(e)
+            self.__controller.log('Exception: {0}'.format(message))
 
         return_value = self.__controller.do_response(message=message,
                                                      data=data,
@@ -91,25 +99,32 @@ class Config_Logger_Control(object):
                 raise ValueError('Logging key incorrect.')
 
             self.__controller.set_value('logger', logger)
+            self.__controller.log('Central logger configured to {0}'\
+                .format(logger)
+            )
             data = {'logger':logger}
         except KeyError as ke:
             success = 'error'
             status = '400'
             message = 'Badly formed request! {0}'.format(ke)
+            self.__controller.log('Key Error: {0}'.format(message))
         except ValueError as ve:
             success = 'error'
             status = '404'
             message = str(ve)
+            self.__controller.log('Value Error: {0}'.format(message))
         except Exception as e:
-            raise
-            #return repr(e)
+            success = 'error'
+            status = '500'
+            message = repr(e)
+            self.__controller.log('Exception: {0}'.format(message))
 
         return_value = self.__controller.do_response(message=message,
                                                      data=data,
                                                      status=status,
                                                      response=success)
 
-        self.__controller.log("Logging request for Bluetooth. "+\
+        self.__controller.log("Logging request for Monitor App. "+\
                               "Response: {0} - {1}. Message = {2}".\
                               format(status, data, message))
 
