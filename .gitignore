@@ -4,3 +4,4 @@
 # Ignore any files ending *~
 *~
 *.db
+*.lock
