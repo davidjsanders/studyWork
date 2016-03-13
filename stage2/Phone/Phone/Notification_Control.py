@@ -17,11 +17,11 @@ class Notification_Control(object):
         self,
         json_string=None
     ):
-        self.__controller.log('Location_Control:incoming_notification:start',
+        self.__controller.log('Incoming notification:start',
                               screen=False)
         success = 'success'
-        status = '201'
-        message = 'Notification received. Thank you.'
+        status = '200'
+        message = 'Notification received.'
         data = None
 
 
@@ -38,18 +38,20 @@ class Notification_Control(object):
                 key=json_data['key']
                 sender=json_data['sender']
                 action=json_data['action']
+
                 if not key == 'NS1234-5678-9012-3456':
                     raise ValueError('Notification control key incorrect.')
 
-                data = {"action":action,
+                data = {"sender":sender,
+                        "action":action,
                         "notification":text}
+
                 now = datetime.datetime.now()
                 tz = time.tzname[0]
                 tzdst = time.tzname[1]
 
                 self.__controller.log(
-                    'Location_Control:incoming_notification:{0}'\
-                    .format('display_notification'),
+                    'Incoming notification: displaying notification',
                     screen=False
                 )
                 self.__display_notification(
@@ -60,8 +62,7 @@ class Notification_Control(object):
                 )
 
                 self.__controller.log(
-                    'Location_Control:incoming_notification:{0}'\
-                    .format('persist_notification'),
+                    'Incoming notification: persisting notification',
                     screen=False
                 )
                 self.__controller.persist_notification(
@@ -72,55 +73,49 @@ class Notification_Control(object):
                 )
 
                 self.__controller.log(
-                  'Location_Control:incoming_notification:{0}'\
-                     .format('issue_bluetooth'),
-                     screen=False
+                    'Incoming notification: Issuing to bluetooth',
+                    screen=False
                 )
                 response = self.__issue_bluetooth(
                     notification=text
                 )
+
                 if response != None and response.status_code != 200:
-                    data['warnings'] = response.json()
+                    data['bluetooth-warnings'] = response.json()
 
             except requests.exceptions.ConnectionError as rce:
                 # Connection error means we could not reach the Bluetooth
                 # device. Ignore it but add a warning to the output as the
                 # notification was still delivered.
-                data['warnings'] = 'Bluetooth Error: device did not respond'
-                self.__controller.log(
-                    'Location_Control:incoming_notification:{0}'\
-                    .format(str(rce),
-                    screen=False)
-                )
+                data['bluetooth-warnings'] = \
+                    'Bluetooth Error: device did not respond. {0}'\
+                        .format(str(rce))
+                self.__controller.log(data['bluetooth-warnings'],
+                                      screen=False)
             except KeyError as ke:
                 success = 'error'
                 status = '400'
-                message = 'Badly formed request!'
-                self.__controller.log(
-                  'Location_Control:incoming_notification:{0}'.format(str(ke)),
-                  screen=False
-                )
+                message = 'Badly formed request! {0}'.format(str(ke))
+                self.__controller.log('Incoming notification: Error {0}'\
+                    .format(str(ke)), screen=False)
             except ValueError as ve:
                 success = 'error'
                 status = '403'
                 message = str(ve)
                 self.__controller.log(
-                  'Location_Control:incoming_notification:{0}'.format(str(ve)),
+                  'Incoming notification: {0}'.format(message),
                   screen=False
                 )
             except Exception as e:
                 success = 'error'
                 status = '400'
-                message = 'Badly formed request!'
+                message = 'Exception: {0}'.format(repr(e))
                 self.__controller.log(
-                  'Location_Control:incoming_notification:{0}'.format(repr(e)),
+                  'Incoming notification: Error {0}'.format(message),
                   screen=False
                 )
-                raise
 
-        self.__controller.log('Location_Control:incoming_notification:end',
-                              screen=False)
-        self.__controller.log('',
+        self.__controller.log('Incoming notification processed',
                               screen=False)
         return_value = self.__controller.do_response(message=message,
                                                      data=data,
@@ -143,14 +138,13 @@ class Notification_Control(object):
                 bluetooth_key = self.__controller.get_value(bluetooth_device)
                 phonename = self.__controller.get_value('phonename')
                 if not (bluetooth_key == None or phonename == None):
-                    payload_data = {
-                                    "key":bluetooth_key,
-                                    "message":notification
-                                   }
+                    payload_data = {"key":bluetooth_key,
+                                    "message":notification}
                     request_response = requests.post(
                          bluetooth_device+'/broadcast/'+phonename,
                          data=json.dumps(payload_data)
                     )
+# OLD:                         bluetooth_device+'/broadcast/'+phonename,
             return request_response
         except requests.exceptions.ConnectionError as rce:
             raise requests.exceptions.ConnectionError(rce)
@@ -165,14 +159,14 @@ class Notification_Control(object):
         action=None
     ):
         try:
-            self.__controller.log('')
+            self.__controller.log(' ')
             self.__controller.log('Notification received')
             self.__controller.log('-'*79)
             self.__controller.log('Notification from: {0}'.format(sender))
             self.__controller.log('Received at      : {0}'.format(date_string))
             self.__controller.log('Notification     : {0}'.format(notification))
             self.__controller.log('Action           : {0}'.format(action))
-            self.__controller.log('')
+            self.__controller.log(' ')
 
             outputfile = self.__controller.get_value('output_device')
             f = open(outputfile,'a')
