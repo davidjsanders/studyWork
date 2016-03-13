@@ -62,7 +62,7 @@ class Control(object):
             event_date
         )
         self.log(
-          'Saved Notification: {0} for {1}; Note: {2}; Action: {3}; on {4}'\
+          'Persisted Notification: {0} for {1}; Note: {2}; Action: {3}; on {4}'\
           .format(
             sender,
             recipient,
@@ -107,6 +107,7 @@ class Control(object):
     ):
         return self.__Notification_Service_db.get_notifications(recipient)
 
+
     def clear_notification(
         self,
         identifier=None
@@ -147,17 +148,23 @@ class Control(object):
                 timeout=10 # If nothing after 10s. ignore central
             ) # Ignore return from central logger
         except Exception as e:
-            print(repr(e))
+            self.log('Notification Service Exception: {0}'\
+                         .format(repr(e)),
+                     log_to_central=False
+                    )
 
 
     def log(self,
-            log_message=None
+            log_message=None,
+            log_to_central=True
     ):
         now = datetime.datetime.now()
         f = None
         try:
             central_logger = self.get_value('logger')
-            if central_logger not in ('', [], None) and log_message != None:
+            if central_logger not in ('', [], None) \
+            and log_to_central \
+            and log_message != None:
                 sender = 'notify_svc_' + str(self.__port_number)
                 self.db_logger(central_logger, sender, 'normal', log_message)
             f = open(self.__log_file, 'a')

@@ -31,15 +31,26 @@ class Notification_Push_Control(object):
             json_data = json.loads(json_string)
             key = json_data['key']
             recipient = json_data['recipient']
-            self.__controller.log('Request received from {0}.'\
-                .format(recipient))
+
             if not key == '1234-5678-9012-3456':
+                status = '403'
                 raise ValueError('Push notification control key incorrect.')
 
+            if 'http://' not in recipient:
+                status = '400'
+                raise ValueError('Recipient must be a valid URL '+\
+                                 'beginning with http://'
+                )
+
+            self.__controller.log('Request received from {0}.'\
+                .format(recipient))
+
             notification_list = []
+
             self.__controller.log('Fetching persisted notifications for {0}.'\
                 .format(recipient))
             notification_list = self.__controller.fetch_notifications(recipient)
+
             self.__controller.log('Found {0} notifications.'\
                 .format(len(notification_list)))
 
@@ -56,29 +67,35 @@ class Notification_Push_Control(object):
                             notification[4],
                             notification[5]
                     )
-                    self.__controller.log('Clearing notifications from db.')
+                    self.__controller.log('Clearing notification from db.')
                     self.__controller.clear_notification(notification[0])
 
+            if counter == 0:
+                status = '404'
+                success = 'error'
+
             data={
-                    "status":"{0} notification(s) will be dispatched."\
-                        .format(counter if counter != 0 else 'No')
+                    "recipient":recipient,
+                    "notification-count":"{0}".format(counter),
                  }
+
             self.__controller.log('Final status: {0}.'\
-                .format(data['status']))
+                .format(status))
 
         except KeyError as ke:
             success = 'error'
             status = '400'
-            message = 'Badly formed request!'
+            message = 'Badly formed request! {0}'.format(str(ke))
             self.__controller.log(message)
         except ValueError as ve:
             success = 'error'
-            status = '403'
             message = str(ve)
             self.__controller.log(message)
         except Exception as e:
+            success = 'error'
+            status = '500'
+            message = 'Exception: {0}'.format(repr(e))
             self.__controller.log(message)
-            raise
 
         return_value = self.__controller.do_response(message=message,
                                                      data=data,

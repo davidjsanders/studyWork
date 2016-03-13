@@ -1,15 +1,9 @@
-import redis
-import requests
-import json
+import redis, requests, json, copy
+import time
 
 def redis_close(thread=None, controller=None):
     # Although not used in this app, the thread close event logic would allow
     # us to do any last tasks.
-    controller.log()
-    controller.log('*'*79)
-    controller.log('Server closing')
-    controller.log('*'*79)
-    controller.log()
     if not thread == None\
     and not controller == None:
         controller.log('Closing background thread.')
@@ -21,14 +15,21 @@ def redis_processor(control_object=None):
 
     for message in redis_pubsub.listen():
         if message['type'].upper() == 'MESSAGE':
+            control_object.log('Redis Processor: Start. '+\
+                               'Message received! {0}'\
+                                   .format(message['data']))
             message_data = message['data']
             message_fields = message['data'].decode('utf-8').split('<<*>>', 5)
 
             try:
-                control_object.log()
-                control_object.log('Redis: *** START HANDLING ***')
-                control_object.log('Redis: message received! {0}'\
-                  .format(message_fields))
+                persist_notification = True
+                persist_reason = 'unknown'
+                time.sleep(2) # Let any caller finish what it was doing first, 
+                              # e.g. deleting from the database.
+                control_object.log('Redis Processor: '+\
+                                   'Message parsed to: {0}'\
+                                       .format(message_fields))
+
                 sender = message_fields[0]
                 recipient = message_fields[1]
                 text = message_fields[2]
@@ -41,18 +42,24 @@ def redis_processor(control_object=None):
                     "sender":sender,
                     "action":action
                 }
-                control_object.log('Redis: Payload {0}'\
-                  .format(payload_data))
 
-                control_object.log('Redis: issuing http request to {0}'\
+                temp_payload_data = copy.deepcopy(payload_data)
+                temp_payload_data['key']='OBFUSCATED'
+
+                control_object.log('Redis Processor: Payload {0}'\
+                  .format(temp_payload_data))
+
+                control_object.log('Redis Processor: issuing http '+\
+                                   'request to {0}'\
                   .format(recipient))
                 request_response = requests.post(
                     recipient,
                     data=json.dumps(payload_data),
                     timeout=30
                 )
-                control_object.log('Redis: http request response {0}'\
-                  .format(request_response.status_code))
+                control_object.log('Redis Processor: http request '+\
+                                   'response {0}'\
+                                       .format(request_response.status_code))
 
                 if request_response.status_code != 201:
                     error_text = \
@@ -70,44 +77,34 @@ def redis_processor(control_object=None):
                                          .format(request_response.status_code)+\
                                       '; '+request_response.json()
 
-                    controller.log(error_text)
-                    control_object.log('Redis: *** STOP HANDLING '+\
-                        'WITH ERROR ***')
-                    print_error(error_text)
+                    persist_reason = error_text
+                    control_object.log('Redis Processor: Stop ERROR')
+                    control_object.log(error_text)
                 else:
-                    control_object.log('Redis: message dispatched to {0}'\
+                    persist_notification = False
+                    control_object.log('Redis Processor: dispatched to {0}'\
                       .format(recipient))
-                    control_object.log('Redis: *** STOP HANDLING '+\
-                        'WITH SUCCESS ***')
+                    control_object.log('Redis Processor: Stop SUCCESS')
                     control_object.log()
             except requests.exceptions.ConnectionError as rce:
-                print_error(str(rce))
-                try:
-                    control_object.log('Redis: Persisting notification '+\
-                      'because {0}'.format(str(rce)))
-                    control_object.log('Redis: *** STOP HANDLING '+\
-                        'WITH WARNING - MESSAGE PERSISTED ***')
-                    control_object.log()
-                    control_object.persist_notification(
-                        sender,
-                        recipient,
-                        text,
-                        action,
-                        event_date
-                    )
-                except Exception as e:
-                    raise
+                persist_reason = str(rce)
+                control_object.log('Redis Processor: Stop WARNING')
             except KeyError as ke:
-                control_object.log('Redis: *** STOP HANDLING '+\
-                    'WITH ERROR ***')
-                print_error(str(ke))
+                persist_reason = str(ke)
+                control_object.log('Redis: *** STOP ERROR: {0}'.format(str(ke)))
             except Exception as e:
-                control_object.log('Redis: *** STOP HANDLING '+\
-                    'WITH ERROR ***')
-                print_error(repr(e))
+                persist_reason = repr(e)
+                control_object.log('Redis: *** STOP ERROR: {0}'.format(repr(e)))
 
-def print_error(error_message=None):
-    print('{0}'.format('-'*80))
-    print('*** {0} ***'.format(error_message))
-    print('{0}'.format('-'*80))
+            if persist_notification:
+                control_object.log('Redis Processor: Persisting '+\
+                                   'notification because {0}'\
+                                   .format(persist_reason))
+                control_object.persist_notification(
+                    sender,
+                    recipient,
+                    text,
+                    action,
+                    event_date
+                )
 

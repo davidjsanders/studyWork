@@ -47,7 +47,7 @@ class Config_Logger_Control(object):
                 raise ValueError('Logging key incorrect.')
 
             if logger in (None, '', []):
-                raise ValueError('The phone is not logging, '+\
+                raise ValueError('The notification service is not logging, '+\
                                  'so central logging cannot be switched off.')
 
             self.__controller.clear_value('logger')
@@ -61,8 +61,10 @@ class Config_Logger_Control(object):
             status = '400'
             message = str(ve)
         except Exception as e:
-            raise
-            #return repr(e)
+            success = 'error'
+            status = '500'
+            message = 'Exception: {0}'.format(repr(e))
+            self.__controller.log(message)
 
         return_value = self.__controller.do_response(message=message,
                                                      data=data,
@@ -101,8 +103,10 @@ class Config_Logger_Control(object):
             status = '404'
             message = str(ve)
         except Exception as e:
-            raise
-            #return repr(e)
+            success = 'error'
+            status = '500'
+            message = 'Exception: {0}'.format(repr(e))
+            self.__controller.log(message)
 
         return_value = self.__controller.do_response(message=message,
                                                      data=data,
