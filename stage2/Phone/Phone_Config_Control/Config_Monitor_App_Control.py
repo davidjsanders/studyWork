@@ -10,45 +10,32 @@ class Config_Monitor_App_Control(object):
         self.__controller = Control.global_controller
 
 
-    def is_launched(self, json_string=None):
+    def is_launched(self):
         success = 'success'
         status = '200'
         message = 'Phone Monitor App launch status.'
         data = None
 
         try:
-            if json_string == None\
-            or json_string == '':
-                raise KeyError('Badly formed request!')
-
-            json_data = json.loads(json_string)
-            key = json_data['key']
+            state = 'connected'
             monitor_app = self.__controller.get_value('monitor_app')
 
-            if not key == '1234-5678-9012-3456':
-                raise ValueError('Control key incorrect.')
-
             if monitor_app == []:
+                state = 'disconnected'
                 monitor_app = None
 
-            data = {'monitor app running at':monitor_app}
-        except KeyError as ke:
-            success = 'error'
-            status = '400'
-            message = 'Badly formed request!'
-        except ValueError as ve:
-            success = 'error'
-            status = '403'
-            message = str(ve)
+            data = {'state':state,
+                    'monitor-app':monitor_app}
         except Exception as e:
-            raise
-            #return repr(e)
-        return_value = self.__controller.do_response(message=message,
-                                                     data=data,
-                                                     status=status,
-                                                     response=success)
+            success = 'error'
+            status = '500'
+            message = 'Exception: {0}'.format(repr(e))
+            self.__controller.log(message, screen=False)
 
-        return return_value
+        return self.__controller.do_response(message=message,
+                                             data=data,
+                                             status=status,
+                                             response=success)
 
 
     def start(self, json_string=None):
@@ -110,7 +97,8 @@ class Config_Monitor_App_Control(object):
                     raise ValueError(json_response['message'])
                 state = json_response['data']['state']
                 self.__controller.set_value('monitor_app', monitor_app)
-                data = {'monitor app':'started at {0}'.format(monitor_app)}
+                data = {'state':'connected',
+                        'monitor-app':monitor_app}
         except requests.exceptions.ConnectionError as rce:
             success = 'error'
             status = '500'
@@ -169,8 +157,8 @@ class Config_Monitor_App_Control(object):
             status_code = request_response.status_code
             if status_code not in (200,201):
                 if status_code == 404:
-                    raise ValueError('Unable to communicate with monitor app. '+\
-                                     'Response from request was {0} {1}.'\
+                    raise ValueError('Unable to communicate with monitor app.'+\
+                                     ' Response from request was {0} {1}.'\
                                      .format(status_code, request_response.text)
                                     )
 
@@ -186,18 +174,19 @@ class Config_Monitor_App_Control(object):
                     raise ValueError(json_response['message'])
                 state = json_response['data']['state']
                 self.__controller.clear_value('monitor_app')
-                data = {'monitor app':'stopped'}
+                data = {'state':'disconnected',
+                        'monitor-app':None}
         except requests.exceptions.ConnectionError as rce:
             success = 'error'
             status = '500'
-            message = 'Phone cannot communicate with the monitor app running '+\
+            message = 'Phone cannot communicate with the monitor app '+\
                       'at {0}'.format(monitor_app)+\
                       '; the response from the monitor app was'+\
                       ' a connection error: {0}'.format(str(rce))+'.'
         except KeyError as ke:
             success = 'error'
             status = '400'
-            message = 'Badly formed request!'
+            message = 'Badly formed request! {0}'.format(str(ke))
         except ValueError as ve:
             success = 'error'
             status = '400'

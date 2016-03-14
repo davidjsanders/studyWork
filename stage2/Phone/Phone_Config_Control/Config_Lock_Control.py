@@ -65,14 +65,15 @@ class Config_Lock_Control(object):
         except KeyError as ke:
             success = 'error'
             status = '400'
-            message = 'Badly formed request!'
+            message = 'Badly formed request! Key Error: {0}'.format(str(ke))
         except ValueError as ve:
             success = 'error'
             status = '403'
-            message = str(ve)
+            message = 'Value Error: {0}'.format(str(ve))
         except Exception as e:
-            print(repr(e))
-            raise
+            success = 'error'
+            status = '500'
+            message = 'Exception: {0}'.format(repr(e))
 
         return_value = self.__controller.do_response(message=message,
                                                      data=data,

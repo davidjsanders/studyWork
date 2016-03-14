@@ -23,8 +23,8 @@ class Config_Push_Notifications_Control(object):
 
             json_data = json.loads(json_string)
             key = json_data['key']
-            service = json_data['service']
-            service_url = service + '/push'
+            service = json_data['notification-service']
+            service_url = service
             recipient = json_data['recipient']
 
             if not key == '1234-5678-9012-3456':
@@ -38,13 +38,7 @@ class Config_Push_Notifications_Control(object):
                                              json.dumps(payload))
 
             status_code = request_response.status_code
-            if status_code not in (200,201):
-                if status_code == 404:
-                    raise ValueError('Unable to communicate with service. '+\
-                                     'Response from request was {0} {1}.'\
-                                     .format(status_code, request_response.text)
-                                    )
-
+            if status_code not in (200,201,404):
                 raise ValueError('Unable to communicate with service! '+\
                                  'Response code '+\
                                  '{0}'.format(request_response.status_code)+\
@@ -52,11 +46,19 @@ class Config_Push_Notifications_Control(object):
                                  '{0}.'.format(request_response.text)
                                 )
             else:
+                self.__controller.log(request_response.text, screen=False)
+                print(request_response.text)
+                if (status_code == 404 or status_code == 403)\
+                and not ('notification-count' in str(request_response.text)):
+                    raise ValueError('Unable to communicate with service. '+\
+                                     'Response from request was {0} {1}.'\
+                                     .format(status_code, request_response.text)
+                                    )
                 json_response = request_response.json()
                 if 'error' in json_response:
                     raise ValueError(json_response['message'])
-                request_status = json_response['data']['status']
-                data = {'notification status':request_status}
+                request_status = json_response['status']
+                data = {'push':json_response['data']}
         except requests.exceptions.ConnectionError as rce:
             success = 'error'
             status = '500'
@@ -65,16 +67,22 @@ class Config_Push_Notifications_Control(object):
                       '; the response from the monitor app was'+\
                       ' a connection error: {0}'.format(str(rce))+'.'+\
                       'The service is probably not running.'
+            self.__controller.log(message, screen=False)
         except KeyError as ke:
             success = 'error'
             status = '400'
-            message = 'Badly formed request!'
+            message = 'Push request key error: {0}'.format(str(ke))
+            self.__controller.log(message, screen=False)
         except ValueError as ve:
             success = 'error'
             status = '403'
-            message = str(ve)
+            message = 'Push request value error: {0}'.format(str(ve))
+            self.__controller.log(message, screen=False)
         except Exception as e:
-            raise
+            success = 'error'
+            status = '500'
+            message = 'Push request exception: {0}'.format(repr(e))
+            self.__controller.log(message, screen=False)
 
         return_value = self.__controller.do_response(message=message,
                                                      data=data,

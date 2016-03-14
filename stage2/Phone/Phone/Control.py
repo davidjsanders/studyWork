@@ -131,12 +131,15 @@ class Control(object):
                 timeout=10 # If nothing after 10s. ignore central
             ) # Ignore return from central logger
         except Exception as e:
-            print(repr(e))
+            self.log('DB Logger Exception: {0}'.format(repr(e)),
+                     screen=False,
+                     log_to_central=False)
 
 
     def log(self,
             log_message=None,
-            screen=True
+            screen=True,
+            log_to_central=True
     ):
         now = datetime.datetime.now()
         f = None
@@ -160,7 +163,7 @@ class Control(object):
                     for line in wrapped80:
                         self.write_screen(line+"\n")
         except Exception:
-            raise
+            pass
         finally:
             if not f == None:
                 f.close()

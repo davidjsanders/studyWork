@@ -21,7 +21,7 @@ class Config_Launch_Control(object):
             or json_string == ''\
             or app == None\
             or app == '':
-                raise KeyError('Badly formed request!')
+                raise KeyError('Badly formed request. There was no JSON!')
 
             json_data = json.loads(json_string)
             key = json_data['key']
@@ -57,13 +57,15 @@ class Config_Launch_Control(object):
         except KeyError as ke:
             success = 'error'
             status = '400'
-            message = 'Badly formed request!'
+            message = 'Key Error: {0}'.format(str(ke))
         except ValueError as ve:
             success = 'error'
             status = '403'
-            message = str(ve)
+            message = 'Value Error: {0}'.format(str(ve))
         except Exception as e:
-            raise
+            success = 'error'
+            status = '500'
+            message = 'Exception: {0}'.format(str(ve))
 
         return_value = self.__controller.do_response(message=message,
                                                      data=data,
@@ -119,8 +121,10 @@ class Config_Launch_Control(object):
                     'message':str(ve)
                    }
         except Exception as e:
-            raise
-            #return repr(e)
+            return {'success':'error',
+                    'status':500,
+                    'message':repr(e)
+                   }
 
 launch_control_object = Config_Launch_Control()
 

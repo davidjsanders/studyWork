@@ -17,13 +17,15 @@ class Config_Pair_Control(object):
         data = None
 
         device_paired = self.__controller.get_bluetooth()
-        data = {'paired with':device_paired}
-        return_value = self.__controller.do_response(message=message,
-                                                     data=data,
-                                                     status=status,
-                                                     response=success)
+        if device_paired == []:
+            device_paired = None
 
-        return return_value
+        return self.__controller.do_response(
+            message=message,
+            data={'device':device_paired},
+            status=status,
+            response=success
+        )
 
 
     def remove_pair(self, json_string=None):
@@ -33,26 +35,38 @@ class Config_Pair_Control(object):
         data = None
 
         try:
+            self.__controller.log('Request to un-pair Bluetooth',
+                                  screen=False)
+
             if json_string == None\
             or json_string == '':
                 raise KeyError('Badly formed request!')
 
             json_data = json.loads(json_string)
             key = json_data['key']
-            phone_name = self.__controller.get_value('phonename')
 
             if not key == '1234-5678-9012-3456':
-                raise ValueError('Pairing key incorrect.')
+                raise KeyError('Pairing key incorrect.')
 
+            self.__controller.log('Getting phone friendly name',
+                                  screen=False)
+            phone_name = self.__controller.get_value('phonename')
+
+            self.__controller.log('Getting current pairing status',
+                                  screen=False)
             device_paired = self.__controller.get_bluetooth()
-            if device_paired == None:
+
+            if device_paired in (None,'',[]):
                 raise ValueError('The phone is not paired, '+\
                                  'so cannot be un-paired')
 
+            self.__controller.log('Communicating with Bluetooth device {0}'\
+                                      .format(device_paired),
+                                  screen=False)
             bluetooth_url = device_paired + '/pair/' + phone_name
             self.__controller.clear_value(device_paired)
             device_paired = self.__controller.set_bluetooth(None)
-            data = {'paired with':None}
+            data = {'device':None}
 
             request_response = requests.delete(bluetooth_url)
             status_code = request_response.status_code
@@ -78,16 +92,23 @@ class Config_Pair_Control(object):
                       ' a connection error: {0}'.format(str(rce))+'. '+\
                       'The Bluetooth device may be unavailable and '+\
                       'so un-pairing could not be confirmed.'
+            self.__controller.log(message,
+                                  screen=False)
         except KeyError as ke:
             success = 'error'
             status = '400'
-            message = 'Badly formed request!'
+            message = 'Bluetooth un-pairing key error: {0}'.format(str(ke))
+            self.__controller.log(message, screen=False)
         except ValueError as ve:
             success = 'error'
-            status = '400'
-            message = str(ve)
+            status = '404'
+            message = 'Bluetooth un-pairing error: {0}'.format(str(ve))
+            self.__controller.log(message, screen=False)
         except Exception as e:
-            raise
+            success = 'error'
+            status = '500'
+            message = 'Bluetooth un-pairing exception: {0}'.format(str(ve))
+            self.__controller.log(message, screen=False)
             #return repr(e)
 
         return_value = self.__controller.do_response(message=message,
@@ -135,26 +156,31 @@ class Config_Pair_Control(object):
                 bluetooth_key = request_response.json()['data']['key']
                 self.__controller.set_value(bluetooth, bluetooth_key)
             device_paired = self.__controller.set_bluetooth(bluetooth)
-            data = {'paired with':device_paired}
+            data = {'device':device_paired}
         except requests.exceptions.ConnectionError as rce:
             success = 'error'
             status = '500'
             message = 'Phone cannot be paired with {0}'.format(bluetooth)+\
                       '; the response from the Bluetooth device was'+\
                       ' a connection error: {0}'.format(str(rce))+'. '+\
-                      'The Bluetooth device may be unavailable and '+\
-                      'so un-pairing could not be confirmed.'
+                      'The Bluetooth device may be unavailable or the URL '+\
+                      'may be incorrect.'
+            self.__controller.log(message, screen=False)
         except KeyError as ke:
             success = 'error'
             status = '400'
-            message = 'Badly formed request!'
+            message = 'Bluetooth un-pairing key error: {0}'.format(str(ke))
+            self.__controller.log(message, screen=False)
         except ValueError as ve:
             success = 'error'
             status = '404'
-            message = str(ve)
+            message = 'Bluetooth un-pairing key error: {0}'.format(str(ve))
+            self.__controller.log(message, screen=False)
         except Exception as e:
-            raise
-            #return repr(e)
+            success = 'error'
+            status = '500'
+            message = 'Bluetooth un-pairing exception: {0}'.format(repr(e))
+            self.__controller.log(message, screen=False)
 
         return_value = self.__controller.do_response(message=message,
                                                      data=data,
