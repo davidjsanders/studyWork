@@ -17,6 +17,8 @@ class Config_Push_Notifications_Control(object):
         data = None
 
         try:
+            self.__controller.log('Request to ask Notification Service to '+\
+                                  'push persisted notifications.', screen=False)
             if json_string == None\
             or json_string == '':
                 raise KeyError('Badly formed request!')
@@ -34,6 +36,10 @@ class Config_Push_Notifications_Control(object):
                        "key":"1234-5678-9012-3456",
                        "recipient":recipient
                       }
+
+            self.__controller.log('Issuing request to notification service '+\
+                                  'with payload: {0} '.format(str(payload)),
+                                  screen=False)
             request_response = requests.post(service_url,
                                              json.dumps(payload))
 
@@ -46,19 +52,21 @@ class Config_Push_Notifications_Control(object):
                                  '{0}.'.format(request_response.text)
                                 )
             else:
-                self.__controller.log(request_response.text, screen=False)
-                print(request_response.text)
                 if (status_code == 404 or status_code == 403)\
                 and not ('notification-count' in str(request_response.text)):
                     raise ValueError('Unable to communicate with service. '+\
                                      'Response from request was {0} {1}.'\
                                      .format(status_code, request_response.text)
                                     )
+                self.__controller.log('Response received from Notification '+\
+                                      'Service', screen=False)
                 json_response = request_response.json()
                 if 'error' in json_response:
                     raise ValueError(json_response['message'])
                 request_status = json_response['status']
                 data = {'push':json_response['data']}
+                self.__controller.log('Received: {0}'.format(str(data)),
+                                      screen=False)
         except requests.exceptions.ConnectionError as rce:
             success = 'error'
             status = '500'

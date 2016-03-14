@@ -61,7 +61,7 @@ def redis_processor(control_object=None):
                                    'response {0}'\
                                        .format(request_response.status_code))
 
-                if request_response.status_code != 201:
+                if request_response.status_code not in (200,201):
                     error_text = \
                         'Unable to communicate with phone due to error. '
                     if request_response.status_code == 404:
@@ -75,7 +75,7 @@ def redis_processor(control_object=None):
                     else:
                         error_text += 'Response status was {0}'\
                                          .format(request_response.status_code)+\
-                                      '; '+request_response.json()
+                                      '; '+json.dumps(request_response.json())
 
                     persist_reason = error_text
                     control_object.log('Redis Processor: Stop ERROR')

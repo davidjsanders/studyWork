@@ -31,7 +31,7 @@ class Config_Launch_Control(object):
 
             monitor_app = self.__controller.get_value('monitor_app')
             if monitor_app == [] or monitor_app == None:
-                data = {'launched app':app}
+                data = {'app':app, 'state':'launched'}
             else:
                 return_status = self.__notify_monitor(app, monitor_app)
                 if 'error' in return_status:
@@ -84,13 +84,7 @@ class Config_Launch_Control(object):
                                              json.dumps(payload))
 
             status_code = request_response.status_code
-            if status_code not in (200,201):
-                if status_code == 404:
-                    raise ValueError('Unable to communicate with monitor app. '+\
-                                     'Response from request was {0} {1}.'\
-                                     .format(status_code, request_response.text)
-                                    )
-
+            if status_code not in (200,201,404):
                 raise ValueError('Unable to communicate with monitor app! '+\
                                  'Response code '+\
                                  '{0}'.format(request_response.status_code)+\
@@ -98,10 +92,16 @@ class Config_Launch_Control(object):
                                  '{0}.'.format(request_response.text)
                                 )
             else:
+                if status_code == 404\
+                and not ('not being monitored' in str(request_response.text)):
+                    raise ValueError('Unable to communicate with monitor app.'+\
+                                     ' Response from request was {0} {1}.'\
+                                     .format(status_code, request_response.text)
+                                    )
                 json_response = request_response.json()
                 if 'error' in json_response:
                     raise ValueError(json_response['message'])
-                return {'launched app':app}
+                return {'app':app, 'state':'launched'}
         except requests.exceptions.ConnectionError as rce:
             return {'success':'error',
                     'status':500,
