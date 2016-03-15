@@ -19,23 +19,42 @@ class Control(object):
             port_number = os.environ['portToUse']
             stage += 1
             server_name = os.environ['serverName']
+            stage += 1
+            host_ip = os.environ['hostIP']
+            stage += 1
+            version = os.environ['version']
         except KeyError as ke:
             if stage == 1:
                 port_number = 5000
                 server_name = 'localhost'
-            else:
+            elif stage == 2:
                 server_name = 'localhost'
+            elif stage == 3:
+                host_ip = '127.0.0.1'
+            else:
+                version = 'v1_00'
 
         self.__server_name = server_name
         self.__port_number = port_number
 
+        self.__pairing_db = Pairing_Database.Pairing_Database()
         self.__log_file = 'datavolume/'+server_name+'-'+\
                           str(port_number)+'-log.txt'
 
-        self.__pairing_db = Pairing_Database.Pairing_Database()
-
         self.log('Bluetooth Device {0}:{1} Started'\
                  .format(server_name, port_number))
+
+        self.log('Setting server_name to {0}'.format(server_name))
+        self.__pairing_db.set_key('server_name', server_name)
+
+        self.log('Setting port number to {0}'.format(port_number))
+        self.__pairing_db.set_key('port_number', port_number)
+
+        self.log('Setting Host IP Address to {0}'.format(host_ip))
+        self.__pairing_db.set_key('ip_addr', host_ip)
+
+        self.log('Setting version to {0}'.format(version))
+        self.__pairing_db.set_key('version', version)
 
 
     def get_value(self, key=None):

@@ -26,12 +26,20 @@ class Control(object):
             port_number = os.environ['portToUse']
             stage += 1
             server_name = os.environ['serverName']
+            stage += 1
+            host_ip = os.environ['hostIP']
+            stage += 1
+            version = os.environ['version']
         except KeyError as ke:
             if stage == 1:
                 port_number = 5000
                 server_name = 'localhost'
-            else:
+            elif stage == 2:
                 server_name = 'localhost'
+            elif stage == 3:
+                host_ip = '127.0.0.1'
+            else:
+                version = 'v1_00'
 
         self.__server_name = server_name
         self.__port_number = port_number
@@ -43,6 +51,17 @@ class Control(object):
         self.log('Notification Service {0}:{1} Started'\
                  .format(server_name, port_number))
 
+        self.log('Setting server_name to {0}'.format(server_name))
+        self.__Notification_Service_db.set_value('server_name', server_name)
+
+        self.log('Setting port number to {0}'.format(port_number))
+        self.__Notification_Service_db.set_value('port_number', port_number)
+
+        self.log('Setting Host IP Address to {0}'.format(host_ip))
+        self.__Notification_Service_db.set_value('ip_addr', host_ip)
+
+        self.log('Setting version to {0}'.format(version))
+        self.__Notification_Service_db.set_value('version', version)
         #self.__redis['host'] = server_name
         #self.__redis['port'] = 6379
 

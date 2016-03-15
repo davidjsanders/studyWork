@@ -166,14 +166,14 @@ class Notification_Control(object):
         action=None
     ):
         try:
-            self.__controller.log('-'*79)
+            self.__controller.log('-'*77)
             self.__controller.log('Notification received')
-            self.__controller.log('-'*79)
+            self.__controller.log('-'*77)
             self.__controller.log('Notification from: {0}'.format(sender))
             self.__controller.log('Received at      : {0}'.format(date_string))
             self.__controller.log('Notification     : {0}'.format(notification))
             self.__controller.log('Action           : {0}'.format(action))
-            self.__controller.log('-'*79)
+            self.__controller.log('-'*77)
 
             outputfile = self.__controller.get_value('output_device')
             f = open(outputfile,'a')
