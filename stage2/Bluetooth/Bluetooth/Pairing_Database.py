@@ -8,20 +8,7 @@ class Pairing_Database(object):
     __server_name = None
     __port_number = None
 
-    def __init__(self):
-        stage = 0
-        try:
-            stage += 1
-            port_number = os.environ['portToUse']
-            stage += 1
-            server_name = os.environ['serverName']
-        except KeyError as ke:
-            if stage == 1:
-                port_number = 5000
-                server_name = 'localhost'
-            else:
-                server_name = 'localhost'
-
+    def __init__(self, server_name=None, port_number=None):
         self.__server_name = server_name
         self.__port_number = port_number
 

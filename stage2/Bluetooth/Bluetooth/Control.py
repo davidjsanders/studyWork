@@ -37,7 +37,10 @@ class Control(object):
         self.__server_name = server_name
         self.__port_number = port_number
 
-        self.__pairing_db = Pairing_Database.Pairing_Database()
+        self.__pairing_db = Pairing_Database.Pairing_Database(
+            server_name = self.__server_name,
+            port_number = self.__port_number
+        )
         self.__log_file = 'datavolume/'+server_name+'-'+\
                           str(port_number)+'-log.txt'
 
@@ -45,17 +48,24 @@ class Control(object):
                  .format(server_name, port_number))
 
         self.log('Setting server_name to {0}'.format(server_name))
-        self.__pairing_db.set_key('server_name', server_name)
+        self.set_value('server_name', server_name)
+        self.log('Stored {0}'.format(self.get_value('server_name')))
 
         self.log('Setting port number to {0}'.format(port_number))
-        self.__pairing_db.set_key('port_number', port_number)
+        self.set_value('port_number', port_number)
+        self.log('Stored {0}'.format(self.get_value('port_number')))
 
         self.log('Setting Host IP Address to {0}'.format(host_ip))
-        self.__pairing_db.set_key('ip_addr', host_ip)
+        self.set_value('ip_addr', host_ip)
+        self.log('Stored {0}'.format(self.get_value('ip_addr')))
 
         self.log('Setting version to {0}'.format(version))
-        self.__pairing_db.set_key('version', version)
+        self.set_value('version', version)
+        self.log('Stored {0}'.format(self.get_value('version')))
 
+
+    def get_pairing_db(self):
+        return self.__pairing_db
 
     def get_value(self, key=None):
         if key == None:

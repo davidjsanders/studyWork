@@ -15,7 +15,9 @@ class Pairing_Control(object):
 
 
     def __init__(self):
-        self.__pairing_db = Pairing_Database.Pairing_Database()
+#        self.__pairing_db = Pairing_Database.Pairing_Database()
+        __controller = global_control
+        self.__pairing_db = self.__controller.get_pairing_db()
 
     def check_pairing(self, devicename):
         return self.__pairing_db.check_pairing(devicename)

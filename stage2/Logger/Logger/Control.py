@@ -68,6 +68,10 @@ class Control(object):
         self.__version = version
 
 
+    def get_version(self):
+        return self.__version
+
+
     def delete_log(self):
         self.file_clear()
         return self.__logger_db.clear_log()
