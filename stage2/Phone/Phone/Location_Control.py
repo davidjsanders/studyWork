@@ -14,7 +14,7 @@ class Location_Control(object):
         self.__controller = Control.global_controller
 
     def location_request(self):
-        self.__controller.log('Location request:start',
+        self.__controller.log('Location request received.',
                               screen=False)
 
         success = 'success'
@@ -56,7 +56,7 @@ class Location_Control(object):
                                                      status=status,
                                                      response=success)
 
-        self.__controller.log('Location request:end',
+        self.__controller.log('Location request returned {0}'.format(data),
                               screen=False)
         return return_value
 

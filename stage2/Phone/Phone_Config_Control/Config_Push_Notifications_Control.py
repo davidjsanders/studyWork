@@ -27,10 +27,19 @@ class Config_Push_Notifications_Control(object):
             key = json_data['key']
             service = json_data['notification-service']
             service_url = service
-            recipient = json_data['recipient']
 
+            self.__controller.log('Validating key.',
+                                  screen=False)
             if not key == '1234-5678-9012-3456':
                 raise ValueError('Control key incorrect.')
+
+            self.__controller.log('Calculating recipient.',
+                                  screen=False)
+
+            recipient = 'http://{0}:{1}/{2}/notification'\
+                        .format(self.__controller.get_value('ip_addr'),
+                                self.__controller.get_value('port_number'),
+                                self.__controller.get_value('version'))
 
             payload = {
                        "key":"1234-5678-9012-3456",
@@ -44,6 +53,11 @@ class Config_Push_Notifications_Control(object):
                                              json.dumps(payload))
 
             status_code = request_response.status_code
+            self.__controller.log('Push request returned status: {0} '\
+                                  .format(status_code),
+                                  screen=False
+                                 )
+
             if status_code not in (200,201,404):
                 raise ValueError('Unable to communicate with service! '+\
                                  'Response code '+\
@@ -98,56 +112,6 @@ class Config_Push_Notifications_Control(object):
                                                      response=success)
 
         return return_value
-
-
-    def __notify_monitor(self, app=None, monitor_app=None):
-        try:
-            monitor_app_url = monitor_app + '/launched/' + app
-
-            payload = {"key":"1234-5678-9012-3456"}
-            request_response = requests.post(monitor_app_url,
-                                             json.dumps(payload))
-
-            status_code = request_response.status_code
-            if status_code not in (200,201):
-                if status_code == 404:
-                    raise ValueError('Unable to communicate with monitor app. '+\
-                                     'Response from request was {0} {1}.'\
-                                     .format(status_code, request_response.text)
-                                    )
-
-                raise ValueError('Unable to communicate with monitor app! '+\
-                                 'Response code '+\
-                                 '{0}'.format(request_response.status_code)+\
-                                 ' with data payload '+\
-                                 '{0}.'.format(request_response.text)
-                                )
-            else:
-                json_response = request_response.json()
-                if 'error' in json_response:
-                    raise ValueError(json_response['message'])
-                return {'launched app':app}
-        except requests.exceptions.ConnectionError as rce:
-            return {'success':'error',
-                    'status':500,
-                    'message':'Phone cannot communicate with the monitor '+\
-                      'app running at {0}'.format(monitor_app)+\
-                      '; the response from the monitor app was'+\
-                      ' a connection error: {0}'.format(str(rce))+'.'
-                   }
-        except KeyError as ke:
-            return {'success':'error',
-                    'status':400,
-                    'message':'Badly formed request!'
-                   }
-        except ValueError as ve:
-            return {'success':'error',
-                    'status':403,
-                    'message':str(ve)
-                   }
-        except Exception as e:
-            raise
-            #return repr(e)
 
 push_control_object = Config_Push_Notifications_Control()
 

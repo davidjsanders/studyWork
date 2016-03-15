@@ -17,7 +17,7 @@ class Notification_Control(object):
         self,
         json_string=None
     ):
-        self.__controller.log('Incoming notification:start',
+        self.__controller.log('Notification received.',
                               screen=False)
         success = 'success'
         status = '200'
@@ -30,6 +30,9 @@ class Notification_Control(object):
             success = 'error'
             status = '400'
             message = 'Badly formed request!'
+            self.__controller.log(
+                'Notification was not properly formed. There was no JSON.',
+                screen=False)
         else:
             json_data = json.loads(json_string)
             continue_sentinel = True
@@ -46,14 +49,19 @@ class Notification_Control(object):
                         "action":action,
                         "notification":text}
 
+                self.__controller.log(
+                    'Notification data: {0}'.format(data),
+                    screen=False)
+
                 now = datetime.datetime.now()
                 tz = time.tzname[0]
                 tzdst = time.tzname[1]
 
                 self.__controller.log(
-                    'Incoming notification: displaying notification',
+                    'Sending display notification request.',
                     screen=False
                 )
+
                 self.__display_notification(
                     sender=sender,
                     date_string='{0} ({1}/{2})'.format(now, tz, tzdst),
@@ -62,7 +70,7 @@ class Notification_Control(object):
                 )
 
                 self.__controller.log(
-                    'Incoming notification: persisting notification',
+                    'Persisting notification to the database.',
                     screen=False
                 )
                 self.__controller.persist_notification(
@@ -73,7 +81,7 @@ class Notification_Control(object):
                 )
 
                 self.__controller.log(
-                    'Incoming notification: Issuing to bluetooth',
+                    'Issuing notification to bluetooth',
                     screen=False
                 )
                 response = self.__issue_bluetooth(
@@ -115,7 +123,7 @@ class Notification_Control(object):
                   screen=False
                 )
 
-        self.__controller.log('Incoming notification processed',
+        self.__controller.log('Notification processed.',
                               screen=False)
         return_value = self.__controller.do_response(message=message,
                                                      data=data,
@@ -144,7 +152,6 @@ class Notification_Control(object):
                          bluetooth_device+'/broadcast/'+phonename,
                          data=json.dumps(payload_data)
                     )
-# OLD:                         bluetooth_device+'/broadcast/'+phonename,
             return request_response
         except requests.exceptions.ConnectionError as rce:
             raise requests.exceptions.ConnectionError(rce)
@@ -159,14 +166,14 @@ class Notification_Control(object):
         action=None
     ):
         try:
-            self.__controller.log(' ')
+            self.__controller.log('-'*79)
             self.__controller.log('Notification received')
             self.__controller.log('-'*79)
             self.__controller.log('Notification from: {0}'.format(sender))
             self.__controller.log('Received at      : {0}'.format(date_string))
             self.__controller.log('Notification     : {0}'.format(notification))
             self.__controller.log('Action           : {0}'.format(action))
-            self.__controller.log(' ')
+            self.__controller.log('-'*79)
 
             outputfile = self.__controller.get_value('output_device')
             f = open(outputfile,'a')

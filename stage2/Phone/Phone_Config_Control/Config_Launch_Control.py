@@ -13,10 +13,11 @@ class Config_Launch_Control(object):
     def launch(self, app=None, json_string=None):
         success = 'success'
         status = '200'
-        message = 'Phone Monitor App launch status.'
+        message = 'App Launched'
         data = None
 
         try:
+            self.__controller.log('Application launch detected.', screen=False)
             if json_string == None\
             or json_string == ''\
             or app == None\
@@ -29,10 +30,16 @@ class Config_Launch_Control(object):
             if not key == '1234-5678-9012-3456':
                 raise ValueError('Control key incorrect.')
 
+            self.__controller.log('Check if monitor app is configured.',
+                                  screen=False)
             monitor_app = self.__controller.get_value('monitor_app')
             if monitor_app == [] or monitor_app == None:
+                self.__controller.log('No monitor app, so ignore.',
+                                      screen=False)
                 data = {'app':app, 'state':'launched'}
             else:
+                self.__controller.log('Monitor app is configured, so notify.',
+                                      screen=False)
                 return_status = self.__notify_monitor(app, monitor_app)
                 if 'error' in return_status:
                     status_code = return_status['status']
@@ -80,10 +87,18 @@ class Config_Launch_Control(object):
             monitor_app_url = monitor_app + '/launched/' + app
 
             payload = {"key":"1234-5678-9012-3456"}
+
+            self.__controller.log('Connecting to {0} with payload {1}'\
+                                      .format(monitor_app_url, payload),
+                                  screen=False)
             request_response = requests.post(monitor_app_url,
                                              json.dumps(payload))
 
             status_code = request_response.status_code
+            self.__controller.log('Monitor App {0} returned status {1}'\
+                                      .format(monitor_app_url, status_code),
+                                  screen=False)
+
             if status_code not in (200,201,404):
                 raise ValueError('Unable to communicate with monitor app! '+\
                                  'Response code '+\
@@ -101,7 +116,12 @@ class Config_Launch_Control(object):
                 json_response = request_response.json()
                 if 'error' in json_response:
                     raise ValueError(json_response['message'])
-                return {'app':app, 'state':'launched'}
+
+                return_value = {'app':app, 'state':'launched'}
+                self.__controller.log('Returning {0}'\
+                                          .format(return_value),
+                                      screen=False)
+                return return_value
         except requests.exceptions.ConnectionError as rce:
             return {'success':'error',
                     'status':500,

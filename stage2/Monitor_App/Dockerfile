@@ -24,6 +24,7 @@ FROM dsanderscan/mscit_stage2_base
 #
 # Install Redis
 #
+RUN apt-get update
 RUN apt-get install -y redis-server
 #
 # Install the python Redis module

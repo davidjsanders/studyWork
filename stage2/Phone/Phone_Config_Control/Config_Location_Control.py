@@ -32,24 +32,34 @@ class Config_Location_Control(object):
             x = float(json_data['x'])
             y = float(json_data['y'])
 
+            self.__controller.log('Request to set location to {0},{1}'\
+                                  .format(x,y), screen=False)
+
             self.__controller.set_value('x', str(x))
             self.__controller.set_value('y', str(y))
 
             data = {"x":x, "y":y}
+            self.__controller.log('Location changed.', screen=False)
         except KeyError as ke:
             success = 'error'
             status = '400'
-            message = 'Badly formed request!'
+            message = 'Set location, Key Error: {0}'.format(str(ke))
+            self.__controller.log(message, screen=False)
         except ValueError as ve:
             success = 'error'
             status = '400'
-            message = str(ve)
+            message = 'Set location, Value Error: {0}'.format(str(ve))
+            self.__controller.log(message, screen=False)
         except IndexError as ie:
             success = 'error'
             status = '403'
-            message = str(ie)
+            message = 'Set location, Index Error: {0}'.format(str(ie))
+            self.__controller.log(message, screen=False)
         except Exception as e:
-            raise
+            success = 'error'
+            status = '500'
+            message = 'Set location, Exception: {0}'.format(repr(e))
+            self.__controller.log(message, screen=False)
 
         return_value = self.__controller.do_response(message=message,
                                                      data=data,

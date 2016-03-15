@@ -15,11 +15,16 @@ class Config_Logger_Control(object):
         status = '200'
         message = 'Central logging status.'
 
+        self.__controller.log('Request to get central logger details.',
+                              screen=False)
         logger = self.__controller.get_value('logger')
         if logger in ([], '', None):
             logger = None
 
         data = {'logger':logger}
+        self.__controller.log('Central logger details: {0}'.format(data),
+                              screen=False)
+
         return_value = self.__controller.do_response(message=message,
                                                      data=data,
                                                      status=status,
@@ -39,12 +44,21 @@ class Config_Logger_Control(object):
             or json_string == '':
                 raise KeyError('Badly formed request!')
 
+            self.__controller.log('Request to stop central logging.',
+                                  screen=False)
+
             json_data = json.loads(json_string)
+
             key = json_data['key']
-            logger = self.__controller.get_value('logger')
+            self.__controller.log('Validating key.',
+                                  screen=False)
 
             if not key == '1234-5678-9012-3456':
                 raise ValueError('Logging key incorrect.')
+
+            logger = self.__controller.get_value('logger')
+            self.__controller.log('Validating logger',
+                                  screen=False)
 
             if logger in (None, '', []):
                 raise ValueError('The phone is not logging, '+\
@@ -52,17 +66,24 @@ class Config_Logger_Control(object):
 
             self.__controller.clear_value('logger')
             data = {'logger':None}
+            self.__controller.log('Central logger details: {0}'.format(data),
+                                  screen=False)
+
         except KeyError as ke:
             success = 'error'
             status = '400'
-            message = 'Badly formed request!'
+            message = 'Config Logger, Key Error: {0}'.format(str(ke))
+            self.__controller.log(message, screen=False)
         except ValueError as ve:
             success = 'error'
             status = '400'
-            message = str(ve)
+            message = 'Config Logger, Value Error: {0}'.format(str(ve))
+            self.__controller.log(message, screen=False)
         except Exception as e:
-            raise
-            #return repr(e)
+            success = 'error'
+            status = '500'
+            message = 'Config Logger, Exception: {0}'.format(repr(e))
+            self.__controller.log(message, screen=False)
 
         return_value = self.__controller.do_response(message=message,
                                                      data=data,
@@ -83,26 +104,43 @@ class Config_Logger_Control(object):
             or json_string == '':
                 raise KeyError('Badly formed request!')
 
-            json_data = json.loads(json_string)
-            key = json_data['key']
-            logger = json_data['logger']
+            self.__controller.log('Request to start central logging.',
+                                  screen=False)
 
+            json_data = json.loads(json_string)
+
+            self.__controller.log('Validating key.',
+                                  screen=False)
+            key = json_data['key']
             if not key == '1234-5678-9012-3456':
                 raise ValueError('Logging key incorrect.')
 
+            self.__controller.log('Validating logger details.',
+                                  screen=False)
+            logger = json_data['logger']
+
+            self.__controller.log('Setting logger to: {0}'.format(logger),
+                                  screen=False)
+
             self.__controller.set_value('logger', logger)
             data = {'logger':logger}
+            self.__controller.log('Central logger details: {0}'.format(data),
+                                  screen=False)
         except KeyError as ke:
             success = 'error'
             status = '400'
-            message = 'Badly formed request! {0}'.format(ke)
+            message = 'Config Logger, Key Error: {0}'.format(str(ke))
+            self.__controller.log(message, screen=False)
         except ValueError as ve:
             success = 'error'
             status = '404'
-            message = str(ve)
+            message = 'Config Logger, Value Error: {0}'.format(str(ve))
+            self.__controller.log(message, screen=False)
         except Exception as e:
-            raise
-            #return repr(e)
+            success = 'error'
+            status = '500'
+            message = 'Config Logger, Exception: {0}'.format(repr(e))
+            self.__controller.log(message, screen=False)
 
         return_value = self.__controller.do_response(message=message,
                                                      data=data,

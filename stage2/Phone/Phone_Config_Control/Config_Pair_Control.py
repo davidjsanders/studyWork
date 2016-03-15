@@ -16,13 +16,20 @@ class Config_Pair_Control(object):
         message = 'Phone Bluetooth pairing status.'
         data = None
 
+        self.__controller.log('Request to get Bluetooth pairing status.',
+                              screen=False)
         device_paired = self.__controller.get_bluetooth()
         if device_paired == []:
             device_paired = None
 
+        pair_data = {'device':device_paired}
+
+        self.__controller.log('Bluetooth pairing status: {0}'.format(pair_data),
+                              screen=False)
+
         return self.__controller.do_response(
             message=message,
-            data={'device':device_paired},
+            data=pair_data,
             status=status,
             response=success
         )
@@ -109,7 +116,6 @@ class Config_Pair_Control(object):
             status = '500'
             message = 'Bluetooth un-pairing exception: {0}'.format(str(ve))
             self.__controller.log(message, screen=False)
-            #return repr(e)
 
         return_value = self.__controller.do_response(message=message,
                                                      data=data,

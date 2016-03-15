@@ -31,6 +31,7 @@ RUN mkdir /Notification_Service/datavolume
 #
 # Install Redis
 #
+RUN apt-get update
 RUN apt-get install -y redis-server
 #
 # Install the python Redis module
