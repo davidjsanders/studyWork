@@ -23,6 +23,7 @@ RUN mkdir /base_lib
 # copy the base_lib files
 #
 COPY __init__.py /base_lib/
+COPY Config_Logger.py /base_lib/
 COPY Environment.py /base_lib/
 COPY KVStore.py /base_lib/
 COPY Logger.py /base_lib/

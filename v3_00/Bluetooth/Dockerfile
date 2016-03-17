@@ -55,5 +55,5 @@ CMD ["/Bluetooth/startup.sh"]   # Set default parameters
 #
 # Create the symbolic link to the base library
 #
-RUN ln -s /base_lib /Bluetooth/Bluetooth/base_lib
+RUN ln -s /base_lib /Bluetooth/base_lib
 

@@ -1,16 +1,13 @@
 # Import base library modules - From Bluetooth symbolic link to /base_lib
-from Bluetooth.base_lib.Responder import Responder
-from Bluetooth.base_lib.Logger import Logger
-from Bluetooth.base_lib.Environment import Environment
-from Bluetooth.base_lib.KVStore import KVStore
+import base_lib
+from base_lib.Responder import Responder
+from base_lib.Config_Logger import Config_Logger
+from base_lib.Logger import Logger
+from base_lib.Environment import Environment
+from base_lib.KVStore import KVStore
 
 # Import general modules and packages
-from flask_restful import Resource, Api, reqparse, abort
-from flask import Response
 from Bluetooth import Pairing_Database
-
-import datetime, time, json, os, requests
-from textwrap import wrap
 
 #
 # SuperClass.
@@ -19,6 +16,7 @@ class Control(object):
     __log_file = None
     __pairing_db = None
     responder = None
+    config_logger = None
 
     def __init__(self):
         # Setup environment
@@ -29,6 +27,9 @@ class Control(object):
         version = self.environment['version']
         pre_filename = 'datavolume/{0}-{1}'\
                        .format(server_name, port_number)
+
+        # Setup Config for Logger
+        # self.config_logger = Config_Logger(self)
 
         # Setup responder
         self.responder = Responder()
