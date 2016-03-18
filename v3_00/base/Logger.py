@@ -24,6 +24,17 @@ class Logger(object):
         return datetime.datetime.now()
 
 
+    def file_clear(self):
+        try:
+            f = open(self.__filename, 'a')
+            f.write("{0:>28s}\n".format(str(now)+': log cleared.'))
+        except Exception:
+            raise
+        finally:
+            if not f == None:
+                f.close()
+
+
     def get_central_logger(self):
         return self.__central_logger
 

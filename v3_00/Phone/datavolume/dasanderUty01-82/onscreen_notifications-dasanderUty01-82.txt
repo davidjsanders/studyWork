@@ -1,0 +1,306 @@
+--------------------------------------------------------------------------------
+Notification from: MonitorApp
+Received at      : 2016-02-02 19:14:36.018707 (EST/EST)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+
+--------------------------------------------------------------------------------
+Notification from: MonitorApp
+Received at      : 2016-02-02 19:14:39.600034 (EST/EST)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+
+--------------------------------------------------------------------------------
+Notification from: MonitorApp
+Received at      : 2016-02-02 19:16:01.533912 (EST/EST)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+
+--------------------------------------------------------------------------------
+Notification from: MonitorApp
+Received at      : 2016-02-02 19:16:02.154647 (EST/EST)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+
+--------------------------------------------------------------------------------
+Notification from: MonitorApp
+Received at      : 2016-02-02 19:16:02.818612 (EST/EST)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+
+--------------------------------------------------------------------------------
+Notification from: MonitorApp
+Received at      : 2016-02-02 19:17:30.015983 (EST/EST)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+
+--------------------------------------------------------------------------------
+Notification from: MonitorApp
+Received at      : 2016-02-02 19:19:26.297450 (EST/EST)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+
+--------------------------------------------------------------------------------
+Notification from: MonitorApp
+Received at      : 2016-02-02 19:20:11.314963 (EST/EST)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+
+--------------------------------------------------------------------------------
+Notification from: MonitorApp
+Received at      : 2016-02-02 19:23:54.300588 (EST/EST)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+
+--------------------------------------------------------------------------------
+Notification from: MonitorApp
+Received at      : 2016-02-02 19:25:14.021824 (EST/EST)
+Notification     : *** You have entered an area known for high STI Infection Rates. Remember; Safe sex is good sex!
+Action           : openMap(x,y)
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-02 19:51:40.320063 (EST/EST)
+Notification     : test
+Action           : test
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-02 19:53:02.234891 (EST/EST)
+Notification     : test
+Action           : test
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-02 19:53:51.108728 (EST/EST)
+Notification     : test
+Action           : test
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-02 19:54:11.349214 (EST/EST)
+Notification     : test
+Action           : test
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-02 19:58:38.255323 (EST/EST)
+Notification     : test
+Action           : test
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-02 19:59:20.636267 (EST/EST)
+Notification     : test
+Action           : test
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-02 20:00:01.306883 (EST/EST)
+Notification     : test
+Action           : test
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-02 20:00:36.101561 (EST/EST)
+Notification     : This is a sensitive text message which has been read aloud by Bluetooth
+Action           : test
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-02 20:06:17.457004 (EST/EST)
+Notification     : This is a sensitive text message which has been read aloud by Bluetooth
+Action           : test
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-02 20:08:20.213960 (EST/EST)
+Notification     : This is a sensitive text message which has been read aloud by Bluetooth
+Action           : test
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-02 20:17:55.419878 (EST/EST)
+Notification     : This is a sensitive text message which has been read aloud by Bluetooth
+Action           : test
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-02 20:18:24.660833 (EST/EST)
+Notification     : This is a sensitive text message which has been read aloud by Bluetooth
+Action           : test
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-02 20:19:09.846371 (EST/EST)
+Notification     : This is a sensitive text message which has been read aloud by Bluetooth
+Action           : test
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-02 20:20:50.002111 (EST/EST)
+Notification     : This is a sensitive text message which has been read aloud by Bluetooth
+Action           : test
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-02 20:21:10.586765 (EST/EST)
+Notification     : This is a sensitive text message which has been read aloud by Bluetooth
+Action           : test
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-02 20:39:06.499658 (EST/EST)
+Notification     : This is a sensitive text message which has been read aloud by Bluetooth
+Action           : test
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-02 21:09:33.145689 (EST/EST)
+Notification     : This is a sensitive text message which has been read aloud by Bluetooth
+Action           : test
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-02 21:10:18.910547 (EST/EST)
+Notification     : This is a sensitive text message which has been read aloud by Bluetooth
+Action           : test
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-02 21:11:35.206417 (EST/EST)
+Notification     : This is a sensitive text message which has been read aloud by Bluetooth
+Action           : test
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-02 21:15:12.494456 (EST/EST)
+Notification     : This is a sensitive text message which has been read aloud by Bluetooth
+Action           : test
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-02 21:15:59.304263 (EST/EST)
+Notification     : This is a sensitive text message which has been read aloud by Bluetooth
+Action           : test
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-02 21:16:24.808891 (EST/EST)
+Notification     : This is a sensitive text message which has been read aloud by Bluetooth
+Action           : test
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-03 17:13:54.560641 (EST/EST)
+Notification     : This is a test notification to validate Bluetooth device
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-03 17:14:40.812700 (EST/EST)
+Notification     : This is a test notification to validate Bluetooth device
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-03 17:14:57.490507 (EST/EST)
+Notification     : This is a test notification to validate Bluetooth device
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-03 17:15:02.603177 (EST/EST)
+Notification     : This is a test notification to validate Bluetooth device
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-03 17:15:14.219353 (EST/EST)
+Notification     : This is a test notification to validate Bluetooth device
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-04 15:26:10.835388 (EST/EST)
+Notification     : just testing
+Action           : do
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-04 15:27:26.049680 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-04 15:27:35.075541 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: test
+Received at      : 2016-02-04 15:28:24.796538 (EST/EST)
+Notification     : just testing
+Action           : do
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-04 15:35:48.052938 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-04 15:36:39.279973 (EST/EST)
+Notification     : The application facebook has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-04 15:39:14.988850 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-04 15:39:26.958924 (EST/EST)
+Notification     : The application manhunt has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-04 15:41:02.840302 (EST/EST)
+Notification     : The application manhunt has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-04 15:41:11.943216 (EST/EST)
+Notification     : The application manhunt has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-04 15:42:17.669865 (EST/EST)
+Notification     : The application grindr has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-04 15:42:26.822104 (EST/EST)
+Notification     : The application manhunt has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-04 15:42:52.569790 (EST/EST)
+Notification     : The application manhunt has been launched. Remember: Safe sex is good sex!
+Action           : none
+
+--------------------------------------------------------------------------------
+Notification from: Monitor_App
+Received at      : 2016-02-04 16:42:57.181350 (EST/EST)
+Notification     : The application manhunt has been launched. Remember: Safe sex is good sex!
+Action           : none
+

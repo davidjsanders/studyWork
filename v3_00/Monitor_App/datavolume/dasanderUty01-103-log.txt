@@ -1,0 +1,1504 @@
+2016-02-20 09:27:25.569916: Monitor App dasanderUty01:103 Started at 2016-02-20 09:27:25.569875
+2016-02-20 09:27:37.989146: State change request. Change to on
+2016-02-20 09:27:38.021553: State change request. Changed to on
+2016-02-20 09:27:38.562555: Request to monitor status of app grindr (Grindr is an app for men seeking men).
+2016-02-20 09:27:38.575536: Monitor App application set. grindr (Grindr is an app for men seeking men) is
+                          : now being monitored.
+2016-02-20 09:27:39.098442: Check monitoring status of app grindr.
+2016-02-20 09:27:39.106186: Monitor App application check. grindr (Grindr is an app for men seeking men) is
+                          : being monitored.
+2016-02-20 09:27:39.630552: Request to monitor status of app manhunt (ManHunt is a location based app for
+                          : men seeking men).
+2016-02-20 09:27:39.642422: Monitor App application set. manhunt (ManHunt is a location based app for men
+                          : seeking men) is now being monitored.
+2016-02-20 09:27:40.174003: Monitor App detected an application launch.
+2016-02-20 09:27:40.181278: Application facebook not on watch list. Ignored.
+2016-02-20 09:27:40.714448: Monitor App detected an application launch.
+2016-02-20 09:27:40.721266: Application grindr is on watch list.
+2016-02-20 09:27:40.770544: Notification raised with data:
+2016-02-20 09:27:40.777908: 201: {'message': 'Notification received. Thank you.', 'response': 'success',
+                          : 'data': {'notification': 'The application grindr has been launched. Remember:
+                          : Safe sex is good sex!', 'action': 'none'}, 'status': '201'}
+2016-02-20 09:27:41.311343: Monitor App detected an application launch.
+2016-02-20 09:27:41.328647: Application mailclient not on watch list. Ignored.
+2016-02-20 09:27:42.487719: Request to stop monitoring app grindr.
+2016-02-20 09:27:42.500383: Monitor App application set. grindr is no longer being monitored.
+2016-02-20 09:27:43.023899: Check monitoring status of app grindr.
+2016-02-20 09:27:43.030796: Application grindr not found.
+2016-02-20 09:27:43.557140: Monitor App detected an application launch.
+2016-02-20 09:27:43.564468: Application grindr not on watch list. Ignored.
+2016-02-20 09:27:45.598690: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:27:45.668033: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:27:45.675956: Location request returned (100.0,100.0).
+2016-02-20 09:27:45.684246: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:27:45.708791: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:27:45.716132: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:27:45.726511: Location (100.0,100.0) has not been previously encountered.
+2016-02-20 09:27:45.732745: Location (100.0, 100.0)  hotspot notification being raised
+2016-02-20 09:27:45.789013: Location notification request returned: 201: {'message': 'Notification
+                          : received. Thank you.', 'response': 'success', 'data': {'notification': 'You
+                          : have entered an area known for high rates of STI infections and drug use.
+                          : Remember: Safe sex is good sex!', 'action': 'openMap(100.0, 100.0)'}, 'status':
+                          : '201'}
+2016-02-20 09:27:55.801508: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:27:55.836164: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:27:55.842855: Location request returned (100.0,100.0).
+2016-02-20 09:27:55.849910: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:27:55.881329: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:27:55.888728: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:27:55.900997: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:28:05.920390: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:28:05.953498: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:28:05.959936: Location request returned (100.0,100.0).
+2016-02-20 09:28:05.966942: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:28:05.998526: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:28:06.005522: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:28:06.012663: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:28:16.030378: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:28:16.064650: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:28:16.071650: Location request returned (100.0,100.0).
+2016-02-20 09:28:16.079539: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:28:16.107811: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:28:16.115385: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:28:16.122433: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:28:26.140987: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:28:26.174068: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:28:26.180895: Location request returned (100.0,100.0).
+2016-02-20 09:28:26.187674: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:28:26.212144: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:28:26.219417: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:28:26.226079: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:28:36.244529: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:28:36.282327: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:28:36.289626: Location request returned (100.0,100.0).
+2016-02-20 09:28:36.296779: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:28:36.322782: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:28:36.330189: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:28:36.337391: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:28:46.348678: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:28:46.382463: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:28:46.389364: Location request returned (100.0,100.0).
+2016-02-20 09:28:46.395762: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:28:46.421056: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:28:46.428292: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:28:46.436035: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:28:56.454600: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:28:56.488583: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:28:56.495112: Location request returned (100.0,100.0).
+2016-02-20 09:28:56.502113: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:28:56.527580: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:28:56.534414: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:28:56.541597: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:29:06.559565: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:29:06.593415: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:29:06.600418: Location request returned (100.0,100.0).
+2016-02-20 09:29:06.607234: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:29:06.632675: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:29:06.639430: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:29:06.646383: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:29:16.662875: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:29:16.695524: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:29:16.702292: Location request returned (100.0,100.0).
+2016-02-20 09:29:16.709619: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:29:16.734747: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:29:16.742791: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:29:16.750273: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:29:26.768545: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:29:26.803145: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:29:26.810092: Location request returned (100.0,100.0).
+2016-02-20 09:29:26.817152: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:29:26.858317: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:29:26.865610: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:29:26.872990: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:29:36.888463: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:29:36.944561: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:29:36.957619: Location request returned (100.0,100.0).
+2016-02-20 09:29:36.970818: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:29:37.003978: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:29:37.014376: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:29:37.026471: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:29:47.044822: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:29:47.080800: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:29:47.094510: Location request returned (100.0,100.0).
+2016-02-20 09:29:47.102493: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:29:47.129783: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:29:47.138897: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:29:47.146597: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:29:57.164337: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:29:57.197965: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:29:57.208776: Location request returned (100.0,100.0).
+2016-02-20 09:29:57.220638: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:29:57.273817: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:29:57.282226: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:29:57.293347: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:30:07.314129: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:30:07.347614: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:30:07.354323: Location request returned (100.0,100.0).
+2016-02-20 09:30:07.361268: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:30:07.385774: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:30:07.393037: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:30:07.400290: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:30:17.414852: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:30:17.448594: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:30:17.455354: Location request returned (100.0,100.0).
+2016-02-20 09:30:17.463130: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:30:17.488840: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:30:17.496054: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:30:17.503621: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:30:27.522014: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:30:27.555590: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:30:27.561975: Location request returned (100.0,100.0).
+2016-02-20 09:30:27.568793: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:30:27.594286: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:30:27.601073: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:30:27.608904: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:30:37.626932: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:30:37.660999: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:30:37.667783: Location request returned (100.0,100.0).
+2016-02-20 09:30:37.675406: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:30:37.701618: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:30:37.708666: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:30:37.725071: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:30:47.743342: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:30:47.778261: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:30:47.785579: Location request returned (100.0,100.0).
+2016-02-20 09:30:47.793013: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:30:47.819040: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:30:47.826122: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:30:47.833703: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:30:57.852089: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:30:57.886488: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:30:57.893655: Location request returned (100.0,100.0).
+2016-02-20 09:30:57.900643: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:30:57.925953: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:30:57.932713: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:30:57.939918: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:31:07.953235: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:31:07.986991: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:31:07.994076: Location request returned (100.0,100.0).
+2016-02-20 09:31:08.001424: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:31:08.027307: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:31:08.034357: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:31:08.042167: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:31:18.053185: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:31:18.087835: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:31:18.094479: Location request returned (100.0,100.0).
+2016-02-20 09:31:18.101872: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:31:18.127430: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:31:18.135401: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:31:18.143060: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:31:28.161215: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:31:28.197644: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:31:28.206164: Location request returned (100.0,100.0).
+2016-02-20 09:31:28.212953: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:31:28.244389: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:31:28.251077: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:31:28.258349: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:31:38.276294: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:31:38.319402: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:31:38.326595: Location request returned (100.0,100.0).
+2016-02-20 09:31:38.337358: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:31:38.362243: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:31:38.369095: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:31:38.376354: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:31:48.394273: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:31:48.433055: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:31:48.448080: Location request returned (100.0,100.0).
+2016-02-20 09:31:48.454968: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:31:48.480049: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:31:48.487052: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:31:48.494376: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:31:58.512271: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:31:58.544226: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:31:58.550665: Location request returned (100.0,100.0).
+2016-02-20 09:31:58.557034: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:31:58.582768: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:31:58.590149: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:31:58.597195: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:32:08.615503: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:32:08.649382: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:32:08.655946: Location request returned (100.0,100.0).
+2016-02-20 09:32:08.663021: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:32:08.687970: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:32:08.695003: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:32:08.702441: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:32:18.720302: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:32:18.753711: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:32:18.760640: Location request returned (100.0,100.0).
+2016-02-20 09:32:18.767644: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:32:18.793936: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:32:18.800795: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:32:18.808091: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:32:28.826749: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:32:28.859961: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:32:28.866777: Location request returned (100.0,100.0).
+2016-02-20 09:32:28.874380: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:32:28.899708: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:32:28.907236: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:32:28.914146: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:32:38.932049: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:32:38.965192: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:32:38.971805: Location request returned (100.0,100.0).
+2016-02-20 09:32:38.978749: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:32:39.004331: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:32:39.011893: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:32:39.018862: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:32:49.036971: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:32:49.078287: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:32:49.085025: Location request returned (100.0,100.0).
+2016-02-20 09:32:49.092130: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:32:49.117736: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:32:49.125335: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:32:49.132931: Location (100.0,100.0) reported more than 5 minutes ago.
+2016-02-20 09:32:49.143360: Location (100.0, 100.0)  hotspot notification being raised
+2016-02-20 09:32:49.191548: Location notification request returned: 201: {'message': 'Notification
+                          : received. Thank you.', 'response': 'success', 'data': {'notification': 'You
+                          : have entered an area known for high rates of STI infections and drug use.
+                          : Remember: Safe sex is good sex!', 'action': 'openMap(100.0, 100.0)'}, 'status':
+                          : '201'}
+2016-02-20 09:32:59.208496: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:32:59.242172: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:32:59.248996: Location request returned (100.0,100.0).
+2016-02-20 09:32:59.255949: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:32:59.280470: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:32:59.287344: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:32:59.294615: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:33:09.311694: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:33:09.344669: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:33:09.351336: Location request returned (100.0,100.0).
+2016-02-20 09:33:09.358537: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:33:09.383624: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:33:09.390844: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:33:09.398200: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:33:19.411156: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:33:19.443790: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 09:33:19.450510: Location request returned (100.0,100.0).
+2016-02-20 09:33:19.457696: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:33:19.483827: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0, "number": 1, "hotspots": [{"upper-x": 200.0, "location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0}], "hotspot": true}, "status": "200", "message": "Location
+                          : Service, check location results."}
+2016-02-20 09:33:19.491092: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:33:19.498019: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:33:45.022375: Monitor App dasanderUty01:103 Started at 2016-02-20 09:33:45.022336
+2016-02-20 09:33:55.093061: State change request. Change to on
+2016-02-20 09:33:55.109265: State change request. Changed to on
+2016-02-20 09:33:55.649068: Request to monitor status of app grindr (Grindr is an app for men seeking men).
+2016-02-20 09:33:55.663659: Monitor App application set. grindr (Grindr is an app for men seeking men) is
+                          : now being monitored.
+2016-02-20 09:33:56.186247: Check monitoring status of app grindr.
+2016-02-20 09:33:56.193644: Monitor App application check. grindr (Grindr is an app for men seeking men) is
+                          : being monitored.
+2016-02-20 09:33:56.716181: Request to monitor status of app manhunt (ManHunt is a location based app for
+                          : men seeking men).
+2016-02-20 09:33:56.728397: Monitor App application set. manhunt (ManHunt is a location based app for men
+                          : seeking men) is now being monitored.
+2016-02-20 09:33:57.255308: Monitor App detected an application launch.
+2016-02-20 09:33:57.262582: Application facebook not on watch list. Ignored.
+2016-02-20 09:33:57.790724: Monitor App detected an application launch.
+2016-02-20 09:33:57.797458: Application grindr is on watch list.
+2016-02-20 09:33:57.850303: Notification raised with data:
+2016-02-20 09:33:57.861743: 201: {'data': {'notification': 'The application grindr has been launched.
+                          : Remember: Safe sex is good sex!', 'action': 'none'}, 'message': 'Notification
+                          : received. Thank you.', 'response': 'success', 'status': '201'}
+2016-02-20 09:33:58.391342: Monitor App detected an application launch.
+2016-02-20 09:33:58.397700: Application mailclient not on watch list. Ignored.
+2016-02-20 09:33:59.548580: Request to stop monitoring app grindr.
+2016-02-20 09:33:59.563657: Monitor App application set. grindr is no longer being monitored.
+2016-02-20 09:34:00.087631: Check monitoring status of app grindr.
+2016-02-20 09:34:00.097909: Application grindr not found.
+2016-02-20 09:34:00.625634: Monitor App detected an application launch.
+2016-02-20 09:34:00.633183: Application grindr not on watch list. Ignored.
+2016-02-20 09:34:15.068669: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:34:15.133010: Location request returned 200:{"status": "200", "message": "Location.", "data":
+                          : {"y": 100.0, "x": 100.0}, "response": "success"}
+2016-02-20 09:34:15.140079: Location request returned (100.0,100.0).
+2016-02-20 09:34:15.147063: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:34:15.177398: Hotspot check returned 200:{"response": "success", "data": {"hotspot": true,
+                          : "hotspots": [{"location": "downtown", "description": "The downtown hotspot",
+                          : "upper-y": 200.0, "lower-y": 50.0, "lower-x": 50.0, "upper-x": 200.0}], "x":
+                          : 100.0, "y": 100.0, "number": 1}, "message": "Location Service, check location
+                          : results.", "status": "200"}
+2016-02-20 09:34:15.184395: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:34:15.196627: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:34:45.235006: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:34:45.269729: Location request returned 200:{"status": "200", "message": "Location.", "data":
+                          : {"y": 100.0, "x": 100.0}, "response": "success"}
+2016-02-20 09:34:45.276578: Location request returned (100.0,100.0).
+2016-02-20 09:34:45.283452: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:34:45.308824: Hotspot check returned 200:{"response": "success", "data": {"hotspot": true,
+                          : "hotspots": [{"location": "downtown", "description": "The downtown hotspot",
+                          : "upper-y": 200.0, "lower-y": 50.0, "lower-x": 50.0, "upper-x": 200.0}], "x":
+                          : 100.0, "y": 100.0, "number": 1}, "message": "Location Service, check location
+                          : results.", "status": "200"}
+2016-02-20 09:34:45.318839: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:34:45.328823: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:36:14.086839: Monitor App dasanderUty01:103 Started at 2016-02-20 09:36:14.086796
+2016-02-20 09:36:24.849121: State change request. Change to on
+2016-02-20 09:36:24.862987: State change request. Changed to on
+2016-02-20 09:36:25.402957: Request to monitor status of app grindr (Grindr is an app for men seeking men).
+2016-02-20 09:36:25.414150: Monitor App application set. grindr (Grindr is an app for men seeking men) is
+                          : now being monitored.
+2016-02-20 09:36:25.936904: Check monitoring status of app grindr.
+2016-02-20 09:36:25.944126: Monitor App application check. grindr (Grindr is an app for men seeking men) is
+                          : being monitored.
+2016-02-20 09:36:26.466659: Request to monitor status of app manhunt (ManHunt is a location based app for
+                          : men seeking men).
+2016-02-20 09:36:26.478065: Monitor App application set. manhunt (ManHunt is a location based app for men
+                          : seeking men) is now being monitored.
+2016-02-20 09:36:27.009163: Monitor App detected an application launch.
+2016-02-20 09:36:27.017374: Application facebook not on watch list. Ignored.
+2016-02-20 09:36:27.547333: Monitor App detected an application launch.
+2016-02-20 09:36:27.554814: Application grindr is on watch list.
+2016-02-20 09:36:27.607495: Notification raised with data:
+2016-02-20 09:36:27.615782: 201: {'data': {'action': 'none', 'notification': 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!'}, 'status': '201', 'message':
+                          : 'Notification received. Thank you.', 'response': 'success'}
+2016-02-20 09:36:28.147068: Monitor App detected an application launch.
+2016-02-20 09:36:28.154030: Application mailclient not on watch list. Ignored.
+2016-02-20 09:36:29.309184: Request to stop monitoring app grindr.
+2016-02-20 09:36:29.321128: Monitor App application set. grindr is no longer being monitored.
+2016-02-20 09:36:29.843177: Check monitoring status of app grindr.
+2016-02-20 09:36:29.850601: Application grindr not found.
+2016-02-20 09:36:30.377850: Monitor App detected an application launch.
+2016-02-20 09:36:30.384799: Application grindr not on watch list. Ignored.
+2016-02-20 09:36:44.119398: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:36:44.181655: Location request returned 200:{"response": "success", "message": "Location.",
+                          : "data": {"x": 100.0, "y": 100.0}, "status": "200"}
+2016-02-20 09:36:44.188396: Location request returned (100.0,100.0).
+2016-02-20 09:36:44.195159: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:36:44.220969: Hotspot check returned 200:{"status": "200", "message": "Location Service,
+                          : check location results.", "data": {"hotspot": true, "number": 1, "hotspots":
+                          : [{"location": "downtown", "description": "The downtown hotspot", "lower-x":
+                          : 50.0, "upper-x": 200.0, "lower-y": 50.0, "upper-y": 200.0}], "y": 100.0, "x":
+                          : 100.0}, "response": "success"}
+2016-02-20 09:36:44.227855: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:36:44.239704: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:37:14.277554: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:37:14.310703: Location request returned 200:{"response": "success", "message": "Location.",
+                          : "data": {"x": 100.0, "y": 100.0}, "status": "200"}
+2016-02-20 09:37:14.316958: Location request returned (100.0,100.0).
+2016-02-20 09:37:14.334100: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:37:14.365539: Hotspot check returned 200:{"status": "200", "message": "Location Service,
+                          : check location results.", "data": {"hotspot": true, "number": 1, "hotspots":
+                          : [{"location": "downtown", "description": "The downtown hotspot", "lower-x":
+                          : 50.0, "upper-x": 200.0, "lower-y": 50.0, "upper-y": 200.0}], "y": 100.0, "x":
+                          : 100.0}, "response": "success"}
+2016-02-20 09:37:14.372493: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:37:14.380295: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:37:44.408491: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:37:44.445529: Location request returned 200:{"response": "success", "message": "Location.",
+                          : "data": {"x": 100.0, "y": 100.0}, "status": "200"}
+2016-02-20 09:37:44.452243: Location request returned (100.0,100.0).
+2016-02-20 09:37:44.458994: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:37:44.483332: Hotspot check returned 200:{"status": "200", "message": "Location Service,
+                          : check location results.", "data": {"hotspot": true, "number": 1, "hotspots":
+                          : [{"location": "downtown", "description": "The downtown hotspot", "lower-x":
+                          : 50.0, "upper-x": 200.0, "lower-y": 50.0, "upper-y": 200.0}], "y": 100.0, "x":
+                          : 100.0}, "response": "success"}
+2016-02-20 09:37:44.490307: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:37:44.497327: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:38:14.517726: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:38:14.550874: Location request returned 200:{"response": "success", "message": "Location.",
+                          : "data": {"x": 100.0, "y": 100.0}, "status": "200"}
+2016-02-20 09:38:14.557903: Location request returned (100.0,100.0).
+2016-02-20 09:38:14.565203: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:38:14.601795: Hotspot check returned 200:{"status": "200", "message": "Location Service,
+                          : check location results.", "data": {"hotspot": true, "number": 1, "hotspots":
+                          : [{"location": "downtown", "description": "The downtown hotspot", "lower-x":
+                          : 50.0, "upper-x": 200.0, "lower-y": 50.0, "upper-y": 200.0}], "y": 100.0, "x":
+                          : 100.0}, "response": "success"}
+2016-02-20 09:38:14.609057: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:38:14.615770: Location (100.0,100.0) reported more than 5 minutes ago.
+2016-02-20 09:38:14.627138: Location (100.0, 100.0)  hotspot notification being raised
+2016-02-20 09:38:14.667638: Location notification request returned: 201: {'data': {'action':
+                          : 'openMap(100.0, 100.0)', 'notification': 'You have entered an area known for
+                          : high rates of STI infections and drug use. Remember: Safe sex is good sex!'},
+                          : 'status': '201', 'message': 'Notification received. Thank you.', 'response':
+                          : 'success'}
+2016-02-20 09:38:44.706814: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:38:44.760709: Location request returned 200:{"response": "success", "message": "Location.",
+                          : "data": {"x": 100.0, "y": 100.0}, "status": "200"}
+2016-02-20 09:38:44.767525: Location request returned (100.0,100.0).
+2016-02-20 09:38:44.774268: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:38:44.799182: Hotspot check returned 200:{"status": "200", "message": "Location Service,
+                          : check location results.", "data": {"hotspot": true, "number": 1, "hotspots":
+                          : [{"location": "downtown", "description": "The downtown hotspot", "lower-x":
+                          : 50.0, "upper-x": 200.0, "lower-y": 50.0, "upper-y": 200.0}], "y": 100.0, "x":
+                          : 100.0}, "response": "success"}
+2016-02-20 09:38:44.805601: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:38:44.812188: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:39:26.316545: Monitor App dasanderUty01:103 Started at 2016-02-20 09:39:26.316504
+2016-02-20 09:39:39.965272: State change request. Change to on
+2016-02-20 09:39:39.992134: State change request. Changed to on
+2016-02-20 09:39:40.541761: Request to monitor status of app grindr (Grindr is an app for men seeking men).
+2016-02-20 09:39:40.564725: Monitor App application set. grindr (Grindr is an app for men seeking men) is
+                          : now being monitored.
+2016-02-20 09:39:41.087395: Check monitoring status of app grindr.
+2016-02-20 09:39:41.095274: Monitor App application check. grindr (Grindr is an app for men seeking men) is
+                          : being monitored.
+2016-02-20 09:39:41.618312: Request to monitor status of app manhunt (ManHunt is a location based app for
+                          : men seeking men).
+2016-02-20 09:39:41.631079: Monitor App application set. manhunt (ManHunt is a location based app for men
+                          : seeking men) is now being monitored.
+2016-02-20 09:39:42.162178: Monitor App detected an application launch.
+2016-02-20 09:39:42.169068: Application facebook not on watch list. Ignored.
+2016-02-20 09:39:42.703978: Monitor App detected an application launch.
+2016-02-20 09:39:42.721218: Application grindr is on watch list.
+2016-02-20 09:39:42.766866: Notification raised with data:
+2016-02-20 09:39:42.774806: 201: {'response': 'success', 'status': '201', 'data': {'notification': 'The
+                          : application grindr has been launched. Remember: Safe sex is good sex!',
+                          : 'action': 'none'}, 'message': 'Notification received. Thank you.'}
+2016-02-20 09:39:43.306337: Monitor App detected an application launch.
+2016-02-20 09:39:43.313864: Application mailclient not on watch list. Ignored.
+2016-02-20 09:39:44.464166: Request to stop monitoring app grindr.
+2016-02-20 09:39:44.476780: Monitor App application set. grindr is no longer being monitored.
+2016-02-20 09:39:44.998676: Check monitoring status of app grindr.
+2016-02-20 09:39:45.005846: Application grindr not found.
+2016-02-20 09:39:45.539423: Monitor App detected an application launch.
+2016-02-20 09:39:45.546254: Application grindr not on watch list. Ignored.
+2016-02-20 09:39:56.351548: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:39:56.420784: Location request returned 200:{"message": "Location.", "data": {"x": 100.0,
+                          : "y": 100.0}, "response": "success", "status": "200"}
+2016-02-20 09:39:56.427299: Location request returned (100.0,100.0).
+2016-02-20 09:39:56.434785: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:39:56.461061: Hotspot check returned 200:{"message": "Location Service, check location
+                          : results.", "status": "200", "response": "success", "data": {"hotspots":
+                          : [{"lower-y": 50.0, "upper-x": 200.0, "location": "downtown", "description":
+                          : "The downtown hotspot", "upper-y": 200.0, "lower-x": 50.0}], "hotspot": true,
+                          : "x": 100.0, "y": 100.0, "number": 1}}
+2016-02-20 09:39:56.476972: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:39:56.489861: Location (100.0,100.0) has not been previously encountered.
+2016-02-20 09:39:56.496055: Location (100.0, 100.0)  hotspot notification being raised
+2016-02-20 09:39:56.537624: Location notification request returned: 201: {'response': 'success', 'status':
+                          : '201', 'data': {'notification': 'You have entered an area known for high rates
+                          : of STI infections and drug use. Remember: Safe sex is good sex!', 'action':
+                          : 'openMap(100.0, 100.0)'}, 'message': 'Notification received. Thank you.'}
+2016-02-20 09:43:01.641687: Monitor App dasanderUty01:103 Started at 2016-02-20 09:43:01.641648
+2016-02-20 09:43:14.413635: State change request. Change to on
+2016-02-20 09:43:14.438402: State change request. Changed to on
+2016-02-20 09:43:14.979557: Request to monitor status of app grindr (Grindr is an app for men seeking men).
+2016-02-20 09:43:14.991936: Monitor App application set. grindr (Grindr is an app for men seeking men) is
+                          : now being monitored.
+2016-02-20 09:43:15.526140: Check monitoring status of app grindr.
+2016-02-20 09:43:15.533555: Monitor App application check. grindr (Grindr is an app for men seeking men) is
+                          : being monitored.
+2016-02-20 09:43:16.057773: Request to monitor status of app manhunt (ManHunt is a location based app for
+                          : men seeking men).
+2016-02-20 09:43:16.081662: Monitor App application set. manhunt (ManHunt is a location based app for men
+                          : seeking men) is now being monitored.
+2016-02-20 09:43:16.612569: Monitor App detected an application launch.
+2016-02-20 09:43:16.620180: Application facebook not on watch list. Ignored.
+2016-02-20 09:43:17.151197: Monitor App detected an application launch.
+2016-02-20 09:43:17.169290: Application grindr is on watch list.
+2016-02-20 09:43:17.217295: Notification raised with data:
+2016-02-20 09:43:17.225387: 201: {'message': 'Notification received. Thank you.', 'data': {'notification':
+                          : 'The application grindr has been launched. Remember: Safe sex is good sex!',
+                          : 'action': 'none'}, 'response': 'success', 'status': '201'}
+2016-02-20 09:43:17.755266: Monitor App detected an application launch.
+2016-02-20 09:43:17.762381: Application mailclient not on watch list. Ignored.
+2016-02-20 09:43:18.914014: Request to stop monitoring app grindr.
+2016-02-20 09:43:18.926648: Monitor App application set. grindr is no longer being monitored.
+2016-02-20 09:43:19.450183: Check monitoring status of app grindr.
+2016-02-20 09:43:19.469019: Application grindr not found.
+2016-02-20 09:43:19.995402: Monitor App detected an application launch.
+2016-02-20 09:43:20.005211: Application grindr not on watch list. Ignored.
+2016-02-20 09:43:31.678006: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:43:31.743562: Location request returned 200:{"data": {"x": 100.0, "y": 100.0}, "response":
+                          : "success", "message": "Location.", "status": "200"}
+2016-02-20 09:43:31.750660: Location request returned (100.0,100.0).
+2016-02-20 09:43:31.758626: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:43:31.783926: Hotspot check returned 200:{"response": "success", "data": {"hotspot": true,
+                          : "y": 100.0, "number": 1, "x": 100.0, "hotspots": [{"upper-y": 200.0, "upper-x":
+                          : 200.0, "lower-y": 50.0, "lower-x": 50.0, "location": "downtown", "description":
+                          : "The downtown hotspot"}]}, "status": "200", "message": "Location Service, check
+                          : location results."}
+2016-02-20 09:43:31.790766: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:43:31.801457: Location (100.0,100.0) has not been previously encountered.
+2016-02-20 09:43:31.808022: Location (100.0, 100.0)  hotspot notification being raised
+2016-02-20 09:43:31.857547: Location notification request returned: 201: {'message': 'Notification
+                          : received. Thank you.', 'data': {'notification': 'You have entered an area known
+                          : for high rates of STI infections and drug use. Remember: Safe sex is good
+                          : sex!', 'action': 'openMap(100.0, 100.0)'}, 'response': 'success', 'status':
+                          : '201'}
+2016-02-20 09:44:01.873905: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:44:01.907520: Location request returned 200:{"data": {"x": 100.0, "y": 100.0}, "response":
+                          : "success", "message": "Location.", "status": "200"}
+2016-02-20 09:44:01.914768: Location request returned (100.0,100.0).
+2016-02-20 09:44:01.921889: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:44:01.947709: Hotspot check returned 200:{"response": "success", "data": {"hotspot": true,
+                          : "y": 100.0, "number": 1, "x": 100.0, "hotspots": [{"upper-y": 200.0, "upper-x":
+                          : 200.0, "lower-y": 50.0, "lower-x": 50.0, "location": "downtown", "description":
+                          : "The downtown hotspot"}]}, "status": "200", "message": "Location Service, check
+                          : location results."}
+2016-02-20 09:44:01.955043: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:44:01.967814: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:44:32.005811: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:44:32.040459: Location request returned 200:{"data": {"x": 100.0, "y": 100.0}, "response":
+                          : "success", "message": "Location.", "status": "200"}
+2016-02-20 09:44:32.046943: Location request returned (100.0,100.0).
+2016-02-20 09:44:32.053763: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:44:32.084153: Hotspot check returned 200:{"response": "success", "data": {"hotspot": true,
+                          : "y": 100.0, "number": 1, "x": 100.0, "hotspots": [{"upper-y": 200.0, "upper-x":
+                          : 200.0, "lower-y": 50.0, "lower-x": 50.0, "location": "downtown", "description":
+                          : "The downtown hotspot"}]}, "status": "200", "message": "Location Service, check
+                          : location results."}
+2016-02-20 09:44:32.091418: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:44:32.099118: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:45:02.128491: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:45:02.162688: Location request returned 200:{"data": {"x": 100.0, "y": 100.0}, "response":
+                          : "success", "message": "Location.", "status": "200"}
+2016-02-20 09:45:02.169271: Location request returned (100.0,100.0).
+2016-02-20 09:45:02.177090: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:45:02.210567: Hotspot check returned 200:{"response": "success", "data": {"hotspot": true,
+                          : "y": 100.0, "number": 1, "x": 100.0, "hotspots": [{"upper-y": 200.0, "upper-x":
+                          : 200.0, "lower-y": 50.0, "lower-x": 50.0, "location": "downtown", "description":
+                          : "The downtown hotspot"}]}, "status": "200", "message": "Location Service, check
+                          : location results."}
+2016-02-20 09:45:02.217375: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:45:02.224916: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:45:32.257729: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:45:32.314940: Location request returned 200:{"data": {"x": 100.0, "y": 100.0}, "response":
+                          : "success", "message": "Location.", "status": "200"}
+2016-02-20 09:45:32.322170: Location request returned (100.0,100.0).
+2016-02-20 09:45:32.328624: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:45:32.354039: Hotspot check returned 200:{"response": "success", "data": {"hotspot": true,
+                          : "y": 100.0, "number": 1, "x": 100.0, "hotspots": [{"upper-y": 200.0, "upper-x":
+                          : 200.0, "lower-y": 50.0, "lower-x": 50.0, "location": "downtown", "description":
+                          : "The downtown hotspot"}]}, "status": "200", "message": "Location Service, check
+                          : location results."}
+2016-02-20 09:45:32.361253: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:45:32.369192: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:45:59.010968: State change request. Change to on
+2016-02-20 09:45:59.023285: State change request. Changed to on
+2016-02-20 09:45:59.565457: Request to monitor status of app grindr (Grindr is an app for men seeking men).
+2016-02-20 09:45:59.577992: Monitor App application set. grindr (Grindr is an app for men seeking men) is
+                          : now being monitored.
+2016-02-20 09:46:00.099941: Check monitoring status of app grindr.
+2016-02-20 09:46:00.106691: Monitor App application check. grindr (Grindr is an app for men seeking men) is
+                          : being monitored.
+2016-02-20 09:46:00.629519: Request to monitor status of app manhunt (ManHunt is a location based app for
+                          : men seeking men).
+2016-02-20 09:46:00.642172: Monitor App application set. manhunt (ManHunt is a location based app for men
+                          : seeking men) is now being monitored.
+2016-02-20 09:46:01.169564: Monitor App detected an application launch.
+2016-02-20 09:46:01.176295: Application facebook not on watch list. Ignored.
+2016-02-20 09:46:01.704977: Monitor App detected an application launch.
+2016-02-20 09:46:01.712302: Application grindr is on watch list.
+2016-02-20 09:46:01.752830: Notification raised with data:
+2016-02-20 09:46:01.760795: 201: {'message': 'Notification received. Thank you.', 'data': {'notification':
+                          : 'The application grindr has been launched. Remember: Safe sex is good sex!',
+                          : 'action': 'none'}, 'response': 'success', 'status': '201'}
+2016-02-20 09:46:02.290825: Monitor App detected an application launch.
+2016-02-20 09:46:02.298209: Application mailclient not on watch list. Ignored.
+2016-02-20 09:46:02.392523: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:46:02.430366: Location request returned 200:{"data": {"x": 100.0, "y": 100.0}, "response":
+                          : "success", "message": "Location.", "status": "200"}
+2016-02-20 09:46:02.436967: Location request returned (100.0,100.0).
+2016-02-20 09:46:02.444070: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:46:02.469896: Hotspot check returned 200:{"response": "success", "data": {"hotspot": true,
+                          : "y": 100.0, "number": 1, "x": 100.0, "hotspots": [{"upper-y": 200.0, "upper-x":
+                          : 200.0, "lower-y": 50.0, "lower-x": 50.0, "location": "downtown", "description":
+                          : "The downtown hotspot"}]}, "status": "200", "message": "Location Service, check
+                          : location results."}
+2016-02-20 09:46:02.484096: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:46:02.493140: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:46:03.448257: Request to stop monitoring app grindr.
+2016-02-20 09:46:03.460901: Monitor App application set. grindr is no longer being monitored.
+2016-02-20 09:46:03.983275: Check monitoring status of app grindr.
+2016-02-20 09:46:03.990635: Application grindr not found.
+2016-02-20 09:46:04.517414: Monitor App detected an application launch.
+2016-02-20 09:46:04.524141: Application grindr not on watch list. Ignored.
+2016-02-20 09:46:32.532917: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:46:32.566157: Location request returned 200:{"data": {"x": 1000.0, "y": 100.0}, "response":
+                          : "success", "message": "Location.", "status": "200"}
+2016-02-20 09:46:32.573170: Location request returned (1000.0,100.0).
+2016-02-20 09:46:32.580735: Location Request checking if location (1000.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:46:32.605814: Hotspot check returned 200:{"response": "warning", "data": {"hotspot": false,
+                          : "y": 100.0, "x": 1000.0}, "status": "200", "message": "No hotspots found."}
+2016-02-20 09:46:32.612887: Location check returned 200: {'message': 'No hotspots found.', 'data': {'y':
+                          : 100.0, 'hotspot': False, 'x': 1000.0}, 'response': 'warning', 'status': '200'}
+2016-02-20 09:47:15.495061: Monitor App dasanderUty01:103 Started at 2016-02-20 09:47:15.495014
+2016-02-20 09:47:40.384032: State change request. Change to on
+2016-02-20 09:47:40.407646: State change request. Changed to on
+2016-02-20 09:47:40.952458: Request to monitor status of app grindr (Grindr is an app for men seeking men).
+2016-02-20 09:47:40.975024: Monitor App application set. grindr (Grindr is an app for men seeking men) is
+                          : now being monitored.
+2016-02-20 09:47:41.498599: Check monitoring status of app grindr.
+2016-02-20 09:47:41.505649: Monitor App application check. grindr (Grindr is an app for men seeking men) is
+                          : being monitored.
+2016-02-20 09:47:42.029386: Request to monitor status of app manhunt (ManHunt is a location based app for
+                          : men seeking men).
+2016-02-20 09:47:42.041447: Monitor App application set. manhunt (ManHunt is a location based app for men
+                          : seeking men) is now being monitored.
+2016-02-20 09:47:42.569684: Monitor App detected an application launch.
+2016-02-20 09:47:42.576309: Application facebook not on watch list. Ignored.
+2016-02-20 09:47:43.108404: Monitor App detected an application launch.
+2016-02-20 09:47:43.126074: Application grindr is on watch list.
+2016-02-20 09:47:43.177702: Notification raised with data:
+2016-02-20 09:47:43.193104: 201: {'response': 'success', 'status': '201', 'message': 'Notification
+                          : received. Thank you.', 'data': {'action': 'none', 'notification': 'The
+                          : application grindr has been launched. Remember: Safe sex is good sex!'}}
+2016-02-20 09:47:43.725931: Monitor App detected an application launch.
+2016-02-20 09:47:43.743540: Application mailclient not on watch list. Ignored.
+2016-02-20 09:47:44.895194: Request to stop monitoring app grindr.
+2016-02-20 09:47:44.907756: Monitor App application set. grindr is no longer being monitored.
+2016-02-20 09:47:45.431240: Check monitoring status of app grindr.
+2016-02-20 09:47:45.438734: Application grindr not found.
+2016-02-20 09:47:45.528907: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:47:45.594765: Location request returned 200:{"response": "success", "message": "Location.",
+                          : "status": "200", "data": {"y": 0.0, "x": 0.0}}
+2016-02-20 09:47:45.601658: Location request returned (0.0,0.0).
+2016-02-20 09:47:45.609374: Location Request checking if location (0.0,0.0) is in hotspot. Checking with
+                          : http://192.168.0.210:104/v1_00/check
+2016-02-20 09:47:45.640499: Hotspot check returned 200:{"status": "200", "response": "warning", "message":
+                          : "No hotspots found.", "data": {"hotspot": false, "y": 0.0, "x": 0.0}}
+2016-02-20 09:47:45.647648: Location check returned 200: {'response': 'warning', 'status': '200',
+                          : 'message': 'No hotspots found.', 'data': {'y': 0.0, 'hotspot': False, 'x':
+                          : 0.0}}
+2016-02-20 09:47:45.967414: Monitor App detected an application launch.
+2016-02-20 09:47:45.974574: Application grindr not on watch list. Ignored.
+2016-02-20 09:48:15.686256: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:48:15.720412: Location request returned 200:{"response": "success", "message": "Location.",
+                          : "status": "200", "data": {"y": 100.0, "x": 100.0}}
+2016-02-20 09:48:15.727214: Location request returned (100.0,100.0).
+2016-02-20 09:48:15.734261: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:48:15.758133: Hotspot check returned 200:{"status": "200", "response": "success", "message":
+                          : "Location Service, check location results.", "data": {"number": 1, "hotspot":
+                          : true, "y": 100.0, "x": 100.0, "hotspots": [{"upper-x": 200.0, "description":
+                          : "The downtown hotspot", "location": "downtown", "lower-x": 50.0, "upper-y":
+                          : 200.0, "lower-y": 50.0}]}}
+2016-02-20 09:48:15.764603: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:48:15.778114: Location (100.0,100.0) has not been previously encountered.
+2016-02-20 09:48:15.785157: Location (100.0, 100.0)  hotspot notification being raised
+2016-02-20 09:48:15.832816: Location notification request returned: 201: {'response': 'success', 'status':
+                          : '201', 'message': 'Notification received. Thank you.', 'data': {'action':
+                          : 'openMap(100.0, 100.0)', 'notification': 'You have entered an area known for
+                          : high rates of STI infections and drug use. Remember: Safe sex is good sex!'}}
+2016-02-20 09:48:45.846617: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:48:45.881220: Location request returned 200:{"response": "success", "message": "Location.",
+                          : "status": "200", "data": {"y": 100.0, "x": 100.0}}
+2016-02-20 09:48:45.888343: Location request returned (100.0,100.0).
+2016-02-20 09:48:45.896061: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:48:45.921773: Hotspot check returned 200:{"status": "200", "response": "success", "message":
+                          : "Location Service, check location results.", "data": {"number": 1, "hotspot":
+                          : true, "y": 100.0, "x": 100.0, "hotspots": [{"upper-x": 200.0, "description":
+                          : "The downtown hotspot", "location": "downtown", "lower-x": 50.0, "upper-y":
+                          : 200.0, "lower-y": 50.0}]}}
+2016-02-20 09:48:45.928795: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:48:45.940902: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:49:15.979331: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:49:16.017311: Location request returned 200:{"response": "success", "message": "Location.",
+                          : "status": "200", "data": {"y": 100.0, "x": 1000.0}}
+2016-02-20 09:49:16.024358: Location request returned (1000.0,100.0).
+2016-02-20 09:49:16.031383: Location Request checking if location (1000.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:49:16.069816: Hotspot check returned 200:{"status": "200", "response": "warning", "message":
+                          : "No hotspots found.", "data": {"hotspot": false, "y": 100.0, "x": 1000.0}}
+2016-02-20 09:49:16.076511: Location check returned 200: {'response': 'warning', 'status': '200',
+                          : 'message': 'No hotspots found.', 'data': {'y': 100.0, 'hotspot': False, 'x':
+                          : 1000.0}}
+2016-02-20 09:49:46.112845: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:49:46.153104: Location request returned 200:{"response": "success", "message": "Location.",
+                          : "status": "200", "data": {"y": 100.0, "x": 1000.0}}
+2016-02-20 09:49:46.172312: Location request returned (1000.0,100.0).
+2016-02-20 09:49:46.179205: Location Request checking if location (1000.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:49:46.210166: Hotspot check returned 200:{"status": "200", "response": "warning", "message":
+                          : "No hotspots found.", "data": {"hotspot": false, "y": 100.0, "x": 1000.0}}
+2016-02-20 09:49:46.216949: Location check returned 200: {'response': 'warning', 'status': '200',
+                          : 'message': 'No hotspots found.', 'data': {'y': 100.0, 'hotspot': False, 'x':
+                          : 1000.0}}
+2016-02-20 09:50:16.252598: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:50:16.295121: Location request returned 200:{"response": "success", "message": "Location.",
+                          : "status": "200", "data": {"y": 100.0, "x": 1000.0}}
+2016-02-20 09:50:16.301945: Location request returned (1000.0,100.0).
+2016-02-20 09:50:16.308552: Location Request checking if location (1000.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:50:16.335003: Hotspot check returned 200:{"status": "200", "response": "warning", "message":
+                          : "No hotspots found.", "data": {"hotspot": false, "y": 100.0, "x": 1000.0}}
+2016-02-20 09:50:16.342107: Location check returned 200: {'response': 'warning', 'status': '200',
+                          : 'message': 'No hotspots found.', 'data': {'y': 100.0, 'hotspot': False, 'x':
+                          : 1000.0}}
+2016-02-20 09:50:46.380331: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:50:46.414031: Location request returned 200:{"response": "success", "message": "Location.",
+                          : "status": "200", "data": {"y": 100.0, "x": 1000.0}}
+2016-02-20 09:50:46.420848: Location request returned (1000.0,100.0).
+2016-02-20 09:50:46.428151: Location Request checking if location (1000.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:50:46.459524: Hotspot check returned 200:{"status": "200", "response": "warning", "message":
+                          : "No hotspots found.", "data": {"hotspot": false, "y": 100.0, "x": 1000.0}}
+2016-02-20 09:50:46.466527: Location check returned 200: {'response': 'warning', 'status': '200',
+                          : 'message': 'No hotspots found.', 'data': {'y': 100.0, 'hotspot': False, 'x':
+                          : 1000.0}}
+2016-02-20 09:54:13.529346: Monitor App dasanderUty01:103 Started at 2016-02-20 09:54:13.529302
+2016-02-20 09:54:28.871309: State change request. Change to on
+2016-02-20 09:54:28.897986: State change request. Changed to on
+2016-02-20 09:54:29.440937: Request to monitor status of app grindr (Grindr is an app for men seeking men).
+2016-02-20 09:54:29.452170: Monitor App application set. grindr (Grindr is an app for men seeking men) is
+                          : now being monitored.
+2016-02-20 09:54:29.976307: Check monitoring status of app grindr.
+2016-02-20 09:54:29.983510: Monitor App application check. grindr (Grindr is an app for men seeking men) is
+                          : being monitored.
+2016-02-20 09:54:30.507079: Request to monitor status of app manhunt (ManHunt is a location based app for
+                          : men seeking men).
+2016-02-20 09:54:30.517425: Monitor App application set. manhunt (ManHunt is a location based app for men
+                          : seeking men) is now being monitored.
+2016-02-20 09:54:31.046184: Monitor App detected an application launch.
+2016-02-20 09:54:31.053822: Application facebook not on watch list. Ignored.
+2016-02-20 09:54:31.583441: Monitor App detected an application launch.
+2016-02-20 09:54:31.598055: Application grindr is on watch list.
+2016-02-20 09:54:31.648761: Notification raised with data:
+2016-02-20 09:54:31.655840: 201: {'message': 'Notification received. Thank you.', 'status': '201',
+                          : 'response': 'success', 'data': {'notification': 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!', 'action': 'none'}}
+2016-02-20 09:54:32.187681: Monitor App detected an application launch.
+2016-02-20 09:54:32.194704: Application mailclient not on watch list. Ignored.
+2016-02-20 09:54:33.345985: Request to stop monitoring app grindr.
+2016-02-20 09:54:33.357905: Monitor App application set. grindr is no longer being monitored.
+2016-02-20 09:54:33.881408: Check monitoring status of app grindr.
+2016-02-20 09:54:33.889619: Application grindr not found.
+2016-02-20 09:54:34.418018: Monitor App detected an application launch.
+2016-02-20 09:54:34.437212: Application grindr not on watch list. Ignored.
+2016-02-20 09:54:43.554171: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:54:43.623707: Location request returned 200:{"response": "success", "data": {"x": 100.0, "y":
+                          : 100.0}, "message": "Location.", "status": "200"}
+2016-02-20 09:54:43.630381: Location request returned (100.0,100.0).
+2016-02-20 09:54:43.637971: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:54:43.665846: Hotspot check returned 200:{"status": "200", "message": "Location Service,
+                          : check location results.", "response": "success", "data": {"x": 100.0, "y":
+                          : 100.0, "number": 1, "hotspot": true, "hotspots": [{"location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0, "upper-x": 200.0}]}}
+2016-02-20 09:54:43.673066: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:54:43.684592: Location (100.0,100.0) has not been previously encountered.
+2016-02-20 09:54:43.690786: Location (100.0, 100.0)  hotspot notification being raised
+2016-02-20 09:54:43.731135: Location notification request returned: 201: {'message': 'Notification
+                          : received. Thank you.', 'status': '201', 'response': 'success', 'data':
+                          : {'notification': 'You have entered an area known for high rates of STI
+                          : infections and drug use. Remember: Safe sex is good sex!', 'action':
+                          : 'openMap(100.0, 100.0)'}}
+2016-02-20 09:55:13.771204: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:55:13.805926: Location request returned 200:{"response": "success", "data": {"x": 100.0, "y":
+                          : 100.0}, "message": "Location.", "status": "200"}
+2016-02-20 09:55:13.812869: Location request returned (100.0,100.0).
+2016-02-20 09:55:13.820013: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:55:13.846454: Hotspot check returned 200:{"status": "200", "message": "Location Service,
+                          : check location results.", "response": "success", "data": {"x": 100.0, "y":
+                          : 100.0, "number": 1, "hotspot": true, "hotspots": [{"location": "downtown",
+                          : "description": "The downtown hotspot", "lower-y": 50.0, "lower-x": 50.0,
+                          : "upper-y": 200.0, "upper-x": 200.0}]}}
+2016-02-20 09:55:13.853690: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:55:13.865256: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 09:55:37.096844: State change request. Change to off
+2016-02-20 09:55:37.120081: State change request. Changed to off
+2016-02-20 09:57:32.923431: Monitor App dasanderUty01:103 Started at 2016-02-20 09:57:32.923394
+2016-02-20 09:59:23.112078: State change request. Change to on
+2016-02-20 09:59:23.136755: State change request. Changed to on
+2016-02-20 09:59:23.680307: Request to monitor status of app grindr (Grindr is an app for men seeking men).
+2016-02-20 09:59:23.702679: Monitor App application set. grindr (Grindr is an app for men seeking men) is
+                          : now being monitored.
+2016-02-20 09:59:24.226413: Check monitoring status of app grindr.
+2016-02-20 09:59:24.233853: Monitor App application check. grindr (Grindr is an app for men seeking men) is
+                          : being monitored.
+2016-02-20 09:59:24.758276: Request to monitor status of app manhunt (ManHunt is a location based app for
+                          : men seeking men).
+2016-02-20 09:59:24.771084: Monitor App application set. manhunt (ManHunt is a location based app for men
+                          : seeking men) is now being monitored.
+2016-02-20 09:59:25.303109: Monitor App detected an application launch.
+2016-02-20 09:59:25.310433: Application facebook not on watch list. Ignored.
+2016-02-20 09:59:25.843083: Monitor App detected an application launch.
+2016-02-20 09:59:25.860652: Application grindr is on watch list.
+2016-02-20 09:59:25.912932: Notification raised with data:
+2016-02-20 09:59:25.920320: 201: {'status': '201', 'data': {'action': 'none', 'notification': 'The
+                          : application grindr has been launched. Remember: Safe sex is good sex!'},
+                          : 'message': 'Notification received. Thank you.', 'response': 'success'}
+2016-02-20 09:59:26.455172: Monitor App detected an application launch.
+2016-02-20 09:59:26.472013: Application mailclient not on watch list. Ignored.
+2016-02-20 09:59:27.621117: Request to stop monitoring app grindr.
+2016-02-20 09:59:27.633625: Monitor App application set. grindr is no longer being monitored.
+2016-02-20 09:59:28.157105: Check monitoring status of app grindr.
+2016-02-20 09:59:28.164343: Application grindr not found.
+2016-02-20 09:59:28.692768: Monitor App detected an application launch.
+2016-02-20 09:59:28.699815: Application grindr not on watch list. Ignored.
+2016-02-20 09:59:33.012837: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 09:59:33.078671: Location request returned 200:{"data": {"y": 100.0, "x": 100.0}, "status":
+                          : "200", "message": "Location.", "response": "success"}
+2016-02-20 09:59:33.085796: Location request returned (100.0,100.0).
+2016-02-20 09:59:33.094235: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 09:59:33.126837: Hotspot check returned 200:{"data": {"number": 1, "x": 100.0, "y": 100.0,
+                          : "hotspots": [{"location": "downtown", "lower-y": 50.0, "upper-x": 200.0,
+                          : "description": "The downtown hotspot", "lower-x": 50.0, "upper-y": 200.0}],
+                          : "hotspot": true}, "message": "Location Service, check location results.",
+                          : "status": "200", "response": "success"}
+2016-02-20 09:59:33.133811: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 09:59:33.145847: Location (100.0,100.0) has not been previously encountered.
+2016-02-20 09:59:33.152629: Location (100.0, 100.0)  hotspot notification being raised
+2016-02-20 09:59:33.198880: Location notification request returned: 201: {'status': '201', 'data':
+                          : {'action': 'openMap(100.0, 100.0)', 'notification': 'You have entered an area
+                          : known for high rates of STI infections and drug use. Remember: Safe sex is good
+                          : sex!'}, 'message': 'Notification received. Thank you.', 'response': 'success'}
+2016-02-20 10:00:03.237606: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 10:00:03.279543: Location request returned 200:{"data": {"y": 100.0, "x": 100.0}, "status":
+                          : "200", "message": "Location.", "response": "success"}
+2016-02-20 10:00:03.286350: Location request returned (100.0,100.0).
+2016-02-20 10:00:03.292807: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 10:00:03.318631: Hotspot check returned 200:{"data": {"number": 1, "x": 100.0, "y": 100.0,
+                          : "hotspots": [{"location": "downtown", "lower-y": 50.0, "upper-x": 200.0,
+                          : "description": "The downtown hotspot", "lower-x": 50.0, "upper-y": 200.0}],
+                          : "hotspot": true}, "message": "Location Service, check location results.",
+                          : "status": "200", "response": "success"}
+2016-02-20 10:00:03.325165: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 10:00:03.336787: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 10:00:31.350689: State change request. Change to off
+2016-02-20 10:00:31.362499: State change request. Changed to off
+2016-02-20 10:02:57.854784: Monitor App dasanderUty01:103 Started at 2016-02-20 10:02:57.854746
+2016-02-20 10:03:22.731183: State change request. Change to on
+2016-02-20 10:03:22.756453: State change request. Changed to on
+2016-02-20 10:03:23.298495: Request to monitor status of app grindr (Grindr is an app for men seeking men).
+2016-02-20 10:03:23.311000: Monitor App application set. grindr (Grindr is an app for men seeking men) is
+                          : now being monitored.
+2016-02-20 10:03:23.834635: Check monitoring status of app grindr.
+2016-02-20 10:03:23.842099: Monitor App application check. grindr (Grindr is an app for men seeking men) is
+                          : being monitored.
+2016-02-20 10:03:24.366318: Request to monitor status of app manhunt (ManHunt is a location based app for
+                          : men seeking men).
+2016-02-20 10:03:24.378518: Monitor App application set. manhunt (ManHunt is a location based app for men
+                          : seeking men) is now being monitored.
+2016-02-20 10:03:24.906843: Monitor App detected an application launch.
+2016-02-20 10:03:24.913601: Application facebook not on watch list. Ignored.
+2016-02-20 10:03:25.453423: Monitor App detected an application launch.
+2016-02-20 10:03:25.460736: Application grindr is on watch list.
+2016-02-20 10:03:25.509626: Notification raised with data:
+2016-02-20 10:03:25.517696: 201: {'response': 'success', 'message': 'Notification received. Thank you.',
+                          : 'status': '201', 'data': {'notification': 'The application grindr has been
+                          : launched. Remember: Safe sex is good sex!', 'action': 'none'}}
+2016-02-20 10:03:26.051068: Monitor App detected an application launch.
+2016-02-20 10:03:26.058313: Application mailclient not on watch list. Ignored.
+2016-02-20 10:03:27.213021: Request to stop monitoring app grindr.
+2016-02-20 10:03:27.225369: Monitor App application set. grindr is no longer being monitored.
+2016-02-20 10:03:27.749043: Check monitoring status of app grindr.
+2016-02-20 10:03:27.756214: Application grindr not found.
+2016-02-20 10:03:27.872599: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 10:03:27.942210: Location request returned 200:{"data": {"x": 0.0, "y": 0.0}, "response":
+                          : "success", "status": "200", "message": "Location."}
+2016-02-20 10:03:27.949317: Location request returned (0.0,0.0).
+2016-02-20 10:03:27.957480: Location Request checking if location (0.0,0.0) is in hotspot. Checking with
+                          : http://192.168.0.210:104/v1_00/check
+2016-02-20 10:03:27.986160: Hotspot check returned 200:{"data": {"hotspot": false, "y": 0.0, "x": 0.0},
+                          : "status": "200", "response": "warning", "message": "No hotspots found."}
+2016-02-20 10:03:27.993196: Location check returned 200: {'message': 'No hotspots found.', 'response':
+                          : 'warning', 'data': {'x': 0.0, 'y': 0.0, 'hotspot': False}, 'status': '200'}
+2016-02-20 10:03:28.283906: Monitor App detected an application launch.
+2016-02-20 10:03:28.291371: Application grindr not on watch list. Ignored.
+2016-02-20 10:03:58.012695: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 10:03:58.051732: Location request returned 200:{"data": {"x": 100.0, "y": 100.0}, "response":
+                          : "success", "status": "200", "message": "Location."}
+2016-02-20 10:03:58.058621: Location request returned (100.0,100.0).
+2016-02-20 10:03:58.065690: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 10:03:58.096870: Hotspot check returned 200:{"data": {"hotspots": [{"lower-y": 50.0,
+                          : "description": "The downtown hotspot", "upper-x": 200.0, "upper-y": 200.0,
+                          : "location": "downtown", "lower-x": 50.0}], "hotspot": true, "y": 100.0, "x":
+                          : 100.0, "number": 1}, "status": "200", "response": "success", "message":
+                          : "Location Service, check location results."}
+2016-02-20 10:03:58.105057: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 10:03:58.115958: Location (100.0,100.0) has not been previously encountered.
+2016-02-20 10:03:58.122397: Location (100.0, 100.0)  hotspot notification being raised
+2016-02-20 10:03:58.169296: Location notification request returned: 201: {'response': 'success', 'message':
+                          : 'Notification received. Thank you.', 'status': '201', 'data': {'notification':
+                          : 'You have entered an area known for high rates of STI infections and drug use.
+                          : Remember: Safe sex is good sex!', 'action': 'openMap(100.0, 100.0)'}}
+2016-02-20 10:04:28.207379: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 10:04:28.242281: Location request returned 200:{"data": {"x": 100.0, "y": 100.0}, "response":
+                          : "success", "status": "200", "message": "Location."}
+2016-02-20 10:04:28.249196: Location request returned (100.0,100.0).
+2016-02-20 10:04:28.255678: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 10:04:28.280677: Hotspot check returned 200:{"data": {"hotspots": [{"lower-y": 50.0,
+                          : "description": "The downtown hotspot", "upper-x": 200.0, "upper-y": 200.0,
+                          : "location": "downtown", "lower-x": 50.0}], "hotspot": true, "y": 100.0, "x":
+                          : 100.0, "number": 1}, "status": "200", "response": "success", "message":
+                          : "Location Service, check location results."}
+2016-02-20 10:04:28.287734: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 10:04:28.299088: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 10:04:30.939484: State change request. Change to off
+2016-02-20 10:04:30.952275: State change request. Changed to off
+2016-02-20 10:09:17.250532: Monitor App dasanderUty01:103 Started at 2016-02-20 10:09:17.250493
+2016-02-20 10:09:31.101499: State change request. Change to on
+2016-02-20 10:09:31.127247: State change request. Changed to on
+2016-02-20 10:09:31.670123: Request to monitor status of app grindr (Grindr is an app for men seeking men).
+2016-02-20 10:09:31.681584: Monitor App application set. grindr (Grindr is an app for men seeking men) is
+                          : now being monitored.
+2016-02-20 10:09:32.205605: Check monitoring status of app grindr.
+2016-02-20 10:09:32.213002: Monitor App application check. grindr (Grindr is an app for men seeking men) is
+                          : being monitored.
+2016-02-20 10:09:32.737294: Request to monitor status of app manhunt (ManHunt is a location based app for
+                          : men seeking men).
+2016-02-20 10:09:32.748175: Monitor App application set. manhunt (ManHunt is a location based app for men
+                          : seeking men) is now being monitored.
+2016-02-20 10:09:33.276505: Monitor App detected an application launch.
+2016-02-20 10:09:33.283516: Application facebook not on watch list. Ignored.
+2016-02-20 10:09:33.813929: Monitor App detected an application launch.
+2016-02-20 10:09:33.820704: Application grindr is on watch list.
+2016-02-20 10:09:33.880131: Notification raised with data:
+2016-02-20 10:09:33.888500: 201: {'message': 'Notification received. Thank you.', 'data': {'action':
+                          : 'none', 'notification': 'The application grindr has been launched. Remember:
+                          : Safe sex is good sex!'}, 'status': '201', 'response': 'success'}
+2016-02-20 10:09:34.420146: Monitor App detected an application launch.
+2016-02-20 10:09:34.427380: Application mailclient not on watch list. Ignored.
+2016-02-20 10:09:35.573910: Request to stop monitoring app grindr.
+2016-02-20 10:09:35.586151: Monitor App application set. grindr is no longer being monitored.
+2016-02-20 10:09:36.109811: Check monitoring status of app grindr.
+2016-02-20 10:09:36.117263: Application grindr not found.
+2016-02-20 10:09:36.645182: Monitor App detected an application launch.
+2016-02-20 10:09:36.652314: Application grindr not on watch list. Ignored.
+2016-02-20 10:09:47.268872: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 10:09:47.289855: Exception HTTPConnectionPool(host='192.168.0.210', port=1080): Max retries
+                          : exceeded with url: /v1_00/location (Caused by
+                          : NewConnectionError('<requests.packages.urllib3.connection.HTTPConnection object
+                          : at 0x7f8f18013e48>: Failed to establish a new connection: [Errno 111]
+                          : Connection refused',)))
+2016-02-20 10:12:43.821613: Monitor App dasanderUty01:103 Started at 2016-02-20 10:12:43.821573
+2016-02-20 10:12:59.940250: State change request. Change to on
+2016-02-20 10:12:59.965706: State change request. Changed to on
+2016-02-20 10:13:00.512334: Request to monitor status of app grindr (Grindr is an app for men seeking men).
+2016-02-20 10:13:00.534961: Monitor App application set. grindr (Grindr is an app for men seeking men) is
+                          : now being monitored.
+2016-02-20 10:13:01.058951: Check monitoring status of app grindr.
+2016-02-20 10:13:01.065631: Monitor App application check. grindr (Grindr is an app for men seeking men) is
+                          : being monitored.
+2016-02-20 10:13:01.589547: Request to monitor status of app manhunt (ManHunt is a location based app for
+                          : men seeking men).
+2016-02-20 10:13:01.601461: Monitor App application set. manhunt (ManHunt is a location based app for men
+                          : seeking men) is now being monitored.
+2016-02-20 10:13:02.130279: Monitor App detected an application launch.
+2016-02-20 10:13:02.137172: Application facebook not on watch list. Ignored.
+2016-02-20 10:13:02.666332: Monitor App detected an application launch.
+2016-02-20 10:13:02.673663: Application grindr is on watch list.
+2016-02-20 10:13:02.720263: Notification raised with data:
+2016-02-20 10:13:02.738426: 201: {'data': {'notification': 'The application grindr has been launched.
+                          : Remember: Safe sex is good sex!', 'action': 'none'}, 'message': 'Notification
+                          : received. Thank you.', 'response': 'success', 'status': '201'}
+2016-02-20 10:13:03.275426: Monitor App detected an application launch.
+2016-02-20 10:13:03.282500: Application mailclient not on watch list. Ignored.
+2016-02-20 10:13:04.435038: Request to stop monitoring app grindr.
+2016-02-20 10:13:04.447443: Monitor App application set. grindr is no longer being monitored.
+2016-02-20 10:13:04.971245: Check monitoring status of app grindr.
+2016-02-20 10:13:04.978676: Application grindr not found.
+2016-02-20 10:13:05.507042: Monitor App detected an application launch.
+2016-02-20 10:13:05.514476: Application grindr not on watch list. Ignored.
+2016-02-20 10:13:13.857061: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 10:13:13.926950: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 10:13:13.934100: Location request returned (100.0,100.0).
+2016-02-20 10:13:13.942621: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 10:13:13.967767: Hotspot check returned 200:{"message": "Location Service, check location
+                          : results.", "response": "success", "data": {"y": 100.0, "number": 1, "x": 100.0,
+                          : "hotspot": true, "hotspots": [{"location": "downtown", "description": "The
+                          : downtown hotspot", "lower-x": 50.0, "upper-x": 200.0, "lower-y": 50.0,
+                          : "upper-y": 200.0}]}, "status": "200"}
+2016-02-20 10:13:13.974406: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 10:13:13.986163: Location (100.0,100.0) has not been previously encountered.
+2016-02-20 10:13:13.992717: Location (100.0, 100.0)  hotspot notification being raised
+2016-02-20 10:13:14.039156: Location notification request returned: 201: {'data': {'notification': 'You
+                          : have entered an area known for high rates of STI infections and drug use.
+                          : Remember: Safe sex is good sex!', 'action': 'openMap(100.0, 100.0)'},
+                          : 'message': 'Notification received. Thank you.', 'response': 'success',
+                          : 'status': '201'}
+2016-02-20 10:13:44.072476: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 10:13:44.104867: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 10:13:44.112071: Location request returned (100.0,100.0).
+2016-02-20 10:13:44.118663: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 10:13:44.148610: Hotspot check returned 200:{"message": "Location Service, check location
+                          : results.", "response": "success", "data": {"y": 100.0, "number": 1, "x": 100.0,
+                          : "hotspot": true, "hotspots": [{"location": "downtown", "description": "The
+                          : downtown hotspot", "lower-x": 50.0, "upper-x": 200.0, "lower-y": 50.0,
+                          : "upper-y": 200.0}]}, "status": "200"}
+2016-02-20 10:13:44.155397: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 10:13:44.167543: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 10:14:08.166192: State change request. Change to off
+2016-02-20 10:14:08.178718: State change request. Changed to off
+2016-02-20 10:15:31.222571: State change request. Change to on
+2016-02-20 10:15:31.235134: State change request. Changed to on
+2016-02-20 10:15:31.776056: Request to monitor status of app grindr (Grindr is an app for men seeking men).
+2016-02-20 10:15:31.788925: Monitor App application set. grindr (Grindr is an app for men seeking men) is
+                          : now being monitored.
+2016-02-20 10:15:32.313295: Check monitoring status of app grindr.
+2016-02-20 10:15:32.320320: Monitor App application check. grindr (Grindr is an app for men seeking men) is
+                          : being monitored.
+2016-02-20 10:15:32.844711: Request to monitor status of app manhunt (ManHunt is a location based app for
+                          : men seeking men).
+2016-02-20 10:15:32.856405: Monitor App application set. manhunt (ManHunt is a location based app for men
+                          : seeking men) is now being monitored.
+2016-02-20 10:15:33.388049: Monitor App detected an application launch.
+2016-02-20 10:15:33.395426: Application facebook not on watch list. Ignored.
+2016-02-20 10:15:33.926333: Monitor App detected an application launch.
+2016-02-20 10:15:33.933539: Application grindr is on watch list.
+2016-02-20 10:15:33.981592: Notification raised with data:
+2016-02-20 10:15:33.989672: 201: {'data': {'notification': 'The application grindr has been launched.
+                          : Remember: Safe sex is good sex!', 'action': 'none'}, 'message': 'Notification
+                          : received. Thank you.', 'response': 'success', 'status': '201'}
+2016-02-20 10:15:34.524334: Monitor App detected an application launch.
+2016-02-20 10:15:34.542548: Application mailclient not on watch list. Ignored.
+2016-02-20 10:15:35.693091: Request to stop monitoring app grindr.
+2016-02-20 10:15:35.705188: Monitor App application set. grindr is no longer being monitored.
+2016-02-20 10:15:36.229298: Check monitoring status of app grindr.
+2016-02-20 10:15:36.236509: Application grindr not found.
+2016-02-20 10:15:36.764817: Monitor App detected an application launch.
+2016-02-20 10:15:36.771643: Application grindr not on watch list. Ignored.
+2016-02-20 10:15:44.237745: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 10:15:44.272620: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 10:15:44.279130: Location request returned (100.0,100.0).
+2016-02-20 10:15:44.285331: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 10:15:44.314665: Hotspot check returned 200:{"message": "Location Service, check location
+                          : results.", "response": "success", "data": {"y": 100.0, "number": 1, "x": 100.0,
+                          : "hotspot": true, "hotspots": [{"location": "downtown", "description": "The
+                          : downtown hotspot", "lower-x": 50.0, "upper-x": 200.0, "lower-y": 50.0,
+                          : "upper-y": 200.0}]}, "status": "200"}
+2016-02-20 10:15:44.321815: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 10:15:44.328891: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 10:16:14.344482: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 10:16:14.377148: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 10:16:14.384223: Location request returned (100.0,100.0).
+2016-02-20 10:16:14.391124: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 10:16:14.417704: Hotspot check returned 200:{"message": "Location Service, check location
+                          : results.", "response": "success", "data": {"y": 100.0, "number": 1, "x": 100.0,
+                          : "hotspot": true, "hotspots": [{"location": "downtown", "description": "The
+                          : downtown hotspot", "lower-x": 50.0, "upper-x": 200.0, "lower-y": 50.0,
+                          : "upper-y": 200.0}]}, "status": "200"}
+2016-02-20 10:16:14.424928: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 10:16:14.431810: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 10:16:39.424576: State change request. Change to off
+2016-02-20 10:16:39.436755: State change request. Changed to off
+2016-02-20 10:18:05.743671: State change request. Change to on
+2016-02-20 10:18:05.755667: State change request. Changed to on
+2016-02-20 10:18:06.299560: Request to monitor status of app grindr (Grindr is an app for men seeking men).
+2016-02-20 10:18:06.311808: Monitor App application set. grindr (Grindr is an app for men seeking men) is
+                          : now being monitored.
+2016-02-20 10:18:06.835084: Check monitoring status of app grindr.
+2016-02-20 10:18:06.842522: Monitor App application check. grindr (Grindr is an app for men seeking men) is
+                          : being monitored.
+2016-02-20 10:18:07.365909: Request to monitor status of app manhunt (ManHunt is a location based app for
+                          : men seeking men).
+2016-02-20 10:18:07.378659: Monitor App application set. manhunt (ManHunt is a location based app for men
+                          : seeking men) is now being monitored.
+2016-02-20 10:18:07.905856: Monitor App detected an application launch.
+2016-02-20 10:18:07.913221: Application facebook not on watch list. Ignored.
+2016-02-20 10:18:08.443301: Monitor App detected an application launch.
+2016-02-20 10:18:08.450135: Application grindr is on watch list.
+2016-02-20 10:18:08.491329: Notification raised with data:
+2016-02-20 10:18:08.504414: 201: {'data': {'notification': 'The application grindr has been launched.
+                          : Remember: Safe sex is good sex!', 'action': 'none'}, 'message': 'Notification
+                          : received. Thank you.', 'response': 'success', 'status': '201'}
+2016-02-20 10:18:09.036450: Monitor App detected an application launch.
+2016-02-20 10:18:09.043785: Application mailclient not on watch list. Ignored.
+2016-02-20 10:18:10.194450: Request to stop monitoring app grindr.
+2016-02-20 10:18:10.206586: Monitor App application set. grindr is no longer being monitored.
+2016-02-20 10:18:10.729994: Check monitoring status of app grindr.
+2016-02-20 10:18:10.736899: Application grindr not found.
+2016-02-20 10:18:11.264250: Monitor App detected an application launch.
+2016-02-20 10:18:11.271220: Application grindr not on watch list. Ignored.
+2016-02-20 10:18:14.528858: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 10:18:14.563444: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 10:18:14.570250: Location request returned (100.0,100.0).
+2016-02-20 10:18:14.576766: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 10:18:14.601522: Hotspot check returned 200:{"message": "Location Service, check location
+                          : results.", "response": "success", "data": {"y": 100.0, "number": 1, "x": 100.0,
+                          : "hotspot": true, "hotspots": [{"location": "downtown", "description": "The
+                          : downtown hotspot", "lower-x": 50.0, "upper-x": 200.0, "lower-y": 50.0,
+                          : "upper-y": 200.0}]}, "status": "200"}
+2016-02-20 10:18:14.608485: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 10:18:14.615896: Location (100.0,100.0) reported more than 5 minutes ago.
+2016-02-20 10:18:14.627535: Location (100.0, 100.0)  hotspot notification being raised
+2016-02-20 10:18:14.669625: Location notification request returned: 201: {'data': {'notification': 'You
+                          : have entered an area known for high rates of STI infections and drug use.
+                          : Remember: Safe sex is good sex!', 'action': 'openMap(100.0, 100.0)'},
+                          : 'message': 'Notification received. Thank you.', 'response': 'success',
+                          : 'status': '201'}
+2016-02-20 10:18:44.707391: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 10:18:44.739773: Location request returned 200:{"response": "success", "data": {"y": 100.0, "x":
+                          : 100.0}, "status": "200", "message": "Location."}
+2016-02-20 10:18:44.746396: Location request returned (100.0,100.0).
+2016-02-20 10:18:44.753355: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 10:18:44.778182: Hotspot check returned 200:{"message": "Location Service, check location
+                          : results.", "response": "success", "data": {"y": 100.0, "number": 1, "x": 100.0,
+                          : "hotspot": true, "hotspots": [{"location": "downtown", "description": "The
+                          : downtown hotspot", "lower-x": 50.0, "upper-x": 200.0, "lower-y": 50.0,
+                          : "upper-y": 200.0}]}, "status": "200"}
+2016-02-20 10:18:44.785159: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 10:18:44.792733: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 10:19:14.829114: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 10:19:14.839306: Exception HTTPConnectionPool(host='192.168.0.210', port=1080): Max retries
+                          : exceeded with url: /v1_00/location (Caused by
+                          : NewConnectionError('<requests.packages.urllib3.connection.HTTPConnection object
+                          : at 0x7fbbf89a6eb8>: Failed to establish a new connection: [Errno 111]
+                          : Connection refused',)))
+2016-02-20 10:19:47.184526: Monitor App dasanderUty01:103 Started at 2016-02-20 10:19:47.184486
+2016-02-20 10:20:20.737076: State change request. Change to on
+2016-02-20 10:20:20.761056: State change request. Changed to on
+2016-02-20 10:20:21.303203: Request to monitor status of app grindr (Grindr is an app for men seeking men).
+2016-02-20 10:20:21.314964: Monitor App application set. grindr (Grindr is an app for men seeking men) is
+                          : now being monitored.
+2016-02-20 10:20:21.838785: Check monitoring status of app grindr.
+2016-02-20 10:20:21.846244: Monitor App application check. grindr (Grindr is an app for men seeking men) is
+                          : being monitored.
+2016-02-20 10:20:22.371748: Request to monitor status of app manhunt (ManHunt is a location based app for
+                          : men seeking men).
+2016-02-20 10:20:22.394588: Monitor App application set. manhunt (ManHunt is a location based app for men
+                          : seeking men) is now being monitored.
+2016-02-20 10:20:22.922997: Monitor App detected an application launch.
+2016-02-20 10:20:22.929803: Application facebook not on watch list. Ignored.
+2016-02-20 10:20:23.461407: Monitor App detected an application launch.
+2016-02-20 10:20:23.479416: Application grindr is on watch list.
+2016-02-20 10:20:23.532259: Notification raised with data:
+2016-02-20 10:20:23.545071: 201: {'response': 'success', 'message': 'Notification received. Thank you.',
+                          : 'data': {'action': 'none', 'notification': 'The application grindr has been
+                          : launched. Remember: Safe sex is good sex!'}, 'status': '201'}
+2016-02-20 10:20:24.076072: Monitor App detected an application launch.
+2016-02-20 10:20:24.082852: Application mailclient not on watch list. Ignored.
+2016-02-20 10:20:25.232948: Request to stop monitoring app grindr.
+2016-02-20 10:20:25.245085: Monitor App application set. grindr is no longer being monitored.
+2016-02-20 10:20:25.768324: Check monitoring status of app grindr.
+2016-02-20 10:20:25.774892: Application grindr not found.
+2016-02-20 10:20:26.302059: Monitor App detected an application launch.
+2016-02-20 10:20:26.308968: Application grindr not on watch list. Ignored.
+2016-02-20 10:20:47.235528: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 10:20:47.304711: Location request returned 200:{"response": "success", "status": "200", "data":
+                          : {"x": 100.0, "y": 100.0}, "message": "Location."}
+2016-02-20 10:20:47.311513: Location request returned (100.0,100.0).
+2016-02-20 10:20:47.319261: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 10:20:47.344066: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0,
+                          : "hotspots": [{"lower-y": 50.0, "lower-x": 50.0, "upper-y": 200.0,
+                          : "description": "The downtown hotspot", "upper-x": 200.0, "location":
+                          : "downtown"}], "number": 1, "hotspot": true, "x": 100.0}, "message": "Location
+                          : Service, check location results.", "status": "200"}
+2016-02-20 10:20:47.350812: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 10:20:47.361915: Location (100.0,100.0) has not been previously encountered.
+2016-02-20 10:20:47.368485: Location (100.0, 100.0)  hotspot notification being raised
+2016-02-20 10:20:47.409106: Location notification request returned: 201: {'response': 'success', 'message':
+                          : 'Notification received. Thank you.', 'data': {'action': 'openMap(100.0,
+                          : 100.0)', 'notification': 'You have entered an area known for high rates of STI
+                          : infections and drug use. Remember: Safe sex is good sex!'}, 'status': '201'}
+2016-02-20 10:21:17.449564: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 10:21:17.482823: Location request returned 200:{"response": "success", "status": "200", "data":
+                          : {"x": 100.0, "y": 100.0}, "message": "Location."}
+2016-02-20 10:21:17.489606: Location request returned (100.0,100.0).
+2016-02-20 10:21:17.496701: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 10:21:17.521955: Hotspot check returned 200:{"response": "success", "data": {"y": 100.0,
+                          : "hotspots": [{"lower-y": 50.0, "lower-x": 50.0, "upper-y": 200.0,
+                          : "description": "The downtown hotspot", "upper-x": 200.0, "location":
+                          : "downtown"}], "number": 1, "hotspot": true, "x": 100.0}, "message": "Location
+                          : Service, check location results.", "status": "200"}
+2016-02-20 10:21:17.529381: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 10:21:17.541035: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 10:21:28.960673: State change request. Change to off
+2016-02-20 10:21:28.972540: State change request. Changed to off
+2016-02-20 10:32:49.989858: Monitor App dasanderUty01:103 Started at 2016-02-20 10:32:49.989819
+2016-02-20 11:14:05.981936: Monitor App dasanderUty01:103 Started at 2016-02-20 11:14:05.981899
+2016-02-20 11:14:30.105351: State change request. Change to on
+2016-02-20 11:14:30.129842: State change request. Changed to on
+2016-02-20 11:14:30.671537: Request to monitor status of app grindr (Grindr is an app for men seeking men).
+2016-02-20 11:14:30.684346: Monitor App application set. grindr (Grindr is an app for men seeking men) is
+                          : now being monitored.
+2016-02-20 11:14:31.207995: Check monitoring status of app grindr.
+2016-02-20 11:14:31.215416: Monitor App application check. grindr (Grindr is an app for men seeking men) is
+                          : being monitored.
+2016-02-20 11:14:31.741139: Request to monitor status of app manhunt (ManHunt is a location based app for
+                          : men seeking men).
+2016-02-20 11:14:31.764342: Monitor App application set. manhunt (ManHunt is a location based app for men
+                          : seeking men) is now being monitored.
+2016-02-20 11:14:32.292739: Monitor App detected an application launch.
+2016-02-20 11:14:32.300070: Application facebook not on watch list. Ignored.
+2016-02-20 11:14:32.829849: Monitor App detected an application launch.
+2016-02-20 11:14:32.836786: Application grindr is on watch list.
+2016-02-20 11:14:32.886696: Notification raised with data:
+2016-02-20 11:14:32.898370: 201: {'data': {'action': 'none', 'notification': 'The application grindr has
+                          : been launched. Remember: Safe sex is good sex!'}, 'status': '201', 'message':
+                          : 'Notification received. Thank you.', 'response': 'success'}
+2016-02-20 11:14:33.434478: Monitor App detected an application launch.
+2016-02-20 11:14:33.441888: Application mailclient not on watch list. Ignored.
+2016-02-20 11:14:34.596413: Request to stop monitoring app grindr.
+2016-02-20 11:14:34.608841: Monitor App application set. grindr is no longer being monitored.
+2016-02-20 11:14:35.132757: Check monitoring status of app grindr.
+2016-02-20 11:14:35.140132: Application grindr not found.
+2016-02-20 11:14:35.667968: Monitor App detected an application launch.
+2016-02-20 11:14:35.675270: Application grindr not on watch list. Ignored.
+2016-02-20 11:14:36.018641: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 11:14:36.087816: Location request returned 200:{"response": "success", "message": "Location.",
+                          : "status": "200", "data": {"x": 0.0, "y": 0.0}}
+2016-02-20 11:14:36.094360: Location request returned (0.0,0.0).
+2016-02-20 11:14:36.101815: Location Request checking if location (0.0,0.0) is in hotspot. Checking with
+                          : http://192.168.0.210:104/v1_00/check
+2016-02-20 11:14:36.129102: Hotspot check returned 200:{"data": {"hotspot": false, "x": 0.0, "y": 0.0},
+                          : "message": "No hotspots found.", "response": "warning", "status": "200"}
+2016-02-20 11:14:36.136123: Location check returned 200: {'data': {'x': 0.0, 'y': 0.0, 'hotspot': False},
+                          : 'status': '200', 'message': 'No hotspots found.', 'response': 'warning'}
+2016-02-20 11:15:06.174290: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 11:15:06.207402: Location request returned 200:{"response": "success", "message": "Location.",
+                          : "status": "200", "data": {"x": 100.0, "y": 100.0}}
+2016-02-20 11:15:06.213925: Location request returned (100.0,100.0).
+2016-02-20 11:15:06.221580: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 11:15:06.253402: Hotspot check returned 200:{"data": {"hotspot": true, "x": 100.0, "y": 100.0,
+                          : "hotspots": [{"lower-y": 50.0, "description": "The downtown hotspot",
+                          : "lower-x": 50.0, "upper-x": 200.0, "upper-y": 200.0, "location": "downtown"}],
+                          : "number": 1}, "message": "Location Service, check location results.",
+                          : "response": "success", "status": "200"}
+2016-02-20 11:15:06.260222: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 11:15:06.271670: Location (100.0,100.0) has not been previously encountered.
+2016-02-20 11:15:06.278375: Location (100.0, 100.0)  hotspot notification being raised
+2016-02-20 11:15:06.332192: Location notification request returned: 201: {'data': {'action':
+                          : 'openMap(100.0, 100.0)', 'notification': 'You have entered an area known for
+                          : high rates of STI infections and drug use. Remember: Safe sex is good sex!'},
+                          : 'status': '201', 'message': 'Notification received. Thank you.', 'response':
+                          : 'success'}
+2016-02-20 11:15:36.356999: Location requested from http://192.168.0.210:1080/v1_00/location.
+2016-02-20 11:15:36.391069: Location request returned 200:{"response": "success", "message": "Location.",
+                          : "status": "200", "data": {"x": 100.0, "y": 100.0}}
+2016-02-20 11:15:36.397935: Location request returned (100.0,100.0).
+2016-02-20 11:15:36.404928: Location Request checking if location (100.0,100.0) is in hotspot. Checking
+                          : with http://192.168.0.210:104/v1_00/check
+2016-02-20 11:15:36.430786: Hotspot check returned 200:{"data": {"hotspot": true, "x": 100.0, "y": 100.0,
+                          : "hotspots": [{"lower-y": 50.0, "description": "The downtown hotspot",
+                          : "lower-x": 50.0, "upper-x": 200.0, "upper-y": 200.0, "location": "downtown"}],
+                          : "number": 1}, "message": "Location Service, check location results.",
+                          : "response": "success", "status": "200"}
+2016-02-20 11:15:36.437675: Location (100.0,100.0) is in a hotspot. Now checking last reported time.
+2016-02-20 11:15:36.449484: Location (100.0,100.0) reported less than 5 minutes ago.
+2016-02-20 11:15:38.330110: State change request. Change to off
+2016-02-20 11:15:38.342522: State change request. Changed to off

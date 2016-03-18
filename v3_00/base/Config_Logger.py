@@ -57,6 +57,7 @@ class Config_Logger(object):
 
             self.__controller.log('Remove Log request - clearing logger')
             self.__controller.clear_value('logger')
+            self.__controller.logger.set_central_logger(None)
             data = {'logger':None}
         except KeyError as ke:
             success = 'error'
@@ -104,6 +105,7 @@ class Config_Logger(object):
 
             self.__controller.log('Set Log request - setting logger')
             self.__controller.set_value('logger', logger)
+            self.__controller.logger.set_central_logger(logger)
             data = {'logger':logger}
         except KeyError as ke:
             success = 'error'
