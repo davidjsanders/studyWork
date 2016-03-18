@@ -44,7 +44,7 @@ class Control(object):
         # Setup Logger
         self.logger = Logger(controller=self,
                              filename=pre_filename+'-log.txt',
-                             sender='{0}-{1}'\
+                             sender='NoteSvc-{1}'\
                                  .format(server_name, port_number))
         self.logger.writelog('Log written')
         self.log = self.logger.writelog

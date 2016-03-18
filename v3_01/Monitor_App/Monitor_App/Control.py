@@ -70,6 +70,30 @@ class Control(object):
         self.set_value('version', version)
         self.log('Stored environment variables')
 
+        # v3_01 Changes
+        self.log('Setting default messages')
+        self.set_value('app_msg',
+                       '!*! {0} launched !*!'+\
+                           '. Remember: Safe sex is good sex!')
+        self.set_value('location_msg', self.get_value('app_msg'))
+        self.set_value('default_app_msg', self.get_value('app_msg'))
+        self.set_value('default_location_msg', self.get_value('app_msg'))
+        self.log('Setting default messages - done.')
+
+
+    def get_app_message(self):
+        return_value = self.get_value('app_msg')
+        if return_value in (None, '', []):
+            return_value = self.get_value('default_app_msg')
+        return return_value
+
+
+    def get_location_message(self):
+        return_value = self.get_value('location_msg')
+        if return_value in (None, '', []):
+            return_value = self.get_value('default_location_msg')
+        return return_value
+
 
     def get_apps(self):
         return self.__Monitor_App_db.get_apps()

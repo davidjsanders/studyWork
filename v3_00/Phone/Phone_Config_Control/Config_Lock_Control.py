@@ -18,7 +18,11 @@ class Config_Lock_Control(object):
 
         self.__controller.log('Request to check if phone is locked.',
                               screen=False)
+
         current_state = self.__controller.get_value('locked')
+        if current_state in (None, [], ''):
+            current_state = 'unlocked'    # Default to unlocked
+
         data = {'locked':current_state}
 
         self.__controller.log('Request returned: {0}'.format(data),
