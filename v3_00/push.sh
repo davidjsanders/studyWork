@@ -1,20 +1,20 @@
 echo ""
 echo "Building base"
 cd base
-bin/build.sh
+bin/push.sh
 echo ""
 echo "Building Bluetooth"
 cd ../Bluetooth
-bin/build.sh
+bin/push.sh
 echo ""
 echo "Building Location Service"
 cd ../Location_Service
 pwd
-bin/build.sh
+bin/push.sh
 echo ""
 echo "Building Logger"
 cd ../Logger
-bin/build.sh
+bin/push.sh
 echo ""
 echo "Building LogViewer"
 cd ../LogViewer
@@ -22,15 +22,15 @@ cd ../LogViewer
 echo ""
 echo "Building Monitor App"
 cd ../Monitor_App
-bin/build.sh
+bin/push.sh
 echo ""
 echo "Building Notification Service"
 cd ../Notification_Service
-bin/build.sh
+bin/push.sh
 echo ""
 echo "Building Phone"
 cd ../Phone
-bin/build.sh
+bin/push.sh
 echo ""
 echo "Building Phone Screen"
 cd ../Phone_Screen

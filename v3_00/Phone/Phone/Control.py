@@ -50,7 +50,8 @@ class Control(object):
         self.clear_value = self.kvstore.clear_key
 
         # Setup Logger
-        self.logger = Logger(filename=pre_filename+'-log.txt',
+        self.logger = Logger(controller=self,
+                             filename=pre_filename+'-log.txt',
                              sender='{0}-{1}'\
                                  .format(server_name, port_number))
         self.logger.writelog('Log written')
@@ -126,14 +127,6 @@ class Control(object):
         self.logger.writelog(log_message, log_to_central)
         if screen:
             self.write_screen(log_message+"\n")
-#            wrapped80 = wrap(log_message, 79)
-#            time_line = [str(now)]
-#            for line in wrapped80:
-#                time_line.append('')
-#            for i, line in enumerate(wrapped80):
-#                f.write('{0:>28s}{1}'.format(time_line[i]+': ', line)+"\n")
-#                for line in wrapped80:
-#                    self.write_screen(line+"\n")
 
 
 global_controller = Control()

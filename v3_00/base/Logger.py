@@ -5,16 +5,19 @@ class Logger(object):
     __filename=None
     __sender=None
     __central_logger=None
+    __controller=None
 
-    def __init__(self, filename=None, sender=None):
-        if filename==None:
-            self.__filename='logfile.txt'
-        else:
-            self.__filename=filename
-        if sender == None:
-            self.__sender = 'UNKNOWN'
-        else:
-            self.__sender = sender
+    def __init__(self,
+                 controller=None,
+                 filename='logfile.txt',
+                 sender='unknown'
+    ):
+        if controller == None:
+            raise Exception('Controller cannot be None!')
+
+        self.__controller = controller
+        self.__filename = filename
+        self.__sender = sender
 
         self.writelog('INITIALIZE LOG: {0}'.format(self.__filename))
         self.writelog('SENDER: {0}'.format(self.__sender))
@@ -33,14 +36,6 @@ class Logger(object):
         finally:
             if not f == None:
                 f.close()
-
-
-    def get_central_logger(self):
-        return self.__central_logger
-
-
-    def set_central_logger(self, logger=None):
-        self.__central_logger = logger
 
 
     def writelog(self, 
@@ -65,9 +60,10 @@ class Logger(object):
         finally:
             if not f == None:
                 f.close()
-        if log_to_central and not (self.__central_logger == None):
+        central_logger = self.__controller.kvstore.get_key('logger')
+        if log_to_central and not (central_logger in ('', [], None)):
             try:
-                self.db_logger(log_message=log_message)
+                self.db_logger(log_message=log_message, logger=central_logger)
             except requests.exceptions.ConnectionError as rce:
                 pass # Ignore communication errors
             except Exception:
@@ -75,9 +71,10 @@ class Logger(object):
 
 
     def db_logger(self,
-                  log_message=None
+                  log_message=None,
+                  logger=None
     ):
-        if self.__central_logger == None:
+        if logger == None:
             return
         try:
             payload_data = {
@@ -86,14 +83,14 @@ class Logger(object):
                 "message":log_message
             }
             requests.post(
-                self.__central_logger,
+                logger,
                 data=json.dumps(payload_data),
                 timeout=10 # If nothing after 10s. ignore central
             ) # Ignore return from central logger
         except Exception as e:
             self.writelog(log_message='Exception: {0}'.format(repr(e)),
                           log_to_central=False)
-            raise
+            pass
 
 
 
