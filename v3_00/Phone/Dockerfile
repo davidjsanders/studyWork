@@ -23,12 +23,12 @@ FROM dsanderscan/mscit_v3_00_base
 #
 # Install Redis
 #
-RUN apt-get update
-RUN apt-get install -y --fix-missing redis-server
+#RUN apt-get update
+#RUN apt-get install -y --fix-missing redis-server
 #
 # Install the python Redis module
 #
-RUN pip3 install redis
+#RUN pip3 install redis
 #
 # Create the directory structures
 #

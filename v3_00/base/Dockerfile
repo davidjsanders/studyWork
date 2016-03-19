@@ -9,12 +9,17 @@ RUN apt-get install -y --fix-missing \
     openssl \
     python3 \
     python3-pip \
+    redis-server \
     sqlite3 \
 && rm -rf /var/lib/apt/lists/*
+#
+# Install additional apps for this module
+#
 RUN pip3 install flask
 RUN pip3 install flask-restful
 RUN pip3 install uwsgi
 RUN pip3 install --upgrade requests
+RUN pip3 install --upgrade redis
 #
 # Setup the base library
 #

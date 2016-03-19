@@ -130,4 +130,3 @@ class Control(object):
 
 
 global_controller = Control()
-
