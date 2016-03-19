@@ -76,19 +76,16 @@ class Control(object):
         self.set_value('port_number', port_number)
         self.set_value('ip_addr', host_ip)
         self.set_value('version', version)
+
+        self.log('Setting phone initial state')
+        self.set_value('locked', 'unlocked')
         self.set_value('phonename', '{0}_{1}'\
             .format(server_name, port_number))
         self.set_value('output_device', 
-                       'datavolume/{0}_{1}-notifications.txt'\
+                       'datavolume/{0}-{1}-notifications.txt'\
                            .format(server_name, port_number))
-
-        self.log('Output device = {0}'.format(self.get_value('output_device')),
-                 screen=False
-                )
-
         self.set_value('x','0')
         self.set_value('y','0')
-        self.log('Stored environment variables')
 
 #
 # v3_00 Logic
@@ -129,7 +126,7 @@ class Control(object):
 
     def log(self,
             log_message=None,
-            screen=True,
+            screen=False,
             log_to_central=True
     ):
         self.logger.writelog(log_message, log_to_central)
@@ -140,8 +137,30 @@ class Control(object):
 # v3_01 Additions & Changes
 #
 
+    def get_lock_status(self):
+        lock_status = self.get_value('locked')
+        if lock_status in (None, [], ''):
+            lock_status = 'unlocked'    # Default to unlocked
+        return lock_status
+
+
     def handle_unlock(self):
-        print('Unlock activated.')
+        self.log('Control - Unlocked: Process persisted '+\
+                 'notifications.',
+                 screen=False)
+        notifications_persisted = self.__phone_db.get_notifications()
+
+        self.log('Control - Unlocked: Process {0} notifications.'\
+                     .format(len(notifications_persisted)),
+                 screen=False)
+
+        for note in notifications_persisted:
+            self.__process_when_unlocked(
+                sender=note[0],
+                date_string=note[1],
+                notification=note[2],
+                action=note[3]
+            )
 
 
     def process_notification(
@@ -162,22 +181,61 @@ class Control(object):
             # get states and values
             self.log('Process Notification: Getting states and values.',
                      screen=False)
-            lock_status = self.get_value('locked')
-            if lock_status in (None, [], ''):
-                lock_status = 'unlocked'    # Default to unlocked
-            if lock_status.upper() == 'LOCKED':
-                self.log('Process Notification: Stopping - Phone is locked. '+\
+
+            context_ok, context_message = self.context_check()
+            if not context_ok:
+                self.log('Process Notification: Context issued '+\
+                          'stop because >> {0}. '.format(context_message)+'. '\
                          'Notification will be persisted.',
                          screen=False)
                 return
 
+            self.__process_when_unlocked(
+                sender=sender,
+                date_string=date_string,
+                notification=notification,
+                action=action
+            )
 
+        except Exception as e:
+            raise
+
+        print('process notification')
+
+
+    def context_check(self):
+        return_context = True  # Default to an allowed context
+        context_message = None
+
+        # 1. Check lock status
+        lock_status = self.get_lock_status()
+        if lock_status.upper() == 'LOCKED':
+            return_context = False
+            context_message = 'Not allowed. The phone is locked.'
+            self.log('Context Check - Phone is locked. ',
+                     screen=False)
+
+        # 2. Check message severity
+
+        # 3. Check isolation state
+
+        # 4. Check where / when / why / how / who
+
+        return return_context, context_message
+
+
+    def __process_when_unlocked(
+        self,
+        sender=None,
+        date_string=None,
+        notification=None,
+        action=None
+    ):
+        try:
             bluetooth = self.get_bluetooth()
             output_device = self.get_value('output_device')
 
             # Log states and values
-            self.log('Process Notification: Lock = {0}.'.format(lock_status),
-                     screen=False)
             self.log('Process Notification: Bluetooth = {0}.'\
                          .format(bluetooth),
                      screen=False)
@@ -215,11 +273,9 @@ class Control(object):
                 notification=notification,
                 action=action,
             )
-
         except Exception as e:
             raise
 
-        print('process notification')
 
 #
 # v3_01: Moved from Notification_Control to Control
@@ -233,14 +289,14 @@ class Control(object):
         output_device='unknown.txt'
     ):
         try:
-            self.log('-'*77)
-            self.log('Notification received')
-            self.log('-'*77)
-            self.log('Notification from: {0}'.format(sender))
-            self.log('Received at      : {0}'.format(date_string))
-            self.log('Notification     : {0}'.format(notification))
-            self.log('Action           : {0}'.format(action))
-            self.log('-'*77)
+            self.log('-'*77, screen=True)
+            self.log('Notification received', screen=True)
+            self.log('-'*77, screen=True)
+            self.log('Notification from: {0}'.format(sender), screen=True)
+            self.log('Received at      : {0}'.format(date_string), screen=True)
+            self.log('Notification     : {0}'.format(notification), screen=True)
+            self.log('Action           : {0}'.format(action), screen=True)
+            self.log('-'*77, screen=True)
 
             f = open(output_device,'a')
             f.write(('-'*80)+"\n")

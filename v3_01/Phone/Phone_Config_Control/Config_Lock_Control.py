@@ -16,17 +16,15 @@ class Config_Lock_Control(object):
         message = 'Device lock status.'
         data = None
 
-        self.__controller.log('Request to check if phone is locked.',
+        self.__controller.log('Config Lock Control: Checking phone lock state.',
                               screen=False)
 
-        current_state = self.__controller.get_value('locked')
-        if current_state in (None, [], ''):
-            current_state = 'unlocked'    # Default to unlocked
-
+        current_state = self.__controller.get_lock_status()
         data = {'locked':current_state}
 
-        self.__controller.log('Request returned: {0}'.format(data),
+        self.__controller.log('Config Lock Control: {0}'.format(current_state),
                               screen=False)
+
         return_value = self.__controller.do_response(message=message,
                                                      data=data,
                                                      status=status,
@@ -41,10 +39,11 @@ class Config_Lock_Control(object):
         message = 'Lock device action.'
         data = None
 
-        self.__controller.log('Locking phone.', screen=False)
+        self.__controller.log('Config Lock Control: Locking phone.',
+                              screen=False)
         lock_state = self.__controller.set_value('locked','locked')
         data = {'locked':lock_state}
-        self.__controller.log('Phone locked.', screen=False)
+        self.__controller.log('Config Lock Control: locked.', screen=False)
 
         return_value = self.__controller.do_response(message=message,
                                                      data=data,
@@ -65,7 +64,8 @@ class Config_Lock_Control(object):
             or json_string == '':
                 raise KeyError('Badly formed request!')
 
-            self.__controller.log('Request to unlock phone.', screen=False)
+            self.__controller.log('Config Lock Control: unlock phone.',
+                                  screen=False)
 
             json_data = json.loads(json_string)
             key = json_data['key']
@@ -74,7 +74,10 @@ class Config_Lock_Control(object):
 
             lock_state = self.__controller.set_value('locked','unlocked')
             data = {'locked':lock_state}
-            self.__controller.log('Phone unlocked.', screen=False)
+
+            self.__controller.log('Config Lock Control: unlocked.',
+                                  screen=False)
+            self.__controller.handle_unlock()
         except KeyError as ke:
             success = 'error'
             status = '400'
