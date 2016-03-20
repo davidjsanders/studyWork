@@ -210,6 +210,7 @@ class Control(object):
             # 2. Check message severity
 
             # 3. Check isolation state
+              # 3.1 Presence indicator - available, busy, dnd, etc.
 
             # 4. Check where / when / why / how / who
 
