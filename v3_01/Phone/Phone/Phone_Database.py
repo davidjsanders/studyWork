@@ -93,7 +93,8 @@ class Phone_Database(object):
             self.__db_exec('select sender, date_string, notification, '+\
                            'action '+\
                            'from notifications '+\
-                           'where notification_read = 0')
+                           'where notification_read = 0 '+\
+                           'order by date_string')
             returned = self.__db_cursor.fetchall()
         except Exception as e:
             raise

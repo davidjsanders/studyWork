@@ -155,7 +155,10 @@ class Control(object):
                  screen=False)
 
         for note in notifications_persisted:
-            self.__process_when_unlocked(
+            self.log('Control - Unlocked: '+\
+                     'Processing notification received at {0}'\
+                         .format(note[1]))
+            self.__process_context(
                 sender=note[0],
                 date_string=note[1],
                 notification=note[2],
@@ -178,19 +181,7 @@ class Control(object):
                 action=action
             )
 
-            # get states and values
-            self.log('Process Notification: Getting states and values.',
-                     screen=False)
-
-            context_ok, context_message = self.context_check()
-            if not context_ok:
-                self.log('Process Notification: Context issued '+\
-                          'stop because >> {0}. '.format(context_message)+'. '\
-                         'Notification will be persisted.',
-                         screen=False)
-                return
-
-            self.__process_when_unlocked(
+            self.__process_context(
                 sender=sender,
                 date_string=date_string,
                 notification=notification,
@@ -207,24 +198,40 @@ class Control(object):
         return_context = True  # Default to an allowed context
         context_message = None
 
-        # 1. Check lock status
-        lock_status = self.get_lock_status()
-        if lock_status.upper() == 'LOCKED':
-            return_context = False
-            context_message = 'Not allowed. The phone is locked.'
-            self.log('Context Check - Phone is locked. ',
+        try:
+            # 1. Check lock status
+            lock_status = self.get_lock_status()
+            if lock_status.upper() == 'LOCKED':
+                context_message = 'Not allowed. The phone is locked.'
+                raise ValueError(context_message)
+
+            context_message = 'Context check is good.'
+
+            # 2. Check message severity
+
+            # 3. Check isolation state
+
+            # 4. Check where / when / why / how / who
+
+            self.log('Context check passed. {0}'.format(context_message),
                      screen=False)
-
-        # 2. Check message severity
-
-        # 3. Check isolation state
-
-        # 4. Check where / when / why / how / who
+        except ValueError as ve:
+            return_context = False
+            context_message = str(ve)
+            self.log('Context check failed. {0}'.format(context_message),
+                     screen=False)
+        except Exception as e:
+            # Fail to safe
+            return_context = False
+            context_message = 'Failed because of exception: {0}'\
+                                  .format(repr(e))
+            self.log('Context check failed. {0}'.format(context_message),
+                     screen=False)
 
         return return_context, context_message
 
 
-    def __process_when_unlocked(
+    def __process_context(
         self,
         sender=None,
         date_string=None,
@@ -232,6 +239,18 @@ class Control(object):
         action=None
     ):
         try:
+            # get states and values
+            self.log('Process Notification: Getting states and values.',
+                     screen=False)
+
+            context_ok, context_message = self.context_check()
+            if not context_ok:
+                self.log('Process Notification: Context issued '+\
+                          'stop because >> {0}. '.format(context_message)+'. '\
+                         'Notification will be persisted.',
+                         screen=False)
+                return
+
             bluetooth = self.get_bluetooth()
             output_device = self.get_value('output_device')
 

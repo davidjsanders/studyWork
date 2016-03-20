@@ -22,8 +22,9 @@ class Config_Lock_Control(object):
         current_state = self.__controller.get_lock_status()
         data = {'locked':current_state}
 
-        self.__controller.log('Config Lock Control: {0}'.format(current_state),
-                              screen=False)
+        self.__controller.log('Config Lock Control: Phone is {0}'\
+                                  .format(current_state),
+                              screen=True)
 
         return_value = self.__controller.do_response(message=message,
                                                      data=data,
@@ -43,7 +44,8 @@ class Config_Lock_Control(object):
                               screen=False)
         lock_state = self.__controller.set_value('locked','locked')
         data = {'locked':lock_state}
-        self.__controller.log('Config Lock Control: locked.', screen=False)
+        self.__controller.log('Config Lock Control: Phone locked.',
+                              screen=True)
 
         return_value = self.__controller.do_response(message=message,
                                                      data=data,
@@ -75,8 +77,8 @@ class Config_Lock_Control(object):
             lock_state = self.__controller.set_value('locked','unlocked')
             data = {'locked':lock_state}
 
-            self.__controller.log('Config Lock Control: unlocked.',
-                                  screen=False)
+            self.__controller.log('Config Lock Control: Phone unlocked.',
+                                  screen=True)
             self.__controller.handle_unlock()
         except KeyError as ke:
             success = 'error'
