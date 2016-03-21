@@ -18,7 +18,7 @@ bin/push.sh
 echo ""
 echo "Pushing LogViewer"
 cd ../LogViewer
-./build.sh
+./push.sh
 echo ""
 echo "Pushing Monitor App"
 cd ../Monitor_App
@@ -34,6 +34,6 @@ bin/push.sh
 echo ""
 echo "Pushing Phone Screen"
 cd ../Phone_Screen
-./build.sh
+./push.sh
 cd ..
 
