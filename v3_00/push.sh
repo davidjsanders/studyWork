@@ -1,38 +1,38 @@
 echo ""
-echo "Building base"
+echo "Pushing base"
 cd base
 bin/push.sh
 echo ""
-echo "Building Bluetooth"
+echo "Pushing Bluetooth"
 cd ../Bluetooth
 bin/push.sh
 echo ""
-echo "Building Location Service"
+echo "Pushing Location Service"
 cd ../Location_Service
 pwd
 bin/push.sh
 echo ""
-echo "Building Logger"
+echo "Pushing Logger"
 cd ../Logger
 bin/push.sh
 echo ""
-echo "Building LogViewer"
+echo "Pushing LogViewer"
 cd ../LogViewer
 ./build.sh
 echo ""
-echo "Building Monitor App"
+echo "Pushing Monitor App"
 cd ../Monitor_App
 bin/push.sh
 echo ""
-echo "Building Notification Service"
+echo "Pushing Notification Service"
 cd ../Notification_Service
 bin/push.sh
 echo ""
-echo "Building Phone"
+echo "Pushing Phone"
 cd ../Phone
 bin/push.sh
 echo ""
-echo "Building Phone Screen"
+echo "Pushing Phone Screen"
 cd ../Phone_Screen
 ./build.sh
 cd ..

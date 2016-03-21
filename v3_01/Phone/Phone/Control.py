@@ -78,14 +78,18 @@ class Control(object):
         self.set_value('version', version)
 
         self.log('Setting phone initial state')
-        self.set_value('locked', 'unlocked')
-        self.set_value('phonename', '{0}_{1}'\
+#        self.set_value('locked', False)
+        self.set_value('phonename', '{0}-{1}'\
             .format(server_name, port_number))
         self.set_value('output_device', 
                        'datavolume/{0}-{1}-notifications.txt'\
                            .format(server_name, port_number))
         self.set_value('x','0')
         self.set_value('y','0')
+#
+# Unlock the device
+#
+        self.lock_device(False)
 
 #
 # v3_00 Logic
@@ -137,13 +141,6 @@ class Control(object):
 # v3_01 Additions & Changes
 #
 
-    def get_lock_status(self):
-        lock_status = self.get_value('locked')
-        if lock_status in (None, [], ''):
-            lock_status = 'unlocked'    # Default to unlocked
-        return lock_status
-
-
     def handle_unlock(self):
         self.log('Control - Unlocked: Process persisted '+\
                  'notifications.',
@@ -194,7 +191,10 @@ class Control(object):
         print('process notification')
 
 
-    def context_check(self):
+    def context_check(self,
+                      kvstore=None,
+                      devicename=None
+    ):
         return_context = True  # Default to an allowed context
         context_message = None
 
@@ -244,7 +244,10 @@ class Control(object):
             self.log('Process Notification: Getting states and values.',
                      screen=False)
 
-            context_ok, context_message = self.context_check()
+            context_ok, context_message = \
+                self.context_check(kvstore=self.kvstore,
+                                   devicename=self.get_value('phonename'))
+
             if not context_ok:
                 self.log('Process Notification: Context issued '+\
                           'stop because >> {0}. '.format(context_message)+'. '\
@@ -295,6 +298,37 @@ class Control(object):
             )
         except Exception as e:
             raise
+
+
+    def get_lock_status(self):
+        self.log('Get Lock Status.')
+
+        lock_status = self.get_value('{0}-{1}-lock-state'\
+                                         .format(self.__server_name,
+                                                 self.__port_number)
+        )
+
+        if lock_status in ([], None, ''):
+            lock_status = 'unlocked'    # Default to unlocked
+
+        self.log('Get Lock Status returned {0}.'.format(lock_status))
+        return lock_status
+
+
+    def lock_device(self, lock=True):
+        if type(lock) is not bool:
+            lock_state = 'locked'
+        elif lock:
+            lock_state='locked'
+        else:
+            lock_state='unlocked'
+
+        self.set_value('{0}-{1}-lock-state'\
+                           .format(self.__server_name,
+                                   self.__port_number),
+                       lock_state)
+
+        return lock_state
 
 
 #

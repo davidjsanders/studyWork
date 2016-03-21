@@ -42,8 +42,10 @@ class Config_Lock_Control(object):
 
         self.__controller.log('Config Lock Control: Locking phone.',
                               screen=False)
-        lock_state = self.__controller.set_value('locked','locked')
+
+        lock_state = self.__controller.lock_device(True)
         data = {'locked':lock_state}
+
         self.__controller.log('Config Lock Control: Phone locked.',
                               screen=True)
 
@@ -74,7 +76,7 @@ class Config_Lock_Control(object):
             if not key == '1234-5678-9012-3456':
                 raise ValueError('Unlock key incorrect.')
 
-            lock_state = self.__controller.set_value('locked','unlocked')
+            lock_state = self.__controller.lock_device(False)
             data = {'locked':lock_state}
 
             self.__controller.log('Config Lock Control: Phone unlocked.',
