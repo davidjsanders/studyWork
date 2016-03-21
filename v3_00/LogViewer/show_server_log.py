@@ -124,6 +124,11 @@ try:
 
     r = requests.get(log_service)
     if r.status_code not in (200, 201):
+        print('Error')
+        print('='*78)
+        print('Return status is: {0}'.format(r.status_code))
+        print('Raw text is     : {0}'.format(r.text))
+        print('='*78)
         raise requests.exceptions.HTTPError(str(r.status_code)+': '+r.text)
 
     json_data = r.json()
@@ -150,7 +155,7 @@ try:
 except requests.exceptions.ConnectionError as rce:
     print('Unable to connect to {0}. Error {1}'.format(args.logger, rce))
 except requests.exceptions.HTTPError as he:
-    print('Unable to process logs. Error {0}'.format(he))
+    print('?? Unable to process logs. Error {0}'.format(he))
 except ValueError as ve:
     print(str(ve))
 except KeyError as ke:

@@ -85,7 +85,6 @@ class Log_Control(object):
                             message=message,
                             timestamp=str(datetime.datetime.now())
             )
-            raise
 
         return_value = self.__controller.do_response(message=message,
                                                      data=data,
