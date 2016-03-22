@@ -23,9 +23,6 @@ class Log_Control(object):
         retry_count = 0
         log_returned = []
 
-        # Give the service time to catch-up on slow machines, e.g. single core
-        # cloud IaaS infrastructure (cheap)
-        time.sleep(5)
         while True:
             try:
                 success = 'success'
@@ -58,7 +55,7 @@ class Log_Control(object):
                         .format(retry_limit, retry_count))
                     break
                 else:
-                    print('Retrying')
+                    print('Retrying operation.')
 
         return  self.__controller.do_response(message=message,
                                               data=data,
