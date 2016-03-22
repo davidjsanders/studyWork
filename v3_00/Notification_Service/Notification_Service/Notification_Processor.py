@@ -15,9 +15,8 @@ def redis_processor(control_object=None):
 
     for message in redis_pubsub.listen():
         if message['type'].upper() == 'MESSAGE':
-            control_object.log('Redis Processor: Start. '+\
-                               'Message received! {0}'\
-                                   .format(message['data']))
+            control_object.log('Redis Processor: Message received!')
+
             message_data = message['data']
             message_fields = message['data'].decode('utf-8').split('<<*>>', 5)
 
@@ -46,8 +45,13 @@ def redis_processor(control_object=None):
                 temp_payload_data = copy.deepcopy(payload_data)
                 temp_payload_data['key']='OBFUSCATED'
 
-                control_object.log('Redis Processor: Payload {0}'\
-                  .format(temp_payload_data))
+                control_object.log('Redis Processor: Payload is '+\
+                                   '{0}-{1}-{2}'\
+                                      .format(payload_data['message'],
+                                              payload_data['sender'],
+                                              payload_data['action']
+                                              )
+                )
 
                 control_object.log('Redis Processor: issuing http '+\
                                    'request to {0}'\

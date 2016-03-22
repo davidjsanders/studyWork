@@ -52,7 +52,7 @@ class Notification_Receiver(object):
                 self.__controller.log('Notification from {0} for {1}'\
                                      .format(sender,recipient))
 
-                self.__controller.log('Notification is {0} with action "{1}"'\
+                self.__controller.log('Notification is {0} with action: {1}'\
                                      .format(text, action))
 
             except KeyError as ke:
@@ -83,16 +83,17 @@ class Notification_Receiver(object):
                     # collection of notifications and then let another thread
                     # take time to process.
 
-                    self.__controller.log('Queuing Notification for delivery '+\
-                                          'with data: '+\
-                                          '{0}<<*>>{1}<<*>>{2}<<*>>{3}<<*>>{4}'\
-                                              .format(
-                                                  sender,
-                                                  recipient,
-                                                  text,
-                                                  action,
-                                                  str(now)+'('+tz+'/'+tzdst+')'
-                                              )
+                    self.__controller.log(
+                        'Notification Receiver is queuing Notification '+\
+                        'with data: '+\
+                        '{0}-{1}-{2}-{3}-{4}'\
+                            .format(
+                                sender,
+                                recipient,
+                                text,
+                                action,
+                                str(now)+'('+tz+'/'+tzdst+')'
+                            )
                     )
                     self.__controller.queue_notification(
                         sender,

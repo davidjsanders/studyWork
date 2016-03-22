@@ -1,5 +1,5 @@
 from flask_restful import Resource, Api, reqparse, abort
-from flask import Response
+from flask import Response, send_file
 from Logger.Control import global_control
 import datetime, time, json, requests, redis, sqlite3
 
@@ -12,6 +12,24 @@ class Log_Control(object):
 
     def __init__(self):
         self.__controller = global_control
+
+    def get_log_file(self):
+        success = 'success'
+        status = '200'
+        message = 'Logging Service, update log.'
+        data = None
+        try:
+            log_file = '{0}'\
+                .format(self.__controller.get_log_filename())
+            print('Fetching {0}'.format(log_file))
+            return_response = send_file(log_file)
+        except Exception as e:
+            error_msg = 'An exception occurred: {0}'.format(repr(e))
+            print(error_msg)
+            self.__controller.log(error_msg, screen=False)
+
+        return return_response
+
 
     def get_log_by_sender(self, sender=None):
         success = 'success'

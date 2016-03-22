@@ -11,6 +11,7 @@ from textwrap import wrap
 
 class Control(object):
     __log_file = None
+    __root = None
     __logger_db = None
 
     def __init__(self):
@@ -24,6 +25,7 @@ class Control(object):
         self.__logger_db = \
             Logger_Database(server_name, port_number)
 
+        self.__root = '/Logger'
         self.__log_file = 'datavolume/'+server_name+'-'+str(port_number)+\
             '-log.txt'
         self.file_clear()
@@ -57,6 +59,10 @@ class Control(object):
         return self.__version
 
 
+    def get_log_filename(self):
+        return '{0}/{1}'.format(self.__root, self.__log_file)
+
+
     def delete_log(self):
         self.file_clear()
         return self.__logger_db.clear_log()
@@ -76,14 +82,17 @@ class Control(object):
             timestamp=None
     ):
         now = str(datetime.datetime.now())
+        if not timestamp == None:
+            now = timestamp
+
         try:
-            self.file_log('{0},{1},{2},{3}'\
-                .format(sender,log_type,message,timestamp))
+            self.file_log('"{0}","{1}","{2}","{3}"'\
+                .format(now,sender,log_type,message))
         except Exception as e:
             print('FILE LOG: Unknown exception! {0}'.format(repr(e)))
 
         try:
-            self.__logger_db.write_log(sender, log_type, message, timestamp)
+            self.__logger_db.write_log(sender, log_type, message, now)
         except Exception as e:
             print('DB LOG: Unknown exception! {0}'.format(repr(e)))
 
@@ -106,7 +115,9 @@ class Control(object):
         try:
             f = open(self.__log_file, 'w')
             f.write('{0},{1},{2},{3}'\
-                .format("LOGGER","INITIALIZE","Log file created.",now)+"\n")
+                .format("Timestamp", "Sender", "Log Type", "Activity")+"\n")
+            f.write('{0},{1},{2},{3}'\
+                .format(now, "logger", "initialize", "Log file created.")+"\n")
         except Exception as e:
             raise
         finally:

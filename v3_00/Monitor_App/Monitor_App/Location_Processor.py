@@ -34,9 +34,8 @@ def do_location_check(control_object=None):
             location_provider,
             data=json.dumps(payload_data)
         )
-        control_object.log('Location request returned {0}:{1}'\
-            .format(request_response.status_code,
-                    request_response.text)
+        control_object.log('Location request returned {0}'\
+            .format(request_response.status_code)
         )
         if request_response.status_code in (200,201):
             returned_data = request_response.json()
@@ -61,12 +60,9 @@ def do_location_check(control_object=None):
                     params=payload_data
                 )
                 control_object.log('URL is {0}'.format(check_response.url))
-# NEW
-#                check_response = requests.get(
-#                    location_service+'?x={0}&y={1}'.format(x,y)
-#                )
-                control_object.log('Hotspot check returned {0}:{1}'\
-                    .format(check_response.status_code, check_response.text)
+
+                control_object.log('Response is {0}'\
+                    .format(check_response.status_code)
                 )
                 if check_response.status_code in (200,201)\
                 and check_response.json()['response'] == 'success':

@@ -21,6 +21,11 @@ class Log_Boundary(Resource):
         return log_control.delete_log(json_string=raw_data)
 
 
+class Log_File_Boundary(Resource):
+    def get(self):
+        return log_control.get_log_file()
+
+
 class Log_Boundary_By_Sender(Resource):
     def get(self, sender=None):
         return log_control.get_log_by_sender(sender)
