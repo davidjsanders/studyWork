@@ -78,21 +78,21 @@ class Control(object):
         self.set_value('version', version)
 
         self.log('Setting phone initial state')
-#        self.set_value('locked', False)
         self.set_value('phonename', '{0}-{1}'\
             .format(server_name, port_number))
         self.set_value('output_device', 
-                       'datavolume/{0}-{1}-notifications.txt'\
-                           .format(server_name, port_number))
+                       '{0}-notifications.txt'\
+                           .format(pre_filename))
         self.set_value('x','0')
         self.set_value('y','0')
+
 #
-# Unlock the device
+# v3_01 : Unlock the device
 #
         self.lock_device(False)
 
 #
-# v3_00 Logic
+# v3_00 Logic UNCHANGED
 #
 
     def persist_notification(
@@ -128,17 +128,9 @@ class Control(object):
             )
 
 
-    def log(self,
-            log_message=None,
-            screen=False,
-            log_to_central=True
-    ):
-        self.logger.writelog(log_message, log_to_central)
-        if screen:
-            self.write_screen(log_message+"\n")
-
 #
-# v3_01 Additions & Changes
+# v3_01 Handle Unlock. Added to catch unlock requests and process any persisted
+# notifications.
 #
 
     def handle_unlock(self):
@@ -163,6 +155,9 @@ class Control(object):
             )
 
 
+#
+# v3_01 Process Notification. Moved to Control so available from everywhere.
+#
     def process_notification(
         self,
         sender=None,
@@ -191,6 +186,9 @@ class Control(object):
         print('process notification')
 
 
+#
+# v3_01 Context Check. New in v3_01. Checks the context of the device.
+#
     def context_check(self,
                       kvstore=None,
                       devicename=None
@@ -232,6 +230,10 @@ class Control(object):
         return return_context, context_message
 
 
+#
+# v3_01 __process_context. Private method that is called by process_notification
+# and displays / processes notifications only if the context check is ok.
+#
     def __process_context(
         self,
         sender=None,
@@ -262,6 +264,7 @@ class Control(object):
             self.log('Process Notification: Bluetooth = {0}.'\
                          .format(bluetooth),
                      screen=False)
+
             self.log('Process Notification: Output_Device = {0}.'\
                          .format(output_device),
                      screen=False)
@@ -274,8 +277,7 @@ class Control(object):
                 sender=sender,
                 date_string=date_string,
                 notification=notification,
-                action=action,
-                output_device=output_device
+                action=action
             )
 
             self.log('Process Notification: Checking for Bluetooth.',
@@ -300,6 +302,10 @@ class Control(object):
             raise
 
 
+#
+# v3_01 Get Lock Status. New in v3_01. Checks whether the device is locked or
+# unlocked.
+#
     def get_lock_status(self):
         self.log('Get Lock Status.')
 
@@ -315,6 +321,9 @@ class Control(object):
         return lock_status
 
 
+#
+# v3_01 Lock Device. New in v3_01. Locks or unlocks the device.
+#
     def lock_device(self, lock=True):
         if type(lock) is not bool:
             lock_state = 'locked'
@@ -332,15 +341,41 @@ class Control(object):
 
 
 #
-# v3_01: Moved from Notification_Control to Control
+# v3_01: Change to log to include file output within the log method.
+#
+
+    def log(self,
+            log_message=None,
+            screen=False,
+            log_to_central=True
+    ):
+        self.logger.writelog(log_message, log_to_central)
+        if screen:
+            self.write_screen(log_message+"\n")
+
+            output_device = self.get_value('output_device')
+            if output_device not in ('', None, []):
+                try:
+                    f = open(output_device,'a')
+                    f.write(log_message+"\n")
+                except Exception as e:
+                    error_msg = 'Log raised exception: {0}'.format(repr(e))
+                    print(error_msg)
+                    self.log(error_msg, screen=False, log_to_central=True)
+                finally:
+                    f.close()
+
+
+#
+# v3_01: Moved from Notification_Control to Control. Change to remove direct
+# file I/O from the method and include as part of the logger.
 #
     def display_notification(
         self,
         sender=None,
         date_string=None,
         notification=None,
-        action=None,
-        output_device='unknown.txt'
+        action=None
     ):
         try:
             self.log('-'*77, screen=True)
@@ -351,18 +386,16 @@ class Control(object):
             self.log('Notification     : {0}'.format(notification), screen=True)
             self.log('Action           : {0}'.format(action), screen=True)
             self.log('-'*77, screen=True)
-
-            f = open(output_device,'a')
-            f.write(('-'*80)+"\n")
-            f.write('Notification from: {0}'.format(sender)+"\n")
-            f.write('Received at      : {0}'.format(date_string)+"\n")
-            f.write('Notification     : {0}'.format(notification)+"\n")
-            f.write('Action           : {0}'.format(action)+"\n\n")
-            f.close()
-        except:
-            raise
+        except Exception as e:
+            error_msg = 'Display Notification. Exception: {0}'.format(repr(e))
+            print(error_msg)
+            self.log(error_msg, screen=False, log_to_central=True)
 
 
+#
+# v3_01: Moved from Notification_Control to Control. Changes are general tidy 
+# up.
+#
     def issue_bluetooth(
         self,
         notification=None,
