@@ -1,7 +1,7 @@
 from flask_restful import Resource, Api, reqparse, abort
 from flask import Response
 from Logger.Control import global_control
-import datetime, time, json, requests, redis
+import datetime, time, json, requests, redis, sqlite3
 
 #
 # SuperClass.
@@ -17,21 +17,48 @@ class Log_Control(object):
         success = 'success'
         status = '200'
         message = 'Logging Service, update log.'
+        data = None
 
+        retry_limit = 4
+        retry_count = 0
         log_returned = []
-        log_contents = self.__controller.get_log(sender)
-        if not log_contents in ([], None, ''):
-            for log in log_contents:
-                log_returned.append(
-                  {
-                    "sender":log[0],
-                    "log-type":log[2],
-                    "message":log[3],
-                    "timestamp":log[1]
-                  }
-                )
 
-        data = {"log":log_returned}
+        # Give the service time to catch-up on slow machines, e.g. single core
+        # cloud IaaS infrastructure (cheap)
+        time.sleep(5)
+        while True:
+            try:
+                success = 'success'
+                status = '200'
+                message = 'Logging Service, update log.'
+                data = None
+
+                log_contents = self.__controller.get_log(sender)
+                if not log_contents in ([], None, ''):
+                    for log in log_contents:
+                        log_returned.append(
+                          {
+                            "sender":log[0],
+                            "log-type":log[2],
+                            "message":log[3],
+                            "timestamp":log[1]
+                          }
+                        )
+
+                data = {"log":log_returned}
+                break
+            except sqlite3.OperationalError as soe:
+                print('Exception: {0}'.format(str(soe)))
+                message = 'Logging service reported unavailable'
+                status = 500
+                response = 'error'
+                retry_count += 1
+                if retry_count > retry_limit:
+                    print('Exceeded maximum retries. Limit = {0}. Count = {1}'\
+                        .format(retry_limit, retry_count))
+                    break
+                else:
+                    print('Retrying')
 
         return  self.__controller.do_response(message=message,
                                               data=data,

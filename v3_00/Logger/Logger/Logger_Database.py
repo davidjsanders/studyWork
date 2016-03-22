@@ -1,5 +1,6 @@
 import sqlite3
 from datetime import datetime
+import time
 
 class Logger_Database(object):
     __db_name = None
@@ -71,6 +72,8 @@ class Logger_Database(object):
             if self.__db_cursor == None:
                 raise Exception('Cursor does not exist!')
             self.__db_cursor.execute(sql_statement, sql_parameters)
+        except sqlite3.OperationalError as soe:
+            raise
         except Exception as e:
             print(repr(e))
             raise
@@ -114,14 +117,29 @@ class Logger_Database(object):
     def get_log(self):
         try:
             self.__open_db()
+        except Exception as e:
+            print('Get log caused exception: {0}'.format(repr(e)))
+            raise
+
+        try:
             self.__db_exec('select * from log')
             returned = self.__db_cursor.fetchall()
+            retry_count = 6
+        except sqlite3.OperationalError as oe:
+            raise
         except Exception as e:
-            print(repr(e))
-        finally:
+            raise Exception('Get log caused exception: {0}'.format(repr(e)))
+
+        try:
             self.__close_db()
-            if returned == []:
-                returned = None
+        except Exception as e:
+            print('Get log caused exception: {0}'.format(repr(e)))
+            raise
+
+        if returned == []:
+            returned = None
+        elif retry_count < 6:
+            raise sqlite3.OperationalError('Database too busy.')
 
         return returned
 
