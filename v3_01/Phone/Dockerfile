@@ -18,9 +18,6 @@
 FROM dsanderscan/mscit_v3_00_phone
 COPY Phone/Control.py /Phone/Phone/
 COPY Phone/Notification_Control.py /Phone/Phone/
-COPY Phone_Config_Boundary/main.py /Phone/Phone_Config_Boundary/
-COPY Phone_Config_Boundary/Config_Screen_Boundary.py /Phone/Phone_Config_Boundary/
 COPY Phone_Config_Control/Config_Lock_Control.py /Phone/Phone_Config_Control/
-COPY Phone_Config_Control/Config_Screen_Control.py /Phone/Phone_Config_Control/
 COPY Phone/Phone_Database.py /Phone/Phone/
 

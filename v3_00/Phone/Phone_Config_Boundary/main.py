@@ -11,15 +11,15 @@ from Phone_Config_Boundary.Config_Push_Notifications_Boundary \
 from Phone_Config_Boundary.Config_Launch_Boundary import Config_Launch_Boundary
 from Phone_Config_Boundary.Config_Location_Boundary \
     import Config_Location_Boundary
-from Phone_Config_Boundary.Config_Help_Boundary import Config_Help_Boundary
+from Phone_Config_Boundary.Config_Screen_Boundary import Config_Screen_Boundary
 
 #
 # Get the version of the API
 #
 version = global_controller.get_value('version')
 
-api.add_resource(Config_Help_Boundary,
-                 '/{0}/config/help'.format(version))
+api.add_resource(Config_Screen_Boundary,
+                 '/{0}/config/screen'.format(version))
 api.add_resource(Config_Launch_Boundary,
                  '/{0}/config/launch/<string:app>'.format(version))
 api.add_resource(Config_Location_Boundary,

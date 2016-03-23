@@ -58,7 +58,6 @@ COPY Phone_Boundary/Notification_Boundary.py /Phone/Phone_Boundary/
 #
 # Config Boundary
 #
-COPY Phone_Config_Boundary/Config_Help_Boundary.py /Phone/Phone_Config_Boundary/
 COPY Phone_Config_Boundary/Config_Launch_Boundary.py /Phone/Phone_Config_Boundary/
 COPY Phone_Config_Boundary/Config_Location_Boundary.py /Phone/Phone_Config_Boundary/
 COPY Phone_Config_Boundary/Config_Lock_Boundary.py /Phone/Phone_Config_Boundary/
@@ -66,12 +65,12 @@ COPY Phone_Config_Boundary/Config_Logger_Boundary.py /Phone/Phone_Config_Boundar
 COPY Phone_Config_Boundary/Config_Monitor_App_Boundary.py /Phone/Phone_Config_Boundary/
 COPY Phone_Config_Boundary/Config_Pair_Boundary.py /Phone/Phone_Config_Boundary/
 COPY Phone_Config_Boundary/Config_Push_Notifications_Boundary.py /Phone/Phone_Config_Boundary/
+COPY Phone_Config_Boundary/Config_Screen_Boundary.py /Phone/Phone_Config_Boundary/
 COPY Phone_Config_Boundary/Config_Unlock_Boundary.py /Phone/Phone_Config_Boundary/
 COPY Phone_Config_Boundary/main.py /Phone/Phone_Config_Boundary/
 #
 # Config Control
 #
-COPY Phone_Config_Control/Config_Help_Control.py /Phone/Phone_Config_Control/
 COPY Phone_Config_Control/Config_Launch_Control.py /Phone/Phone_Config_Control/
 COPY Phone_Config_Control/Config_Location_Control.py /Phone/Phone_Config_Control/
 COPY Phone_Config_Control/Config_Lock_Control.py /Phone/Phone_Config_Control/
@@ -79,6 +78,7 @@ COPY Phone_Config_Control/Config_Logger_Control.py /Phone/Phone_Config_Control/
 COPY Phone_Config_Control/Config_Monitor_App_Control.py /Phone/Phone_Config_Control/
 COPY Phone_Config_Control/Config_Pair_Control.py /Phone/Phone_Config_Control/
 COPY Phone_Config_Control/Config_Push_Notifications_Control.py /Phone/Phone_Config_Control/
+COPY Phone_Config_Control/Config_Screen_Control.py /Phone/Phone_Config_Control/
 #
 # Set the working directory for the container
 #
