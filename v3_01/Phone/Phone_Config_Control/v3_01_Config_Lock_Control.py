@@ -2,12 +2,13 @@ from flask_restful import Resource
 from flask import Response
 from Phone import Control
 import json
+from Phone_Config_Control.v3_00_Config_Lock_Control \
+    import v3_00_Config_Lock_Control
 
-class Config_Lock_Control(object):
-    __controller = None
+class v3_01_Config_Lock_Control(v3_00_Config_Lock_Control):
 
     def __init__(self):
-        self.__controller = Control.global_controller
+        super(v3_01_Config_Lock_Control, self).__init__()
 
 
     def is_locked(self):
@@ -16,17 +17,17 @@ class Config_Lock_Control(object):
         message = 'Device lock status.'
         data = None
 
-        self.__controller.log('Config Lock Control: Checking phone lock state.',
+        self.controller.log('Config Lock Control: Checking phone lock state.',
                               screen=False)
 
-        current_state = self.__controller.get_lock_status()
+        current_state = self.controller.get_lock_status()
         data = {'locked':current_state}
 
-        self.__controller.log('Config Lock Control: Phone is {0}'\
+        self.controller.log('Config Lock Control: Phone is {0}'\
                                   .format(current_state),
                               screen=True)
 
-        return_value = self.__controller.do_response(message=message,
+        return_value = self.controller.do_response(message=message,
                                                      data=data,
                                                      status=status,
                                                      response=success)
@@ -40,16 +41,16 @@ class Config_Lock_Control(object):
         message = 'Lock device action.'
         data = None
 
-        self.__controller.log('Config Lock Control: Locking phone.',
+        self.controller.log('Config Lock Control: Locking phone.',
                               screen=False)
 
-        lock_state = self.__controller.lock_device(True)
+        lock_state = self.controller.lock_device(True)
         data = {'locked':lock_state}
 
-        self.__controller.log('Config Lock Control: Phone locked.',
+        self.controller.log('Config Lock Control: Phone locked.',
                               screen=True)
 
-        return_value = self.__controller.do_response(message=message,
+        return_value = self.controller.do_response(message=message,
                                                      data=data,
                                                      status=status,
                                                      response=success)
@@ -68,7 +69,7 @@ class Config_Lock_Control(object):
             or json_string == '':
                 raise KeyError('Badly formed request!')
 
-            self.__controller.log('Config Lock Control: unlock phone.',
+            self.controller.log('Config Lock Control: unlock phone.',
                                   screen=False)
 
             json_data = json.loads(json_string)
@@ -76,35 +77,32 @@ class Config_Lock_Control(object):
             if not key == '1234-5678-9012-3456':
                 raise ValueError('Unlock key incorrect.')
 
-            lock_state = self.__controller.lock_device(False)
+            lock_state = self.controller.lock_device(False)
             data = {'locked':lock_state}
 
-            self.__controller.log('Config Lock Control: Phone unlocked.',
+            self.controller.log('Config Lock Control: Phone unlocked.',
                                   screen=True)
-            self.__controller.handle_unlock()
+            self.controller.handle_unlock()
         except KeyError as ke:
             success = 'error'
             status = '400'
             message = 'Unlock, Key Error: {0}'.format(str(ke))
-            self.__controller.log(message, screen=False)
+            self.controller.log(message, screen=False)
         except ValueError as ve:
             success = 'error'
             status = '403'
             message = 'Unlock, Value Error: {0}'.format(str(ve))
-            self.__controller.log(message, screen=False)
+            self.controller.log(message, screen=False)
         except Exception as e:
             success = 'error'
             status = '500'
             message = 'Unlock, Exception: {0}'.format(repr(e))
-            self.__controller.log(message, screen=False)
+            self.controller.log(message, screen=False)
 
-        return_value = self.__controller.do_response(message=message,
+        return_value = self.controller.do_response(message=message,
                                                      data=data,
                                                      status=status,
                                                      response=success)
 
         return return_value
-
-lock_control_object = Config_Lock_Control()
-
 

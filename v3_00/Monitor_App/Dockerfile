@@ -47,22 +47,41 @@ COPY runserver.py /Monitor_App/
 COPY startup.sh /Monitor_App/
 COPY Monitor_App/__init__.py /Monitor_App/Monitor_App/
 COPY Monitor_App/main.py /Monitor_App/Monitor_App/
+#
 COPY Monitor_App/Control.py /Monitor_App/Monitor_App/
+COPY Monitor_App/v3_00_Control.py /Monitor_App/Monitor_App/
+#
 COPY Monitor_App/App_Control.py /Monitor_App/Monitor_App/
+COPY Monitor_App/v3_00_App_Control.py /Monitor_App/Monitor_App/
+#
 COPY Monitor_App/App_Launched_Control.py /Monitor_App/Monitor_App/
+COPY Monitor_App/v3_00_App_Launched_Control.py /Monitor_App/Monitor_App/
+#
 COPY Monitor_App/Location_Processor.py /Monitor_App/Monitor_App/
+#
 COPY Monitor_App/Monitor_App_Database.py /Monitor_App/Monitor_App/
+COPY Monitor_App/v3_00_Monitor_App_Database.py /Monitor_App/Monitor_App/
+#
 COPY Monitor_App/State_Control.py /Monitor_App/Monitor_App/
+COPY Monitor_App/v3_00_State_Control.py /Monitor_App/Monitor_App/
+#
 COPY Monitor_App_Boundary/__init__.py /Monitor_App/Monitor_App_Boundary/
 COPY Monitor_App_Boundary/main.py /Monitor_App/Monitor_App_Boundary/
 COPY Monitor_App_Boundary/State_Boundary.py /Monitor_App/Monitor_App_Boundary/
 COPY Monitor_App_Boundary/App_Launched_Boundary.py /Monitor_App/Monitor_App_Boundary/
 COPY Monitor_App_Boundary/App_Boundary.py /Monitor_App/Monitor_App_Boundary/
+#
 COPY Monitor_App_Config_Boundary/Config_Logger_Boundary.py \
     /Monitor_App/Monitor_App_Config_Boundary/
+COPY Monitor_App_Config_Boundary/v3_00_Config_Logger_Boundary.py \
+    /Monitor_App/Monitor_App_Config_Boundary/
+#
 COPY Monitor_App_Config_Boundary/main.py \
     /Monitor_App/Monitor_App_Config_Boundary/
+#
 COPY Monitor_App_Config_Control/Config_Logger_Control.py \
+    /Monitor_App/Monitor_App_Config_Control/
+COPY Monitor_App_Config_Control/v3_00_Config_Logger_Control.py \
     /Monitor_App/Monitor_App_Config_Control/
 #
 # Set the working directory for the container

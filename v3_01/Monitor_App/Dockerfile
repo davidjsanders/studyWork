@@ -21,6 +21,8 @@ FROM dsanderscan/mscit_v3_00_monitor_app
 # Copy v3_01 apps
 #
 COPY Monitor_App/Control.py /Monitor_App/Monitor_App/
+COPY Monitor_App/v3_01_Control.py /Monitor_App/Monitor_App/
+#
 COPY Monitor_App/App_Launched_Control.py /Monitor_App/Monitor_App/
 COPY Monitor_App/Location_Processor.py /Monitor_App/Monitor_App/
 COPY Monitor_App_Config_Boundary/main.py /Monitor_App/Monitor_App_Config_Boundary/

@@ -43,12 +43,20 @@ RUN mkdir /Phone/datavolume
 #
 COPY runserver.py /Phone/
 COPY startup.sh /Phone/
-COPY Phone/Control.py /Phone/Phone/
-COPY Phone/__init__.py /Phone/Phone/
-COPY Phone/Location_Control.py /Phone/Phone/
 COPY Phone/main.py /Phone/Phone/
+COPY Phone/__init__.py /Phone/Phone/
+#
+COPY Phone/Control.py /Phone/Phone/
+COPY Phone/v3_00_Control.py /Phone/Phone/
+#
+COPY Phone/Location_Control.py /Phone/Phone/
+COPY Phone/v3_00_Location_Control.py /Phone/Phone/
+#
 COPY Phone/Notification_Control.py /Phone/Phone/
+COPY Phone/v3_00_Notification_Control.py /Phone/Phone/
+#
 COPY Phone/Phone_Database.py /Phone/Phone/
+COPY Phone/v3_00_Phone_Database.py /Phone/Phone/
 #
 # Boundary
 #
@@ -72,13 +80,28 @@ COPY Phone_Config_Boundary/main.py /Phone/Phone_Config_Boundary/
 # Config Control
 #
 COPY Phone_Config_Control/Config_Launch_Control.py /Phone/Phone_Config_Control/
+COPY Phone_Config_Control/v3_00_Config_Launch_Control.py /Phone/Phone_Config_Control/
+#
 COPY Phone_Config_Control/Config_Location_Control.py /Phone/Phone_Config_Control/
+COPY Phone_Config_Control/v3_00_Config_Location_Control.py /Phone/Phone_Config_Control/
+#
 COPY Phone_Config_Control/Config_Lock_Control.py /Phone/Phone_Config_Control/
+COPY Phone_Config_Control/v3_00_Config_Lock_Control.py /Phone/Phone_Config_Control/
+#
 COPY Phone_Config_Control/Config_Logger_Control.py /Phone/Phone_Config_Control/
+COPY Phone_Config_Control/v3_00_Config_Logger_Control.py /Phone/Phone_Config_Control/
+#
 COPY Phone_Config_Control/Config_Monitor_App_Control.py /Phone/Phone_Config_Control/
+COPY Phone_Config_Control/v3_00_Config_Monitor_App_Control.py /Phone/Phone_Config_Control/
+#
 COPY Phone_Config_Control/Config_Pair_Control.py /Phone/Phone_Config_Control/
+COPY Phone_Config_Control/v3_00_Config_Pair_Control.py /Phone/Phone_Config_Control/
+#
 COPY Phone_Config_Control/Config_Push_Notifications_Control.py /Phone/Phone_Config_Control/
+COPY Phone_Config_Control/v3_00_Config_Push_Notifications_Control.py /Phone/Phone_Config_Control/
+#
 COPY Phone_Config_Control/Config_Screen_Control.py /Phone/Phone_Config_Control/
+COPY Phone_Config_Control/v3_00_Config_Screen_Control.py /Phone/Phone_Config_Control/
 #
 # Set the working directory for the container
 #

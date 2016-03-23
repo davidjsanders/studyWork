@@ -7,109 +7,17 @@ import datetime, time, json, requests, os
 #
 # SuperClass.
 # ----------------------------------------------------------------------------
-class Notification_Control(object):
-    __controller = None
+class v3_00_Notification_Control(object):
+    controller = None
 
     def __init__(self):
-        self.__controller = Control.global_controller
+        self.controller = Control.global_controller
 
-
-#
-# v3_01 Additions & Changes
-#
     def incoming_notification(
         self,
         json_string=None
     ):
-        success = 'success'
-        status = '200'
-        message = 'Notification received.'
-        data = None
-        now = datetime.datetime.now()
-        tz = time.tzname[0]
-        tzdst = time.tzname[1]
-
-        date_string='{0} ({1}/{2})'.format(now, tz, tzdst)
-
-        self.__controller.log('Notification Control: Notification received.',
-                              screen=False)
-
-        try:
-            json_data = json.loads(json_string)
-
-            if json_string == None\
-            or json_string == '':
-                raise KeyError('No JSON Data provided!')
-
-            self.__controller.log('Notification Control: Parsing JSON data.',
-                                  screen=False)
-            text=json_data['message']
-            key=json_data['key']
-            sender=json_data['sender']
-            action=json_data['action']
-
-            self.__controller.log('Notification Control: Validate key.',
-                                  screen=False)
-            if not key == 'NS1234-5678-9012-3456':
-                raise ValueError('Notification control key incorrect.')
-
-            self.__controller.process_notification(
-                sender=sender,
-                date_string=date_string,
-                notification=text,
-                action=action
-            )
-
-            data = {"sender":sender,
-                    "action":action,
-                    "event-date":date_string,
-                    "notification":text}
-
-        except KeyError as ke:
-            success = 'error'
-            status = '400'
-            message = 'Badly formed request! {0}'.format(str(ke))
-            self.__controller.log('Incoming notification: Error {0}'\
-                .format(str(ke)), screen=False)
-        except ValueError as ve:
-            success = 'error'
-            status = '403'
-            message = str(ve)
-            self.__controller.log(
-              'Notification Control: {0}'.format(message),
-              screen=False
-            )
-        except Exception as e:
-            success = 'error'
-            status = '500'
-            message = 'Exception: {0}'.format(repr(e))
-            self.__controller.log(
-              'Incoming notification: Error {0}'.format(message),
-              screen=False
-            )
-
-        self.__controller.log('Notification Control: Processing completed.',
-                              screen=False)
-
-        return_value = self.__controller.do_response(message=message,
-                                                     data=data,
-                                                     status=status,
-                                                     response=success)
-
-        return return_value
-
-
-#
-# incoming_notification
-# deprecated in v3_01 from v3_00
-#
-# DEPRECATED BLOCK BEGINS
-#
-    def __v3_00_incoming_notification(
-        self,
-        json_string=None
-    ):
-        self.__controller.log('Notification received.',
+        self.controller.log('Notification received.',
                               screen=False)
         success = 'success'
         status = '200'
@@ -122,7 +30,7 @@ class Notification_Control(object):
             success = 'error'
             status = '400'
             message = 'Badly formed request!'
-            self.__controller.log(
+            self.controller.log(
                 'Notification was not properly formed. There was no JSON.',
                 screen=False)
         else:
@@ -141,42 +49,42 @@ class Notification_Control(object):
                         "action":action,
                         "notification":text}
 
-                self.__controller.log(
-                    'Notification Contol: Persisting {0}'.format(data),
+                self.controller.log(
+                    'Notification data: {0}'.format(data),
                     screen=False)
 
                 now = datetime.datetime.now()
                 tz = time.tzname[0]
                 tzdst = time.tzname[1]
 
-                self.__controller.log(
+                self.controller.log(
                     'Sending display notification request.',
                     screen=False
                 )
 
-                self.__display_notification(
+                self.display_notification(
                     sender=sender,
                     date_string='{0} ({1}/{2})'.format(now, tz, tzdst),
                     notification=text,
                     action=action
                 )
 
-                self.__controller.log(
+                self.controller.log(
                     'Persisting notification to the database.',
                     screen=False
                 )
-                self.__controller.persist_notification(
+                self.controller.persist_notification(
                     sender=sender,
                     date_string='{0} ({1}/{2})'.format(now, tz, tzdst),
                     notification=text,
                     action=action
                 )
 
-                self.__controller.log(
+                self.controller.log(
                     'Issuing notification to bluetooth',
                     screen=False
                 )
-                response = self.__issue_bluetooth(
+                response = self.issue_bluetooth(
                     notification=text
                 )
 
@@ -190,19 +98,19 @@ class Notification_Control(object):
                 data['bluetooth-warnings'] = \
                     'Bluetooth Error: device did not respond. {0}'\
                         .format(str(rce))
-                self.__controller.log(data['bluetooth-warnings'],
+                self.controller.log(data['bluetooth-warnings'],
                                       screen=False)
             except KeyError as ke:
                 success = 'error'
                 status = '400'
                 message = 'Badly formed request! {0}'.format(str(ke))
-                self.__controller.log('Incoming notification: Error {0}'\
+                self.controller.log('Incoming notification: Error {0}'\
                     .format(str(ke)), screen=False)
             except ValueError as ve:
                 success = 'error'
                 status = '403'
                 message = str(ve)
-                self.__controller.log(
+                self.controller.log(
                   'Incoming notification: {0}'.format(message),
                   screen=False
                 )
@@ -210,23 +118,71 @@ class Notification_Control(object):
                 success = 'error'
                 status = '400'
                 message = 'Exception: {0}'.format(repr(e))
-                self.__controller.log(
+                self.controller.log(
                   'Incoming notification: Error {0}'.format(message),
                   screen=False
                 )
 
-        self.__controller.log('Notification processed.',
+        self.controller.log('Notification processed.',
                               screen=False)
-        return_value = self.__controller.do_response(message=message,
+        return_value = self.controller.do_response(message=message,
                                                      data=data,
                                                      status=status,
                                                      response=success)
 
         return return_value
-#
-# DEPRECATED BLOCK ENDS
-#
 
 
-notification_control_object = Notification_Control()
+    def issue_bluetooth(
+        self,
+        notification=None
+    ):
+        request_response = None
+
+        try:
+            bluetooth_device = self.controller.get_bluetooth()
+            if bluetooth_device != []\
+            and bluetooth_device != None:
+                bluetooth_key = self.controller.get_value(bluetooth_device)
+                phonename = self.controller.get_value('phonename')
+                if not (bluetooth_key == None or phonename == None):
+                    payload_data = {"key":bluetooth_key,
+                                    "message":notification}
+                    request_response = requests.post(
+                         bluetooth_device+'/broadcast/'+phonename,
+                         data=json.dumps(payload_data)
+                    )
+            return request_response
+        except requests.exceptions.ConnectionError as rce:
+            raise requests.exceptions.ConnectionError(rce)
+        except:
+            raise
+
+    def display_notification(
+        self,
+        sender=None,
+        date_string=None,
+        notification=None,
+        action=None
+    ):
+        try:
+            self.controller.log('-'*77)
+            self.controller.log('Notification received')
+            self.controller.log('-'*77)
+            self.controller.log('Notification from: {0}'.format(sender))
+            self.controller.log('Received at      : {0}'.format(date_string))
+            self.controller.log('Notification     : {0}'.format(notification))
+            self.controller.log('Action           : {0}'.format(action))
+            self.controller.log('-'*77)
+
+            outputfile = self.controller.get_value('output_device')
+            f = open(outputfile,'a')
+            f.write(('-'*80)+"\n")
+            f.write('Notification from: {0}'.format(sender)+"\n")
+            f.write('Received at      : {0}'.format(date_string)+"\n")
+            f.write('Notification     : {0}'.format(notification)+"\n")
+            f.write('Action           : {0}'.format(action)+"\n\n")
+            f.close()
+        except:
+            raise
 

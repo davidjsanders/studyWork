@@ -16,8 +16,16 @@
 # Use the base Python image which includes Python3, Flask, and Flask_Restful
 # 
 FROM dsanderscan/mscit_v3_00_phone
+#
 COPY Phone/Control.py /Phone/Phone/
+COPY Phone/v3_01_Control.py /Phone/Phone/
+#
 COPY Phone/Notification_Control.py /Phone/Phone/
+COPY Phone/v3_01_Notification_Control.py /Phone/Phone/
+#
 COPY Phone_Config_Control/Config_Lock_Control.py /Phone/Phone_Config_Control/
+COPY Phone_Config_Control/v3_01_Config_Lock_Control.py /Phone/Phone_Config_Control/
+#
 COPY Phone/Phone_Database.py /Phone/Phone/
+COPY Phone/v3_01_Phone_Database.py /Phone/Phone/
 
