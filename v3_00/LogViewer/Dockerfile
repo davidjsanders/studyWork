@@ -34,6 +34,7 @@ RUN mkdir /Log_Viewer
 
 # copy the files required for the application
 COPY show_server_log.py /Log_Viewer/
+COPY v3_00_Show_Log.py /Log_Viewer/
 
 # Set the working directory for the container
 WORKDIR /Log_Viewer/

@@ -41,10 +41,23 @@ COPY runserver.py /Logger/
 COPY startup.sh /Logger/
 COPY Logger/__init__.py /Logger/Logger/
 COPY Logger/main.py /Logger/Logger/
+#
+# Control
+#
 COPY Logger/Control.py /Logger/Logger/
+COPY Logger/v3_00_Control.py /Logger/Logger/
+#
 COPY Logger/Log_Control.py /Logger/Logger/
+COPY Logger/v3_00_Log_Control.py /Logger/Logger/
+#
 COPY Logger/Logger_Database.py /Logger/Logger/
+COPY Logger/v3_00_Logger_Database.py /Logger/Logger/
+#
 COPY Logger/Logging_Processor.py /Logger/Logger
+COPY Logger/v3_00_Logging_Processor.py /Logger/Logger
+#
+# Boundary
+#
 COPY Logger_Boundary/__init__.py /Logger/Logger_Boundary/
 COPY Logger_Boundary/main.py /Logger/Logger_Boundary/
 COPY Logger_Boundary/Log_Boundary.py /Logger/Logger_Boundary/

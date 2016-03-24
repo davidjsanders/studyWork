@@ -1,23 +1,13 @@
-from base_lib.Config_Logger import Config_Logger
-from Location_Service import Control
+# Import base library modules - From Bluetooth symbolic link to /base_lib
+from Location_Service_Config_Control.v3_00_Config_Logger_Control \
+    import v3_00_Config_Logger_Control
 
-class Config_Logger_Control(object):
-    __controller = None
-    __config_logger = None
-
+#
+# SuperClass.
+# ----------------------------------------------------------------------------
+class Config_Logger_Control(v3_00_Config_Logger_Control):
     def __init__(self):
-        self.__controller = Control.global_control
-        self.__config_logger = Config_Logger(self.__controller)
-
-    def get_logger(self):
-        return self.__config_logger.get_logger()
-
-    def remove_logger(self, json_string=None):
-        return self.__config_logger.remove_logger(json_string)
-
-    def set_logger(self, json_string=None):
-        return self.__config_logger.set_logger(json_string)
+        super(Config_Logger_Control, self).__init__()
 
 logger_control_object = Config_Logger_Control()
-
 

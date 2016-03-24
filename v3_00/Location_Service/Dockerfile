@@ -32,25 +32,48 @@ COPY runserver.py /Location_Service/
 COPY startup.sh /Location_Service/
 COPY Location_Service/__init__.py /Location_Service/Location_Service/
 COPY Location_Service/main.py /Location_Service/Location_Service/
+#
+# Control
+#
 COPY Location_Service/Control.py /Location_Service/Location_Service/
+COPY Location_Service/v3_00_Control.py /Location_Service/Location_Service/
+#
 COPY Location_Service/Check_Control.py /Location_Service/Location_Service/
+COPY Location_Service/v3_00_Check_Control.py /Location_Service/Location_Service/
+#
 COPY Location_Service/Location_Service_Database.py \
     /Location_Service/Location_Service/
+COPY Location_Service/v3_00_Location_Service_Database.py \
+    /Location_Service/Location_Service/
+#
+# Boundary
+#
 COPY Location_Service_Boundary/__init__.py \
     /Location_Service/Location_Service_Boundary/
 COPY Location_Service_Boundary/main.py \
     /Location_Service/Location_Service_Boundary/
 COPY Location_Service_Boundary/Check_Boundary.py \
     /Location_Service/Location_Service_Boundary/
+#
+# Config Boundary
+#
 COPY Location_Service_Config_Boundary/Config_Hotspot_Boundary.py \
     /Location_Service/Location_Service_Config_Boundary/
 COPY Location_Service_Config_Boundary/Config_Logger_Boundary.py \
     /Location_Service/Location_Service_Config_Boundary/
 COPY Location_Service_Config_Boundary/main.py \
     /Location_Service/Location_Service_Config_Boundary/
+#
+# Config Control
+#
 COPY Location_Service_Config_Control/Config_Hotspot_Control.py \
     /Location_Service/Location_Service_Config_Control/
+COPY Location_Service_Config_Control/v3_00_Config_Hotspot_Control.py \
+    /Location_Service/Location_Service_Config_Control/
+#
 COPY Location_Service_Config_Control/Config_Logger_Control.py \
+    /Location_Service/Location_Service_Config_Control/
+COPY Location_Service_Config_Control/v3_00_Config_Logger_Control.py \
     /Location_Service/Location_Service_Config_Control/
 #
 # Set the working directory for the container

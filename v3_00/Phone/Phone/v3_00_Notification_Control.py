@@ -166,14 +166,22 @@ class v3_00_Notification_Control(object):
         action=None
     ):
         try:
-            self.controller.log('-'*77)
-            self.controller.log('Notification received')
-            self.controller.log('-'*77)
-            self.controller.log('Notification from: {0}'.format(sender))
-            self.controller.log('Received at      : {0}'.format(date_string))
-            self.controller.log('Notification     : {0}'.format(notification))
-            self.controller.log('Action           : {0}'.format(action))
-            self.controller.log('-'*77)
+            self.controller.log('-'*77,
+                                screen=True)
+            self.controller.log('Notification received',
+                                screen=True)
+            self.controller.log('-'*77,
+                                screen=True)
+            self.controller.log('Notification from: {0}'.format(sender),
+                                screen=True)
+            self.controller.log('Received at      : {0}'.format(date_string),
+                                screen=True)
+            self.controller.log('Notification     : {0}'.format(notification),
+                                screen=True)
+            self.controller.log('Action           : {0}'.format(action),
+                                screen=True)
+            self.controller.log('-'*77,
+                                screen=True)
 
             outputfile = self.controller.get_value('output_device')
             f = open(outputfile,'a')

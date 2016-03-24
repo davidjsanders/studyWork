@@ -28,7 +28,7 @@ api = Api(app)
 # Import control
 #import Logger.Control
 from Logger.Control import global_control as control
-import Logger.Logging_Processor
+from Logger.Logging_Processor import Logging_Processor
 
 # Import werkzueg
 from werkzeug import serving
@@ -43,9 +43,12 @@ import threading
 # Check app is NOT reloaded or spawned
 # Reference: http://werkzeug.pocoo.org/docs/0.10/serving/#werkzeug.serving.is_running_from_reloader
 #
+log_proc = Logging_Processor()
+
 if not serving.is_running_from_reloader():
+    #
     thread_job = threading.Thread(
-        target=Logging_Processor.redis_processor,
+        target=log_proc.redis_processor,
         args=(control,)
     )
     thread_job.setDaemon(True)

@@ -32,20 +32,42 @@ COPY runserver.py /Bluetooth/
 COPY startup.sh /Bluetooth/
 COPY Bluetooth/__init__.py /Bluetooth/Bluetooth/
 COPY Bluetooth/main.py /Bluetooth/Bluetooth/
-COPY Bluetooth/Control.py /Bluetooth/Bluetooth/
-COPY Bluetooth/Pairing_Database.py /Bluetooth/Bluetooth/
-COPY Bluetooth/Pairing_Control.py /Bluetooth/Bluetooth/
-COPY Bluetooth/Broadcast_Control.py /Bluetooth/Bluetooth/
+#
+# Boundary
+#
 COPY Bluetooth_Boundary/__init__.py /Bluetooth/Bluetooth_Boundary/
 COPY Bluetooth_Boundary/main.py /Bluetooth/Bluetooth_Boundary/
 COPY Bluetooth_Boundary/Broadcast_Boundary.py /Bluetooth/Bluetooth_Boundary/
 COPY Bluetooth_Boundary/Pair_Boundary.py /Bluetooth/Bluetooth_Boundary/
 #
+# Control
+#
+COPY Bluetooth/Control.py /Bluetooth/Bluetooth/
+COPY Bluetooth/v3_00_Control.py /Bluetooth/Bluetooth/
+#
+COPY Bluetooth/Pairing_Database.py /Bluetooth/Bluetooth/
+COPY Bluetooth/v3_00_Pairing_Database.py /Bluetooth/Bluetooth/
+#
+COPY Bluetooth/Pairing_Control.py /Bluetooth/Bluetooth/
+COPY Bluetooth/v3_00_Pairing_Control.py /Bluetooth/Bluetooth/
+#
+COPY Bluetooth/Broadcast_Control.py /Bluetooth/Bluetooth/
+COPY Bluetooth/v3_00_Broadcast_Control.py /Bluetooth/Bluetooth/
+#
+#
+# Config Boundary 
+#
 COPY Bluetooth_Config_Boundary/main.py /Bluetooth/Bluetooth_Config_Boundary/
 COPY Bluetooth_Config_Boundary/Config_Logger_Boundary.py /Bluetooth/Bluetooth_Config_Boundary/
 COPY Bluetooth_Config_Boundary/Config_Output_Boundary.py /Bluetooth/Bluetooth_Config_Boundary/
+#
+# Config Control 
+#
 COPY Bluetooth_Config_Control/Config_Output_Control.py /Bluetooth/Bluetooth_Config_Control/
+COPY Bluetooth_Config_Control/v3_00_Config_Output_Control.py /Bluetooth/Bluetooth_Config_Control/
+#
 COPY Bluetooth_Config_Control/Config_Logger_Control.py /Bluetooth/Bluetooth_Config_Control/
+COPY Bluetooth_Config_Control/v3_00_Config_Logger_Control.py /Bluetooth/Bluetooth_Config_Control/
 #
 # Set the working directory for the container
 #
