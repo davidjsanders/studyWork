@@ -177,10 +177,6 @@ class v3_00_Show_Log(object):
                              'shortly.')
         except ValueError as ve:
             self.output_line(str(ve))
-        except KeyError as ke:
-            self.output_error('Error 404: There is no log information for {0}'\
-                              .format(ke)
-            )
         except Exception as e:
             self.output_error(repr(e))
         finally:
