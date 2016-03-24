@@ -43,8 +43,9 @@ api = Api(app)
 # Reference: http://werkzeug.pocoo.org/docs/0.10/serving/#werkzeug.serving.is_running_from_reloader
 #
 if not serving.is_running_from_reloader():
+    loc_proc = Location_Processor.Location_Processor()
     thread_job = threading.Thread(
-        target=Location_Processor.location_processor,
+        target=loc_proc.job,
         args=(global_control,)
     )
     thread_job.setDaemon(True)

@@ -13,9 +13,11 @@ class v3_01_Control(v3_00_Control):
         self.set_value('app_msg',
                        '!*! {0} launched !*!'+\
                            '. Remember: Safe sex is good sex!')
-        self.set_value('location_msg', self.get_value('app_msg'))
+        self.set_value('location_msg',
+                       '!*! Hotspot detected at {0} !*!'+\
+                           '. Remember: Safe sex is good sex!')
         self.set_value('default_app_msg', self.get_value('app_msg'))
-        self.set_value('default_location_msg', self.get_value('app_msg'))
+        self.set_value('default_location_msg', self.get_value('location_msg'))
         self.log('Setting default messages - done.')
 
 
@@ -26,8 +28,22 @@ class v3_01_Control(v3_00_Control):
         return return_value
 
 
+    def set_app_message(self, text=None):
+        return_value = self.set_value('app_msg', text)
+        if return_value in (None, '', []):
+            return_value = self.get_value('default_app_msg')
+        return return_value
+
+
     def get_location_message(self):
         return_value = self.get_value('location_msg')
+        if return_value in (None, '', []):
+            return_value = self.get_value('default_location_msg')
+        return return_value
+
+
+    def set_location_message(self, text=None):
+        return_value = self.set_value('location_msg', text)
         if return_value in (None, '', []):
             return_value = self.get_value('default_location_msg')
         return return_value

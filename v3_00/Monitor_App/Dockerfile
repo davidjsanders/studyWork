@@ -58,6 +58,7 @@ COPY Monitor_App/App_Launched_Control.py /Monitor_App/Monitor_App/
 COPY Monitor_App/v3_00_App_Launched_Control.py /Monitor_App/Monitor_App/
 #
 COPY Monitor_App/Location_Processor.py /Monitor_App/Monitor_App/
+COPY Monitor_App/v3_00_Location_Processor.py /Monitor_App/Monitor_App/
 #
 COPY Monitor_App/Monitor_App_Database.py /Monitor_App/Monitor_App/
 COPY Monitor_App/v3_00_Monitor_App_Database.py /Monitor_App/Monitor_App/

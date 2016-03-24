@@ -24,10 +24,18 @@ COPY Monitor_App/Control.py /Monitor_App/Monitor_App/
 COPY Monitor_App/v3_01_Control.py /Monitor_App/Monitor_App/
 #
 COPY Monitor_App/App_Launched_Control.py /Monitor_App/Monitor_App/
+COPY Monitor_App/v3_01_App_Launched_Control.py /Monitor_App/Monitor_App/
+#
 COPY Monitor_App/Location_Processor.py /Monitor_App/Monitor_App/
-COPY Monitor_App_Config_Boundary/main.py /Monitor_App/Monitor_App_Config_Boundary/
-COPY Monitor_App_Config_Boundary/Config_Message_Boundary.py \
-  /Monitor_App/Monitor_App_Config_Boundary/
+COPY Monitor_App/v3_01_Location_Processor.py /Monitor_App/Monitor_App/
+#
 COPY Monitor_App_Config_Control/Config_Message_Control.py \
   /Monitor_App/Monitor_App_Config_Control/
+COPY Monitor_App_Config_Control/v3_01_Config_Message_Control.py \
+  /Monitor_App/Monitor_App_Config_Control/
+#
+COPY Monitor_App_Config_Boundary/main.py /Monitor_App/Monitor_App_Config_Boundary/
+#
+COPY Monitor_App_Config_Boundary/Config_Message_Boundary.py \
+  /Monitor_App/Monitor_App_Config_Boundary/
 
