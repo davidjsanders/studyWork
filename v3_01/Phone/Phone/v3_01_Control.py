@@ -248,13 +248,14 @@ class v3_01_Control(v3_00_Control):
     ):
         self.logger.writelog(log_message, log_to_central)
         if screen:
-            self.write_screen(log_message+"\n")
+            now = str(datetime.datetime.now())
+            self.write_screen(now+": "+log_message+"\n")
 
             output_device = self.get_value('output_device')
             if output_device not in ('', None, []):
                 try:
                     f = open(output_device,'a')
-                    f.write(log_message+"\n")
+                    f.write(now+": "+log_message+"\n")
                 except Exception as e:
                     error_msg = 'Log raised exception: {0}'.format(repr(e))
                     print(error_msg)

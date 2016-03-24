@@ -46,21 +46,44 @@ COPY Notification_Service/__init__.py \
    /Notification_Service/Notification_Service/
 COPY Notification_Service/main.py \
    /Notification_Service/Notification_Service/
+#
+# Control
+#
 COPY Notification_Service/Control.py /Notification_Service/Notification_Service/
+COPY Notification_Service/v3_00_Control.py /Notification_Service/Notification_Service/
+#
 COPY Notification_Service/Notification_Processor.py /Notification_Service/Notification_Service/
+COPY Notification_Service/v3_00_Notification_Processor.py /Notification_Service/Notification_Service/
+#
 COPY Notification_Service/Notification_Receiver.py /Notification_Service/Notification_Service/
+COPY Notification_Service/v3_00_Notification_Receiver.py /Notification_Service/Notification_Service/
+#
 COPY Notification_Service/Notification_Service_Database.py /Notification_Service/Notification_Service/
+COPY Notification_Service/v3_00_Notification_Service_Database.py /Notification_Service/Notification_Service/
+#
 COPY Notification_Service/Notification_Push_Control.py /Notification_Service/Notification_Service/
+COPY Notification_Service/v3_00_Notification_Push_Control.py /Notification_Service/Notification_Service/
+#
+# Boundary
+#
 COPY Notification_Service_Boundary/main.py /Notification_Service/Notification_Service_Boundary/
 COPY Notification_Service_Boundary/Notification_Receive_Boundary.py \
     /Notification_Service/Notification_Service_Boundary/
 COPY Notification_Service_Boundary/Notification_Push_Boundary.py \
     /Notification_Service/Notification_Service_Boundary/
+#
+# Config Boundary
+#
 COPY Notification_Service_Config_Boundary/main.py \
     /Notification_Service/Notification_Service_Config_Boundary/
 COPY Notification_Service_Config_Boundary/Config_Logger_Boundary.py \
     /Notification_Service/Notification_Service_Config_Boundary/
+#
+# Config Control
+#
 COPY Notification_Service_Config_Control/Config_Logger_Control.py \
+    /Notification_Service/Notification_Service_Config_Control/
+COPY Notification_Service_Config_Control/v3_00_Config_Logger_Control.py \
     /Notification_Service/Notification_Service_Config_Control/
 #
 # Set the working directory for the container

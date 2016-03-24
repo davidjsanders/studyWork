@@ -30,7 +30,7 @@ import threading
 
 # Import PairControl
 from Notification_Service.Control import global_control as control
-from Notification_Service import Notification_Processor
+from Notification_Service.Notification_Processor import Notification_Processor
 
 # The app is this application and set when the Python file is run from the
 # command line, e.g. python3 /some/folder/notes/runserver.py
@@ -43,9 +43,10 @@ api = Api(app)
 # Check app is NOT reloaded or spawned
 # Reference: http://werkzeug.pocoo.org/docs/0.10/serving/#werkzeug.serving.is_running_from_reloader
 #
+not_proc = Notification_Processor()
 if not serving.is_running_from_reloader():
     thread_job = threading.Thread(
-        target=Notification_Processor.redis_processor,
+        target=not_proc.redis_processor,
         args=(control,)
     )
     thread_job.setDaemon(True)
@@ -54,7 +55,7 @@ if not serving.is_running_from_reloader():
     # Reference https://docs.python.org/2/library/atexit.html
     # Register an exit handler - in case we need to do any close out stuff on
     # our thread.
-    atexit.register(Notification_Processor.redis_close,
+    atexit.register(not_proc.redis_close,
                     thread=thread_job,
                     controller=control)
 

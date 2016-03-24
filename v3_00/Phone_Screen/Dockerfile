@@ -26,6 +26,7 @@ RUN pip3 install redis
 RUN mkdir /Phone_Screen
 
 COPY Phone_Screen.py /Phone_Screen/
+COPY v3_00_Phone_Screen.py /Phone_Screen/
 
 # Set the working directory for the container
 WORKDIR /Phone_Screen/

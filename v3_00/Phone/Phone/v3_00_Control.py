@@ -126,6 +126,7 @@ class v3_00_Control(object):
     ):
         self.logger.writelog(log_message, log_to_central)
         if screen:
-            self.write_screen(log_message+"\n")
+            now = str(datetime.datetime.now())
+            self.write_screen(now+":"+log_message+"\n")
 
 
