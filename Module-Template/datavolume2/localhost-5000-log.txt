@@ -1,7 +1,0 @@
-2016-03-29 00:49:06.122471: INITIALIZE LOG: datavolume/localhost-5000-log.txt
-2016-03-29 00:49:06.123222: SENDER: Module-5000
-2016-03-29 00:49:06.123697: Log written
-2016-03-29 00:49:06.127602: Module localhost:5000 Started
-2016-03-29 00:49:06.128300: Setting environment variables to {'server_name': 'localhost', 'version':
-                          : 'v1_00', 'ip_addr': '127.0.0.1', 'port_number': '5000'}
-2016-03-29 00:49:06.140123: Stored environment variables
