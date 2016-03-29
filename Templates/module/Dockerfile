@@ -19,7 +19,7 @@
 #
 # Set the base image to the correct version, e.g. v1_00 | v2_00 | etc.
 #
-FROM dsanderscan/mscit_v3_00_base
+FROM dsanderscan/mscit_base
 #
 #
 # ADDITIONAL APPS

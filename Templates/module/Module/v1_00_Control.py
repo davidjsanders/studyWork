@@ -42,7 +42,7 @@ class v1_00_Control(object):
                              filename=pre_filename+'-log.txt',
                              sender='Module-{1}'\
                                  .format(server_name, port_number))
-        self.logger.writelog('Log written')
+        self.log = self.logger.writelog
         self.db_logger = self.logger.db_logger
 
 
@@ -65,11 +65,5 @@ class v1_00_Control(object):
         self.set_value('version', version)
         self.log('Stored environment variables')
 
-
-    def log(self,
-            log_message=None,
-            log_to_central=True
-    ):
-        self.logger.writelog(log_message, log_to_central)
 
 
