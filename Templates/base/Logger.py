@@ -58,19 +58,13 @@ class Logger(object):
                             self.__sender, 
                             'normal', 
                             ''))
-#                f.write("{0:>28s}\n".format(str(now)+': '))
             else:
-                wrapped80 = wrap(log_message, 79)
-                time_line = [str(self.__now())]
-                for line in wrapped80:
-                    time_line.append('')
-                for i, line in enumerate(wrapped80):
-                    f.write('{0},{1},{2},{3}'\
-                        .format(time_line[i],
-                                self.__sender,
-                                'normal',
-                                line
-                        )+"\n")
+                f.write('{0},{1},{2},"{3}"'\
+                    .format(str(self.__now()),
+                            self.__sender,
+                            'normal',
+                            log_message
+                    )+"\n")
             print('***LOG: {0}'.format(log_message))
         except Exception:
             raise
