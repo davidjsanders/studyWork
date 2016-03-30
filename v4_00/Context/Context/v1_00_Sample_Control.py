@@ -11,10 +11,15 @@ class v1_00_Sample_Control(object):
 
     def __init__(self):
         self.controller = Control.global_controller
+        self.module_name = 'v1_00_Sample_Control'
+        self.method_name = 'unknown'
 
     def sample_request(self):
         try:
-            self.controller.log('Sample request received.')
+            self.controller.log('{0}-{1}: Sample request received.'\
+                .format(self.module_name,
+                        self.method_name)
+            )
 
             success = 'success'
             status = '200'
@@ -24,10 +29,12 @@ class v1_00_Sample_Control(object):
         except Exception as e:
             success = 'error'
             status = '500'
-            message = 'An error occurred.'
-            error_text = 'v1_00_Sample_Control.sample_request_all: '+\
-                'Exception {0}'.format(repr(e))
-            data = {"exception":error_text}
+            message = '{0}-{1}: {2}'\
+                .format(self.module_name,
+                        self.method_name,
+                        repr(e))
+            data = {"exception":repr(e)}
+            self.controller.log(message)
             print(error_text)
 
         return_value = self.controller.do_response(message=message,
@@ -35,7 +42,11 @@ class v1_00_Sample_Control(object):
                                                    status=status,
                                                    response=success)
 
-        self.controller.log('Sample request returned {0}'.format(data))
+        self.controller.log('{0}-{1}: Sample request returned: {2} '\
+            .format(self.module_name,
+                    self.method_name,
+                    data)
+        )
 
         return return_value
 
