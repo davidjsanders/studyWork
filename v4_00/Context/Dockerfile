@@ -80,13 +80,16 @@ COPY Context_Boundary/Activity_Boundary.py /Context/Context_Boundary/
 #
 # Config Boundary
 #
-COPY Context_Config_Boundary/Config_Sample_Boundary.py /Context/Context_Config_Boundary/
 COPY Context_Config_Boundary/main.py /Context/Context_Config_Boundary/
+COPY Context_Config_Boundary/Config_Sample_Boundary.py /Context/Context_Config_Boundary/
+COPY Context_Config_Boundary/Config_Logger_Boundary.py /Context/Context_Config_Boundary/
 #
 # Config Control
 #
 COPY Context_Config_Control/Config_Sample_Control.py /Context/Context_Config_Control/
 COPY Context_Config_Control/v1_00_Config_Sample_Control.py /Context/Context_Config_Control/
+COPY Context_Config_Control/Config_Logger_Control.py /Context/Context_Config_Control/
+COPY Context_Config_Control/v1_00_Config_Logger_Control.py /Context/Context_Config_Control/
 #
 #
 # Set the working directory for the container

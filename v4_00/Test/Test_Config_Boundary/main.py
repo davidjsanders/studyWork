@@ -1,10 +1,9 @@
-from Context import app, api
-from Context.Control import global_controller
-from Context_Config_Boundary.Config_Sample_Boundary \
+from Test import app, api
+from Test.Control import global_controller
+from Test_Config_Boundary.Config_Sample_Boundary \
     import Config_Sample_Boundary
-from Context_Config_Boundary.Config_Logger_Boundary \
+from Test_Config_Boundary.Config_Logger_Boundary \
     import Config_Logger_Boundary
-
 #
 # Get the version of the API
 #

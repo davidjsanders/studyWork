@@ -6,7 +6,7 @@ from base_lib.v1_00_Config_Logger \
 # SuperClass.
 # ----------------------------------------------------------------------------
 class Config_Logger(v1_00_Config_Logger):
-    def __init__(self):
-        super(Config_Logger, self).__init__()
+    def __init__(self, control=None, module=None):
+        super(Config_Logger, self).__init__(control)
 
 
