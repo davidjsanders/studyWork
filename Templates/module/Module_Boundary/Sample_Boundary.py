@@ -16,10 +16,38 @@ class Sample_Boundary(Resource):
         # headers afterward SO, get the return result, do anything needed, and
         # then return.
         #
-        return_state = sample_control_object.sample_update(
-            json_string=raw_data
-        )
+        return_state = sample_control_object\
+                           .sample_update(json_string=raw_data)
+        # Return
+        return return_state
 
+    def put(self):
+        #
+        # Get the data with the request and decode it to UTF-8
+        #
+        raw_data = None
+        raw_data = reqparse.request.get_data().decode('utf-8')
+        #
+        # Don't return results immediately. There may be a need to update 
+        # headers afterward SO, get the return result, do anything needed, and
+        # then return.
+        #
+        return_state = sample_control_object.not_implemented('PUT')
+        # Return
+        return return_state
+
+    def delete(self):
+        #
+        # Get the data with the request and decode it to UTF-8
+        #
+        raw_data = None
+        raw_data = reqparse.request.get_data().decode('utf-8')
+        #
+        # Don't return results immediately. There may be a need to update 
+        # headers afterward SO, get the return result, do anything needed, and
+        # then return.
+        #
+        return_state = sample_control_object.not_implemented('DELETE')
         # Return
         return return_state
 

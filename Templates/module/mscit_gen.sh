@@ -1,5 +1,6 @@
 destination='NONE'
 name='NONE'
+template='NONE'
 version='v1_00'
 lName=''
 error=0
@@ -11,6 +12,7 @@ usage()
     echo "Usage: $0 -d /absolute/path -n new-name [-h]" 1>&2
     echo
     echo "  -d [path]    Specify the destination ABSOLUTE path"
+    echo "  -t [path]    Specify the path to the template"
     echo "  -n [string]  Specify the name of the service to be generated"
     echo "  -v [string]  Specify the version of the service, e.g. v3_00"
     echo "  -h           Show this help message."
@@ -20,7 +22,7 @@ usage()
 #
 # Get options
 #
-while getopts ":v:d:n:h" param; do
+while getopts ":v:d:n:t:h" param; do
     case "$param" in
         n) name=$OPTARG
            check_case=$(echo ${name} | grep [A-Z])
@@ -34,6 +36,8 @@ while getopts ":v:d:n:h" param; do
         d) destination=$OPTARG
            ;;
         v) version=$OPTARG
+           ;;
+        t) template=$OPTARG
            ;;
         h) usage
            ;;
@@ -52,20 +56,18 @@ fi
 #
 # Check name has been defined
 #
-if [[ $name == "NONE" ]]; then
+if [ $name == "NONE" -o $destination == "NONE" -o $template == "NONE" ]; then
     echo
-    echo "Error: name (-n) is required."
+    echo "Error: name (-n), destination (-d), and template path (-t) are required."
     echo
     usage
 fi
-#
-# Check destinations has been defined and does not exist.
-#
-if [[ $destination == "NONE" ]]; then
+if ! [[ -f $template/__README_FIRST__DO_NOT_EDIT__COPY_ONLY__ ]]; then
     echo
-    echo "Error: destination (-d) is required."
+    echo "Error: Bad template - "$template
+    echo "       Template does not exist."
     echo
-    usage
+    exit 1
 fi
 if [[ -d $destination/$name ]]; then
     echo
@@ -74,8 +76,15 @@ if [[ -d $destination/$name ]]; then
     echo
     exit 1
 fi
+echo
+echo
 echo "Module Generator"
 echo "================"
+echo
+echo "Destination:     "$destination
+echo "Name:            "$name
+echo "Docker Name:     "$lName
+echo "Service version: "$version
 echo
 echo "Define the services in the new module."
 echo "--------------------------------------"
@@ -127,11 +136,13 @@ echo "Starting"
 echo "--------"
 echo
 echo -n "1. Copy template 'en masse' to ${destination} ..."
-cp -r . $destination/$name
+cp -r $template/ $destination/$name
 echo "done"
 echo -n "2. Remove files used only in the template ..."
-rm $destination/$name/generate.sh
-rm $destination/$name/__DO_NOT_EDIT*
+rm $destination/$name/mscit_gen*.sh
+rm $destination/$name/__README_FIRST__DO_NOT_EDIT*
+rm -r $destination/$name/*.old
+rm -r $destination/$name/*~
 echo "done"
 echo -n "3. Rename files and folders ..."
 mv $destination/$name/Module $destination/$name/$name
@@ -179,16 +190,23 @@ echo "done"
 echo -n "  4.11 - 's/v1_00$/"$version"_$/g' ..."
 find $destination/$name/ -type f -exec sed -i 's/v1_00/'$version'/g' {} +
 echo "done"
-echo
+echo -n "  4.12 - Modify base version numbers ..."
+mv $destination/$name/$name/v1_00_Control.py $destination/$name/$name/$version"_Control.py"
+mv $destination/$name/$name/v1_00_Sample_Control.py $destination/$name/$name/$version"_Sample_Control.py"
+mv $destination/$name/$name/v1_00_Test_Database.py $destination/$name/$name/$version"_Test_Database.py"
+mv $destination/$name/$name"_Config_Control/v1_00_Config_Logger_Control.py" \
+  $destination/$name/$name"_Config_Control/"$version"_Config_Logger_Control.py"
+mv $destination/$name/$name"_Config_Control/v1_00_Config_Sample_Control.py" \
+  $destination/$name/$name"_Config_Control/"$version"_Config_Sample_Control.py"
+echo "done"
 echo "5. Generate services."
-echo
 for file_name in $service_list
 do
   lower_file_name=$(echo $file_name | tr [A-Z] [a-z])
   echo "  Generating $file_name ..."
-  cp Module_Boundary/Sample_Boundary.py $destination/$name/$name"_Boundary"/$file_name"_Boundary.py"
-  cp Module/Sample_Control.py $destination/$name/$name/$file_name"_Control.py"
-  cp Module/v1_00_Sample_Control.py $destination/$name/$name/$version"_"$file_name"_Control.py"
+  cp $template/Module_Boundary/Sample_Boundary.py $destination/$name/$name"_Boundary"/$file_name"_Boundary.py"
+  cp $template/Module/Sample_Control.py $destination/$name/$name/$file_name"_Control.py"
+  cp $template/Module/v1_00_Sample_Control.py $destination/$name/$name/$version"_"$file_name"_Control.py"
 #
 # Modify service boundary
 #
@@ -249,21 +267,17 @@ do
   echo "COPY "$name/$version"_"$file_name"_Control.py /"$name"/"$name"/" \
      >> $destination/$name/Dockerfile
   echo "done"
-#
-  echo
 done
-echo
 echo "6. Generate config services."
-echo
 for file_name in $config_list
 do
   lower_file_name=$(echo $file_name | tr [A-Z] [a-z])
   echo "  Generating $file_name ..."
-  cp Module_Config_Boundary/Config_Sample_Boundary.py \
+  cp $template/Module_Config_Boundary/Config_Sample_Boundary.py \
     $destination/$name/$name"_Config_Boundary"/$file_name"_Boundary.py"
-  cp Module_Config_Control/Config_Sample_Control.py \
+  cp $template/Module_Config_Control/Config_Sample_Control.py \
     $destination/$name/$name"_Config_Control"/"Config_"$file_name"_Control.py"
-  cp Module_Config_Control/v1_00_Config_Sample_Control.py \
+  cp $template/Module_Config_Control/v1_00_Config_Sample_Control.py \
     $destination/$name/$name"_Config_Control"/$version"_Config_"$file_name"_Control.py"
 #
 # Modify service boundary
@@ -327,10 +341,7 @@ do
   echo "COPY "$name"_Config_Control"/$version"_Config_"$file_name"_Control.py /"$name"/"$name"_Config_Control/" \
      >> $destination/$name/Dockerfile
   echo "done"
-#
-  echo
 done
-echo
 echo 
 echo "Complete. Service has been generated"
 echo "  Build the service with:      ./build.sh"

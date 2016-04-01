@@ -1,0 +1,9 @@
+Do not edit this folder or the files contained in it AT ALL. It serves the 
+purpose of a template only and is used by gen.sh to create new services using
+Python 3, Flask, and Flask-Restful templates.
+
+DO NOT EDIT.
+THIS FILE SHOULD BE DELETED AFTER COPYING STRUCTURE
+THIS FILE WILL NOT BE COPIED IF gen.sh IS USED TO GENERATE SERVICES
+
+

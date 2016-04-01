@@ -1,0 +1,13 @@
+###############################################################################
+# GENERATED SERVICE                                                           #
+###############################################################################
+
+This service has been generated. You should:
+
+1. Edit the route paths you defined in <ModuleName>_Boundary/ folder and add
+the correct verbs required - get, put, etc.
+2. Edit the control in <ModuleName>/ and modify the vX_XX_XXXX_Control.py files
+to include the logice required to support the boundaries.
+3. Do the same for the config paths in <ModuleName>_Config_Boundary/ and
+<ModuleName>_Config_Control
+

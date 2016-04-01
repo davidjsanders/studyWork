@@ -9,6 +9,28 @@ class v1_00_Config_Sample_Control(object):
         self.controller = Control.global_controller
 
 
+    def not_implemented(self, route=None):
+        self.method_name = 'not_implemented'
+
+        success = 'error'
+        status = '500'
+        message = 'Not Implemented.'
+        data = None
+
+        return_value = self.controller.do_response(message=message,
+                                                   data=data,
+                                                   status=status,
+                                                   response=success)
+
+        self.controller.log('{0}-{1}: Route {2} not implemented'\
+            .format(self.module_name,
+                    self.method_name,
+                    route)
+        )
+
+        return return_value
+
+
     def sample_request(self):
         try:
             self.controller.log('Config sample request received.')

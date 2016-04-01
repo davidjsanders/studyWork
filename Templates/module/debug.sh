@@ -68,6 +68,7 @@ docker run \
     ${port_param} \
     ${save_param} \
     ${server_name} \
+    -e version=v1_00 \
     -it dsanderscan/mscit_v1_00_module
 echo -n "Stopping contianer: module_$container_name = "
 docker stop "module_$container_name"
