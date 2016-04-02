@@ -226,7 +226,6 @@ rm_files()
     echo -n " "$step_counter". Remove files used only in the template ..."
     rm $destination/$name/mscit_gen*.sh
     rm $destination/$name/__README_FIRST__DO_NOT_EDIT*
-    rm -r $destination/$name/*.old
     rm -r $destination/$name/*~
     echo "done"
 }
@@ -273,7 +272,8 @@ change_source()
     find $destination/$name/ -type f -exec sed -i 's/from Module/from '$name'/g' {} +
     echo "done"
     echo -n "   "$step_counter".7 - 's/from 'Module'/from '$name'/g' ..."
-    find $destination/$name/ -type f -exec sed -i "s/\'Module\'/\'"$name"\'/g" {} +
+    find $destination/$name/ -type f -exec sed -i "s/'Module'/'"$name"'/g" {} +
+    find $destination/$name/ -type f -exec sed -i "s/'Module/'"$name"/g" {} +
     echo "done"
     echo -n "   "$step_counter".8 - 's/'Module'/from '$name'/g' ..."
     find $destination/$name/ -type f -exec sed -i "s/'Module'/'"$name"'/g" {} +
@@ -289,9 +289,14 @@ change_source()
     echo "done"
     if [ "$version" != "v1_00" ]; then
         echo -n "   "$step_counter".12 - Modify base version numbers ..."
-        mv $destination/$name/$name/v1_00_Control.py $destination/$name/$name/$version"_Control.py"
-        mv $destination/$name/$name/v1_00_Sample_Control.py $destination/$name/$name/$version"_Sample_Control.py"
-        mv $destination/$name/$name/v1_00_Test_Database.py $destination/$name/$name/$version"_Test_Database.py"
+        mv $destination/$name/$name/v1_00_Control.py \
+          $destination/$name/$name/$version"_Control.py"
+        mv $destination/$name/$name/v1_00_Sample_Control.py \
+          $destination/$name/$name/$version"_Sample_Control.py"
+        mv $destination/$name/$name/"v1_00_"$name"_Database.py" \
+          $destination/$name/$name/$version"_"$name"_Database.py"
+        mv $destination/$name/$name"_Config_Control/v1_00_Config_Context_Control.py" \
+          $destination/$name/$name"_Config_Control/"$version"_Config_Context_Control.py"
         mv $destination/$name/$name"_Config_Control/v1_00_Config_Logger_Control.py" \
           $destination/$name/$name"_Config_Control/"$version"_Config_Logger_Control.py"
         mv $destination/$name/$name"_Config_Control/v1_00_Config_Sample_Control.py" \

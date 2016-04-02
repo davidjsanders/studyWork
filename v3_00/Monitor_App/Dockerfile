@@ -18,7 +18,7 @@
 #
 # Use the base Python image which includes Python3, Flask, Flask_Restful, and
 # 
-FROM dsanderscan/mscit_v3_00_base
+FROM dsanderscan/mscit_base
 #
 # Install additional apps for this module
 #

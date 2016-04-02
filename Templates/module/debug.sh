@@ -5,6 +5,9 @@ save_param=''
 server_name='-e serverName=localhost'
 port='5000'
 port_param='-e portNumber='$port''
+version='v1_00'
+version_param='-e version='$version
+let error_occurred=0
 #
 # Usage instructions
 #
@@ -15,12 +18,13 @@ usage()
     echo "  -p [number]  Specify the port number to use. Must be higher than 1023"
     echo "  -s [path]    Specify the path to persist the data volume to."
     echo "  -n [string]  Specify the name the service should use for its url"
+    echo "  -v [version] Specify the version of the service to be used"
     echo "  -h           Show this help message."
     echo
     exit 1; 
 }
 
-while getopts "s:hp:n:" param; do
+while getopts "s:hp:n:v:" param; do
     case "$param" in
         s) save_param="-v "$OPTARG"/datavolume:/Module/datavolume"
            ;;
@@ -37,6 +41,9 @@ while getopts "s:hp:n:" param; do
                break
            fi
            port_param='-e portToUse='$port_number''
+           ;;
+        v) version=$OPTARG
+           version_param='-e version='$OPTARG
            ;;
         n) server_name='-e serverName='$OPTARG
            ;;
@@ -68,8 +75,8 @@ docker run \
     ${port_param} \
     ${save_param} \
     ${server_name} \
-    -e version=v1_00 \
-    -it dsanderscan/mscit_v1_00_module
+    ${version_param} \
+    -it "dsanderscan/mscit_"$version"_module"
 echo -n "Stopping contianer: module_$container_name = "
 docker stop "module_$container_name"
 echo -n "Removing contianer: module_$container_name = "

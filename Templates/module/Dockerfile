@@ -77,11 +77,14 @@ COPY Module_Boundary/Sample_Boundary.py /Module/Module_Boundary/
 # Config Boundary
 #
 COPY Module_Config_Boundary/main.py /Module/Module_Config_Boundary/
+COPY Module_Config_Boundary/Config_Context_Boundary.py /Module/Module_Config_Boundary/
 COPY Module_Config_Boundary/Config_Sample_Boundary.py /Module/Module_Config_Boundary/
 COPY Module_Config_Boundary/Config_Logger_Boundary.py /Module/Module_Config_Boundary/
 #
 # Config Control
 #
+COPY Module_Config_Control/Config_Context_Control.py /Module/Module_Config_Control/
+COPY Module_Config_Control/v1_00_Config_Context_Control.py /Module/Module_Config_Control/
 COPY Module_Config_Control/Config_Sample_Control.py /Module/Module_Config_Control/
 COPY Module_Config_Control/v1_00_Config_Sample_Control.py /Module/Module_Config_Control/
 COPY Module_Config_Control/Config_Logger_Control.py /Module/Module_Config_Control/

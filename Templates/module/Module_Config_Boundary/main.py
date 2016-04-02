@@ -4,6 +4,8 @@ from Module_Config_Boundary.Config_Sample_Boundary \
     import Config_Sample_Boundary
 from Module_Config_Boundary.Config_Logger_Boundary \
     import Config_Logger_Boundary
+from Module_Config_Boundary.Config_Context_Boundary \
+    import Config_Context_Boundary
 #
 # Get the version of the API
 #
@@ -18,4 +20,5 @@ api.add_resource(Config_Sample_Boundary,
 #
 api.add_resource(Config_Logger_Boundary,
                  '/{0}/config/logger'.format(version))
-
+api.add_resource(Config_Context_Boundary,
+                 '/{0}/config/context'.format(version))

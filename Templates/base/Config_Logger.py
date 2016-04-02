@@ -7,6 +7,6 @@ from base_lib.v1_00_Config_Logger \
 # ----------------------------------------------------------------------------
 class Config_Logger(v1_00_Config_Logger):
     def __init__(self, control=None, module=None):
-        super(Config_Logger, self).__init__(control)
+        super(Config_Logger, self).__init__(control, module)
 
 

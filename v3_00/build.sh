@@ -1,10 +1,10 @@
-echo ""
-echo "Building base"
-cd base
-bin/build.sh
-echo ""
+#echo ""
+#echo "Building base"
+#cd base
+#bin/build.sh
+#echo ""
 echo "Building Bluetooth"
-cd ../Bluetooth
+cd Bluetooth
 bin/build.sh
 echo ""
 echo "Building Location Service"

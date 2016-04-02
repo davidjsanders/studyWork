@@ -30,6 +30,8 @@ RUN mkdir /base_lib
 COPY __init__.py /base_lib/
 COPY Config_Logger.py /base_lib/
 COPY v1_00_Config_Logger.py /base_lib/
+COPY Config_Context.py /base_lib/
+COPY v1_00_Config_Context.py /base_lib/
 COPY Environment.py /base_lib/
 COPY KVStore.py /base_lib/
 COPY Logger.py /base_lib/

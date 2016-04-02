@@ -7,7 +7,7 @@ class v1_00_Config_Logger_Control(object):
 
     def __init__(self):
         self.controller = Control.global_controller
-        self.config_logger = Config_Logger(self.controller)
+        self.config_logger = Config_Logger(self.controller, module='Module')
 
     def get_logger(self):
         return self.config_logger.get_logger()
