@@ -1,10 +1,6 @@
 echo ""
-echo "Pushing base"
-cd base
-bin/push.sh
-echo ""
 echo "Pushing Bluetooth"
-cd ../Bluetooth
+cd Bluetooth
 bin/push.sh
 echo ""
 echo "Pushing Location Service"
